@@ -1,0 +1,419 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: transparent;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  line-height: 1.4;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #ccc;
+}
+
+.page {
+  max-width: 1440px;
+  margin: auto;
+  box-shadow: 0 0 5px #000;
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 59px;
+  line-height: 1;
+  font-family: "AdobeClean-BoldSemiCn";
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 27px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.15;
+  margin-bottom: 5px;
+}
+
+p {
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+b {
+  font-family: "OpenSans-Semibold";
+}
+
+ul,ol {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.small-text, .small-text p {
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.bold-text, .bold-text p {
+  font-family: "OpenSans-Bold";
+}
+
+.bold-text-adobe, .bold-text-adobe p {
+  font-family: "OpenSans-Bold";
+}
+
+.regular-text, .regular-text p {
+  font-family: "OpenSans-Regular";
+}
+
+.regular-text-adobe, .regular-text-adobe p {
+  font-family: "OpenSans-Regular";
+}
+
+.light-text, .light-text p {
+  font-family: "OpenSans-Light";
+}
+
+.bold-italics-text, .bold-italics-text p {
+  font-family: "OpenSans-SemiboldItalic";
+}
+
+.light-italics-text, .light-italics-text p {
+  font-family: "AdobeClean-LightIt";
+}
+
+.light-italics-text-adobe, .light-italics-text-adobe p {
+  font-family: "AdobeClean-LightIt";
+}
+
+.black-text, .black-text p, .black-text h1, .black-text h2, .black-text h3 {
+  color: #000;
+}
+
+.white-text, .white-text p, .white-text h1, .white-text h2, .white-text h3 {
+  color: #fff;
+}
+
+.gray-text, .gray-text p, .gray-text h1, .gray-text h2, .gray-text h3 {
+  color: #aaa;
+}
+
+.primary-color {
+  color: #035a59;
+}
+
+.secondary-color {
+  color: #f1675a;
+}
+
+.red-color {
+  color: red;
+}
+
+.black-color {
+  color: #000;
+}
+
+.footer-secondary-color {
+  color: #9cc9fb;
+}
+
+.highlight {
+  color: #fff37d;
+}
+
+.white-border {
+  border: solid 0 #fff;
+}
+
+.border-design {
+  border-top: solid 5px #f1675a;
+  border-bottom: solid 5px #f1675a;
+}
+
+.dark-bg {
+  background-color: #333;
+}
+
+.grey-bg {
+  background-color: #f3f3f3;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+input[type=submit],input[type=button] {
+  background-color: #2a6d81;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  min-width: 101px;
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  border: none;
+}
+
+input[type=button]:last-child {
+  margin: 0 0 10px 0;
+}
+
+input[type=submit]:hover {
+  background-color: #02c6bb;
+}
+
+input[type=button]:hover {
+  background-color: #02c6bb;
+}
+
+.custom-dropdown-menu, .custom-select {
+  font-size: 14px;
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  line-height: 1.4;
+  background-color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 30px 10px 10px;
+  width: 100%;
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  border-left: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  display: block;
+  position: relative;
+}
+
+.custom-dropdown-position {
+  position: relative;
+}
+
+.custom-dropdown-arrow-toggle {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  -webkit-transform: rotate(0deg);
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+  opacity: .7;
+}
+
+.custom-dropdown-arrow-open {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+  opacity: .7;
+}
+
+.custom-dropdown-arrow-close {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+  opacity: .7;
+}
+
+.custom-dropdown-group {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  z-index: 2;
+}
+
+.custom-dropdown-scroll {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 320px;
+  border-bottom: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  border-left: solid 1px #ccc;
+}
+
+.custom-dropdown-outer, .custom-select-outer {
+  margin: 10px 0;
+  position: relative;
+  height: auto;
+}
+
+.custom-dropdown {
+  font-size: 14px;
+  padding: 10px;
+  background-color: #fff;
+  border-top: solid 1px #ccc;
+  cursor: pointer;
+}
+
+.custom-dropdown:last-child {
+  border-bottom: solid 0 #ccc;
+}
+
+.custom-dropdown:first-child {
+  border-top: solid 0 #ccc;
+}
+
+.custom-dropdown-close {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.custom-dropdown-open {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.percent-33,.percent-40,.percent-50,.percent-60,.percent-100 {
+  width: 100%;
+}
+
+.modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select {
+  display: none;
+ /* Hidden by default */
+  position: fixed;
+ /* Stay in place */
+  z-index: 1;
+ /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+ /* Full width */
+  height: 100%;
+ /* Full height */
+  overflow: auto;
+ /* Enable scroll if needed */
+  background-color: rgb(0,0,0);
+ /* Fallback color */
+  background-color: rgba(0,0,0,0.4);
+ /* Black w/ opacity */;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin-left: -125px;
+  margin-top: -110px;
+  padding: 40px 20px;
+  border: 1px solid #888;
+  width: 250px;
+  height: 220px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 1);
+  text-align: center;
+  border-top: solid 5px #f1675a;
+  border-bottom: solid 5px #f1675a;
+}
+
+/* The Close Button */
+.modal-close {
+  color: #aaaaaa;
+  top: 0;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+ 
+@media screen and (min-width: 701px) {
+  .percent-60 {
+    width: 60%;
+  }
+
+  .percent-50 {
+    width: 50%;
+  }
+
+  .percent-40 {
+    width: 40%;
+  }
+
+  .percent-33 {
+    width: 50%;
+  }
+    
+  .modal-content {
+    margin-left: -175px;
+    margin-top: -100px;
+    width: 350px;
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .percent-33 {
+    width: 33.33%;
+  }
+}
