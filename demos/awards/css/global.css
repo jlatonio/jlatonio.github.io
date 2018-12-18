@@ -236,6 +236,10 @@ input[type=button]:hover {
   background-color: #02c6bb;
 }
 
+.store-button-container input{
+  width:100px;
+}
+
 .custom-dropdown-menu, .custom-select {
   font-size: 14px;
   font-family: "OpenSans-Regular", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
