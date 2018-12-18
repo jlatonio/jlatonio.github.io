@@ -45,10 +45,10 @@ $(".custom-dropdown").on("click", function(){
     // changes the form"s action link on specific choices
     if ($("input[type='text']").attr("title") == "custom-dropdown-btn1") {
         $(".custom-dropdown-input").removeAttr("action");
-        $(".custom-dropdown-input").attr("action", "ty-entry");
+        $(".custom-dropdown-input").attr("action", "ty-entry.html");
     } else {
         $(".custom-dropdown-input").removeAttr("action");
-        $(".custom-dropdown-input").attr("action", "awards-entry");
+        $(".custom-dropdown-input").attr("action", "awards-entry.html");
     }
     
     // sets active state
