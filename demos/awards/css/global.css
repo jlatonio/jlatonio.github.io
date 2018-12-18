@@ -222,6 +222,7 @@ input[type=submit],input[type=button] {
 
 input[type=button]:last-child {
   margin-bottom: 0;
+  margin-right: 0;
 }
 
 textarea {
@@ -237,7 +238,7 @@ input[type=button]:hover {
 }
 
 .store-button-container input{
-  width:100px;
+  width:110px;
 }
 
 .custom-dropdown-menu, .custom-select {
