@@ -247,6 +247,7 @@ input[type=button]:hover {
   border-right: solid 1px #ccc;
   display: block;
   position: relative;
+  margin: 0;
 }
 
 .custom-dropdown-position {

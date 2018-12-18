@@ -37,13 +37,13 @@ $(".custom-dropdown-input").attr("action", "#");
 // adds the html to the input value for each button clicked
 $(".custom-dropdown").on("click", function(){
     var option = $(this).text();
-    var title = $(this).attr("title");
+    var val = $(this).attr("value");
     var checkinput = $(this).closest(".custom-dropdown-outer").find("input[type='text']")
     $(this).closest(".custom-dropdown-outer").find(checkinput).val(option);
-    $(checkinput).attr("title", title);
+    $(checkinput).attr("value", val);
 
     // changes the form"s action link on specific choices
-    if ($("input[type='text']").attr("title") == "custom-dropdown-btn1") {
+    if ($("input[type='text']").attr("value") == "Thank You") {
         $(".custom-dropdown-input").removeAttr("action");
         $(".custom-dropdown-input").attr("action", "ty-entry.html");
     } else {
