@@ -212,8 +212,9 @@ input[type=submit],input[type=button] {
   font-size: 14px;
   display: inline-block;
   width: 100%;
-  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  font-family: "OpenSans-Regular", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   border: none;
+  border-radius: 5px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -237,7 +238,7 @@ input[type=button]:hover {
 
 .custom-dropdown-menu, .custom-select {
   font-size: 14px;
-  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  font-family: "OpenSans-Regular", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   line-height: 1.4;
   background-color: #fff;
   white-space: nowrap;
@@ -469,16 +470,15 @@ width: calc(100% - 120px);
   }
 
   .percent-fixed-180 {
-    width: calc(100% - 220px);
+    width: calc(100% - 260px);
   }
 
   .fixed-180 {
-    width: 180px;
+    width: 220px;
   }
 
   input[type=submit],input[type=button] {
     margin-bottom: 10px;
     margin-right: 10px;
-    width: 100px;
   }
 }
