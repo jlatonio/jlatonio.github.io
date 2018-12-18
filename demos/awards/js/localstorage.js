@@ -1,6 +1,6 @@
 // loads latest every session
-$( document ).ready(function() {
-    var name = $("textarea").attr("name");
+$(".store-data").each(function() {
+    var name = $(this).attr("name");
     var value = localStorage.getItem(name);
     $(this).val(value);
     // If textarea is empty, a new class is added        
