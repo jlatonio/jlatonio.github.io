@@ -152,7 +152,6 @@ a:hover {
 .gray-text, .gray-text p, .gray-text h1, .gray-text h2, .gray-text h3 {
   color: #aaa;
 }
-
 .primary-color {
   color: #018aa6;
 }
@@ -237,8 +236,8 @@ input[type=button]:hover {
   background-color: #02c6bb;
 }
 
-.store-button-container input{
-  width:110px;
+.store-button-container input {
+  width: 100%;
 }
 
 .custom-dropdown-menu, .custom-select {
@@ -373,7 +372,7 @@ input[type=button]:hover {
 }
 
 .header-percent-fixed-120 {
-width: calc(100% - 120px);
+  width: calc(100% - 120px);
 }
 
 .modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select {
@@ -466,6 +465,10 @@ width: calc(100% - 120px);
     margin-top: -100px;
     width: 350px;
     height: 200px;
+  }
+
+  .store-button-container input {
+    width: 110px;
   }
 }
 
