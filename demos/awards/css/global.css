@@ -86,6 +86,7 @@ b {
 ul,ol {
   padding-left: 20px;
   margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 a {
