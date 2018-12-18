@@ -10,7 +10,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, menu, nav, section {
   display: block;
 }
-
 * {
   box-sizing: inherit;
 }
@@ -19,6 +18,7 @@ html {
   box-sizing: border-box;
   background-color: transparent;
 }
+
 body {
   width: 100%;
   height: 100%;
@@ -46,12 +46,19 @@ h1 {
 }
 
 h2 {
-  font-size: 27px;
+  font-size: 35px;
   line-height: 1.15;
   margin-bottom: 20px;
+  display: block;
 }
 
 h3 {
+  font-size: 27px;
+  line-height: 1.15;
+  margin-bottom: 5px;
+}
+
+h4 {
   font-size: 20px;
   line-height: 1.15;
   margin-bottom: 5px;
@@ -61,6 +68,15 @@ p {
   font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   font-size: 16px;
   line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+p + p {
+  margin-bottom: 20px;
 }
 
 b {
@@ -69,7 +85,7 @@ b {
 
 ul,ol {
   padding-left: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 a {
@@ -80,6 +96,11 @@ a {
 a:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+:focus {
+  outline: none;
+  border: none;
 }
 
 .small-text, .small-text p {
@@ -133,7 +154,7 @@ a:hover {
 }
 
 .primary-color {
-  color: #035a59;
+  color: #018aa6;
 }
 
 .secondary-color {
@@ -173,25 +194,33 @@ a:hover {
   background-color: #f3f3f3;
 }
 
+.grey-2-bg {
+  background-color: #e1e1e1;
+}
+
 .white-bg {
   background-color: #fff;
 }
 
 input[type=submit],input[type=button] {
-  background-color: #2a6d81;
+  background-color: #074c6a;
   color: white;
   padding: 10px 20px;
-  margin: 0 10px 10px 0;
+  margin-bottom: 10px;
+  margin-right: 0;
   cursor: pointer;
   font-size: 14px;
   display: inline-block;
-  min-width: 101px;
+  width: 100%;
   font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 input[type=button]:last-child {
-  margin: 0 0 10px 0;
+  margin-bottom: 0;
 }
 
 input[type=submit]:hover {
@@ -324,8 +353,16 @@ input[type=button]:hover {
   z-index: 1;
 }
 
-.percent-33,.percent-40,.percent-50,.percent-60,.percent-100 {
+.percent-33,.percent-40,.percent-50,.percent-60,.percent-100,.percent-fixed-180,.fixed-180 {
   width: 100%;
+}
+
+.header-percent-120 {
+  width: 120px;
+}
+
+.header-percent-fixed-120 {
+width: calc(100% - 120px);
 }
 
 .modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select {
@@ -346,7 +383,8 @@ input[type=button]:hover {
   background-color: rgb(0,0,0);
  /* Fallback color */
   background-color: rgba(0,0,0,0.4);
- /* Black w/ opacity */;
+ /* Black w/ opacity */
+  ;
 }
 
 /* Modal Content */
@@ -359,8 +397,8 @@ input[type=button]:hover {
   width: 250px;
   height: 220px;
   position: absolute;
-  top:50%;
-  left:50%;
+  top: 50%;
+  left: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -386,7 +424,7 @@ input[type=button]:hover {
   text-decoration: none;
   cursor: pointer;
 }
- 
+
 @media screen and (min-width: 701px) {
   .percent-60 {
     width: 60%;
@@ -403,7 +441,15 @@ input[type=button]:hover {
   .percent-33 {
     width: 50%;
   }
-    
+
+  .percent-fixed-180 {
+    width: calc(100% - 180px);
+  }
+
+  .fixed-180 {
+    width: 160px;
+  }
+
   .modal-content {
     margin-left: -175px;
     margin-top: -100px;
@@ -415,5 +461,19 @@ input[type=button]:hover {
 @media screen and (min-width: 1025px) {
   .percent-33 {
     width: 33.33%;
+  }
+
+  .percent-fixed-180 {
+    width: calc(100% - 220px);
+  }
+
+  .fixed-180 {
+    width: 180px;
+  }
+
+  input[type=submit],input[type=button] {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 100px;
   }
 }
