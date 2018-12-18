@@ -223,6 +223,10 @@ input[type=button]:last-child {
   margin-bottom: 0;
 }
 
+textarea {
+  margin: 0;
+}
+
 input[type=submit]:hover {
   background-color: #02c6bb;
 }
