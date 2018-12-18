@@ -52,11 +52,6 @@ $(".store-save").on("click", function() {
     return false;
 });
 
-// saves data on changes
-$(".store-data").change(function() {
-    $(".store-save").trigger("click");
-});
-
 // resets each field 
 $(".store-reset").on("click", function() {
     $(this).closest("form").find(".custom-dropdown-menu").val("");
@@ -76,7 +71,6 @@ $(".store-reset").on("click", function() {
         $(this).val(value);
     });
     $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
-    return false;
 });
 
 // sends nomination. alerts if input is blank. adds focus to empty input area
@@ -127,7 +121,18 @@ $(".store-share").click(function() {
     return false;
 });
 
-$(".nomination-complete").click(function() {
-    localStorage.clear();
-    return false;
+// needed for confirmation page, to clear local storage session when complete
+$(".store-complete-container").hide();
+$(".store-complete").on("click", function() {
+    $(".store-data").val("");
+    $(".store-data").each(function() {
+        var name = $(this).attr("name");
+        var value = $(this).val();
+        localStorage.setItem(name, value);
+    });
+    $(".store-data").each(function() {
+        var name = $(this).attr("name");
+        var value = localStorage.getItem(name);
+        $(this).val(value);
+    });
 });
