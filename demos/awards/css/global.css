@@ -307,10 +307,12 @@ input[type=button]:hover {
 }
 
 .custom-dropdown-group {
-  position: absolute;
-  z-index: 1;
+  position: fixed;
   width: 100%;
   z-index: 2;
+  bottom:0;
+  right:0;
+  border-top: solid 1px #ccc;
 }
 
 .custom-dropdown-scroll {
@@ -469,6 +471,12 @@ input[type=button]:hover {
   .store-button-container input {
     width: 110px;
   }
+    
+  .custom-dropdown-group {
+    position: absolute;
+    bottom: initial;
+    border-top: solid 0 #ccc;
+  }    
 }
 
 @media screen and (min-width: 1025px) {

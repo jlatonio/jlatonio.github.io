@@ -160,4 +160,4 @@ $(".custom-select").on("change", function() {
         $('.custom-select').closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
         $('.modal-ineligible').show();
     } 
-});
+});    
