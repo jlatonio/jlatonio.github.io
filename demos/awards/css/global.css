@@ -256,6 +256,10 @@ input[type=button]:hover {
   display: block;
   position: relative;
   margin: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .custom-dropdown-position {
