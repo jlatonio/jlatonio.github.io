@@ -322,7 +322,7 @@ input[type=button]:hover {
 .custom-dropdown-scroll {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  max-height: 320px;
+  max-height: 400px;
   border-bottom: solid 1px #ccc;
   border-right: solid 1px #ccc;
   border-left: solid 1px #ccc;
@@ -481,6 +481,10 @@ input[type=button]:hover {
     bottom: initial;
     border-top: solid 0 #ccc;
   } 
+    
+ .custom-dropdown-scroll {
+  max-height: 320px;
+}
     
 .custom-dropdown {
   font-size: 14px;
