@@ -332,7 +332,7 @@ input[type=button]:hover {
 
 .custom-dropdown {
   font-size: 14px;
-  padding: 10px;
+  padding: 20px;
   background-color: #fff;
   border-top: solid 1px #ccc;
   cursor: pointer;
@@ -476,7 +476,15 @@ input[type=button]:hover {
     position: absolute;
     bottom: initial;
     border-top: solid 0 #ccc;
-  }    
+  } 
+    
+.custom-dropdown {
+  font-size: 14px;
+  padding: 10px;
+  background-color: #fff;
+  border-top: solid 1px #ccc;
+  cursor: pointer;
+}
 }
 
 @media screen and (min-width: 1025px) {
