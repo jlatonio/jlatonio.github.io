@@ -133,34 +133,7 @@ $("input[type='text'],textarea").keypress(function(){
     });
   });
     return false;
-});
-
-// alerts if email is invalid
-var $block = $('.modal-ineligible');
-$(".custom-select").on("change", function() {
-    var val = $(this).val();
-    var isMatch = false;
-    $('.custom-select').closest(".custom-dropdown-outer").find(".custom-dropdown-scroll div").each(function(i) {
-        var content = $(this).html();
-        if(content.toLowerCase().indexOf(val) == -1) {
-            $('.modal-ineligible').show();
-        } 
-        else {
-            isMatch = true;
-            $('.modal-ineligible').hide();
-            $('.custom-select').css({"background": ""});
-        }
-    });
-    $block.toggle(!isMatch);
-});
-
-// user must enter more than one char
-$(".custom-select").on("change", function() {
-        if($(this).val().length == 1) {
-        $('.custom-select').closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
-        $('.modal-ineligible').show();
-    } 
-});    
+});  
 
 // dropdown menu will block all keystrokes
 $(".custom-dropdown-menu").on("keyup", function() {
