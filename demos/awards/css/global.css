@@ -292,7 +292,7 @@ input[type=button]:hover {
 
 .custom-dropdown-menu, .custom-select {
   font-size: 14px;
-  font-family: "OpenSans-Regular", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   line-height: 1.4;
   background-color: #fff;
   white-space: nowrap;
