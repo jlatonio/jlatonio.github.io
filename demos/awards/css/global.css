@@ -259,6 +259,9 @@ input[type=button]:last-child {
 
 textarea {
   margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 input[type=submit]:hover {
