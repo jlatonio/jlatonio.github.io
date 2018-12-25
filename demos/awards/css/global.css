@@ -262,6 +262,14 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  font-family: "OpenSans-Light";
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #fff;
+  width: 100%;
+  resize: none;
+  border: none;
+  border-radius: 0;
 }
 
 input[type=submit]:hover {

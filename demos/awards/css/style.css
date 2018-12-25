@@ -135,21 +135,8 @@
   margin-bottom: 10px;
 }
 
-.store-data {
-  font-family: "OpenSans-Light";
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: #fff;
-  white-space: normal;
-  color: #000;
-  box-sizing: border-box;
-  width: 100%;
-  text-align: left;
-  white-space: pre-wrap;
-  width: 100%;
-  min-height: 300px;
-  resize: none;
-  border: 0px solid #000;
+.store-data-ty,.store-data-awards {
+  min-height: 312px;
   padding: 20px;
 }
 

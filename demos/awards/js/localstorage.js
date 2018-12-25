@@ -1,8 +1,8 @@
-// loads latest every session
-$(".store-data").each(function() {
+// loads latest every session for the ty page
+$(".store-data-ty").each(function() {
     'use strict';
-    var name = $(this).attr("name");
-    var value = localStorage.getItem(name);
+    var text = "store-data-ty"
+    var value = localStorage.getItem(text);
     $(this).val(value);
     // If textarea is empty, a new class is added        
     if ($.trim($(this).val()) === "") {
@@ -10,38 +10,62 @@ $(".store-data").each(function() {
     } else {
         $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
     }
-    $(this).attr("name");
+    $(this).attr("text");
 });
 
+// loads latest every session for the awards page
+$(".store-data-awards").each(function() {
+    'use strict';
+    var text = "store-data-awards"
+    var value = localStorage.getItem(text);
+    $(this).val(value);
+    // If textarea is empty, a new class is added        
+    if ($.trim($(this).val()) === "") {
+        $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+    } else {
+        $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
+    }
+    $(this).attr("text");
+});
 // save icon. hidden by default
 $(".notes-btn-each").hide();
 
 // saves data on click
 $(".store-save").on("click", function() {
     'use strict';
-    $(this).closest("form").find("input[type='text'],textarea").css({
+    $(this).closest("form").find(".store-data-ty").css({
         "background": ""
     });
-    $(this).closest(".notes-container").find(".store-data").each(function() {
-        var name = $(this).attr("name");
+    $(this).closest(".notes-container").find(".store-data-ty").each(function() {
+        var text = "store-data-ty"
         var value = $(this).val();
-        localStorage.setItem(name, value);
+        localStorage.setItem(text, value);
+    });
+    $(this).closest(".notes-container").find(".store-data-awards").each(function() {
+        var text = "store-data-awards"
+        var value = $(this).val();
+        localStorage.setItem(text, value);
     });
     // gets data and store-data in each field
-    $(".store-data").each(function() {
-        var name = $(this).attr("name");
-        var value = localStorage.getItem(name);
+    $(".store-data-ty").each(function() {
+        var text = "store-data-ty"
+        var value = localStorage.getItem(text);
+        $(this).val(value);
+    });
+    $(".store-data-awards").each(function() {
+        var text = "store-data-awards"
+        var value = localStorage.getItem(text);
         $(this).val(value);
     });
     $(".nominee-save").each(function() {
-        var name = $(this).attr("name");
+        var text = $(this).attr("text");
         var value = $(this).val();
-        localStorage.setItem(name, value);
+        localStorage.setItem(text, value);
     });
     // gets data and store-data in each field
     $(".nominee-save").each(function() {
-        var name = $(this).attr("name");
-        var value = localStorage.getItem(name);
+        var text = $(this).attr("text");
+        var value = localStorage.getItem(text);
         $(this).val(value);
     });
 
@@ -59,19 +83,29 @@ $(".store-save").on("click", function() {
 $(".store-reset").on("click", function() {
     'use strict';
     $(this).closest("form").find(".custom-dropdown-menu").val("");
-    $(this).closest("form").find("input[type='text']").val("");
-    $(this).closest("form").find("input[type='text'],textarea").css({
+    $(this).closest("form").removeAttr("action");
+    $(this).closest("form").find("textarea").val("").css({
         "background": ""
     });
-    $(this).closest(".notes-container").find(".store-data").val("");
-    $(".store-data").each(function() {
-        var name = $(this).attr("name");
+    $(this).closest(".notes-container").find("textarea").val("");
+    $(".store-data-ty").each(function() {
+        var text = "store-data-ty"
         var value = $(this).val();
-        localStorage.setItem(name, value);
+        localStorage.setItem(text, value);
     });
-    $(".store-data").each(function() {
-        var name = $(this).attr("name");
-        var value = localStorage.getItem(name);
+    $(".store-data-ty").each(function() {
+        var text = "store-data-ty"
+        var value = localStorage.getItem(text);
+        $(this).val(value);
+    });
+    $(".store-data-awards").each(function() {
+        var text = "store-data-awards"
+        var value = $(this).val();
+        localStorage.setItem(text, value);
+    });
+    $(".store-data-awards").each(function() {
+        var text = "store-data-awards"
+        var value = localStorage.getItem(text);
         $(this).val(value);
     });
     $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
@@ -79,9 +113,9 @@ $(".store-reset").on("click", function() {
 
 // sends nomination. alerts if input is blank. adds focus to empty input area
 $(".store-nominate").click(function() {
-    $("textarea").each(function() {
+    $(".store-data-ty").each(function() {
         'use strict';
-        var option = $("textarea").val();
+        var option = $(".store-data-ty").val();
         if (option.length === 0) {
             $(this).css({
                 "background": "#fff2f2"
@@ -90,7 +124,25 @@ $(".store-nominate").click(function() {
         }
         if (option.length > 0) {
             $("form").removeAttr("action");
-            $("form").attr("action", "confirmation.html");
+            $("form").attr("action", "ty-confirmation.html");
+            $("form").submit();
+            $(this).css({
+                "background": ""
+            });
+        }
+    });
+    $(".store-data-awards").each(function() {
+        'use strict';
+        var option = $(".store-data-awards").val();
+        if (option.length === 0) {
+            $(this).css({
+                "background": "#fff2f2"
+            });
+            $(".modal-alert").show();
+        }
+        if (option.length > 0) {
+            $("form").removeAttr("action");
+            $("form").attr("action", "awards-confirmation.html");
             $("form").submit();
             $(this).css({
                 "background": ""
@@ -131,15 +183,36 @@ $(".store-share").click(function() {
 $(".store-complete-container").hide();
 $(".store-complete").on("click", function() {
     'use strict';
-    $(".store-data").val("");
-    $(".store-data").each(function() {
-        var name = $(this).attr("name");
+    $(".store-data-ty").val("");
+    $(".store-data-ty").each(function() {
+        var text = "store-data-ty"
         var value = $(this).val();
-        localStorage.setItem(name, value);
+        localStorage.setItem(text, value);
     });
-    $(".store-data").each(function() {
-        var name = $(this).attr("name");
-        var value = localStorage.getItem(name);
+    $(".store-data-ty").each(function() {
+        var text = "store-data-ty"
+        var value = localStorage.getItem(text);
+        $(this).val(value);
+    });
+    $(".store-data-awards").val("");
+    $(".store-data-awards").each(function() {
+        var text = "store-data-awards"
+        var value = $(this).val();
+        localStorage.setItem(text, value);
+    });
+    $(".store-data-awards").each(function() {
+        var text = "store-data-awards"
+        var value = localStorage.getItem(text);
         $(this).val(value);
     });
 });
+
+
+
+
+
+
+
+
+
+
