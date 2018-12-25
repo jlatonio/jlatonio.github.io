@@ -82,8 +82,8 @@ $(".store-save").on("click", function() {
 // resets each field 
 $(".store-reset").on("click", function() {
     'use strict';
-    $(this).closest("form").find(".custom-dropdown-menu").val("");
     $(this).closest("form").removeAttr("action");
+    $(this).closest("form").find("input[type=text]").val("");
     $(this).closest("form").find("textarea").val("").css({
         "background": ""
     });
