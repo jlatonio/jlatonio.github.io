@@ -18,8 +18,8 @@
 }
 
 .notes-btn-each-active::after {
-  position:absolute;
-  content:"Saving Data...";
+  position: absolute;
+  content: "Saving Data...";
   width: 100px;
   background-color: #fff;
   padding: 10px;
@@ -32,8 +32,8 @@
 }
 
 .notes-btn-each-empty::after {
-  position:inherit;
-  content:"";
+  position: inherit;
+  content: "";
   width: 100px;
 }
 
@@ -73,16 +73,53 @@
  /* Safari 6.1+ */
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.column-container-header h2 {
+  margin-bottom: 40px;
 }
 
 .column-container-row:last-child {
   margin-bottom: 0;
 }
 
+.notes-container-column-each {
+  padding-left: 0;
+  padding-top: 80px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.notes-container-column-icon {
+  top: 0;
+  left: 50%;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  margin-left: -35px;
+}
+
+.notes-container-column-each:before {
+  content: "";
+  border-top: 2px solid #d3d3d3;
+  width: calc(50% - 45px);
+  position: absolute;
+  top: 35px;
+  right: 0;
+}
+
+.notes-container-column-each:after {
+  content: "";
+  border-top: 2px solid #d3d3d3;
+  width: calc(50% - 45px);
+  position: absolute;
+  top: 35px;
+  left: 0;
+}
+
 .column-container-row .notes-container-column-inner:first-child {
   padding-right: 0;
-  margin-bottom: 20px;
 }
 
 .column-container-row .notes-container-column-inner:last-child {
@@ -90,7 +127,8 @@
 }
 
 .store-data-container-inner {
-  border: 4px solid #e2e2e2;
+  border: 7px solid #e2e2e2;
+  border-style: double;
 }
 
 .store-data-container h3 {
@@ -146,6 +184,32 @@
 }
 
 @media screen and (min-width: 701px) {
+    
+  .column-container-row {
+    margin-bottom: 20px;
+  }
+
+  .notes-container-column-each {
+    padding-left: 70px;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
+  .notes-container-column-icon {
+    left: 0;
+    width: 50px;
+    height: 50px;
+    margin-left: 0;
+  }
+
+  .notes-container-column-each:before {
+    border-top: none;
+  }
+
+  .notes-container-column-each:after {
+    border-top: none;
+  }
+
   .column-container-row .notes-container-column-inner:first-child {
     padding-right: 10px;
     margin-bottom: 0;
@@ -160,6 +224,10 @@
   .store-data {
     padding: 32px 40px;
     min-height: 320px;
+  }
+
+  .column-container-row {
+    margin-bottom: 40px;
   }
 
   .column-container-row .notes-container-column-inner:first-child {

@@ -1,10 +1,11 @@
 // loads latest every session
 $(".store-data").each(function() {
+    'use strict';
     var name = $(this).attr("name");
     var value = localStorage.getItem(name);
     $(this).val(value);
     // If textarea is empty, a new class is added        
-    if ($.trim($(this).val()) == "") {
+    if ($.trim($(this).val()) === "") {
         $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
     } else {
         $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
@@ -17,6 +18,7 @@ $(".notes-btn-each").hide();
 
 // saves data on click
 $(".store-save").on("click", function() {
+    'use strict';
     $(this).closest("form").find("input[type='text'],textarea").css({
         "background": ""
     });
@@ -45,6 +47,7 @@ $(".store-save").on("click", function() {
 
     // save animation
     $(".notes-btn-each").show();
+    'use strict';
     $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
     setTimeout(function() {
         $(".notes-btn-each").fadeOut();
@@ -54,6 +57,7 @@ $(".store-save").on("click", function() {
 
 // resets each field 
 $(".store-reset").on("click", function() {
+    'use strict';
     $(this).closest("form").find(".custom-dropdown-menu").val("");
     $(this).closest("form").find("input[type='text']").val("");
     $(this).closest("form").find("input[type='text'],textarea").css({
@@ -76,6 +80,7 @@ $(".store-reset").on("click", function() {
 // sends nomination. alerts if input is blank. adds focus to empty input area
 $(".store-nominate").click(function() {
     $("textarea").each(function() {
+        'use strict';
         var option = $("textarea").val();
         if (option.length === 0) {
             $(this).css({
@@ -98,6 +103,7 @@ $(".store-nominate").click(function() {
 // sends draft to email. alerts if input is blank. adds focus to empty input area
 $(".store-share").click(function() {
     $("textarea").each(function() {
+        'use strict';
         var option = $("textarea").val();
         if (option.length === 0) {
             $(this).css({
@@ -124,6 +130,7 @@ $(".store-share").click(function() {
 // needed for confirmation page, to clear local storage session when complete
 $(".store-complete-container").hide();
 $(".store-complete").on("click", function() {
+    'use strict';
     $(".store-data").val("");
     $(".store-data").each(function() {
         var name = $(this).attr("name");

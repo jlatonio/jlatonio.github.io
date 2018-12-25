@@ -112,7 +112,7 @@ font-size: 14px;
   padding: 20px;
 }
 
-.column-set {
+.column-set, .row-set{
   margin-bottom: 20px;
 }
 
@@ -202,7 +202,7 @@ font-size: 14px;
   }
 
   .column-container {
-    padding: 40px 135px;
+    padding: 40px 120px;
   }
 
   .column-container-inner-1 {
@@ -213,27 +213,27 @@ font-size: 14px;
   .column-container-inner-2 {
     padding: 40px;
   }
-
+ 
   .notes-button-container {
     padding: 40px;
   }
 
-  .acs-main-content, {
-    padding: 40px 0;
-  }
-
   .acs-footer {
-    padding: 40px 135px;
+    padding: 40px 120px;
   }
 
   .acs-header {
-    padding: 20px 135px;
+    padding: 20px 120px;
   }
 
   .column-set {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 
+  .row-set {
+    margin-bottom: 40px;
+  }
+    
   .column-2-set {
     margin-left: 40px;
   }

@@ -10,6 +10,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, menu, nav, section {
   display: block;
 }
+
 * {
   box-sizing: inherit;
 }
@@ -42,26 +43,22 @@ h1 {
   font-size: 59px;
   line-height: 1;
   font-family: "AdobeClean-BoldSemiCn";
-  margin-bottom: 10px;
 }
 
 h2 {
   font-size: 35px;
   line-height: 1.15;
-  margin-bottom: 20px;
   display: block;
 }
 
 h3 {
   font-size: 27px;
   line-height: 1.15;
-  margin-bottom: 5px;
 }
 
 h4 {
   font-size: 20px;
   line-height: 1.15;
-  margin-bottom: 5px;
 }
 
 p {
@@ -79,13 +76,32 @@ p + p {
   margin-bottom: 20px;
 }
 
+/* headings for paragraphs or lists */
+h2 + ul, h2 + ol, ul + p, ol + p, h2 + p {
+  margin-top: 20px;
+}
+
+/* additional headings placed after paragraphs or lists */
+p + h2, ul + h2, ol + h2 {
+  margin-top: 40px;
+}
+
+/* subheadings for paragraphs or lists */
+h3 + p, h3 + ol, h3 + ul, h4 + p, h4 + ol, h4 + ul {
+  margin-top: 10px;
+}
+
+/* subheadings if stacked */
+h3 + h3, h4 + h4 {
+  margin-top: 5px;
+}
+
 b {
   font-family: "OpenSans-Semibold";
 }
 
 ul,ol {
   padding-left: 20px;
-  margin-bottom: 20px;
   line-height: 1.5;
 }
 
@@ -153,12 +169,17 @@ a:hover {
 .gray-text, .gray-text p, .gray-text h1, .gray-text h2, .gray-text h3 {
   color: #aaa;
 }
+
 .primary-color {
   color: #018aa6;
 }
 
 .secondary-color {
   color: #f1675a;
+}
+
+.link-color {
+  color: #3a629d;
 }
 
 .red-color {
@@ -203,7 +224,6 @@ a:hover {
 }
 
 input[type=submit],input[type=button] {
-  background-color: #074c6a;
   color: white;
   padding: 10px 20px;
   margin: 0 10px 10px 0;
@@ -212,11 +232,25 @@ input[type=submit],input[type=button] {
   display: inline-block;
   width: 100%;
   font-family: "OpenSans-Regular", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
-  border: none;
+  -moz-box-shadow: 0px 0px 0px 2px #9baec8;
+  -webkit-box-shadow: 0px 0px 0px 2px #9baec8;
+  box-shadow: 0px 0px 0px 2px #9baec8;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #3a629d));
+  background: -moz-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: -webkit-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: -o-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: -ms-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: linear-gradient(to bottom, #7593bf 5%, #3a629d 100%);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
+  border: 1px solid #4e6c96;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #283966;
 }
 
 input[type=button]:last-child {
@@ -228,11 +262,25 @@ textarea {
 }
 
 input[type=submit]:hover {
-  background-color: #02c6bb;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #7593bf));
+  background: -moz-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -webkit-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -o-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -ms-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: linear-gradient(to bottom, #7593bf 5%, #7593bf 100%);
 }
 
 input[type=button]:hover {
-  background-color: #02c6bb;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #7593bf));
+  background: -moz-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -webkit-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -o-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -ms-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: linear-gradient(to bottom, #7593bf 5%, #7593bf 100%);
+}
+
+.store-button-container {
+  margin-bottom: 35px;
 }
 
 .store-button-container input {
@@ -314,8 +362,8 @@ input[type=button]:hover {
   position: fixed;
   width: 100%;
   z-index: 2;
-  bottom:0;
-  right:0;
+  bottom: 0;
+  right: 0;
   border-top: solid 1px #ccc;
 }
 
@@ -329,7 +377,7 @@ input[type=button]:hover {
 }
 
 .custom-dropdown-outer, .custom-select-outer {
-  margin: 10px 0;
+  margin: 10px 0 20px 0;
   position: relative;
   height: auto;
 }
@@ -473,26 +521,26 @@ input[type=button]:hover {
   }
 
   .store-button-container input {
-    width: 110px;
+    width: 100px;
   }
-    
+
   .custom-dropdown-group {
     position: absolute;
     bottom: initial;
     border-top: solid 0 #ccc;
-  } 
-    
- .custom-dropdown-scroll {
-  max-height: 320px;
-}
-    
-.custom-dropdown {
-  font-size: 14px;
-  padding: 10px;
-  background-color: #fff;
-  border-top: solid 1px #ccc;
-  cursor: pointer;
-}
+  }
+
+  .custom-dropdown-scroll {
+    max-height: 320px;
+  }
+
+  .custom-dropdown {
+    font-size: 14px;
+    padding: 10px;
+    background-color: #fff;
+    border-top: solid 1px #ccc;
+    cursor: pointer;
+  }
 }
 
 @media screen and (min-width: 1025px) {
