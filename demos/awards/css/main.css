@@ -108,7 +108,7 @@ font-size: 14px;
   padding-right: 0;
 }
 
-.column-container-inner-2 {
+.column-container-inner-2,.column-container-inner-3 {
   padding: 20px;
 }
 
@@ -166,7 +166,7 @@ font-size: 14px;
 
   .hero-container {
     background-size: 1440px auto;
-    height: 250px;
+    height: 300px;
   }
 
   .acs-header-column-1 {
@@ -176,7 +176,7 @@ font-size: 14px;
   }
 
   .hero-content {
-    width: 380px;
+    width: 320px;
   }
     
   .acs-header img {
@@ -202,7 +202,7 @@ font-size: 14px;
   }
 
   .column-container {
-    padding: 40px 120px;
+    padding: 40px 100px;
   }
 
   .column-container-inner-1 {
@@ -213,17 +213,21 @@ font-size: 14px;
   .column-container-inner-2 {
     padding: 40px;
   }
- 
+
+  .column-container-inner-3 {
+    padding: 60px 80px;
+  }
+    
   .notes-button-container {
     padding: 40px;
   }
 
   .acs-footer {
-    padding: 40px 120px;
+    padding: 40px 100px;
   }
 
   .acs-header {
-    padding: 20px 120px;
+    padding: 20px 100px;
   }
 
   .column-set {
