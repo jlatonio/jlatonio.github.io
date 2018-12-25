@@ -108,7 +108,7 @@ font-size: 14px;
   padding-right: 0;
 }
 
-.column-container-inner-2,.column-container-inner-3 {
+.column-container-inner-2 {
   padding: 20px;
 }
 
@@ -212,10 +212,6 @@ font-size: 14px;
 
   .column-container-inner-2 {
     padding: 40px;
-  }
-
-  .column-container-inner-3 {
-    padding: 60px 80px;
   }
     
   .notes-button-container {

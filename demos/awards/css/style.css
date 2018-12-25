@@ -190,15 +190,15 @@
   }
 
   .notes-container-column-each {
-    padding-left: 70px;
+    padding-left: 110px;
     padding-top: 0;
     margin-bottom: 0;
   }
 
   .notes-container-column-icon {
     left: 0;
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     margin-left: 0;
   }
 
