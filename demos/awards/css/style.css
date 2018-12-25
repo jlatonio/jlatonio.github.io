@@ -190,15 +190,15 @@
   }
 
   .notes-container-column-each {
-    padding-left: 110px;
+    padding-left: 70px;
     padding-top: 0;
     margin-bottom: 0;
   }
 
   .notes-container-column-icon {
     left: 0;
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
     margin-left: 0;
   }
 
@@ -229,7 +229,16 @@
   .column-container-row {
     margin-bottom: 40px;
   }
+    
+  .notes-container-column-each {
+    padding-left: 100px;
+  }
 
+  .notes-container-column-icon {
+    width: 80px;
+    height: 80px;
+  }
+    
   .column-container-row .notes-container-column-inner:first-child {
     padding-right: 20px;
   }
