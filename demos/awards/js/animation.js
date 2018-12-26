@@ -27,12 +27,14 @@ $(".custom-dropdown-close").on("click", function() {
 // resets search when user clicks close
 $(".custom-select-close").hide();
 $(".custom-select").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function() {
-    $(".custom-select").closest(".custom-dropdown-outer").find(".custom-select-close").show();
+    $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
+    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideUp(100);
     return false;
 });
 $(".custom-select").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function() {
     $(this).hide();
-    $(".custom-select").val("").focus();
+    $(this).closest(".custom-dropdown-outer").find(".custom-select").val("").focus();
+    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
     return false;
 });
 
@@ -177,7 +179,7 @@ $(document).ready(function() {
 });
 
 // If user clicks outside of dropdown list, as opposed to selecting the available IDs, the value will reset
-$('.custom-select').on("focusout", function() {
+$('.custom-select').on("blur", function() {
     $('.custom-select').val('').attr('placeholder', 'Search Email ID');
     $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
 });
