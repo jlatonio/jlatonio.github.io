@@ -223,6 +223,18 @@ a:hover {
   background-color: #fff;
 }
 
+.rule-h {
+  border-bottom: 2px solid #d3d3d3;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.rule-v {
+  border-left: 2px solid #d3d3d3;
+  width: 100%;
+  margin-left: 20px;
+}
+
 input[type=submit],input[type=button] {
   color: white;
   padding: 10px 20px;
@@ -272,6 +284,12 @@ textarea {
   border-radius: 0;
 }
 
+label {
+  font-family: "OpenSans-Regular";
+}
+
+label:after { content: ": " }
+
 input[type=submit]:hover {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #7593bf));
   background: -moz-linear-gradient(top, #7593bf 5%, #7593bf 100%);
@@ -306,7 +324,7 @@ input[type=button]:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 10px 30px 10px 20px;
+  padding: 10px 35px 10px 20px;
   width: 100%;
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
@@ -316,9 +334,6 @@ input[type=button]:hover {
   position: relative;
   margin: 0;
   border-radius: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 .custom-dropdown-position {
@@ -327,7 +342,7 @@ input[type=button]:hover {
 
 .custom-dropdown-arrow-toggle {
   position: absolute;
-  top: 13px;
+  top: 37px;
   right: 10px;
   width: 15px;
   height: 15px;
@@ -341,7 +356,7 @@ input[type=button]:hover {
 
 .custom-dropdown-arrow-open {
   position: absolute;
-  top: 13px;
+  top: 37px;
   right: 10px;
   width: 15px;
   height: 15px;
@@ -356,7 +371,7 @@ input[type=button]:hover {
 
 .custom-dropdown-arrow-close {
   position: absolute;
-  top: 14px;
+  top: 37px;
   right: 10px;
   width: 15px;
   height: 15px;
@@ -558,7 +573,7 @@ input[type=button]:hover {
   }
 
   .custom-dropdown-scroll {
-    max-height: 320px;
+    max-height: 340px;
     border-bottom: solid 1px #ccc;
     border-right: solid 1px #ccc;
     border-left: solid 1px #ccc;
@@ -584,4 +599,12 @@ input[type=button]:hover {
   .fixed-180 {
     width: 220px;
   }
+    
+  .rule-h {
+  margin-bottom: 40px;
+}
+
+  .rule-v {
+  margin-left: 40px;
+}
 }
