@@ -177,10 +177,10 @@ $(document).ready(function() {
 });
 
 // If user clicks outside of dropdown list, as opposed to selecting the available IDs, the value will reset
-$('.custom-select').on("blur", function() {
+$('.custom-select').on("focusout", function() {
     $('.custom-select').val('').attr('placeholder', 'Search Email ID');
+    $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
 });
-
 
 // dropdown menu will block all keystrokes
 $(".custom-dropdown-menu").on("keyup", function() {
