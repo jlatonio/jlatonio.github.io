@@ -24,6 +24,18 @@ $(".custom-dropdown-close").on("click", function() {
     return false;
 });
 
+// resets search when user clicks close
+$(".custom-select-close").hide();
+$(".custom-select").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function() {
+    $(".custom-select").closest(".custom-dropdown-outer").find(".custom-select-close").show();
+    return false;
+});
+$(".custom-select").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function() {
+    $(this).hide();
+    $(".custom-select").val("").focus();
+    return false;
+});
+
 // closes menu when user clicks away
 $("body").on("click", function() {
     'use strict';
@@ -34,6 +46,11 @@ $("body").on("click", function() {
         $(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");
         $(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-open");
     }
+});
+
+$("input[type='text']").on("keydown", function() {
+    'use strict';
+    $(this).attr("placeholder", "");
 });
 
 // adds the html to the input value for each button clicked
@@ -146,31 +163,17 @@ $(document).ready(function() {
         var item = option
         if (option.length === 0) {
             $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
-
+            $(".custom-select").closest(".custom-dropdown-outer").find(".custom-select-close").hide();
         }
         if (option.length > 1) {
             $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").show();
+            $(".custom-select").closest(".custom-dropdown-outer").find(".custom-select-close").show();
         }
         $(this).closest(".custom-dropdown-outer").find(".custom-dropdown").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
         });
     });
     return false;
-});
-
-
-// Validates Email ID
-$('.custom-select').on("change", function() {
-    var txt = $('.custom-select').val();
-    var resultCount = 0;
-    $('.custom-select').closest(".custom-dropdown-outer").find(".custom-dropdown").each(function() {
-        if ($(this).text().toUpperCase().indexOf(txt.toUpperCase()) != -1) {
-            resultCount++;
-        }
-    });
-    if (resultCount == 0) {
-        $('.modal-ineligible').show();
-    }
 });
 
 // If user clicks outside of dropdown list, as opposed to selecting the available IDs, the value will reset
@@ -183,3 +186,18 @@ $('.custom-select').on("blur", function() {
 $(".custom-dropdown-menu").on("keyup", function() {
     $(this).val("");
 });
+
+
+// Validates Email ID. Not needed for now since the user only can only select what is available via dropdown
+// $('.custom-select').on("change", function() {
+//     var txt = $('.custom-select').val();
+//     var resultCount = 0;
+//     $('.custom-select').closest(".custom-dropdown-outer").find(".custom-dropdown").each(function() {
+//         if ($(this).text().toUpperCase().indexOf(txt.toUpperCase()) != -1) {
+//             resultCount++;
+//         }
+//     });
+//     if (resultCount == 0) {
+//         $('.modal-ineligible').show();
+//     }
+// });

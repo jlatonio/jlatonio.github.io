@@ -286,6 +286,8 @@ textarea {
 
 label {
   font-family: "OpenSans-Regular";
+  display: block;
+  margin-bottom: 5px;
 }
 
 label:after { content: ": " }
@@ -340,48 +342,52 @@ input[type=button]:hover {
   position: relative;
 }
 
-.custom-dropdown-arrow-toggle {
+.custom-dropdown-arrow-toggle, .custom-select-close {
   position: absolute;
-  top: 37px;
-  right: 10px;
-  width: 15px;
-  height: 15px;
+  bottom: 4px;
+  right: 3px;
+  width: 32px;
+  height: 32px;
   -webkit-transform: rotate(0deg);
   -webkit-transition: all .25s;
   -moz-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
-  opacity: .7;
+  opacity: .4;
+  cursor: pointer;
+  padding: 8px;
 }
 
 .custom-dropdown-arrow-open {
   position: absolute;
-  top: 37px;
-  right: 10px;
-  width: 15px;
-  height: 15px;
+  bottom: 4px;
+  right: 3px;
+  width: 32px;
+  height: 32px;
   transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -webkit-transition: all .25s;
   -moz-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
-  opacity: .7;
+  opacity: .4;
+  cursor: pointer;
 }
 
 .custom-dropdown-arrow-close {
   position: absolute;
-  top: 37px;
-  right: 10px;
-  width: 15px;
-  height: 15px;
+  bottom: 4px;
+  right: 3px;
+  width: 32px;
+  height: 32px;
   transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
   -webkit-transition: all .25s;
   -moz-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
-  opacity: .7;
+  opacity: .4;
+  cursor: pointer;
 }
 
 .custom-dropdown-group {
@@ -427,6 +433,7 @@ input[type=button]:hover {
   top: 0;
   position: absolute;
   z-index: 1;
+  cursor: pointer;
 }
 
 .custom-dropdown-open {
@@ -436,6 +443,7 @@ input[type=button]:hover {
   top: 0;
   position: absolute;
   z-index: 1;
+  cursor: pointer;
 }
 
 .percent-30,.percent-35,.percent-33,.percent-40,.percent-50,.percent-60,.percent-65,.percent-100,.percent-fixed-180,.fixed-180 {
