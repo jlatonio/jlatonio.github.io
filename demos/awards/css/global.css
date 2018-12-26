@@ -412,16 +412,12 @@ input[type=button]:hover {
   font-size: 14px;
   padding: 20px;
   background-color: #fff;
-  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
   cursor: pointer;
 }
 
 .custom-dropdown:last-child {
   border-bottom: solid 0 #ccc;
-}
-
-.custom-dropdown:first-child {
-  border-top: solid 0 #ccc;
 }
 
 .custom-dropdown-close {
@@ -574,16 +570,16 @@ input[type=button]:hover {
 
   .custom-dropdown-scroll {
     max-height: 340px;
-    border-bottom: solid 1px #ccc;
     border-right: solid 1px #ccc;
     border-left: solid 1px #ccc;
   }
 
   .custom-dropdown {
-    font-size: 14px;
     padding: 10px 20px;
-    border-top: solid 1px #ccc;
-    cursor: pointer;
+  }
+    
+  .custom-dropdown:last-child {
+  border-bottom: solid 1px #ccc;
   }
 }
 
