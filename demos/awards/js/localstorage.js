@@ -57,17 +57,6 @@ $(".store-save").on("click", function() {
         var value = localStorage.getItem(text);
         $(this).val(value);
     });
-    $(".nominee-save").each(function() {
-        var text = $(this).attr("text");
-        var value = $(this).val();
-        localStorage.setItem(text, value);
-    });
-    // gets data and store-data in each field
-    $(".nominee-save").each(function() {
-        var text = $(this).attr("text");
-        var value = localStorage.getItem(text);
-        $(this).val(value);
-    });
 
     // save animation
     $(".notes-btn-each").show();
@@ -83,7 +72,9 @@ $(".store-save").on("click", function() {
 $(".store-reset").on("click", function() {
     'use strict';
     $(this).closest("form").removeAttr("action");
-    $(this).closest("form").find("input[type=text]").val("");
+    $(this).closest("form").find("input[type=text]").val("").css({
+        "background": ""
+    });
     $(this).closest("form").find("textarea").val("").css({
         "background": ""
     });
