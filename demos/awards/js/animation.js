@@ -172,11 +172,11 @@ $(document).ready(function() {
         var item = option
         if (option.length === 0) {
             $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
-            $(".custom-select").closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+            $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
         }
         if (option.length > 1) {
             $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").show();
-            $(".custom-select").closest(".custom-dropdown-outer").find(".custom-select-close").show();
+            $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
         }
         $(this).closest(".custom-dropdown-outer").find(".custom-dropdown").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
@@ -189,9 +189,6 @@ $(document).ready(function() {
 $(".custom-dropdown-menu").on("keyup", function() {
     $(this).val("");
 });
-
-
-
 // Validates Email ID. Not needed for now since the user only can only select what is available via dropdown
 // $('.custom-select').on("change", function() {
 //     var txt = $('.custom-select').val();
