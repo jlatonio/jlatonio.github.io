@@ -28,7 +28,7 @@ $(".custom-dropdown-close").on("click", function() {
 $(".custom-select-close").hide();
 $(".custom-select").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function() {
     $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideUp(100);
+    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide(100);
     return false;
 });
 $(".custom-select").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function() {
@@ -86,14 +86,24 @@ $(".custom-dropdown").on("click", function() {
 });
 
 // hover state
-$(".custom-dropdown").on("hover", function() {
-    $(".custom-dropdown").css({
+$(".custom-dropdown-outer").find(".custom-dropdown").on("mouseover click", function() {
+    'use strict';
+    $(this).closest(".custom-dropdown-outer").find(this).css({
         "background-color": "",
         "color": ""
     });
     $(this).closest(".custom-dropdown-outer").find(this).css({
         "background-color": "#7593bf",
         "color": "#fff"
+    });
+    return false;
+});
+
+$(".custom-dropdown-outer").find(".custom-dropdown").on("mouseout", function() {
+    'use strict';
+    $(this).closest(".custom-dropdown-outer").find(this).css({
+        "background-color": "",
+        "color": ""
     });
     return false;
 });
@@ -188,6 +198,7 @@ $('.custom-select').on("blur", function() {
 $(".custom-dropdown-menu").on("keyup", function() {
     $(this).val("");
 });
+
 
 
 // Validates Email ID. Not needed for now since the user only can only select what is available via dropdown
