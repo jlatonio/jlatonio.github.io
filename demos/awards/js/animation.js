@@ -52,11 +52,6 @@ $("body").on("click", function() {
     }
 });
 
-$("input[type='text']").on("keydown", function() {
-    'use strict';
-    $(this).attr("placeholder", "");
-});
-
 // adds the html to the input value for each button clicked
 $(".custom-dropdown").on("click", function() {
     'use strict';
@@ -188,12 +183,6 @@ $(document).ready(function() {
         });
     });
     return false;
-});
-
-// If user clicks outside of dropdown list, as opposed to selecting the available IDs, the value will reset
-$('.custom-select').on("focusout", function() {
-    $('.custom-select').val('').attr('placeholder', 'Search Email ID');
-    $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
 });
 
 // dropdown menu will block all keystrokes
