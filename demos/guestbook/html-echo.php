@@ -1,3 +1,8 @@
-<?php 
-echo '<div style="background-color:#ffa; padding:20px">' . $_POST['message'] . '</div>'; 
-?>
+<html>
+ <head>
+  <title>PHP Test</title>
+ </head>
+ <body>
+ <?php echo '<p>Hello World</p>'; ?> 
+ </body>
+</html>

@@ -1,45 +1,39 @@
-<!DOCTYPE html>
+<!--  File: read-guestbook.php
+
+      Write comments to guestbook file,
+      then redirect to Guestbook Homepage.
+-->
+
 <html>
+
 <head>
-<title>form demo</title>
-<script type="text/javascript" src="jquery.form.js"></script>
-<script src="jquery.js"></script> 
-    <script> 
-        // wait for the DOM to be loaded 
-        $(document).ready(function() { 
-            // bind 'myForm' and provide a simple callback function 
-            $('#myForm').ajaxForm(function() { 
-                alert("Thank you for your comment!"); 
-            }); 
-        }); 
-    </script> 
+<title>Guestbook Example</title>
+<link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
+
 <body>
-<div id="form">
-<form id="myForm" action="html-echo.php" method="post"> 
-    Name: <input type="text" name="name" /> 
-    Comment: <textarea name="comment"></textarea> 
-    <input type="submit" value="Submit Comment" /> 
-</form>
-</div>
-<script>
-// prepare the form when the DOM is ready 
-$(document).ready(function() { 
-    // bind form using ajaxForm 
-    $('#htmlForm').ajaxForm({ 
-        // target identifies the element(s) to update with the server response 
-        target: '#htmlExampleTarget', 
- 
-        // success identifies the function to invoke when the server response 
-        // has been received; here we apply a fade-in effect to the new content 
-        success: function() { 
-            $('#htmlExampleTarget').fadeIn('slow'); 
-        } 
-    }); 
-});
-<?php 
-echo '<div style="background-color:#ffa; padding:20px">' . $_POST['message'] . '</div>'; 
+
+<h2>Guestbook Example</h2>
+
+<h3>Add to Guestbook</h3>
+
+ <p>
+
+<p><a href="form.htm">To Guestbook Homepage</a></p>
+
+<?php
+    $fguestbook = fopen(
+        "e:/ectserver/sjost/Database/guestbook.txt", "rb");
+    while($line = fgets($fguestbook, 100))
+    {
+        echo "<p style=\"color:blue\">";
+        echo $line;
+        echo "</p>";
+        $line = fgets($fguestbook);
+        echo "<p>";
+        echo $line;
+        echo "</p>";
+    }
 ?>
-</script>
 </body>
 </html>
