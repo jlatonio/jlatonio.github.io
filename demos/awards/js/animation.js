@@ -185,6 +185,12 @@ $(document).ready(function() {
     return false;
 });
 
+// user only can only select what is available via dropdown for search
+$(".custom-select").closest(".custom-dropdown-outer").find(":not('.custom-dropdown-menu')").on("focusout", function() {
+    $(this).closest(".custom-dropdown-outer").find(".custom-select").val("");
+    $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+});
+ 
 // dropdown menu will block all keystrokes
 $(".custom-dropdown-menu").on("keyup", function() {
     $(this).val("");
