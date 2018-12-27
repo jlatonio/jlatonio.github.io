@@ -26,14 +26,16 @@ $(".custom-dropdown-close").on("click", function() {
 
 // resets search when user clicks close
 $(".custom-select-close").hide();
-$(".custom-select").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function() {
+$("input[type='text']").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function() {
+    'use strict';
     $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide(100);
+    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
     return false;
 });
-$(".custom-select").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function() {
+$("input[type='text']").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function() {
+    'use strict';
     $(this).hide();
-    $(this).closest(".custom-dropdown-outer").find(".custom-select").val("").focus();
+    $(this).closest(".custom-dropdown-outer").find("input[type='text']").val("").focus();
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
     return false;
 });
@@ -189,7 +191,7 @@ $(document).ready(function() {
 });
 
 // If user clicks outside of dropdown list, as opposed to selecting the available IDs, the value will reset
-$('.custom-select').on("blur", function() {
+$('.custom-select').on("focusout", function() {
     $('.custom-select').val('').attr('placeholder', 'Search Email ID');
     $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
 });
