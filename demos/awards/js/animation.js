@@ -21,6 +21,7 @@ $(".custom-dropdown-close").on("click", function() {
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideUp(100);
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
+    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
     return false;
 });
 
@@ -37,6 +38,7 @@ $("input[type='text']").closest(".custom-dropdown-outer").find(".custom-select-c
     $(this).hide();
     $(this).closest(".custom-dropdown-outer").find("input[type='text']").val("").focus();
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
+    $(this).closest(".custom-dropdown-outer").find(".custom-select-date").show();
     return false;
 });
 
@@ -166,17 +168,19 @@ $("input[type='text'],textarea").keypress(function() {
 
 // autofill email
 $(document).ready(function() {
-    $(".custom-select").on("keyup", function() {
+    $("input[type='text']").on("keyup change", function() {
         var value = $(this).val().toLowerCase();
         var option = $(this).val();
         var item = option
         if (option.length === 0) {
             $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
             $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+            $(this).closest(".custom-dropdown-outer").find(".custom-select-date").show();
         }
         if (option.length > 1) {
             $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").show();
             $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
+            $(this).closest(".custom-dropdown-outer").find(".custom-select-date").hide();
         }
         $(this).closest(".custom-dropdown-outer").find(".custom-dropdown").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
@@ -185,12 +189,6 @@ $(document).ready(function() {
     return false;
 });
 
-// user only can only select what is available via dropdown for search
-$(".custom-select").closest(".custom-dropdown-outer").find(":not('.custom-dropdown-menu')").on("focusout", function() {
-    $(this).closest(".custom-dropdown-outer").find(".custom-select").val("");
-    $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
-});
- 
 // dropdown menu will block all keystrokes
 $(".custom-dropdown-menu").on("keyup", function() {
     $(this).val("");
@@ -208,3 +206,8 @@ $(".custom-dropdown-menu").on("keyup", function() {
 //         $('.modal-ineligible').show();
 //     }
 // });
+
+$(".custom-select-date, .custom-date").on("click", function() {
+    $( ".custom-date" ).datepicker();
+    $(this).closest(".custom-dropdown-outer").find( ".custom-date" ).datepicker("show");
+});

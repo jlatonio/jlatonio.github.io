@@ -88,7 +88,7 @@ p + h2, ul + h2, ol + h2 {
 
 /* subheadings for paragraphs or lists */
 h3 + p, h3 + ol, h3 + ul, h4 + p, h4 + ol, h4 + ul {
-  margin-top: 10px;
+  margin-top: 3px;
 }
 
 /* subheadings if stacked */
@@ -119,6 +119,63 @@ a:hover {
   outline: none;
   border: none;
 }
+
+table {
+  font-size: 14px;
+}
+
+tr th{
+  border-right: 1px solid #B3B3B3;
+  padding: 20px;
+  vertical-align: middle;
+  font-family: "OpenSans-Regular";
+  font-weight: normal;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 0px solid #FFFFFF;
+}
+
+tr td{
+  border-right: 1px solid #B3B3B3;
+  padding: 20px;
+    vertical-align: middle;
+}
+
+table.darkTable {
+  min-width: 2000px;
+  text-align: center;
+  border-collapse: collapse;
+  border-bottom: 10px solid #333333;
+}
+th:first-child {
+  border-left: 0 solid #B3B3B3;
+}
+
+td:first-child {
+  border-left: 0 solid #B3B3B3;
+}
+
+th:last-child {
+  border-right: 0 solid #B3B3B3;
+}
+
+td:last-child {
+  border-right: 0 solid #B3B3B3;
+}
+
+tr:nth-child(even) {
+}
+
+thead {
+  border: none;
+}
+ 
+.column-container-table{
+  overflow-x: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+  border: 0 solid #333;
+}
+
 
 .small-text, .small-text p {
   font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
@@ -265,6 +322,46 @@ input[type=submit],input[type=button] {
   text-shadow: 0px 1px 0px #283966;
 }
 
+input[type=text]{
+  font-size: 14px;
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  line-height: 1.4;
+  background-color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 35px 10px 20px;
+  width: 100%;
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  border-left: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  display: block;
+  position: relative;
+  margin: 0;
+  border-radius: 0;
+}
+
+input[type=date] {
+  font-size: 14px;
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  line-height: 1.4;
+  background-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 35px 10px 20px;
+  width: 100%;
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  border-left: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  display: block;
+  position: relative;
+  margin: 0;
+  border-radius: 0;
+}
+
 input[type=button]:last-child {
   margin: 0;
 }
@@ -287,7 +384,7 @@ textarea {
 label {
   font-family: "OpenSans-Regular";
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 label:after { content: ": " }
@@ -310,6 +407,54 @@ input[type=button]:hover {
   background: linear-gradient(to bottom, #7593bf 5%, #7593bf 100%);
 }
 
+[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
+}
+
+.custom-date-inner {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+}
+.custom-date-inner::before {
+    content: "";
+  background:#fff url('../images/dropdown-arrow.svg') no-repeat ;background-position: center right 10px;background-size: 16px 16px;
+ opacity: .4;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+    position: absolute;
+    right:10px;  
+
+}
+
+[type="date"]::-webkit-clear-button {
+}
+
+input::-webkit-clear-button{
+    position:relative;
+    background:#fff url('../images/select-close.svg') no-repeat ;background-position: center right 10px;background-size: 16px 16px;
+    -webkit-appearance: none;
+    height: 30px;
+    width: 30px;
+    border-radius:10px;
+    opacity: .4;
+}
+
+
 .store-button-container {
   margin-bottom: 35px;
 }
@@ -318,11 +463,11 @@ input[type=button]:hover {
   width: 100%;
 }
 
-.custom-dropdown-menu, .custom-select {
+.custom-dropdown-menu, .custom-select, .custom-date {
   font-size: 14px;
   font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   line-height: 1.4;
-  background-color: #fff;
+  background-color: transparent;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -336,13 +481,14 @@ input[type=button]:hover {
   position: relative;
   margin: 0;
   border-radius: 0;
+  max-height: 40px;
 }
 
 .custom-dropdown-position {
   position: relative;
 }
 
-.custom-dropdown-arrow-toggle, .custom-select-close {
+.custom-dropdown-arrow-toggle, .custom-select-close, .custom-select-date {
   position: absolute;
   bottom: 4px;
   right: 3px;
@@ -356,6 +502,23 @@ input[type=button]:hover {
   opacity: .4;
   cursor: pointer;
   padding: 8px;
+}
+
+.custom-dropdown-date-toggle {
+  position: absolute;
+  bottom: 4px;
+  right: 43px;
+  width: 32px;
+  height: 32px;
+  -webkit-transform: rotate(0deg);
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+  opacity: .4;
+  cursor: pointer;
+  padding: 8px;
+    z-index: 0;
 }
 
 .custom-dropdown-arrow-open {
@@ -446,7 +609,7 @@ input[type=button]:hover {
   cursor: pointer;
 }
 
-.percent-30,.percent-35,.percent-33,.percent-40,.percent-50,.percent-60,.percent-65,.percent-100,.percent-fixed-180,.fixed-180 {
+.percent-20,.percent-25,.percent-30,.percent-35,.percent-33,.percent-40,.percent-50,.percent-60,.percent-65,.percent-75,.percent-100,.percent-fixed-180,.fixed-180 {
   width: 100%;
 }
 
@@ -519,6 +682,11 @@ input[type=button]:hover {
 }
 
 @media screen and (min-width: 701px) {
+    
+  .percent-75 {
+    width: 75%;
+  }
+    
   .percent-70 {
     width: 70%;
   }
@@ -549,6 +717,14 @@ input[type=button]:hover {
 
   .percent-30 {
     width: 30%;
+  }
+    
+  .percent-25 {
+    width: 25%;
+  }
+    
+  .percent-20 {
+    width: 20%;
   }
     
   .percent-fixed-180 {

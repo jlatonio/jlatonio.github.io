@@ -40,20 +40,14 @@ $(".store-save").on("click", function() {
         var text = "store-data-ty"
         var value = $(this).val();
         localStorage.setItem(text, value);
+        var value = localStorage.getItem(text);
+        $(this).val(value);
     });
+    
     $(this).closest(".notes-container").find(".store-data-awards").each(function() {
         var text = "store-data-awards"
         var value = $(this).val();
         localStorage.setItem(text, value);
-    });
-    // gets data and store-data in each field
-    $(".store-data-ty").each(function() {
-        var text = "store-data-ty"
-        var value = localStorage.getItem(text);
-        $(this).val(value);
-    });
-    $(".store-data-awards").each(function() {
-        var text = "store-data-awards"
         var value = localStorage.getItem(text);
         $(this).val(value);
     });
@@ -80,23 +74,18 @@ $(".store-reset").on("click", function() {
         "background": ""
     });
     $(this).closest(".notes-container").find("textarea").val("");
-    $(".store-data-ty").each(function() {
+    $(this).closest(".notes-container").find(".store-data-ty").each(function() {
         var text = "store-data-ty"
         var value = $(this).val();
         localStorage.setItem(text, value);
-    });
-    $(".store-data-ty").each(function() {
-        var text = "store-data-ty"
         var value = localStorage.getItem(text);
         $(this).val(value);
     });
-    $(".store-data-awards").each(function() {
+    
+    $(this).closest(".notes-container").find(".store-data-awards").each(function() {
         var text = "store-data-awards"
         var value = $(this).val();
         localStorage.setItem(text, value);
-    });
-    $(".store-data-awards").each(function() {
-        var text = "store-data-awards"
         var value = localStorage.getItem(text);
         $(this).val(value);
     });
