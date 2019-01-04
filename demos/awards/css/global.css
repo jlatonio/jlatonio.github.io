@@ -340,6 +340,9 @@ input[type=text]{
   position: relative;
   margin: 0;
   border-radius: 0;
+-webkit-box-shadow: inset 0px 1px 1px 0px rgba(4,4,4,0.4);
+-moz-box-shadow: inset 0px 1px 1px 0px rgba(4,4,4,0.4);
+box-shadow: inset 0px 1px 1px 0px rgba(4,4,4,0.4);
 }
 
 input[type=date] {
@@ -360,6 +363,9 @@ input[type=date] {
   position: relative;
   margin: 0;
   border-radius: 0;
+-webkit-box-shadow: inset 0px 1px 1px 0px rgba(4,4,4,0.4);
+-moz-box-shadow: inset 0px 1px 1px 0px rgba(4,4,4,0.4);
+box-shadow: inset 0px 1px 1px 0px rgba(4,4,4,0.4);
 }
 
 input[type=button]:last-child {
@@ -488,7 +494,7 @@ input::-webkit-clear-button{
   position: relative;
 }
 
-.custom-dropdown-arrow-toggle, .custom-select-close, .custom-select-date {
+.custom-dropdown-arrow-toggle, .custom-select-close, .custom-select-date, .custom-select-search {
   position: absolute;
   bottom: 4px;
   right: 3px;
@@ -560,13 +566,16 @@ input::-webkit-clear-button{
   bottom: 0;
   right: 0;
   border-top: solid 1px #ccc;
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(4,4,4,0.4);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(4,4,4,0.4);
+  box-shadow: 0px 1px 1px 0px rgba(4,4,4,0.4);
 }
 
 .custom-dropdown-scroll {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   max-height: 400px;
-  border-bottom: solid 0 #ccc;
+  border-bottom: solid 1px #ccc;
   border-right: solid 0 #ccc;
   border-left: solid 0 #ccc;
 }
@@ -759,11 +768,7 @@ input::-webkit-clear-button{
   }
 
   .custom-dropdown {
-    padding: 10px 20px;
-  }
-    
-  .custom-dropdown:last-child {
-  border-bottom: solid 1px #ccc;
+    padding: 15px 20px;
   }
 }
 

@@ -7,7 +7,10 @@
 				<link rel="stylesheet" href="css/main.css" />
 				<link rel="stylesheet" href="css/global.css" />
 				<link rel="stylesheet" href="css/fonts.css" />
-				<script src="js/jquery.min.js"></script>
+				<link rel="stylesheet" href="css/style.css" />
+				<link rel="stylesheet" href="css/jquery-ui.css" />
+				<script src="js/jquery-1.12.4.js"></script>
+				<script src="js/jquery-ui.js"></script>
 			</head>
 			<body>
 				<div class="page">
@@ -122,15 +125,9 @@
 												</div>
 												<div class="custom-dropdown-outer">
 													<label class="primary-color">Email ID</label>
-													<input class="custom-select" type="text" autocomplete="on" placeholder="Search Email ID" />
+													<input class="custom-search" type="text" autocomplete="on" placeholder="Search Email ID" />
+                                                    <img src="images/select-search.svg" class="custom-select-search" alt="" />
 													<img src="images/select-close.svg" class="custom-select-close" alt="" />
-													<div class="custom-dropdown-group">
-														<div class="custom-dropdown-scroll">
-															<div class="custom-dropdown">Joseph Latonio</div>
-															<div class="custom-dropdown">Rebecca Warner</div>
-															<div class="custom-dropdown">Sri Krishnamoorthy</div>
-														</div>
-													</div>
 												</div>
 												<div class="store-button-container">
 													<input class="store-continue" type="button" value="Continue" />
@@ -154,18 +151,6 @@
 							<div class="modal-content">
 								<span class="modal-close">&times;</span>
 								<p>Complete the form before submitting.</p>
-							</div>
-						</div>
-						<div class="modal-ineligible">
-							<div class="modal-content">
-								<span class="modal-close modal-close-ineligible">&times;</span>
-								<p>IMPORTANT: It appears the employee entered is either not valid or ineligible.</p>
-							</div>
-						</div>
-						<div class="modal-select">
-							<div class="modal-content">
-								<span class="modal-close modal-close-select">&times;</span>
-								<p>Select an avaiable Email ID</p>
 							</div>
 						</div>
 					</div>
@@ -201,6 +186,6 @@
 						</footer>
 					</div>
 					<script src="js/animation.js"></script>
-					<script src="js/localstorage.js"></script>
+					<script src="js/localstorage.js"></script>                
 				</body>
 			</html>
