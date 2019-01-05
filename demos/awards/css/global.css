@@ -334,7 +334,7 @@ input[type=text]{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 15px 35px 15px 20px;
+  padding: 14px 35px 14px 20px;
   width: 100%;
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
@@ -433,11 +433,12 @@ input[type=button]:hover {
 
 input::-webkit-clear-button{
     position:relative;
-    background:#fff url('../images/select-close.svg') no-repeat ;background-position: center right 10px;background-size: 16px 16px;
+    background:#fff url('../images/select-close.svg') no-repeat ;
+    background-position: center right 10px;
+    background-size: 16px 16px;
     -webkit-appearance: none;
     height: 30px;
     width: 30px;
-    border-radius:10px;
     opacity: .4;
 }
 
@@ -457,12 +458,8 @@ input::-webkit-clear-button{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 15px 35px 15px 20px;
+  padding: 14px 35px 14px 20px;
   width: 100%;
-  border-top: solid 1px #ccc;
-  border-bottom: solid 1px #ccc;
-  border-left: solid 1px #ccc;
-  border-right: solid 1px #ccc;
   display: block;
   position: relative;
   margin: 0;
@@ -476,7 +473,7 @@ input::-webkit-clear-button{
 
 .custom-dropdown-arrow-toggle, .custom-select-close, .custom-select-date, .custom-select-search {
   position: absolute;
-  bottom: 9px;
+  bottom: 7px;
   right: 3px;
   width: 32px;
   height: 32px;
@@ -492,7 +489,7 @@ input::-webkit-clear-button{
 
 .custom-dropdown-date-toggle {
   position: absolute;
-  bottom: 9px;
+  bottom: 7px;
   right: 43px;
   width: 32px;
   height: 32px;
@@ -509,7 +506,7 @@ input::-webkit-clear-button{
 
 .custom-dropdown-arrow-open {
   position: absolute;
-  bottom: 9px;
+  bottom: 7px;
   right: 3px;
   width: 32px;
   height: 32px;
@@ -525,7 +522,7 @@ input::-webkit-clear-button{
 
 .custom-dropdown-arrow-close {
   position: absolute;
-  bottom: 9px;
+  bottom: 7px;
   right: 3px;
   width: 32px;
   height: 32px;
@@ -568,7 +565,7 @@ input::-webkit-clear-button{
 
 .custom-dropdown {
   font-size: 14px;
-  padding: 20px;
+  padding: 14px 20px;
   background-color: #fff;
   border-bottom: solid 1px #ccc;
   cursor: pointer;
@@ -745,10 +742,6 @@ input::-webkit-clear-button{
     max-height: 340px;
     border-right: solid 1px #ccc;
     border-left: solid 1px #ccc;
-  }
-
-  .custom-dropdown {
-    padding: 15px 20px;
   }
 }
 
