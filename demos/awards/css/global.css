@@ -595,7 +595,7 @@ input::-webkit-clear-button{
   cursor: pointer;
 }
 
-.percent-20,.percent-25,.percent-30,.percent-35,.percent-33,.percent-40,.percent-50,.percent-60,.percent-65,.percent-75,.percent-100,.percent-fixed-180,.fixed-180 {
+.percent-15,.percent-20,.percent-25,.percent-30,.percent-35,.percent-33,.percent-40,.percent-45,.percent-50,.percent-60,.percent-65,.percent-75,.percent-85,.percent-100,.percent-fixed-180,.fixed-180 {
   width: 100%;
 }
 
@@ -668,6 +668,10 @@ input::-webkit-clear-button{
 }
 
 @media screen and (min-width: 701px) {
+
+  .percent-85 {
+    width: 75%;
+  }
     
   .percent-75 {
     width: 75%;
@@ -689,6 +693,10 @@ input::-webkit-clear-button{
     width: 50%;
   }
 
+  .percent-45 {
+    width: 40%;
+  }
+    
   .percent-40 {
     width: 40%;
   }
@@ -711,6 +719,10 @@ input::-webkit-clear-button{
     
   .percent-20 {
     width: 20%;
+  }
+ 
+  .percent-15 {
+    width: 15%;
   }
     
   .percent-fixed-180 {
