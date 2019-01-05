@@ -1386,13 +1386,6 @@ a.ui-button:active,
 .ui-button.ui-state-active:hover {
 }
 
-.ui-menu-item-wrapper {
-  font-size: 14px;
-  padding: 10px 20px;
-  border: none !important;
-  cursor: pointer;
-}
-
 .ui-menu-item {
   font-size: 14px;
   padding: 10px 20px;
