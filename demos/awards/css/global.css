@@ -287,7 +287,7 @@ thead {
 .rule-h {
   border-bottom: 2px solid #d3d3d3;
   width: 100%;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 .rule-v {
@@ -334,30 +334,7 @@ input[type=text]{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 10px 35px 10px 20px;
-  width: 100%;
-  border-top: solid 1px #ccc;
-  border-bottom: solid 1px #ccc;
-  border-left: solid 1px #ccc;
-  border-right: solid 1px #ccc;
-  display: block;
-  position: relative;
-  margin: 0;
-  border-radius: 0;
--webkit-box-shadow: inset 0px 1px 1px 0px rgba(4,4,4,0.4);
--moz-box-shadow: inset 0px 1px 1px 0px rgba(4,4,4,0.4);
-box-shadow: inset 0px 1px 1px 0px rgba(4,4,4,0.4);
-}
-
-input[type=date] {
-  font-size: 14px;
-  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
-  line-height: 1.4;
-  background-color: transparent;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 10px 35px 10px 20px;
+  padding: 15px 35px 15px 20px;
   width: 100%;
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
@@ -464,7 +441,6 @@ input::-webkit-clear-button{
     opacity: .4;
 }
 
-
 .store-button-container {
   margin-bottom: 35px;
 }
@@ -481,7 +457,7 @@ input::-webkit-clear-button{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 10px 35px 10px 20px;
+  padding: 15px 35px 15px 20px;
   width: 100%;
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
@@ -491,7 +467,7 @@ input::-webkit-clear-button{
   position: relative;
   margin: 0;
   border-radius: 0;
-  max-height: 40px;
+  max-height: 50px;
 }
 
 .custom-dropdown-position {
@@ -500,7 +476,7 @@ input::-webkit-clear-button{
 
 .custom-dropdown-arrow-toggle, .custom-select-close, .custom-select-date, .custom-select-search {
   position: absolute;
-  bottom: 4px;
+  bottom: 9px;
   right: 3px;
   width: 32px;
   height: 32px;
@@ -516,7 +492,7 @@ input::-webkit-clear-button{
 
 .custom-dropdown-date-toggle {
   position: absolute;
-  bottom: 4px;
+  bottom: 9px;
   right: 43px;
   width: 32px;
   height: 32px;
@@ -533,7 +509,7 @@ input::-webkit-clear-button{
 
 .custom-dropdown-arrow-open {
   position: absolute;
-  bottom: 4px;
+  bottom: 9px;
   right: 3px;
   width: 32px;
   height: 32px;
@@ -549,7 +525,7 @@ input::-webkit-clear-button{
 
 .custom-dropdown-arrow-close {
   position: absolute;
-  bottom: 4px;
+  bottom: 9px;
   right: 3px;
   width: 32px;
   height: 32px;
@@ -790,7 +766,7 @@ input::-webkit-clear-button{
   }
     
   .rule-h {
-  margin-bottom: 40px;
+  margin: 40px 0;
 }
 
   .rule-v {
