@@ -215,6 +215,12 @@
   margin-bottom: 0;
 }
 
+.nomination-entry-image {
+  width:80px;
+  height: auto;
+  margin-top: 10px;
+}
+
 .column-container-admin {
   padding: 20px;
 }
@@ -228,7 +234,6 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
-  border: solid 2px #ccc;
 }
 
 .column-container-select .custom-dropdown-outer {

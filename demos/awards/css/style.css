@@ -171,6 +171,10 @@
 }
 
 @media screen and (min-width: 701px) {
+   .store-data-ty,.store-data-awards {
+    min-height: 260px;
+    padding: 32px 40px;
+  }
     
   .column-container-row {
     margin-bottom: 20px;
@@ -208,12 +212,6 @@
 }
 
 @media screen and (min-width: 1025px) {
-    
-  .store-data-ty,.store-data-awards {
-    min-height: 320px;
-    padding: 32px 40px;
-  }
-
   .column-container-row {
     margin-bottom: 40px;
   }
