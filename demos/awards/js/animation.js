@@ -202,24 +202,44 @@ $(".custom-select-search").on("click", function() {
  return false;
 });
 
-// enables dropdown search
+// enables autocomplete dropdown search
 $(function() {
  $(".custom-search").autocomplete({
   source: [
    "Joseph Latonio",
-   "Rebecca Warner",
+   "Rebecca Warner",  
    "Sri Krishnamoorthy"
   ],
   minLength: 1,
   response: function(event, ui) {
    // clears field if name is misspelled or invalid
    if (ui.content.length === 0) {
-    $(this).val("");
+    $(this).val("").attr("placeholder","No Match Found").blur().css({
+    "background": "#fff2f2"
+   });
     return false;
-   } else {}
+   } else {
+    $(this).attr("placeholder","Search Email ID").css({
+    "background": ""
+   });
+   }
   }
  });
 });
+
+// resets placeholder text on focus
+$(".custom-search").on("focus", function() {
+ $(this).attr("placeholder","Search Email ID").css({
+    "background": ""
+   });
+ return false;
+});
+
+// fixes width of autocomplete menu
+jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+  var ul = this.menu.element;
+  ul.outerWidth(this.element.outerWidth());
+}
 
 // clears field if there is only one character submitted
 // $("input[type='text']").on("change", function() {
