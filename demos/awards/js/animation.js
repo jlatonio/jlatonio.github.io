@@ -225,6 +225,11 @@ $(function() {
    }
   }
  });
+ // resizes width of autocomplete menu as needed
+ jQuery.ui.autocomplete.prototype._resizeMenu = function() {
+ var ul = this.menu.element;
+ ul.outerWidth(this.element.outerWidth());
+}
 });
 
 // resets placeholder text on focus
@@ -236,12 +241,6 @@ $(".custom-search").on("focus", function() {
  });
  return false;
 });
-
-// fixes width of autocomplete menu
-jQuery.ui.autocomplete.prototype._resizeMenu = function() {
- var ul = this.menu.element;
- ul.outerWidth(this.element.outerWidth());
-}
 
 // clears field if there is only one character submitted
 // $("input[type='text']").on("change", function() {
