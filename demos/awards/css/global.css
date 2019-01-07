@@ -626,7 +626,7 @@ input::-webkit-clear-button {
   cursor: pointer;
 }
 
-.percent-15,.percent-20,.percent-25,.percent-30,.percent-35,.percent-33,.percent-40,.percent-45,.percent-50,.percent-60,.percent-65,.percent-75,.percent-85,.percent-100,.percent-fixed-180,.fixed-180 {
+.percent-15,.percent-20,.percent-25,.percent-30,.percent-35,.percent-33,.percent-40,.percent-45,.percent-50,.percent-55,.percent-60,.percent-65,.percent-75,.percent-85,.percent-100,.percent-fixed-180,.fixed-180 {
   width: 100%;
 }
 
@@ -721,7 +721,11 @@ input::-webkit-clear-button {
   .percent-60 {
     width: 60%;
   }
-
+    
+  .percent-55 {
+    width: 55%;
+  }
+    
   .percent-50 {
     width: 50%;
   }
