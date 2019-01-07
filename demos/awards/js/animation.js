@@ -2,7 +2,7 @@
 $(".custom-dropdown-group,.custom-dropdown-close").hide();
 $(".custom-dropdown-open").on("click", function() {
  // closes other elements other than this when clicked
- 'use strict';
+ "use strict";
  $(".custom-dropdown-input").find(".custom-dropdown-close").not(this).trigger("click");
  $("body").trigger("click");
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-open");
@@ -15,7 +15,7 @@ $(".custom-dropdown-open").on("click", function() {
 
 // closes menu when an item is selected
 $(".custom-dropdown-close").on("click", function() {
- 'use strict';
+ "use strict";
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-open");
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideUp(100);
@@ -28,13 +28,13 @@ $(".custom-dropdown-close").on("click", function() {
 // resets search when user clicks close
 $(".custom-select-close").hide();
 $("input[type='text']").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function() {
- 'use strict';
+ "use strict";
  $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
  return false;
 });
 $("input[type='text']").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function() {
- 'use strict';
+ "use strict";
  $(this).hide();
  $(".modal-select").hide();
  $(this).closest(".custom-dropdown-outer").find("input[type='text']").val("").focus().css({
@@ -48,7 +48,7 @@ $("input[type='text']").closest(".custom-dropdown-outer").find(".custom-select-c
 
 // closes menu when user clicks away
 $("body").on("click", function() {
- 'use strict';
+ "use strict";
  if ($(this).not(".custom-dropdown-outer")) {
   $(".custom-dropdown-group").slideUp(100);
   $(".custom-dropdown-open").show();
@@ -64,7 +64,7 @@ $("input[type='text']").on("click", function() {
 
 // adds the html to the input value for each button clicked
 $(".custom-dropdown").on("click", function() {
- 'use strict';
+ "use strict";
  var option = $(this).text();
  var val = $(this).attr("value");
  var checkinput = $(this).closest(".custom-dropdown-outer").find("input[type='text']")
@@ -82,7 +82,7 @@ $(".custom-dropdown").on("click", function() {
 
  // sets active state
  $(".custom-dropdown").css("background-color", "");
- 'use strict';
+ "use strict";
  $(this).css("background-color", "#e3e3e3");
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-open");
@@ -94,7 +94,7 @@ $(".custom-dropdown").on("click", function() {
 
 // hover state
 $(".custom-dropdown-outer").find(".custom-dropdown").on("mouseover click", function() {
- 'use strict';
+ "use strict";
  $(this).closest(".custom-dropdown-outer").find(this).css({
   "background-color": "",
   "color": ""
@@ -107,7 +107,7 @@ $(".custom-dropdown-outer").find(".custom-dropdown").on("mouseover click", funct
 });
 
 $(".custom-dropdown-outer").find(".custom-dropdown").on("mouseout", function() {
- 'use strict';
+ "use strict";
  $(this).closest(".custom-dropdown-outer").find(this).css({
   "background-color": "",
   "color": ""
@@ -207,21 +207,21 @@ $(function() {
  $(".custom-search").autocomplete({
   source: [
    "Joseph Latonio",
-   "Rebecca Warner",  
+   "Rebecca Warner",
    "Sri Krishnamoorthy"
   ],
   minLength: 1,
   response: function(event, ui) {
    // clears field if name is misspelled or invalid
    if (ui.content.length === 0) {
-    $(this).val("").attr("placeholder","No Match Found").blur().css({
-    "background": "#fff2f2"
-   });
+    $(this).val("").attr("placeholder", "No Match Found").blur().css({
+     "background": "#fff2f2"
+    });
     return false;
    } else {
-    $(this).attr("placeholder","Search Email ID").css({
-    "background": ""
-   });
+    $(this).attr("placeholder", "Search Email ID").css({
+     "background": ""
+    });
    }
   }
  });
@@ -229,16 +229,18 @@ $(function() {
 
 // resets placeholder text on focus
 $(".custom-search").on("focus", function() {
- $(this).attr("placeholder","Search Email ID").css({
-    "background": ""
-   });
+ $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+ $(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
+ $(this).attr("placeholder", "Search Email ID").css({
+  "background": ""
+ });
  return false;
 });
 
 // fixes width of autocomplete menu
-jQuery.ui.autocomplete.prototype._resizeMenu = function () {
-  var ul = this.menu.element;
-  ul.outerWidth(this.element.outerWidth());
+jQuery.ui.autocomplete.prototype._resizeMenu = function() {
+ var ul = this.menu.element;
+ ul.outerWidth(this.element.outerWidth());
 }
 
 // clears field if there is only one character submitted

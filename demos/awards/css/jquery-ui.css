@@ -1348,9 +1348,9 @@ a.ui-button:active,
   font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   width: auto;
   height: auto;
-  -webkit-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
-  -moz-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
-  box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(4,4,4,0.4);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(4,4,4,0.4);
+  box-shadow: 0px 1px 4px 0px rgba(4,4,4,0.4);
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
@@ -1405,4 +1405,11 @@ a.ui-button:active,
 .ui-menu-item:hover {
   background: #7593bf;
   color: #fff;
+}
+
+.ui-autocomplete {
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  border-right: solid 1px #ccc;
+  border-left: solid 1px #ccc;
 }

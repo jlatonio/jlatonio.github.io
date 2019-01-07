@@ -171,11 +171,11 @@
 }
 
 @media screen and (min-width: 701px) {
-   .store-data-ty,.store-data-awards {
+  .store-data-ty,.store-data-awards {
     min-height: 260px;
     padding: 32px 40px;
   }
-    
+
   .column-container-row {
     margin-bottom: 20px;
   }
@@ -215,7 +215,7 @@
   .column-container-row {
     margin-bottom: 40px;
   }
-    
+
   .notes-container-column-each {
     padding-left: 100px;
   }
@@ -224,7 +224,7 @@
     width: 80px;
     height: 80px;
   }
-    
+
   .column-container-row .notes-container-column-inner:first-child {
     padding-right: 20px;
   }

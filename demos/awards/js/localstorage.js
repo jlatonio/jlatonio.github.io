@@ -1,10 +1,10 @@
 // loads latest every session for the ty page
 $(".store-data-ty").each(function() {
- 'use strict';
- var text = "store-data-ty"
+ "use strict";
+ var text = "store-data-ty";
  var value = localStorage.getItem(text);
  $(this).val(value);
- // If textarea is empty, a new class is added        
+ // If textarea is empty, a new class is added
  if ($.trim($(this).val()) === "") {
   $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
  } else {
@@ -15,11 +15,11 @@ $(".store-data-ty").each(function() {
 
 // loads latest every session for the awards page
 $(".store-data-awards").each(function() {
- 'use strict';
- var text = "store-data-awards"
+ "use strict";
+ var text = "store-data-awards";
  var value = localStorage.getItem(text);
  $(this).val(value);
- // If textarea is empty, a new class is added        
+ // If textarea is empty, a new class is added
  if ($.trim($(this).val()) === "") {
   $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
  } else {
@@ -32,12 +32,12 @@ $(".notes-btn-each").hide();
 
 // saves data on click
 $(".store-save").on("click", function() {
- 'use strict';
+ "use strict";
  $(this).closest("form").find(".store-data-ty").css({
   "background": ""
  });
  $(this).closest(".notes-container").find(".store-data-ty").each(function() {
-  var text = "store-data-ty"
+  var text = "store-data-ty";
   var value = $(this).val();
   localStorage.setItem(text, value);
   var value = localStorage.getItem(text);
@@ -45,7 +45,8 @@ $(".store-save").on("click", function() {
  });
 
  $(this).closest(".notes-container").find(".store-data-awards").each(function() {
-  var text = "store-data-awards"
+ "use strict";
+  var text = "store-data-awards";
   var value = $(this).val();
   localStorage.setItem(text, value);
   var value = localStorage.getItem(text);
@@ -54,7 +55,7 @@ $(".store-save").on("click", function() {
 
  // save animation
  $(".notes-btn-each").show();
- 'use strict';
+ "use strict";
  $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
  setTimeout(function() {
   $(".notes-btn-each").fadeOut();
@@ -62,9 +63,9 @@ $(".store-save").on("click", function() {
  return false;
 });
 
-// resets each field 
+// resets each field
 $(".store-reset").on("click", function() {
- 'use strict';
+ "use strict";
  $(".custom-select-close").hide();
  $(this).closest("form").removeAttr("action");
  $(this).closest("form").find("input[type=text]").val("").css({
@@ -88,8 +89,8 @@ $(".store-reset").on("click", function() {
 
 // sends nomination. alerts if input is blank. adds focus to empty input area
 $(".store-nominate").click(function() {
+  "use strict";
  $(".store-data-ty").each(function() {
-  'use strict';
   var option = $(".store-data-ty").val();
   if (option.length === 0) {
    $(this).css({
@@ -107,7 +108,7 @@ $(".store-nominate").click(function() {
   }
  });
  $(".store-data-awards").each(function() {
-  'use strict';
+  "use strict";
   var option = $(".store-data-awards").val();
   if (option.length === 0) {
    $(this).css({
@@ -129,8 +130,8 @@ $(".store-nominate").click(function() {
 
 // sends draft to email. alerts if input is blank. adds focus to empty input area
 $(".store-share").click(function() {
+  "use strict";
  $("textarea").each(function() {
-  'use strict';
   var option = $("textarea").val();
   if (option.length === 0) {
    $(this).css({
