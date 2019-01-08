@@ -81,8 +81,6 @@ $(".custom-dropdown").on("click", function() {
  }
 
  // sets active state
- $(".custom-dropdown").css("background-color", "");
- "use strict";
  $(this).css("background-color", "#e3e3e3");
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-open");
@@ -95,22 +93,13 @@ $(".custom-dropdown").on("click", function() {
 // hover state
 $(".custom-dropdown-outer").find(".custom-dropdown").on("mouseover click", function() {
  "use strict";
- $(this).closest(".custom-dropdown-outer").find(this).css({
+ $(this).closest(".custom-dropdown-outer").find(this).siblings().css({
   "background-color": "",
   "color": ""
  });
  $(this).closest(".custom-dropdown-outer").find(this).css({
   "background-color": "#7593bf",
   "color": "#fff"
- });
- return false;
-});
-
-$(".custom-dropdown-outer").find(".custom-dropdown").on("mouseout", function() {
- "use strict";
- $(this).closest(".custom-dropdown-outer").find(this).css({
-  "background-color": "",
-  "color": ""
  });
  return false;
 });

@@ -167,3 +167,20 @@ $(".store-complete").on("click", function() {
   localStorage.removeItem(text);
  });
 });
+
+
+// mailto from the dashboard
+$(".nomination-entry-image").click(function() {
+  "use strict";
+ $(this).closest(".nomination-entry-container").find(".nomination-entry-notes").each(function() {
+   var mailto = "mailto:nominate@adobe.com";
+   var bodyStr = $(this).closest(".nomination-entry-container").find(".nomination-entry-notes").html().replace(/<br>/g,"\r\n");
+   var nominee = $(this).closest(".nomination-entry-container").find(".store-nominee-enter").text();
+   var subjectStr = "subject=Thank You " + nominee + "!";
+   var cc = "?" + "cc=nominate@adobe.com,";
+   window.location = mailto + cc + "&" + subjectStr + "&body=" + encodeURIComponent(bodyStr) + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
+ });
+});
+
+
+ 

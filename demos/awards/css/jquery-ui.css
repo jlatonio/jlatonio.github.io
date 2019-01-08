@@ -1384,6 +1384,8 @@ a.ui-button:active,
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
+  background: #7593bf;
+  color: #fff;
 }
 
 .ui-menu-item {
