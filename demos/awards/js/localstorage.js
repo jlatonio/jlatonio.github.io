@@ -188,7 +188,7 @@ if ($(window).width() >= 1024){
  $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(1)) .store-nominator-notes-container").css({
   "min-height" : "105px"
   });
-  $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(1)) .store-nominator-notes-container").css({
+  $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(2)) .store-nominator-notes-container").css({
   "min-height" : "auto"
   });
  }
