@@ -168,19 +168,28 @@ $(".store-complete").on("click", function() {
  });
 });
 
-
 // mailto from the dashboard (from a div, not values from a textarea)
 $(".nomination-entry-share").click(function() {
   "use strict";
- $(this).closest(".nomination-entry-submissions").find(".nomination-entry-notes").each(function() {
+ $(this).closest(".nomination-entry-submissions").find(".store-nominator-notes").each(function() {
    var mailto = "mailto:nominate@adobe.com";
-   var bodyStr = $(this).closest(".nomination-entry-submissions").find(".nomination-entry-notes").text().replace(/\<br>*/ig,"%0D%0A").replace(/\<p>*/ig,"").replace(/\<\/p\>*/ig,"\r\n").replace(/\Nominator Name: */ig,"%0D%0ANominator Name: ").replace(/\Award: */ig,"%0D%0AAward: ").replace(/\<\/span\>*/ig,"%0D%0A").replace(/\Notes: */ig,"%0D%0ANotes: ").replace(/\<div class="nomination-entry-submissions">*/ig,"").replace(/\<div>*/ig,"").replace(/\\<\/div\><\/div\>\*/ig,"\n\n").replace(/\<\/div\>*/ig,"\n\n");
-   var nominee = $(this).closest(".nomination-entry-container").find(".store-nominee-enter").text();
-   var subjectStr = "subject=Thank You " + nominee + "!";
+   var bodyStr = $(this).html().replace(/\<br>*/ig,"%0D%0A").replace(/\<p>*/ig,"").replace(/\<\/p\>*/ig,"%0D%0A%0D%0A");
+   var nominee = $(this).closest(".nomination-entry-container").find(".store-nominee-enter").html();
+   var award = $(this).closest(".nomination-entry-container").find(".store-nominator-award").html();
+   var subjectStr = "subject=Thank You " + nominee + "!" + " - " + award;
    var cc = "?" + "cc=nominate@adobe.com,";
    window.location = mailto + cc + "&" + subjectStr + "&body=" + bodyStr + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
  });
 });
 
-
- 
+ // dynamic positioning of the share link
+$(".store-nominator-notes-container").each(function() {
+if ($(window).width() >= 1024){	
+ $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(1)) .store-nominator-notes-container").css({
+  "min-height" : "105px"
+  });
+  $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(1)) .store-nominator-notes-container").css({
+  "min-height" : "auto"
+  });
+ }
+});
