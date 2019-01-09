@@ -169,16 +169,16 @@ $(".store-complete").on("click", function() {
 });
 
 
-// mailto from the dashboard
-$(".nomination-entry-image").click(function() {
+// mailto from the dashboard (from a div, not values from a textarea)
+$(".nomination-entry-share").click(function() {
   "use strict";
- $(this).closest(".nomination-entry-container").find(".nomination-entry-notes").each(function() {
+ $(this).closest(".nomination-entry-submissions").find(".nomination-entry-notes").each(function() {
    var mailto = "mailto:nominate@adobe.com";
-   var bodyStr = $(this).closest(".nomination-entry-container").find(".nomination-entry-notes").html().replace(/<br>/g,"\r\n");
+   var bodyStr = $(this).closest(".nomination-entry-submissions").find(".nomination-entry-notes").text().replace(/\<br>*/ig,"%0D%0A").replace(/\<p>*/ig,"").replace(/\<\/p\>*/ig,"\r\n").replace(/\Nominator Name: */ig,"%0D%0ANominator Name: ").replace(/\Award: */ig,"%0D%0AAward: ").replace(/\<\/span\>*/ig,"%0D%0A").replace(/\Notes: */ig,"%0D%0ANotes: ").replace(/\<div class="nomination-entry-submissions">*/ig,"").replace(/\<div>*/ig,"").replace(/\\<\/div\><\/div\>\*/ig,"\n\n").replace(/\<\/div\>*/ig,"\n\n");
    var nominee = $(this).closest(".nomination-entry-container").find(".store-nominee-enter").text();
    var subjectStr = "subject=Thank You " + nominee + "!";
    var cc = "?" + "cc=nominate@adobe.com,";
-   window.location = mailto + cc + "&" + subjectStr + "&body=" + encodeURIComponent(bodyStr) + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
+   window.location = mailto + cc + "&" + subjectStr + "&body=" + bodyStr + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
  });
 });
 
