@@ -361,14 +361,20 @@ input[type=text] {
   text-overflow: ellipsis;
   padding: 14px 35px 14px 20px;
   width: 100%;
-  display: block;
-  position: relative;
   margin: 0;
   border-radius: 0;
-  border: none;
-  -webkit-box-shadow: inset 0px 1px 4px 0px rgba(4,4,4,0.4);
-  -moz-box-shadow: inset 0px 1px 4px 0px rgba(4,4,4,0.4);
-  box-shadow: inset 0px 1px 4px 0px rgba(4,4,4,0.4);
+  border: 1px solid #ccc;
+  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
+  box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
+}
+
+.custom-dropdown-menu, .custom-select, .custom-date {
+  padding: 14px 35px 14px 20px;
+  width: 100%;
+  display: block;
+  position: relative;
+  max-height: 50px;
 }
 
 input[type=button]:last-child {
@@ -475,23 +481,6 @@ input::-webkit-clear-button {
 
 .store-button-container input {
   width: 100%;
-}
-
-.custom-dropdown-menu, .custom-select, .custom-date {
-  font-size: 14px;
-  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
-  line-height: 1.4;
-  background-color: transparent;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 14px 35px 14px 20px;
-  width: 100%;
-  display: block;
-  position: relative;
-  margin: 0;
-  border-radius: 0;
-  max-height: 50px;
 }
 
 .custom-dropdown-position {
