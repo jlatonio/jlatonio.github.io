@@ -35,6 +35,7 @@ $(".store-save").on("click", function() {
  // saves data. alerts if input is blank. adds focus to empty input area
  $(".draft-slots").each(function() {
   var option = $(".draft-slots").val();
+  var option2 = $(".store-data").val();
   if (option.length === 0) {
    $(this).css({
     "background": "#fff2f2"
@@ -50,6 +51,15 @@ $(".store-save").on("click", function() {
    $(this).css({
     "background": ""
    });
+  }
+   if (option.length > 0 && option2.length > 0) {
+   var text = $(".draft-slots").val();
+   var value = $(this).closest(".notes-container").find(".store-data").val();
+   localStorage.setItem(text, value);
+   var value = localStorage.getItem(text);
+   $(this).css({
+    "background": ""
+   });
    $(".notes-btn-each").show();
    "use strict";
    $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
@@ -57,6 +67,21 @@ $(".store-save").on("click", function() {
     $(".notes-btn-each").fadeOut();
    }, 1000);
    return false;
+  } 
+ });
+ $(".store-data").each(function() {
+  var option2 = $(".store-data").val();
+  if (option2.length === 0) {
+   $(this).css({
+    "background": "#fff2f2"
+   });
+   $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+   $(".modal-alert").show();
+  }
+  if (option2.length > 0) {
+   $(this).css({
+    "background": ""
+   });
   }
  });
  return false;
@@ -65,7 +90,8 @@ $(".store-save").on("click", function() {
 // resets each field
 $(".store-reset").on("click", function() {
  "use strict";
- $(".custom-select-close").hide();
+ $(this).closest("form").find(".custom-select-close").hide();
+ $(this).closest("form").find(".custom-select-search").show();
  $(this).closest(".notes-container").find("textarea").val("");
  var text = $(this).closest(".notes-container").find(".draft-slots").val();
  localStorage.removeItem(text);
@@ -76,6 +102,17 @@ $(".store-reset").on("click", function() {
   "background": ""
  });
  $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+});
+
+// static clear, no effect on saved data
+$(".store-clear").on("click", function() {
+ "use strict";
+ $(this).closest("form").find(".custom-select-close").hide();
+ $(this).closest("form").find(".custom-select-search").show();
+ $(this).closest("form").find("textarea").val("");
+ $(this).closest("form").find("input[type=text]").val("").css({
+  "background": ""
+ });
 });
 
 // resets all fields
