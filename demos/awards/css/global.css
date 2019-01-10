@@ -616,12 +616,16 @@ input::-webkit-clear-button {
   cursor: pointer;
 }
 
-.percent-15,.percent-20,.percent-25,.percent-30,.percent-35,.percent-33,.percent-40,.percent-45,.percent-50,.percent-55,.percent-60,.percent-65,.percent-75,.percent-85,.percent-100,.percent-fixed-70-100,.percent-fixed-75-100,.percent-fixed-70-120,.percent-fixed-180,.fixed-180 {
+.percent-15,.percent-20,.percent-25,.percent-30,.percent-35,.percent-33,.percent-40,.percent-45,.percent-50,.percent-55,.percent-60,.percent-65,.percent-75,.percent-85,.percent-100,.percent-fixed-70-100,.percent-fixed-75-100,.percent-fixed-70-120,.percent-fixed-180,.percent-fixed-220,.percent-fixed-280,.fixed-180 {
   width: 100%;
 }
 
 .fixed-100 {
   width: 100px;
+}
+
+.fixed-220 {
+  width: 220px;
 }
 
 .fixed-120 {
@@ -636,7 +640,7 @@ input::-webkit-clear-button {
   width: calc(100% - 120px);
 }
 
-.modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select {
+.modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select,.modal-save,.modal-load {
   display: none;
  /* Hidden by default */
   position: fixed;
@@ -682,13 +686,14 @@ input::-webkit-clear-button {
 }
 
 /* The Close Button */
-.modal-close {
+.modal-close,.modal-close-save {
   color: #aaaaaa;
   top: 0;
   right: 10px;
   font-size: 28px;
   font-weight: bold;
   position: absolute;
+  cursor: pointer;
 }
 
 .modal-close:hover,
@@ -776,6 +781,18 @@ input::-webkit-clear-button {
     width: calc(100% - 180px);
   }
 
+ .percent-fixed-220 {
+    width: calc(100% - 220px);
+  }
+
+  .percent-fixed-280 {
+    width: calc(100% - 200px);
+  }
+    
+  .fixed-240 {
+    width: 180px;
+  }
+    
   .fixed-180 {
     width: 160px;
   }
@@ -813,12 +830,12 @@ input::-webkit-clear-button {
     width: 33.33%;
   }
 
-  .percent-fixed-180 {
-    width: calc(100% - 260px);
+  .percent-fixed-280 {
+    width: calc(100% - 280px);
   }
 
-  .fixed-180 {
-    width: 220px;
+  .fixed-240 {
+    width: 240px;
   }
 
   .rule-h {

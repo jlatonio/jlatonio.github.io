@@ -67,19 +67,19 @@ $(".custom-dropdown").on("click", function() {
  "use strict";
  var option = $(this).text();
  var val = $(this).attr("value");
- var checkinput = $(this).closest(".custom-dropdown-outer").find("input[type='text']")
+ var checkinput = $(this).closest(".custom-dropdown-outer").find("input[type='text']");
  $(this).closest(".custom-dropdown-outer").find(checkinput).val(option);
  $(checkinput).attr("value", val);
 
  // changes the form"s action link on specific choices
- if ($("input[type='text']").attr("value") === "Thank You") {
+ if ($(this).closest("form").find("input[type='text']").val() === 'Thank You') {
   $(".custom-dropdown-input").removeAttr("action");
   $(".custom-dropdown-input").attr("action", "ty-entry.html");
  } else {
   $(".custom-dropdown-input").removeAttr("action");
   $(".custom-dropdown-input").attr("action", "awards-entry.html");
- }
-
+ }  
+    
  // sets active state
  $(this).css("background-color", "#e3e3e3");
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");
@@ -89,7 +89,7 @@ $(".custom-dropdown").on("click", function() {
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
  return false;
 });
-
+ 
 // hover state
 $(".custom-dropdown-outer").find(".custom-dropdown").on("mouseover click", function() {
  "use strict";
@@ -131,6 +131,12 @@ $(".modal-close").on("click", function() {
  $(".modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select").hide();
  $("textarea").focus();
  $(".custom-dropdown-input").find("input:text[value='']:visible").first().focus();
+ return false;
+});
+
+$(".modal-close-save").on("click", function() {
+ $(".modal-save,.modal-load").hide();
+ $(".draft-slots").first().focus();
  return false;
 });
 

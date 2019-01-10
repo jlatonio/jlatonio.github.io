@@ -60,26 +60,44 @@
 								<p class="store-nominator-award light-text black-color">Customer Success Employee of the Quarter</p>
 							</div>
 						</div>
-						<form class="notes-container" enctype="text/plain" method="get">
-							<div class="column-container-notes">
-								<div class="store-data-container-inner box-shadow percent-fixed-180">
-									<div class="store-data-container">
-										<textarea class="store-data-ty" placeholder="Enter Notes Here. Save your data in case your session times out." name="nominee"></textarea>
-										<div class="notes-btn-each-container">
-											<div class="notes-btn-each"></div>
-										</div>
-									</div>
-								</div>
-								<div class="column-2-set fixed-180 box-shadow grey-2-bg">
-									<div class="notes-button-container">
-										<input class="store-save" type="button" value="Save" />
-										<input class="store-reset" type="button" value="Reset" />
-										<input class="store-nominate" type="button" value="Nominate" />
-										<input class="store-share" type="button" value="Share" />
-									</div>
-								</div>
-							</div>
-						</form>
+                        <form class="notes-container" enctype="text/plain" method="get">
+                            <div class="column-container-notes">
+                                <div class="store-data-container-inner box-shadow percent-fixed-280">
+                                    <div class="store-data-container">
+                                        <textarea class="store-data" placeholder="Enter Notes Here. Save your data in case your session times out." name="nominee"></textarea>
+                                        <div class="notes-btn-each-container">
+                                            <div class="notes-btn-each"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column-2-set fixed-240 box-shadow grey-2-bg">
+                                    <div class="notes-button-container">
+                                        <div class="custom-dropdown-outer">
+                                            <label class="primary-color">Select Draft</label>
+                                            <input type="text" class="custom-dropdown-menu draft-slots" placeholder="Select..." />
+                                            <div class="custom-dropdown-close"></div>
+                                            <div class="custom-dropdown-open"></div>
+                                            <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+                                            <div class="custom-dropdown-position">
+                                                <div class="custom-dropdown-group">
+                                                    <div class="custom-dropdown-scroll">
+                                                        <div class="custom-dropdown">Saved Data A</div>
+                                                        <div class="custom-dropdown">Saved Data B</div>
+                                                        <div class="custom-dropdown">Saved Data C</div>
+                                                        <div class="custom-dropdown">Saved Data D</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input class="store-save" type="button" value="Save" />
+                                        <input class="store-load" type="button" value="Load" />
+                                        <input class="store-reset" type="button" value="Clear" />
+                                        <input class="store-reset-all" type="button" value="Reset All" />
+                                        <input class="store-nominate" type="button" value="Nominate" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
 					</div>
 					<div class="column-container-inner-2 column-container-header box-shadow percent-100 border-design grey-bg">
 						<h2 class="primary-color percent-100">Good Nomination Examples</h2>
@@ -130,6 +148,18 @@
 					<div class="modal-content">
 						<span class="modal-close">&times;</span>
 						<p>Complete the form before sharing.</p>
+					</div>
+				</div>
+				<div class="modal-save">
+					<div class="modal-content">
+						<span class="modal-close-save">&times;</span>
+						<p>Select a save slot before saving.</p>
+					</div>
+				</div>
+				<div class="modal-load">
+					<div class="modal-content">
+						<span class="modal-close-save">&times;</span>
+						<p>Select a draft to load.</p>
 					</div>
 				</div>
 			</div>
