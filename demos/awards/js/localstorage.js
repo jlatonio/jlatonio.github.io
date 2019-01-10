@@ -17,7 +17,10 @@ $(".store-load").on("click", function() {
    var text = $(".draft-slots").val();
    var value = localStorage.getItem(text);
    $(this).val(value);
-   $(this).closest(".notes-container").find(".draft-slots").css({
+   $(this).closest(".notes-container").find("input[type=text]").css({
+    "background": ""
+   });
+   $(this).closest(".notes-container").find("textarea").css({
     "background": ""
    });
    return false;
