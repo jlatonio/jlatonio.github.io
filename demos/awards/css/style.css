@@ -65,6 +65,11 @@
  /* Safari 6.1+ */
   display: flex;
   flex-wrap: wrap;
+  padding: 10px;
+  background-image: url('../images/acs-awards-paper-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 .column-container-row {
@@ -141,10 +146,10 @@
 
 .store-data {
   padding: 20px;
-  background-image: url('../images/acs-awards-paper-1.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background-color: #fff;
+  -webkit-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
+  box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
 }
 
 .store-save,.store-reset,.store-reset-all, .store-nominate {
