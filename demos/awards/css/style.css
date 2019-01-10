@@ -128,8 +128,7 @@
 }
 
 .store-data-container-inner {
-  border: 7px solid #e2e2e2;
-  border-style: double;
+  margin-bottom: 20px;
 }
 
 .store-data-container h3 {
@@ -142,6 +141,10 @@
 
 .store-data {
   padding: 20px;
+  background-image: url('../images/acs-awards-paper-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 .store-save,.store-reset,.store-reset-all, .store-nominate {
@@ -183,6 +186,10 @@
     margin-bottom: 20px;
   }
 
+  .store-data-container-inner {
+    margin-bottom: 0;
+  }
+    
   .notes-container-column-each {
     padding-left: 70px;
     padding-top: 0;
@@ -216,7 +223,7 @@
 
 @media screen and (min-width: 1025px) {
   .store-data {
-    padding: 40px;
+    padding: 70px;
   }
     
   .column-container-row {
