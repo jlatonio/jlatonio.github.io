@@ -33,11 +33,11 @@ $("input[type='text']").closest(".custom-dropdown-outer").find(".custom-dropdown
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
  return false;
 });
-$("input[type='text']").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function() {
+$("input[type='text'],input[type='numbers']").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function() {
  "use strict";
  $(this).hide();
  $(".modal-select").hide();
- $(this).closest(".custom-dropdown-outer").find("input[type='text']").val("").focus().css({
+ $(this).closest(".custom-dropdown-outer").find("input[type='text'],input[type='numbers']").val("").focusout().css({
   "background": ""
  });
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
@@ -155,7 +155,7 @@ $("input[type='text'],textarea").keypress(function() {
 
 // autofill email
 $(document).ready(function() {
- $("input[type='text']").on("keyup change", function() {
+ $("input[type='text'],input[type='numbers']").on("keyup change", function() {
   var value = $(this).val().toLowerCase();
   var option = $(this).val();
   var item = option
