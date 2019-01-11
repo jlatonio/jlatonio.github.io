@@ -127,7 +127,6 @@
 }
 .ui-menu .ui-menu-item-wrapper {
 	position: relative;
-	padding: 3px 1em 3px .4em;
 }
 .ui-menu .ui-menu-divider {
 	margin: 5px 0;
@@ -898,7 +897,8 @@ body .ui-tooltip {
 }
 .ui-widget.ui-widget-content {
     max-height: 340px;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     -webkit-box-shadow: 0px 1px 1px 0px rgba(4,4,4,0.4);
     -moz-box-shadow: 0px 1px 1px 0px rgba(4,4,4,0.4);
     box-shadow: 0px 1px 1px 0px rgba(4,4,4,0.4);
@@ -1320,6 +1320,7 @@ a.ui-button:active,
 }
 
 /* Custom */
+/* datepicker styles */
 .ui-datepicker-calendar th {
   border-right: 2px solid #fff;
   border-bottom: 1px solid #fff;
@@ -1378,22 +1379,33 @@ a.ui-button:active,
   top: 2px;
 }
 
-.ui-state-active,
-.ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active,
 a.ui-button:active,
 .ui-button:active,
-.ui-button.ui-state-active:hover {
+.ui-button.ui-state-active {
+ padding:14px 20px !important;
+}
+
+/* datepicker active color */
+.ui-widget-content .ui-state-active {
   background: #7593bf;
   color: #fff;
 }
 
+/* dropdown shell styles */
 .ui-menu-item {
   font-size: 14px;
-  padding: 10px 20px;
+  padding:0;
+  margin:0;
   border-bottom: solid 1px #ccc;
   cursor: pointer;
   font-family: "OpenSans-Light";
+}
+
+/* dropdown styles */
+.ui-menu .ui-menu-item-wrapper {
+	padding: 14px 20px;
+    margin:0;
 }
 
 .ui-menu-item:first-child {
