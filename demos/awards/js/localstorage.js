@@ -11,7 +11,7 @@ $(".store-load").on("click", function() {
     "background": "#fff2f2"
    });
    $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
-   $(".modal-load").show();
+   $(".modal-load").fadeIn(300);
   }
   if (option.length > 0) {
    var text = $(".draft-slots").val();
@@ -44,7 +44,7 @@ $(".store-save").on("click", function() {
     "background": "#fff2f2"
    });
    $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
-   $(".modal-save").show();
+   $(".modal-save").fadeIn(300);
   }
   if (option.length > 0) {
    var text = $(".draft-slots").val();
@@ -79,7 +79,7 @@ $(".store-save").on("click", function() {
     "background": "#fff2f2"
    });
    $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
-   $(".modal-alert").show();
+   $(".modal-alert").fadeIn(300);
   }
   if (option2.length > 0) {
    $(this).css({
@@ -149,7 +149,7 @@ $(".store-nominate").click(function() {
    $(this).css({
     "background": "#fff2f2"
    });
-   $(".modal-alert").show();
+   $(".modal-alert").fadeIn(300);
   }
   if (option.length > 0) {
    $("form").removeAttr("action").attr("action", "awards-confirmation.html").submit();
@@ -170,7 +170,7 @@ $(".store-share").click(function() {
    $(this).css({
     "background": "#fff2f2"
    });
-   $(".modal-share").show();
+   $(".modal-share").fadeIn(300);
   }
   if (option.length > 0) {
    var mailto = "mailto:nominate@adobe.com";

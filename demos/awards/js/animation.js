@@ -113,7 +113,7 @@ $(".store-continue").click(function(e) {
    $(this).css({
     "background": "#fff2f2"
    });
-   $(".modal-alert").show();
+   $(".modal-alert").fadeIn(300);
   } else {
    $(this).css({
     "background": ""
