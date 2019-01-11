@@ -1,3 +1,8 @@
+.acs-main-content{
+  min-height:calc(100vh - 210px);
+}
+
+
 .acs-header {
   display: -webkit-flex;
  /* Safari */
@@ -303,7 +308,6 @@
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  min-height: calc(100vh - 455px);
 }
 
 .column-container-notes {
