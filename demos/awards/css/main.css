@@ -303,7 +303,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  min-height: 290px;
+  min-height: calc(100vh - 455px);
 }
 
 .column-container-notes {
