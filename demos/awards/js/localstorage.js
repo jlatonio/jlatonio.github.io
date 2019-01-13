@@ -86,6 +86,9 @@ $(document.body).on('click', ".custom-dropdown-delete", function() {
  if (empty.length === 0) {
   $(".draft-slots").attr("placeholder", "There are no saved files available to load");
  }
+ if (empty.length > 0) {
+  $(".draft-slots").attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
+ }
 });
 
 // saves data on click
