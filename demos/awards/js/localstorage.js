@@ -46,7 +46,7 @@ $(".store-create").on("click", function() {
 });
 
 $(".draft-slots").on("click", function() {
- $(this).attr("placeholder", "Select...").css({
+ $(this).attr("placeholder", "Select or create data to load").css({
   "background": ""
  });
  return false;
@@ -112,9 +112,9 @@ $(".store-save").on("click", function() {
    var value = $(this).closest(".notes-container").find(".store-data").val();
    localStorage.setItem(text, value);
    var value = localStorage.getItem(text);
-   $(this).css({
-    "background": ""
-   });
+   $(this).attr("placeholder", "Select or create data to load").css({
+   "background": ""
+  });
 
    // saves dropdown field
    $(".custom-dropdown-slots").each(function() {
@@ -192,7 +192,7 @@ $(".store-reset-all").on("click", function() {
  $(this).closest(".notes-container").find("textarea").val("");
  $(".custom-dropdown-slots").empty();
  localStorage.clear();
- $(this).closest("form").removeAttr("action").find("input[type=text]").val("").css({
+ $(this).closest("form").removeAttr("action").find("input[type=text]").val("").attr("placeholder", "Select or create data to load").css({
   "background": ""
  });
  $(this).closest("form").find("textarea").val("").css({
