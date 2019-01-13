@@ -386,6 +386,10 @@ input[type=button]:last-child {
   margin: 0;
 }
 
+input::placeholder,textarea::placeholder { 
+  color: #7a7a7a;
+}
+
 textarea {
   margin: 0;
   -webkit-appearance: none;
