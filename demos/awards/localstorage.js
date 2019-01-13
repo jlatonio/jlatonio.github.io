@@ -2,7 +2,7 @@
 $(".notes-btn-each").hide();
 
 // loads draft sessions for the awards page
-$(document.body).on('click', ".custom-dropdown", function() {
+$(".store-load").on("click", function() {
  $(this).closest("form").find(".store-data").each(function() {
   "use strict";
   var option = $(".draft-slots").val();
@@ -28,51 +28,6 @@ $(document.body).on('click', ".custom-dropdown", function() {
  });
 });
 
-// Create a new save file
-$(".store-rename").on("click", function() {
- "use strict";
- $(this).closest("form").find(".draft-slots").focus();
-});
-
-// Create a new save file
-$(".store-create").on("click", function() {
- "use strict";
- $(this).closest("form").find(".draft-slots").val("").focus().attr("placeholder","Name your file").css({
-  "background": "#fff2f2"
- });
- $(this).closest("form").find("textarea").val("").css({
-    "background": ""
- });
-});
-
-$(".draft-slots").on("click", function() {
- $(this).attr("placeholder", "Select...").css({
-  "background": ""
- });
- return false;
-});
-
-// Deletes a save file
-$(document.body).on('click', ".custom-dropdown-delete", function() {
- "use strict";
- $(this).closest("form").removeAttr("action").find("input[type=text]").val("").css({
-  "background": ""
- });
- $(this).closest("form").find("textarea").val("").css({
-  "background": ""
- });
- var text = $(this).closest(".custom-dropdown").text();
- localStorage.removeItem(text);
- $(this).closest(".custom-dropdown").remove();
- $(".custom-dropdown-slots").each(function() {
-  var name = "custom-dropdown"
-  var value = $(this).html();
-  localStorage.setItem(name, value);
-  var value = localStorage.getItem(name);
-  $(this).html(value);
- });
-});
-
 // saves data on click
 $(".store-save").on("click", function() {
  "use strict";
@@ -80,34 +35,18 @@ $(".store-save").on("click", function() {
   "background": ""
  });
 
- // adds to dropdown
- var prepend = "<div class='custom-dropdown'>"
- var append = "<div class='custom-dropdown-delete'></div></div>"
- if ($(".draft-slots").val().length > 0) {
-  $(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
- }
- // removes duplicates
- var seen = {};
- $('.custom-dropdown').each(function() {
-  var txt = $(this).html();
-  if (seen[txt])
-   $(this).remove();
-  else
-   seen[txt] = true;
- });
-
  // saves data. alerts if input is blank. adds focus to empty input area
  $(".draft-slots").each(function() {
   var option = $(".draft-slots").val();
   var option2 = $(".store-data").val();
   if (option.length === 0) {
-  $(this).attr("placeholder", "Name your file").css({
-  "background": "#fff2f2"
-  });
+   $(this).css({
+    "background": "#fff2f2"
+   });
    $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
    $(".modal-save").fadeIn(300);
   }
-  if (option.length > 0 && option2.length > 0) {
+  if (option.length > 0) {
    var text = $(".draft-slots").val();
    var value = $(this).closest(".notes-container").find(".store-data").val();
    localStorage.setItem(text, value);
@@ -115,16 +54,15 @@ $(".store-save").on("click", function() {
    $(this).css({
     "background": ""
    });
-
-   // saves dropdown field
-   $(".custom-dropdown-slots").each(function() {
-    var name = "custom-dropdown"
-    var value = $(this).html();
-    localStorage.setItem(name, value);
-    var value = localStorage.getItem(name);
-    $(this).html(value);
+  }
+   if (option.length > 0 && option2.length > 0) {
+   var text = $(".draft-slots").val();
+   var value = $(this).closest(".notes-container").find(".store-data").val();
+   localStorage.setItem(text, value);
+   var value = localStorage.getItem(text);
+   $(this).css({
+    "background": ""
    });
-
    $(".notes-btn-each").show();
    "use strict";
    $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
@@ -132,7 +70,7 @@ $(".store-save").on("click", function() {
     $(".notes-btn-each").fadeOut();
    }, 1000);
    return false;
-  }
+  } 
  });
  $(".store-data").each(function() {
   var option2 = $(".store-data").val();
@@ -152,19 +90,14 @@ $(".store-save").on("click", function() {
  return false;
 });
 
-// auto load current dropdown field
-$(".custom-dropdown-slots").each(function() {
- var name = "custom-dropdown"
- var value = $(this).html();
- var value = localStorage.getItem(name);
- $(this).html(value);
-});
-
 // resets each field
 $(".store-reset").on("click", function() {
  "use strict";
  $(this).closest("form").find(".custom-select-close").hide();
  $(this).closest("form").find(".custom-select-search").show();
+ $(this).closest(".notes-container").find("textarea").val("");
+ var text = $(this).closest(".notes-container").find(".draft-slots").val();
+ localStorage.removeItem(text);
  $(this).closest("form").removeAttr("action").find("input[type=text]").css({
   "background": ""
  });
@@ -190,9 +123,15 @@ $(".store-reset-all").on("click", function() {
  "use strict";
  $(".custom-select-close").hide();
  $(this).closest(".notes-container").find("textarea").val("");
- $(".custom-dropdown-slots").empty();
- localStorage.clear();
- $(this).closest("form").removeAttr("action").find("input[type=text]").val("").css({
+ var data1 = "Saved Data A";
+ var data2 = "Saved Data B";
+ var data3 = "Saved Data C";
+ var data4 = "Saved Data D";
+ localStorage.removeItem(data1);
+ localStorage.removeItem(data2);
+ localStorage.removeItem(data3);
+ localStorage.removeItem(data4);
+  $(this).closest("form").removeAttr("action").find("input[type=text]").val("").css({
   "background": ""
  });
  $(this).closest("form").find("textarea").val("").css({

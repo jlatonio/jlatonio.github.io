@@ -278,6 +278,29 @@
   opacity: .8;
 }
 
+
+.custom-dropdown-delete {
+  position: absolute;
+  top: 9px;
+  right: 2px;
+  width: 32px;
+  height: 32px;
+  background-image: url('../images/select-close.svg');
+  background-repeat: no-repeat;
+  background-size: 17px auto;
+  background-position: center center;
+  opacity: .4;
+  cursor: pointer;
+}
+.notes-button-container .custom-dropdown{
+  padding: 16px 35px 16px 20px;
+  white-space: normal;
+}
+.custom-dropdown-delete:hover {
+  background-image: url('../images/select-close-white.svg');
+  opacity: 1;
+}
+
 .column-container-select .custom-dropdown-outer {
   margin-bottom: 5px;
 }
@@ -338,7 +361,7 @@
 
 .notes-button-container {
   margin: auto;
-  padding: 10px 20px 20px 20px;
+  padding: 20px;
   height: auto;
 }
 
@@ -473,7 +496,7 @@
   }
 
   .notes-button-container {
-    padding: 30px 40px 40px 40px;
+    padding: 40px;
   }
 
   .acs-footer {

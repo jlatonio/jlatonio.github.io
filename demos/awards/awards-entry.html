@@ -67,6 +67,18 @@
                             <div class="column-container-notes">
                                 <div class="store-data-container-inner box-shadow percent-fixed-280">
                                     <div class="store-data-container">
+                                        <div class="custom-dropdown-outer percent-100">
+                                            <input type="text" class="custom-dropdown-menu draft-slots" placeholder="Select or create data to load"/>
+                                            <div class="custom-dropdown-close"></div>
+                                            <div class="custom-dropdown-open"></div>
+                                            <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+                                            <div class="custom-dropdown-position">
+                                                <div class="custom-dropdown-group">
+                                                    <div class="custom-dropdown-slots">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <textarea class="store-data" placeholder="Write a testimonial about your nominee here. Save your data in case your session times out." name="nominee"></textarea>
                                         <div class="notes-btn-each-container">
                                             <div class="notes-btn-each"></div>
@@ -75,25 +87,9 @@
                                 </div>
                                 <div class="column-2-set fixed-240 box-shadow grey-2-bg">
                                     <div class="notes-button-container">
-                                        <div class="custom-dropdown-outer">
-                                            <label class="primary-color">Select Draft</label>
-                                            <input type="text" class="custom-dropdown-menu draft-slots" placeholder="Select..." readonly />
-                                            <div class="custom-dropdown-close"></div>
-                                            <div class="custom-dropdown-open"></div>
-                                            <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
-                                            <div class="custom-dropdown-position">
-                                                <div class="custom-dropdown-group">
-                                                    <div class="custom-dropdown-scroll">
-                                                        <div class="custom-dropdown">Saved Data A</div>
-                                                        <div class="custom-dropdown">Saved Data B</div>
-                                                        <div class="custom-dropdown">Saved Data C</div>
-                                                        <div class="custom-dropdown">Saved Data D</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <input class="store-create" type="button" value="Create New" />
+                                        <input class="store-rename" type="button" value="Rename" />
                                         <input class="store-save" type="button" value="Save" />
-                                        <input class="store-load" type="button" value="Load" />
                                         <input class="store-reset" type="button" value="Clear" />
                                         <input class="store-reset-all" type="button" value="Reset All" />
                                         <input class="store-nominate" type="button" value="Nominate" />
@@ -208,7 +204,7 @@
 				<div class="modal-save">
 					<div class="modal-content">
 						<span class="modal-close-save">&times;</span>
-						<p>Select a save slot before saving.</p>
+						<p>Create a file name.</p>
 					</div>
 				</div>
 				<div class="modal-load">

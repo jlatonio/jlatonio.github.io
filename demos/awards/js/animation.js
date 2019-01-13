@@ -62,6 +62,34 @@ $("input[type='text']").on("click", function() {
  return false;
 });
 
+// adds the html to the input value for each button clicked (needed for appeneded items)
+$(document.body).on('click', ".custom-dropdown", function() {
+ "use strict";
+ var option = $(this).text();
+ var val = $(this).attr("value");
+ var checkinput = $(this).closest(".custom-dropdown-outer").find("input[type='text']");
+ $(this).closest(".custom-dropdown-outer").find(checkinput).val(option);
+ $(checkinput).attr("value", val);
+
+ // changes the form"s action link on specific choices
+ if ($(this).closest("form").find("input[type='text']").val() === 'Thank You') {
+  $(".custom-dropdown-input").removeAttr("action");
+  $(".custom-dropdown-input").attr("action", "ty-entry.html");
+ } else {
+  $(".custom-dropdown-input").removeAttr("action");
+  $(".custom-dropdown-input").attr("action", "awards-entry.html");
+ }  
+    
+ // sets active state
+ $(this).css("background-color", "#e3e3e3");
+ $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");
+ $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-open");
+ $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideUp(100);
+ $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
+ $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
+ return false;
+});
+
 // adds the html to the input value for each button clicked
 $(".custom-dropdown").on("click", function() {
  "use strict";
@@ -91,7 +119,7 @@ $(".custom-dropdown").on("click", function() {
 });
  
 // hover state
-$(".custom-dropdown-outer").find(".custom-dropdown").on("mouseover click", function() {
+$(document.body).on('mouseover click', ".custom-dropdown", function() {
  "use strict";
  $(this).closest(".custom-dropdown-outer").find(this).siblings().css({
   "background-color": "",
@@ -154,35 +182,35 @@ $("input[type='text'],textarea").keypress(function() {
 });
 
 // autofill email
-$(document).ready(function() {
- $("input[type='text'],input[type='numbers']").on("keyup change", function() {
-  var value = $(this).val().toLowerCase();
-  var option = $(this).val();
-  var item = option
-  if (option.length === 0) {
-   $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
-   $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
-   $(this).closest(".custom-dropdown-outer").find(".custom-select-date").show();
-   $(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
-  }
-  if (option.length > 0) {
-   $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").show();
-   $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
-   $(this).closest(".custom-dropdown-outer").find(".custom-select-date").hide();
-   $(this).closest(".custom-dropdown-outer").find(".custom-select-search").hide();
-  }
-  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown").filter(function() {
-   $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-  });
- });
- return false;
-});
+//$(document).ready(function() {
+// $("input[type='text'],input[type='numbers']").on("keyup change", function() {
+//  var value = $(this).val().toLowerCase();
+//  var option = $(this).val();
+//  var item = option
+//  if (option.length === 0) {
+//   $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
+//   $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+//   $(this).closest(".custom-dropdown-outer").find(".custom-select-date").show();
+//   $(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
+//  }
+//  if (option.length > 0) {
+//   $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").show();
+//   $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
+//   $(this).closest(".custom-dropdown-outer").find(".custom-select-date").hide();
+//   $(this).closest(".custom-dropdown-outer").find(".custom-select-search").hide();
+//  }
+  //$(this).closest(".custom-dropdown-outer").find(".custom-dropdown").filter(function() {
+   //$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+  //});
+// });
+// return false;
+//});
 
 // dropdown menu will block all keystrokes
-$(".custom-dropdown-menu").on("keyup", function() {
- $(this).val("");
- return false;
-});
+//$(".custom-dropdown-menu").on("keyup", function() {
+// $(this).val("");
+// return false;
+//});
 
 // enables the datepicker
 $(".custom-select-date, .custom-date").on("click", function() {

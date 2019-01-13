@@ -184,7 +184,7 @@
 
 @media screen and (min-width: 701px) {
   .store-data-container textarea{
-    height: 100%;
+     
   }  
 
   .column-container-row {
@@ -228,7 +228,7 @@
 
 @media screen and (min-width: 1025px) {
   .store-data {
-    padding: 70px;
+    padding: 40px;
   }
     
   .column-container-row {

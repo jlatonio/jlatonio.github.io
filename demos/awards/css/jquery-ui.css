@@ -1377,7 +1377,7 @@ a.ui-button:active,
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active {
- padding:14px 20px !important;
+ padding:16px 20px !important;
 }
 
 /* datepicker active color */
@@ -1409,7 +1409,7 @@ a.ui-button:active,
 
 /* dropdown styles */
 .ui-menu .ui-menu-item-wrapper {
-	padding: 14px 20px;
+	padding: 16px 20px;
     margin:0;	text-overflow: ellipsis;
 }
 

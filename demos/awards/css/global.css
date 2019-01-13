@@ -364,7 +364,7 @@ input[type=text],input[type=numbers] {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 14px 35px 14px 20px;
+  padding: 16px 35px 16px 20px;
   width: 100%;
   margin: 0;
   border-radius: 0;
@@ -374,7 +374,7 @@ input[type=text],input[type=numbers] {
   box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
 }
 
-.custom-dropdown-menu, .custom-select, .custom-date {
+.custom-dropdown-menu, .custom-select, .custom-date,.combo-dropdown-menu {
   padding: 14px 35px 14px 20px;
   width: 100%;
   display: block;
@@ -573,7 +573,7 @@ input::-webkit-clear-button {
   background-color: #fff;
 }
 
-.custom-dropdown-scroll {
+.custom-dropdown-scroll,.custom-dropdown-slots {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   max-height: 400px;
@@ -587,10 +587,11 @@ input::-webkit-clear-button {
 
 .custom-dropdown {
   font-size: 14px;
-  padding: 14px 20px;
+  padding: 16px 20px;
   background-color: #fff;
   border-top: solid 1px #ccc;
   cursor: pointer;
+  position: relative;
 }
 
 .custom-dropdown:first-child {
