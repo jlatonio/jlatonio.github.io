@@ -583,8 +583,8 @@ input::-webkit-clear-button {
   max-height: 400px;
 }
 
-.custom-dropdown-slots .custom-dropdown:hover:after {
-  content: "– Click to load";
+.custom-dropdown-slots .custom-dropdown:after {
+  content: "";
   position: absolute;
   text-indent: 5px;
   font-family: "OpenSans-SemiboldItalic";
