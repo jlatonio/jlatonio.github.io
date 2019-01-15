@@ -159,14 +159,23 @@
 }
 
 .nomination-entry-header-container {
-  display: none;
   flex-wrap: wrap;
   font-size: 14px;
   padding: 20px;
+  position: relative;
 }
 
-.nomination-entry-header-container {
-  background-color: #333;
+.nomination-entry-header-first {
+  position: relative;
+}
+
+.nomination-entry-header-first:after {
+  position: absolute;
+  content: ",";
+}
+
+.nomination-entry-footer-container {
+  height: 20px;
 }
 
 .nomination-entry-container span {
@@ -175,7 +184,11 @@
 }
 
 .nomination-entry-container:nth-child(1) {
-  border-top: 2px solid #d3d3d3;
+  border-top: 0 solid #d3d3d3;
+}
+
+.nomination-entry-container:last-child {
+  border-bottom: 0 solid #d3d3d3;
 }
 
 .nomination-entry-container:nth-child(even) {
@@ -407,6 +420,10 @@
     flex-direction: row-reverse;
   }
 
+  .nomination-entry-header-first:after {
+    content: "";
+  }
+
   .column-container-select {
     padding-right: 20px;
     margin-top: 0;
@@ -422,10 +439,6 @@
     -webkit-flex-wrap: wrap;
  /* Safari 6.1+ */
     display: flex;
-  }
-
-  .nomination-entry-container:nth-child(1) {
-    border-top: none;
   }
 
   .nomination-entry-details {

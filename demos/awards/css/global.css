@@ -274,11 +274,15 @@ thead {
 }
 
 .border-radius {
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .border-radius-top {
-  border-radius: 15px 15px 0 0;
+  border-radius: 10px 10px 0 0;
+}
+
+.border-radius-bottom {
+  border-radius: 0 0 10px 10px;
 }
 
 .dark-bg {
