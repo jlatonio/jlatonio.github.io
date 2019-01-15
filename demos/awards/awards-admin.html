@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/global.css" />
 		<link rel="stylesheet" href="css/fonts.css" />
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/resizing.css" />
 		<link rel="stylesheet" href="css/jquery-ui.css" />
 		<script src="js/jquery-1.12.4.js"></script>
 		<script src="js/jquery-ui.js"></script>
@@ -24,8 +25,13 @@
 						<p class="regular-text">
 							<span class="acs-header-name">Hello&nbsp;Joseph Latonio</span>
 							<span class="acs-header-separator">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
-							<span><a href="index.html">Home</a></span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-							<span><a href="#">Logout</a></span>
+							<span>
+								<a href="index.html">Home</a>
+							</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+							
+							<span>
+								<a href="#">Logout</a>
+							</span>
 						</p>
 					</div>
 				</div>
@@ -46,7 +52,19 @@
 				<!-- main content -->
 				<div class="column-container-admin">
 					<form class="custom-dropdown-input" method="GET" accept-charset="UTF-8">
-						<div class="column-container-flex box-shadow grey-2-bg">
+						<div class="nomination-totals-container box-shadow grey-2-bg border-radius margin-bottom-20">
+							<div class="nomination-totals-container column-container-totals percent-100">
+								<div class="percent-50">
+									<h3>Total Nominees: 
+										<span class="nomination-total-nominees bold-text secondary-color"></span>
+									</h3>
+								</div>
+								<div class="percent-50">
+									<h3>Total Nominations: 
+										<span class="nomination-total-nominations bold-text secondary-color"></span>
+									</h3>
+								</div>
+							</div>
 							<div class="column-container-select percent-50">
 								<div class="custom-dropdown-outer">
 									<label class="primary-color">Select Award</label>
@@ -88,7 +106,7 @@
 							</div>
 						</div>
 					</form>
-					<div class="nomination-entry-header-container regular-text white-text">
+					<div class="nomination-entry-header-container regular-text white-text border-radius-top">
 						<div class="nomination-entry-header percent-30">
 							<h4>Nominee Details</h4>
 						</div>
@@ -105,49 +123,63 @@
 								<img src="images/portrait_1.jpg" class="nomination-entry-image box-shadow" alt="" />
 							</div>
 							<div class="nomination-entry-details percent-30">
-								<div>Total Nominations: 	
-									<span class="store-nominee-total-nominations">2</span>
+								<div class="store-nominee-total-nominations-container">Total Nominations: 	
+									
+									<span class="store-nominee-total-nominations"></span>
 								</div>
 								<div>Name: 
+									
 									<span class="store-nominee-enter">Rudi Anonymous</span>
 								</div>
 								<div>Job Title: 
+									
 									<span class="store-nominee-job-title">[Job Title]</span>
 								</div>
 								<div>Location: 
+									
 									<span class="store-nominee-location">[Location]</span>
 								</div>
 								<div>Employee ID: 
+									
 									<span class="store-nominee-employee">[Employee ID]</span>
 								</div>
 								<div>Hire Date: 
+									
 									<span class="store-nominee-hire-date">[Hire Date]</span>
 								</div>
 								<div>Email: 
+									
 									<span class="store-nominee-email">[Email]</span>
 								</div>
 								<div>Manager Name: 
+									
 									<span class="store-nominee-manager-name">[Manager Name]</span>
 								</div>
 								<div>Manager Email: 
+									
 									<span class="store-nominee-manager-email">[Manager Email]</span>
 								</div>
 								<div>Geo: 
+									
 									<span class="store-nominee-geo">EMEA</span>
 								</div>
 							</div>
 							<div class="nomination-entry-details nomination-entry-submissions-container percent-fixed-70-120">
 								<div class="nomination-entry-submissions">
 									<div>Submit Date: 
+										
 										<span class="store-nominator-date">[Submit Date]</span>
 									</div>
 									<div>Nominator Name: 
+										
 										<span class="store-nominator-enter">[Nominator Name]</span>
 									</div>
 									<div>Award: 
+										
 										<span class="store-nominator-award">Customer Success Employee of the Quarter</span>
 									</div>
 									<div class="store-nominator-notes-container">Notes:
+										
 										<span class="store-nominator-notes">Rudi is one of the most honest and direct people I have ever met. He makes everyone’s job much easier because he is so easy to work with. He genuinely cares about the Acrobat/Reader product, and does not cut corners when it comes to doing his work.</span>
 									</div>
 									<div class="nomination-entry-share-container bold-italics-text link-color">
@@ -158,15 +190,19 @@
 								</div>
 								<div class="nomination-entry-submissions">
 									<div>Submit Date: 
+										
 										<span class="store-nominator-date">[Submit Date]</span>
 									</div>
 									<div>Nominator Name: 
+										
 										<span class="store-nominator-enter">[Nominator Name]</span>
 									</div>
 									<div>Award: 
+										
 										<span class="store-nominator-award">Customer Success Employee of the Quarter</span>
 									</div>
 									<div class="store-nominator-notes-container">Notes:
+										
 										<span class="store-nominator-notes">Rudi enjoys the challenge of his work, even when it isn’t easy. He also, however, makes it a point to treat everyone with respect. He is one person you can truly trust to offer intelligent, unbiased views and information</span>
 									</div>
 									<div class="nomination-entry-share-container bold-italics-text link-color">
@@ -182,49 +218,63 @@
 								<img src="images/portrait_2.jpg" class="nomination-entry-image box-shadow" alt="" />
 							</div>
 							<div class="nomination-entry-details percent-30">
-								<div>Total Nominations: 	
-									<span class="store-nominee-total-nominations">1</span>
+								<div class="store-nominee-total-nominations-container">Total Nominations: 	
+									
+									<span class="store-nominee-total-nominations"></span>
 								</div>
 								<div>Name: 
+									
 									<span class="store-nominee-enter">Maria Anonymous</span>
 								</div>
 								<div>Job Title: 
+									
 									<span class="store-nominee-job-title">[Job Title]</span>
 								</div>
 								<div>Location: 
+									
 									<span class="store-nominee-location">[Location]</span>
 								</div>
 								<div>Employee ID: 
+									
 									<span class="store-nominee-employee">[Employee ID]</span>
 								</div>
 								<div>Hire Date: 
+									
 									<span class="store-nominee-hire-date">[Hire Date]</span>
 								</div>
 								<div>Email: 
+									
 									<span class="store-nominee-email">[Email]</span>
 								</div>
 								<div>Manager Name: 
+									
 									<span class="store-nominee-manager-name">[Manager Name]</span>
 								</div>
 								<div>Manager Email: 
+									
 									<span class="store-nominee-manager-email">[Manager Email]</span>
 								</div>
 								<div>Geo: 
+									
 									<span class="store-nominee-geo">EMEA</span>
 								</div>
 							</div>
 							<div class="nomination-entry-details nomination-entry-submissions-container percent-fixed-70-120">
 								<div class="nomination-entry-submissions">
 									<div>Submit Date: 
+										
 										<span class="store-nominator-date">[Submit Date]</span>
 									</div>
 									<div>Nominator Name: 
+										
 										<span class="store-nominator-enter">[Nominator Name]</span>
 									</div>
 									<div>Award: 
+										
 										<span class="store-nominator-award">Customer Success Employee of the Quarter</span>
 									</div>
 									<div class="store-nominator-notes-container">Notes:
+										
 										<span class="store-nominator-notes">Maria encourages active engagement and partnership with the community, customers, and partners. She is always willing to help and explain complex technical issues to other on the team and explains them in terms people can easily understand. She has created an inclusive culture where people do their best work and maximize the contributions of the team. Maria is always reminding our teams about the customer and to put the customer first. She is also champion for the mission of our group and promotes collaboration among different groups in many different geos. Under her leadership, my group has seen a tremendous positive cultural shift over the years.</span>
 									</div>
 									<div class="nomination-entry-share-container bold-italics-text link-color">
@@ -240,49 +290,63 @@
 								<img src="images/portrait_3.jpg" class="nomination-entry-image box-shadow" alt="" />
 							</div>
 							<div class="nomination-entry-details percent-30">
-								<div>Total Nominations: 	
-									<span class="store-nominee-total-nominations">1</span>
+								<div class="store-nominee-total-nominations-container">Total Nominations: 	
+									
+									<span class="store-nominee-total-nominations"></span>
 								</div>
 								<div>Name: 
+									
 									<span class="store-nominee-enter">Alex Anonymous</span>
 								</div>
 								<div>Job Title: 
+									
 									<span class="store-nominee-job-title">[Job Title]</span>
 								</div>
 								<div>Location: 
+									
 									<span class="store-nominee-location">[Location]</span>
 								</div>
 								<div>Employee ID: 
+									
 									<span class="store-nominee-employee">[Employee ID]</span>
 								</div>
 								<div>Hire Date: 
+									
 									<span class="store-nominee-hire-date">[Hire Date]</span>
 								</div>
 								<div>Email: 
+									
 									<span class="store-nominee-email">[Email]</span>
 								</div>
 								<div>Manager Name: 
+									
 									<span class="store-nominee-manager-name">[Manager Name]</span>
 								</div>
 								<div>Manager Email: 
+									
 									<span class="store-nominee-manager-email">[Manager Email]</span>
 								</div>
 								<div>Geo: 
+									
 									<span class="store-nominee-geo">EMEA</span>
 								</div>
 							</div>
 							<div class="nomination-entry-details nomination-entry-submissions-container percent-fixed-70-120">
 								<div class="nomination-entry-submissions">
 									<div>Submit Date: 
+										
 										<span class="store-nominator-date">[Submit Date]</span>
 									</div>
 									<div>Nominator Name: 
+										
 										<span class="store-nominator-enter">[Nominator Name]</span>
 									</div>
 									<div>Award: 
+										
 										<span class="store-nominator-award">Customer Success Employee of the Quarter</span>
 									</div>
 									<div class="store-nominator-notes-container">Notes:
+										
 										<span class="store-nominator-notes">You can see in every action Alex takes that he keeps the customer experience in mind. Whether internal stakeholders or our external customers, Alex won’t settle for the status quo and looks for ways to continually drive improvement, and he works tirelessly to find better ways to do things. There was a clear external customer need, and Alex was able to address that issue while also solving a problem his colleagues were having. The original process was manual and resource intensive and Alex was able to ease their burden by devising a "set it and forget it" workflow. At the end of the day, he is concerned with delivering Exceptional experiences to anyone he interacts with.</span>
 									</div>
 									<div class="nomination-entry-share-container bold-italics-text link-color">
@@ -298,49 +362,63 @@
 								<img src="images/portrait_4.jpg" class="nomination-entry-image box-shadow" alt="" />
 							</div>
 							<div class="nomination-entry-details percent-30">
-								<div>Total Nominations: 	
-									<span class="store-nominee-total-nominations">1</span>
+								<div class="store-nominee-total-nominations-container">Total Nominations: 	
+									
+									<span class="store-nominee-total-nominations"></span>
 								</div>
 								<div>Name: 
+									
 									<span class="store-nominee-enter">Rupert Anonymous</span>
 								</div>
 								<div>Job Title: 
+									
 									<span class="store-nominee-job-title">[Job Title]</span>
 								</div>
 								<div>Location: 
+									
 									<span class="store-nominee-location">[Location]</span>
 								</div>
 								<div>Employee ID: 
+									
 									<span class="store-nominee-employee">[Employee ID]</span>
 								</div>
 								<div>Hire Date: 
+									
 									<span class="store-nominee-hire-date">[Hire Date]</span>
 								</div>
 								<div>Email: 
+									
 									<span class="store-nominee-email">[Email]</span>
 								</div>
 								<div>Manager Name: 
+									
 									<span class="store-nominee-manager-name">[Manager Name]</span>
 								</div>
 								<div>Manager Email: 
+									
 									<span class="store-nominee-manager-email">[Manager Email]</span>
 								</div>
 								<div>Geo: 
+									
 									<span class="store-nominee-geo">EMEA</span>
 								</div>
 							</div>
 							<div class="nomination-entry-details nomination-entry-submissions-container percent-fixed-70-120">
 								<div class="nomination-entry-submissions">
 									<div>Submit Date: 
+										
 										<span class="store-nominator-date">[Submit Date]</span>
 									</div>
 									<div>Nominator Name: 
+										
 										<span class="store-nominator-enter">[Nominator Name]</span>
 									</div>
 									<div>Award: 
+										
 										<span class="store-nominator-award">Customer Success Employee of the Quarter</span>
 									</div>
 									<div class="store-nominator-notes-container">Notes:
+										
 										<span class="store-nominator-notes">Rupen has been highly innovative around helping to redesign the Flash player to w ainstorm new ideas to tie in developer services to help Adobe monetize the Flash platform through services.</span>
 									</div>
 									<div class="nomination-entry-share-container bold-italics-text link-color">
@@ -357,7 +435,6 @@
 			<footer class="acs-footer dark-bg small-text">
 				<div>
 					<p>@2019 Adobe Systems Incorporated. All rights reserved.
-						
 						<span class="footer-secondary-color regular-text">
 							<a href="#">Adobe Confidential</a>
 						</span>.
@@ -365,7 +442,6 @@
 				</div>
 				<div>
 					<p>See all 						
-						
 						<span class="footer-secondary-color regular-text">
 							<a href="#">Corporate Policies</a>
 						</span>.
@@ -374,6 +450,7 @@
 				<div>
 					<br />
 					<p>Problems using this form?
+						
 						<span class="footer-secondary-color regular-text">
 							<a href="#">Contact ACS Awards Webmaster</a>
 						</span>

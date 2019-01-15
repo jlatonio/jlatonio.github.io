@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/global.css" />
 		<link rel="stylesheet" href="css/fonts.css" />
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/resizing.css" />
 		<link rel="stylesheet" href="css/jquery-ui.css" />
 		<script src="js/jquery-1.12.4.js"></script>
 		<script src="js/jquery-ui.js"></script>
@@ -45,30 +46,30 @@
 				</div>
 				<!-- main content -->
 				<div class="column-container">
-					<div class="row-set percent-100">
+					<div class="margin-bottom percent-100">
 						<div class="column-container-data primary-color bold-text">
 							<div class="column-container-select percent-25">
 								<p>Nominator: 
-                                    <span class="store-nominator-enter black-text light-text">[First Name, Last Name]</span>
+                                    <span class="column-container-span store-nominator-enter black-text light-text">[First Name, Last Name]</span>
                                 </p>
 							</div>
 							<div class="column-container-select percent-25">
 								<p>Nominee: 
-                                    <span class="store-nominee-enter black-text light-text">[First Name, Last Name]</span>
+                                    <span class="column-container-span store-nominee-enter black-text light-text">[First Name, Last Name]</span>
                                 </p>
                             </div>
 							<div class="column-container-select percent-50">
 								<p>Award: 
-                                    <span class="store-nominator-award black-text light-text">A Special Thank You</span>
+                                    <span class="column-container-span store-nominator-award black-text light-text">A Special Thank You</span>
                                 </p>
 							</div>
 						</div>
                         <form class="notes-container" enctype="text/plain" method="get">
                             <div class="column-container-notes">
                                 <div class="store-data-container-inner box-shadow percent-fixed-280">
-                                    <div class="store-data-container">
+                                    <div class="store-data-container grey-2-bg">
                                         <div class="custom-dropdown-outer percent-100">
-                                            <input type="text" class="custom-dropdown-menu draft-slots" placeholder="Select or create data to load"/>
+                                            <input type="text" class="custom-dropdown-menu draft-slots" />
                                             <div class="custom-dropdown-close"></div>
                                             <div class="custom-dropdown-open"></div>
                                             <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
@@ -79,14 +80,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <textarea class="store-data" placeholder="Write a testimonial about your nominee here. Save your data (optional) in case your session times out." name="nominee"></textarea>
+                                        <textarea class="store-data padding-all" spellcheck="true" placeholder="Write a testimonial about your nominee here. Save your data (optional) in case your session times out." name="nominee"></textarea>
                                         <div class="notes-btn-each-container">
                                             <div class="notes-btn-each"></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="column-2-set fixed-240 box-shadow grey-2-bg">
-                                    <div class="notes-button-container">
+                                <div class="margin-left-0 fixed-240 box-shadow grey-2-bg">
+                                    <div class="notes-button-container padding-all">
                                         <input class="store-create" type="button" value="Create New" />
                                         <input class="store-rename" type="button" value="Rename" />
                                         <input class="store-save" type="button" value="Save" />
@@ -98,9 +99,9 @@
                             </div>
                         </form>
 					</div>
-					<div class="column-container-inner-2 column-container-header box-shadow percent-100 border-design grey-bg">
+					<div class="padding-all column-container-header box-shadow percent-100 border-design grey-bg">
 						<h2 class="primary-color percent-100">Good Nomination Examples</h2>
-						<div class="column-container-row percent-100">
+						<div class="column-container-row margin-bottom-0 percent-100">
 							<div class="notes-container-column-inner percent-50">
 								<div class="notes-container-column-each">
 									<img class="notes-container-column-icon" src="images/acs-awards-genuine.svg" alt="" />
@@ -116,7 +117,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="column-container-row percent-100">
+						<div class="column-container-row margin-bottom-0 percent-100">
 							<div class="notes-container-column-inner percent-50">
 								<div class="notes-container-column-each">
 									<img class="notes-container-column-icon" src="images/acs-awards-exceptional.svg" alt="" />

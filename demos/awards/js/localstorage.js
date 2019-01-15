@@ -1,27 +1,47 @@
 // save icon. hidden by default
 $(".notes-btn-each").hide();
 
+// counts total nominees overall
+$('.nomination-entry-container-outer').each(function(i) {
+ var empty = $(this).find(".nomination-entry-container").length;
+ $(".nomination-total-nominees").eq(i).text(empty);
+});
+
+// counts total nominations overall
+$('.nomination-entry-container-outer').each(function(i) {
+ var empty = $(this).find(".nomination-entry-submissions").length;
+ $(".nomination-total-nominations").eq(i).text(empty);
+});
+
+// counts total nominations per nominee
+$('.nomination-entry-container').each(function(i) {
+ var empty = $(this).find(".nomination-entry-submissions").length;
+ $(".store-nominee-total-nominations").eq(i).text(empty);
+});
+
 // counts added items and updates placeholder on load
-$(function() {
- var empty = $(".custom-dropdown-slots .custom-dropdown");
- if (empty.length === 0) {
-  $(".draft-slots").attr("placeholder", "There are no saved files available to load");
- }
- if (empty.length > 0) {
-  $(".draft-slots").attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
- }
+$('.custom-dropdown-slots').each(function(i) {
+ $(function() {
+  var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
+  if (empty.length === 0) {
+   $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load");
+  }
+  if (empty.length > 0) {
+   $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
+  }
+ });
 });
 
 // loads draft sessions for the awards page
 $(document.body).on('click', ".custom-dropdown", function() {
- $(this).closest("form").find(".store-data").each(function() {
+ $(this).closest(".column-container-notes").find(".store-data").each(function() {
   "use strict";
   var option = $(".draft-slots").val();
   if (option.length === 0) {
    $(this).closest(".notes-container").find(".draft-slots").css({
     "background": "#fff2f2"
    });
-   $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+   $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
    $(".modal-load").fadeIn(300);
   }
   if (option.length > 0) {
@@ -39,19 +59,19 @@ $(document.body).on('click', ".custom-dropdown", function() {
  });
 });
 
-// Create a new save file
+// Rename file
 $(".store-rename").on("click", function() {
  "use strict";
- $(this).closest("form").find(".draft-slots").focus();
+ $(this).closest(".column-container-notes").find(".draft-slots").focus();
 });
 
 // Create a new save file
 $(".store-create").on("click", function() {
  "use strict";
- $(this).closest("form").find(".draft-slots").val("").focus().attr("placeholder", "Name your file").css({
+ $(this).closest(".column-container-notes").find(".draft-slots").val("").focus().attr("placeholder", "Name your file").css({
   "background": "#fff2f2"
  });
- $(this).closest("form").find("textarea").val("").css({
+ $(this).closest(".column-container-notes").find("textarea").val("").css({
   "background": ""
  });
 });
@@ -66,10 +86,10 @@ $(".draft-slots").on("click", function() {
 // Deletes a save file
 $(document.body).on('click', ".custom-dropdown-delete", function() {
  "use strict";
- $(this).closest("form").removeAttr("action").find("input[type=text]").val("").css({
+ $(this).closest(".column-container-notes").removeAttr("action").find("input[type=text]").val("").css({
   "background": ""
  });
- $(this).closest("form").find("textarea").val("").css({
+ $(this).closest(".column-container-notes").find("textarea").val("").css({
   "background": ""
  });
  var text = $(this).closest(".custom-dropdown").text();
@@ -82,19 +102,25 @@ $(document.body).on('click', ".custom-dropdown-delete", function() {
   var value = localStorage.getItem(name);
   $(this).html(value);
  });
- var empty = $(".custom-dropdown-slots .custom-dropdown");
- if (empty.length === 0) {
-  $(".draft-slots").attr("placeholder", "There are no saved files available to load");
- }
- if (empty.length > 0) {
-  $(".draft-slots").attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
- }
+ // counts number of files after every deletion
+ $('.custom-dropdown-slots').each(function(i) {
+  $(function() {
+   var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
+   if (empty.length === 0) {
+    $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load");
+   }
+   if (empty.length > 0) {
+    $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
+   }
+  });
+ });
+
 });
 
 // saves data on click
 $(".store-save").on("click", function() {
  "use strict";
- $(this).closest("form").find(".store-data").css({
+ $(this).closest(".column-container-notes").find(".store-data").css({
   "background": ""
  });
 
@@ -102,7 +128,7 @@ $(".store-save").on("click", function() {
  var prepend = "<div class='custom-dropdown'>"
  var append = "<div class='custom-dropdown-delete'></div></div>"
  if ($(".draft-slots").val().length > 0) {
-  $(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
+  $(this).closest(".column-container-notes").find(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
  }
  // removes duplicates
  var seen = {};
@@ -115,18 +141,18 @@ $(".store-save").on("click", function() {
  });
 
  // saves data. alerts if input is blank. adds focus to empty input area
- $(".draft-slots").each(function() {
-  var option = $(".draft-slots").val();
-  var option2 = $(".store-data").val();
+ $(this).closest(".column-container-notes").find(".draft-slots").each(function() {
+  var option = $(this).closest(".column-container-notes").find(".draft-slots").val();
+  var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
   if (option.length === 0) {
    $(this).attr("placeholder", "Name your file").css({
     "background": "#fff2f2"
    });
-   $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+   $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
    $(".modal-save").fadeIn(300);
   }
   if (option.length > 0 && option2.length > 0) {
-   var text = $(".draft-slots").val();
+   var text = $(this).closest(".column-container-notes").find(".draft-slots").val();
    var value = $(this).closest(".notes-container").find(".store-data").val();
    localStorage.setItem(text, value);
    var value = localStorage.getItem(text);
@@ -135,30 +161,30 @@ $(".store-save").on("click", function() {
    });
 
    // saves dropdown field
-   $(".custom-dropdown-slots").each(function() {
+   $(this).closest(".column-container-notes").find(".custom-dropdown-slots").each(function() {
     var name = "custom-dropdown"
-    var value = $(this).html();
+    var value = $(this).closest(".column-container-notes").find(this).html();
     localStorage.setItem(name, value);
     var value = localStorage.getItem(name);
     $(this).html(value);
    });
 
-   $(".notes-btn-each").show();
+   $(this).closest(".column-container-notes").find(".notes-btn-each").show();
    "use strict";
-   $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
+   $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
    setTimeout(function() {
     $(".notes-btn-each").fadeOut();
    }, 1000);
    return false;
   }
  });
- $(".store-data").each(function() {
-  var option2 = $(".store-data").val();
+ $(this).closest(".store-data").each(function() {
+  var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
   if (option2.length === 0) {
    $(this).css({
     "background": "#fff2f2"
    });
-   $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+   $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
    $(".modal-alert").fadeIn(300);
   }
   if (option2.length > 0) {
@@ -168,12 +194,18 @@ $(".store-save").on("click", function() {
   }
  });
  // counts added items and updates placeholder on save
- $(function() {
-  var empty = $(".custom-dropdown-slots .custom-dropdown");
-  if (empty.length > 0) {
-   $(".draft-slots").attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
-  }
+ $('.custom-dropdown-slots').each(function(i) {
+  $(function() {
+   var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
+   if (empty.length === 0) {
+    $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load");
+   }
+   if (empty.length > 0) {
+    $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
+   }
+  });
  });
+
  return false;
 });
 
@@ -242,33 +274,6 @@ $(".store-nominate").click(function() {
    $(this).css({
     "background": ""
    });
-  }
- });
- return false;
-});
-
-// sends draft to email. alerts if input is blank. adds focus to empty input area
-$(".store-share").click(function() {
- "use strict";
- $("textarea").each(function() {
-  var option = $("textarea").val();
-  if (option.length === 0) {
-   $(this).css({
-    "background": "#fff2f2"
-   });
-   $(".modal-share").fadeIn(300);
-  }
-  if (option.length > 0) {
-   var mailto = "mailto:nominate@adobe.com";
-   var inputs = $("textarea");
-   var bodyStr = "";
-   var nominee = $(".store-nominee-enter").text();
-   var subjectStr = "subject=Thank You " + nominee + "!";
-   var cc = "?" + "cc=nominate@adobe.com,";
-   inputs.each(function(index, value) {
-    bodyStr += value.value;
-   });
-   window.location = mailto + cc + "&" + subjectStr + "&body=" + encodeURIComponent(bodyStr) + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
   }
  });
  return false;

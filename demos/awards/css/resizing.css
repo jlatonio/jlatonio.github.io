@@ -1,0 +1,96 @@
+/* basic margin and padding resizing for mobile */
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.margin-left-0 {
+  margin-left: 0;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.margin-bottom-0:last-child {
+  margin-bottom: 0;
+}
+
+.margin-bottom-20,.margin-bottom-20-mobile {
+  margin-bottom: 20px;
+}
+
+.margin-bottom-20-mobile:last-child {
+  margin-bottom: 0;
+}
+
+.padding-all {
+  padding: 20px;
+}
+
+.padding-bottom {
+  padding-bottom: 20px;
+}
+
+.padding-right {
+  padding-right: 20px;
+}
+
+.padding-top-right {
+  padding-top: 0;
+  padding-right: 0;
+}
+
+@media screen and (min-width: 701px) {
+  .margin-left-0 {
+    margin-left: 20px;
+  }
+
+  .margin-bottom-0 {
+    margin-bottom: 20px;
+  }
+
+  .padding-top-right {
+    padding-top: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .margin-top {
+    margin-top: 40px;
+  }
+
+  .margin-left-0 {
+    margin-left: 40px;
+  }
+
+  .margin-bottom {
+    margin-bottom: 40px;
+  }
+
+  .margin-bottom-0 {
+    margin-bottom: 40px;
+  }
+
+  .margin-bottom-20-mobile {
+    margin-bottom: 0;
+  }
+
+  .padding-all {
+    padding: 40px;
+  }
+
+  .padding-right {
+    padding-right: 40px;
+  }
+
+  .padding-top-right {
+    padding-top: 40px;
+    padding-right: 40px;
+  }
+}

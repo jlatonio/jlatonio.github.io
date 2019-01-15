@@ -66,10 +66,6 @@
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  background-image: url('../images/acs-awards-paper-1.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
 }
 
 .column-container-row {
@@ -79,15 +75,10 @@
  /* Safari 6.1+ */
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 0;
 }
 
 .column-container-header h2 {
   margin-bottom: 40px;
-}
-
-.column-container-row:last-child {
-  margin-bottom: 0;
 }
 
 .notes-container-column-each {
@@ -140,12 +131,11 @@
   margin-bottom: 10px;
 }
 
-.store-data-container textarea{
-    height: 300px;
+.store-data-container textarea {
+  height: 300px;
 }
 
 .store-data {
-  padding: 20px;
   background-color: #fff;
   -webkit-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
   -moz-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
@@ -183,18 +173,13 @@
 }
 
 @media screen and (min-width: 701px) {
-  .store-data-container textarea{
-     
-  }  
-
-  .column-container-row {
-    margin-bottom: 20px;
+  .store-data-container textarea {
   }
 
   .store-data-container-inner {
     margin-bottom: 0;
   }
-    
+
   .notes-container-column-each {
     padding-left: 70px;
     padding-top: 0;
@@ -227,14 +212,6 @@
 }
 
 @media screen and (min-width: 1025px) {
-  .store-data {
-    padding: 40px;
-  }
-    
-  .column-container-row {
-    margin-bottom: 40px;
-  }
-
   .notes-container-column-each {
     padding-left: 100px;
   }
@@ -252,4 +229,3 @@
     padding-left: 20px;
   }
 }
-

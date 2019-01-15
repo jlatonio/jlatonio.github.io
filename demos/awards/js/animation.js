@@ -118,8 +118,22 @@ $(".custom-dropdown").on("click", function() {
  return false;
 });
  
-// hover state
+// hover state (neded for combo dropdown)
 $(document.body).on('mouseover click', ".custom-dropdown", function() {
+ "use strict";
+ $(this).closest(".custom-dropdown-outer").find(this).siblings().css({
+  "background-color": "",
+  "color": ""
+ });
+ $(this).closest(".custom-dropdown-outer").find(this).css({
+  "background-color": "#7593bf",
+  "color": "#fff"
+ });
+ return false;
+});
+
+// hover state
+$(".custom-dropdown").on("mouseover click", function() {
  "use strict";
  $(this).closest(".custom-dropdown-outer").find(this).siblings().css({
   "background-color": "",
@@ -181,7 +195,7 @@ $("input[type='text'],textarea").keypress(function() {
  });
 });
 
-// autofill email
+// autofill fields as user types (static html only) - not needed for now
 //$(document).ready(function() {
 // $("input[type='text'],input[type='numbers']").on("keyup change", function() {
 //  var value = $(this).val().toLowerCase();
@@ -264,26 +278,3 @@ $(".custom-search").on("focus", function() {
  });
  return false;
 });
-
-// clears field if there is only one character submitted
-// $("input[type='text']").on("change", function() {
-//         if($(this).val().length == 0) {
-//         $('.custom-select').closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
-//         $(this).val("");
-//         return false;
-//     } 
-// });
-
-// Validates Email ID. Not needed for now since the user only can only select what is available via dropdown
-// $('.custom-select').on("change", function() {
-//     var txt = $('.custom-select').val();
-//     var resultCount = 0;
-//     $('.custom-select').closest(".custom-dropdown-outer").find(".custom-dropdown").each(function() {
-//         if ($(this).text().toUpperCase().indexOf(txt.toUpperCase()) != -1) {
-//             resultCount++;
-//         }
-//     });
-//     if (resultCount == 0) {
-//         $('.modal-ineligible').show();
-//     }
-// });

@@ -273,8 +273,20 @@ thead {
   border-bottom: solid 5px #f1675a;
 }
 
+.border-radius {
+  border-radius: 15px;
+}
+
+.border-radius-top {
+  border-radius: 15px 15px 0 0;
+}
+
 .dark-bg {
   background-color: #333;
+}
+
+.dark-2-bg {
+  background-color: #a3a3a3;
 }
 
 .grey-bg {
@@ -591,7 +603,7 @@ input::-webkit-clear-button {
 }
 
 .custom-dropdown-outer, .custom-select-outer {
-  margin: 10px 0 20px 0;
+  margin: 16px 0 20px 0;
   position: relative;
   height: auto;
 }
