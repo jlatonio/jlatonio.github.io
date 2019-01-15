@@ -195,36 +195,24 @@ $("input[type='text'],textarea").keypress(function() {
  });
 });
 
-// autofill fields as user types (static html only) - not needed for now
-//$(document).ready(function() {
-// $("input[type='text'],input[type='numbers']").on("keyup change", function() {
-//  var value = $(this).val().toLowerCase();
-//  var option = $(this).val();
-//  var item = option
-//  if (option.length === 0) {
-//   $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
-//   $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
-//   $(this).closest(".custom-dropdown-outer").find(".custom-select-date").show();
-//   $(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
-//  }
-//  if (option.length > 0) {
-//   $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").show();
-//   $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
-//   $(this).closest(".custom-dropdown-outer").find(".custom-select-date").hide();
-//   $(this).closest(".custom-dropdown-outer").find(".custom-select-search").hide();
-//  }
-  //$(this).closest(".custom-dropdown-outer").find(".custom-dropdown").filter(function() {
-   //$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-  //});
-// });
-// return false;
-//});
-
-// dropdown menu will block all keystrokes
-//$(".custom-dropdown-menu").on("keyup", function() {
-// $(this).val("");
-// return false;
-//});
+// autofill fields as user types. static html only
+$(document).ready(function() {
+ $("input[type='text'],input[type='numbers']").on("keyup change", function() {
+  var option = $(this).val();
+  var item = option
+  if (option.length === 0) {
+   $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+   $(this).closest(".custom-dropdown-outer").find(".custom-select-date").show();
+   $(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
+  }
+  if (option.length > 0) {
+   $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
+   $(this).closest(".custom-dropdown-outer").find(".custom-select-date").hide();
+   $(this).closest(".custom-dropdown-outer").find(".custom-select-search").hide();
+  }
+  });
+  return false;
+});
 
 // enables the datepicker
 $(".custom-select-date, .custom-date").on("click", function() {
