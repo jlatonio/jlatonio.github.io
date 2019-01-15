@@ -14,7 +14,7 @@ $(document).ready(function() {
   $(this).prop('Counter', 0).delay(750).animate({
    Counter: $(".nomination-entry-container-outer").find(".nomination-entry-submissions").length
   }, {
-   duration: 500,
+   duration: 750,
    easing: 'swing',
    step: function(now) {
     $(this).text(Math.ceil(now));
@@ -33,7 +33,7 @@ $(document).ready(function() {
   $(this).prop('Counter', 0).delay(750).animate({
    Counter: $(".nomination-entry-container-outer").find(".nomination-entry-container").length
   }, {
-   duration: 500,
+   duration: 750,
    easing: 'swing',
    step: function(now) {
     $(this).text(Math.ceil(now));
