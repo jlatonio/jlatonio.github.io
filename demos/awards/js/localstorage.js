@@ -92,6 +92,7 @@ $(document.body).on('click', ".custom-dropdown-delete", function() {
  $(this).closest(".column-container-notes").find("textarea").val("").css({
   "background": ""
  });
+ // updates dropdown and saves it
  var text = $(this).closest(".custom-dropdown").text();
  localStorage.removeItem(text);
  $(this).closest(".custom-dropdown").remove();
@@ -130,6 +131,7 @@ $(".store-save").on("click", function() {
  if ($(".draft-slots").val().length > 0) {
   $(this).closest(".column-container-notes").find(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
  }
+    
  // removes duplicates
  var seen = {};
  $('.custom-dropdown').each(function() {
@@ -160,7 +162,7 @@ $(".store-save").on("click", function() {
     "background": ""
    });
 
-   // saves dropdown field
+   // saves updated dropdown field
    $(this).closest(".column-container-notes").find(".custom-dropdown-slots").each(function() {
     var name = "custom-dropdown"
     var value = $(this).closest(".column-container-notes").find(this).html();
@@ -168,7 +170,8 @@ $(".store-save").on("click", function() {
     var value = localStorage.getItem(name);
     $(this).html(value);
    });
-
+      
+   // save animation will animate if save is working
    $(this).closest(".column-container-notes").find(".notes-btn-each").show();
    "use strict";
    $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
@@ -178,6 +181,8 @@ $(".store-save").on("click", function() {
    return false;
   }
  });
+    
+ // alerts if form is not complete
  $(this).closest(".store-data").each(function() {
   var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
   if (option2.length === 0) {
@@ -193,6 +198,7 @@ $(".store-save").on("click", function() {
    });
   }
  });
+    
  // counts added items and updates placeholder on save
  $('.custom-dropdown-slots').each(function(i) {
   $(function() {
@@ -205,7 +211,6 @@ $(".store-save").on("click", function() {
    }
   });
  });
-
  return false;
 });
 
@@ -231,7 +236,7 @@ $(".store-reset").on("click", function() {
  $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
 });
 
-// static clear, no effect on saved data
+// static clear, no effect on saved data, for index page
 $(".store-clear").on("click", function() {
  "use strict";
  $(this).closest("form").find(".custom-select-close").hide();
@@ -242,7 +247,7 @@ $(".store-clear").on("click", function() {
  });
 });
 
-// resets all fields
+// resets all fields. removes all local storage data
 $(".store-reset-all").on("click", function() {
  "use strict";
  $(".custom-select-close").hide();
