@@ -28,9 +28,9 @@
       }
     </style>
     <radialGradient id="radial-gradient" cx="56.1" cy="55.1" r="51.25" gradientUnits="userSpaceOnUse">
-      <stop offset="0.53" stop-color="#fce07d"/>
-      <stop offset="0.89" stop-color="#fce07d"/>
-      <stop offset="0.94" stop-color="#fce07d"/>
+      <stop offset="0.53" stop-color="#fce041"/>
+      <stop offset="0.89" stop-color="#fce041"/>
+      <stop offset="0.94" stop-color="#fce041"/>
     </radialGradient>
   </defs>
   <title>acs-awards-innovation</title>
