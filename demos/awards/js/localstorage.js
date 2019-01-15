@@ -1,23 +1,49 @@
 // save icon. hidden by default
 $(".notes-btn-each").hide();
 
-// counts total nominees overall
-$('.nomination-entry-container-outer').each(function(i) {
- var empty = $(this).find(".nomination-entry-container").length;
- $(".nomination-total-nominees").eq(i).text(empty);
-});
-
-// counts total nominations overall
-$('.nomination-entry-container-outer').each(function(i) {
- var empty = $(this).find(".nomination-entry-submissions").length;
- $(".nomination-total-nominations").eq(i).text(empty);
-});
-
 // counts total nominations per nominee
 $('.nomination-entry-container').each(function(i) {
  var empty = $(this).find(".nomination-entry-submissions").length;
  $(".store-nominee-total-nominations").eq(i).text(empty);
 });
+
+// counts animates total nominations overall
+$('.nomination-total-nominations').each(function () {
+    $(this).prop('Counter',0).delay(750).animate({
+        Counter: $(".nomination-entry-container-outer").find(".nomination-entry-submissions").length
+    }, {
+        duration: 500,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+
+// counts total nominations overall (no animation)
+//$('.nomination-entry-container-outer').each(function(i) {
+// var empty = $(this).find(".nomination-entry-submissions").length;
+// $(".nomination-total-nominations").eq(i).text(empty);
+//});
+
+// counts and animates total nominees overall
+$('.nomination-total-nominees').each(function () {
+    $(this).prop('Counter',0).delay(750).animate({
+        Counter: $(".nomination-entry-container-outer").find(".nomination-entry-container").length
+    }, {
+        duration: 500,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+
+// counts total nominees overall (no animation)
+//$('.nomination-entry-container-outer').each(function(i) {
+// var empty = $(this).find(".nomination-entry-container").length;
+// $(".nomination-total-nominees").eq(i).text(empty);
+//});
 
 // counts added items and updates placeholder on load
 $('.custom-dropdown-slots').each(function(i) {
