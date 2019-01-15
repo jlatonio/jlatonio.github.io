@@ -165,13 +165,16 @@
   position: relative;
 }
 
-.nomination-entry-header-first {
+.nomination-entry-header h4, .nomination-entry-header-second h4{
   position: relative;
 }
 
-.nomination-entry-header-first:after {
-  position: absolute;
-  content: ",";
+.nomination-entry-header-first h4:after {
+  content: ", Submissions";
+}
+
+.nomination-entry-header-second h4:before {
+  content: ""
 }
 
 .nomination-entry-footer-container {
@@ -420,10 +423,14 @@
     flex-direction: row-reverse;
   }
 
-  .nomination-entry-header-first:after {
+  .nomination-entry-header-first h4:after {
     content: "";
   }
 
+  .nomination-entry-header-second h4:before {
+    content: "Submissions "
+  }
+    
   .column-container-select {
     padding-right: 20px;
     margin-top: 0;
