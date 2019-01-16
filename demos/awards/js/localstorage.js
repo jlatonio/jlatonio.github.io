@@ -32,8 +32,8 @@ $(document).ready(function() {
    $(this).prop('Counter', 0).delay(750).animate({
     Counter: option.length
    }, {
-    duration: 750,
-    easing: 'swing',
+    duration: 1500,
+    easing: 'easeOutQuint',
     step: function(now) {
      $(this).text(Math.ceil(now));
     }
@@ -48,8 +48,8 @@ $(document).ready(function() {
    $(this).prop('Counter', 0).delay(750).animate({
     Counter: option.length
    }, {
-    duration: 750,
-    easing: 'swing',
+    duration: 1500,
+    easing: 'easeOutQuint',
     step: function(now) {
      $(this).text(Math.ceil(now));
     }
