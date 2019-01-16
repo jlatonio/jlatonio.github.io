@@ -99,7 +99,7 @@ $('.custom-dropdown-slots').each(function(i) {
 $(document.body).on('click', ".custom-dropdown", function() {
  "use strict";
  $(this).closest(".column-container-notes").find(".store-data").each(function() {
-  var option = $(".draft-slots").val();
+  var option = $(".draft-slots").val() + " - #!#"; // used to make the local storage key unique
   if (option.length === 0) {
    $(this).closest(".notes-container").find(".draft-slots").css({
     "background": "#fff2f2"
@@ -108,7 +108,7 @@ $(document.body).on('click', ".custom-dropdown", function() {
    $(".modal-load").fadeIn(300);
   }
   if (option.length > 0) {
-   var text = $(".draft-slots").val();
+   var text = $(".draft-slots").val() + " - #!#"; // used to make the local storage key unique
    var value = localStorage.getItem(text);
    $(this).val(value);
    $(this).closest(".notes-container").find("input[type=text]").css({
@@ -310,13 +310,17 @@ $(".store-clear").on("click", function() {
  });
 });
 
-// resets all fields. removes all local storage data
+// resets all fields. removes all local storage data from menu only, not entire web storage
 $(".store-reset-all").on("click", function() {
  "use strict";
+ $('.custom-dropdown').each(function () {
+  var text = $(this).text() + " - #!#"; // used to make the local storage key unique
+  localStorage.removeItem(text);
+  localStorage.removeItem("custom-dropdown");
+ }); 
  $(".custom-select-close").hide();
  $(this).closest(".notes-container").find("textarea").val("");
  $(".custom-dropdown-slots").empty();
- localStorage.clear();
  $(this).closest("form").removeAttr("action").find("input[type=text]").val("").attr("placeholder", "There are no saved files available to load").css({
   "background": ""
  });
@@ -345,19 +349,6 @@ $(".store-nominate").click(function() {
   }
  });
  return false;
-});
-
-// needed for confirmation page, to clear local storage session when complete
-$(".store-complete-container").hide();
-$(".store-complete").on("click", function() {
- $(".store-data").each(function() {
-  var text = "store-data"
-  localStorage.removeItem(text);
- });
- $(".store-data").each(function() {
-  var text = "store-data"
-  localStorage.removeItem(text);
- });
 });
 
 // mailto from the dashboard (from a div, not values from a textarea)
