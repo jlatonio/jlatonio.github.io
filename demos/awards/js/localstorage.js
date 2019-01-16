@@ -156,7 +156,7 @@ $(document.body).on('click', ".custom-dropdown-delete", function() {
   "background": ""
  });
  // updates dropdown and saves it
- var text = $(this).closest(".custom-dropdown").text();
+ var text = $(this).closest(".custom-dropdown").text() + " - #!#"; // used to make the local storage key unique
  localStorage.removeItem(text);
  $(this).closest(".custom-dropdown").remove();
  $(".custom-dropdown-slots").each(function() {
@@ -217,7 +217,7 @@ $(".store-save").on("click", function() {
    $(".modal-save").fadeIn(300);
   }
   if (option.length > 0 && option2.length > 0) {
-   var text = $(this).closest(".column-container-notes").find(".draft-slots").val();
+   var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - #!#"; // used to make the local storage key unique
    var value = $(this).closest(".notes-container").find(".store-data").val();
    localStorage.setItem(text, value);
    var value = localStorage.getItem(text);
@@ -246,8 +246,8 @@ $(".store-save").on("click", function() {
  });
 
  // alerts if form is not complete
- $(this).closest(".store-data").each(function() {
-  var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
+ $(".store-data").each(function() {
+  var option2 = $(this).val();
   if (option2.length === 0) {
    $(this).css({
     "background": "#fff2f2"
