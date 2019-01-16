@@ -28,7 +28,7 @@ $(document).ready(function() {
  // counts and animates total nominations overall
  $('.nomination-total-nominations').each(function () {
   var option = $(this).closest("form").find(".nomination-entry-submissions");
-  if (option.length > 0) {
+  if (option.length < 9) {
    $(this).prop('Counter', 0).delay(750).animate({
     Counter: option.length
    }, {
@@ -39,11 +39,11 @@ $(document).ready(function() {
     }
    });
   }
-  if (option.length > 9) {
+  else {
    $(this).prop('Counter', 0).delay(750).animate({
     Counter: option.length
    }, {
-    duration: 3000,
+    duration: 5000,
     easing: 'easeOutQuint',
     step: function(now) {
      $(this).text(Math.ceil(now));
@@ -55,7 +55,7 @@ $(document).ready(function() {
  // counts and animates total nominees overall
  $('.nomination-total-nominees').each(function () {
   var option = $(this).closest("form").find(".nomination-entry-container");
-  if (option.length > 0) {
+  if (option.length < 9) {
    $(this).prop('Counter', 0).delay(750).animate({
     Counter: option.length
    }, {
@@ -66,11 +66,11 @@ $(document).ready(function() {
     }
    });
   }
-  if (option.length > 9) {
+  else {
    $(this).prop('Counter', 0).delay(750).animate({
     Counter: option.length
    }, {
-    duration: 3000,
+    duration: 5000,
     easing: 'easeOutQuint',
     step: function(now) {
      $(this).text(Math.ceil(now));
