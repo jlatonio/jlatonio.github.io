@@ -255,6 +255,16 @@
   flex-wrap: wrap;
 }
 
+.nomination-totals-container-inner {
+  padding: 15px 0 20px 0;
+  display: -webkit-flex;
+ /* Safari */
+  -webkit-flex-wrap: wrap;
+ /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .nomination-entry-share-container {
   text-align: right;
 }
