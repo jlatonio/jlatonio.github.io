@@ -57,7 +57,7 @@ $("body").on("click", function() {
   $(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-open");
  }
 });
-$("input[type='text']").on("click", function() {
+$("input[type='text'],input[type='numbers']").on("click", function() {
  $(".custom-dropdown-close").trigger("click");
  return false;
 });
