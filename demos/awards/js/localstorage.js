@@ -32,7 +32,7 @@ $(document).ready(function() {
    $(this).prop('Counter', 0).delay(750).animate({
     Counter: option.length
    }, {
-    duration: 1500,
+    duration: 2000,
     easing: 'easeOutQuint',
     step: function(now) {
      $(this).text(Math.ceil(now));
@@ -48,7 +48,7 @@ $(document).ready(function() {
    $(this).prop('Counter', 0).delay(750).animate({
     Counter: option.length
    }, {
-    duration: 1500,
+    duration: 2000,
     easing: 'easeOutQuint',
     step: function(now) {
      $(this).text(Math.ceil(now));
