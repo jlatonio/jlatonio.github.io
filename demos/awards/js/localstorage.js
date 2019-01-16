@@ -39,6 +39,17 @@ $(document).ready(function() {
     }
    });
   }
+  if (option.length > 9) {
+   $(this).prop('Counter', 0).delay(750).animate({
+    Counter: option.length
+   }, {
+    duration: 3000,
+    easing: 'easeOutQuint',
+    step: function(now) {
+     $(this).text(Math.ceil(now));
+    }
+   });
+  }
  });
 
  // counts and animates total nominees overall
@@ -49,6 +60,17 @@ $(document).ready(function() {
     Counter: option.length
    }, {
     duration: 2000,
+    easing: 'easeOutQuint',
+    step: function(now) {
+     $(this).text(Math.ceil(now));
+    }
+   });
+  }
+  if (option.length > 9) {
+   $(this).prop('Counter', 0).delay(750).animate({
+    Counter: option.length
+   }, {
+    duration: 3000,
     easing: 'easeOutQuint',
     step: function(now) {
      $(this).text(Math.ceil(now));
