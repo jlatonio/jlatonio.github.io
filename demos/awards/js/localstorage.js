@@ -10,14 +10,14 @@ $(document).ready(function() {
  //});
 
 // counts and animates total total nominations per nominee
- $('.store-nominee-total-nominations').each(function () {
+ $(".store-nominee-total-nominations").each(function () {
   var option = $(this).closest(".nomination-entry-container").find(".nomination-entry-submissions");
   if (option.length > 0) {
-   $(this).prop('Counter', 0).delay(250).animate({
+   $(this).prop("Counter", 0).delay(250).animate({
     Counter: option.length
    }, {
     duration: 250,
-    easing: 'swing',
+    easing: "easeOutQuint",
     step: function(now) {
      $(this).text(Math.ceil(now));
     }
@@ -26,25 +26,25 @@ $(document).ready(function() {
  });
     
  // counts and animates total nominations overall
- $('.nomination-total-nominations').each(function () {
+ $(".nomination-total-nominations").each(function () {
   var option = $(this).closest("form").find(".nomination-entry-submissions");
   if (option.length < 9) {
-   $(this).prop('Counter', 0).delay(750).animate({
+   $(this).prop("Counter", 0).delay(750).animate({
     Counter: option.length
    }, {
     duration: 2000,
-    easing: 'easeOutQuint',
+    easing: "easeOutQuint",
     step: function(now) {
      $(this).text(Math.ceil(now));
     }
    });
   }
   else {
-   $(this).prop('Counter', 0).delay(750).animate({
+   $(this).prop("Counter", 0).delay(750).animate({
     Counter: option.length
    }, {
     duration: 5000,
-    easing: 'easeOutQuint',
+    easing: "easeOutQuint",
     step: function(now) {
      $(this).text(Math.ceil(now));
     }
@@ -53,14 +53,14 @@ $(document).ready(function() {
  });
 
  // counts and animates total nominees overall
- $('.nomination-total-nominees').each(function () {
+ $(".nomination-total-nominees").each(function () {
   var option = $(this).closest("form").find(".nomination-entry-container");
   if (option.length < 9) {
-   $(this).prop('Counter', 0).delay(750).animate({
+   $(this).prop("Counter", 0).delay(750).animate({
     Counter: option.length
    }, {
     duration: 2000,
-    easing: 'easeOutQuint',
+    easing: "easeOutQuint",
     step: function(now) {
      $(this).text(Math.ceil(now));
     }
@@ -71,7 +71,7 @@ $(document).ready(function() {
     Counter: option.length
    }, {
     duration: 5000,
-    easing: 'easeOutQuint',
+    easing: "easeOutQuint",
     step: function(now) {
      $(this).text(Math.ceil(now));
     }
@@ -82,7 +82,7 @@ $(document).ready(function() {
 });
 
 // counts added items and updates placeholder on load
-$('.custom-dropdown-slots').each(function(i) {
+$(".custom-dropdown-slots").each(function(i) {
  "use strict";
  $(function() {
   var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
@@ -96,7 +96,7 @@ $('.custom-dropdown-slots').each(function(i) {
 });
 
 // loads draft sessions for the awards page
-$(document.body).on('click', ".custom-dropdown", function() {
+$(document.body).on("click", ".custom-dropdown", function () {
  "use strict";
  $(this).closest(".column-container-notes").find(".store-data").each(function() {
   var option = $(".draft-slots").val() + " - #!#"; // used to make the local storage key unique
@@ -123,13 +123,13 @@ $(document.body).on('click', ".custom-dropdown", function() {
 });
 
 // Rename file
-$(".store-rename").on("click", function() {
+$(".store-rename").on("click", function () {
  "use strict";
  $(this).closest(".column-container-notes").find(".draft-slots").focus();
 });
 
 // Create a new save file
-$(".store-create").on("click", function() {
+$(".store-create").on("click", function () {
  "use strict";
  $(this).closest(".column-container-notes").find(".draft-slots").val("").focus().attr("placeholder", "Name your file").css({
   "background": "#fff2f2"
@@ -139,7 +139,7 @@ $(".store-create").on("click", function() {
  });
 });
 
-$(".draft-slots").on("click", function() {
+$(".draft-slots").on("click", function () {
  $(this).css({
   "background": ""
  });
@@ -147,7 +147,7 @@ $(".draft-slots").on("click", function() {
 });
 
 // Deletes a save file
-$(document.body).on('click', ".custom-dropdown-delete", function() {
+$(document.body).on("click", ".custom-dropdown-delete", function () {
  "use strict";
  $(this).closest(".column-container-notes").removeAttr("action").find("input[type=text]").val("").css({
   "background": ""
@@ -167,7 +167,7 @@ $(document.body).on('click', ".custom-dropdown-delete", function() {
   $(this).html(value);
  });
  // counts number of files after every deletion
- $('.custom-dropdown-slots').each(function(i) {
+ $(".custom-dropdown-slots").each(function(i) {
   $(function() {
    var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
    if (empty.length === 0) {
@@ -182,7 +182,7 @@ $(document.body).on('click', ".custom-dropdown-delete", function() {
 });
 
 // saves data on click
-$(".store-save").on("click", function() {
+$(".store-save").on("click", function () {
  "use strict";
  $(this).closest(".column-container-notes").find(".store-data").css({
   "background": ""
@@ -197,7 +197,7 @@ $(".store-save").on("click", function() {
 
  // removes duplicates
  var seen = {};
- $('.custom-dropdown').each(function() {
+ $(".custom-dropdown").each(function() {
   var txt = $(this).html();
   if (seen[txt])
    $(this).remove();
@@ -263,7 +263,7 @@ $(".store-save").on("click", function() {
  });
 
  // counts added items and updates placeholder on save
- $('.custom-dropdown-slots').each(function(i) {
+ $(".custom-dropdown-slots").each(function(i) {
   $(function() {
    var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
    if (empty.length === 0) {
@@ -286,7 +286,7 @@ $(".custom-dropdown-slots").each(function() {
 });
 
 // resets each field
-$(".store-reset").on("click", function() {
+$(".store-reset").on("click", function () {
  "use strict";
  $(this).closest("form").find(".custom-select-close").hide();
  $(this).closest("form").find(".custom-select-search").show();
@@ -300,7 +300,7 @@ $(".store-reset").on("click", function() {
 });
 
 // static clear, no effect on saved data, for index page
-$(".store-clear").on("click", function() {
+$(".store-clear").on("click", function () {
  "use strict";
  $(this).closest("form").find(".custom-select-close").hide();
  $(this).closest("form").find(".custom-select-search").show();
@@ -311,9 +311,9 @@ $(".store-clear").on("click", function() {
 });
 
 // resets all fields. removes all local storage data from menu only, not entire web storage
-$(".store-reset-all").on("click", function() {
+$(".store-reset-all").on("click", function () {
  "use strict";
- $('.custom-dropdown').each(function () {
+ $(".custom-dropdown").each(function () {
   var text = $(this).text() + " - #!#"; // used to make the local storage key unique
   localStorage.removeItem(text);
   localStorage.removeItem("custom-dropdown");
