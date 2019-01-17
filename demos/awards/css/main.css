@@ -256,7 +256,7 @@
 }
 
 .nomination-totals-container-inner {
-  padding: 20px 0 30px 0;
+  padding: 10px 0 20px 0;
   display: -webkit-flex;
  /* Safari */
   -webkit-flex-wrap: wrap;
@@ -488,5 +488,9 @@
 
   .acs-header {
     padding: 20px 100px;
+  }
+    
+  .nomination-totals-container-inner {
+    padding: 20px 0 30px 0;
   }
 }
