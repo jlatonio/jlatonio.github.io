@@ -1,7 +1,7 @@
 // save icon. hidden by default
 $(".notes-btn-each").hide();
 
-$(window).load(function(){
+$(window).on("load", function() {
  "use strict";
  // counts total nominations per nominee without animation
  //$('.nomination-entry-container').each(function(i) {
