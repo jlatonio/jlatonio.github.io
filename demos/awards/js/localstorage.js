@@ -280,7 +280,8 @@ $(".store-save").on("click", function () {
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
         }
         if (option2.length > 0) {
-            $(this).attr("placeholder", "Write a testimonial about your nominee here. Save your data (optional) in case your session times out.").css({
+            var old_place_holder = $("textarea").attr("data-placeholder");
+            $(this).attr("placeholder", old_place_holder).css({
                 "background": ""
             });
         }
@@ -315,7 +316,8 @@ $(".store-reset").on("click", function () {
     $(this).closest("form").removeAttr("action").find("input[type=text]").css({
         "background": ""
     });
-    $(this).closest("form").find("textarea").attr("placeholder", "Write a testimonial about your nominee here. Save your data (optional) in case your session times out.").val("").focus().css({
+    var old_place_holder = $("textarea").attr("data-placeholder");
+    $(this).closest("form").find("textarea").attr("placeholder", old_place_holder).val("").focus().css({
         "background": ""
     });
     $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
@@ -348,7 +350,8 @@ $(".store-reset-all").on("click", function () {
     $(this).closest("form").removeAttr("action").find("input[type=text]").val("").attr("placeholder", "There are no saved files available to load.").css({
         "background": ""
     });
-    $(this).closest("form").find("textarea").attr("placeholder", "Write a testimonial about your nominee here. Save your data (optional) in case your session times out.").val("").css({
+    var old_place_holder = $("textarea").attr("data-placeholder");
+    $(this).closest("form").find("textarea").attr("placeholder", old_place_holder).val("").css({
         "background": ""
     });
     $(this).closest("form").find("textarea").val("").css({
@@ -377,12 +380,12 @@ $(".store-nominate").click(function () {
     return false;
 });
 
-// mailto from the dashboard (from a div, not values from a textarea)
+// mailto from the dashboard (from a div, not values from a textarea). 
 $(".nomination-entry-share").click(function () {
     "use strict";
     $(this).closest(".nomination-entry-submissions").find(".store-nominator-notes").each(function () {
         var mailto = "mailto:nominate@adobe.com";
-        var bodyStr = $(this).html().replace(/\<br>*/ig, "%0D%0A").replace(/\<p>*/ig, "").replace(/\<\/p\>*/ig, "%0D%0A%0D%0A");
+        var bodyStr = $(this).html().replace(/\<br>*/ig, "%0D%0A").replace(/\<p>*/ig, "").replace(/\<\/p\>*/ig, "%0D%0A%0D%0A"); //Needs to honor line breaks in body
         var nominee = $(this).closest(".nomination-entry-container").find(".store-nominee-enter").html();
         var award = $(this).closest(".nomination-entry-container").find(".store-nominator-award").html();
         var subjectStr = "subject=Thank You " + nominee + "!" + " - " + award;
