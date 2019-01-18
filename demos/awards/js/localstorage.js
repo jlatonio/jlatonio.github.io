@@ -1,377 +1,405 @@
 // save icon. hidden by default
 $(".notes-btn-each").hide();
 
+// when screen loads, it focuses out of any input field which triggers the counter event. It can be re-triggerd again like so. The idea for this is to refresh the counter every time the user filters data from the menu
 $(window).on("load", function () {
- "use strict";
- // counts total nominations per nominee without animation
- //$('.nomination-entry-container').each(function (i) {
-  //var empty = $(this).find(".nomination-entry-submissions").length;
-  //$(".store-nominee-total-nominations").eq(i).text(empty);
- //});
+    "use strict";
+    $("input[type='text']").trigger("blur");
+});
 
-// counts and animates total total nominations per nominee
- $(".store-nominee-total-nominations").each(function () {
-  var option = $(this).closest(".nomination-entry-container").find(".nomination-entry-submissions");
-  if (option.length > 0) {
-   $(this).prop("Counter", 0).delay(250).animate({
-    Counter: option.length
-   }, {
-    duration: 250,
-    easing: "easeOutQuint",
-    step: function (now) {
-     $(this).text(Math.ceil(now));
-    }
-   });
-  }
- });
-    
- // counts and animates total nominations overall
- $(".nomination-total-nominations").each(function () {
-  var option = $(this).closest("form").find(".nomination-entry-submissions");
-  if (option.length < 9) {
-   $(this).prop("Counter", 0).delay(750).animate({
-    Counter: option.length
-   }, {
-    duration: 2000,
-    easing: "easeOutQuint",
-    step: function (now) {
-     $(this).text(Math.ceil(now));
-    }
-   });
-  } else {
-   $(this).prop("Counter", 0).delay(750).animate({
-    Counter: option.length
-   }, {
-    duration: 5000,
-    easing: "easeOutQuint",
-    step: function (now) {
-     $(this).text(Math.ceil(now));
-    }
-   });
-  }
- });
+$(".custom-dropdown").on("click", function () {
+    "use strict";
+    $("input[type='text']").trigger("blur");
+});
 
- // counts and animates total nominees overall
- $(".nomination-total-nominees").each(function () {
-  var option = $(this).closest("form").find(".nomination-entry-container");
-  if (option.length < 9) {
-   $(this).prop("Counter", 0).delay(750).animate({
-    Counter: option.length
-   }, {
-    duration: 2000,
-    easing: "easeOutQuint",
-    step: function (now) {
-     $(this).text(Math.ceil(now));
-    }
-   });
-  }
-  else {
-   $(this).prop('Counter', 0).delay(750).animate({
-    Counter: option.length
-   }, {
-    duration: 5000,
-    easing: "easeOutQuint",
-    step: function (now) {
-     $(this).text(Math.ceil(now));
-    }
-   });
-  }
- });
- return false;
+$("input[type='text']").on("blur", function () {
+    "use strict";
+    // counts total nominations per nominee without animation
+    //$('.nomination-entry-container').each(function (i) {
+    //var empty = $(this).find(".nomination-entry-submissions").length;
+    //$(".store-nominee-total-nominations").eq(i).text(empty);
+    //});
+
+    // counts and animates total total nominations per nominee
+    $(".store-nominee-total-nominations").each(function () {
+        var option = $(this).closest(".nomination-entry-container").find(".nomination-entry-submissions");
+        if (option.length > 0) {
+            $(this).prop("Counter", 0).delay(250).animate({
+                Counter: option.length
+            }, {
+                duration: 250,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        }
+    });
+
+    // counts and animates total nominations overall
+    $(".nomination-total-nominations").each(function () {
+        var option = $(this).closest("form").find(".nomination-entry-submissions");
+        if (option.length < 9) {
+            $(this).prop("Counter", 0).delay(750).animate({
+                Counter: option.length
+            }, {
+                duration: 2000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        } else {
+            $(this).prop("Counter", 0).delay(750).animate({
+                Counter: option.length
+            }, {
+                duration: 5000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        }
+    });
+
+    // counts and animates total nominees overall
+    $(".nomination-total-nominees").each(function () {
+        var option = $(this).closest("form").find(".nomination-entry-container");
+        if (option.length < 9) {
+            $(this).prop("Counter", 0).delay(750).animate({
+                Counter: option.length
+            }, {
+                duration: 2000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        } else {
+            $(this).prop('Counter', 0).delay(750).animate({
+                Counter: option.length
+            }, {
+                duration: 5000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        }
+    });
+    return false;
 });
 
 // counts added items and updates placeholder on load
 $(".custom-dropdown-slots").each(function (i) {
- "use strict";
- $(function () {
-  var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
-  if (empty.length === 0) {
-   $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load");
-  }
-  if (empty.length > 0) {
-   $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
-  }
- });
+    "use strict";
+    $(function () {
+        var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
+        if (empty.length === 0) {
+            $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load.");
+        }
+        if (empty.length > 0) {
+            $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
+        }
+    });
 });
 
 // loads draft sessions for the awards page
 $(document.body).on("click", ".custom-dropdown", function () {
- "use strict";
- $(this).closest(".column-container-notes").find(".store-data").each(function () {
-  var option = $(".draft-slots").val() + " - #!#"; // used to make the local storage key unique
-  if (option.length === 0) {
-   $(this).closest(".notes-container").find(".draft-slots").css({
-    "background": "#fff2f2"
-   });
-   $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
-   $(".modal-load").fadeIn(300);
-  }
-  if (option.length > 0) {
-   var text = $(".draft-slots").val() + " - #!#"; // used to make the local storage key unique
-   var value = localStorage.getItem(text);
-   $(this).val(value);
-   $(this).closest(".notes-container").find("input[type=text]").css({
-    "background": ""
-   });
-   $(this).closest(".notes-container").find("textarea").css({
-    "background": ""
-   });
-   return false;
-  }
- });
+    "use strict";
+    $(this).closest(".column-container-notes").find(".store-data").each(function () {
+        var option = $(".draft-slots").val() + " - {awards}"; // used to make the local storage key unique
+        if (option.length === 0) {
+            $(this).closest(".notes-container").find(".draft-slots").css({
+                "background": "#fff2f2"
+            });
+            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+        }
+        if (option.length > 0) {
+            var text = $(".draft-slots").val() + " - {awards}"; // used to make the local storage key unique
+            var value = localStorage.getItem(text);
+            $(this).val(value);
+            $(this).closest(".notes-container").find("input[type=text]").css({
+                "background": ""
+            });
+            $(this).closest(".notes-container").find("textarea").css({
+                "background": ""
+            });
+            return false;
+        }
+    });
 });
 
 // Rename file
 $(".store-rename").on("click", function () {
- "use strict";
- $(this).closest(".column-container-notes").find(".draft-slots").focus();
+    "use strict";
+    $(this).closest(".column-container-notes").find(".draft-slots").focus();
 });
 
 // Create a new save file
 $(".store-create").on("click", function () {
- "use strict";
- $(this).closest(".column-container-notes").find(".draft-slots").val("").focus().attr("placeholder", "Name your file").css({
-  "background": "#fff2f2"
- });
- $(this).closest(".column-container-notes").find("textarea").val("").css({
-  "background": ""
- });
+    "use strict";
+    $(this).closest(".column-container-notes").find(".draft-slots").val("").focus().attr("placeholder", "Name your file.").css({
+        "background": "#fff2f2"
+    });
+    $(this).closest(".column-container-notes").find("textarea").val("").css({
+        "background": ""
+    });
+});
+
+$(".draft-slots").on("change", function () {
+    "use strict";
+    var option = $(this).closest(".column-container-notes").find(".draft-slots").val();
+    var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
+    if (option.length > 0 && option2.length === 0) {
+        $(this).closest(".column-container-notes").find("textarea").attr("placeholder", "Start a draft before saving.").val("").focus().css({
+            "background": "#fff2f2"
+        });
+    }
 });
 
 $(".draft-slots").on("click", function () {
- $(this).css({
-  "background": ""
- });
- return false;
+    "use strict";
+    $(this).css({
+        "background": ""
+    });
+    return false;
 });
 
 // Deletes a save file
 $(document.body).on("click", ".custom-dropdown-delete", function () {
- "use strict";
- $(this).closest(".column-container-notes").removeAttr("action").find("input[type=text]").val("").css({
-  "background": ""
- });
- $(this).closest(".column-container-notes").find("textarea").val("").css({
-  "background": ""
- });
- // updates dropdown and saves it
- var text = $(this).closest(".custom-dropdown").text() + " - #!#"; // used to make the local storage key unique
- localStorage.removeItem(text);
- $(this).closest(".custom-dropdown").remove();
- $(".custom-dropdown-slots").each(function () {
-  var name = "custom-dropdown"
-  var value = $(this).html();
-  localStorage.setItem(name, value);
-  var value = localStorage.getItem(name);
-  $(this).html(value);
- });
- // counts number of files after every deletion
- $(".custom-dropdown-slots").each(function (i) {
-  $(function () {
-   var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
-   if (empty.length === 0) {
-    $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load");
-   }
-   if (empty.length > 0) {
-    $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
-   }
-  });
- });
+    "use strict";
+    $(this).closest(".column-container-notes").removeAttr("action").find("input[type=text]").val("").css({
+        "background": ""
+    });
+    $(this).closest(".column-container-notes").find("textarea").val("").css({
+        "background": ""
+    });
+    // updates dropdown and saves it
+    var text = $(this).closest(".custom-dropdown").text() + " - {awards}"; // used to make the local storage key unique
+    localStorage.removeItem(text);
+    $(this).closest(".custom-dropdown").remove();
+    $(".custom-dropdown-slots").each(function () {
+        var name = "custom dropdown - {awards}";
+        var value = $(this).html();
+        localStorage.setItem(name, value);
+        var value = localStorage.getItem(name);
+        $(this).html(value);
+    });
+    // counts number of files after every deletion
+    $(".custom-dropdown-slots").each(function (i) {
+        $(function () {
+            var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
+            if (empty.length === 0) {
+                $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load.");
+            }
+            if (empty.length > 0) {
+                $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
+            }
+        });
+    });
 
 });
 
 // saves data on click
 $(".store-save").on("click", function () {
- "use strict";
- $(this).closest(".column-container-notes").find(".store-data").css({
-  "background": ""
- });
+    "use strict";
+    $(this).closest(".column-container-notes").find(".store-data").css({
+        "background": ""
+    });
 
- // adds to dropdown
- var prepend = "<div class='custom-dropdown'>"
- var append = "<div class='custom-dropdown-delete'></div></div>"
- if ($(".draft-slots").val().length > 0) {
-  $(this).closest(".column-container-notes").find(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
- }
+    // adds to dropdown
+    var prepend = "<div class='custom-dropdown'>";
+    var append = "<div class='custom-dropdown-delete'></div></div>";
+    if ($(".draft-slots").val().length > 0) {
+        $(this).closest(".column-container-notes").find(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
+    }
 
- // removes duplicates
- var seen = {};
- $(".custom-dropdown").each(function () {
-  var txt = $(this).html();
-  if (seen[txt])
-   $(this).remove();
-  else
-   seen[txt] = true;
- });
+    // removes duplicates
+    var seen = {};
+    $(".custom-dropdown").each(function () {
+        var txt = $(this).html();
+        if (seen[txt])
+            $(this).remove();
+        else
+            seen[txt] = true;
+    });
 
- // saves data. alerts if input is blank. adds focus to empty input area
- $(this).closest(".column-container-notes").find(".draft-slots").each(function () {
-  var option = $(this).closest(".column-container-notes").find(".draft-slots").val();
-  var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
-  if (option.length === 0) {
-   $(this).attr("placeholder", "Name your file").css({
-    "background": "#fff2f2"
-   });
-   $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
-   $(".modal-save").fadeIn(300);
-  }
-  if (option.length > 0 && option2.length > 0) {
-   var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - #!#"; // used to make the local storage key unique
-   var value = $(this).closest(".notes-container").find(".store-data").val();
-   localStorage.setItem(text, value);
-   var value = localStorage.getItem(text);
-   $(this).css({
-    "background": ""
-   });
+    // saves data. alerts if input is blank. adds focus to empty input area
+    $(this).closest(".column-container-notes").find(".draft-slots").each(function () {
+        var option = $(this).closest(".column-container-notes").find(".draft-slots").val();
+        var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
+        if (option.length === 0) {
+            $(this).focus().attr("placeholder", "Name your file.").css({
+                "background": "#fff2f2"
+            });
+            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+        }
+        if (option.length > 0 && option2.length > 0) {
+            var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - {awards}"; // used to make the local storage key unique
+            var value = $(this).closest(".notes-container").find(".store-data").val();
+            localStorage.setItem(text, value);
+            var value = localStorage.getItem(text);
+            $(this).css({
+                "background": ""
+            });
 
-   // saves updated dropdown field
-   $(this).closest(".column-container-notes").find(".custom-dropdown-slots").each(function () {
-    var name = "custom-dropdown"
-    var value = $(this).closest(".column-container-notes").find(this).html();
-    localStorage.setItem(name, value);
-    var value = localStorage.getItem(name);
-    $(this).html(value);
-   });
+            // saves updated dropdown field
+            $(this).closest(".column-container-notes").find(".custom-dropdown-slots").each(function () {
+                var name = "custom dropdown - {awards}";
+                var value = $(this).closest(".column-container-notes").find(this).html();
+                localStorage.setItem(name, value);
+                var value = localStorage.getItem(name);
+                $(this).html(value);
+            });
 
-   // save animation will animate if save is working
-   $(this).closest(".column-container-notes").find(".notes-btn-each").show();
-   "use strict";
-   $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
-   setTimeout(function () {
-    $(".notes-btn-each").fadeOut();
-   }, 1000);
-   return false;
-  }
- });
+            // save animation will animate if save is working
+            $(this).closest(".column-container-notes").find(".notes-btn-each").show();
+            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-empty").addClass("notes-btn-each-active");
+            setTimeout(function () {
+                $(".notes-btn-each").fadeOut();
+            }, 1000);
+            return false;
+        }
+    });
 
- // alerts if form is not complete
- $(".store-data").each(function () {
-  var option2 = $(this).val();
-  if (option2.length === 0) {
-   $(this).css({
-    "background": "#fff2f2"
-   });
-   $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
-   $(".modal-alert").fadeIn(300);
-  }
-  if (option2.length > 0) {
-   $(this).css({
-    "background": ""
-   });
-  }
- });
+    // alerts if form is not complete
+    $(".store-data").each(function () {
+        var option = $(this).closest(".column-container-notes").find(".draft-slots").val();
+        var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
+        if (option.length === 0 && option2.length === 0) {
+            $(this).attr("placeholder", "Create a file and start a draft before saving.").css({
+                "background": "#fff2f2"
+            });
+            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+        }
+        if (option.length > 0 && option2.length === 0) {
+            $(this).attr("placeholder", "Start a draft before saving.").css({
+                "background": "#fff2f2"
+            });
+            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+        }
+        if (option2.length > 0) {
+            $(this).css({
+                "background": ""
+            });
+        }
+    });
 
- // counts added items and updates placeholder on save
- $(".custom-dropdown-slots").each(function (i) {
-  $(function () {
-   var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
-   if (empty.length === 0) {
-    $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load");
-   }
-   if (empty.length > 0) {
-    $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
-   }
-  });
- });
- return false;
+    // counts added items and updates placeholder on save
+    $(".custom-dropdown-slots").each(function (i) {
+        $(function () {
+            var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
+            if (empty.length > 0) {
+                $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
+            }
+        });
+    });
+    return false;
 });
 
 // auto load current dropdown field
 $(".custom-dropdown-slots").each(function () {
- var name = "custom-dropdown"
- var value = $(this).html();
- var value = localStorage.getItem(name);
- $(this).html(value);
+    "use strict";
+    var name = "custom dropdown - {awards}";
+    var value = $(this).html();
+    var value = localStorage.getItem(name);
+    $(this).html(value);
 });
 
-// resets each field
+// resets content for open draft
 $(".store-reset").on("click", function () {
- "use strict";
- $(this).closest("form").find(".custom-select-close").hide();
- $(this).closest("form").find(".custom-select-search").show();
- $(this).closest("form").removeAttr("action").find("input[type=text]").css({
-  "background": ""
- });
- $(this).closest("form").find("textarea").val("").css({
-  "background": ""
- });
- $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+    "use strict";
+    $(this).closest("form").find(".custom-select-close").hide();
+    $(this).closest("form").find(".custom-select-search").show();
+    $(this).closest("form").removeAttr("action").find("input[type=text]").css({
+        "background": ""
+    });
+    $(this).closest("form").find("textarea").attr("placeholder", "Write a testimonial about your nominee here. Save your data (optional) in case your session times out.").val("").focus().css({
+        "background": ""
+    });
+    $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+    var text = $(this).closest("form").find(".draft-slots").val() + " - {awards}"; // used to make the local storage key unique
+    localStorage.removeItem(text);
 });
 
 // static clear, no effect on saved data, for index page
 $(".store-clear").on("click", function () {
- "use strict";
- $(this).closest("form").find(".custom-select-close").hide();
- $(this).closest("form").find(".custom-select-search").show();
- $(this).closest("form").find("textarea").val("");
- $(this).closest("form").find("input[type=text]").val("").css({
-  "background": ""
- });
+    "use strict";
+    $(this).closest("form").find(".custom-select-close").hide();
+    $(this).closest("form").find(".custom-select-search").show();
+    $(this).closest("form").find("textarea").val("");
+    $(this).closest("form").find("input[type=text]").val("").css({
+        "background": ""
+    });
 });
 
 // resets all fields. removes all local storage data from menu only, not entire web storage
 $(".store-reset-all").on("click", function () {
- "use strict";
- $(".custom-dropdown").each(function () {
-  var text = $(this).text() + " - #!#"; // used to make the local storage key unique
-  localStorage.removeItem(text);
-  localStorage.removeItem("custom-dropdown");
- }); 
- $(".custom-select-close").hide();
- $(this).closest(".notes-container").find("textarea").val("");
- $(".custom-dropdown-slots").empty();
- $(this).closest("form").removeAttr("action").find("input[type=text]").val("").attr("placeholder", "There are no saved files available to load").css({
-  "background": ""
- });
- $(this).closest("form").find("textarea").val("").css({
-  "background": ""
- });
- $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+    "use strict";
+    $(".custom-dropdown").each(function () {
+        var text = $(this).text() + " - {awards}"; // used to make the local storage key unique
+        localStorage.removeItem(text);
+        localStorage.removeItem("custom dropdown - {awards}");
+    });
+    $(".custom-select-close").hide();
+    $(this).closest(".notes-container").find("textarea").val("");
+    $(".custom-dropdown-slots").empty();
+    $(this).closest("form").removeAttr("action").find("input[type=text]").val("").attr("placeholder", "There are no saved files available to load.").css({
+        "background": ""
+    });
+    $(this).closest("form").find("textarea").attr("placeholder", "Write a testimonial about your nominee here. Save your data (optional) in case your session times out.").val("").css({
+        "background": ""
+    });
+    $(this).closest("form").find("textarea").val("").css({
+        "background": ""
+    });
+    $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
 });
 
 // sends nomination. alerts if input is blank. adds focus to empty input area
 $(".store-nominate").click(function () {
- "use strict";
- $(".store-data").each(function () {
-  var option = $(".store-data").val();
-  if (option.length === 0) {
-   $(this).css({
-    "background": "#fff2f2"
-   });
-   $(".modal-alert").fadeIn(300);
-  }
-  if (option.length > 0) {
-   $("form").removeAttr("action").attr("action", "awards-confirmation.html").submit();
-   $(this).css({
-    "background": ""
-   });
-  }
- });
- return false;
+    "use strict";
+    $(".store-data").each(function () {
+        var option = $(".store-data").val();
+        if (option.length === 0) {
+            $(this).focus().attr("placeholder", "Complete your draft before submitting.").css({
+                "background": "#fff2f2"
+            });
+        }
+        if (option.length > 0) {
+            $("form").removeAttr("action").attr("action", "awards-confirmation.html").submit();
+            $(this).css({
+                "background": ""
+            });
+        }
+    });
+    return false;
 });
 
 // mailto from the dashboard (from a div, not values from a textarea)
 $(".nomination-entry-share").click(function () {
- "use strict";
- $(this).closest(".nomination-entry-submissions").find(".store-nominator-notes").each(function () {
-  var mailto = "mailto:nominate@adobe.com";
-  var bodyStr = $(this).html().replace(/\<br>*/ig, "%0D%0A").replace(/\<p>*/ig, "").replace(/\<\/p\>*/ig, "%0D%0A%0D%0A");
-  var nominee = $(this).closest(".nomination-entry-container").find(".store-nominee-enter").html();
-  var award = $(this).closest(".nomination-entry-container").find(".store-nominator-award").html();
-  var subjectStr = "subject=Thank You " + nominee + "!" + " - " + award;
-  var cc = "?" + "cc=nominate@adobe.com,";
-  window.location = mailto + cc + "&" + subjectStr + "&body=" + bodyStr + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
- });
+    "use strict";
+    $(this).closest(".nomination-entry-submissions").find(".store-nominator-notes").each(function () {
+        var mailto = "mailto:nominate@adobe.com";
+        var bodyStr = $(this).html().replace(/\<br>*/ig, "%0D%0A").replace(/\<p>*/ig, "").replace(/\<\/p\>*/ig, "%0D%0A%0D%0A");
+        var nominee = $(this).closest(".nomination-entry-container").find(".store-nominee-enter").html();
+        var award = $(this).closest(".nomination-entry-container").find(".store-nominator-award").html();
+        var subjectStr = "subject=Thank You " + nominee + "!" + " - " + award;
+        var cc = "?" + "cc=nominate@adobe.com,";
+        window.location = mailto + cc + "&" + subjectStr + "&body=" + bodyStr + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
+    });
 });
 
 // dynamic positioning of the share link
 $(".store-nominator-notes-container").each(function () {
- if ($(window).width() >= 1024) {
-  $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(1)) .store-nominator-notes-container").css({
-   "min-height": "105px"
-  });
-  $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(2)) .store-nominator-notes-container").css({
-   "min-height": "auto"
-  });
- }
+    "use strict";
+    if ($(window).width() >= 1024) {
+        $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(1)) .store-nominator-notes-container").css({
+            "min-height": "105px"
+        });
+        $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(2)) .store-nominator-notes-container").css({
+            "min-height": "auto"
+        });
+    }
 });
