@@ -108,7 +108,7 @@ $(".custom-dropdown-slots").each(function (i) {
 $(document.body).on("click", ".custom-dropdown", function () {
     "use strict";
     $(this).closest(".column-container-notes").find(".store-data").each(function () {
-        var option = $(".draft-slots").val() + " - {awards}"; // used to make the local storage key unique
+        var option = $(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
         if (option.length === 0) {
             $(this).closest(".notes-container").find(".draft-slots").css({
                 "background": "#fff2f2"
@@ -116,7 +116,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
         }
         if (option.length > 0) {
-            var text = $(".draft-slots").val() + " - {awards}"; // used to make the local storage key unique
+            var text = $(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
             var value = localStorage.getItem(text);
             $(this).val(value);
             $(this).closest(".notes-container").find("input[type=text]").css({
@@ -176,11 +176,11 @@ $(document.body).on("click", ".custom-dropdown-delete", function () {
         "background": ""
     });
     // updates dropdown and saves it
-    var text = $(this).closest(".custom-dropdown").text() + " - {awards}"; // used to make the local storage key unique
+    var text = $(this).closest(".custom-dropdown").text() + " - {awards-each}"; // used to make the local storage key unique
     localStorage.removeItem(text);
     $(this).closest(".custom-dropdown").remove();
     $(".custom-dropdown-slots").each(function () {
-        var name = "custom dropdown - {awards}";
+        var name = "custom dropdown - {awards-menu}";
         var value = $(this).html();
         localStorage.setItem(name, value);
         var value = localStorage.getItem(name);
@@ -236,7 +236,7 @@ $(".store-save").on("click", function () {
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
         }
         if (option.length > 0 && option2.length > 0) {
-            var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - {awards}"; // used to make the local storage key unique
+            var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
             var value = $(this).closest(".notes-container").find(".store-data").val();
             localStorage.setItem(text, value);
             var value = localStorage.getItem(text);
@@ -246,7 +246,7 @@ $(".store-save").on("click", function () {
 
             // saves updated dropdown field
             $(this).closest(".column-container-notes").find(".custom-dropdown-slots").each(function () {
-                var name = "custom dropdown - {awards}";
+                var name = "custom dropdown - {awards-menu}";
                 var value = $(this).closest(".column-container-notes").find(this).html();
                 localStorage.setItem(name, value);
                 var value = localStorage.getItem(name);
@@ -280,7 +280,7 @@ $(".store-save").on("click", function () {
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
         }
         if (option2.length > 0) {
-            $(this).css({
+            $(this).attr("placeholder", "Write a testimonial about your nominee here. Save your data (optional) in case your session times out.").css({
                 "background": ""
             });
         }
@@ -301,7 +301,7 @@ $(".store-save").on("click", function () {
 // auto load current dropdown field
 $(".custom-dropdown-slots").each(function () {
     "use strict";
-    var name = "custom dropdown - {awards}";
+    var name = "custom dropdown - {awards-menu}";
     var value = $(this).html();
     var value = localStorage.getItem(name);
     $(this).html(value);
@@ -319,7 +319,7 @@ $(".store-reset").on("click", function () {
         "background": ""
     });
     $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
-    var text = $(this).closest("form").find(".draft-slots").val() + " - {awards}"; // used to make the local storage key unique
+    var text = $(this).closest("form").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
     localStorage.removeItem(text);
 });
 
@@ -338,9 +338,9 @@ $(".store-clear").on("click", function () {
 $(".store-reset-all").on("click", function () {
     "use strict";
     $(".custom-dropdown").each(function () {
-        var text = $(this).text() + " - {awards}"; // used to make the local storage key unique
+        var text = $(this).text() + " - {awards-each}"; // used to make the local storage key unique
         localStorage.removeItem(text);
-        localStorage.removeItem("custom dropdown - {awards}");
+        localStorage.removeItem("custom dropdown - {awards-menu}");
     });
     $(".custom-select-close").hide();
     $(this).closest(".notes-container").find("textarea").val("");
