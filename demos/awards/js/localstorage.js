@@ -141,7 +141,7 @@ $(".draft-slots").on("change", function () {
     var option = $(this).closest(".column-container-notes").find(".draft-slots").val();
     var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
     if (option.length > 0 && option2.length === 0) {
-        $(this).closest(".column-container-notes").find("textarea").attr("placeholder", "Now start a draft before saving. See examples below for reference").val("").focus().css({
+        $(this).closest(".column-container-notes").find("textarea").attr("placeholder", "Now start a draft before saving. See examples below for reference.").val("").focus().css({
             "background": "#fff2f2"
         });
     }
@@ -277,7 +277,7 @@ $(".store-save").on("click", function () {
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
         }
         if (option.length > 0 && option2.length === 0) {
-            $(this).attr("placeholder", "Now start a draft before saving. See examples below for reference").css({
+            $(this).attr("placeholder", "Now start a draft before saving. See examples below for reference.").css({
                 "background": "#fff2f2"
             });
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
