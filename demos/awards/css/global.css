@@ -398,6 +398,25 @@ input[type=text],input[type=number] {
   max-height: 50px;
 }
 
+.custom-dropdown-strDate {
+  font-size: 14px;
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  line-height: 1.4;
+  background-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  color: inherit;
+  width:100%;
+}
+
+.custom-dropdown-strDate:hover {
+  color: inherit;
+}
+
 input[type=button]:last-child {
   margin: 0;
 }

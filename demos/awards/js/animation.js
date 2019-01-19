@@ -137,6 +137,19 @@ $(document.body).on('mouseover click', ".custom-dropdown", function () {
     return false;
 });
 
+$(document.body).on('click', ".custom-dropdown", function () {
+    "use strict";
+    $(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active").css({
+        "background-color": "",
+        "color": ""
+    });
+    $(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
+        "background-color": "#7593bf",
+        "color": "#fff"
+    });
+    return false;
+});
+
 // hover state
 $(".custom-dropdown").on("mouseover click", function () {
     "use strict";

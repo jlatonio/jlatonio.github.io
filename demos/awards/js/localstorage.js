@@ -191,10 +191,11 @@ $(document.body).on("click", ".custom-dropdown-delete", function () {
 });
 
 // keyboard enter triggers save on click
-$(document).on('keypress',function(e) {
-    if(e.which == 13) {
+$(document).on('keypress', function (e) {
+    "use strict";
+    if (e.which === 13) {
         $(".store-save").trigger("click");
-    return false;
+        return false;
     }
 });
 
@@ -206,13 +207,29 @@ $(".store-save").on("click", function () {
     });
 
     // adds to dropdown
-    var prepend = "<div class='custom-dropdown'>";
-    var append = "<div class='custom-dropdown-delete'></div></div>";
+
+    var prepend = "<div class='custom-dropdown active'>";
+    var append = "<div class='custom-dropdown-delete'></div><input class='custom-dropdown-strDate' disabled readonly /></div>";
     if ($(".draft-slots").val().length > 0) {
+        $(this).closest(".column-container-notes").find(".custom-dropdown").removeClass("active");
         $(this).closest(".column-container-notes").find(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
     }
 
-    // removes duplicates
+    // adds timestamp (last updated)
+    $('.custom-dropdown').each(function () {
+        var d = new Date();
+        var sec = d.getSeconds();
+        var strDate = "Last updated: " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+        if ($(this).hasClass('active')) {
+            $(this).find(".custom-dropdown-strDate").attr("value", strDate);
+        }
+        if (sec < 1) {
+            d = '0' + d;
+            return false;
+        }
+    });
+
+    // removes duplicates (will not remove those with different datestamps)
     var seen = {};
     $(".custom-dropdown").each(function () {
         var txt = $(this).html();
