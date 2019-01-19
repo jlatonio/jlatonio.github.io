@@ -35,6 +35,10 @@ $("input[type='text']").closest(".custom-dropdown-outer").find(".custom-dropdown
 });
 $("input[type='text'],input[type='number']").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function () {
     "use strict";
+    var input_place_holder = $(this).attr("data-placeholder");
+    $(this).attr("placeholder", input_place_holder).css({
+        "background": ""
+    });
     $(this).hide();
     $(".modal-select").hide();
     $(this).closest(".custom-dropdown-outer").find("input[type='text'],input[type='number']").val("").focusout().css({
@@ -152,12 +156,12 @@ $(".store-continue").click(function (e) {
     "use strict";
     var isValid = true;
     $("input[type='text']").each(function () {
-        if ($.trim($(this).val()) === "") {
+        if ($(this).val().length === 0) {
             isValid = false;
-            $(this).css({
+            $(this).focus().attr("placeholder", "This is a required field.").css({
                 "background": "#fff2f2"
             });
-            $(".modal-alert").fadeIn(300);
+            return false;
         } else {
             $(this).css({
                 "background": ""
@@ -170,21 +174,21 @@ $(".store-continue").click(function (e) {
         $("form").submit();
 });
 
-// modal alerts
-$(".modal-close").on("click", function () {
-    "use strict";
-    $(".modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select").hide();
-    $("textarea").focus();
-    $(".custom-dropdown-input").find("input:text[value='']:visible").first().focus();
-    return false;
-});
+// modal alerts not needed for now
+//$(".modal-close").on("click", function () {
+//    "use strict";
+//    $(".modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select").hide();
+//    $("textarea").focus();
+//    $(".custom-dropdown-input").find("input:text[value='']").first().focus();
+//    return false;
+//});
 
-$(".modal-close-save").on("click", function () {
-    "use strict";
-    $(".modal-save,.modal-load").hide();
-    $(".draft-slots").first().focus();
-    return false;
-});
+//$(".modal-close-save").on("click", function () {
+//    "use strict";
+//    $(".modal-save,.modal-load").hide();
+//    $(".draft-slots").first().focus();
+//    return false;
+//});
 
 // resets required fields to a white bg
 $(".custom-dropdown-scroll div").on("click", function () {
@@ -194,7 +198,7 @@ $(".custom-dropdown-scroll div").on("click", function () {
     });
     return false;
 });
-$("input[type='text'],textarea").keypress(function () {
+$("input[type='text'],textarea").on("keydown", function () {
     "use strict";
     $(this).css({
         "background": ""
@@ -271,10 +275,11 @@ $(function () {
 // resets placeholder text on focus
 $(".custom-search").on("focus", function () {
     "use strict";
-    $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
-    $(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
-    $(this).attr("placeholder", "Search Email ID").css({
+    var input_place_holder = $(this).attr("data-placeholder");
+    $(this).attr("placeholder", input_place_holder).css({
         "background": ""
     });
+    $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+    $(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
     return false;
 });

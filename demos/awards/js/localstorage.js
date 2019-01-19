@@ -1,18 +1,7 @@
 // save icon. hidden by default
 $(".notes-btn-each").hide();
 
-// when screen loads, it focuses out of any input field which triggers the counter event. It can be re-triggerd again like so. The idea for this is to refresh the counter every time the user filters data from the menu
 $(window).on("load", function () {
-    "use strict";
-    $("input[type='text']").trigger("blur");
-});
-
-$(".custom-dropdown").on("click", function () {
-    "use strict";
-    $("input[type='text']").trigger("blur");
-});
-
-$("input[type='text']").on("blur", function () {
     "use strict";
     // counts total nominations per nominee without animation
     //$('.nomination-entry-container').each(function (i) {
@@ -201,6 +190,14 @@ $(document.body).on("click", ".custom-dropdown-delete", function () {
 
 });
 
+// keyboard enter triggers save on click
+$(document).on('keypress',function(e) {
+    if(e.which == 13) {
+        $(".store-save").trigger("click");
+    return false;
+    }
+});
+
 // saves data on click
 $(".store-save").on("click", function () {
     "use strict";
@@ -280,21 +277,11 @@ $(".store-save").on("click", function () {
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
         }
         if (option2.length > 0) {
-            var old_place_holder = $("textarea").attr("data-placeholder");
-            $(this).attr("placeholder", old_place_holder).css({
+            var textarea_place_holder = $("textarea").attr("data-placeholder");
+            $(this).attr("placeholder", textarea_place_holder).css({
                 "background": ""
             });
         }
-    });
-
-    // counts added items and updates placeholder on save
-    $(".custom-dropdown-slots").each(function (i) {
-        $(function () {
-            var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
-            if (empty.length > 0) {
-                $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
-            }
-        });
     });
     return false;
 });
@@ -311,13 +298,13 @@ $(".custom-dropdown-slots").each(function () {
 // resets content for open draft
 $(".store-reset").on("click", function () {
     "use strict";
+    var textarea_place_holder = $("textarea").attr("data-placeholder");
+    $(this).closest("form").find("textarea").attr("placeholder", textarea_place_holder).val("").focus().css({
+        "background": ""
+    });
     $(this).closest("form").find(".custom-select-close").hide();
     $(this).closest("form").find(".custom-select-search").show();
     $(this).closest("form").removeAttr("action").find("input[type=text]").css({
-        "background": ""
-    });
-    var old_place_holder = $("textarea").attr("data-placeholder");
-    $(this).closest("form").find("textarea").attr("placeholder", old_place_holder).val("").focus().css({
         "background": ""
     });
     $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
@@ -333,6 +320,12 @@ $(".store-clear").on("click", function () {
     $(this).closest("form").find("textarea").val("");
     $(this).closest("form").find("input[type=text]").val("").css({
         "background": ""
+    });
+    $("input[type='text']").each(function () {
+        var input_place_holder = $(this).attr("data-placeholder");
+        $(this).attr("placeholder", input_place_holder).css({
+            "background": ""
+        });
     });
 });
 
@@ -350,8 +343,8 @@ $(".store-reset-all").on("click", function () {
     $(this).closest("form").removeAttr("action").find("input[type=text]").val("").attr("placeholder", "There are no saved files available to load.").css({
         "background": ""
     });
-    var old_place_holder = $("textarea").attr("data-placeholder");
-    $(this).closest("form").find("textarea").attr("placeholder", old_place_holder).val("").css({
+    var textarea_place_holder = $("textarea").attr("data-placeholder");
+    $(this).closest("form").find("textarea").attr("placeholder", textarea_place_holder).val("").css({
         "background": ""
     });
     $(this).closest("form").find("textarea").val("").css({
@@ -366,7 +359,7 @@ $(".store-nominate").click(function () {
     $(".store-data").each(function () {
         var option = $(".store-data").val();
         if (option.length === 0) {
-            $(this).focus().attr("placeholder", "Complete your draft before submitting.").css({
+            $(this).focus().attr("placeholder", "Complete your nomination before submitting.").css({
                 "background": "#fff2f2"
             });
         }
