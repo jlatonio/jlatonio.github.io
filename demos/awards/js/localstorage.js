@@ -232,7 +232,7 @@ $(".store-save").on("click", function () {
     // removes duplicates (will not remove those with different datestamps)
     var seen = {};
     $(".custom-dropdown").each(function () {
-        var txt = $(this).html();
+        var txt = $(this).text();
         if (seen[txt])
             $(this).remove();
         else
