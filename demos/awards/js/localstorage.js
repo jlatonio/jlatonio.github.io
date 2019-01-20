@@ -218,14 +218,26 @@ $(".store-save").on("click", function () {
     // adds timestamp (last updated)
     $('.custom-dropdown').each(function () {
         var d = new Date();
-        var sec = d.getSeconds();
-        var strDate = "Last updated: " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+        var weekday = d.getDay();
+        var month = (d.getMonth() + 1)
+        var day = d.getDate();
+        var year = d.getFullYear();
+        var hour = d.getHours();
+        var minutes = d.getMinutes();
+        var seconds = d.getSeconds();
+        if (hour < 10) hour = "0" + hour;
+        if (minutes < 10) minutes = "0" + minutes;
+        if (seconds < 10) seconds = "0" + seconds;
+        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var ampm = " PM ";
+        if (hour < 12) ampm = " AM ";
+        if (hour > 12) hour -= 12;
+        var showDate = weekdayNames[weekday] + ", " + monthNames[month] + " " + day + ", " + year;
+        var showTime = hour + ":" + minutes + ":" + seconds + ampm;
+        var strDate = "Last updated: " + showDate + " " + "-" + " " + showTime;
         if ($(this).hasClass('active')) {
             $(this).find(".custom-dropdown-strDate").attr("value", strDate);
-        }
-        if (sec < 1) {
-            d = '0' + d;
-            return false;
         }
     });
 
