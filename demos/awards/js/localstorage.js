@@ -132,7 +132,8 @@ $(".store-create").on("click", function () {
         "background": "#fff2f2"
     });
     $(this).closest(".column-container-notes").find(".custom-dropdown").css({
-        "background": "","color": ""
+        "background": "",
+        "color": ""
     });
     $(this).closest(".column-container-notes").find("textarea").val("").css({
         "background": ""
@@ -222,7 +223,7 @@ $(".store-save").on("click", function () {
     $('.custom-dropdown').each(function () {
         var d = new Date();
         var weekday = d.getDay();
-        var month = (d.getMonth() + 1)
+        var month = d.getMonth();
         var day = d.getDate();
         var year = d.getFullYear();
         var hour = d.getHours();
@@ -231,7 +232,7 @@ $(".store-save").on("click", function () {
         if (hour < 10) hour = "0" + hour;
         if (minutes < 10) minutes = "0" + minutes;
         if (seconds < 10) seconds = "0" + seconds;
-        var monthNames = ["January", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+        var monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
         var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         var ampm = " PM ";
         if (hour < 12) ampm = " AM ";
@@ -406,9 +407,55 @@ $(".store-nominate").click(function () {
             });
         }
         if (option.length > 0) {
-            $("form").removeAttr("action").attr("action", "awards-confirmation.html").submit();
+            // saves latest data before submission
+            var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
+            var value = $(this).closest(".notes-container").find(".store-data").val();
+            localStorage.setItem(text, value);
+            var value = localStorage.getItem(text);
             $(this).css({
                 "background": ""
+            });
+            // adds timestamp (last submitted) and locates the active element
+            $('.custom-dropdown').each(function () {
+                var d = new Date();
+                var weekday = d.getDay();
+                var month = d.getMonth();
+                var day = d.getDate();
+                var year = d.getFullYear();
+                var hour = d.getHours();
+                var minutes = d.getMinutes();
+                var seconds = d.getSeconds();
+                if (hour < 10) hour = "0" + hour;
+                if (minutes < 10) minutes = "0" + minutes;
+                if (seconds < 10) seconds = "0" + seconds;
+                var monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+                var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var ampm = " PM ";
+                if (hour < 12) ampm = " AM ";
+                if (hour > 12) hour -= 12;
+                var showDate = weekdayNames[weekday] + ", " + monthNames[month] + " " + day + ", " + year;
+                var showTime = hour + ":" + minutes + ":" + seconds + ampm;
+                var strDate = "Submitted: " + showDate + " " + "-" + " " + showTime;
+                if ($(this).hasClass('active')) {
+                    $(this).css({
+                        "background-color": "#7593bf",
+                        "color": "#fff"
+                    });
+                    $(this).find(".custom-dropdown-strDate").attr("value", strDate);
+                }
+            });
+            $(this).closest(".column-container-notes").find(".custom-dropdown-slots").each(function () {
+                var name = "custom dropdown - {awards-menu}";
+                var value = $(this).closest(".column-container-notes").find(this).html();
+                localStorage.setItem(name, value);
+                var value = localStorage.getItem(name);
+                $(this).html(value);
+            });
+
+            $("form").removeAttr("action").attr("action", "awards-confirmation.html").submit();
+            $(this).css({
+                "background": "",
+                "color": ""
             });
         }
     });

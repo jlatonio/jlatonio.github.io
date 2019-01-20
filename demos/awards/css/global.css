@@ -701,12 +701,11 @@ input::-webkit-clear-button {
 /* Modal Content */
 .modal-content {
   background-color: #fefefe;
-  margin-left: -125px;
-  margin-top: -110px;
-  padding: 40px 20px;
+  margin-left: -140px;
+  margin-top: -130px;
   border: 1px solid #888;
-  width: 250px;
-  height: 220px;
+  width: 280px;
+  height: 260px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -716,9 +715,12 @@ input::-webkit-clear-button {
   -webkit-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
   -moz-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
   box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
-  text-align: center;
   border-top: solid 5px #f1675a;
   border-bottom: solid 5px #f1675a;
+}
+
+.modal-content-inner {
+  text-align: center;
 }
 
 /* The Close Button */
@@ -831,13 +833,6 @@ input::-webkit-clear-button {
     
   .fixed-180 {
     width: 160px;
-  }
-
-  .modal-content {
-    margin-left: -175px;
-    margin-top: -100px;
-    width: 350px;
-    height: 200px;
   }
 
   .store-button-container input {

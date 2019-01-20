@@ -187,22 +187,6 @@ $(".store-continue").click(function (e) {
         $("form").submit();
 });
 
-// modal alerts not needed for now
-//$(".modal-close").on("click", function () {
-//    "use strict";
-//    $(".modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select").hide();
-//    $("textarea").focus();
-//    $(".custom-dropdown-input").find("input:text[value='']").first().focus();
-//    return false;
-//});
-
-//$(".modal-close-save").on("click", function () {
-//    "use strict";
-//    $(".modal-save,.modal-load").hide();
-//    $(".draft-slots").first().focus();
-//    return false;
-//});
-
 // resets required fields to a white bg
 $(".custom-dropdown-scroll div").on("click", function () {
     "use strict";
@@ -294,5 +278,16 @@ $(".custom-search").on("focus", function () {
     });
     $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
     $(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
+    return false;
+});
+
+// modal alerts
+$(".modal-close, .store-reset-all, .store-reset-cancel").on("click", function() {
+    $(".modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select").hide();
+    return false;
+});
+
+$(".store-reset-open").on("click", function() {
+ $(".modal-alert").fadeIn(300);
     return false;
 });
