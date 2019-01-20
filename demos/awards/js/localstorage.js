@@ -131,6 +131,9 @@ $(".store-create").on("click", function () {
     $(this).closest(".column-container-notes").find(".draft-slots").val("").focus().attr("placeholder", "Name your file.").css({
         "background": "#fff2f2"
     });
+    $(this).closest(".column-container-notes").find(".custom-dropdown").css({
+        "background": "","color": ""
+    });
     $(this).closest(".column-container-notes").find("textarea").val("").css({
         "background": ""
     });
@@ -215,7 +218,7 @@ $(".store-save").on("click", function () {
         $(this).closest(".column-container-notes").find(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
     }
 
-    // adds timestamp (last updated)
+    // adds timestamp (last updated) and locates the active element
     $('.custom-dropdown').each(function () {
         var d = new Date();
         var weekday = d.getDay();
@@ -237,6 +240,10 @@ $(".store-save").on("click", function () {
         var showTime = hour + ":" + minutes + ":" + seconds + ampm;
         var strDate = "Updated: " + showDate + " " + "-" + " " + showTime;
         if ($(this).hasClass('active')) {
+            $(this).css({
+                "background-color": "#7593bf",
+                "color": "#fff"
+            });
             $(this).find(".custom-dropdown-strDate").attr("value", strDate);
         }
     });

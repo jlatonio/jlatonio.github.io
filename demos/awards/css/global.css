@@ -860,9 +860,15 @@ input::-webkit-clear-button {
     border-bottom: solid 0 #ccc;
   }
     
-  .custom-dropdown-scroll,.custom-dropdown-slots {
+  .custom-dropdown-scroll {
     height:auto;
   }
+    
+  .custom-dropdown-slots {
+    max-height:317px;
+    height:317px;
+  }
+    
 }
 
 @media screen and (min-width: 1025px) {
