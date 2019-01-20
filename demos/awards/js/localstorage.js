@@ -228,14 +228,14 @@ $(".store-save").on("click", function () {
         if (hour < 10) hour = "0" + hour;
         if (minutes < 10) minutes = "0" + minutes;
         if (seconds < 10) seconds = "0" + seconds;
-        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var monthNames = ["January", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
         var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         var ampm = " PM ";
         if (hour < 12) ampm = " AM ";
         if (hour > 12) hour -= 12;
         var showDate = weekdayNames[weekday] + ", " + monthNames[month] + " " + day + ", " + year;
         var showTime = hour + ":" + minutes + ":" + seconds + ampm;
-        var strDate = "Last updated: " + showDate + " " + "-" + " " + showTime;
+        var strDate = "Updated: " + showDate + " " + "-" + " " + showTime;
         if ($(this).hasClass('active')) {
             $(this).find(".custom-dropdown-strDate").attr("value", strDate);
         }
