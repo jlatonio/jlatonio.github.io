@@ -855,11 +855,7 @@ input::-webkit-clear-button {
     position: absolute;
     bottom: initial;
   }
-
-  .custom-dropdown:last-child {
-    border-bottom: solid 0 #ccc;
-  }
-    
+ 
   .custom-dropdown-scroll {
     height:auto;
   }
