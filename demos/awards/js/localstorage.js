@@ -123,6 +123,10 @@ $(document.body).on("click", ".custom-dropdown", function () {
 $(".store-rename").on("click", function () {
     "use strict";
     $(this).closest(".column-container-notes").find(".draft-slots").focus();
+    $(".custom-dropdown").css({
+        "background-color": "",
+        "color": ""
+    });
 });
 
 // Create a new save file
