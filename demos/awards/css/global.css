@@ -616,7 +616,7 @@ input::-webkit-clear-button {
   position: absolute;
   background-image: none;
   background-repeat: no-repeat;
-  background-size:45px auto;
+  background-size:47px auto;
   background-position: left top;
   left: 20px;
   padding-left: 20px;
@@ -859,7 +859,7 @@ input::-webkit-clear-button {
   }
 
   .custom-dropdown-slots .custom-dropdown {
-    padding-left: 85px;
+    padding-left: 87px;
   }
 
   .custom-dropdown-slots .custom-dropdown:after {
