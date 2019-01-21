@@ -185,6 +185,7 @@ $(document.body).on("click", ".custom-dropdown-delete", function () {
             var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
             if (empty.length === 0) {
                 $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load.");
+                $(".custom-dropdown-close").trigger("click");
             }
             if (empty.length > 0) {
                 $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
