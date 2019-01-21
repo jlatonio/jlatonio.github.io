@@ -14,7 +14,6 @@
 
 .notes-btn-each-active {
   position: absolute;
-  z-index: 2;
 }
 
 .notes-btn-each-active::after {
@@ -28,7 +27,6 @@
 
 .notes-btn-each-empty {
   position: absolute;
-  z-index: 2;
 }
 
 .notes-btn-each-empty::after {
@@ -48,7 +46,6 @@
   right: 110px;
   position: absolute;
   text-align: center;
-  z-index: 2;
   font-size: 14px;
 }
 
