@@ -66,9 +66,10 @@
 }
 
 .store-disclaimer {
-  margin-top: 13px;
-  padding-top: 16px;
+  margin: 13px auto 0 auto;
+  padding: 16px 40px 0 40px;
   border-top: solid 2px #ccc;
+  text-align: center;
 }
 
 .column-container-row {
@@ -164,6 +165,10 @@
     margin-bottom: 0;
   }
 
+  .store-disclaimer {
+    padding: 16px 0 0 0;
+  }
+    
   .notes-container-column-each {
     padding-left: 70px;
     padding-top: 0;
