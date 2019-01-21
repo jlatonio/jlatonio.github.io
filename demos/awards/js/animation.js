@@ -21,7 +21,6 @@ $(".custom-dropdown-close").on("click", function () {
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideUp(100);
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
     return false;
 });
 
@@ -54,13 +53,10 @@ $("input[type='text'],input[type='number']").closest(".custom-dropdown-outer").f
 $("body").on("click", function () {
     "use strict";
     if ($(this).not(".custom-dropdown-outer")) {
-        $(".custom-dropdown-group").slideUp(100);
-        $(".custom-dropdown-open").show();
-        $(".custom-dropdown-close").hide();
-        $(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");
-        $(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-open");
+        $(".custom-dropdown-close").trigger("click");
     }
 });
+
 $("input[type='text'],input[type='number']").on("click", function () {
     "use strict";
     $(".custom-dropdown-close").trigger("click");

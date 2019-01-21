@@ -342,6 +342,7 @@ $(".custom-dropdown-slots").each(function () {
 // resets content for open draft
 $(".store-reset").on("click", function () {
     "use strict";
+    $(".custom-dropdown-close").trigger("click");
     var textarea_place_holder = $("textarea").attr("data-placeholder");
     $(this).closest("form").find("textarea").attr("placeholder", textarea_place_holder).val("").focus().css({
         "background": ""
@@ -359,6 +360,7 @@ $(".store-reset").on("click", function () {
 // static clear, no effect on saved data, for index page
 $(".store-clear").on("click", function () {
     "use strict";
+    $(".custom-dropdown-close").trigger("click");
     $(this).closest("form").find(".custom-select-close").hide();
     $(this).closest("form").find(".custom-select-search").show();
     $(this).closest("form").find("textarea").val("");
@@ -376,6 +378,7 @@ $(".store-clear").on("click", function () {
 // resets all fields. removes all local storage data from menu only, not entire web storage
 $(".store-reset-all").on("click", function () {
     "use strict";
+    $(".custom-dropdown-close").trigger("click");
     $(".custom-dropdown").each(function () {
         var text = $(this).text() + " - {awards-each}"; // used to make the local storage key unique
         localStorage.removeItem(text);
