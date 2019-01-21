@@ -206,6 +206,7 @@ $(document).on('keypress', function (e) {
 // saves data on click
 $(".store-save").on("click", function () {
     "use strict";
+    $(".custom-dropdown-close").trigger("click");
     $(this).closest(".column-container-notes").find(".store-data").css({
         "background": ""
     });
@@ -215,7 +216,7 @@ $(".store-save").on("click", function () {
     var prepend = "<div class='custom-dropdown active'>";
     var append = "<div class='custom-dropdown-delete'></div><input class='custom-dropdown-strDate' disabled readonly /></div>";
     if ($(".draft-slots").val().length > 0) {
-        $(this).closest(".column-container-notes").find(".custom-dropdown").removeClass("active");
+        $(".custom-dropdown").removeClass("active");
         $(this).closest(".column-container-notes").find(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
     }
 
@@ -407,14 +408,7 @@ $(".store-nominate").click(function () {
             });
         }
         if (option.length > 0) {
-            // saves latest data before submission
-            var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
-            var value = $(this).closest(".notes-container").find(".store-data").val();
-            localStorage.setItem(text, value);
-            var value = localStorage.getItem(text);
-            $(this).css({
-                "background": ""
-            });
+            
             // adds timestamp (last submitted) and locates the active element
             $('.custom-dropdown').each(function () {
                 var d = new Date();
@@ -444,6 +438,18 @@ $(".store-nominate").click(function () {
                     $(this).find(".custom-dropdown-strDate").attr("value", strDate);
                 }
             });
+            
+            // resets active selection
+            $('.custom-dropdown').removeClass("active").css({
+                "background-color": "",
+                "color": ""
+            });
+            
+            // saves latest data before submission
+            var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
+            var value = $(this).closest(".notes-container").find(".store-data").val();
+            localStorage.setItem(text, value);
+            var value = localStorage.getItem(text);
             $(this).closest(".column-container-notes").find(".custom-dropdown-slots").each(function () {
                 var name = "custom dropdown - {awards-menu}";
                 var value = $(this).closest(".column-container-notes").find(this).html();
@@ -451,12 +457,9 @@ $(".store-nominate").click(function () {
                 var value = localStorage.getItem(name);
                 $(this).html(value);
             });
-
+            
+            // nomination submission
             $("form").removeAttr("action").attr("action", "awards-confirmation.html").submit();
-            $(this).css({
-                "background": "",
-                "color": ""
-            });
         }
     });
     return false;
