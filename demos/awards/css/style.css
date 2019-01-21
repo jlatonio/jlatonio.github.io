@@ -66,8 +66,8 @@
 }
 
 .store-disclaimer {
-  margin-top: 10px;
-  padding-top: 15px;
+  margin-top: 13px;
+  padding-top: 16px;
   border-top: solid 2px #ccc;
 }
 
@@ -143,26 +143,6 @@
   -webkit-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
   -moz-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
   box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
-}
-
-.store-save,.store-reset,.store-reset-all, .store-nominate {
-  width: 94px;
-  padding: 0;
-}
-
-.store-save:hover,.store-reset:hover,.store-reset-all:hover, .store-nominate:hover {
-  opacity: 1;
-}
-
-.store-save p,.store-reset p,.store-reset-all p,.store-nominate p {
-  margin-top: 0px;
-  padding: 10px;
-  width: 94px;
-  font-family: "OpenSans-Light";
-  font-size: 14px;
-  color: #000;
-  border: 0px solid #000;
-  text-align: center;
 }
 
 .store-send {

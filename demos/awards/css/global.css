@@ -343,36 +343,37 @@ thead {
 }
 
 input[type=submit],input[type=button] {
-  color: white;
-  padding: 10px 20px;
-  margin: 0 10px 10px 0;
-  cursor: pointer;
-  font-size: 14px;
-  display: inline-block;
-  width: 100%;
-  font-family: "OpenSans-Regular", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
-  -moz-box-shadow: 0px 0px 0px 2px #9baec8;
-  -webkit-box-shadow: 0px 0px 0px 2px #9baec8;
-  box-shadow: 0px 0px 0px 2px #9baec8;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #3a629d));
-  background: -moz-linear-gradient(top, #7593bf 5%, #3a629d 100%);
-  background: -webkit-linear-gradient(top, #7593bf 5%, #3a629d 100%);
-  background: -o-linear-gradient(top, #7593bf 5%, #3a629d 100%);
-  background: -ms-linear-gradient(top, #7593bf 5%, #3a629d 100%);
-  background: linear-gradient(to bottom, #7593bf 5%, #3a629d 100%);
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #4e6c96;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  cursor: pointer;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #283966;
 }
 
 input[type=text],input[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+input[type=submit]:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #7593bf));
+  background: -moz-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -webkit-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -o-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -ms-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: linear-gradient(to bottom, #7593bf 5%, #7593bf 100%);
+}
+
+input[type=button]:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #7593bf));
+  background: -moz-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -webkit-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -o-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: -ms-linear-gradient(top, #7593bf 5%, #7593bf 100%);
+  background: linear-gradient(to bottom, #7593bf 5%, #7593bf 100%);
+}
+
+.custom-dropdown-menu, .custom-search, .custom-date, .combo-dropdown-menu {
   font-size: 14px;
   font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   line-height: 1.4;
@@ -390,12 +391,30 @@ input[type=text],input[type=number] {
   box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
 }
 
-.custom-dropdown-menu, .custom-select, .custom-date, .combo-dropdown-menu {
-  padding: 14px 35px 14px 20px;
+.store-button {
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px 10px 0;
+  font-size: 14px;
+  display: inline-block;
   width: 100%;
-  display: block;
-  position: relative;
-  max-height: 50px;
+  font-family: "OpenSans-Regular", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  -moz-box-shadow: 0px 0px 0px 2px #9baec8;
+  -webkit-box-shadow: 0px 0px 0px 2px #9baec8;
+  box-shadow: 0px 0px 0px 2px #9baec8;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #3a629d));
+  background: -moz-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: -webkit-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: -o-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: -ms-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: linear-gradient(to bottom, #7593bf 5%, #3a629d 100%);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #4e6c96;
+  cursor: pointer;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #283966;
 }
 
 .custom-dropdown-strDate {
@@ -453,24 +472,6 @@ label {
 
 label:after {
   content: ": ";
-}
-
-input[type=submit]:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #7593bf));
-  background: -moz-linear-gradient(top, #7593bf 5%, #7593bf 100%);
-  background: -webkit-linear-gradient(top, #7593bf 5%, #7593bf 100%);
-  background: -o-linear-gradient(top, #7593bf 5%, #7593bf 100%);
-  background: -ms-linear-gradient(top, #7593bf 5%, #7593bf 100%);
-  background: linear-gradient(to bottom, #7593bf 5%, #7593bf 100%);
-}
-
-input[type=button]:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #7593bf));
-  background: -moz-linear-gradient(top, #7593bf 5%, #7593bf 100%);
-  background: -webkit-linear-gradient(top, #7593bf 5%, #7593bf 100%);
-  background: -o-linear-gradient(top, #7593bf 5%, #7593bf 100%);
-  background: -ms-linear-gradient(top, #7593bf 5%, #7593bf 100%);
-  background: linear-gradient(to bottom, #7593bf 5%, #7593bf 100%);
 }
 
 [type="date"] {
@@ -860,8 +861,8 @@ input::-webkit-clear-button {
   }
     
   .custom-dropdown-slots {
-    max-height:338px;
-    height:338px;
+    max-height:323px;
+    height:323px;
   }
     
 }
