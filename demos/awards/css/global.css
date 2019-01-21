@@ -390,7 +390,7 @@ input[type=text],input[type=number] {
   box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
 }
 
-.custom-dropdown-menu, .custom-select, .custom-date,.combo-dropdown-menu {
+.custom-dropdown-menu, .custom-select, .custom-date, .combo-dropdown-menu {
   padding: 14px 35px 14px 20px;
   width: 100%;
   display: block;
@@ -412,6 +412,10 @@ input[type=text],input[type=number] {
   color: inherit;
   width:100%;
   margin-top: 5px;
+}
+
+.custom-dropdown-relative {
+  position: relative;
 }
 
 .custom-dropdown-strDate:hover {
@@ -538,7 +542,7 @@ input::-webkit-clear-button {
 
 .custom-dropdown-date-toggle,.custom-select-close, .custom-select-date, .custom-select-search {
   position: absolute;
-  bottom: 9px;
+  top: 9px;
   right: 3px;
   width: 32px;
   height: 32px;
@@ -554,7 +558,7 @@ input::-webkit-clear-button {
 
 .custom-dropdown-arrow-toggle,.custom-dropdown-arrow-open,.custom-dropdown-arrow-close {
   position: absolute;
-  bottom: 9px;
+  top: 9px;
   right: 3px;
   width: 32px;
   height: 32px;
@@ -856,8 +860,8 @@ input::-webkit-clear-button {
   }
     
   .custom-dropdown-slots {
-    max-height:317px;
-    height:317px;
+    max-height:338px;
+    height:338px;
   }
     
 }

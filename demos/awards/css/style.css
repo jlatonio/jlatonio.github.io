@@ -65,6 +65,12 @@
   padding: 4px 20px 20px 20px;
 }
 
+.store-disclaimer {
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: solid 2px #ccc;
+}
+
 .column-container-row {
   display: -webkit-flex;
  /* Safari */
@@ -171,6 +177,7 @@
 
 @media screen and (min-width: 701px) {
   .store-data-container textarea {
+    height:calc(100% - 85px);
   }
 
   .store-data-container-inner {
