@@ -69,7 +69,6 @@
   margin: 13px auto 0 auto;
   padding: 16px 40px 0 40px;
   border-top: solid 2px #ccc;
-  text-align: center;
 }
 
 .column-container-row {
@@ -140,10 +139,18 @@
 }
 
 .store-data {
+  font-family: "OpenSans-Light";
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #fff;
+  width: 100%;
+  resize: none;
+  border-radius: 0;
   background-color: #fff;
   -webkit-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
   -moz-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
   box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
+  border: solid 1px #ccc;
 }
 
 .store-send {
@@ -158,7 +165,7 @@
 
 @media screen and (min-width: 701px) {
   .store-data-container textarea {
-    height:calc(100% - 85px);
+    height:calc(100% - 100px);
   }
 
   .store-data-container-inner {

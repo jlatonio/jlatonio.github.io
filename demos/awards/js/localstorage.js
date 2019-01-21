@@ -85,10 +85,10 @@ $(".custom-dropdown-slots").each(function (i) {
     $(function () {
         var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
         if (empty.length === 0) {
-            $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load.");
+            $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available.");
         }
         if (empty.length > 0) {
-            $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
+            $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Saved files: " + empty.length);
         }
     });
 });
@@ -184,24 +184,15 @@ $(document.body).on("click", ".custom-dropdown-delete", function () {
         $(function () {
             var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
             if (empty.length === 0) {
-                $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available to load.");
+                $(".draft-slots").eq(i).attr("placeholder", "There are no saved files available.");
                 $(".custom-dropdown-close").trigger("click");
             }
             if (empty.length > 0) {
-                $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Number of saved files: " + empty.length);
+                $(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Saved files: " + empty.length);
             }
         });
     });
 
-});
-
-// keyboard enter triggers save on click
-$(document).on('keypress', function (e) {
-    "use strict";
-    if (e.which === 13) {
-        $(".store-save").trigger("click");
-        return false;
-    }
 });
 
 // saves data on click
@@ -388,7 +379,7 @@ $(".store-reset-all").on("click", function () {
     $(".custom-select-close").hide();
     $(this).closest(".notes-container").find("textarea").val("");
     $(".custom-dropdown-slots").empty();
-    $(this).closest("form").removeAttr("action").find("input[type=text]").val("").attr("placeholder", "There are no saved files available to load.").css({
+    $(this).closest("form").removeAttr("action").find("input[type=text]").val("").attr("placeholder", "There are no saved files available.").css({
         "background": ""
     });
     var textarea_place_holder = $("textarea").attr("data-placeholder");
