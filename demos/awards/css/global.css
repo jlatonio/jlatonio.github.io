@@ -624,7 +624,7 @@ input::-webkit-clear-button {
   background-repeat: no-repeat;
   background-size:47px auto;
   background-position: left top;
-  left: 40px;
+  left: 20px;
   top: 19px;
   width: 70px;
   height: 45px;
@@ -860,7 +860,7 @@ input::-webkit-clear-button {
   }
 
   .custom-dropdown-slots .custom-dropdown {
-    padding-left: 107px;
+    padding-left: 87px;
   }
 
   .custom-dropdown-slots .custom-dropdown:after {
@@ -913,6 +913,14 @@ input::-webkit-clear-button {
   .custom-dropdown-slots {
     max-height: 308px;
     height: 308px;
+  }
+
+  .custom-dropdown-slots .custom-dropdown {
+    padding-left: 107px;
+  }
+
+  .custom-dropdown-slots .custom-dropdown:after {
+    left: 40px;
   }
     
   .custom-dropdown-padding-large {
