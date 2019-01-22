@@ -351,6 +351,35 @@ $(".store-reset").on("click", function () {
     $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
     var text = $(this).closest("form").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
     localStorage.removeItem(text);
+    // updates datestamp
+    $('.custom-dropdown').each(function () {
+        var d = new Date();
+        var weekday = d.getDay();
+        var month = d.getMonth();
+        var day = d.getDate();
+        var year = d.getFullYear();
+        var hour = d.getHours();
+        var minutes = d.getMinutes();
+        var seconds = d.getSeconds();
+        if (hour < 10) hour = "0" + hour;
+        if (minutes < 10) minutes = "0" + minutes;
+        if (seconds < 10) seconds = "0" + seconds;
+        var monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+        var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var ampm = " PM ";
+        if (hour < 12) ampm = " AM ";
+        if (hour > 12) hour -= 12;
+        var showDate = weekdayNames[weekday] + ", " + monthNames[month] + " " + day + ", " + year;
+        var showTime = hour + ":" + minutes + ":" + seconds + ampm;
+        var strDate = "Updated: " + showDate + " " + "-" + " " + showTime;
+        if ($(this).hasClass('active')) {
+            $(this).css({
+                "background-color": "#7593bf",
+                "color": "#fff"
+            });
+            $(this).find(".custom-dropdown-strDate").attr("value", strDate);
+        }
+    });
 });
 
 // static clear, no effect on saved data, for index page
