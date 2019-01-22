@@ -72,15 +72,6 @@ $(document.body).on('click', ".custom-dropdown", function () {
     $(this).closest(".custom-dropdown-outer").find(checkinput).val(option);
     $(checkinput).attr("value", val);
 
-    // changes the form"s action link on specific choices
-    if ($(this).closest("form").find("input[type='text']").val() === 'Thank You') {
-        $(".custom-dropdown-input").removeAttr("action");
-        $(".custom-dropdown-input").attr("action", "ty-entry.html");
-    } else {
-        $(".custom-dropdown-input").removeAttr("action");
-        $(".custom-dropdown-input").attr("action", "awards-entry.html");
-    }
-
     // sets active state
     $(this).css("background-color", "#e3e3e3");
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");

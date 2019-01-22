@@ -198,6 +198,10 @@
   background-color: #f3f3f3;
 }
 
+.nomination-entry-container-last {
+  border-bottom: 0 solid #d3d3d3;
+}
+
 .nomination-entry-submissions {
   margin-bottom: 20px;
 }
