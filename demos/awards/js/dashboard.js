@@ -206,7 +206,7 @@ $(".custom-dropdown").on("click", function () {
     }
     
     // Sorting by Nominations (descnding)
-    if (award_val === "Number of Nominations ⇩") {
+    if (award_val === "Nomination Total (Least)") {
         $('.nomination-entry-container').each(function () {
             var result = $(this).find('.store-nominee-total-nominations').text();
             var new_result = $('.nomination-entry-container').attr("title", result);
@@ -222,7 +222,7 @@ $(".custom-dropdown").on("click", function () {
     }
 
     // Sorting by Nominations (ascending)
-    if (award_val === "Number of Nominations ⇧") {
+    if (award_val === "Nomination Total (Most)") {
         $('.nomination-entry-container').each(function () {
             var result = $(this).find('.store-nominee-total-nominations').text();
             var new_result = $('.nomination-entry-container').attr("title", result);
