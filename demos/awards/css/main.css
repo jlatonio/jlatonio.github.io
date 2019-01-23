@@ -96,6 +96,61 @@
 
 .column-container-breadcrumbs {
   padding: 0 20px;
+  display: flex;
+}
+
+.column-container-breadcrumbs-tools {
+    display: none;
+    justify-content: right;
+    flex-direction: row-reverse;
+}
+
+#view-fullscreen,#cancel-fullscreen  {
+  padding: 10px 35px 10px 0;
+  display: none;
+  position: relative;
+}
+
+#view-fullscreen::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 10px;
+  top: 50%;
+  margin-top:-8px;
+  padding-top: 0;
+  background-image: url('../images/fullscreen-icon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  -ms-transform: rotate(-90deg);
+ /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+ /* Safari 3-8 */
+  transform: rotate(-90deg);
+  opacity: .4;
+}
+
+#cancel-fullscreen::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 10px;
+  top: 50%;
+  margin-top:-8px;
+  padding-top: 0;
+  background-image: url('../images/fullscreen-icon-exit.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  -ms-transform: rotate(-90deg);
+ /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+ /* Safari 3-8 */
+  transform: rotate(-90deg);
+  opacity: .4;
 }
 
 .column-container-breadcrumbs-each {
@@ -496,5 +551,13 @@
 
   .nomination-totals-container-inner {
     padding: 20px 10px 30px 10px;
+  }
+
+  .column-container-breadcrumbs-tools  {
+    display: flex;
+  }
+    
+  #view-fullscreen,#cancel-fullscreen  {
+    display: block;
   }
 }
