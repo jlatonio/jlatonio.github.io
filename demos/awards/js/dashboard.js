@@ -1,25 +1,21 @@
 $(window).on("load", function () {
     "use strict";
     // counts total nominations per nominee without animation
-    //$('.nomination-entry-container').each(function (i) {
-    //var empty = $(this).find(".nomination-entry-submissions").length;
-    //$(".store-nominee-total-nominations").eq(i).text(empty);
-    //});
+    $('.nomination-entry-container:visible').each(function (i) {
+        var empty = $(this).find(".nomination-entry-submissions:visible").length;
+        $(".store-nominee-total-nominations:visible").eq(i).text(empty);
+    });
 
-    // counts and animates total total nominations per nominee
-    $(".store-nominee-total-nominations").each(function () {
-        var option = $(this).closest(".nomination-entry-container").find(".nomination-entry-submissions:visible");
-        if (option.length > 0) {
-            $(this).prop("Counter", 0).delay(250).animate({
-                Counter: option.length
-            }, {
-                duration: 250,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        }
+    // adds a 0 before 1
+    $(".store-nominee-total-nominations:visible").each(function () {
+        $(this).text(function (a, b) {
+            var result = Number(b) + 0;
+            if (result < 10) {
+                return "0" + result;
+            } else {
+                return result;
+            }
+        });
     });
 
     // counts and animates total nominations overall
@@ -107,20 +103,22 @@ $(".custom-dropdown").on("click", function () {
         }
     });
 
-    // counts and animates total total nominations per nominee
-    $(".store-nominee-total-nominations").each(function () {
-        var option = $(this).closest(".nomination-entry-container").find(".nomination-entry-submissions:visible");
-        if (option.length > 0) {
-            $(this).prop("Counter", 0).animate({
-                Counter: option.length
-            }, {
-                duration: 250,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        }
+    // counts total nominations per nominee without animation
+    $('.nomination-entry-container:visible').each(function (i) {
+        var empty = $(this).find(".nomination-entry-submissions:visible").length;
+        $(".store-nominee-total-nominations:visible").eq(i).text(empty);
+    });
+
+    // adds a 0 before 1. Can be useful for sorting?
+    $(".store-nominee-total-nominations:visible").each(function () {
+        $(this).text(function (a, b) {
+            var result = Number(b) + 0;
+            if (result < 10) {
+                return "0" + result;
+            } else {
+                return result;
+            }
+        });
     });
 
     // counts and animates total nominations overall
@@ -174,7 +172,7 @@ $(".custom-dropdown").on("click", function () {
             });
         }
     });
-    
+
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
         "background-color": "#fff"
