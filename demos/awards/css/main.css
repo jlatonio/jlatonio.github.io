@@ -250,7 +250,7 @@
 }
 
 .nomination-totals-container {
-  padding: 15px 20px 20px 20px;
+  padding: 15px 10px 20px 10px;
   display: -webkit-flex;
  /* Safari */
   -webkit-flex-wrap: wrap;
@@ -260,7 +260,7 @@
 }
 
 .nomination-totals-container-inner {
-  padding: 10px 0 20px 0;
+  padding: 10px 10px 20px 10px;
   display: -webkit-flex;
  /* Safari */
   -webkit-flex-wrap: wrap;
@@ -331,6 +331,12 @@
 }
 
 .column-container-totals {
+  position: relative;
+}
+
+.column-container-totals {
+  position: relative;
+  margin: 0 10px;
   border-bottom: dotted 2px #ccc;
 }
 
@@ -339,12 +345,8 @@
 }
 
 .column-container-select {
-  padding-right: 0;
+  padding: 0 10px;
   margin-top: 5px;
-}
-
-.column-container-select:last-child {
-  padding: 0;
 }
 
 .column-container-span {
@@ -444,7 +446,6 @@
   }
 
   .column-container-select {
-    padding-right: 20px;
     margin-top: 0;
   }
 
@@ -494,6 +495,6 @@
   }
 
   .nomination-totals-container-inner {
-    padding: 20px 0 30px 0;
+    padding: 20px 10px 30px 10px;
   }
 }

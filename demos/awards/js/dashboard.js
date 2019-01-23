@@ -75,12 +75,13 @@ $(window).on("load", function () {
 // Filtering
 $(".custom-dropdown").on("click", function () {
     "use strict";
+    $(".nomination-entry-submissions").removeClass("hidethis").removeClass("showthis");
     $(".store-nominator-award").each(function () {
         var award_text = $(this).text();
         var award_val = $(this).closest("form").find(".custom-dropdown-dashboard").val();
         // changes the form"s action link on specific choices
         if (award_text === award_val) {
-            $(this).closest(".nomination-entry-submissions").addClass("showthis").show();
+            $(this).closest(".nomination-entry-submissions").removeClass("hidethis").addClass("showthis").show();
         } else {
             $(this).closest(".nomination-entry-submissions").removeClass("showthis").addClass("hidethis").hide();
         }
@@ -90,7 +91,7 @@ $(".custom-dropdown").on("click", function () {
     $(".store-nominator-award").each(function () {
         var award_val = $(this).closest("form").find(".custom-dropdown-dashboard").val();
         if (award_val === "All Award Winners") {
-            $(".nomination-entry-submissions").addClass("showthis").show();
+            $(".nomination-entry-submissions").removeClass("hidethis").addClass("showthis").show();
         }
     });
 
