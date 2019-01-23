@@ -428,16 +428,3 @@ $(".nomination-entry-share").click(function () {
         window.location = mailto + cc + "&" + subjectStr + "&body=" + bodyStr + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
     });
 });
-
-// dynamic positioning of the share link
-$(".store-nominator-notes-container").each(function () {
-    "use strict";
-    if ($(window).width() >= 1024) {
-        $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(1)) .store-nominator-notes-container").css({
-            "min-height": "105px"
-        });
-        $(this).closest(".nomination-entry-submissions-container:has(.nomination-entry-submissions:nth-of-type(2)) .store-nominator-notes-container").css({
-            "min-height": "auto"
-        });
-    }
-});

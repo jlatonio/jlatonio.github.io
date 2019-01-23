@@ -79,7 +79,6 @@ $(window).on("load", function () {
 // sorting
 $(".custom-dropdown").on("click", function () {
     "use strict";
-    $(".nomination-entry-container").hide();
     $(".store-nominator-award").each(function () {
         var award_text = $(this).text();
         var award_val = $(this).closest("form").find(".custom-dropdown-dashboard").val();
@@ -102,7 +101,7 @@ $(".custom-dropdown").on("click", function () {
     // filters all those with the showthis class
     $(".nomination-entry-submissions-container").each(function () {
         if ($(this).find(".nomination-entry-submissions").hasClass('showthis')) {
-            $(this).closest(".nomination-entry-container").fadeIn();
+            $(this).closest(".nomination-entry-container").show();
         } else {
             $(this).closest(".nomination-entry-container").hide();
         }
@@ -175,7 +174,7 @@ $(".custom-dropdown").on("click", function () {
             });
         }
     });
-
+    
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
         "background-color": "#fff"
