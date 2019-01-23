@@ -109,7 +109,7 @@ $(".custom-dropdown").on("click", function () {
         $(".store-nominee-total-nominations:visible").eq(i).text(empty);
     });
 
-    // adds a 0 before 1. Can be useful for sorting?
+    // adds a 0 before single digits. Can be useful for sorting?
     $(".store-nominee-total-nominations:visible").each(function () {
         $(this).text(function (a, b) {
             var result = Number(b) + 0;
