@@ -72,7 +72,7 @@ $(window).on("load", function () {
     return false;
 });
 
-// sorting
+// Filtering
 $(".custom-dropdown").on("click", function () {
     "use strict";
     $(".store-nominator-award").each(function () {
@@ -172,6 +172,70 @@ $(".custom-dropdown").on("click", function () {
             });
         }
     });
+
+    // Sorting by Name (A - Z)
+    $('.nomination-entry-container').removeAttr("title");
+    var award_val = $(this).closest("form").find(".custom-dropdown-sort").val();
+    if (award_val === "By Name (A - Z)") {
+        $('.nomination-entry-container').each(function () {
+            var result = $(this).find('.store-nominee-enter').text();
+            var new_result = $('.nomination-entry-container').attr("title", result);
+            $(new_result).sort(function (a, b) {
+                if (a.textContent < b.textContent) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).appendTo('.nomination-entry-container-outer');
+        });
+    }
+    
+    // Sorting by Name (Z - A)
+    if (award_val === "By Name (Z - A)") {
+        $('.nomination-entry-container').each(function () {
+            var result = $(this).find('.store-nominee-enter').text();
+            var new_result = $('.nomination-entry-container').attr("title", result);
+            $(new_result).sort(function (a, b) {
+                if (a.textContent > b.textContent) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).appendTo('.nomination-entry-container-outer');
+        });
+    }
+    
+    // Sorting by Nominations (descnding)
+    if (award_val === "Number of Nominations ⇩") {
+        $('.nomination-entry-container').each(function () {
+            var result = $(this).find('.store-nominee-total-nominations').text();
+            var new_result = $('.nomination-entry-container').attr("title", result);
+            $(new_result).sort(function (a, b) {
+                if (a.textContent < b.textContent) { // ascending: <  |  descending: >
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).appendTo('.nomination-entry-container-outer');
+
+        });
+    }
+
+    // Sorting by Nominations (ascending)
+    if (award_val === "Number of Nominations ⇧") {
+        $('.nomination-entry-container').each(function () {
+            var result = $(this).find('.store-nominee-total-nominations').text();
+            var new_result = $('.nomination-entry-container').attr("title", result);
+            $(new_result).sort(function (a, b) {
+                if (a.textContent > b.textContent) { // ascending: <  |  descending: >
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).appendTo('.nomination-entry-container-outer');
+
+        });
+    }
 
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
