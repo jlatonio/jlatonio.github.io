@@ -10,6 +10,10 @@ $(".custom-dropdown-open").on("click", function () {
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideDown(300);
     $(this).hide();
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").show();
+    $('html,body').animate({
+        scrollTop: $(this).closest(".custom-dropdown-outer").offset().top - 120},
+        500,'easeInOutQuad');
+        return false; 
     return false;
 });
 
