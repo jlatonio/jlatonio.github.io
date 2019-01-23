@@ -105,6 +105,12 @@
     flex-direction: row-reverse;
 }
 
+.column-tools-breadcrumbs-each{
+    padding: 0 0 0 20px;
+    width: auto;
+}
+
+
 #view-fullscreen,#cancel-fullscreen  {
   padding: 10px 35px 10px 0;
   display: none;
