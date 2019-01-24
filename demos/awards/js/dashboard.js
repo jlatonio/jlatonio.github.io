@@ -195,13 +195,19 @@ $(".custom-dropdown").on("click", function () {
         }
       });  
     
+    
+    // Please fix all sorting features! I am trying to use the data attribute. Feel free to update as needed
+    
+    
     // Sorting by Name (A - Z)
-    $('.nomination-entry-container').removeAttr("title");
+    $('.nomination-entry-container').removeAttr("data");
+    
     var award_val = $(this).closest("form").find(".custom-dropdown-sort").val();
     if (award_val === "By Name (A - Z)") {
-        $('.nomination-entry-container').each(function () {
-            var result = $(this).find('.store-nominee-enter').text();
-            var new_result = $('.nomination-entry-container').attr("title", result);
+    $('.store-nominee-enter').each(function (i) {
+        var result = $(this).text();
+        $(".nomination-entry-container").eq(i).attr("data-sort", result);
+            var new_result = $('.nomination-entry-container').attr("data-sort", result);
             $(new_result).sort(function (a, b) {
                 if (a.textContent < b.textContent) {
                     return -1;
@@ -214,9 +220,10 @@ $(".custom-dropdown").on("click", function () {
     
     // Sorting by Name (Z - A)
     if (award_val === "By Name (Z - A)") {
-        $('.nomination-entry-container').each(function () {
-            var result = $(this).find('.store-nominee-enter').text();
-            var new_result = $('.nomination-entry-container').attr("title", result);
+    $('.store-nominee-enter').each(function (i) {
+        var result = $(this).text();
+        $(".nomination-entry-container").eq(i).attr("data-sort", result);
+            var new_result = $('.nomination-entry-container').attr("data-sort", result);
             $(new_result).sort(function (a, b) {
                 if (a.textContent > b.textContent) {
                     return -1;
@@ -229,9 +236,10 @@ $(".custom-dropdown").on("click", function () {
     
     // Sorting by Nominations (descnding)
     if (award_val === "Total Nominations (Least)") {
-        $('.nomination-entry-container').each(function () {
-            var result = $(this).find('.store-nominee-total-nominations').text();
-            var new_result = $('.nomination-entry-container').attr("title", result);
+    $('.store-nominee-total-nominations').each(function (i) {
+        var result = $(this).text();
+        $(".nomination-entry-container").eq(i).attr("data-sort", result);
+            var new_result = $('.nomination-entry-container').attr("data-sort", result);
             $(new_result).sort(function (a, b) {
                 if (a.textContent < b.textContent) { // ascending: <  |  descending: >
                     return -1;
@@ -245,9 +253,10 @@ $(".custom-dropdown").on("click", function () {
 
     // Sorting by Nominations (ascending)
     if (award_val === "Total Nominations (Most)") {
-        $('.nomination-entry-container').each(function () {
-            var result = $(this).find('.store-nominee-total-nominations').text();
-            var new_result = $('.nomination-entry-container').attr("title", result);
+    $('.store-nominee-total-nominations').each(function (i) {
+        var result = $(this).text();
+        $(".nomination-entry-container").eq(i).attr("data-sort", result);
+            var new_result = $('.nomination-entry-container').attr("data-sort", result);
             $(new_result).sort(function (a, b) {
                 if (a.textContent > b.textContent) { // ascending: <  |  descending: >
                     return -1;
@@ -261,9 +270,10 @@ $(".custom-dropdown").on("click", function () {
 
     // Sorting by Date (Recent)
     if (award_val === "By Date (Newest)") {
-        $('.nomination-entry-container').each(function () {
-            var result = $(this).find('.store-nominator-date').text();
-            var new_result = $('.nomination-entry-container').attr("title", result);
+    $('.store-nominator-date').each(function (i) {
+        var result = $(this).text();
+        $(".nomination-entry-container").eq(i).attr("data-sort", result);
+            var new_result = $('.nomination-entry-container').attr("data-sort", result);
             $(new_result).sort(function (a, b) {
                 if (a.textContent < b.textContent) { // ascending: <  |  descending: >
                     return -1;
@@ -277,9 +287,10 @@ $(".custom-dropdown").on("click", function () {
     
     // Sorting by Date (Oldest)
     if (award_val === "By Date (Oldest)") {
-        $('.nomination-entry-container').each(function () {
-            var result = $(this).find('.store-nominator-date').text();
-            var new_result = $('.nomination-entry-container').attr("title", result);
+    $('.store-nominator-date').each(function (i) {
+        var result = $(this).text();
+        $(".nomination-entry-container").eq(i).attr("data-sort", result);
+            var new_result = $(".nomination-entry-container").attr("data-sort", result);
             $(new_result).sort(function (a, b) {
                 if (a.textContent > b.textContent) { // ascending: <  |  descending: >
                     return -1;
