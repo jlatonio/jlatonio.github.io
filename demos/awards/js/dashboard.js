@@ -182,6 +182,10 @@ $(".custom-dropdown").on("click", function () {
         var option = $(this).closest("form").find(".nomination-entry-container:visible");
         if (option.length === 0) {
             $('.nomination-no-entries').show();
+            $('html,body').animate({
+                scrollTop: $(".custom-dropdown-outer").offset().top - 140},
+                300,'easeInOutQuad');
+            return false;
         } else {
             $('.nomination-no-entries').hide();
         }
