@@ -188,6 +188,10 @@ $(".custom-dropdown").on("click", function () {
             return false;
         } else {
             $('.nomination-no-entries').hide();
+            $('html,body').animate({
+                scrollTop: $(".custom-dropdown-outer").offset().top - 140},
+                300,'easeInOutQuad');
+            return false;
         }
       });  
     
