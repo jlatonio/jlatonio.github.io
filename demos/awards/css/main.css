@@ -242,11 +242,6 @@
   height: 20px;
 }
 
-.nomination-entry-container span {
-  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
-  color: #000;
-}
-
 .nomination-entry-container:nth-child(1) {
   border-top: 0 solid #d3d3d3;
 }
@@ -310,6 +305,18 @@
   padding: 20px;
 }
 
+.nomination-no-entries {
+  display: -webkit-flex;
+ /* Safari */
+  -webkit-flex-wrap: wrap;
+ /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  border-left: solid 2px #ccc;
+  border-right: solid 2px #ccc;
+}
+
 .nomination-totals-container {
   padding: 15px 10px 20px 10px;
   display: -webkit-flex;
@@ -365,6 +372,24 @@
   background-size: cover;
   background-position: center center;
   opacity: .8;
+}
+
+.store-nominee-total-nominations-container{
+  margin-bottom: 19px;
+  position: relative;
+}
+
+.store-nominee-total-nominations-container::before{
+  content: "";
+  left: 0;
+  bottom: -5px;
+  position: absolute;
+  height:4px;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  background: -moz-linear-gradient(left, rgba(1,138,166,1) 21%, rgba(1,138,166,0.7) 50%, rgba(255,255,255,0) 90%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(1,138,166,1) 21%,rgba(1,138,166,0.7) 50%, rgba(255,255,255,0) 90%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(1,138,166,1) 21%,rgba(1,138,166,0.7) 50%, rgba(255,255,255,0) 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .custom-dropdown-delete {
@@ -563,6 +588,10 @@
     display: flex;
   }
     
+    
+.nomination-no-entries {
+  padding: 85px 20px 140px 20px;
+}
   #view-fullscreen,#cancel-fullscreen  {
     display: block;
   }

@@ -1,3 +1,6 @@
+// hides no submission message by default
+$('.nomination-no-entries').hide();
+
 $(window).on("load", function () {
     "use strict";
     // counts total nominations per nominee without animation
@@ -174,6 +177,16 @@ $(".custom-dropdown").on("click", function () {
         }
     });
 
+    // Shows no submission message
+    $('.nomination-no-entries').each(function () {
+        var option = $(this).closest("form").find(".nomination-entry-container:visible");
+        if (option.length === 0) {
+            $('.nomination-no-entries').show();
+        } else {
+            $('.nomination-no-entries').hide();
+        }
+      });  
+    
     // Sorting by Name (A - Z)
     $('.nomination-entry-container').removeAttr("title");
     var award_val = $(this).closest("form").find(".custom-dropdown-sort").val();
@@ -238,6 +251,38 @@ $(".custom-dropdown").on("click", function () {
         });
     }
 
+    // Sorting by Date (Recent)
+    if (award_val === "By Date (Newest)") {
+        $('.nomination-entry-container').each(function () {
+            var result = $(this).find('.store-nominator-date').text();
+            var new_result = $('.nomination-entry-container').attr("title", result);
+            $(new_result).sort(function (a, b) {
+                if (a.textContent < b.textContent) { // ascending: <  |  descending: >
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).appendTo('.nomination-entry-container-outer');
+
+        });
+    }
+    
+    // Sorting by Date (Oldest)
+    if (award_val === "By Date (Oldest)") {
+        $('.nomination-entry-container').each(function () {
+            var result = $(this).find('.store-nominator-date').text();
+            var new_result = $('.nomination-entry-container').attr("title", result);
+            $(new_result).sort(function (a, b) {
+                if (a.textContent > b.textContent) { // ascending: <  |  descending: >
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).appendTo('.nomination-entry-container-outer');
+
+        });
+    }
+    
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
         "background-color": "#fff"
@@ -249,3 +294,4 @@ $(".custom-dropdown").on("click", function () {
     $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
     return false;
 });
+
