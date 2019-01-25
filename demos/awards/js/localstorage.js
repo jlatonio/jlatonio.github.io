@@ -417,17 +417,3 @@ $(".store-nominate").click(function () {
     });
     return false;
 });
-
-// mailto from the dashboard (from a div, not values from a textarea). 
-$(".nomination-entry-share").click(function () {
-    "use strict";
-    $(this).closest(".nomination-entry-submissions").find(".store-nominator-notes").each(function () {
-        var mailto = "mailto:nominate@adobe.com";
-        var bodyStr = $(this).html().replace(/\<br>*/ig, "%0D%0A").replace(/\<p>*/ig, "").replace(/\<\/p\>*/ig, "%0D%0A%0D%0A"); //Needs to honor line breaks in body
-        var nominee = $(this).closest(".nomination-entry-container").find(".store-nominee-enter").html();
-        var award = $(this).closest(".nomination-entry-container").find(".store-nominator-award").html();
-        var subjectStr = "subject=Thank You " + nominee + "!" + " - " + award;
-        var cc = "?" + "cc=nominate@adobe.com,";
-        window.location = mailto + cc + "&" + subjectStr + "&body=" + bodyStr + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
-    });
-});

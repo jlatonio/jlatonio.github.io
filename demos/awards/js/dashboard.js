@@ -197,108 +197,101 @@ $(".custom-dropdown").on("click", function () {
         }
     });
 
-
-    // Please fix all sorting features! I am trying to use the data attribute. It works, but not correctly. Please update as needed.
-
+    // Please fix all sorting features! It works, but not perfectly. Please update as needed.
 
     // Sorting by Name (A - Z)
     $(".nomination-entry-container").removeAttr("data");
 
     var award_val = $(this).closest("form").find(".custom-dropdown-sort").val();
     if (award_val === "By Name (A - Z)") {
-        $(".store-nominee-enter").each(function (i) {
-            var result = $(this).text();
-            $(".nomination-entry-container").eq(i).attr("data-sort", result);
-            var new_result = $(".nomination-entry-container").attr("data-sort", result);
-            $(new_result).sort(function (a, b) {
-                if (a.textContent > b.textContent) {
-                    return -1;
-                } else {
-                    return 1;
-                }
-            }).appendTo(".nomination-entry-container-outer");
+        $(".store-nominee-enter").each(function () {
+            var sort_this = $('.nomination-entry-container');
+            var main_container = $(this).closest('.nomination-entry-container-outer');
+            $(sort_this).sort(function(a, b) {
+              if (a.textContent > b.textContent) {  // ascending: <  |  descending: >
+                return -1;
+              } else {
+                return 1;
+              }
+            }).appendTo(main_container);
         });
     }
 
     // Sorting by Name (Z - A)
     if (award_val === "By Name (Z - A)") {
-        $(".store-nominee-enter").each(function (i) {
-            var result = $(this).text();
-            $(".nomination-entry-container").eq(i).attr("data-sort", result);
-            var new_result = $(".nomination-entry-container").attr("data-sort", result);
-            $(new_result).sort(function (a, b) {
-                if (a.textContent < b.textContent) {
-                    return -1;
-                } else {
-                    return 1;
-                }
-            }).appendTo(".nomination-entry-container-outer");
+        $(".store-nominee-enter").each(function () {
+            var sort_this = $('.nomination-entry-container');
+            var main_container = $(this).closest('.nomination-entry-container-outer');
+            $(sort_this).sort(function(a, b) {
+              if (a.textContent < b.textContent) {  // ascending: <  |  descending: >
+                return -1;
+              } else {
+                return 1;
+              }
+            }).appendTo(main_container);
         });
     }
 
     // Sorting by Nominations (descnding)
     if (award_val === "Total Nominations (Least)") {
-        $(".store-nominee-total-nominations").each(function (i) {
-            var result = $(this).text();
-            $(".nomination-entry-container").eq(i).attr("data-sort", result);
-            var new_result = $(".nomination-entry-container").attr("data-sort", result);
-            $(new_result).sort(function (a, b) {
-                if (a.textContent < b.textContent) { // ascending: <  |  descending: >
-                    return -1;
-                } else {
-                    return 1;
-                }
-            }).appendTo(".nomination-entry-container-outer");
+        $(".store-nominee-total-nominations").each(function () {
+            var sort_this = $('.nomination-entry-container');
+            var main_container = $(this).closest('.nomination-entry-container-outer');
+            $(sort_this).sort(function(a, b) {
+              if (a.textContent < b.textContent) {  // ascending: <  |  descending: >
+                return -1;
+              } else {
+                return 1;
+              }
+            }).appendTo(main_container);
         });
     }
 
     // Sorting by Nominations (ascending)
     if (award_val === "Total Nominations (Most)") {
-        $(".store-nominee-total-nominations").each(function (i) {
-            var result = $(this).text();
-            $(".nomination-entry-container").eq(i).attr("data-sort", result);
-            var new_result = $(".nomination-entry-container").attr("data-sort", result);
-            $(new_result).sort(function (a, b) {
-                if (a.textContent > b.textContent) { // ascending: <  |  descending: >
-                    return -1;
-                } else {
-                    return 1;
-                }
-            }).appendTo(".nomination-entry-container-outer");
+        $(".store-nominee-total-nominations").each(function () {
+            var sort_this = $('.nomination-entry-container');
+            var main_container = $(this).closest('.nomination-entry-container-outer');
+            $(sort_this).sort(function(a, b) {
+              if (a.textContent > b.textContent) {  // ascending: <  |  descending: >
+                return -1;
+              } else {
+                return 1;
+              }
+            }).appendTo(main_container);
         });
     }
 
     // Sorting by Date (Recent)
     if (award_val === "By Date (Newest)") {
-        $(".store-nominator-date").each(function (i) {
-            var result = $(this).text();
-            $(".nomination-entry-container").eq(i).attr("data-sort", result);
-            var new_result = $(".nomination-entry-container").attr("data-sort", result);
-            $(new_result).sort(function (a, b) {
-                if (a.textContent < b.textContent) { // ascending: <  |  descending: >
-                    return -1;
-                } else {
-                    return 1;
-                }
-            }).appendTo(".nomination-entry-container-outer");
+        $(".store-nominator-date").each(function () {
+            var sort_this = $('.nomination-entry-container');
+            var main_container = $(this).closest('.nomination-entry-container-outer');
+            $(sort_this).sort(function(a, b) {
+              if (a.textContent > b.textContent) {  // ascending: <  |  descending: >
+                return -1;
+              } else {
+                return 1;
+              }
+            }).appendTo(main_container);
         });
     }
 
     // Sorting by Date (Oldest)
     if (award_val === "By Date (Oldest)") {
         $(".store-nominator-date").each(function (i) {
-            var result = $(this).text();
-            $(".nomination-entry-container").eq(i).attr("data-sort", result);
-            var new_result = $(".nomination-entry-container").attr("data-sort", result);
-            $(new_result).sort(function (a, b) {
-                if (a.textContent > b.textContent) { // ascending: <  |  descending: >
-                    return -1;
-                } else {
-                    return 1;
-                }
-            }).appendTo(".nomination-entry-container-outer");
+            var sort_this = $('.nomination-entry-container');
+            var main_container = $(this).closest('.nomination-entry-container-outer');
+            $(sort_this).sort(function(a, b) {
+              if (a.textContent < b.textContent) {  // ascending: <  |  descending: >
+                return -1;
+              } else {
+                return 1;
+              }
+            }).appendTo(main_container);
         });
     }
+
 
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
@@ -310,4 +303,46 @@ $(".custom-dropdown").on("click", function () {
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
     $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
     return false;
+});
+
+// mailto from the dashboard (from a div, not values from a textarea). 
+$(".nomination-entry-share").click(function () {
+    "use strict";
+    $(this).closest(".nomination-entry-submissions").find(".store-nominator-notes").each(function () {
+        var mailto = "mailto:nominate@adobe.com";
+        var bodyStr = $(this).html().replace(/\<br>*/ig, "%0D%0A").replace(/\<p>*/ig, "").replace(/\<\/p\>*/ig, "%0D%0A%0D%0A"); //Needs to honor line breaks in body
+        var nominee = $(this).closest(".nomination-entry-container").find(".store-nominee-enter").html();
+        var award = $(this).closest(".nomination-entry-container").find(".store-nominator-award").html();
+        var subjectStr = "subject=Thank You " + nominee + "!" + " - " + award;
+        var cc = "?" + "cc=nominate@adobe.com,";
+        window.location = mailto + cc + "&" + subjectStr + "&body=" + bodyStr + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
+    });
+});
+
+// enables the datepicker
+$(".custom-select-date, .custom-date").on("click", function () {
+    "use strict";
+    $(".custom-dropdown-start-date, .custom-dropdown-end-date").datepicker({
+        changeMonth: false,
+        changeYear: false,
+        numberOfMonths: 1,
+        dateFormat: "mm-dd-yy",
+        showAnim: "fadeIn",
+    });
+    $(this).closest(".custom-dropdown-outer").find(".custom-date").datepicker("show");
+    $("body").trigger("click"); // closes all other open menus
+    return false;
+});
+
+
+$('.store-nominator-date').each(function(i) {
+    var sort_this = $(this).closest('.nomination-entry-submissions');
+    var main_container = $(this).closest('.nomination-entry-submissions-container');
+    $(sort_this).eq(i).sort(function(a, b) {
+      if (a.textContent > b.textContent) {  // ascending: <  |  descending: >
+        return -1;
+      } else {
+        return 1;
+      }
+    }).appendTo(main_container);
 });

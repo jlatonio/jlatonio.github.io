@@ -275,15 +275,6 @@ $(function () {
     return false;
 });
 
-// enables the datepicker
-$(".custom-select-date, .custom-date").on("click", function () {
-    "use strict";
-    $(".custom-date").datepicker();
-    $(this).closest(".custom-dropdown-outer").find(".custom-date").datepicker("show");
-    $("body").trigger("click");
-    return false;
-});
-
 // adds focus when the search icon is clicked
 $(".custom-select-search").on("click", function () {
     "use strict";
