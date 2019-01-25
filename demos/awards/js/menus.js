@@ -10,9 +10,10 @@ $(".custom-dropdown-open").on("click", function () {
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").delay(300).slideDown(300);
     $(this).hide();
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").show();
-    $('html,body').animate({
-        scrollTop: $(this).closest(".custom-dropdown-outer").offset().top - 140},
-        300,'easeInOutQuad');
+    $("html, body").animate({
+        scrollTop: $(this).closest(".custom-dropdown-outer").offset().top - 140
+    },
+        300, "easeInOutQuad");
     return false;
 });
 
@@ -95,7 +96,7 @@ $(".custom-dropdown").on("click", function () {
     $(checkinput).attr("value", val);
 
     // changes the form"s action link on specific choices
-    if ($(this).closest("form").find("input[type='text']").val() === 'Thank You') {
+    if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Thank You') {
         $(".custom-dropdown-input").removeAttr("action");
         $(".custom-dropdown-input").attr("action", "ty-entry.html");
     } else {
@@ -127,6 +128,7 @@ $(document.body).on('mouseover click', ".custom-dropdown", function () {
     return false;
 });
 
+// dropdown menu click (neded for appended dropdown)
 $(document.body).on('click', ".custom-dropdown", function () {
     "use strict";
     $(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active").css({
@@ -154,6 +156,7 @@ $(".custom-dropdown").on("mouseover click", function () {
     return false;
 });
 
+// modals if needed
 $(".custom-dropdown-open,.custom-dropdown-close").on("mouseover", function () {
     "use strict";
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").css({
@@ -232,7 +235,7 @@ $(".store-continue").click(function (e) {
         }
     });
     if (isValid === false)
-        e.preventDefault();
+    e.preventDefault();
     else
         $("form").submit();
 });

@@ -104,6 +104,7 @@ h3 + p, h4 + p {
 h3 + h3, h4 + h4 {
   margin-top: 5px;
 }
+
 b {
   font-family: "OpenSans-Semibold";
 }
@@ -192,8 +193,8 @@ thead {
   font-family: "OpenSans-Bold";
 }
 
-.bold-text-adobe, .bold-text-adobe p {
-  font-family: "OpenSans-Bold";
+.semi-bold-text, .semi-bold-text p {
+  font-family: "OpenSans-Semibold";
 }
 
 .regular-text, .regular-text p {
@@ -210,6 +211,10 @@ thead {
 
 .bold-italics-text, .bold-italics-text p {
   font-family: "OpenSans-SemiboldItalic";
+}
+
+.bold-text-adobe, .bold-text-adobe p {
+  font-family: "AdobeClean-BoldSemiCn";
 }
 
 .light-italics-text, .light-italics-text p {

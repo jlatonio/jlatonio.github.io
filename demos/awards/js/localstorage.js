@@ -64,6 +64,10 @@ $(".store-create").on("click", function () {
     $(this).closest(".column-container-notes").find("textarea").val("").css({
         "background": ""
     });
+    $("html, body").animate({
+        scrollTop: $(".custom-dropdown-outer").offset().top - 140
+    },
+        300, "easeInOutQuad");
 });
 
 $(".draft-slots").on("change", function () {
@@ -130,7 +134,6 @@ $(".store-save").on("click", function () {
     });
 
     // adds to dropdown
-
     var prepend = "<div class='custom-dropdown active'>";
     var append = "<div class='custom-dropdown-delete'></div><input class='custom-dropdown-strDate' disabled readonly /></div>";
     if ($(".draft-slots").val().length > 0) {
