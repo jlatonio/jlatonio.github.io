@@ -1,7 +1,3 @@
-.acs-main-content {
-  min-height: calc(100vh - 210px);
-}
-
 .acs-header {
   display: -webkit-flex;
  /* Safari */

@@ -261,6 +261,13 @@ thead {
   color: #9cc9fb;
 }
 
+.footer-image {
+  width: 70px;
+  height: auto;
+  margin: 20px 0;
+}
+
+
 .highlight {
   color: #fff37d;
 }
@@ -891,6 +898,10 @@ input::-webkit-clear-button {
   .custom-dropdown-slots {
     max-height: 330px;
     height: 330px;
+  }
+    
+  .footer-image {
+    margin: 20px 0 40px 0;
   }
 }
 
