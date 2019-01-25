@@ -469,7 +469,7 @@
 
 .acs-footer {
   width: 100%;
-  padding: 20px;
+  padding: 20px 20px 30px 20px;
   color: #fff;
 }
 
@@ -567,7 +567,7 @@
   }
 
   .acs-footer {
-    padding: 40px 100px;
+    padding: 40px 100px 60px 100px;
   }
 
   .acs-header {
