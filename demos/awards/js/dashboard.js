@@ -234,7 +234,7 @@ $(".custom-dropdown").on("click", function () {
         }).appendTo(main_container);
     }
 
-    // Sorting by Nominations (descnding)
+    // Sorting by Nominations (descending)
     if (award_val === "Total Nominations (Least)") {
         $(".store-nominee-total-nominations").each(function (i) {
             var result = $(this).text();
@@ -257,58 +257,6 @@ $(".custom-dropdown").on("click", function () {
         });
         $(".nomination-entry-container").sort(function (a, b) {
             if (a.dataset.sort > b.dataset.sort) { // ascending: <  |  descending: >
-                return -1;
-            } else {
-                return 1;
-            }
-        }).appendTo(main_container);
-    }
-
-    // Sorting by overall Date (Newest)
-    if (award_val === "By Overall Date (Newest)") {
-        $(".nomination-entry-submissions-container").each(function () {
-            "use strict";
-            var main_container = $(this).find('.nomination-entry-submissions');
-            $(main_container).sort(function (a, b) {
-                if (a.dataset.date > b.dataset.date) { // ascending: <  |  descending: >
-                    return -1;
-                } else {
-                    return 1;
-                }
-            }).appendTo(this);
-        });
-        $(".nomination-entry-submissions:visible:first-child").find(".store-nominator-date").each(function (i) {
-            var result = $(this).text();
-            $(".nomination-entry-container").eq(i).attr("data-sort", result);
-        });
-        $(".nomination-entry-container").sort(function (a, b) {
-            if (a.dataset.sort > b.dataset.sort) { // ascending: <  |  descending: >
-                return -1;
-            } else {
-                return 1;
-            }
-        }).appendTo(main_container);
-    }
-
-    // Sorting by overall Date (Oldest)
-    if (award_val === "By Overall Date (Oldest)") {
-        $(".nomination-entry-submissions-container").each(function () {
-            "use strict";
-            var main_container = $(this).find('.nomination-entry-submissions');
-            $(main_container).sort(function (a, b) {
-                if (a.dataset.date < b.dataset.date) { // ascending: <  |  descending: >
-                    return -1;
-                } else {
-                    return 1;
-                }
-            }).appendTo(this);
-        });
-        $(".nomination-entry-submissions:visible:first-child").find(".store-nominator-date").each(function (i) {
-            var result = $(this).text();
-            $(".nomination-entry-container").eq(i).attr("data-sort", result);
-        });
-        $(".nomination-entry-container").sort(function (a, b) {
-            if (a.dataset.sort < b.dataset.sort) { // ascending: <  |  descending: >
                 return -1;
             } else {
                 return 1;
@@ -346,6 +294,57 @@ $(".custom-dropdown").on("click", function () {
         });
     }
     
+    // Sorting by overall Date (Newest)
+    if (award_val === "By Overall Date (Newest)") {
+        $(".nomination-entry-submissions-container").each(function () {
+            "use strict";
+            var main_container = $(this).find('.nomination-entry-submissions');
+            $(main_container).sort(function (a, b) {
+                if (a.dataset.date > b.dataset.date) { // ascending: <  |  descending: >
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).appendTo(this);
+        });
+        $(".nomination-entry-submissions:first-child").find(".store-nominator-date").each(function (i) {
+            var result = $(this).text();
+            $(".nomination-entry-container").eq(i).attr("data-sort", result);
+        });
+        $(".nomination-entry-container").sort(function (a, b) {
+            if (a.dataset.sort > b.dataset.sort) { // ascending: <  |  descending: >
+                return -1;
+            } else {
+                return 1;
+            }
+        }).appendTo(main_container);
+    }
+
+    // Sorting by overall Date (Oldest)
+    if (award_val === "By Overall Date (Oldest)") {
+        $(".nomination-entry-submissions-container").each(function () {
+            "use strict";
+            var main_container = $(this).find('.nomination-entry-submissions');
+            $(main_container).sort(function (a, b) {
+                if (a.dataset.date < b.dataset.date) { // ascending: <  |  descending: >
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).appendTo(this);
+        });
+        $(".nomination-entry-submissions:first-child").find(".store-nominator-date").each(function (i) {
+            var result = $(this).text();
+            $(".nomination-entry-container").eq(i).attr("data-sort", result);
+        });
+        $(".nomination-entry-container").sort(function (a, b) {
+            if (a.dataset.sort < b.dataset.sort) { // ascending: <  |  descending: >
+                return -1;
+            } else {
+                return 1;
+            }
+        }).appendTo(main_container);
+    }
     
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
