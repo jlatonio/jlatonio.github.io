@@ -183,113 +183,142 @@ $(".custom-dropdown").on("click", function () {
         if (option.length === 0) {
             $(".nomination-no-entries").show();
             $("html, body").animate({
-                scrollTop: $(".custom-dropdown-outer").offset().top - 140
-            },
+                    scrollTop: $(".custom-dropdown-outer").offset().top - 140
+                },
                 300, "easeInOutQuad");
             return false;
         } else {
             $(".nomination-no-entries").hide();
             $("html,body").animate({
-                scrollTop: $(".custom-dropdown-outer").offset().top - 140
-            },
+                    scrollTop: $(".custom-dropdown-outer").offset().top - 140
+                },
                 300, "easeInOutQuad");
             return false;
         }
     });
 
-    // Please fix all sorting features! It works, but not perfectly. Please update as needed.
+    // Please QA all sorting features. The logic is to apply the child text as a data attribute to the parent and sort the attribute. Please update as needed.
 
     // Sorting by Name (A - Z)
     $(".nomination-entry-container").removeAttr("data");
 
     var award_val = $(this).closest("form").find(".custom-dropdown-sort").val();
+    var main_container = $('.nomination-entry-container-outer');
+    
     if (award_val === "By Name (A - Z)") {
-        $(".store-nominee-enter").each(function () {
-            var sort_this = $('.nomination-entry-container');
-            var main_container = $(this).closest('.nomination-entry-container-outer');
-            $(sort_this).sort(function(a, b) {
-              if (a.textContent > b.textContent) {  // ascending: <  |  descending: >
-                return -1;
-              } else {
-                return 1;
-              }
-            }).appendTo(main_container);
+        $(".store-nominee-enter").each(function (i) {
+            var result = $(this).text();
+            $(".nomination-entry-container").eq(i).attr("data-sort", result);
         });
+        $(".nomination-entry-container").sort(function (a, b) {
+            if (a.dataset.sort < b.dataset.sort) { // ascending: <  |  descending: >
+                return -1;
+            } else {
+                return 1;
+            }
+        }).appendTo(main_container);
     }
 
     // Sorting by Name (Z - A)
     if (award_val === "By Name (Z - A)") {
-        $(".store-nominee-enter").each(function () {
-            var sort_this = $('.nomination-entry-container');
-            var main_container = $(this).closest('.nomination-entry-container-outer');
-            $(sort_this).sort(function(a, b) {
-              if (a.textContent < b.textContent) {  // ascending: <  |  descending: >
-                return -1;
-              } else {
-                return 1;
-              }
-            }).appendTo(main_container);
+        $(".store-nominee-enter").each(function (i) {
+            var result = $(this).text();
+            $(".nomination-entry-container").eq(i).attr("data-sort", result);
         });
+        $(".nomination-entry-container").sort(function (a, b) {
+            if (a.dataset.sort > b.dataset.sort) { // ascending: <  |  descending: >
+                return -1;
+            } else {
+                return 1;
+            }
+        }).appendTo(main_container);
     }
 
     // Sorting by Nominations (descnding)
     if (award_val === "Total Nominations (Least)") {
-        $(".store-nominee-total-nominations").each(function () {
-            var sort_this = $('.nomination-entry-container');
-            var main_container = $(this).closest('.nomination-entry-container-outer');
-            $(sort_this).sort(function(a, b) {
-              if (a.textContent < b.textContent) {  // ascending: <  |  descending: >
-                return -1;
-              } else {
-                return 1;
-              }
-            }).appendTo(main_container);
+        $(".store-nominee-total-nominations").each(function (i) {
+            var result = $(this).text();
+            $(".nomination-entry-container").eq(i).attr("data-sort", result);
         });
+        $(".nomination-entry-container").sort(function (a, b) {
+            if (a.dataset.sort < b.dataset.sort) { // ascending: <  |  descending: >
+                return -1;
+            } else {
+                return 1;
+            }
+        }).appendTo(main_container);
     }
 
     // Sorting by Nominations (ascending)
     if (award_val === "Total Nominations (Most)") {
-        $(".store-nominee-total-nominations").each(function () {
-            var sort_this = $('.nomination-entry-container');
-            var main_container = $(this).closest('.nomination-entry-container-outer');
-            $(sort_this).sort(function(a, b) {
-              if (a.textContent > b.textContent) {  // ascending: <  |  descending: >
-                return -1;
-              } else {
-                return 1;
-              }
-            }).appendTo(main_container);
+        $(".store-nominee-total-nominations").each(function (i) {
+            var result = $(this).text();
+            $(".nomination-entry-container").eq(i).attr("data-sort", result);
         });
+        $(".nomination-entry-container").sort(function (a, b) {
+            if (a.dataset.sort > b.dataset.sort) { // ascending: <  |  descending: >
+                return -1;
+            } else {
+                return 1;
+            }
+        }).appendTo(main_container);
     }
 
     // Sorting by Date (Recent)
-    if (award_val === "By Date (Newest)") {
-        $(".store-nominator-date").each(function () {
-            var sort_this = $('.nomination-entry-container');
-            var main_container = $(this).closest('.nomination-entry-container-outer');
-            $(sort_this).sort(function(a, b) {
-              if (a.textContent > b.textContent) {  // ascending: <  |  descending: >
-                return -1;
-              } else {
-                return 1;
-              }
-            }).appendTo(main_container);
+    if (award_val === "By Date (Newest), per Name") {
+        $(".nomination-entry-submissions:first-child").find(".store-nominator-date").each(function (i) {
+            var result = $(this).text();
+            $(".nomination-entry-container").eq(i).attr("data-sort", result);
         });
+        
+        // per name, sort defaults to date (Recent)
+        $(".nomination-entry-submissions-container").each(function () {
+            $(main_container).sort(function (a, b) {
+                if (a.dataset.date > b.dataset.date) { // ascending: <  |  descending: >
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).appendTo(this);
+        });
+        
+        // Sorts overall date (Recent)
+        //$(".nomination-entry-container").sort(function (a, b) {
+        //    if (a.dataset.sort > b.dataset.sort) { // ascending: <  |  descending: >
+        //        return -1;
+        //    } else {
+        //        return 1;
+        //    }
+        //}).appendTo(main_container);
     }
 
     // Sorting by Date (Oldest)
-    if (award_val === "By Date (Oldest)") {
-        $(".store-nominator-date").each(function (i) {
-            var sort_this = $('.nomination-entry-container');
-            var main_container = $(this).closest('.nomination-entry-container-outer');
-            $(sort_this).sort(function(a, b) {
-              if (a.textContent < b.textContent) {  // ascending: <  |  descending: >
-                return -1;
-              } else {
-                return 1;
-              }
-            }).appendTo(main_container);
+    if (award_val === "By Date (Oldest), per Name") {
+        $(".nomination-entry-submissions:first-child").find(".store-nominator-date").each(function (i) {
+            var result = $(this).text();
+            $(".nomination-entry-container").eq(i).attr("data-sort", result);
         });
+        
+        // per name, sort defaults to date (Oldest)
+        $(".nomination-entry-submissions-container").each(function () {
+            $(main_container).sort(function (a, b) {
+                if (a.dataset.date < b.dataset.date) { // ascending: <  |  descending: >
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }).appendTo(this);
+        });
+        
+        // Sorts overall date (Oldest)
+        //var main_container = $('.nomination-entry-container-outer');
+        //$(".nomination-entry-container").sort(function (a, b) {
+        //    if (a.dataset.sort < b.dataset.sort) { // ascending: <  |  descending: >
+        //        return -1;
+        //    } else {
+        //        return 1;
+        //    }
+        //}).appendTo(main_container);
     }
 
 
@@ -334,15 +363,37 @@ $(".custom-select-date, .custom-date").on("click", function () {
     return false;
 });
 
-
-$('.store-nominator-date').each(function(i) {
-    var sort_this = $(this).closest('.nomination-entry-submissions');
-    var main_container = $(this).closest('.nomination-entry-submissions-container');
-    $(sort_this).eq(i).sort(function(a, b) {
-      if (a.textContent > b.textContent) {  // ascending: <  |  descending: >
+// sort defaults by name (A-Z)
+$(".store-nominee-enter").each(function (i) {
+    "use strict";
+    var result = $(this).text();
+    $(".nomination-entry-container").eq(i).attr("data-sort", result);
+});
+var main_container = $('.nomination-entry-container-outer');
+$(".nomination-entry-container").sort(function (a, b) {
+    "use strict";
+    if (a.dataset.sort < b.dataset.sort) { // ascending: <  |  descending: >
         return -1;
-      } else {
+    } else {
         return 1;
-      }
-    }).appendTo(main_container);
+    }
+}).appendTo(main_container);
+
+
+// per name, sort defaults to date (latest)
+$(".store-nominator-date").each(function (i) {
+    "use strict";
+    var result = $(this).text();
+    $(".nomination-entry-submissions").eq(i).attr("data-date", result);
+});
+$(".nomination-entry-submissions-container:visible").each(function () {
+    "use strict";
+    var main_container = $(this).find('.nomination-entry-submissions');
+    $(main_container).sort(function (a, b) {
+        if (a.dataset.date > b.dataset.date) { // ascending: <  |  descending: >
+            return -1;
+        } else {
+            return 1;
+        }
+    }).appendTo(this);
 });
