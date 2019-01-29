@@ -342,6 +342,32 @@ $(".custom-dropdown").on("click", function () {
         }).appendTo(main_container);
     }
 
+    var quarter_val = $(this).closest("form").find(".custom-dropdown-quarter").val();
+
+    if (quarter_val === "FY19 Q1") {
+        $(".custom-dropdown-start-date").val("2018-12-02");
+        $(".custom-dropdown-end-date").val("2019-03-01");
+        $(".store-go").trigger("click");
+    } 
+    
+    if (quarter_val === "FY19 Q2") {
+        $(".custom-dropdown-start-date").val("2019-03-02");
+        $(".custom-dropdown-end-date").val("2019-06-01");
+        $(".store-go").trigger("click");
+    }   
+    
+    if (quarter_val === "FY19 Q3") {
+        $(".custom-dropdown-start-date").val("2019-06-02");
+        $(".custom-dropdown-end-date").val("2019-09-01");
+        $(".store-go").trigger("click");
+    }      
+    
+    if (quarter_val === "FY19 Q4") {
+        $(".custom-dropdown-start-date").val("2019-09-02");
+        $(".custom-dropdown-end-date").val("2019-12-01");
+        $(".store-go").trigger("click");
+    }  
+    
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
         "background-color": "#fff"
