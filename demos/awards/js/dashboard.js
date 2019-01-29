@@ -265,7 +265,7 @@ $(".custom-dropdown").on("click", function () {
     }
 
     // per name, sort defaults to date (Newest)
-    if (award_val === "By Date (Newest), per Name") {
+    if (award_val === "Latest Date (Each)") {
         $(".nomination-entry-submissions-container").each(function () {
             var main_container = $(this).find('.nomination-entry-submissions');
             $(main_container).sort(function (a, b) {
@@ -279,7 +279,7 @@ $(".custom-dropdown").on("click", function () {
     }
 
     // per name, sort defaults to date (Oldest)
-    if (award_val === "By Date (Oldest), per Name") {
+    if (award_val === "Oldest Date (Each)") {
         $(".nomination-entry-submissions-container").each(function () {
             var main_container = $(this).find('.nomination-entry-submissions');
             $(main_container).sort(function (a, b) {
@@ -293,7 +293,7 @@ $(".custom-dropdown").on("click", function () {
     }
 
     // Sorting by overall Date (Newest)
-    if (award_val === "By Overall Date (Newest)") {
+    if (award_val === "Latest Date (Overall)") {
         $(".nomination-entry-submissions-container").each(function () {
             var main_container = $(this).find('.nomination-entry-submissions');
             $(main_container).sort(function (a, b) {
@@ -318,7 +318,7 @@ $(".custom-dropdown").on("click", function () {
     }
 
     // Sorting by overall Date (Oldest)
-    if (award_val === "By Overall Date (Oldest)") {
+    if (award_val === "Oldest Date (Overall)") {
         $(".nomination-entry-submissions-container").each(function () {
             var main_container = $(this).find('.nomination-entry-submissions');
             $(main_container).sort(function (a, b) {
