@@ -480,6 +480,23 @@ $(".store-go").on("click", function () {
         }
     });
 
+    $(".nomination-entry-container:visible").each(function (i) {
+        var empty = $(this).find(".nomination-entry-submissions:visible").length;
+        $(".store-nominee-total-nominations:visible").eq(i).text(empty);
+    });
+
+    // adds a 0 before 1
+    $(".store-nominee-total-nominations:visible").each(function () {
+        $(this).text(function (a, b) {
+            var result = Number(b) + 0;
+            if (result < 10) {
+                return "0" + result;
+            } else {
+                return result;
+            }
+        });
+    });
+    
     // counts and animates total nominations overall
     $(".nomination-total-nominations").each(function () {
         var option = $(this).closest("form").find(".nomination-entry-submissions:visible");
@@ -600,6 +617,23 @@ $(".store-go-reset").on("click", function () {
         }).appendTo(this);
     });
 
+    $(".nomination-entry-container:visible").each(function (i) {
+        var empty = $(this).find(".nomination-entry-submissions:visible").length;
+        $(".store-nominee-total-nominations:visible").eq(i).text(empty);
+    });
+
+    // adds a 0 before 1
+    $(".store-nominee-total-nominations:visible").each(function () {
+        $(this).text(function (a, b) {
+            var result = Number(b) + 0;
+            if (result < 10) {
+                return "0" + result;
+            } else {
+                return result;
+            }
+        });
+    });
+    
     // counts and animates total nominations overall
     $(".nomination-total-nominations").each(function () {
         var option = $(this).closest("form").find(".nomination-entry-submissions:visible");
@@ -678,4 +712,9 @@ $(".store-go-reset").on("click", function () {
 $('.column-container-options-outer').hide();
 $('.store-options').on('click', function () {
     $('.column-container-options-outer').toggle('slideDown');
+    $("html, body").animate({
+        scrollTop: $(".custom-dropdown-outer").offset().top - 140
+        },
+        300, "easeInOutQuad");
+    return false;
 });
