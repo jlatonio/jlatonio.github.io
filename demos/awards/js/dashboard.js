@@ -348,25 +348,25 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2018-12-02");
         $(".custom-dropdown-end-date").val("2019-03-01");
         $(".store-go").trigger("click");
-    } 
+    }
     
     if (quarter_val === "FY2019 Q2") {
         $(".custom-dropdown-start-date").val("2019-03-02");
         $(".custom-dropdown-end-date").val("2019-06-01");
         $(".store-go").trigger("click");
-    }   
+    }
     
     if (quarter_val === "FY2019 Q3") {
         $(".custom-dropdown-start-date").val("2019-06-02");
         $(".custom-dropdown-end-date").val("2019-09-01");
         $(".store-go").trigger("click");
-    }      
+    }
     
     if (quarter_val === "FY2019 Q4") {
         $(".custom-dropdown-start-date").val("2019-09-02");
         $(".custom-dropdown-end-date").val("2019-12-01");
         $(".store-go").trigger("click");
-    }  
+    }
     
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
@@ -444,17 +444,23 @@ $(".nomination-entry-submissions-container:visible").each(function () {
 });
 
 // dashboard options
-$('.store-options').on('click', function () {
+$(".store-options").click(function () {
     "use strict";
-    $('.column-container-options-outer').toggle('slideDown');
     $(".custom-dropdown-close").trigger("click");
+    $(".column-container-options-outer").toggle("slideDown");
+    if ($(this).val() === "Show Options") {
+        $(this).val("Hide Options");
+    } else {
+        $(this).val("Show Options");
+    }
     $("html, body").animate({
-        scrollTop: $(".custom-dropdown-outer").offset().top - 140
+            scrollTop: $(".custom-dropdown-outer").offset().top - 140
         },
         300, "easeInOutQuad");
     return false;
 });
 
+// Date filtering
 $(".store-go").on("click", function () {
     "use strict";
     $(".custom-dropdown-close").trigger("click");
