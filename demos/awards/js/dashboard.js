@@ -265,7 +265,7 @@ $(".custom-dropdown").on("click", function () {
     }
 
     // per name, sort defaults to date (Newest)
-    if (award_val === "Latest Date (Each)") {
+    if (award_val === "Latest Date (Each Nominee)") {
         $(".nomination-entry-submissions-container").each(function () {
             var main_container = $(this).find('.nomination-entry-submissions');
             $(main_container).sort(function (a, b) {
@@ -279,7 +279,7 @@ $(".custom-dropdown").on("click", function () {
     }
 
     // per name, sort defaults to date (Oldest)
-    if (award_val === "Oldest Date (Each)") {
+    if (award_val === "Oldest Date (Each Nominee)") {
         $(".nomination-entry-submissions-container").each(function () {
             var main_container = $(this).find('.nomination-entry-submissions');
             $(main_container).sort(function (a, b) {
@@ -541,10 +541,16 @@ $(".store-go-reset").on("click", function () {
         }).appendTo(this);
     });
 
+    // closes menu and resets all fields
+    $(".nomination-no-entries").hide();
     $(".custom-dropdown-award").val("All Award Winners");
     $(".custom-dropdown-sort").val("By Name (A - Z)");
     $(".custom-date").val("");
-
+    $(".custom-dropdown-close").trigger("click");
+    $("input[type='text']").css({
+        "background": ""
+    });
+    
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
         "background-color": "#fff"

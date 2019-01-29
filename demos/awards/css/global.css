@@ -662,7 +662,14 @@ input::-webkit-clear-button {
   background-color: #fff;
 }
 
-.custom-dropdown-scroll,.custom-dropdown-slots {
+.custom-dropdown-scroll {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 350px;
+  height: 450px;
+}
+
+.custom-dropdown-slots {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   max-height: 350px;
@@ -763,7 +770,7 @@ input::-webkit-clear-button {
  /* Hidden by default */
   position: fixed;
  /* Stay in place */
-  z-index: 3;
+  z-index: 1;
  /* Location of the box */
   left: 0;
   top: 0;
@@ -954,6 +961,7 @@ input::-webkit-clear-button {
   }
 
   .custom-dropdown-scroll {
+    max-height: 450px;
     height: auto;
   }
 
