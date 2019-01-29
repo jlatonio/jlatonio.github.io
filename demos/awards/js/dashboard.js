@@ -445,6 +445,7 @@ $(".nomination-entry-submissions-container:visible").each(function () {
 
 $(".store-go").on("click", function () {
     "use strict";
+    $(".custom-dropdown-close").trigger("click");
     $(".nomination-entry-submissions:visible").removeClass("hidethis").addClass("showthis");
 
     $(".custom-dropdown-start-date").each(function () {
@@ -712,6 +713,7 @@ $(".store-go-reset").on("click", function () {
 $('.column-container-options-outer').hide();
 $('.store-options').on('click', function () {
     $('.column-container-options-outer').toggle('slideDown');
+    $(".custom-dropdown-close").trigger("click");
     $("html, body").animate({
         scrollTop: $(".custom-dropdown-outer").offset().top - 140
         },
