@@ -474,25 +474,6 @@ $(".store-go").on("click", function () {
         }
     });
 
-    // alerts if date fields are empty
-    $(function (e) {
-        var isValid = true;
-        $("input[type='text']").each(function () {
-            if ($(this).val().length === 0) {
-                isValid = false;
-                $(this).focus().attr("placeholder", "Select a Date.").css({
-                    "background": "#fff2f2"
-                });
-                return false;
-            } else {
-                $(this).css({
-                    "background": ""
-                });
-            }
-        });
-
-    });
-
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
         "background-color": "#fff"
