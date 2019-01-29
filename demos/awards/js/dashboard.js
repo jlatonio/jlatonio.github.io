@@ -419,7 +419,7 @@ $(".nomination-entry-submissions-container:visible").each(function () {
 
 $(".store-go").on("click", function () {
     "use strict";
-    $(".nomination-entry-submissions").removeClass("hidethis").addClass("showthis");
+    $(".nomination-entry-submissions:visible").removeClass("hidethis").addClass("showthis");
 
     $(".custom-dropdown-start-date").each(function () {
         $(".store-nominator-date").each(function () {
