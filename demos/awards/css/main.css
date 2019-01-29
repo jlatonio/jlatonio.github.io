@@ -1,3 +1,10 @@
+.hidethis{
+  display: none;
+}
+.showthis{
+  display: block;
+}
+
 .acs-header {
   display: -webkit-flex;
  /* Safari */

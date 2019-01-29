@@ -406,6 +406,7 @@ input[type=button]:hover {
   -webkit-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
   -moz-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
   box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
+  position: relative;
 }
 
 .custom-dropdown-padding-small,.custom-dropdown-padding-large {
@@ -436,6 +437,51 @@ input[type=button]:hover {
   cursor: pointer;
   text-decoration: none;
   text-shadow: 0px 1px 0px #283966;
+}
+
+.column-container-go {
+  height: 100%;
+  display: flex;
+  padding: 20px 0 0 0;
+}
+
+.custom-date-dash {
+  content:"";
+  border-bottom: solid 0 #9baec8;
+  position: absolute;
+  right:-20px;
+  bottom: 25px;
+  width:20px;
+  height: 10px;
+  display: block;
+}
+
+.store-go,.store-go-reset {
+  color: white;
+  padding: 14px;
+  margin: 0 10px 10px 0;
+  font-size: 14px;
+  display: inline-block;
+  width: 100%;
+  font-family: "OpenSans-Regular", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  -moz-box-shadow: 0px 0px 0px 2px #9baec8;
+  -webkit-box-shadow: 0px 0px 0px 2px #9baec8;
+  box-shadow: 0px 0px 0px 2px #9baec8;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7593bf), color-stop(1, #3a629d));
+  background: -moz-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: -webkit-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: -o-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: -ms-linear-gradient(top, #7593bf 5%, #3a629d 100%);
+  background: linear-gradient(to bottom, #7593bf 5%, #3a629d 100%);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #4e6c96;
+  cursor: pointer;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #283966;
+  align-self: flex-end;
+
 }
 
 .custom-dropdown-strDate {
@@ -688,7 +734,7 @@ input::-webkit-clear-button {
   cursor: pointer;
 }
 
-.percent-15,.percent-20,.percent-25,.percent-30,.percent-35,.percent-33,.percent-40,.percent-45,.percent-50,.percent-55,.percent-60,.percent-65,.percent-75,.percent-85,.percent-100,.percent-fixed-70-100,.percent-fixed-75-100,.percent-fixed-70-120,.percent-fixed-180,.percent-fixed-220,.percent-fixed-280,.fixed-180,.fixed-240 {
+.percent-05,.percent-10,.percent-15,.percent-20,.percent-25,.percent-30,.percent-35,.percent-33,.percent-40,.percent-45,.percent-50,.percent-55,.percent-60,.percent-65,.percent-75,.percent-85,.percent-100,.percent-fixed-70-100,.percent-fixed-75-100,.percent-fixed-70-120,.percent-fixed-180,.percent-fixed-220,.percent-fixed-280,.fixed-180,.fixed-240 {
   width: 100%;
 }
 
@@ -834,7 +880,15 @@ input::-webkit-clear-button {
   .percent-15 {
     width: 15%;
   }
-
+    
+  .percent-10 {
+    width: 10%;
+  }
+    
+  .percent-05 {
+    width: 5%;
+  }
+    
   .percent-fixed-70-100 {
     width: calc(70% - 100px);
   }
@@ -866,7 +920,15 @@ input::-webkit-clear-button {
   .fixed-180 {
     width: 160px;
   }
+    
+  .column-container-go {
+    padding:7px 0;
+  }
 
+  .custom-date-dash {
+    border-bottom: solid 2px #9baec8;
+  }
+    
   .store-button-container input {
     width: 100px;
   }

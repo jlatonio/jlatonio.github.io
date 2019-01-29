@@ -337,3 +337,12 @@ $(".store-reset-open").on("click", function () {
     $(".modal-alert").fadeIn(300);
     return false;
 });
+
+// removes pink bg after value changes
+$("input[type='text']").on("change", function () {
+    "use strict";
+    $(this).css({
+        "background": ""
+    });
+    return false;
+});
