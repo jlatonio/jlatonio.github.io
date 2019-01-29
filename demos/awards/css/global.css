@@ -456,7 +456,7 @@ input[type=button]:hover {
   display: block;
 }
 
-.store-go,.store-go-reset {
+.store-go,.store-go-reset,.store-options {
   color: white;
   padding: 14px;
   margin: 0 10px 10px 0;

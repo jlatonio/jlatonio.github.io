@@ -673,3 +673,9 @@ $(".store-go-reset").on("click", function () {
     $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
     return false;
 });
+
+// dashboard options
+$('.column-container-options-outer').hide();
+$('.store-options').on('click', function () {
+    $('.column-container-options-outer').toggle('slideDown');
+});

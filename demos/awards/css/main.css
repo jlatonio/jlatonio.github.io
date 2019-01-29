@@ -536,6 +536,14 @@
     margin-top: 0;
   }
 
+  .column-container-options {
+    display: -webkit-flex;
+ /* Safari */
+    -webkit-flex-wrap: wrap;
+ /* Safari 6.1+ */
+    display: flex;
+  }
+    
   .column-container-span {
     display: block;
   }
