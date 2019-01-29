@@ -11,7 +11,7 @@ $(".custom-dropdown-open").on("click", function () {
     $(this).hide();
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").show();
     $("html, body").animate({
-        scrollTop: $(this).closest(".custom-dropdown-outer").offset().top - 140
+        scrollTop: $(this).closest(".custom-dropdown-outer").offset().top - 170
     },
         300, "easeInOutQuad");
     return false;

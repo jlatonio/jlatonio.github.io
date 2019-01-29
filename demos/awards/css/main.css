@@ -335,13 +335,33 @@
 }
 
 .nomination-totals-container-inner {
-  padding: 10px 10px 20px 10px;
+  padding: 20px 0 30px 0;
   display: -webkit-flex;
  /* Safari */
   -webkit-flex-wrap: wrap;
  /* Safari 6.1+ */
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.nomination-totals-centerpiece {
+  top:-15px;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  margin-left: -70px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  position: relative;
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    -webkit-transition: all ease-out .5s;
+    -moz-transition: all ease-out .5s;
+    -o-transition: all ease-out .5s;
+    transition: all ease-out .5s;
 }
 
 .nomination-entry-share-container {
@@ -536,6 +556,17 @@
     content: "Submissions ";
   }
 
+.nomination-totals-centerpiece {
+  top:-25px;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  border-radius: 100px;
+  padding-bottom: 10px;
+  position: absolute;
+}
+    
   .column-container-select {
     margin-top: 0;
   }
@@ -593,18 +624,26 @@
     padding: 20px 100px;
   }
 
+  .nomination-totals-centerpiece {
+    top:-35px;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin-left: -60px;
+  }
+    
   .nomination-totals-container-inner {
-    padding: 20px 10px 30px 10px;
+    padding: 30px 0 40px 0;
   }
 
   .column-container-breadcrumbs-tools  {
     display: flex;
   }
     
+  .nomination-no-entries {
+    padding: 105px 20px 140px 20px;
+  }
     
-.nomination-no-entries {
-  padding: 85px 20px 140px 20px;
-}
   #view-fullscreen,#cancel-fullscreen  {
     display: block;
   }

@@ -65,7 +65,7 @@ $(".store-create").on("click", function () {
         "background": ""
     });
     $("html, body").animate({
-        scrollTop: $(".custom-dropdown-outer").offset().top - 140
+        scrollTop: $(".custom-dropdown-outer").offset().top - 170
     },
         300, "easeInOutQuad");
 });
