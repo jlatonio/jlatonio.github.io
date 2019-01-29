@@ -308,6 +308,10 @@
   padding: 20px;
 }
 
+.column-container-options-outer{
+  display: none;
+}
+
 .nomination-no-entries {
   display: -webkit-flex;
  /* Safari */

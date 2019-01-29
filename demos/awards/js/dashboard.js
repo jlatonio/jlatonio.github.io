@@ -443,6 +443,18 @@ $(".nomination-entry-submissions-container:visible").each(function () {
     }).appendTo(this);
 });
 
+// dashboard options
+$('.store-options').on('click', function () {
+    "use strict";
+    $('.column-container-options-outer').toggle('slideDown');
+    $(".custom-dropdown-close").trigger("click");
+    $("html, body").animate({
+        scrollTop: $(".custom-dropdown-outer").offset().top - 140
+        },
+        300, "easeInOutQuad");
+    return false;
+});
+
 $(".store-go").on("click", function () {
     "use strict";
     $(".custom-dropdown-close").trigger("click");
@@ -706,17 +718,5 @@ $(".store-go-reset").on("click", function () {
     });
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
     $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
-    return false;
-});
-
-// dashboard options
-$('.column-container-options-outer').hide();
-$('.store-options').on('click', function () {
-    $('.column-container-options-outer').toggle('slideDown');
-    $(".custom-dropdown-close").trigger("click");
-    $("html, body").animate({
-        scrollTop: $(".custom-dropdown-outer").offset().top - 140
-        },
-        300, "easeInOutQuad");
     return false;
 });
