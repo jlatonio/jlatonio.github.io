@@ -545,8 +545,7 @@ $(".store-go-reset").on("click", function () {
     $(".nomination-no-entries").hide();
     $(".custom-dropdown-award").val("All Award Winners");
     $(".custom-dropdown-sort").val("By Name (A - Z)");
-    $(".custom-date").val("");
-    $(".custom-dropdown-close").trigger("click");
+    $(".custom-dropdown-close, .custom-select-close").trigger("click");
     $("input[type='text']").css({
         "background": ""
     });
