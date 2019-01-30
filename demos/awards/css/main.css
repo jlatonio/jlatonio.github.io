@@ -352,9 +352,10 @@
   height: 140px;
   margin-left: -70px;
   border-radius: 100px;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
   position: relative;
   background-color: #eaeaea;
+  color: #e6b56b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -563,7 +564,6 @@
   height: 100px;
   margin-left: -50px;
   border-radius: 100px;
-  padding-bottom: 10px;
   position: absolute;
 }
     
