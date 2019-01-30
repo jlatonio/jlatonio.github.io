@@ -358,10 +358,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-    -webkit-transition: all ease-out .5s;
-    -moz-transition: all ease-out .5s;
-    -o-transition: all ease-out .5s;
-    transition: all ease-out .5s;
+  -webkit-transition: all ease-out .5s;
+  -moz-transition: all ease-out .5s;
+  -o-transition: all ease-out .5s;
+  transition: all ease-out .5s;
 }
 
 .nomination-entry-share-container {
