@@ -424,17 +424,12 @@ $(".store-nominate").click(function () {
     "use strict";
     $(".custom-dropdown-close").trigger("click");
     $(".store-data").each(function () {
-        var option1 = $(".store-data").val();
-        var option2 = $(".draft-value").val();
         var value = $(".store-data, .draft-value").val();
 
-        if (option1.length === 0) {
-            $(".store-data").focus().attr("placeholder", "Complete your nomination before submitting.").css({
+        if (value.length === 0) {
+            $(".store-data").attr("placeholder", "Complete your nomination before submitting.").css({
                 "background": "#fff2f2"
             });
-        }
-
-        if (option2.length === 0) {
             $(".draft-value").focus().css({
                 "background": "#fff2f2"
             });
