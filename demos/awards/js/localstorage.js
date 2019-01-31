@@ -57,6 +57,9 @@ $(".store-create").on("click", function () {
     $(this).closest(".column-container-notes").find(".draft-slots").val("").focus().attr("placeholder", "Name your file.").css({
         "background": "#fff2f2"
     });
+    $(this).closest("form").find(".draft-value").val("").css({
+        "background": ""
+    });
     $(this).closest(".column-container-notes").find(".custom-dropdown").css({
         "background": "",
         "color": ""
@@ -65,8 +68,8 @@ $(".store-create").on("click", function () {
         "background": ""
     });
     $("html, body").animate({
-        scrollTop: $(".custom-dropdown-outer").offset().top - 170
-    },
+            scrollTop: $(".custom-dropdown-outer").offset().top - 170
+        },
         300, "easeInOutQuad");
 });
 
@@ -74,8 +77,19 @@ $(".draft-slots").on("change", function () {
     "use strict";
     var option = $(this).closest(".column-container-notes").find(".draft-slots").val();
     var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
-    if (option.length > 0 && option2.length === 0) {
-        $(this).closest(".column-container-notes").find("textarea").attr("placeholder", "Now start a draft before saving. See examples below for reference.").val("").focus().css({
+    var option3 = $(this).closest(".column-container-notes").find(".draft-value").val();
+    if (option.length > 0 && option2.length === 0 && option3.length === 0) {
+        $(this).closest(".column-container-notes").find(".draft-value").val("").focus().css({
+            "background": "#fff2f2"
+        });
+    }
+    if (option.length > 0 && option2.length > 0 && option3.length === 0) {
+        $(this).closest(".column-container-notes").find(".draft-value").val("").focus().css({
+            "background": "#fff2f2"
+        });
+    }
+    if (option.length > 0 && option2.length === 0 && option3.length > 0) {
+        $(this).closest(".column-container-notes").find("textarea").attr("placeholder", "Start a draft before saving. See examples below for reference.").val("").focus().css({
             "background": "#fff2f2"
         });
     }
@@ -225,6 +239,28 @@ $(".store-save").on("click", function () {
         }
     });
 
+    $(this).closest(".column-container-notes").find(".draft-value").each(function () {
+        var option = $(this).val();
+        if (option.length === 0) {
+            $(this).attr("placeholder", "Select a Value.").css({
+                "background": "#fff2f2"
+            });
+            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+            return false;
+        }
+        if (option.length > 0) {
+            $(this).attr("placeholder", textarea_place_holder).css({
+                "background": ""
+            });
+        }
+    });
+
+    if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Thank You') {
+        $(".custom-dropdown-input").removeAttr("action");
+        $(".custom-dropdown-input").attr("action", "ty-entry.html");
+    }
+
+
     // alerts if form is not complete
     $(".store-data").each(function () {
         var option = $(this).closest(".column-container-notes").find(".draft-slots").val();
@@ -236,7 +272,7 @@ $(".store-save").on("click", function () {
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
         }
         if (option.length > 0 && option2.length === 0) {
-            $(this).attr("placeholder", "Now start a draft before saving. See examples below for reference.").css({
+            $(this).attr("placeholder", "Start a draft before saving. See examples below for reference.").css({
                 "background": "#fff2f2"
             });
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
@@ -271,6 +307,9 @@ $(".store-reset").on("click", function () {
     $(this).closest("form").find(".custom-select-close").hide();
     $(this).closest("form").find(".custom-select-search").show();
     $(this).closest("form").removeAttr("action").find("input[type=text]").css({
+        "background": ""
+    });
+    $(this).closest("form").find(".draft-value").val("").css({
         "background": ""
     });
     $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
@@ -337,7 +376,10 @@ $(".store-reset-all").on("click", function () {
     $(".custom-select-close").hide();
     $(this).closest(".notes-container").find("textarea").val("");
     $(".custom-dropdown-slots").empty();
-    $(this).closest("form").removeAttr("action").find("input[type=text]").val("").attr("placeholder", "There are no saved files available.").css({
+    $(this).closest("form").removeAttr("action").find(".draft-slots").val("").attr("placeholder", "There are no saved files available.").css({
+        "background": ""
+    });
+    $(this).closest("form").find(".draft-value").val("").css({
         "background": ""
     });
     var textarea_place_holder = $("textarea").attr("data-placeholder");
@@ -353,15 +395,37 @@ $(".store-reset-all").on("click", function () {
 // sends nomination. alerts if input is blank. adds focus to empty input area
 $(".store-nominate").click(function () {
     "use strict";
+
+    // Highlights required fields
+    $(".store-data, .draft-value").each(function () {
+        var isValid = true;
+        $(this).each(function () {
+            if ($(this).val().length === 0) {
+                isValid = false;
+                $(this).focus().css({
+                    "background": "#fff2f2"
+                });
+            } else {
+                $(this).css({
+                    "background": ""
+                });
+            }
+        });
+        if (isValid === false)
+            e.preventDefault();
+    });
+
     $(".store-data").each(function () {
         var option = $(".store-data").val();
+        var value = $(".draft-value").val();
+    
         if (option.length === 0) {
             $(this).focus().attr("placeholder", "Complete your nomination before submitting.").css({
                 "background": "#fff2f2"
             });
         }
+
         if (option.length > 0) {
-            
             // adds timestamp (last submitted) and locates the active element
             $('.custom-dropdown').each(function () {
                 var d = new Date();
@@ -391,13 +455,13 @@ $(".store-nominate").click(function () {
                     $(this).find(".custom-dropdown-strDate").attr("value", strDate);
                 }
             });
-            
+
             // resets active selection
             $('.custom-dropdown').removeClass("active").css({
                 "background-color": "",
                 "color": ""
             });
-            
+
             // saves latest data before submission
             var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
             var value = $(this).closest(".notes-container").find(".store-data").val();
@@ -410,10 +474,35 @@ $(".store-nominate").click(function () {
                 var value = localStorage.getItem(name);
                 $(this).html(value);
             });
-            
+
             // nomination submission
             $("form").removeAttr("action").attr("action", "awards-confirmation.html").submit();
         }
     });
     return false;
+});
+
+
+//var texts = [];
+//$( ".draft-value" ).closest(".column-container-notes").find(".custom-dropdown").each(function () {
+//   texts.push($(this).text());
+//});
+//alert(texts);
+
+//setTimeout(function () {
+//textarea.val(textarea.val().replace("Important: Be sure to include this Value in your header as shown above, and as the basis of your nomination. See a few good nomination examples below for reference.\n\n",""));
+//}, 7000);
+//return false;
+
+// adds the required value for each submission
+$(".draft-value").closest(".column-container-notes").find(".custom-dropdown").on("click", function () {
+    var text = $(this).text();
+    var textarea = $(".store-data");
+    if ($(this).closest("form").find(".draft-value").val() === text) {
+        textarea.val(textarea.val().replace("Value:  \n\n", "").replace("Value: Genuine \n\n", "").replace("Value: Innovative \n\n", "").replace("Value: Exceptional \n\n", "").replace("Value: Involved \n\n", ""));
+        $(".store-data").val(function (index, old) {
+            return "Value: " + text + " \n\n" + "" + old
+        }).focus();
+        return false;
+    }
 });

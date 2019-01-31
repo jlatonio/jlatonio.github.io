@@ -452,6 +452,9 @@
   border-bottom: dotted 2px #ccc;
 }
 
+.column-container-references {
+}
+
 .column-container-select .custom-dropdown-outer {
   margin-bottom: 5px;
 }

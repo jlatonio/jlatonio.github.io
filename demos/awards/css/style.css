@@ -62,7 +62,7 @@
  /* Safari 6.1+ */
   display: flex;
   flex-wrap: wrap;
-  padding: 4px 20px 20px 20px;
+  padding: 20px;
 }
 
 .store-disclaimer {
@@ -165,7 +165,7 @@
 
 @media screen and (min-width: 701px) {
   .store-data-container textarea {
-    height:calc(100% - 100px);
+    height:calc(100% - 85px);
   }
 
   .store-data-container-inner {
