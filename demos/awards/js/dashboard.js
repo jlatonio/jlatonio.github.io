@@ -49,7 +49,9 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2018-12-01");
             $(".custom-dropdown-end-date").val("2019-03-01");
             $(".nomination-totals-centerpiece h1").text("Q1");
+            setTimeout(function() {
             $(".store-go").trigger("click");
+            }, 750);
         }
 
         if (CurrentDate > FY2019_Q2 && CurrentDate < FY2019_Q3) {
@@ -57,7 +59,9 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2019-03-02");
             $(".custom-dropdown-end-date").val("2019-05-31");
             $(".nomination-totals-centerpiece h1").text("Q2");
+            setTimeout(function() {
             $(".store-go").trigger("click");
+            }, 750);
         }
 
         if (CurrentDate > FY2019_Q3 && CurrentDate < FY2019_Q4) {
@@ -65,7 +69,9 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2019-06-01");
             $(".custom-dropdown-end-date").val("2019-08-30");
             $(".nomination-totals-centerpiece h1").text("Q3");
+            setTimeout(function() {
             $(".store-go").trigger("click");
+            }, 750);
         }
 
         if (CurrentDate > FY2019_Q4 && CurrentDate < FY2020_Q1) {
@@ -73,7 +79,9 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2019-08-31");
             $(".custom-dropdown-end-date").val("2019-11-29");
             $(".nomination-totals-centerpiece h1").text("Q4");
+            setTimeout(function() {
             $(".store-go").trigger("click");
+            }, 750);
         }
 
         // FY 2020
@@ -82,7 +90,9 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2020-11-30");
             $(".custom-dropdown-end-date").val("2020-02-28");
             $(".nomination-totals-centerpiece h1").text("Q1");
+            setTimeout(function() {
             $(".store-go").trigger("click");
+            }, 750);
         }
 
         if (CurrentDate > FY2020_Q2 && CurrentDate < FY2020_Q3) {
@@ -90,7 +100,9 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2020-02-29");
             $(".custom-dropdown-end-date").val("2020-05-29");
             $(".nomination-totals-centerpiece h1").text("Q2");
+            setTimeout(function() {
             $(".store-go").trigger("click");
+            }, 750);
         }
 
         if (CurrentDate > FY2020_Q3 && CurrentDate < FY2020_Q4) {
@@ -98,7 +110,9 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2020-05-30");
             $(".custom-dropdown-end-date").val("2020-08-28");
             $(".nomination-totals-centerpiece h1").text("Q3");
+            setTimeout(function() {
             $(".store-go").trigger("click");
+            }, 750);
         }
 
         if (CurrentDate > FY2020_Q4 && CurrentDate < FY2021_Q1) {
@@ -106,59 +120,9 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2020-08-29");
             $(".custom-dropdown-end-date").val("2020-11-27");
             $(".nomination-totals-centerpiece h1").text("Q4");
+            setTimeout(function() {
             $(".store-go").trigger("click");
-        }
-    });
-
-    // counts and animates total nominations overall
-    $(".nomination-total-nominations").each(function () {
-        var option = $(this).closest("form").find(".nomination-entry-submissions:visible");
-        if (option.length < 9) {
-            $(this).prop("Counter", 0).delay(1000).animate({
-                Counter: option.length
-            }, {
-                duration: 2000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        } else {
-            $(this).prop("Counter", 0).delay(1000).animate({
-                Counter: option.length
-            }, {
-                duration: 4000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        }
-    });
-
-    // counts and animates total nominees overall
-    $(".nomination-total-nominees").each(function () {
-        var option = $(this).closest("form").find(".nomination-entry-container:visible");
-        if (option.length < 9) {
-            $(this).prop("Counter", 0).delay(750).animate({
-                Counter: option.length
-            }, {
-                duration: 2000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        } else {
-            $(this).prop("Counter", 0).delay(750).animate({
-                Counter: option.length
-            }, {
-                duration: 4000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
+            }, 750);
         }
     });
     return false;
