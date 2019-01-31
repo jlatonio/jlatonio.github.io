@@ -395,37 +395,25 @@ $(".store-reset-all").on("click", function () {
 // sends nomination. alerts if input is blank. adds focus to empty input area
 $(".store-nominate").click(function () {
     "use strict";
-
-    // Highlights required fields
-    $(".store-data, .draft-value").each(function () {
-        var isValid = true;
-        $(this).each(function () {
-            if ($(this).val().length === 0) {
-                isValid = false;
-                $(this).focus().css({
-                    "background": "#fff2f2"
-                });
-            } else {
-                $(this).css({
-                    "background": ""
-                });
-            }
-        });
-        if (isValid === false)
-            e.preventDefault();
-    });
-
+ 
     $(".store-data").each(function () {
-        var option = $(".store-data").val();
-        var value = $(".draft-value").val();
+        var option1 = $(".store-data").val();
+        var option2 = $(".draft-value").val();
+        var value = $(".store-data, .draft-value").val();
     
-        if (option.length === 0) {
-            $(this).focus().attr("placeholder", "Complete your nomination before submitting.").css({
+        if (option1.length === 0) {
+            $(".store-data").focus().attr("placeholder", "Complete your nomination before submitting.").css({
                 "background": "#fff2f2"
             });
         }
 
-        if (option.length > 0) {
+        if (option2.length === 0) {
+            $(".draft-value").focus().css({
+                "background": "#fff2f2"
+            });
+        }
+        
+        if (value.length > 0) {
             // adds timestamp (last submitted) and locates the active element
             $('.custom-dropdown').each(function () {
                 var d = new Date();
