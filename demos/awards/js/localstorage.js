@@ -39,6 +39,9 @@ $(document.body).on("click", ".custom-dropdown", function () {
             return false;
         }
     });
+    $(this).closest(".column-container-notes").find(".draft-value").val("").css({
+        "background-color": ""
+    });
 });
 
 // Rename file
