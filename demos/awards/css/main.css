@@ -430,6 +430,10 @@
     background-position: center center;
     opacity: .4;
     cursor: pointer;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
 }
 
 .custom-dropdown {

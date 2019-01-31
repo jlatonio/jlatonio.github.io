@@ -258,7 +258,7 @@ $(".store-save").on("click", function () {
     $(this).closest(".column-container-notes").find(".draft-value").each(function () {
         var option = $(this).val();
         if (option.length === 0) {
-            $(this).attr("placeholder", "Select a Value.").css({
+            $(this).css({
                 "background": "#fff2f2"
             });
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
