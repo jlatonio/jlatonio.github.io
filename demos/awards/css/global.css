@@ -419,8 +419,8 @@ input[type=button]:hover {
 
 .store-button {
   color: white;
-  padding: 10px 20px;
-  margin: 0 10px 10px 0;
+  padding: 16px 20px;
+  margin: 0 10px 12px 0;
   font-size: 14px;
   display: inline-block;
   width: 100%;
@@ -726,7 +726,7 @@ input::-webkit-clear-button {
 }
 
 .custom-dropdown:last-child {
-  border-bottom: solid 1px #ccc;
+  border-bottom: solid 0 #ccc;
 }
 
 .custom-dropdown-close {
@@ -945,7 +945,7 @@ input::-webkit-clear-button {
   }
     
   .store-button-container input {
-    width: 100px;
+    width: 130px;
   }
 
   .custom-dropdown-slots .custom-dropdown {
@@ -974,8 +974,8 @@ input::-webkit-clear-button {
   }
 
   .custom-dropdown-slots, .custom-dropdown-large {
-    max-height: 330px;
-    height: 330px;
+    max-height: auto;
+    height: auto;
   }
     
   .footer-image {
@@ -1002,11 +1002,6 @@ input::-webkit-clear-button {
 
   .rule-v {
     margin-left: 40px;
-  }
-
-  .custom-dropdown-slots, .custom-dropdown-large {
-    max-height: 308px;
-    height: 308px;
   }
 
   .custom-dropdown-slots .custom-dropdown {

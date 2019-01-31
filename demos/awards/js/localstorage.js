@@ -265,6 +265,7 @@ $(".store-save").on("click", function () {
             return false;
         }
         if (option.length > 0) {
+            var textarea_place_holder = $("textarea").attr("data-placeholder");
             $(this).attr("placeholder", textarea_place_holder).css({
                 "background": ""
             });
