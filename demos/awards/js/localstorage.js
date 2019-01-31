@@ -1,6 +1,23 @@
 // save icon. hidden by default
 $(".notes-btn-each").hide();
 
+$(".custom-dropdown-slots, .custom-dropdown-large").closest("form").find(".custom-dropdown-open").on("click", function () {
+    // closes other elements other than this when clicked
+    "use strict";
+    $(".custom-dropdown-input").find(".custom-dropdown-close").not(this).trigger("click");
+    $("body").trigger("click");
+    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-open");
+    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-close");
+    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").delay(200).slideDown(300);
+    $(this).hide();
+    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").show();
+    $("html, body").animate({
+        scrollTop: $(this).closest(".custom-dropdown-outer").offset().top - 120
+    },
+        200, "easeInOutQuad");
+    return false;
+});
+
 // counts added items and updates placeholder on load
 $(".custom-dropdown-slots").each(function (i) {
     "use strict";
@@ -86,7 +103,7 @@ $(".store-create").on("click", function () {
     });
     $("html, body").animate({
             scrollTop: $(".custom-dropdown-outer").offset().top - 170
-        },
+    },
         200, "easeInOutQuad");
 });
 

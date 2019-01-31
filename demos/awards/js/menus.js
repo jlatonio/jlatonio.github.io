@@ -1,6 +1,6 @@
 // toggles drop down and toggle arrow icon
 $(".custom-dropdown-group,.custom-dropdown-close").hide();
-$(".custom-dropdown-open").on("click", function () {
+$(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("click", function () {
     // closes other elements other than this when clicked
     "use strict";
     $(".custom-dropdown-input").find(".custom-dropdown-close").not(this).trigger("click");
@@ -97,18 +97,16 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-input").removeAttr("action");
         $(".custom-dropdown-input").attr("action", "ty-entry.html");
         return false;
-    } 
+    }
     if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Manager of the Quarter') {
         $(".custom-dropdown-input").removeAttr("action");
         $(".custom-dropdown-input").attr("action", "moq-entry.html");
         return false;
-    }
-    else {
+    } else {
         $(".custom-dropdown-input").removeAttr("action");
         $(".custom-dropdown-input").attr("action", "awards-entry.html");
         return false;
     }
-    return false;
 });
 
 // hover state (neded for combo dropdown)
@@ -152,11 +150,6 @@ $(".custom-dropdown").on("mouseover click", function () {
     });
     return false;
 });
-
-$(document).bind('scroll', function(e){
-                    e.preventDefault(); 
-                    // alert('prevent scroll');         
-                });
 
 // modals if needed
 $(".custom-dropdown-open,.custom-dropdown-close").on("mouseover", function () {

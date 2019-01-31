@@ -970,11 +970,16 @@ input::-webkit-clear-button {
     bottom: initial;
   }
 
-  .custom-dropdown-scroll, .custom-dropdown-slots, .custom-dropdown-large {
-    max-height: 400px;
+  .custom-dropdown-scroll {
+    max-height: 420px;
     height: auto;
   }
 
+  .custom-dropdown-slots, .custom-dropdown-large {
+    max-height: 375px;
+    height: auto;
+  }
+    
   .custom-dropdown:last-child {
     border-bottom: solid 0 #ccc;
   }
