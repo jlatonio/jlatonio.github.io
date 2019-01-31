@@ -38,13 +38,9 @@ $("input[type='text']").closest(".custom-dropdown-outer").find(".custom-dropdown
 });
 $("input[type='text'],input[type='number']").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function () {
     "use strict";
-    var input_place_holder = $(this).attr("data-placeholder");
-    $(this).attr("placeholder", input_place_holder).css({
-        "background": ""
-    });
+    var input_place_holder = $(this).closest(".custom-dropdown-outer").find("input[type='text'],input[type='number']").attr("data-placeholder");
     $(this).hide();
-    $(".modal-select").hide();
-    $(this).closest(".custom-dropdown-outer").find("input[type='text'],input[type='number']").val("").focusout().css({
+    $(this).closest(".custom-dropdown-outer").find("input[type='text'],input[type='number']").val("").focusout().attr("placeholder", input_place_holder).css({
         "background": ""
     });
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
@@ -54,7 +50,7 @@ $("input[type='text'],input[type='number']").closest(".custom-dropdown-outer").f
 });
 
 // closes menu when user clicks away
-$("body").on("click", function () {
+$("html, body").on("click", function () {
     "use strict";
     if ($(this).not(".custom-dropdown-outer")) {
         $(".custom-dropdown-close").trigger("click");
@@ -94,7 +90,8 @@ $(".custom-dropdown").on("click", function () {
     var checkinput = $(this).closest(".custom-dropdown-outer").find("input[type='text']");
     $(this).closest(".custom-dropdown-outer").find(checkinput).val(option);
     $(checkinput).attr("value", val);
-
+    $(".custom-dropdown-close").trigger("click");
+    
     // changes the form"s action link on specific choices
     if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Thank You') {
         $(".custom-dropdown-input").removeAttr("action");
@@ -111,14 +108,6 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-input").attr("action", "awards-entry.html");
         return false;
     }
-
-    // sets active state
-    $(this).css("background-color", "#e3e3e3");
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-open");
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideUp(100);
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
     return false;
 });
 
