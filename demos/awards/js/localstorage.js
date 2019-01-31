@@ -500,6 +500,7 @@ $(".draft-value").closest(".column-container-notes").find(".custom-dropdown").on
     $(this).closest(".column-container-notes").find(".draft-value").css({
         "background-color": ""
     });
+    $(".custom-dropdown-close").trigger("click");
     if ($(this).closest("form").find(".draft-value").val() === text) {
         textarea.val(textarea.val().replace("Adobe Value: \n\n", "").replace("Adobe Value: Genuine\n\n", "").replace("Adobe Value: Innovative\n\n", "").replace("Adobe Value: Exceptional\n\n", "").replace("Adobe Value: Involved\n\n", ""));
         $(this).closest(".column-container-notes").find(".store-data").val(function (index, old) {
