@@ -109,7 +109,7 @@ $(window).on("load", function () {
             $(".store-go").trigger("click");
         }
     });
-    
+
     // counts and animates total nominations overall
     $(".nomination-total-nominations").each(function () {
         var option = $(this).closest("form").find(".nomination-entry-submissions:visible");
@@ -935,14 +935,14 @@ $(".store-go-reset").on("click", function () {
         }
     });
 
-        // fixes alternating styles
-        $(".nomination-entry-container:visible:even").css({
-            "background-color": "#fff"
-        });
-        $(".nomination-entry-container:visible:odd").css({
-            "background-color": "#f3f3f3"
-        });
-        $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
-        $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
-        return false;
+    // fixes alternating styles
+    $(".nomination-entry-container:visible:even").css({
+        "background-color": "#fff"
     });
+    $(".nomination-entry-container:visible:odd").css({
+        "background-color": "#f3f3f3"
+    });
+    $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
+    $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
+    return false;
+});
