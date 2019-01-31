@@ -21,58 +21,6 @@ $(window).on("load", function () {
         });
     });
 
-    // counts and animates total nominations overall
-    $(".nomination-total-nominations").each(function () {
-        var option = $(this).closest("form").find(".nomination-entry-submissions:visible");
-        if (option.length < 9) {
-            $(this).prop("Counter", 0).delay(750).animate({
-                Counter: option.length
-            }, {
-                duration: 2000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        } else {
-            $(this).prop("Counter", 0).delay(750).animate({
-                Counter: option.length
-            }, {
-                duration: 5000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        }
-    });
-
-    // counts and animates total nominees overall
-    $(".nomination-total-nominees").each(function () {
-        var option = $(this).closest("form").find(".nomination-entry-container:visible");
-        if (option.length < 9) {
-            $(this).prop("Counter", 0).delay(750).animate({
-                Counter: option.length
-            }, {
-                duration: 2000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        } else {
-            $(this).prop("Counter", 0).delay(750).animate({
-                Counter: option.length
-            }, {
-                duration: 5000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        }
-    });
-    
     // defaults to current quarter (dynamically adjusts Quarter symbol based on today's date). Good for the next two years, or until 2021 quarter dates are released
     $(function () {
         var FY2019_Q1 = "2018-12-01";
@@ -161,6 +109,58 @@ $(window).on("load", function () {
             $(".store-go").trigger("click");
         }
     });
+    
+    // counts and animates total nominations overall
+    $(".nomination-total-nominations").each(function () {
+        var option = $(this).closest("form").find(".nomination-entry-submissions:visible");
+        if (option.length < 9) {
+            $(this).prop("Counter", 0).delay(750).animate({
+                Counter: option.length
+            }, {
+                duration: 2000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        } else {
+            $(this).prop("Counter", 0).delay(750).animate({
+                Counter: option.length
+            }, {
+                duration: 4000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        }
+    });
+
+    // counts and animates total nominees overall
+    $(".nomination-total-nominees").each(function () {
+        var option = $(this).closest("form").find(".nomination-entry-container:visible");
+        if (option.length < 9) {
+            $(this).prop("Counter", 0).delay(750).animate({
+                Counter: option.length
+            }, {
+                duration: 2000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        } else {
+            $(this).prop("Counter", 0).delay(750).animate({
+                Counter: option.length
+            }, {
+                duration: 4000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        }
+    });
     return false;
 });
 
@@ -231,7 +231,7 @@ $(".custom-dropdown").on("click", function () {
             $(this).prop("Counter", 0).animate({
                 Counter: option.length
             }, {
-                duration: 5000,
+                duration: 4000,
                 easing: "easeOutQuint",
                 step: function (now) {
                     $(this).text(Math.ceil(now));
@@ -257,7 +257,7 @@ $(".custom-dropdown").on("click", function () {
             $(this).prop("Counter", 0).animate({
                 Counter: option.length
             }, {
-                duration: 5000,
+                duration: 4000,
                 easing: "easeOutQuint",
                 step: function (now) {
                     $(this).text(Math.ceil(now));
@@ -668,7 +668,7 @@ $(".store-go").on("click", function () {
             $(this).prop("Counter", 0).animate({
                 Counter: option.length
             }, {
-                duration: 5000,
+                duration: 4000,
                 easing: "easeOutQuint",
                 step: function (now) {
                     $(this).text(Math.ceil(now));
@@ -694,7 +694,7 @@ $(".store-go").on("click", function () {
             $(this).prop("Counter", 0).animate({
                 Counter: option.length
             }, {
-                duration: 5000,
+                duration: 4000,
                 easing: "easeOutQuint",
                 step: function (now) {
                     $(this).text(Math.ceil(now));
@@ -801,7 +801,7 @@ $(".store-go-reset").on("click", function () {
             $(this).prop("Counter", 0).animate({
                 Counter: option.length
             }, {
-                duration: 5000,
+                duration: 4000,
                 easing: "easeOutQuint",
                 step: function (now) {
                     $(this).text(Math.ceil(now));
@@ -827,7 +827,7 @@ $(".store-go-reset").on("click", function () {
             $(this).prop("Counter", 0).animate({
                 Counter: option.length
             }, {
-                duration: 5000,
+                duration: 4000,
                 easing: "easeOutQuint",
                 step: function (now) {
                     $(this).text(Math.ceil(now));
