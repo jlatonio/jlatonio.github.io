@@ -395,7 +395,7 @@ $(".store-reset-all").on("click", function () {
 // sends nomination. alerts if input is blank. adds focus to empty input area
 $(".store-nominate").click(function () {
     "use strict";
- 
+    $(".custom-dropdown-close").trigger("click");
     $(".store-data").each(function () {
         var option1 = $(".store-data").val();
         var option2 = $(".draft-value").val();
@@ -484,13 +484,19 @@ $(".store-nominate").click(function () {
 
 // adds the required value for each submission
 $(".draft-value").closest(".column-container-notes").find(".custom-dropdown").on("click", function () {
+    "use strict";
     var text = $(this).text();
     var textarea = $(".store-data");
+    $(this).closest(".column-container-notes").find(".draft-value").css({
+        "background-color": ""
+    });
     if ($(this).closest("form").find(".draft-value").val() === text) {
         textarea.val(textarea.val().replace("Value:  \n\n", "").replace("Value: Genuine \n\n", "").replace("Value: Innovative \n\n", "").replace("Value: Exceptional \n\n", "").replace("Value: Involved \n\n", ""));
-        $(".store-data").val(function (index, old) {
+        $(this).closest(".column-container-notes").find(".store-data").val(function (index, old) {
             return "Value: " + text + " \n\n" + "" + old
-        }).focus();
+        }).focus().css({
+            "background-color": ""
+        });;
         return false;
     }
 });
