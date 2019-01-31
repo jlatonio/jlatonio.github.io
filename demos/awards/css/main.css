@@ -465,7 +465,6 @@
 
 .column-container-select {
   padding: 0 10px;
-  margin-top: 5px;
 }
 
 .column-container-span {
@@ -573,10 +572,6 @@
   border-radius: 100px;
   position: absolute;
 }
-    
-  .column-container-select {
-    margin-top: 0;
-  }
 
   .column-container-options {
     display: -webkit-flex;

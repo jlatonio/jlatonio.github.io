@@ -454,7 +454,7 @@ input[type=button]:hover {
 .column-container-go {
   height: 100%;
   display: flex;
-  padding: 20px 0 0 0;
+  padding: 12px 0 0 0;
 }
 
 .custom-date-dash {
@@ -603,6 +603,7 @@ input::-webkit-clear-button {
 
 .store-button-container {
   margin-bottom: 35px;
+  padding: 0 2px;
 }
 
 .store-button-container input {
