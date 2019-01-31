@@ -114,7 +114,7 @@ $(window).on("load", function () {
     $(".nomination-total-nominations").each(function () {
         var option = $(this).closest("form").find(".nomination-entry-submissions:visible");
         if (option.length < 9) {
-            $(this).prop("Counter", 0).delay(750).animate({
+            $(this).prop("Counter", 0).delay(1000).animate({
                 Counter: option.length
             }, {
                 duration: 2000,
@@ -124,7 +124,7 @@ $(window).on("load", function () {
                 }
             });
         } else {
-            $(this).prop("Counter", 0).delay(750).animate({
+            $(this).prop("Counter", 0).delay(1000).animate({
                 Counter: option.length
             }, {
                 duration: 4000,
