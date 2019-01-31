@@ -414,7 +414,7 @@ input[type=button]:hover {
 }
 
 .custom-dropdown-padding-small,.custom-dropdown-padding-large {
-  padding: 16px 35px 16px 20px;
+  padding: 16px 52px 16px 20px;
 }
 
 .store-button {
@@ -608,10 +608,9 @@ input::-webkit-clear-button {
 .custom-dropdown-date-toggle,.custom-select-close, .custom-select-date, .custom-select-search {
   position: absolute;
   top: 50%;
-  right: 3px;
-  width: 32px;
-  height: 32px;
-  -webkit-transform: rotate(0deg);
+  right: 10px;
+  width: 36px;
+  height: 36px;
   -webkit-transition: all .25s;
   -moz-transition: all .25s;
   -o-transition: all .25s;
@@ -619,15 +618,15 @@ input::-webkit-clear-button {
   opacity: .4;
   cursor: pointer;
   padding: 8px;
-  margin-top: -16px;
+  margin-top: -18px;
 }
 
 .custom-dropdown-arrow-toggle,.custom-dropdown-arrow-open,.custom-dropdown-arrow-close {
   position: absolute;
   top: 50%;
-  right: 3px;
-  width: 32px;
-  height: 32px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
   -webkit-transition: all .25s;
   -moz-transition: all .25s;
   -o-transition: all .25s;
@@ -635,7 +634,7 @@ input::-webkit-clear-button {
   opacity: .4;
   cursor: pointer;
   padding: 8px;
-  margin-top: -16px;
+  margin-top: -18px;
 }
 
 .custom-dropdown-arrow-toggle {
@@ -715,7 +714,7 @@ input::-webkit-clear-button {
 
 .custom-dropdown {
   font-size: 14px;
-  padding: 16px 20px;
+  padding: 16px 52px 16px 20px;
   background-color: #fff;
   border-top: solid 1px #ccc;
   cursor: pointer;
@@ -1023,6 +1022,6 @@ input::-webkit-clear-button {
   }
     
   .custom-dropdown-padding-large {
-    padding: 20px 35px 20px 40px;
+    padding: 20px 52px 20px 40px;
   }
 }

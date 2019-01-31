@@ -33,7 +33,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
             $(this).closest(".notes-container").find("input[type=text]").css({
                 "background": ""
             });
-            $(this).closest(".notes-container").find("textarea").css({
+            $(this).closest(".notes-container").find("textarea").focus().css({
                 "background": ""
             });
             return false;
@@ -42,6 +42,20 @@ $(document.body).on("click", ".custom-dropdown", function () {
     $(this).closest(".column-container-notes").find(".draft-value").val("").css({
         "background-color": ""
     });
+
+    // automatically fills in the Adobe Value input if the following strings are in the textarea when loaded
+    if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Genuine") > -1) {
+        $(".draft-value").val("Genuine");
+    }
+    if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Innovative") > -1) {
+        $(".draft-value").val("Innovative");
+    }
+    if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Exceptional") > -1) {
+        $(".draft-value").val("Exceptional");
+    }
+    if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Involved") > -1) {
+        $(".draft-value").val("Involved");
+    }
 });
 
 // Rename file
@@ -139,7 +153,6 @@ $(document.body).on("click", ".custom-dropdown-delete", function () {
             }
         });
     });
-
 });
 
 // saves data on click
@@ -403,7 +416,7 @@ $(".store-nominate").click(function () {
         var option1 = $(".store-data").val();
         var option2 = $(".draft-value").val();
         var value = $(".store-data, .draft-value").val();
-    
+
         if (option1.length === 0) {
             $(".store-data").focus().attr("placeholder", "Complete your nomination before submitting.").css({
                 "background": "#fff2f2"
@@ -415,7 +428,7 @@ $(".store-nominate").click(function () {
                 "background": "#fff2f2"
             });
         }
-        
+
         if (value.length > 0) {
             // adds timestamp (last submitted) and locates the active element
             $('.custom-dropdown').each(function () {
@@ -494,12 +507,12 @@ $(".draft-value").closest(".column-container-notes").find(".custom-dropdown").on
         "background-color": ""
     });
     if ($(this).closest("form").find(".draft-value").val() === text) {
-        textarea.val(textarea.val().replace("Value:  \n\n", "").replace("Value: Genuine \n\n", "").replace("Value: Innovative \n\n", "").replace("Value: Exceptional \n\n", "").replace("Value: Involved \n\n", ""));
+        textarea.val(textarea.val().replace("Adobe Value: \n\n", "").replace("Adobe Value: Genuine\n\n", "").replace("Adobe Value: Innovative\n\n", "").replace("Adobe Value: Exceptional\n\n", "").replace("Adobe Value: Involved\n\n", ""));
         $(this).closest(".column-container-notes").find(".store-data").val(function (index, old) {
-            return "Value: " + text + " \n\n" + "" + old
+            return "Adobe Value: " + text + "\n\n" + "" + old
         }).focus().css({
             "background-color": ""
-        });;
+        });
         return false;
     }
 });
