@@ -976,7 +976,7 @@ input::-webkit-clear-button {
   }
 
   .custom-dropdown-slots, .custom-dropdown-large {
-    max-height: 375px;
+    max-height: 400px;
     height: auto;
   }
     
@@ -1020,6 +1020,10 @@ input::-webkit-clear-button {
 
   .custom-dropdown-large .custom-dropdown {
     padding-left: 40px;
+  }
+
+  .custom-dropdown-slots, .custom-dropdown-large {
+    max-height: 375px;
   }
     
   .custom-dropdown-slots .custom-dropdown:after {
