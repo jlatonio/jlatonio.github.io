@@ -179,6 +179,14 @@ thead {
   border: 0 solid #333;
 }
 
+.column-container-each {
+  margin-bottom: 20px;
+}
+
+.column-container-each:last-child {
+  margin-bottom: 0;
+}
+
 .small-text, .small-text p {
   font-size: 14px;
   line-height: 1.4;
@@ -1003,7 +1011,11 @@ input::-webkit-clear-button {
   .rule-v {
     margin-left: 40px;
   }
-
+    
+  .column-container-each {
+    margin-bottom: 40px;
+  }
+    
   .custom-dropdown-slots .custom-dropdown {
     padding-left: 107px;
   }

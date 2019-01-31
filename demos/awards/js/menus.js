@@ -99,14 +99,17 @@ $(".custom-dropdown").on("click", function () {
     if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Thank You') {
         $(".custom-dropdown-input").removeAttr("action");
         $(".custom-dropdown-input").attr("action", "ty-entry.html");
+        return false;
     } 
     if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Manager of the Quarter') {
         $(".custom-dropdown-input").removeAttr("action");
         $(".custom-dropdown-input").attr("action", "moq-entry.html");
+        return false;
     }
     else {
         $(".custom-dropdown-input").removeAttr("action");
         $(".custom-dropdown-input").attr("action", "awards-entry.html");
+        return false;
     }
 
     // sets active state

@@ -272,12 +272,6 @@ $(".store-save").on("click", function () {
         }
     });
 
-    if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Thank You') {
-        $(".custom-dropdown-input").removeAttr("action");
-        $(".custom-dropdown-input").attr("action", "ty-entry.html");
-    }
-
-
     // alerts if form is not complete
     $(".store-data").each(function () {
         var option = $(this).closest(".column-container-notes").find(".draft-slots").val();
