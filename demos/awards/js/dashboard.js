@@ -185,14 +185,14 @@ $(".custom-dropdown").on("click", function () {
             $("html, body").animate({
                     scrollTop: $(".custom-dropdown-outer").offset().top - 170
                 },
-                300, "easeInOutQuad");
+                200, "easeInOutQuad");
             return false;
         } else {
             $(".nomination-no-entries").hide();
             $("html, body").animate({
                     scrollTop: $(".custom-dropdown-outer").offset().top - 170
                 },
-                300, "easeInOutQuad");
+                200, "easeInOutQuad");
             return false;
         }
     });

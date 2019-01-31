@@ -7,13 +7,13 @@ $(".custom-dropdown-open").on("click", function () {
     $("body").trigger("click");
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-open");
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-close");
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").delay(300).slideDown(300);
+    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").delay(200).slideDown(300);
     $(this).hide();
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").show();
     $("html, body").animate({
         scrollTop: $(this).closest(".custom-dropdown-outer").offset().top - 170
     },
-        300, "easeInOutQuad");
+        200, "easeInOutQuad");
     return false;
 });
 

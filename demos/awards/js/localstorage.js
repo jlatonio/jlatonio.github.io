@@ -87,7 +87,7 @@ $(".store-create").on("click", function () {
     $("html, body").animate({
             scrollTop: $(".custom-dropdown-outer").offset().top - 170
         },
-        300, "easeInOutQuad");
+        200, "easeInOutQuad");
 });
 
 $(".draft-slots").on("change", function () {
