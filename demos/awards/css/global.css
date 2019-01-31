@@ -524,7 +524,7 @@ input[type=button]:last-child {
 }
 
 input::placeholder,textarea::placeholder { 
-  color: #7a7a7a;
+  color: #3d3d3d;
   font-family: "OpenSans-Light";
 }
 
