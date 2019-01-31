@@ -153,6 +153,11 @@ $(".custom-dropdown").on("mouseover click", function () {
     return false;
 });
 
+$(document).bind('scroll', function(e){
+                    e.preventDefault(); 
+                    // alert('prevent scroll');         
+                });
+
 // modals if needed
 $(".custom-dropdown-open,.custom-dropdown-close").on("mouseover", function () {
     "use strict";

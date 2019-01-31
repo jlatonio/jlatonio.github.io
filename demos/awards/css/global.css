@@ -427,7 +427,7 @@ input[type=button]:hover {
 
 .store-button {
   color: white;
-  padding: 16px 20px;
+  padding: 14px 8px;
   margin: 0 10px 12px 0;
   font-size: 14px;
   display: inline-block;
@@ -470,7 +470,7 @@ input[type=button]:hover {
 
 .store-go,.store-go-reset,.store-options {
   color: white;
-  padding: 14px;
+  padding: 14px 8px;
   margin: 0 10px 10px 0;
   font-size: 14px;
   display: inline-block;
@@ -947,7 +947,7 @@ input::-webkit-clear-button {
   }
     
   .store-button-container input {
-    width: 130px;
+    width:calc(50% - 7.1px);
   }
 
   .custom-dropdown-slots .custom-dropdown {
