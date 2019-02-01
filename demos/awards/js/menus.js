@@ -300,33 +300,3 @@ $("input[type='text'], textarea").on("keydown change", function () {
         "background": ""
     });
 });
-
-// Helps prevent background scrolling when a dropdown is open
-$(document.body).on('mouseover', ".custom-dropdown", function (event) {
-    "use strict";
-    $(document).bind('mousewheel');
-});
-
-$(document.body).on('mouseleave', ".custom-dropdown", function (event) {
-    "use strict";
-    $(document).unbind('mousewheel', function (event) {
-        event.preventDefault();
-        var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-        init_scroll(event, delta);
-    });
-});
-
-// Helps prevent background scrolling when a dropdown is open
-$('.custom-dropdown').on('mouseover', function (event) {
-    "use strict";
-    $(document).bind('mousewheel');
-});
-
-$('.custom-dropdown').on('mouseleave', function (event) {
-    "use strict";
-    $(document).unbind('mousewheel', function (event) {
-        event.preventDefault();
-        var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-        init_scroll(event, delta);
-    });
-});
