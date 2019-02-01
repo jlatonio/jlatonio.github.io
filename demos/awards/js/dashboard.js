@@ -23,7 +23,7 @@ $(window).on("load", function () {
 
     // defaults to current quarter (dynamically adjusts Quarter symbol based on today's date). Good for the next two years, or until 2021 quarter dates are released
     
-   $(".nomination-totals-centerpiece h1").fadeIn(1000);
+   $(".nomination-totals-centerpiece h1").fadeIn(750);
     $(function () {
         var FY2019_Q1 = "2018-12-01";
         var FY2019_Q2 = "2019-03-02";
