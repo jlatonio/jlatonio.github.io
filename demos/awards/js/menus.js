@@ -1,5 +1,6 @@
 // toggles drop down and toggle arrow icon
 $(".custom-dropdown-group,.custom-dropdown-close").hide();
+
 $(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("click", function () {
     // closes other elements other than this when clicked
     "use strict";
@@ -50,17 +51,11 @@ $("input[type='text'],input[type='number']").closest(".custom-dropdown-outer").f
 });
 
 // closes menu when user clicks away
-$("html, body").on("click", function () {
+$("html, body, input").on("click", function () {
     "use strict";
     if ($(this).not(".custom-dropdown-outer")) {
         $(".custom-dropdown-close").trigger("click");
     }
-});
-
-$("input[type='text'],input[type='number']").on("click", function () {
-    "use strict";
-    $(".custom-dropdown-close").trigger("click");
-    return false;
 });
 
 // adds the html to the input value for each button clicked (needed for appeneded items)
@@ -71,14 +66,7 @@ $(document.body).on('click', ".custom-dropdown", function () {
     var checkinput = $(this).closest(".custom-dropdown-outer").find("input[type='text']");
     $(this).closest(".custom-dropdown-outer").find(checkinput).val(option);
     $(checkinput).attr("value", val);
-
-    // sets active state
-    $(this).css("background-color", "#e3e3e3");
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").addClass("custom-dropdown-arrow-open");
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideUp(100);
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
+    $(".custom-dropdown-close").trigger("click");
     return false;
 });
 
@@ -109,21 +97,7 @@ $(".custom-dropdown").on("click", function () {
     }
 });
 
-// hover state (neded for combo dropdown)
-$(document.body).on('mouseover click', ".custom-dropdown", function () {
-    "use strict";
-    $(this).closest(".custom-dropdown-outer").find(this).siblings().css({
-        "background-color": "",
-        "color": ""
-    });
-    $(this).closest(".custom-dropdown-outer").find(this).css({
-        "background-color": "#7593bf",
-        "color": "#fff"
-    });
-    return false;
-});
-
-// dropdown menu click (neded for appended dropdown)
+// set active state (neded for appended dropdown)
 $(document.body).on('click', ".custom-dropdown", function () {
     "use strict";
     $(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active").css({
@@ -131,21 +105,21 @@ $(document.body).on('click', ".custom-dropdown", function () {
         "color": ""
     });
     $(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
-        "background-color": "#7593bf",
+        "background-color": "#446aa0",
         "color": "#fff"
     });
     return false;
 });
 
-// hover states
-$(".custom-dropdown").on("mouseover click", function () {
+// hover states to set active state
+$(".custom-dropdown").on("click", function () {
     "use strict";
-    $(this).closest(".custom-dropdown-outer").find(this).siblings().css({
+    $(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active").css({
         "background-color": "",
         "color": ""
     });
-    $(this).closest(".custom-dropdown-outer").find(this).css({
-        "background-color": "#7593bf",
+    $(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
+        "background-color": "#446aa0",
         "color": "#fff"
     });
     return false;
@@ -182,6 +156,20 @@ $(".custom-select-close, .custom-select-date, .custom-select-search").on("mouseo
     return false;
 });
 
+// modal alerts
+$(".modal-close, .store-reset-all, .store-reset-cancel").on("click", function () {
+    "use strict";
+    $(".modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select").hide();
+    return false;
+});
+
+$(".store-reset-open").on("click", function () {
+    "use strict";
+    $(".modal-alert").fadeIn(300);
+    return false;
+});
+
+// icon hover states
 $("input[type=text]").on("mouseover", function () {
     "use strict";
     $(this).closest(".custom-dropdown-outer").find(".custom-select-search").css({
@@ -233,21 +221,6 @@ $(".store-continue").click(function (e) {
     e.preventDefault();
     else
         $("form").submit();
-});
-
-// resets required fields to a white bg
-$(".custom-dropdown-scroll div").on("click", function () {
-    "use strict";
-    $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-menu").css({
-        "background": ""
-    });
-    return false;
-});
-$("input[type='text'],textarea").on("keydown", function () {
-    "use strict";
-    $(this).css({
-        "background": ""
-    });
 });
 
 // autofill fields as user types. static html only
@@ -320,24 +293,10 @@ $(".custom-search").on("focus", function () {
     return false;
 });
 
-// modal alerts
-$(".modal-close, .store-reset-all, .store-reset-cancel").on("click", function () {
-    "use strict";
-    $(".modal-alert,.modal-confirmation,.modal-ineligible,.modal-share,.modal-select").hide();
-    return false;
-});
-
-$(".store-reset-open").on("click", function () {
-    "use strict";
-    $(".modal-alert").fadeIn(300);
-    return false;
-});
-
-// removes pink bg after value changes
-$("input[type='text']").on("change", function () {
+// resets required fields to a white bg
+$("input[type='text'], textarea").on("keydown change", function () {
     "use strict";
     $(this).css({
         "background": ""
     });
-    return false;
 });

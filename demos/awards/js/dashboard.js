@@ -51,6 +51,8 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2018-12-01");
             $(".custom-dropdown-end-date").val("2019-03-01");
             $(".nomination-totals-centerpiece h1").text("Q1");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             setTimeout(function() {
             $(".store-go").trigger("click");
             }, 1500);
@@ -61,6 +63,8 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2019-03-02");
             $(".custom-dropdown-end-date").val("2019-05-31");
             $(".nomination-totals-centerpiece h1").text("Q2");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             setTimeout(function() {
             $(".store-go").trigger("click");
             }, 1500);
@@ -81,6 +85,8 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2019-08-31");
             $(".custom-dropdown-end-date").val("2019-11-29");
             $(".nomination-totals-centerpiece h1").text("Q4");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             setTimeout(function() {
             $(".store-go").trigger("click");
             }, 1500);
@@ -112,6 +118,8 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2020-05-30");
             $(".custom-dropdown-end-date").val("2020-08-28");
             $(".nomination-totals-centerpiece h1").text("Q3");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             setTimeout(function() {
             $(".store-go").trigger("click");
             }, 1500);
@@ -122,6 +130,8 @@ $(window).on("load", function () {
             $(".custom-dropdown-start-date").val("2020-08-29");
             $(".custom-dropdown-end-date").val("2020-11-27");
             $(".nomination-totals-centerpiece h1").text("Q4");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             setTimeout(function() {
             $(".store-go").trigger("click");
             }, 1500);
@@ -403,6 +413,8 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2018-12-01");
         $(".custom-dropdown-end-date").val("2019-03-01");
         $(".nomination-totals-centerpiece h1").text("Q1");
+        $(".custom-select-close").show();
+        $(".custom-select-date").hide();
         $(".store-go").trigger("click");
     }
 
@@ -410,6 +422,8 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2019-03-02");
         $(".custom-dropdown-end-date").val("2019-05-31");
         $(".nomination-totals-centerpiece h1").text("Q2");
+        $(".custom-select-close").show();
+        $(".custom-select-date").hide();
         $(".store-go").trigger("click");
     }
 
@@ -417,6 +431,8 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2019-06-01");
         $(".custom-dropdown-end-date").val("2019-08-30");
         $(".nomination-totals-centerpiece h1").text("Q3");
+        $(".custom-select-close").show();
+        $(".custom-select-date").hide();
         $(".store-go").trigger("click");
     }
 
@@ -424,6 +440,8 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2019-08-31");
         $(".custom-dropdown-end-date").val("2019-11-29");
         $(".nomination-totals-centerpiece h1").text("Q4");
+        $(".custom-select-close").show();
+        $(".custom-select-date").hide();
         $(".store-go").trigger("click");
     }
 
@@ -431,6 +449,8 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2018-12-01");
         $(".custom-dropdown-end-date").val("2019-11-29");
         $(".nomination-totals-centerpiece h1").text("FY");
+        $(".custom-select-close").show();
+        $(".custom-select-date").hide();
         $(".store-go").trigger("click");
     }
 
@@ -438,6 +458,8 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2020-11-30");
         $(".custom-dropdown-end-date").val("2020-02-28");
         $(".nomination-totals-centerpiece h1").text("Q1");
+        $(".custom-select-close").show();
+        $(".custom-select-date").hide();
         $(".store-go").trigger("click");
     }
 
@@ -445,6 +467,8 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2020-02-29");
         $(".custom-dropdown-end-date").val("2020-05-29");
         $(".nomination-totals-centerpiece h1").text("Q2");
+        $(".custom-select-close").show();
+        $(".custom-select-date").hide();
         $(".store-go").trigger("click");
     }
 
@@ -452,6 +476,8 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2020-05-30");
         $(".custom-dropdown-end-date").val("2020-08-28");
         $(".nomination-totals-centerpiece h1").text("Q3");
+        $(".custom-select-close").show();
+        $(".custom-select-date").hide();
         $(".store-go").trigger("click");
     }
 
@@ -459,6 +485,8 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2020-08-29");
         $(".custom-dropdown-end-date").val("2020-11-27");
         $(".nomination-totals-centerpiece h1").text("Q4");
+        $(".custom-select-close").show();
+        $(".custom-select-date").hide();
         $(".store-go").trigger("click");
     }
 
@@ -466,6 +494,8 @@ $(".custom-dropdown").on("click", function () {
         $(".custom-dropdown-start-date").val("2020-11-30");
         $(".custom-dropdown-end-date").val("2020-11-27");
         $(".nomination-totals-centerpiece h1").text("FY");
+        $(".custom-select-close").show();
+        $(".custom-select-date").hide();
         $(".store-go").trigger("click");
     }
 
@@ -840,6 +870,8 @@ $(".store-go-reset").on("click", function () {
             $(".custom-dropdown-start-date").val("2018-12-01");
             $(".custom-dropdown-end-date").val("2019-03-01");
             $(".nomination-totals-centerpiece h1").text("Q1");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             $(".store-go").trigger("click");
         }
 
@@ -848,6 +880,8 @@ $(".store-go-reset").on("click", function () {
             $(".custom-dropdown-start-date").val("2019-03-02");
             $(".custom-dropdown-end-date").val("2019-05-31");
             $(".nomination-totals-centerpiece h1").text("Q2");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             $(".store-go").trigger("click");
         }
 
@@ -856,6 +890,8 @@ $(".store-go-reset").on("click", function () {
             $(".custom-dropdown-start-date").val("2019-06-01");
             $(".custom-dropdown-end-date").val("2019-08-30");
             $(".nomination-totals-centerpiece h1").text("Q3");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             $(".store-go").trigger("click");
         }
 
@@ -864,6 +900,8 @@ $(".store-go-reset").on("click", function () {
             $(".custom-dropdown-start-date").val("2019-08-31");
             $(".custom-dropdown-end-date").val("2019-11-29");
             $(".nomination-totals-centerpiece h1").text("Q4");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             $(".store-go").trigger("click");
         }
 
@@ -873,6 +911,8 @@ $(".store-go-reset").on("click", function () {
             $(".custom-dropdown-start-date").val("2020-11-30");
             $(".custom-dropdown-end-date").val("2020-02-28");
             $(".nomination-totals-centerpiece h1").text("Q1");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             $(".store-go").trigger("click");
         }
 
@@ -881,6 +921,8 @@ $(".store-go-reset").on("click", function () {
             $(".custom-dropdown-start-date").val("2020-02-29");
             $(".custom-dropdown-end-date").val("2020-05-29");
             $(".nomination-totals-centerpiece h1").text("Q2");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             $(".store-go").trigger("click");
         }
 
@@ -889,6 +931,8 @@ $(".store-go-reset").on("click", function () {
             $(".custom-dropdown-start-date").val("2020-05-30");
             $(".custom-dropdown-end-date").val("2020-08-28");
             $(".nomination-totals-centerpiece h1").text("Q3");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             $(".store-go").trigger("click");
         }
 
@@ -897,6 +941,8 @@ $(".store-go-reset").on("click", function () {
             $(".custom-dropdown-start-date").val("2020-08-29");
             $(".custom-dropdown-end-date").val("2020-11-27");
             $(".nomination-totals-centerpiece h1").text("Q4");
+            $(".custom-select-close").show();
+            $(".custom-select-date").hide();
             $(".store-go").trigger("click");
         }
     });

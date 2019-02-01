@@ -211,7 +211,7 @@ $(".store-save").on("click", function () {
         var strDate = "Updated: " + showDate + " " + "-" + " " + showTime;
         if ($(this).hasClass('active')) {
             $(this).css({
-                "background-color": "#7593bf",
+                "background-color": "#446aa0",
                 "color": "#fff"
             });
             $(this).find(".custom-dropdown-strDate").attr("value", strDate);
@@ -272,6 +272,7 @@ $(".store-save").on("click", function () {
         }
     });
 
+    // value is a required field
     $(this).closest(".column-container-notes").find(".draft-value").each(function () {
         var option = $(this).val();
         if (option.length === 0) {
@@ -466,12 +467,6 @@ $(".store-nominate").click(function () {
                 }
             });
 
-            // resets active selection
-            $('.custom-dropdown').removeClass("active").css({
-                "background-color": "",
-                "color": ""
-            });
-
             // saves latest data before submission
             var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
             var value = $(this).closest(".notes-container").find(".store-data").val();
@@ -521,4 +516,10 @@ $(".draft-value").closest(".column-container-notes").find(".custom-dropdown").on
         });
         return false;
     }
+});
+
+// removes any active states on page load
+$('.custom-dropdown').removeClass("active").css({
+    "background-color": "",
+    "color": ""
 });

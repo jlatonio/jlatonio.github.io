@@ -683,13 +683,13 @@ input::-webkit-clear-button {
 
 .custom-dropdown-slots .custom-dropdown {
   padding-left: 20px;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "OpenSans-Regular";
 }
 
 .custom-dropdown-large .custom-dropdown {
   padding-left: 20px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .custom-dropdown-slots .custom-dropdown:after {
@@ -729,6 +729,11 @@ input::-webkit-clear-button {
 
 .custom-dropdown:last-child {
   border-bottom: solid 1px #ccc;
+}
+
+.custom-dropdown:hover {
+  color:#fff;
+  background-color: #7593bf;
 }
 
 .custom-dropdown-close {
@@ -1016,10 +1021,12 @@ input::-webkit-clear-button {
     
   .custom-dropdown-slots .custom-dropdown {
     padding-left: 107px;
+    font-size: 16px;
   }
 
   .custom-dropdown-large .custom-dropdown {
     padding-left: 40px;
+    font-size: 16px;
   }
 
   .custom-dropdown-slots, .custom-dropdown-large {
