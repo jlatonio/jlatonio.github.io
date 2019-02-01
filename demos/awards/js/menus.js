@@ -12,8 +12,8 @@ $(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("c
     $(this).hide();
     $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").show();
     $("html, body").animate({
-        scrollTop: $(this).closest(".custom-dropdown-outer").offset().top - 170
-    },
+            scrollTop: $(this).closest(".custom-dropdown-outer").offset().top - 170
+        },
         200, "easeInOutQuad");
     return false;
 });
@@ -79,7 +79,7 @@ $(".custom-dropdown").on("click", function () {
     $(this).closest(".custom-dropdown-outer").find(checkinput).val(option);
     $(checkinput).attr("value", val);
     $(".custom-dropdown-close").trigger("click");
-    
+
     // changes the form"s action link on specific choices
     if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Thank You') {
         $(".custom-dropdown-input").removeAttr("action");
@@ -218,7 +218,7 @@ $(".store-continue").click(function (e) {
         }
     });
     if (isValid === false)
-    e.preventDefault();
+        e.preventDefault();
     else
         $("form").submit();
 });
@@ -298,5 +298,35 @@ $("input[type='text'], textarea").on("keydown change", function () {
     "use strict";
     $(this).css({
         "background": ""
+    });
+});
+
+// Helps prevent background scrolling when a dropdown is open
+$(document.body).on('mouseover', ".custom-dropdown", function (event) {
+    "use strict";
+    $(document).bind('mousewheel');
+});
+
+$(document.body).on('mouseleave', ".custom-dropdown", function (event) {
+    "use strict";
+    $(document).unbind('mousewheel', function (event) {
+        event.preventDefault();
+        var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+        init_scroll(event, delta);
+    });
+});
+
+// Helps prevent background scrolling when a dropdown is open
+$('.custom-dropdown').on('mouseover', function (event) {
+    "use strict";
+    $(document).bind('mousewheel');
+});
+
+$('.custom-dropdown').on('mouseleave', function (event) {
+    "use strict";
+    $(document).unbind('mousewheel', function (event) {
+        event.preventDefault();
+        var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+        init_scroll(event, delta);
     });
 });
