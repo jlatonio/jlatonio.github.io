@@ -733,6 +733,10 @@ input::-webkit-clear-button {
 .custom-dropdown:hover {
 }
 
+.active {
+  color: #fff;
+}
+
 .custom-dropdown-close {
   background-color: transparent;
   width: 100%;

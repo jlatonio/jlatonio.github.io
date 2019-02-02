@@ -97,34 +97,6 @@ $(".custom-dropdown").on("click", function () {
 	}
 });
 
-// set active state (neded for appended dropdown)
-$(document.body).on('click', ".custom-dropdown", function () {
-	"use strict";
-	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active").css({
-		"background-color": "",
-		"color": ""
-	});
-	$(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
-		"background-color": "#446aa0",
-		"color": "#fff"
-	});
-	return false;
-});
-
-// hover states to set active state
-$(".custom-dropdown").on("click", function () {
-	"use strict";
-	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active").css({
-		"background-color": "",
-		"color": ""
-	});
-	$(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
-		"background-color": "#446aa0",
-		"color": "#fff"
-	});
-	return false;
-});
-
 // modals if needed
 $(".custom-dropdown-open,.custom-dropdown-close").on("mouseover", function () {
 	"use strict";
@@ -309,13 +281,40 @@ $("input[type='text'], textarea").on("keydown change", function () {
 	});
 });
 
+// set active state (neded for appended dropdown)
+$(document.body).on('click', ".custom-dropdown", function () {
+	"use strict";
+	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active").css({
+		"background-color": "",
+		"color": ""
+	});
+	$(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
+		"background-color": "#446aa0",
+		"color": "#fff"
+	});
+	return false;
+});
 
+// set active state
+$(".custom-dropdown").on("click", function () {
+	"use strict";
+	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active").css({
+		"background-color": "",
+		"color": ""
+	});
+	$(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
+		"background-color": "#446aa0",
+		"color": "#fff"
+	});
+	return false;
+});
+
+// Hover effects
 $(window).on("load", function () {
 	$(".custom-dropdown").append("<div class='custom-dropdown-animation'></div>");
 });
 
-// Hover effects
-$(".custom-dropdown::after").on("mouseover", function () {
+$(".custom-dropdown").on("mouseover", function () {
 	$(this).css({
 		"color": "#fff",
     });
@@ -329,9 +328,23 @@ $(".custom-dropdown::after").on("mouseover", function () {
 	});
 });
 
-$(".custom-dropdown::after").on("mouseout", function () {
+$(".custom-dropdown").on("mouseout", function () {
 	$(this).css({
 		"color": "",
+    });
+	$(this).find(".custom-dropdown-animation").css({
+		"opacity": "",
+		"width": "",
+		"-webkit-transition": "all .01s ease-out",
+		"-moz-transition": "all .01s ease-out",
+		"o-transition": "all .01s ease-out",
+		"transition": "all .01s ease-out"
+	});
+});
+
+$(".custom-dropdown active").on("mouseout", function () {
+	$(this).css({
+		"color": "#fff",
     });
 	$(this).find(".custom-dropdown-animation").css({
 		"opacity": "",
