@@ -755,7 +755,6 @@ input::-webkit-clear-button {
 }
 
 .custom-dropdown-animation {
-  background-color: transparent;
   width: 0;
   height: 100%;
   top: 0;
