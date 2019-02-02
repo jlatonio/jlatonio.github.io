@@ -316,42 +316,54 @@ $(window).on("load", function () {
 
 // Hover effects
 $(".custom-dropdown::after").on("mouseover", function () {
+	$(this).css({
+		"color": "#fff",
+    });
 	$(this).find(".custom-dropdown-animation").css({
 		"opacity": "1",
 		"width": "100%",
-		"-webkit-transition": "all .25s ease-out",
-		"-moz-transition": "all .25s ease-out",
-		"o-transition": "all .25s ease-out",
-		"transition": "all .25s ease-out"
+		"-webkit-transition": "all .2s ease-out",
+		"-moz-transition": "all .2s ease-out",
+		"o-transition": "all .2s ease-out",
+		"transition": "all .2s ease-out"
 	});
 });
 
 $(".custom-dropdown::after").on("mouseout", function () {
+	$(this).css({
+		"color": "",
+    });
 	$(this).find(".custom-dropdown-animation").css({
-		"opacity": "1",
-		"width": "0",
+		"opacity": "",
+		"width": "",
 		"-webkit-transition": "all .01s ease-out",
-		"-moz-transition": "all .1s ease-out",
-		"o-transition": "all .1s ease-out",
-		"transition": "all .1s ease-out"
+		"-moz-transition": "all .01s ease-out",
+		"o-transition": "all .01s ease-out",
+		"transition": "all .01s ease-out"
 	});
 });
 
 $(document.body).on('mouseover', ".custom-dropdown", function () {
+	$(this).css({
+		"color": "#fff",
+    });
 	$(this).find(".custom-dropdown-animation").css({
 		"opacity": "1",
 		"width": "100%",
-		"-webkit-transition": "all .25s ease-out",
-		"-moz-transition": "all .25s ease-out",
-		"o-transition": "all .25s ease-out",
-		"transition": "all .25s ease-out"
+		"-webkit-transition": "all .2s ease-out",
+		"-moz-transition": "all .2s ease-out",
+		"o-transition": "all .2s ease-out",
+		"transition": "all .2s ease-out"
 	});
 });
 
 $(document.body).on('mouseout', ".custom-dropdown", function () {
+	$(this).css({
+		"color": "",
+    });
 	$(this).find(".custom-dropdown-animation").css({
-		"opacity": "1",
-		"width": "0",
+		"opacity": "",
+		"width": "",
 		"-webkit-transition": "all .01s ease-out",
 		"-moz-transition": "all .01s ease-out",
 		"o-transition": "all .01s ease-out",
