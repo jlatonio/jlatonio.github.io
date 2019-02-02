@@ -1358,7 +1358,7 @@ a.ui-button:active,
 }
 
 .ui-state-default:hover {
-  background: #7593bf;
+  background: transparent;
   color: #fff;
 }
 
@@ -1387,7 +1387,7 @@ a.ui-button:active,
 
 /* datepicker active color */
 .ui-widget-content .ui-state-active {
-  background: #7593bf;
+  background: transparent;
   color: #fff;
 }
 
@@ -1416,6 +1416,7 @@ a.ui-button:active,
 .ui-menu .ui-menu-item-wrapper {
 	padding: 16px 20px;
     margin:0;	text-overflow: ellipsis;
+    position: relative;
 }
 
 .ui-menu-item:first-child {
@@ -1427,7 +1428,7 @@ a.ui-button:active,
 }
 
 .ui-menu-item:hover {
-  background: #7593bf;
+  background: transparent;
   color: #fff;
 }
 

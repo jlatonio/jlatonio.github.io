@@ -5243,6 +5243,7 @@ var widgetsMenu = $.widget( "ui.menu", {
 					role: this._itemRole()
 				} );
 		this._addClass( newItems, "ui-menu-item" )
+            ._addClass( newWrappers, "custom-dropdown" )
 			._addClass( newWrappers, "ui-menu-item-wrapper" );
 
 		// Add aria-disabled attribute to any disabled menu item
