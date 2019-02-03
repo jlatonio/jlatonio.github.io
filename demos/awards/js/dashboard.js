@@ -23,7 +23,7 @@ $(window).on("load", function () {
 
     // defaults to current quarter (dynamically adjusts Quarter symbol based on today's date). Good for the next two years, or until 2021 quarter dates are released
     
-   $(".nomination-totals-centerpiece h1").delay(100).fadeIn(700);
+   $(".nomination-totals-centerpiece h1").delay(200).fadeIn(800);
     $(function () {
         var FY2019_Q1 = "2018-12-01";
         var FY2019_Q2 = "2019-03-02";
@@ -55,7 +55,7 @@ $(window).on("load", function () {
             $(".custom-select-date").hide();
             setTimeout(function() {
             $(".store-go").trigger("click");
-            }, 1000);
+            }, 1200);
         }
 
         if (CurrentDate > FY2019_Q2 && CurrentDate < FY2019_Q3) {
@@ -67,7 +67,7 @@ $(window).on("load", function () {
             $(".custom-select-date").hide();
             setTimeout(function() {
             $(".store-go").trigger("click");
-            }, 1000);
+            }, 1200);
         }
 
         if (CurrentDate > FY2019_Q3 && CurrentDate < FY2019_Q4) {
@@ -77,7 +77,7 @@ $(window).on("load", function () {
             $(".nomination-totals-centerpiece h1").text("Q3");
             setTimeout(function() {
             $(".store-go").trigger("click");
-            }, 1000);
+            }, 1200);
         }
 
         if (CurrentDate > FY2019_Q4 && CurrentDate < FY2020_Q1) {
@@ -89,7 +89,7 @@ $(window).on("load", function () {
             $(".custom-select-date").hide();
             setTimeout(function() {
             $(".store-go").trigger("click");
-            }, 1000);
+            }, 1200);
         }
 
         // FY 2020
@@ -100,7 +100,7 @@ $(window).on("load", function () {
             $(".nomination-totals-centerpiece h1").text("Q1");
             setTimeout(function() {
             $(".store-go").trigger("click");
-            }, 1500);
+            }, 1200);
         }
 
         if (CurrentDate > FY2020_Q2 && CurrentDate < FY2020_Q3) {
@@ -110,7 +110,7 @@ $(window).on("load", function () {
             $(".nomination-totals-centerpiece h1").text("Q2");
             setTimeout(function() {
             $(".store-go").trigger("click");
-            }, 1500);
+            }, 1200);
         }
 
         if (CurrentDate > FY2020_Q3 && CurrentDate < FY2020_Q4) {
@@ -122,7 +122,7 @@ $(window).on("load", function () {
             $(".custom-select-date").hide();
             setTimeout(function() {
             $(".store-go").trigger("click");
-            }, 1500);
+            }, 1200);
         }
 
         if (CurrentDate > FY2020_Q4 && CurrentDate < FY2021_Q1) {
@@ -134,7 +134,7 @@ $(window).on("load", function () {
             $(".custom-select-date").hide();
             setTimeout(function() {
             $(".store-go").trigger("click");
-            }, 1500);
+            }, 1200);
         }
     });
     return false;
