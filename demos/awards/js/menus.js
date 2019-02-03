@@ -326,7 +326,6 @@ $(".custom-dropdown").on("mouseover touchstart", function () {
 		"o-transition": "all .2s ease-out",
 		"transition": "all .2s ease-out"
 	});
-	return false;
 });
 
 $(".custom-dropdown").on("mouseout touchend", function () {
@@ -343,7 +342,6 @@ $(".custom-dropdown").on("mouseout touchend", function () {
 		"o-transition": "all .01s ease-out",
 		"transition": "all .01s ease-out"
 	});
-	return false;
 });
 
 $(document.body).on('mouseover touchstart', ".custom-dropdown", function () {
@@ -360,7 +358,6 @@ $(document.body).on('mouseover touchstart', ".custom-dropdown", function () {
 		"o-transition": "all .2s ease-out",
 		"transition": "all .2s ease-out"
 	});
-	return false;
 });
 
 $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
@@ -377,5 +374,4 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
 		"o-transition": "all .01s ease-out",
 		"transition": "all .01s ease-out"
 	});
-	return false;
 });
