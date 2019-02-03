@@ -35,27 +35,27 @@ $(".custom-dropdown-slots").each(function (i) {
 // loads draft sessions for the awards page
 $(document.body).on("click", ".custom-dropdown", function () {
 	"use strict";
-	$(this).closest(".column-container-notes").find(".store-data").each(function () {
-		var option = $(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
-		if (option.length === 0) {
-			$(this).closest(".notes-container").find(".draft-slots").css({
-				"background": "#fff2f2"
-			});
-			$(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
-		}
-		if (option.length > 0) {
-			var text = $(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
-			var value = localStorage.getItem(text);
-			$(this).val(value);
-			$(this).closest(".notes-container").find("input[type=text]").css({
-				"background": ""
-			});
-			$(this).closest(".notes-container").find("textarea").focus().css({
-				"background": ""
-			});
-			return false;
-		}
-	});
+    $(this).closest(".column-container-notes").find(".store-data").each(function () {
+        var option = $(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
+        if (option.length === 0) {
+            $(this).closest(".notes-container").find(".draft-slots").css({
+                "background": "#fff2f2"
+            });
+            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+        }
+        if (option.length > 0) {
+            var text = $(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
+            var value = localStorage.getItem(text);
+            $(this).val(value);
+            $(this).closest(".notes-container").find("input[type=text]").css({
+                "background": ""
+            });
+            $(this).closest(".notes-container").find("textarea").css({
+                "background": ""
+            });
+            return false;
+        }
+    });
 	$(this).closest(".column-container-notes").find(".draft-value").val("").css({
 		"background-color": ""
 	});
@@ -63,16 +63,39 @@ $(document.body).on("click", ".custom-dropdown", function () {
 	// automatically fills in the Adobe Value input if the following strings are in the textarea when loaded
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Genuine") > -1) {
 		$(".draft-value").val("Genuine");
+        $('.custom-dropdown').removeClass("active").css({
+            "background-color": "",
+            "color": ""
+        });
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Innovative") > -1) {
 		$(".draft-value").val("Innovative");
+        $('.custom-dropdown').removeClass("active").css({
+            "background-color": "",
+            "color": ""
+        });
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Exceptional") > -1) {
 		$(".draft-value").val("Exceptional");
+        $('.custom-dropdown').removeClass("active").css({
+            "background-color": "",
+            "color": ""
+        });
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Involved") > -1) {
 		$(".draft-value").val("Involved");
+        $('.custom-dropdown').removeClass("active").css({
+            "background-color": "",
+            "color": ""
+        });
 	}
+    
+    // sets active state again
+	$(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
+		"background-color": "#446aa0",
+		"color": "#fff"
+	});
+    return false;
 });
 
 // Rename file
@@ -140,12 +163,12 @@ $(".draft-slots").on("click", function () {
 // Deletes a save file
 $(document.body).on("click", ".custom-dropdown-delete", function () {
 	"use strict";
-	$(this).closest(".column-container-notes").removeAttr("action").find("input[type=text]").val("").css({
-		"background": ""
-	});
-	$(this).closest(".column-container-notes").find("textarea").val("").css({
-		"background": ""
-	});
+    $(this).closest(".column-container-notes").find("input[type=text]").val("").css({
+        "background": ""
+    });
+    $(this).closest(".column-container-notes").find("textarea").val("").css({
+        "background": ""
+    });
 	// updates dropdown and saves it
 	var text = $(this).closest(".custom-dropdown").text() + " - {awards-each}"; // used to make the local storage key unique
 	localStorage.removeItem(text);
@@ -163,7 +186,6 @@ $(document.body).on("click", ".custom-dropdown-delete", function () {
 			var empty = $(this).find(".custom-dropdown-slots .custom-dropdown");
 			if (empty.length === 0) {
 				$(".draft-slots").eq(i).attr("placeholder", "There are no saved files available.");
-				$(".custom-dropdown-close").trigger("click");
 			}
 			if (empty.length > 0) {
 				$(".draft-slots").eq(i).attr("placeholder", "Select a file to load. Saved files: " + empty.length);
@@ -184,7 +206,10 @@ $(".store-save").on("click", function () {
 	var prepend = "<div class='custom-dropdown active'>";
 	var append = "<div class='custom-dropdown-animation'></div><div class='custom-dropdown-delete'></div><input class='custom-dropdown-strDate' disabled readonly /></div>";
 	if ($(".draft-slots").val().length > 0) {
-		$(".draft-slots").closest(".custom-dropdown-outer").find(".custom-dropdown").removeClass("active");
+		$(".custom-dropdown").removeClass("active").css({
+            "background-color": "",
+            "color": ""
+        });
 		$(this).closest(".column-container-notes").find(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
 	}
 
