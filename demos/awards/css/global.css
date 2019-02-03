@@ -659,6 +659,7 @@ input::-webkit-clear-button {
 }
 
 .custom-dropdown-group {
+  display: none;
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -977,7 +978,6 @@ input::-webkit-clear-button {
   }
 
   .custom-dropdown-group {
-    display: none;
     border-top: solid 1px #ccc;
     border-bottom: solid 1px #ccc;
     border-right: solid 1px #ccc;
