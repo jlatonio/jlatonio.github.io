@@ -226,7 +226,7 @@ $(function () {
 		source: [
 			"Joseph Latonio",
 			"Rebecca Warner",
-			"Sri KrishnamoorthySri KrishnamoorthySri KrishnamoorthySri KrishnamoorthySri KrishnamoorthySri KrishnamoorthySri KrishnamoorthySri Krishnamoorthy"
+			"Sri Krishnamoorthy"
 		],
 		minLength: 1,
 		response: function (event, ui) {
