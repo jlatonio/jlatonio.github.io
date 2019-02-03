@@ -337,7 +337,7 @@ $(".custom-dropdown-award, .custom-dropdown-quarter").closest(".custom-dropdown-
         $(".store-nominee-total-nominations:visible").eq(i).text(empty);
     });
 
-    // adds a 0 before single digits. Can be useful for sorting?
+    // adds a 0 before single digits. Also needed for sorting
     $(".store-nominee-total-nominations:visible").each(function () {
         $(this).text(function (a, b) {
             var result = Number(b) + 0;
@@ -560,7 +560,57 @@ $(".custom-select-date, .custom-date").on("click", function () {
 $(".custom-date").on("change", function () {
     "use strict";
     $(".custom-dropdown-quarter").val("");
-    return false;
+    $(".nomination-entry-submissions").removeClass("hidethis").removeClass("showthis");
+    
+    // Quarter automatically shows, depending on the custom dates chosen
+    $(function () {
+        var start_date = $(".custom-dropdown-start-date").val();
+        var end_date = $(".custom-dropdown-end-date").val();
+        var FY2019_Q1 = "2018-12-01";
+        var FY2019_Q2 = "2019-03-02";
+        var FY2019_Q3 = "2019-06-01";
+        var FY2019_Q4 = "2019-08-31";
+        var FY2020_Q1 = "2020-11-30";
+        var FY2020_Q2 = "2020-02-29";
+        var FY2020_Q3 = "2020-05-30";
+        var FY2020_Q4 = "2020-08-29";
+        var FY2021_Q1 = "2020-11-28";
+
+        // FY 2019
+        if (start_date >= FY2019_Q1 && end_date <= FY2019_Q2) {
+            $(".nomination-totals-centerpiece h1").text("Q1");
+        }
+
+        if (start_date >= FY2019_Q2 && end_date <= FY2019_Q3) {
+            $(".nomination-totals-centerpiece h1").text("Q2");
+        }
+
+        if (start_date >= FY2019_Q3 && end_date <= FY2019_Q4) {
+            $(".nomination-totals-centerpiece h1").text("Q3");
+        }
+
+        if (start_date >= FY2019_Q4 && end_date <= FY2020_Q1) {
+            $(".nomination-totals-centerpiece h1").text("Q4");
+        }
+
+        // FY 2020
+        if (start_date >= FY2020_Q1 && end_date <= FY2020_Q2) {
+            $(".nomination-totals-centerpiece h1").text("Q1");
+        }
+
+        if (start_date >= FY2020_Q2 && end_date <= FY2020_Q3) {
+            $(".nomination-totals-centerpiece h1").text("Q2");
+        }
+
+        if (start_date >= FY2020_Q3 && end_date <= FY2020_Q4) {
+            $(".nomination-totals-centerpiece h1").text("Q3");
+        }
+
+        if (start_date >= FY2020_Q4 && end_date <= FY2021_Q1) {
+            $(".nomination-totals-centerpiece h1").text("Q4");
+        }
+    });
+   
 });
 
 // sort defaults by name (A-Z)
