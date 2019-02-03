@@ -620,7 +620,7 @@ input::-webkit-clear-button {
   right: 10px;
   width: 36px;
   height: 36px;
-   -webkit-transition: all .25s ease-out;
+  -webkit-transition: all .25s ease-out;
   -moz-transition: all .25s ease-out;
   -o-transition: all .25s ease-out;
   transition: all .25s ease-out;
@@ -636,7 +636,7 @@ input::-webkit-clear-button {
   right: 10px;
   width: 36px;
   height: 36px;
-   -webkit-transition: all .25s ease-out;
+  -webkit-transition: all .25s ease-out;
   -moz-transition: all .25s ease-out;
   -o-transition: all .25s ease-out;
   transition: all .25s ease-out;
@@ -763,7 +763,7 @@ input::-webkit-clear-button {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #7593bf;
+  background-color: #446aa0;
   position: absolute;
   z-index: -1;
   opacity: 1;

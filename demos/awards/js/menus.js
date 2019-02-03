@@ -333,6 +333,7 @@ $(".custom-dropdown").on("mouseout", function () {
 		"color": ""
     });
 	$(this).find(".custom-dropdown-animation").css({
+        "background-color": "#7593bf",
 		"opacity": "",
 		"width": "",
 		"-webkit-transition": "all .01s ease-out",
@@ -348,6 +349,7 @@ $(".custom-dropdown active").on("mouseout", function () {
 		"color": "#fff"
     });
 	$(this).find(".custom-dropdown-animation").css({
+        "background-color": "",
 		"opacity": "",
 		"width": "",
 		"-webkit-transition": "all .01s ease-out",
@@ -363,6 +365,7 @@ $(document.body).on('mouseover', ".custom-dropdown", function () {
 		"color": "#fff"
     });
 	$(this).find(".custom-dropdown-animation").css({
+        "background-color": "#7593bf",
 		"opacity": "1",
 		"width": "100%",
 		"-webkit-transition": "all .2s ease-out",
@@ -378,6 +381,7 @@ $(document.body).on('mouseout', ".custom-dropdown", function () {
 		"color": ""
     });
 	$(this).find(".custom-dropdown-animation").css({
+        "background-color": "",
 		"opacity": "",
 		"width": "",
 		"-webkit-transition": "all .01s ease-out",
