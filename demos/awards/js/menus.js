@@ -28,12 +28,6 @@ $(".custom-dropdown-close").on("click", function () {
 
 // resets search when user clicks close
 $(".custom-select-close").hide();
-$("input[type='text']").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
-	"use strict";
-	$(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
-	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
-	return false;
-});
 $("input[type='text'],input[type='number']").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function () {
 	"use strict";
 	var input_place_holder = $(this).closest(".custom-dropdown-outer").find("input[type='text'],input[type='number']").attr("data-placeholder");
@@ -80,7 +74,11 @@ $(".custom-dropdown").on("click", function () {
 	});
 	$(checkinput).attr("value", val);
 	$(".custom-dropdown-close").trigger("click");
+	return false;
+});
 
+// directs to specific pages
+$(".custom-dropdown-awards").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
 	// changes the form"s action link on specific choices
 	if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Thank You') {
 		$(".custom-dropdown-input").removeAttr("action");
@@ -248,11 +246,7 @@ $(function () {
 		},
 		// Animated hover effect
 		open: function (event, ui) {
-			$("<div class='custom-dropdown-animation'></div>")
-				.on('click', function (event) {
-					$.dialog("open");
-				})
-				.appendTo('ul.ui-autocomplete div');
+			$("<div class='custom-dropdown-animation'></div>").appendTo('ul.ui-autocomplete div');
 		}
 	});
 	// resizes width of autocomplete menu as needed
@@ -334,6 +328,7 @@ $(".custom-dropdown").on("mouseover touchstart", function () {
 		"o-transition": "all .2s ease-out",
 		"transition": "all .2s ease-out"
 	});
+	return false;
 });
 
 $(".custom-dropdown").on("mouseout touchend", function () {
@@ -354,6 +349,7 @@ $(".custom-dropdown").on("mouseout touchend", function () {
 		"o-transition": "all .01s ease-out",
 		"transition": "all .01s ease-out"
 	});
+	return false;
 });
 
 $(document.body).on('mouseover touchstart', ".custom-dropdown", function () {
@@ -374,6 +370,7 @@ $(document.body).on('mouseover touchstart', ".custom-dropdown", function () {
 		"o-transition": "all .2s ease-out",
 		"transition": "all .2s ease-out"
 	});
+	return false;
 });
 
 $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
@@ -394,4 +391,5 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
 		"o-transition": "all .01s ease-out",
 		"transition": "all .01s ease-out"
 	});
+	return false;
 });
