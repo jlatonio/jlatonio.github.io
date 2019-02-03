@@ -184,7 +184,7 @@ $(".store-save").on("click", function () {
 	var prepend = "<div class='custom-dropdown active'>";
 	var append = "<div class='custom-dropdown-animation'></div><div class='custom-dropdown-delete'></div><input class='custom-dropdown-strDate' disabled readonly /></div>";
 	if ($(".draft-slots").val().length > 0) {
-		$(".custom-dropdown").removeClass("active");
+		$(".draft-slots").closest(".custom-dropdown-outer").find(".custom-dropdown").removeClass("active");
 		$(this).closest(".column-container-notes").find(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
 	}
 
