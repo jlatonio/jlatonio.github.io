@@ -312,7 +312,7 @@ $(window).on("load", function () {
 	$(".custom-dropdown").append("<div class='custom-dropdown-animation'></div>");
 });
 
-$(".custom-dropdown").on("mouseover", function () {
+$(".custom-dropdown").on("mouseover touchstart", function () {
 	"use strict";
 	$(this).css({
 		"color": "#fff"
@@ -327,7 +327,7 @@ $(".custom-dropdown").on("mouseover", function () {
 	});
 });
 
-$(".custom-dropdown").on("mouseout", function () {
+$(".custom-dropdown").on("mouseout touchend", function () {
 	"use strict";
 	$(this).css({
 		"color": ""
@@ -343,7 +343,7 @@ $(".custom-dropdown").on("mouseout", function () {
 	});
 });
 
-$(".custom-dropdown active").on("mouseout", function () {
+$(".custom-dropdown active").on("mouseout touchstart", function () {
 	"use strict";
 	$(this).css({
 		"color": "#fff"
@@ -359,7 +359,7 @@ $(".custom-dropdown active").on("mouseout", function () {
 	});
 });
 
-$(document.body).on('mouseover', ".custom-dropdown", function () {
+$(document.body).on('mouseover touchend', ".custom-dropdown", function () {
 	"use strict";
 	$(this).css({
 		"color": "#fff"
