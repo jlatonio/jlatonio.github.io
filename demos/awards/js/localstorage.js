@@ -59,6 +59,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
 	$(this).closest(".column-container-notes").find(".draft-value").val("").css({
 		"background-color": ""
 	});
+    
     // adds focus to the end of input
     (function($){
         $.fn.focusTextToEnd = function(){
@@ -103,7 +104,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
         $(".store-data").focusTextToEnd();
 	}
     
-    // sets active state again
+    // re-sets active state
 	$(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
 		"background-color": "#446aa0",
 		"color": "#fff"
