@@ -1391,6 +1391,14 @@ a.ui-button:active,
   color: #fff;
 }
 
+.ui-datepicker td span, .ui-datepicker td a {
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+}
+
 /* dropdown shell styles */
 .ui-menu-item {
   font-size: 14px;
@@ -1429,7 +1437,6 @@ a.ui-button:active,
 
 .ui-menu-item:hover {
   background: transparent;
-  color: #fff;
 }
 
 .ui-autocomplete {
@@ -1437,14 +1444,4 @@ a.ui-button:active,
   border-bottom: solid 1px #ccc;
   border-right: solid 1px #ccc;
   border-left: solid 1px #ccc;
-}
-
-.ui-datepicker td span, .ui-datepicker td a {
-    display: block;
-    padding: .2em;
-    text-align: right;
-    text-decoration: none;
-    border-radius: 20px;
-    width: 40px;
-    height: 40px;
 }
