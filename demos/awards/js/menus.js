@@ -61,7 +61,9 @@ $(document.body).on('click', ".custom-dropdown", function () {
 	var option = $(this).text();
 	var val = $(this).attr("value");
 	var checkinput = $(this).closest(".custom-dropdown-outer").find("input[type='text']");
-	$(this).closest(".custom-dropdown-outer").find(checkinput).val(option);
+	$(this).closest(".custom-dropdown-outer").find(checkinput).val(option).css({
+		"background": ""
+	});
 	$(checkinput).attr("value", val);
 	$(".custom-dropdown-close").trigger("click");
 	return false;
@@ -73,7 +75,9 @@ $(".custom-dropdown").on("click", function () {
 	var option = $(this).text();
 	var val = $(this).attr("value");
 	var checkinput = $(this).closest(".custom-dropdown-outer").find("input[type='text']");
-	$(this).closest(".custom-dropdown-outer").find(checkinput).val(option);
+	$(this).closest(".custom-dropdown-outer").find(checkinput).val(option).css({
+		"background": ""
+	});
 	$(checkinput).attr("value", val);
 	$(".custom-dropdown-close").trigger("click");
 
