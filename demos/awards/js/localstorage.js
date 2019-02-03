@@ -495,11 +495,20 @@ $(".draft-value").closest(".column-container-notes").find(".custom-dropdown").on
 	$(this).closest(".column-container-notes").find(".draft-value").css({
 		"background-color": ""
 	});
+    // adds focus to the end of input
+    (function($){
+        $.fn.focusTextToEnd = function(){
+            this.focus();
+            var $thisVal = this.val();
+            this.val('').val($thisVal);
+            return this;
+        }
+    }(jQuery));
 	if ($(this).closest("form").find(".draft-value").val() === text) {
 		textarea.val(textarea.val().replace("Adobe Value: \n\n", "").replace("Adobe Value: Genuine\n\n", "").replace("Adobe Value: Innovative\n\n", "").replace("Adobe Value: Exceptional\n\n", "").replace("Adobe Value: Involved\n\n", ""));
 		$(this).closest(".column-container-notes").find(".store-data").val(function (index, old) {
 			return "Adobe Value: " + text + "\n\n" + "" + old
-		}).focus().css({
+		}).focusTextToEnd().css({
 			"background-color": ""
 		});
 		return false;
