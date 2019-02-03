@@ -56,6 +56,7 @@ $(window).on("load", function () {
             setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
+            return false;
         }
 
         if (CurrentDate >= FY2019_Q2 && CurrentDate <= FY2019_Q3) {
@@ -68,6 +69,7 @@ $(window).on("load", function () {
             setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
+            return false;
         }
 
         if (CurrentDate >= FY2019_Q3 && CurrentDate <= FY2019_Q4) {
@@ -78,6 +80,7 @@ $(window).on("load", function () {
             setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
+            return false;
         }
 
         if (CurrentDate >= FY2019_Q4 && CurrentDate <= FY2020_Q1) {
@@ -90,6 +93,7 @@ $(window).on("load", function () {
             setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
+            return false;
         }
 
         // FY 2020
@@ -101,6 +105,7 @@ $(window).on("load", function () {
             setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
+            return false;
         }
 
         if (CurrentDate >= FY2020_Q2 && CurrentDate <= FY2020_Q3) {
@@ -111,6 +116,7 @@ $(window).on("load", function () {
             setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
+            return false;
         }
 
         if (CurrentDate >= FY2020_Q3 && CurrentDate <= FY2020_Q4) {
@@ -123,6 +129,7 @@ $(window).on("load", function () {
             setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
+            return false;
         }
 
         if (CurrentDate >= FY2020_Q4 && CurrentDate <= FY2021_Q1) {
@@ -135,6 +142,7 @@ $(window).on("load", function () {
             setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
+            return false;
         }
     });
     return false;
@@ -587,37 +595,49 @@ $(".custom-date").on("change", function () {
         var FY2021_Q1 = "2020-11-28";
 
         // FY 2019
-        if (start_date >= FY2019_Q1 && end_date <= FY2019_Q2) {
+        if (start_date >= FY2019_Q1 && end_date < FY2019_Q2) {
             $(".nomination-totals-centerpiece h1").text("Q1");
+            return false;
         }
 
         if (start_date >= FY2019_Q2 && end_date <= FY2019_Q3) {
             $(".nomination-totals-centerpiece h1").text("Q2");
+            return false;
         }
 
         if (start_date >= FY2019_Q3 && end_date <= FY2019_Q4) {
             $(".nomination-totals-centerpiece h1").text("Q3");
+            return false;
         }
 
         if (start_date >= FY2019_Q4 && end_date <= FY2020_Q1) {
             $(".nomination-totals-centerpiece h1").text("Q4");
+            return false;
         }
 
         // FY 2020
         if (start_date >= FY2020_Q1 && end_date <= FY2020_Q2) {
             $(".nomination-totals-centerpiece h1").text("Q1");
+            return false;
         }
 
         if (start_date >= FY2020_Q2 && end_date <= FY2020_Q3) {
             $(".nomination-totals-centerpiece h1").text("Q2");
+            return false;
         }
 
         if (start_date >= FY2020_Q3 && end_date <= FY2020_Q4) {
             $(".nomination-totals-centerpiece h1").text("Q3");
+            return false;
         }
 
         if (start_date >= FY2020_Q4 && end_date <= FY2021_Q1) {
             $(".nomination-totals-centerpiece h1").text("Q4");
+            return false;
+        }
+        else {
+            $(".nomination-totals-centerpiece h1").text("");
+            return false;
         }
     });
    
@@ -945,6 +965,7 @@ $(".store-go-reset").on("click", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             $(".store-go").trigger("click");
+            return false;
         }
 
         if (CurrentDate >= FY2019_Q2 && CurrentDate <= FY2019_Q3) {
@@ -955,6 +976,7 @@ $(".store-go-reset").on("click", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             $(".store-go").trigger("click");
+            return false;
         }
 
         if (CurrentDate >= FY2019_Q3 && CurrentDate <= FY2019_Q4) {
@@ -965,6 +987,7 @@ $(".store-go-reset").on("click", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             $(".store-go").trigger("click");
+            return false;
         }
 
         if (CurrentDate >= FY2019_Q4 && CurrentDate <= FY2020_Q1) {
@@ -975,6 +998,7 @@ $(".store-go-reset").on("click", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             $(".store-go").trigger("click");
+            return false;
         }
 
         // FY 2020
@@ -986,6 +1010,7 @@ $(".store-go-reset").on("click", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             $(".store-go").trigger("click");
+            return false;
         }
 
         if (CurrentDate >= FY2020_Q2 && CurrentDate <= FY2020_Q3) {
@@ -996,6 +1021,7 @@ $(".store-go-reset").on("click", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             $(".store-go").trigger("click");
+            return false;
         }
 
         if (CurrentDate >= FY2020_Q3 && CurrentDate <= FY2020_Q4) {
@@ -1006,6 +1032,7 @@ $(".store-go-reset").on("click", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             $(".store-go").trigger("click");
+            return false;
         }
 
         if (CurrentDate >= FY2020_Q4 && CurrentDate <= FY2021_Q1) {
@@ -1016,6 +1043,7 @@ $(".store-go-reset").on("click", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             $(".store-go").trigger("click");
+            return false;
         }
     });
 
