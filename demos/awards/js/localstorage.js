@@ -59,7 +59,16 @@ $(document.body).on("click", ".custom-dropdown", function () {
 	$(this).closest(".column-container-notes").find(".draft-value").val("").css({
 		"background-color": ""
 	});
-
+    // adds focus to the end of input
+    (function($){
+        $.fn.focusTextToEnd = function(){
+            this.focus();
+            var $thisVal = this.val();
+            this.val('').val($thisVal);
+            return this;
+        }
+    }(jQuery));
+    
 	// automatically fills in the Adobe Value input if the following strings are in the textarea when loaded
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Genuine") > -1) {
 		$(".draft-value").val("Genuine");
@@ -67,7 +76,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
             "background-color": "",
             "color": ""
         });
-        $(".store-data").focus();
+        $(".store-data").focusTextToEnd();
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Innovative") > -1) {
 		$(".draft-value").val("Innovative");
@@ -75,7 +84,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
             "background-color": "",
             "color": ""
         });
-        $(".store-data").focus();
+        $(".store-data").focusTextToEnd();
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Exceptional") > -1) {
 		$(".draft-value").val("Exceptional");
@@ -83,7 +92,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
             "background-color": "",
             "color": ""
         });
-        $(".store-data").focus();
+        $(".store-data").focusTextToEnd();
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Involved") > -1) {
 		$(".draft-value").val("Involved");
@@ -91,7 +100,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
             "background-color": "",
             "color": ""
         });
-        $(".store-data").focus();
+        $(".store-data").focusTextToEnd();
 	}
     
     // sets active state again
