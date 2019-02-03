@@ -1,6 +1,3 @@
-// toggles drop down and toggle arrow icon
-$(".custom-dropdown-group,.custom-dropdown-close").hide();
-
 $(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("click", function () {
 	// closes other elements other than this when clicked
 	"use strict";
@@ -229,7 +226,7 @@ $(function () {
 		source: [
 			"Joseph Latonio",
 			"Rebecca Warner",
-			"Sri Krishnamoorthy"
+			"Sri KrishnamoorthySri KrishnamoorthySri KrishnamoorthySri KrishnamoorthySri KrishnamoorthySri KrishnamoorthySri KrishnamoorthySri Krishnamoorthy"
 		],
 		minLength: 1,
 		response: function (event, ui) {
@@ -242,23 +239,23 @@ $(function () {
 			} else {
 				$(this).attr("placeholder", "Search Email ID").css({
 					"background": ""
-				});
+				});  
 			}
 		},
 		// Animated hover effect
 		open: function (event, ui) {
 			$("<div class='custom-dropdown-animation'></div>")
 				.on('click', function (event) {
-					$("#dialog-add-new").dialog("open");
+					$.dialog("open");
 				})
 				.appendTo('ul.ui-autocomplete div');
 		}
 	});
 	// resizes width of autocomplete menu as needed
-	jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+	$.ui.autocomplete.prototype._resizeMenu = function () {
 		var ul = this.menu.element;
 		ul.outerWidth(this.element.outerWidth());
-	}
+	};
 });
 
 // resets placeholder text on focus
@@ -311,12 +308,14 @@ $(".custom-dropdown").on("click", function () {
 
 // Hover effects
 $(window).on("load", function () {
+	"use strict";
 	$(".custom-dropdown").append("<div class='custom-dropdown-animation'></div>");
 });
 
 $(".custom-dropdown").on("mouseover", function () {
+	"use strict";
 	$(this).css({
-		"color": "#fff",
+		"color": "#fff"
     });
 	$(this).find(".custom-dropdown-animation").css({
 		"opacity": "1",
@@ -329,8 +328,9 @@ $(".custom-dropdown").on("mouseover", function () {
 });
 
 $(".custom-dropdown").on("mouseout", function () {
+	"use strict";
 	$(this).css({
-		"color": "",
+		"color": ""
     });
 	$(this).find(".custom-dropdown-animation").css({
 		"opacity": "",
@@ -343,8 +343,9 @@ $(".custom-dropdown").on("mouseout", function () {
 });
 
 $(".custom-dropdown active").on("mouseout", function () {
+	"use strict";
 	$(this).css({
-		"color": "#fff",
+		"color": "#fff"
     });
 	$(this).find(".custom-dropdown-animation").css({
 		"opacity": "",
@@ -357,8 +358,9 @@ $(".custom-dropdown active").on("mouseout", function () {
 });
 
 $(document.body).on('mouseover', ".custom-dropdown", function () {
+	"use strict";
 	$(this).css({
-		"color": "#fff",
+		"color": "#fff"
     });
 	$(this).find(".custom-dropdown-animation").css({
 		"opacity": "1",
@@ -371,8 +373,9 @@ $(document.body).on('mouseover', ".custom-dropdown", function () {
 });
 
 $(document.body).on('mouseout', ".custom-dropdown", function () {
+	"use strict";
 	$(this).css({
-		"color": "",
+		"color": ""
     });
 	$(this).find(".custom-dropdown-animation").css({
 		"opacity": "",

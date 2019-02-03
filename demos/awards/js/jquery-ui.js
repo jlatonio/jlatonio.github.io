@@ -6057,7 +6057,7 @@ $.widget( "ui.autocomplete", {
 		this._off( this.document, "mousedown" );
 
 		if ( this.menu.element.is( ":visible" ) ) {
-			this.menu.element.hide();
+			this.menu.element.slideUp(100);
 			this.menu.blur();
 			this.isNewMenu = true;
 			this._trigger( "close", event );
@@ -6097,7 +6097,7 @@ $.widget( "ui.autocomplete", {
 		this.menu.refresh();
 
 		// Size and position menu
-		ul.show();
+		ul.slideDown(300);
 		this._resizeMenu();
 		ul.position( $.extend( {
 			of: this.element
