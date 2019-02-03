@@ -46,93 +46,93 @@ $(window).on("load", function () {
         FY2020_Q4 = new Date(FY2020_Q4);
 
         // FY 2019
-        if (CurrentDate > FY2019_Q1 && CurrentDate < FY2019_Q2) {
+        if (CurrentDate >= FY2019_Q1 && CurrentDate <= FY2019_Q2) {
             $(".custom-dropdown-quarter").val("FY2019 Q1");
             $(".custom-dropdown-start-date").val("2018-12-01");
             $(".custom-dropdown-end-date").val("2019-03-01");
             $(".nomination-totals-centerpiece h1").text("Q1");
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
-            setTimeout(function() {
+            setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
         }
 
-        if (CurrentDate > FY2019_Q2 && CurrentDate < FY2019_Q3) {
+        if (CurrentDate >= FY2019_Q2 && CurrentDate <= FY2019_Q3) {
             $(".custom-dropdown-quarter").val("FY2019 Q2");
             $(".custom-dropdown-start-date").val("2019-03-02");
             $(".custom-dropdown-end-date").val("2019-05-31");
             $(".nomination-totals-centerpiece h1").text("Q2");
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
-            setTimeout(function() {
+            setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
         }
 
-        if (CurrentDate > FY2019_Q3 && CurrentDate < FY2019_Q4) {
+        if (CurrentDate >= FY2019_Q3 && CurrentDate <= FY2019_Q4) {
             $(".custom-dropdown-quarter").val("FY2019 Q3");
             $(".custom-dropdown-start-date").val("2019-06-01");
             $(".custom-dropdown-end-date").val("2019-08-30");
             $(".nomination-totals-centerpiece h1").text("Q3");
-            setTimeout(function() {
+            setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
         }
 
-        if (CurrentDate > FY2019_Q4 && CurrentDate < FY2020_Q1) {
+        if (CurrentDate >= FY2019_Q4 && CurrentDate <= FY2020_Q1) {
             $(".custom-dropdown-quarter").val("FY2019 Q4");
             $(".custom-dropdown-start-date").val("2019-08-31");
             $(".custom-dropdown-end-date").val("2019-11-29");
             $(".nomination-totals-centerpiece h1").text("Q4");
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
-            setTimeout(function() {
+            setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
         }
 
         // FY 2020
-        if (CurrentDate > FY2020_Q1 && CurrentDate < FY2020_Q2) {
+        if (CurrentDate >= FY2020_Q1 && CurrentDate <= FY2020_Q2) {
             $(".custom-dropdown-quarter").val("FY2020 Q1");
             $(".custom-dropdown-start-date").val("2020-11-30");
             $(".custom-dropdown-end-date").val("2020-02-28");
             $(".nomination-totals-centerpiece h1").text("Q1");
-            setTimeout(function() {
+            setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
         }
 
-        if (CurrentDate > FY2020_Q2 && CurrentDate < FY2020_Q3) {
+        if (CurrentDate >= FY2020_Q2 && CurrentDate <= FY2020_Q3) {
             $(".custom-dropdown-quarter").val("FY2020 Q2");
             $(".custom-dropdown-start-date").val("2020-02-29");
             $(".custom-dropdown-end-date").val("2020-05-29");
             $(".nomination-totals-centerpiece h1").text("Q2");
-            setTimeout(function() {
+            setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
         }
 
-        if (CurrentDate > FY2020_Q3 && CurrentDate < FY2020_Q4) {
+        if (CurrentDate >= FY2020_Q3 && CurrentDate <= FY2020_Q4) {
             $(".custom-dropdown-quarter").val("FY2020 Q3");
             $(".custom-dropdown-start-date").val("2020-05-30");
             $(".custom-dropdown-end-date").val("2020-08-28");
             $(".nomination-totals-centerpiece h1").text("Q3");
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
-            setTimeout(function() {
+            setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
         }
 
-        if (CurrentDate > FY2020_Q4 && CurrentDate < FY2021_Q1) {
+        if (CurrentDate >= FY2020_Q4 && CurrentDate <= FY2021_Q1) {
             $(".custom-dropdown-quarter").val("FY2020 Q4");
             $(".custom-dropdown-start-date").val("2020-08-29");
             $(".custom-dropdown-end-date").val("2020-11-27");
             $(".nomination-totals-centerpiece h1").text("Q4");
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
-            setTimeout(function() {
+            setTimeout(function () {
             $(".store-go").trigger("click");
             }, 1200);
         }
@@ -140,128 +140,8 @@ $(window).on("load", function () {
     return false;
 });
 
-// Filtering
-$(".custom-dropdown").on("click", function () {
+$(".custom-dropdown-sort").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
     "use strict";
-    $(".nomination-entry-submissions").removeClass("hidethis").removeClass("showthis");
-    $(".store-nominator-award").each(function () {
-        var award_text = $(this).text();
-        var award_val = $(this).closest("form").find(".custom-dropdown-award").val();
-        // changes the form"s action link on specific choices
-        if (award_text === award_val) {
-            $(this).closest(".nomination-entry-submissions").removeClass("hidethis").addClass("showthis");
-        } else {
-            $(this).closest(".nomination-entry-submissions").removeClass("showthis").addClass("hidethis");
-        }
-    });
-
-    // shows all
-    $(".store-nominator-award").each(function () {
-        var award_val = $(this).closest("form").find(".custom-dropdown-award").val();
-        if (award_val === "All Award Winners") {
-            $(".nomination-entry-submissions").removeClass("hidethis").addClass("showthis");
-        }
-    });
-
-    // filters all those with the showthis class
-    $(".nomination-entry-submissions-container").each(function () {
-        if ($(this).find(".nomination-entry-submissions").hasClass("showthis")) {
-            $(this).closest(".nomination-entry-container").show();
-        } else {
-            $(this).closest(".nomination-entry-container").hide();
-        }
-    });
-
-    // counts total nominations per nominee without animation
-    $(".nomination-entry-container:visible").each(function (i) {
-        var empty = $(this).find(".nomination-entry-submissions:visible").length;
-        $(".store-nominee-total-nominations:visible").eq(i).text(empty);
-    });
-
-    // adds a 0 before single digits. Can be useful for sorting?
-    $(".store-nominee-total-nominations:visible").each(function () {
-        $(this).text(function (a, b) {
-            var result = Number(b) + 0;
-            if (result < 10) {
-                return "0" + result;
-            } else {
-                return result;
-            }
-        });
-    });
-
-    // counts and animates total nominations overall
-    $(".nomination-total-nominations").each(function () {
-        var option = $(this).closest("form").find(".nomination-entry-submissions:visible");
-        if (option.length < 9) {
-            $(this).prop("Counter", 0).animate({
-                Counter: option.length
-            }, {
-                duration: 2000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        } else {
-            $(this).prop("Counter", 0).animate({
-                Counter: option.length
-            }, {
-                duration: 4000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        }
-    });
-
-    // counts and animates total nominees overall
-    $(".nomination-total-nominees").each(function () {
-        var option = $(this).closest("form").find(".nomination-entry-container:visible");
-        if (option.length < 9) {
-            $(this).prop("Counter", 0).animate({
-                Counter: option.length
-            }, {
-                duration: 2000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        } else {
-            $(this).prop("Counter", 0).animate({
-                Counter: option.length
-            }, {
-                duration: 4000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        }
-    });
-
-    // Shows no submission message
-    $(".nomination-no-entries").each(function () {
-        var option = $(this).closest("form").find(".nomination-entry-container:visible");
-        if (option.length === 0) {
-            $(".nomination-no-entries").show();
-            $("html, body").animate({
-                    scrollTop: $(".custom-dropdown-outer").offset().top - 170
-                },
-                200, "easeInOutQuad");
-            return false;
-        } else {
-            $(".nomination-no-entries").hide();
-            $("html, body").animate({
-                    scrollTop: $(".custom-dropdown-outer").offset().top - 170
-                },
-                200, "easeInOutQuad");
-            return false;
-        }
-    });
-
     // Please QA all sorting features. The logic is to apply the child text as a data attribute to the parent and sort the attribute. Please update as needed.
 
     // Sorting by Name (A - Z)
@@ -407,6 +287,142 @@ $(".custom-dropdown").on("click", function () {
         }).appendTo(main_container);
     }
 
+    // fixes alternating styles
+    $(".nomination-entry-container:visible:even").css({
+        "background-color": "#fff"
+    });
+    $(".nomination-entry-container:visible:odd").css({
+        "background-color": "#f3f3f3"
+    });
+    $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
+    $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
+    return false;
+});
+
+// Filtering
+$(".custom-dropdown-award, .custom-dropdown-quarter").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
+    "use strict";
+    $(".nomination-entry-submissions").removeClass("hidethis").removeClass("showthis");
+    $(".store-nominator-award").each(function () {
+        var award_text = $(this).text();
+        var award_val = $(this).closest("form").find(".custom-dropdown-award").val();
+        // changes the form"s action link on specific choices
+        if (award_text === award_val) {
+            $(this).closest(".nomination-entry-submissions").removeClass("hidethis").addClass("showthis");
+        } else {
+            $(this).closest(".nomination-entry-submissions").removeClass("showthis").addClass("hidethis");
+        }
+    });
+
+    // shows all
+    $(".store-nominator-award").each(function () {
+        var award_val = $(this).closest("form").find(".custom-dropdown-award").val();
+        if (award_val === "All Award Winners") {
+            $(".nomination-entry-submissions").removeClass("hidethis").addClass("showthis");
+        }
+    });
+
+    // filters all those with the showthis class
+    $(".nomination-entry-submissions-container").each(function () {
+        if ($(this).find(".nomination-entry-submissions").hasClass("showthis")) {
+            $(this).closest(".nomination-entry-container").show();
+        } else {
+            $(this).closest(".nomination-entry-container").hide();
+        }
+    });
+
+    // counts total nominations per nominee without animation
+    $(".nomination-entry-container:visible").each(function (i) {
+        var empty = $(this).find(".nomination-entry-submissions:visible").length;
+        $(".store-nominee-total-nominations:visible").eq(i).text(empty);
+    });
+
+    // adds a 0 before single digits. Can be useful for sorting?
+    $(".store-nominee-total-nominations:visible").each(function () {
+        $(this).text(function (a, b) {
+            var result = Number(b) + 0;
+            if (result < 10) {
+                return "0" + result;
+            } else {
+                return result;
+            }
+        });
+    });
+
+    // counts and animates total nominations overall
+    $(".nomination-total-nominations").each(function () {
+        var option = $(this).closest("form").find(".nomination-entry-submissions:visible");
+        if (option.length < 9) {
+            $(this).prop("Counter", 0).animate({
+                Counter: option.length
+            }, {
+                duration: 2000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        } else {
+            $(this).prop("Counter", 0).animate({
+                Counter: option.length
+            }, {
+                duration: 4000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        }
+        return false;
+    });
+
+    // counts and animates total nominees overall
+    $(".nomination-total-nominees").each(function () {
+        var option = $(this).closest("form").find(".nomination-entry-container:visible");
+        if (option.length < 9) {
+            $(this).prop("Counter", 0).animate({
+                Counter: option.length
+            }, {
+                duration: 2000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        } else {
+            $(this).prop("Counter", 0).animate({
+                Counter: option.length
+            }, {
+                duration: 4000,
+                easing: "easeOutQuint",
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        }
+        return false;
+    });
+
+    // Shows no submission message
+    $(".nomination-no-entries").each(function () {
+        var option = $(this).closest("form").find(".nomination-entry-container:visible");
+        if (option.length === 0) {
+            $(".nomination-no-entries").show();
+            $("html, body").animate({
+                    scrollTop: $(".custom-dropdown-outer").offset().top - 170
+                },
+                200, "easeInOutQuad");
+            return false;
+        } else {
+            $(".nomination-no-entries").hide();
+            $("html, body").animate({
+                    scrollTop: $(".custom-dropdown-outer").offset().top - 170
+                },
+                200, "easeInOutQuad");
+            return false;
+        }
+    });
+
     // Quick Links (FY Quarters)
     var quarter_val = $(this).closest("form").find(".custom-dropdown-quarter").val();
     if (quarter_val === "FY2019 Q1") {
@@ -540,6 +556,13 @@ $(".custom-select-date, .custom-date").on("click", function () {
     return false;
 });
 
+// resets quick link if user chooses a new custom date
+$(".custom-date").on("change", function () {
+    "use strict";
+    $(".custom-dropdown-quarter").val("");
+    return false;
+});
+
 // sort defaults by name (A-Z)
 $(".store-nominee-enter").each(function (i) {
     "use strict";
@@ -595,32 +618,17 @@ $(".store-options").click(function () {
 $(".store-go").on("click", function () {
     "use strict";
     $(".custom-dropdown-close").trigger("click");
-    $(".nomination-entry-submissions:visible").removeClass("hidethis").addClass("showthis");
-
-    $(".custom-dropdown-start-date").each(function () {
-        $(".store-nominator-date").each(function () {
+       $(".store-nominator-date").each(function () {
             var start_date = $(".custom-dropdown-start-date").val();
-            var submit_date = $(this).text();
-            if (submit_date > start_date) {
-                $(this).closest(".nomination-entry-submissions:visible").removeClass("hidethis").addClass("showthis");
-            } else {
-                $(this).closest(".nomination-entry-submissions:visible").removeClass("showthis").addClass("hidethis");
-            }
-        });
-    });
-
-    $(".custom-dropdown-end-date").each(function () {
-        $(".store-nominator-date").each(function () {
             var end_date = $(".custom-dropdown-end-date").val();
             var submit_date = $(this).text();
-            if (submit_date < end_date) {
+            if (submit_date >= start_date && submit_date <= end_date) {
                 $(this).closest(".nomination-entry-submissions:visible").removeClass("hidethis").addClass("showthis");
             } else {
                 $(this).closest(".nomination-entry-submissions:visible").removeClass("showthis").addClass("hidethis");
             }
         });
-    });
-
+ 
     // filters all those with the showthis class
     $(".nomination-entry-submissions-container:visible").each(function () {
         if ($(this).find(".nomination-entry-submissions").hasClass("showthis")) {
@@ -671,6 +679,7 @@ $(".store-go").on("click", function () {
                 }
             });
         }
+        return false;
     });
 
     // counts and animates total nominees overall
@@ -697,6 +706,7 @@ $(".store-go").on("click", function () {
                 }
             });
         }
+        return false;
     });
 
     // Shows no submission message
@@ -804,6 +814,7 @@ $(".store-go-reset").on("click", function () {
                 }
             });
         }
+        return false;
     });
 
     // counts and animates total nominees overall
@@ -830,6 +841,7 @@ $(".store-go-reset").on("click", function () {
                 }
             });
         }
+        return false;
     });
 
     // closes menu and resets all fields
@@ -865,7 +877,7 @@ $(".store-go-reset").on("click", function () {
         FY2020_Q4 = new Date(FY2020_Q4);
 
         // FY 2019
-        if (CurrentDate > FY2019_Q1 && CurrentDate < FY2019_Q2) {
+        if (CurrentDate >= FY2019_Q1 && CurrentDate <= FY2019_Q2) {
             $(".custom-dropdown-quarter").val("FY2019 Q1");
             $(".custom-dropdown-start-date").val("2018-12-01");
             $(".custom-dropdown-end-date").val("2019-03-01");
@@ -875,7 +887,7 @@ $(".store-go-reset").on("click", function () {
             $(".store-go").trigger("click");
         }
 
-        if (CurrentDate > FY2019_Q2 && CurrentDate < FY2019_Q3) {
+        if (CurrentDate >= FY2019_Q2 && CurrentDate <= FY2019_Q3) {
             $(".custom-dropdown-quarter").val("FY2019 Q2");
             $(".custom-dropdown-start-date").val("2019-03-02");
             $(".custom-dropdown-end-date").val("2019-05-31");
@@ -885,7 +897,7 @@ $(".store-go-reset").on("click", function () {
             $(".store-go").trigger("click");
         }
 
-        if (CurrentDate > FY2019_Q3 && CurrentDate < FY2019_Q4) {
+        if (CurrentDate >= FY2019_Q3 && CurrentDate <= FY2019_Q4) {
             $(".custom-dropdown-quarter").val("FY2019 Q3");
             $(".custom-dropdown-start-date").val("2019-06-01");
             $(".custom-dropdown-end-date").val("2019-08-30");
@@ -895,7 +907,7 @@ $(".store-go-reset").on("click", function () {
             $(".store-go").trigger("click");
         }
 
-        if (CurrentDate > FY2019_Q4 && CurrentDate < FY2020_Q1) {
+        if (CurrentDate >= FY2019_Q4 && CurrentDate <= FY2020_Q1) {
             $(".custom-dropdown-quarter").val("FY2019 Q4");
             $(".custom-dropdown-start-date").val("2019-08-31");
             $(".custom-dropdown-end-date").val("2019-11-29");
@@ -906,7 +918,7 @@ $(".store-go-reset").on("click", function () {
         }
 
         // FY 2020
-        if (CurrentDate > FY2020_Q1 && CurrentDate < FY2020_Q2) {
+        if (CurrentDate >= FY2020_Q1 && CurrentDate <= FY2020_Q2) {
             $(".custom-dropdown-quarter").val("FY2020 Q1");
             $(".custom-dropdown-start-date").val("2020-11-30");
             $(".custom-dropdown-end-date").val("2020-02-28");
@@ -916,7 +928,7 @@ $(".store-go-reset").on("click", function () {
             $(".store-go").trigger("click");
         }
 
-        if (CurrentDate > FY2020_Q2 && CurrentDate < FY2020_Q3) {
+        if (CurrentDate >= FY2020_Q2 && CurrentDate <= FY2020_Q3) {
             $(".custom-dropdown-quarter").val("FY2020 Q2");
             $(".custom-dropdown-start-date").val("2020-02-29");
             $(".custom-dropdown-end-date").val("2020-05-29");
@@ -926,7 +938,7 @@ $(".store-go-reset").on("click", function () {
             $(".store-go").trigger("click");
         }
 
-        if (CurrentDate > FY2020_Q3 && CurrentDate < FY2020_Q4) {
+        if (CurrentDate >= FY2020_Q3 && CurrentDate <= FY2020_Q4) {
             $(".custom-dropdown-quarter").val("FY2020 Q3");
             $(".custom-dropdown-start-date").val("2020-05-30");
             $(".custom-dropdown-end-date").val("2020-08-28");
@@ -936,7 +948,7 @@ $(".store-go-reset").on("click", function () {
             $(".store-go").trigger("click");
         }
 
-        if (CurrentDate > FY2020_Q4 && CurrentDate < FY2021_Q1) {
+        if (CurrentDate >= FY2020_Q4 && CurrentDate <= FY2021_Q1) {
             $(".custom-dropdown-quarter").val("FY2020 Q4");
             $(".custom-dropdown-start-date").val("2020-08-29");
             $(".custom-dropdown-end-date").val("2020-11-27");
