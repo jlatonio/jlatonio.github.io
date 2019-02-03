@@ -556,11 +556,21 @@ $(".custom-select-date, .custom-date").on("click", function () {
     return false;
 });
 
-// resets quick link if user chooses a new custom date
+// resets quick link if user searches with a new custom date
 $(".custom-date").on("change", function () {
     "use strict";
     $(".custom-dropdown-quarter").val("");
+    $(".custom-dropdown-award").val("All Award Winners");
+    
+    // resets active states for search
+    $(".nomination-entry-container").show();
     $(".nomination-entry-submissions").removeClass("hidethis").removeClass("showthis");
+    $(".custom-dropdown-award, .custom-dropdown-quarter").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+    $(this).removeClass("active").css({
+            "background-color": "",
+            "color": ""
+        });
+    });
     
     // Quarter automatically shows, depending on the custom dates chosen
     $(function () {
