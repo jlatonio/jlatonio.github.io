@@ -315,7 +315,11 @@ $(window).on("load", function () {
 $(".custom-dropdown").on("mouseover touchstart", function () {
 	"use strict";
 	$(this).css({
-		"color": "#fff"
+		"color": "#fff",
+		"-webkit-transition": "all .1s ease-out",
+		"-moz-transition": "all .1s ease-out",
+		"o-transition": "all .1s ease-out",
+		"transition": "all .1s ease-out"
     });
 	$(this).find(".custom-dropdown-animation").css({
         "background-color": "#7593bf",
@@ -331,7 +335,11 @@ $(".custom-dropdown").on("mouseover touchstart", function () {
 $(".custom-dropdown").on("mouseout touchend", function () {
 	"use strict";
 	$(this).css({
-		"color": ""
+		"color": "",
+		"-webkit-transition": "all .01s ease-out",
+		"-moz-transition": "all .01s ease-out",
+		"o-transition": "all .01s ease-out",
+		"transition": "all .01s ease-out"
     });
 	$(this).find(".custom-dropdown-animation").css({
         "background-color": "",
@@ -347,7 +355,11 @@ $(".custom-dropdown").on("mouseout touchend", function () {
 $(document.body).on('mouseover touchstart', ".custom-dropdown", function () {
 	"use strict";
 	$(this).css({
-		"color": "#fff"
+		"color": "#fff",
+		"-webkit-transition": "all .1s ease-out",
+		"-moz-transition": "all .1s ease-out",
+		"o-transition": "all .1s ease-out",
+		"transition": "all .1s ease-out"
     });
 	$(this).find(".custom-dropdown-animation").css({
         "background-color": "#7593bf",
@@ -363,7 +375,11 @@ $(document.body).on('mouseover touchstart', ".custom-dropdown", function () {
 $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
 	"use strict";
 	$(this).css({
-		"color": ""
+		"color": "",
+		"-webkit-transition": "all .01s ease-out",
+		"-moz-transition": "all .01s ease-out",
+		"o-transition": "all .01s ease-out",
+		"transition": "all .01s ease-out"
     });
 	$(this).find(".custom-dropdown-animation").css({
         "background-color": "",
