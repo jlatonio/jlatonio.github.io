@@ -63,31 +63,35 @@ $(document.body).on("click", ".custom-dropdown", function () {
 	// automatically fills in the Adobe Value input if the following strings are in the textarea when loaded
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Genuine") > -1) {
 		$(".draft-value").val("Genuine");
-        $('.custom-dropdown').removeClass("active").css({
+        $(".custom-dropdown").removeClass("active").css({
             "background-color": "",
             "color": ""
         });
+        $(".store-data").focus();
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Innovative") > -1) {
 		$(".draft-value").val("Innovative");
-        $('.custom-dropdown').removeClass("active").css({
+        $(".custom-dropdown").removeClass("active").css({
             "background-color": "",
             "color": ""
         });
+        $(".store-data").focus();
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Exceptional") > -1) {
 		$(".draft-value").val("Exceptional");
-        $('.custom-dropdown').removeClass("active").css({
+        $(".custom-dropdown").removeClass("active").css({
             "background-color": "",
             "color": ""
         });
+        $(".store-data").focus();
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Involved") > -1) {
 		$(".draft-value").val("Involved");
-        $('.custom-dropdown').removeClass("active").css({
+        $(".custom-dropdown").removeClass("active").css({
             "background-color": "",
             "color": ""
         });
+        $(".store-data").focus();
 	}
     
     // sets active state again
