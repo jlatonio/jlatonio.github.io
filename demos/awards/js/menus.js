@@ -64,7 +64,6 @@ $(document.body).on('click', ".custom-dropdown", function () {
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideUp(100);
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
-	return false;
 });
 
 // adds the html to the input value for each button clicked
@@ -82,7 +81,6 @@ $(".custom-dropdown").on("click", function () {
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").slideUp(100);
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
-	return false;
 });
 
 // directs to specific pages
