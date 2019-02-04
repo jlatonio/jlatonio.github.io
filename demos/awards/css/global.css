@@ -1061,6 +1061,10 @@ input::-webkit-clear-button {
 }
 
 @media screen and (max-device-width: 1366px) and (orientation:landscape) {
+  .acs-header {
+    padding: 16px 40px;
+  }
+    
   .column-container, .column-container-admin {
     padding: 40px;
   }
