@@ -427,7 +427,8 @@ input[type=button]:hover {
 
 .store-button {
   color: white;
-  padding: 14px 8px;
+  height: 49px;
+  white-space: normal;
   margin: 0 10px 12px 0;
   font-size: 14px;
   display: inline-block;
@@ -470,7 +471,8 @@ input[type=button]:hover {
 
 .store-go,.store-go-reset,.store-options {
   color: white;
-  padding: 14px 8px;
+  height: 49px;
+  white-space: normal;
   margin: 0 10px 10px 0;
   font-size: 14px;
   display: inline-block;
