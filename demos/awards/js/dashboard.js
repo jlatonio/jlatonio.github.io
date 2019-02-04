@@ -574,9 +574,8 @@ $(".custom-date").on("change", function () {
     $(".nomination-entry-container").show();
     $(".nomination-entry-submissions").removeClass("hidethis").removeClass("showthis");
     $(".custom-dropdown-award, .custom-dropdown-quarter").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
-    $(this).removeClass("active").css({
-            "background-color": "",
-            "color": ""
+    $(this).css({
+            "background-color": ""
         });
     });
     
