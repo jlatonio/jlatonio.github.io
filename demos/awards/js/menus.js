@@ -287,28 +287,16 @@ $("input[type='text'], textarea").on("keydown change", function () {
 // set active state (neded for appended dropdown)
 $(document.body).on('click', ".custom-dropdown", function () {
 	"use strict";
-	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active").css({
-		"background-color": "",
-		"color": ""
-	});
-	$(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
-		"background-color": "#446aa0",
-		"color": "#fff"
-	});
+	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active");
+	$(this).closest(".custom-dropdown-outer").find(this).addClass("active");
 	return false;
 });
 
 // set active state
 $(".custom-dropdown").on("click", function () {
 	"use strict";
-	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active").css({
-		"background-color": "",
-		"color": ""
-	});
-	$(this).closest(".custom-dropdown-outer").find(this).addClass("active").css({
-		"background-color": "#446aa0",
-		"color": "#fff"
-	});
+	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active");
+	$(this).closest(".custom-dropdown-outer").find(this).addClass("active");
 	return false;
 });
 

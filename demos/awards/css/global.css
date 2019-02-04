@@ -736,6 +736,7 @@ input::-webkit-clear-button {
 
 .active {
   color: #fff;
+  background: #446aa0;
 }
 
 .custom-dropdown-close {
