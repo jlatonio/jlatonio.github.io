@@ -463,6 +463,10 @@
   padding: 0 10px;
 }
 
+.column-container-data .column-container-select {
+  padding: 0;
+}
+
 .column-container-span {
   display: inline;
 }
