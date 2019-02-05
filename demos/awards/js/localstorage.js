@@ -59,7 +59,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
 
     // highlights is Adobe value input is empty
     $(this).closest(".column-container-notes").find(".draft-value").val("").css({
-        "background-color": "#fff2f2"
+        "background-color": ""
     });
 
     // adds focus to the end of input
@@ -114,11 +114,26 @@ $(document.body).on("click", ".custom-dropdown", function () {
         $(".store-data").focusTextToEnd();
     }
 
-    // re-sets active state
+    // re-sets active state for load save file
     $(this).addClass("active").siblings().removeClass("active").css({
         "background-color": "",
         "color": ""
     });
+
+    // re-sets active state for Adobe Value
+    $(".draft-value").closest(".column-container-notes").find(".custom-dropdown").each(function () {
+        var value = $(".draft-value").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active").css({
+                "background-color": "",
+                "color": ""
+            });
+        }
+    });
+
     return false;
 });
 
