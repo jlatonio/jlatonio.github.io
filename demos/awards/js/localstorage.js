@@ -76,7 +76,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
         $(".custom-dropdown").removeClass("active").css({
 		"background-color": "",
 		"color": ""
-	});;
+	});
         $(".store-data").focusTextToEnd();
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Innovative") > -1) {
@@ -84,7 +84,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
         $(".custom-dropdown").removeClass("active").css({
 		"background-color": "",
 		"color": ""
-	});;
+	});
         $(".store-data").focusTextToEnd();
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Exceptional") > -1) {
@@ -92,7 +92,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
         $(".custom-dropdown").removeClass("active").css({
 		"background-color": "",
 		"color": ""
-	});;
+	});
         $(".store-data").focusTextToEnd();
 	}
 	if ($(this).closest(".column-container-notes").find(".store-data").val().indexOf("Involved") > -1) {
@@ -100,12 +100,13 @@ $(document.body).on("click", ".custom-dropdown", function () {
         $(".custom-dropdown").removeClass("active").css({
 		"background-color": "",
 		"color": ""
-	});;
+	});
         $(".store-data").focusTextToEnd();
 	}
     
     // re-sets active state
-	$(this).closest(".custom-dropdown-outer").find(this).addClass("active");
+	$(this).closest(".custom-dropdown-outer").find(this).addClass("active").siblings().removeClass("active");
+    
     return false;
 });
 
