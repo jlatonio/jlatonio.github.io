@@ -1,20 +1,21 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $("#cancel-fullscreen").hide();
 });
 
-$("#view-fullscreen").click(function() {
-    $("#view-fullscreen").delay(250).queue(function(){
-    $("#view-fullscreen").hide();
-    $("#cancel-fullscreen").show();
-    $("#view-fullscreen").dequeue();
+$("#view-fullscreen").click(function () {
+    $("#view-fullscreen").delay(250).queue(function () {
+        $("#view-fullscreen").hide();
+        $("#cancel-fullscreen").show();
+        $("#view-fullscreen").dequeue();
+    });
 });
-});
-$("#cancel-fullscreen").click(function() {
-    $("#cancel-fullscreen").delay(250).queue(function(){
-    $("#cancel-fullscreen").hide();
-    $("#view-fullscreen").show();
-    $("#cancel-fullscreen").dequeue();
-});
+
+$("#cancel-fullscreen").click(function () {
+    $("#cancel-fullscreen").delay(250).queue(function () {
+        $("#cancel-fullscreen").hide();
+        $("#view-fullscreen").show();
+        $("#cancel-fullscreen").dequeue();
+    });
 });
 
 if (document.addEventListener) {
@@ -26,30 +27,30 @@ if (document.addEventListener) {
 
 function exitHandler() {
     if (document.webkitIsFullScreen === false) {
-    $("#cancel-fullscreen").delay(250).queue(function(){
-    $("#cancel-fullscreen").hide();
-    $("#view-fullscreen").show();
-    $("#cancel-fullscreen").dequeue();
-});
+        $("#cancel-fullscreen").delay(250).queue(function () {
+            $("#cancel-fullscreen").hide();
+            $("#view-fullscreen").show();
+            $("#cancel-fullscreen").dequeue();
+        });
     } else if (document.mozFullScreen === false) {
-    $("#cancel-fullscreen").delay(250).queue(function(){
-    $("#cancel-fullscreen").hide();
-    $("#view-fullscreen").show();
-    $("#cancel-fullscreen").dequeue();
-});
+        $("#cancel-fullscreen").delay(250).queue(function () {
+            $("#cancel-fullscreen").hide();
+            $("#view-fullscreen").show();
+            $("#cancel-fullscreen").dequeue();
+        });
     } else if (document.msFullscreenElement === false) {
-    $("#cancel-fullscreen").delay(250).queue(function(){
-    $("#cancel-fullscreen").hide();
-    $("#view-fullscreen").show();
-    $("#cancel-fullscreen").dequeue();
-});
+        $("#cancel-fullscreen").delay(250).queue(function () {
+            $("#cancel-fullscreen").hide();
+            $("#view-fullscreen").show();
+            $("#cancel-fullscreen").dequeue();
+        });
     }
 }
 
-(function() {
+(function () {
     var viewFullScreen = document.getElementById("view-fullscreen");
     if (viewFullScreen) {
-        viewFullScreen.addEventListener("click", function() {
+        viewFullScreen.addEventListener("click", function () {
             var docElm = document.documentElement;
             if (docElm.requestFullscreen) {
                 docElm.requestFullscreen();
@@ -67,7 +68,7 @@ function exitHandler() {
     }
     var cancelFullScreen = document.getElementById("cancel-fullscreen");
     if (cancelFullScreen) {
-        cancelFullScreen.addEventListener("click", function() {
+        cancelFullScreen.addEventListener("click", function () {
             if (document.exitFullscreen) {
                 document.exitFullscreen();
             } else if (document.msExitFullscreen) {
@@ -81,23 +82,23 @@ function exitHandler() {
     }
     var fullscreenState = document.getElementById("fullscreen-state");
     if (fullscreenState) {
-        document.addEventListener("fullscreenchange", function() {
+        document.addEventListener("fullscreenchange", function () {
             fullscreenState.innerHTML = (document.fullscreenElement) ? "" : "not ";
         }, false);
-        document.addEventListener("msfullscreenchange", function() {
+        document.addEventListener("msfullscreenchange", function () {
             fullscreenState.innerHTML = (document.msFullscreenElement) ? "" : "not ";
         }, false);
-        document.addEventListener("mozfullscreenchange", function() {
+        document.addEventListener("mozfullscreenchange", function () {
             fullscreenState.innerHTML = (document.mozFullScreen) ? "" : "not ";
         }, false);
-        document.addEventListener("webkitfullscreenchange", function() {
+        document.addEventListener("webkitfullscreenchange", function () {
             fullscreenState.innerHTML = (document.webkitIsFullScreen) ? "" : "not ";
         }, false);
     }
     var video = document.getElementById("video")
     videoFullscreen = document.getElementById("video-fullscreen");
     if (video && videoFullscreen) {
-        videoFullscreen.addEventListener("click", function(evt) {
+        videoFullscreen.addEventListener("click", function (evt) {
             if (video.requestFullscreen) {
                 video.requestFullscreen();
             } else if (video.msRequestFullscreen) {

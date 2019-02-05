@@ -33,7 +33,7 @@ $(".custom-dropdown-slots").each(function (i) {
 });
 
 // loads draft sessions for the awards page
-$(document.body).on("click", ".custom-dropdown", function () {
+$(document.body).on("click", ".custom-dropdown-slots .custom-dropdown", function () {
     "use strict";
     $(this).closest(".column-container-notes").find(".store-data").each(function () {
         var option = $(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
@@ -126,8 +126,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
         var btn = $(this).text();
         if (value === btn) {
             $(this).addClass("active");
-        }
-        else {
+        } else {
             $(this).removeClass("active");
         }
     });
@@ -143,6 +142,7 @@ $(".store-rename").on("click", function () {
         "background-color": "",
         "color": ""
     });
+    return false;
 });
 
 // Create a new save file
@@ -165,35 +165,6 @@ $(".store-create").on("click", function () {
             scrollTop: $(".custom-dropdown-outer").offset().top - 170
         },
         200, "easeInOutQuad");
-});
-
-$(".draft-slots").on("change", function () {
-    "use strict";
-    var option = $(this).closest(".column-container-notes").find(".draft-slots").val();
-    var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
-    var option3 = $(this).closest(".column-container-notes").find(".draft-value").val();
-    if (option.length > 0 && option2.length === 0 && option3.length === 0) {
-        $(this).closest(".column-container-notes").find(".draft-value").val("").focus().css({
-            "background": "#fff2f2"
-        });
-    }
-    if (option.length > 0 && option2.length > 0 && option3.length === 0) {
-        $(this).closest(".column-container-notes").find(".draft-value").val("").focus().css({
-            "background": "#fff2f2"
-        });
-    }
-    if (option.length > 0 && option2.length === 0 && option3.length > 0) {
-        $(this).closest(".column-container-notes").find("textarea").attr("placeholder", "Start a draft before saving. See examples below for reference.").val("").focus().css({
-            "background": "#fff2f2"
-        });
-    }
-});
-
-$(".draft-slots").on("click", function () {
-    "use strict";
-    $(this).css({
-        "background": ""
-    });
     return false;
 });
 
@@ -253,7 +224,7 @@ $(".store-save").on("click", function () {
     }
 
     // adds timestamp (last updated) and locates the active element
-    $('.custom-dropdown').each(function () {
+    $('.custom-dropdown-slots .custom-dropdown').each(function () {
         var d = new Date();
         var weekday = d.getDay();
         var month = d.getMonth();
@@ -297,12 +268,14 @@ $(".store-save").on("click", function () {
                 "background": "#fff2f2"
             });
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+            return false;
         }
         if (option.length === 0 && option2.length > 0) {
-            $(this).focus().attr("placeholder", "Name your file and then click 'Save.'").css({
+            $(this).focus().attr("placeholder", "Name your file and click Save.").css({
                 "background": "#fff2f2"
             });
             $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+            return false;
         }
         if (option.length > 0 && option2.length > 0) {
             var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
@@ -404,7 +377,7 @@ $(".store-reset").on("click", function () {
     var text = $(this).closest("form").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
     localStorage.removeItem(text);
     // updates datestamp
-    $('.custom-dropdown').each(function () {
+    $('.custom-dropdown-slots .custom-dropdown').each(function () {
         var d = new Date();
         var weekday = d.getDay();
         var month = d.getMonth();
@@ -452,7 +425,7 @@ $(".store-clear").on("click", function () {
 $(".store-reset-all").on("click", function () {
     "use strict";
     $(".custom-dropdown-close").trigger("click");
-    $(".custom-dropdown").each(function () {
+    $(".custom-dropdown-slots .custom-dropdown").each(function () {
         var text = $(this).text() + " - {awards-each}"; // used to make the local storage key unique
         localStorage.removeItem(text);
         localStorage.removeItem("custom dropdown - {awards-menu}");
@@ -476,54 +449,49 @@ $(".store-reset-all").on("click", function () {
     $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
 });
 
-// sends nomination. alerts if input is blank. adds focus to empty input area
-$(".store-nominate").click(function () {
+// Submit
+$(".store-nominate").on("click", function () {
     "use strict";
-    $(".custom-dropdown-close").trigger("click");
-    $(".store-data").each(function () {
-        var value = $(".store-data, .draft-value").val();
 
-        if (value.length === 0) {
-            $(".store-data").attr("placeholder", "Complete your nomination before submitting.").css({
-                "background": "#fff2f2"
-            });
-            $(".draft-value").focus().css({
-                "background": "#fff2f2"
-            });
+    // adds timestamp (last updated) and locates the active element
+    $('.custom-dropdown-slots .custom-dropdown').each(function () {
+        var d = new Date();
+        var weekday = d.getDay();
+        var month = d.getMonth();
+        var day = d.getDate();
+        var year = d.getFullYear();
+        var hour = d.getHours();
+        var minutes = d.getMinutes();
+        var seconds = d.getSeconds();
+        if (hour < 10) hour = "0" + hour;
+        if (minutes < 10) minutes = "0" + minutes;
+        if (seconds < 10) seconds = "0" + seconds;
+        var monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+        var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var ampm = " PM ";
+        if (hour < 12) ampm = " AM ";
+        if (hour > 12) hour -= 12;
+        var showDate = weekdayNames[weekday] + ", " + monthNames[month] + " " + day + ", " + year;
+        var showTime = hour + ":" + minutes + ":" + seconds + ampm;
+        var strDate = "Submitted: " + showDate + " " + "-" + " " + showTime;
+        if ($(this).hasClass('active')) {
+            $(this).find(".custom-dropdown-strDate").attr("value", strDate);
         }
+    });
 
-        if (value.length > 0) {
-            // adds timestamp (last submitted) and locates the active element
-            $('.custom-dropdown').each(function () {
-                var d = new Date();
-                var weekday = d.getDay();
-                var month = d.getMonth();
-                var day = d.getDate();
-                var year = d.getFullYear();
-                var hour = d.getHours();
-                var minutes = d.getMinutes();
-                var seconds = d.getSeconds();
-                if (hour < 10) hour = "0" + hour;
-                if (minutes < 10) minutes = "0" + minutes;
-                if (seconds < 10) seconds = "0" + seconds;
-                var monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
-                var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                var ampm = " PM ";
-                if (hour < 12) ampm = " AM ";
-                if (hour > 12) hour -= 12;
-                var showDate = weekdayNames[weekday] + ", " + monthNames[month] + " " + day + ", " + year;
-                var showTime = hour + ":" + minutes + ":" + seconds + ampm;
-                var strDate = "Submitted: " + showDate + " " + "-" + " " + showTime;
-                if ($(this).hasClass('active')) {
-                    $(this).find(".custom-dropdown-strDate").attr("value", strDate);
-                }
-            });
-
-            // saves latest data before submission
+    // saves data. alerts if input is blank. adds focus to empty input area
+    $(this).closest(".column-container-notes").find(".draft-slots").each(function () {
+        var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
+        if (option2.length > 0) {
             var text = $(this).closest(".column-container-notes").find(".draft-slots").val() + " - {awards-each}"; // used to make the local storage key unique
             var value = $(this).closest(".notes-container").find(".store-data").val();
             localStorage.setItem(text, value);
             var value = localStorage.getItem(text);
+            $(this).css({
+                "background": ""
+            });
+
+            // saves updated dropdown field
             $(this).closest(".column-container-notes").find(".custom-dropdown-slots").each(function () {
                 var name = "custom dropdown - {awards-menu}";
                 var value = $(this).closest(".column-container-notes").find(this).html();
@@ -531,15 +499,70 @@ $(".store-nominate").click(function () {
                 var value = localStorage.getItem(name);
                 $(this).html(value);
             });
+            return false;
+        }
+    });
 
-            // nomination submission
+    // value is a required field
+    $(this).closest(".column-container-notes").find(".draft-value").each(function () {
+        var option = $(this).val();
+        if (option.length === 0) {
+            $(this).css({
+                "background": "#fff2f2"
+            });
+            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+            return false;
+        }
+        if (option.length > 0) {
+            $(this).css({
+                "background": ""
+            });
+        }
+    });
+
+    // alerts if form is not complete
+    $(".store-data").each(function () {
+        
+        // saving data is not required for submission. 
+        //      var option = $(this).closest(".column-container-notes").find(".draft-slots").val(); 
+        var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
+        var option3 = $(".store-data, .draft-value").val();
+        //        if (option.length === 0 && option2.length === 0) {
+        //            $(this).attr("placeholder", "Create a file and start a draft before saving.").css({
+        //                "background": "#fff2f2"
+        //            });
+        //            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+        //        return false;
+        //        }
+        //        if (option.length > 0 && option2.length === 0) {
+        //            $(this).attr("placeholder", "Start a draft before saving. See examples below for reference.").css({
+        //                "background": "#fff2f2"
+        //            });
+        //            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+        //        return false;
+        //        }
+
+        if (option2.length === 0) {
+            $(this).attr("placeholder", "Start a draft before submitting. See examples below for reference.").css({
+                "background": "#fff2f2"
+            });
+            $(this).closest(".column-container-notes").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
+            return false;
+        }
+        if (option2.length > 0) {
+            var textarea_place_holder = $("textarea").attr("data-placeholder");
+            $(this).attr("placeholder", textarea_place_holder).css({
+                "background": ""
+            });
+        }
+        if (option3.length > 0) {
             $("form").removeAttr("action").attr("action", "awards-confirmation.html").submit();
         }
     });
     return false;
 });
 
-// adds the required value for each submission
+// adds the required value in the textarea for each submission
 $(".draft-value").closest(".column-container-notes").find(".custom-dropdown").on("click", function () {
     "use strict";
     var text = $(this).text();
