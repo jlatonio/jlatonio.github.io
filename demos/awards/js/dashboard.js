@@ -148,6 +148,7 @@ $(window).on("load", function () {
     return false;
 });
 
+// Sorting
 $(".custom-dropdown-sort").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
     "use strict";
     // Please QA all sorting features. The logic is to apply the child text as a data attribute to the parent and sort the attribute. Please update as needed.
@@ -301,6 +302,12 @@ $(".custom-dropdown-sort").closest(".custom-dropdown-outer").find(".custom-dropd
     });
     $(".nomination-entry-container:visible:odd").css({
         "background-color": "#f3f3f3"
+    });
+    $(".nomination-entry-submissions:visible").css({
+        "margin-bottom": "20px"
+    });
+    $(".nomination-entry-submissions:visible:last-child").css({
+        "margin-bottom": "0"
     });
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
     $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
@@ -529,6 +536,12 @@ $(".custom-dropdown-award, .custom-dropdown-quarter").closest(".custom-dropdown-
     });
     $(".nomination-entry-container:visible:odd").css({
         "background-color": "#f3f3f3"
+    });
+    $(".nomination-entry-submissions:visible").css({
+        "margin-bottom": "20px"
+    });
+    $(".nomination-entry-submissions:visible:last-child").css({
+        "margin-bottom": "0"
     });
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
     $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
@@ -811,6 +824,12 @@ $(".store-go").on("click", function () {
     $(".nomination-entry-container:visible:odd").css({
         "background-color": "#f3f3f3"
     });
+    $(".nomination-entry-submissions:visible").css({
+        "margin-bottom": "20px"
+    });
+    $(".nomination-entry-submissions:visible:last-child").css({
+        "margin-bottom": "0"
+    });
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
     $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
     return false;
@@ -1052,6 +1071,12 @@ $(".store-go-reset").on("click", function () {
     });
     $(".nomination-entry-container:visible:odd").css({
         "background-color": "#f3f3f3"
+    });
+    $(".nomination-entry-submissions:visible").css({
+        "margin-bottom": "20px"
+    });
+    $(".nomination-entry-submissions:visible:last-child").css({
+        "margin-bottom": "0"
     });
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
     $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
