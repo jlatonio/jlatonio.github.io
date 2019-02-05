@@ -121,7 +121,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
     });
 
     // re-sets active state for Adobe Value
-    $(".draft-value").closest(".column-container-notes").find(".custom-dropdown").each(function () {
+    $(".custom-dropdown-large .custom-dropdown").each(function () {
         var value = $(".draft-value").val();
         var btn = $(this).text();
         if (value === btn) {
@@ -274,10 +274,6 @@ $(".store-save").on("click", function () {
         var showTime = hour + ":" + minutes + ":" + seconds + ampm;
         var strDate = "Updated: " + showDate + " " + "-" + " " + showTime;
         if ($(this).hasClass('active')) {
-            $(this).css({
-                "background-color": "#446aa0",
-                "color": "#fff"
-            });
             $(this).find(".custom-dropdown-strDate").attr("value", strDate);
         }
     });
@@ -429,10 +425,6 @@ $(".store-reset").on("click", function () {
         var showTime = hour + ":" + minutes + ":" + seconds + ampm;
         var strDate = "Updated: " + showDate + " " + "-" + " " + showTime;
         if ($(this).hasClass('active')) {
-            $(this).css({
-                "background-color": "#7593bf",
-                "color": "#fff"
-            });
             $(this).find(".custom-dropdown-strDate").attr("value", strDate);
         }
     });
@@ -523,10 +515,6 @@ $(".store-nominate").click(function () {
                 var showTime = hour + ":" + minutes + ":" + seconds + ampm;
                 var strDate = "Submitted: " + showDate + " " + "-" + " " + showTime;
                 if ($(this).hasClass('active')) {
-                    $(this).css({
-                        "background-color": "#7593bf",
-                        "color": "#fff"
-                    });
                     $(this).find(".custom-dropdown-strDate").attr("value", strDate);
                 }
             });
