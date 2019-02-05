@@ -57,7 +57,7 @@ $(document.body).on("click", ".custom-dropdown", function () {
         }
     });
 
-    // highlights is Adobe value input is empty
+    // highlights if Adobe value input is empty
     $(this).closest(".column-container-notes").find(".draft-value").val("").css({
         "background-color": ""
     });
@@ -126,11 +126,6 @@ $(document.body).on("click", ".custom-dropdown", function () {
         var btn = $(this).text();
         if (value === btn) {
             $(this).addClass("active");
-        } else {
-            $(this).removeClass("active").css({
-                "background-color": "",
-                "color": ""
-            });
         }
     });
 
@@ -245,9 +240,11 @@ $(".store-save").on("click", function () {
     var prepend = "<div class='custom-dropdown active'>";
     var append = "<div class='custom-dropdown-animation'></div><div class='custom-dropdown-delete'></div><input class='custom-dropdown-strDate' disabled readonly /></div>";
     if ($(".draft-slots").val().length > 0) {
-        $(".custom-dropdown").removeClass("active").css({
-            "background-color": "",
-            "color": ""
+        $(".custom-dropdown-slots .custom-dropdown").each(function () {
+            $(this).removeClass("active").css({
+                "background-color": "",
+                "color": ""
+            });
         });
         $(this).closest(".column-container-notes").find(".custom-dropdown-slots").prepend(prepend + $(".draft-slots").val() + append);
     }
@@ -284,7 +281,7 @@ $(".store-save").on("click", function () {
 
     // removes duplicates (will not remove those with different datestamps)
     var seen = {};
-    $(".custom-dropdown").each(function () {
+    $(".custom-dropdown-slots .custom-dropdown").each(function () {
         var txt = $(this).text();
         if (seen[txt])
             $(this).remove();
