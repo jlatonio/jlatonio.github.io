@@ -127,6 +127,9 @@ $(document.body).on("click", ".custom-dropdown", function () {
         if (value === btn) {
             $(this).addClass("active");
         }
+        else {
+            $(this).removeClass("active");
+        }
     });
 
     return false;
