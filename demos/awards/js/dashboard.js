@@ -303,10 +303,10 @@ $(".custom-dropdown-sort").closest(".custom-dropdown-outer").find(".custom-dropd
     $(".nomination-entry-container:visible:odd").css({
         "background-color": "#f3f3f3"
     });
-    $(".nomination-entry-submissions:visible").css({
+    $(".nomination-entry-submissions-container").find(".nomination-entry-submissions:visible").css({
         "margin-bottom": "20px"
     });
-    $(".nomination-entry-submissions:visible:last-child").css({
+    $(".nomination-entry-submissions-container").find(".nomination-entry-submissions:visible:last").css({
         "margin-bottom": "0"
     });
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
@@ -537,10 +537,10 @@ $(".custom-dropdown-award, .custom-dropdown-quarter").closest(".custom-dropdown-
     $(".nomination-entry-container:visible:odd").css({
         "background-color": "#f3f3f3"
     });
-    $(".nomination-entry-submissions:visible").css({
+    $(".nomination-entry-submissions-container").find(".nomination-entry-submissions:visible").css({
         "margin-bottom": "20px"
     });
-    $(".nomination-entry-submissions:visible:last-child").css({
+    $(".nomination-entry-submissions-container").find(".nomination-entry-submissions:visible:last").css({
         "margin-bottom": "0"
     });
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
@@ -824,10 +824,10 @@ $(".store-go").on("click", function () {
     $(".nomination-entry-container:visible:odd").css({
         "background-color": "#f3f3f3"
     });
-    $(".nomination-entry-submissions:visible").css({
+    $(".nomination-entry-submissions-container").find(".nomination-entry-submissions:visible").css({
         "margin-bottom": "20px"
     });
-    $(".nomination-entry-submissions:visible:last-child").css({
+    $(".nomination-entry-submissions-container").find(".nomination-entry-submissions:visible:last").css({
         "margin-bottom": "0"
     });
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
@@ -1075,7 +1075,7 @@ $(".store-go-reset").on("click", function () {
     $(".nomination-entry-submissions:visible").css({
         "margin-bottom": "20px"
     });
-    $(".nomination-entry-submissions:visible:last-child").css({
+    $(".nomination-entry-submissions:visible:last").css({
         "margin-bottom": "0"
     });
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
