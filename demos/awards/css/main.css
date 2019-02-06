@@ -109,13 +109,31 @@
 }
 
 .column-tools-breadcrumbs-each{
-    padding: 0 0 0 20px;
+    padding: 10px 35px 10px 20px;
     width: auto;
 }
 
+#view-print {
+  position: relative;
+}
 
-#view-fullscreen, #cancel-fullscreen  {
-  padding: 10px 35px 10px 0;
+#view-print::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 10px;
+  top: 50%;
+  margin-top:-8px;
+  padding-top: 0;
+  background-image: url('../images/print-icon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  opacity: .4;
+}
+
+#view-fullscreen, #cancel-fullscreen {
   display: none;
   position: relative;
 }

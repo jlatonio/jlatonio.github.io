@@ -1267,3 +1267,7 @@ $(".store-nominator-delivery").each(function () {
         $(this).closest(".nomination-entry-submissions").find(".nomination-entry-deliver").hide();
     }
 });
+
+$("#view-print").click(function() {
+ window.print();
+});

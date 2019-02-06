@@ -1,0 +1,22 @@
+<svg id="Layer_20" data-name="Layer 20" xmlns="http://www.w3.org/2000/svg" width="98.15" height="98.75" viewBox="0 0 98.15 98.75">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <title>print-icon</title>
+  <path class="cls-1" d="M79.72,62.71v37.41H32.08V62.71ZM76.3,69.54H35.49v3.28H76.3ZM35.45,83H76.3V79.76H35.45Zm0,10.25H76.28V90H35.43Z" transform="translate(-6.28 -5.67)"/>
+  <path class="cls-2" d="M30.9,100.63H79.82V58.93H30.9Z" transform="translate(-6.28 -5.67)"/>
+  <path class="cls-2" d="M86.72,36h3.59V32.32H86.72Z" transform="translate(-6.28 -5.67)"/>
+  <path d="M104.39,33.63c0-6.59-4.07-11.76-10.1-12.55a88,88,0,0,0-9.62-.27H83.34V5.67H27.27V20.81c-3,0-5.81,0-8.65,0C11.05,20.87,6.3,26,6.29,34.19q0,14.45,0,28.88a21.18,21.18,0,0,0,.34,3.65c1.23,6.63,6.52,11.48,12.84,11.17,2.58-.12,5.16,0,7.86,0v26.54H83.4V77.87h1.14c2.63,0,5.26.06,7.89,0,6.11-.18,12.08-5.65,12-13.2C104.32,54.31,104.43,44,104.39,33.63Zm-24.57,67H30.9V58.93H79.82Zm0-79.89v7.72h-49v-19h49Z" transform="translate(-6.28 -5.67)"/>
+  <path class="cls-1" d="M95.46,49H81.57V36H95.46Z" transform="translate(-6.28 -5.67)"/>
+  <path d="M76.3,69.54v3.28H35.49V69.54Z" transform="translate(-6.28 -5.67)"/>
+  <path d="M35.45,83V79.76H76.3V83Z" transform="translate(-6.28 -5.67)"/>
+  <path d="M35.43,93.29V90H76.28v3.27Z" transform="translate(-6.28 -5.67)"/>
+</svg>
