@@ -22,8 +22,30 @@ $(window).on("load", function () {
     });
 
     // defaults to current quarter (dynamically adjusts Quarter symbol based on today's date). Good for the next two years, or until 2021 quarter dates are released
-    
-   $(".nomination-totals-centerpiece h1").fadeIn(1000);
+
+    // Defaults to EMEA
+    $(".custom-dropdown-geo").val("EMEA");
+    $(".store-nominee-geo").each(function () {
+        var geo_text = $(this).text();
+        var geo_val = $(this).closest("form").find(".custom-dropdown-geo").val();
+        // changes the form"s action link on specific choices
+        if (geo_text === geo_val) {
+            $(this).closest(".nomination-entry-container").addClass("showthisgeo");
+        } else {
+            $(this).closest(".nomination-entry-container").removeClass("showthisgeo");
+        }
+    });
+
+    // filters all those with the showthisgeo class
+    $(".nomination-entry-container").each(function () {
+        if ($(this).hasClass("showthisgeo")) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
+
+    $(".nomination-totals-centerpiece h1").fadeIn(1000);
     $(function () {
         var FY2019_Q1 = "2018-12-01";
         var FY2019_Q2 = "2019-03-02";
@@ -54,7 +76,7 @@ $(window).on("load", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             setTimeout(function () {
-            $(".store-go").trigger("click");
+                $(".store-go").trigger("click");
             }, 1200);
             return false;
         }
@@ -67,7 +89,7 @@ $(window).on("load", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             setTimeout(function () {
-            $(".store-go").trigger("click");
+                $(".store-go").trigger("click");
             }, 1200);
             return false;
         }
@@ -78,7 +100,7 @@ $(window).on("load", function () {
             $(".custom-dropdown-end-date").val("2019-08-30");
             $(".nomination-totals-centerpiece h1").text("Q3");
             setTimeout(function () {
-            $(".store-go").trigger("click");
+                $(".store-go").trigger("click");
             }, 1200);
             return false;
         }
@@ -91,7 +113,7 @@ $(window).on("load", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             setTimeout(function () {
-            $(".store-go").trigger("click");
+                $(".store-go").trigger("click");
             }, 1200);
             return false;
         }
@@ -103,7 +125,7 @@ $(window).on("load", function () {
             $(".custom-dropdown-end-date").val("2020-02-28");
             $(".nomination-totals-centerpiece h1").text("Q1");
             setTimeout(function () {
-            $(".store-go").trigger("click");
+                $(".store-go").trigger("click");
             }, 1200);
             return false;
         }
@@ -114,7 +136,7 @@ $(window).on("load", function () {
             $(".custom-dropdown-end-date").val("2020-05-29");
             $(".nomination-totals-centerpiece h1").text("Q2");
             setTimeout(function () {
-            $(".store-go").trigger("click");
+                $(".store-go").trigger("click");
             }, 1200);
             return false;
         }
@@ -127,7 +149,7 @@ $(window).on("load", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             setTimeout(function () {
-            $(".store-go").trigger("click");
+                $(".store-go").trigger("click");
             }, 1200);
             return false;
         }
@@ -140,9 +162,55 @@ $(window).on("load", function () {
             $(".custom-select-close").show();
             $(".custom-select-date").hide();
             setTimeout(function () {
-            $(".store-go").trigger("click");
+                $(".store-go").trigger("click");
             }, 1200);
             return false;
+        }
+    });
+
+
+
+    // re-sets active states for quarter
+    $(".custom-dropdown-quarter").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-quarter").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+
+    // re-sets active state for geo
+    $(".custom-dropdown-geo").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-geo").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+
+    // re-sets active state for sorting by name
+    $(".custom-dropdown-sort").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-sort").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+
+    // re-sets active state for award
+    $(".custom-dropdown-award").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-award").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
         }
     });
     return false;
@@ -315,9 +383,11 @@ $(".custom-dropdown-sort").closest(".custom-dropdown-outer").find(".custom-dropd
 });
 
 // Filtering
-$(".custom-dropdown-award, .custom-dropdown-quarter").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
+$(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
     "use strict";
-    $(".nomination-entry-submissions").removeClass("hidethis").removeClass("showthis");
+    $(".nomination-entry-submissions").removeClass("hidethis").removeClass("showthis").removeClass("showthisgeo");
+
+    // Filter Awards
     $(".store-nominator-award").each(function () {
         var award_text = $(this).text();
         var award_val = $(this).closest("form").find(".custom-dropdown-award").val();
@@ -329,7 +399,7 @@ $(".custom-dropdown-award, .custom-dropdown-quarter").closest(".custom-dropdown-
         }
     });
 
-    // shows all
+    // shows all Awards
     $(".store-nominator-award").each(function () {
         var award_val = $(this).closest("form").find(".custom-dropdown-award").val();
         if (award_val === "All Award Winners") {
@@ -338,11 +408,39 @@ $(".custom-dropdown-award, .custom-dropdown-quarter").closest(".custom-dropdown-
     });
 
     // filters all those with the showthis class
-    $(".nomination-entry-submissions-container").each(function () {
-        if ($(this).find(".nomination-entry-submissions").hasClass("showthis")) {
+    $(".nomination-entry-submissions-container .nomination-entry-submissions").each(function () {
+        if ($(this).hasClass("showthis")) {
             $(this).closest(".nomination-entry-container").show();
         } else {
             $(this).closest(".nomination-entry-container").hide();
+        }
+    });
+
+    // Filter Geo
+    $(".store-nominee-geo").each(function () {
+        var geo_text = $(this).text();
+        var geo_val = $(this).closest("form").find(".custom-dropdown-geo").val();
+        // changes the form"s action link on specific choices
+        if (geo_text === geo_val) {
+            $(this).closest(".nomination-entry-container").addClass("showthisgeo");
+        } else {
+            $(this).closest(".nomination-entry-container").removeClass("showthisgeo");
+        }
+    });
+
+    $(".store-nominee-geo").each(function () {
+        var geo_val = $(this).closest("form").find(".custom-dropdown-geo").val();
+        if (geo_val === "All Adobe") {
+            $(".nomination-entry-container").addClass("showthisgeo");
+        }
+    });
+
+    // filters all those with the showthisgeo class
+    $(".nomination-entry-container").each(function () {
+        if ($(this).hasClass("showthisgeo")) {
+            $(this).show();
+        } else {
+            $(this).hide();
         }
     });
 
@@ -582,16 +680,16 @@ $(".custom-date").on("change", function () {
     "use strict";
     $(".custom-dropdown-quarter").val("");
     $(".custom-dropdown-award").val("All Award Winners");
-    
+
     // resets active states for search
     $(".nomination-entry-container").show();
     $(".nomination-entry-submissions").removeClass("hidethis").removeClass("showthis");
     $(".custom-dropdown-award, .custom-dropdown-quarter").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
-    $(this).css({
+        $(this).css({
             "background-color": ""
         });
     });
-    
+
     // Quarter automatically shows, depending on the custom dates chosen
     $(function () {
         var start_date = $(".custom-dropdown-start-date").val();
@@ -646,13 +744,12 @@ $(".custom-date").on("change", function () {
         if (start_date >= FY2020_Q4 && end_date <= FY2021_Q1) {
             $(".nomination-totals-centerpiece h1").text("Q4");
             return false;
-        }
-        else {
+        } else {
             $(".nomination-totals-centerpiece h1").text("");
             return false;
         }
     });
-   
+
 });
 
 // sort defaults by name (A-Z)
@@ -710,17 +807,17 @@ $(".store-options").click(function () {
 $(".store-go").on("click", function () {
     "use strict";
     $(".custom-dropdown-close").trigger("click");
-       $(".store-nominator-date").each(function () {
-            var start_date = $(".custom-dropdown-start-date").val();
-            var end_date = $(".custom-dropdown-end-date").val();
-            var submit_date = $(this).text();
-            if (submit_date >= start_date && submit_date <= end_date) {
-                $(this).closest(".nomination-entry-submissions:visible").removeClass("hidethis").addClass("showthis");
-            } else {
-                $(this).closest(".nomination-entry-submissions:visible").removeClass("showthis").addClass("hidethis");
-            }
-        });
- 
+    $(".store-nominator-date").each(function () {
+        var start_date = $(".custom-dropdown-start-date").val();
+        var end_date = $(".custom-dropdown-end-date").val();
+        var submit_date = $(this).text();
+        if (submit_date >= start_date && submit_date <= end_date) {
+            $(this).closest(".nomination-entry-submissions:visible").removeClass("hidethis").addClass("showthis");
+        } else {
+            $(this).closest(".nomination-entry-submissions:visible").removeClass("showthis").addClass("hidethis");
+        }
+    });
+
     // filters all those with the showthis class
     $(".nomination-entry-submissions-container:visible").each(function () {
         if ($(this).find(".nomination-entry-submissions").hasClass("showthis")) {
@@ -838,8 +935,30 @@ $(".store-go").on("click", function () {
 // resets all queries
 $(".store-go-reset").on("click", function () {
     "use strict";
-    $(".nomination-entry-submissions").removeClass("hidethis").addClass("showthis");
+    $(".nomination-entry-submissions").removeClass("hidethis").addClass("showthis").removeClass("showthisgeo");
     $(".nomination-entry-container").show();
+
+    // Defaults to EMEA
+    $(".custom-dropdown-geo").val("EMEA");
+    $(".store-nominee-geo").each(function () {
+        var geo_text = $(this).text();
+        var geo_val = $(this).closest("form").find(".custom-dropdown-geo").val();
+        // changes the form"s action link on specific choices
+        if (geo_text === geo_val) {
+            $(this).closest(".nomination-entry-container").addClass("showthisgeo");
+        } else {
+            $(this).closest(".nomination-entry-container").removeClass("showthisgeo");
+        }
+    });
+
+    // filters all those with the showthisgeo class
+    $(".nomination-entry-container").each(function () {
+        if ($(this).hasClass("showthisgeo")) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
 
     // sort defaults by name (A-Z)
     $(".store-nominee-enter").each(function (i) {
@@ -1065,6 +1184,50 @@ $(".store-go-reset").on("click", function () {
         }
     });
 
+    // re-sets active states for quarter
+    $(".custom-dropdown-quarter").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-quarter").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+
+    // re-sets active state for geo
+    $(".custom-dropdown-geo").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-geo").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+
+    // re-sets active state for sorting by name
+    $(".custom-dropdown-sort").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-sort").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+
+    // re-sets active state for award
+    $(".custom-dropdown-award").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-award").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+
     // fixes alternating styles
     $(".nomination-entry-container:visible:even").css({
         "background-color": "#fff"
@@ -1081,4 +1244,26 @@ $(".store-go-reset").on("click", function () {
     $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
     $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
     return false;
+});
+
+
+// Thank You delivery options
+$(".store-nominator-delivery-container").each(function () {
+    // changes the form"s action link on specific choices
+    if ($(this).closest(".nomination-entry-submissions").find(".store-nominator-award").text() === "Thank You") {
+        $(this).show();
+    } else {
+        $(this).hide();
+    }
+});
+
+$(".store-nominator-delivery").each(function () {
+    if ($(this).text() === "By Card") {
+        $(this).closest(".nomination-entry-submissions").find(".nomination-entry-share").hide();
+        $(this).closest(".nomination-entry-submissions").find(".nomination-entry-deliver").show();
+
+    } else {
+        $(this).closest(".nomination-entry-submissions").find(".nomination-entry-share").show();
+        $(this).closest(".nomination-entry-submissions").find(".nomination-entry-deliver").hide();
+    }
 });

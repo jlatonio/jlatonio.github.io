@@ -402,6 +402,39 @@
   opacity: .8;
 }
 
+.nomination-entry-deliver {
+  margin-top: 0;
+  position: relative;
+  padding-right: 25px;
+  padding-top: 10px;
+  display: none;
+}
+
+.nomination-entry-deliver::before {
+  content: "";
+  position: absolute;
+  border-top: 0 solid #ccc;
+  width: calc(100% - 180px);
+  left: 0;
+  top: -3px;
+  opacity: .8;
+}
+
+.nomination-entry-deliver::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 0;
+  top: 7px;
+  padding-top: 0;
+  background-image: url('../images/select-share.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: .8;
+}
+
 .store-nominee-total-nominations-container{
   margin-bottom: 19px;
   position: relative;
@@ -416,6 +449,10 @@
   width: 160px;
   border-radius: 0 20px 20px 0;
   background-color: #ccc;
+}
+
+.store-nominator-delivery-container{
+  display: none;
 }
 
 .custom-dropdown-delete {

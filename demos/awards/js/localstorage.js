@@ -58,7 +58,7 @@ $(document.body).on("click", ".custom-dropdown-slots .custom-dropdown", function
     });
 
     // highlights if Adobe value input is empty
-    $(this).closest(".column-container-notes").find(".draft-value").val("").css({
+    $(this).closest(".column-container-notes").find(".draft-value, .draft-delivery").val("").css({
         "background-color": ""
     });
 
@@ -151,7 +151,7 @@ $(".store-create").on("click", function () {
     $(this).closest(".column-container-notes").find(".draft-slots").val("").focus().attr("placeholder", "Name your file.").css({
         "background": "#fff2f2"
     });
-    $(this).closest("form").find(".draft-value").val("").css({
+    $(this).closest("form").find(".draft-value, .draft-delivery").val("").css({
         "background": ""
     });
     $(this).closest(".column-container-notes").find(".custom-dropdown").css({
@@ -306,7 +306,7 @@ $(".store-save").on("click", function () {
     });
 
     // value is a required field
-    $(this).closest(".column-container-notes").find(".draft-value").each(function () {
+    $(this).closest(".column-container-notes").find(".draft-value, .draft-delivery").each(function () {
         var option = $(this).val();
         if (option.length === 0) {
             $(this).css({
@@ -371,7 +371,7 @@ $(".store-reset").on("click", function () {
     $(this).closest("form").find("input[type=text]").css({
         "background": ""
     });
-    $(this).closest("form").find(".draft-value").val("").css({
+    $(this).closest("form").find(".draft-value, .draft-delivery").val("").css({
         "background": ""
     });
     $(this).closest("form").find(".notes-btn-each").removeClass("notes-btn-each-active").addClass("notes-btn-each-empty");
@@ -438,7 +438,7 @@ $(".store-reset-all").on("click", function () {
     $(this).closest("form").removeAttr("action").find(".draft-slots").val("").attr("placeholder", "There are no saved files available.").css({
         "background": ""
     });
-    $(this).closest("form").find(".draft-value").val("").css({
+    $(this).closest("form").find(".draft-value, .draft-delivery").val("").css({
         "background": ""
     });
     var textarea_place_holder = $("textarea").attr("data-placeholder");
@@ -506,7 +506,7 @@ $(".store-nominate").on("click", function () {
     });
 
     // value is a required field
-    $(this).closest(".column-container-notes").find(".draft-value").each(function () {
+    $(this).closest(".column-container-notes").find(".draft-value, .draft-delivery").each(function () {
         var option = $(this).val();
         if (option.length === 0) {
             $(this).css({
@@ -528,7 +528,7 @@ $(".store-nominate").on("click", function () {
         // saving data is not required for submission. 
         //      var option = $(this).closest(".column-container-notes").find(".draft-slots").val(); 
         var option2 = $(this).closest(".column-container-notes").find(".store-data").val();
-        var option3 = $(".store-data, .draft-value").val();
+        var option3 = $(".store-data, .draft-value, .draft-delivery").val();
         //        if (option.length === 0 && option2.length === 0) {
         //            $(this).attr("placeholder", "Create a file and start a draft before saving.").css({
         //                "background": "#fff2f2"
