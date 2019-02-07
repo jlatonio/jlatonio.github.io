@@ -39,7 +39,7 @@
     -ms-font-feature-settings: "liga" 1;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    display: block;
+    display: inline-block;
   }
 
   .acs-main-content {
@@ -69,15 +69,6 @@
 
   .small-text, .small-text p {
     font-size: 12px!important;
-  }
-    
-  .hero-content {
-    width: 100%!important;
-  }
-    
-  .hero-container {
-    height: 200px !important;
-    background-size: 100% auto !important;
   }
 
   .acs-header, .column-container-breadcrumbs, .column-container-select, .nomination-entry-share-container {
@@ -256,10 +247,10 @@
   }
 
   .hero-container {
-    background-size: 1440px auto;
-    height: 300px;
+    height: 200px !important;
+    background-size: 130% auto !important;
   }
-
+    
   .acs-header-column-1 {
     display: flex;
     align-items: left;
@@ -267,7 +258,7 @@
   }
 
   .hero-content {
-    width: 320px;
+    width: 100% !important;
   }
 
   .acs-header img {
