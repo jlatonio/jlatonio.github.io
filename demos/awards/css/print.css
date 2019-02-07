@@ -2,28 +2,36 @@
 
 @media print {
 
-@page 
-{
-    size: A4 landscape;   /* auto is the initial value */
-    margin: 0mm;  /* this affects the margin in the printer settings */
+@page {
+    size: A4 landscape;
+   /* auto is the initial value */
+    margin: 0mm;
+  /* this affects the margin in the printer settings */
     page-break-inside: always;
     page-break-before: avoid;
     page-break-after: avoid;
     overflow-y: visible;
     display: inline-block;
-}
-html
-{
-    margin: 0mm;  /* this affects the margin on the html before sending to printer */
+    a[href]:after {
+        content: none !important;
+    }
+  }
+
+  html {
+    margin: 0mm;
+    padding: 0;
+  /* this affects the margin on the html before sending to printer */
     page-break-inside: always;
     page-break-before: avoid;
     page-break-after: avoid;
     overflow-y: visible;
     display: inline-block;
-}
-body
-{
-    padding:0; /* margin you want for the content */
+  }
+
+  body {
+    margin: 0mm;
+    padding: 0;
+ /* margin you want for the content */
     page-break-inside: always;
     page-break-before: avoid;
     page-break-after: avoid;
@@ -32,42 +40,47 @@ body
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     display: block;
-}
+  }
 
-.acs-main-content {
+  .acs-main-content {
     display: block;
     overflow-y: visible;
   }
-    
-h1 {
-  font-size: 57px!important;
-}
 
-h2 {
-  font-size: 32px!important;
-}
+  h1 {
+    font-size: 57px!important;
+  }
 
-h3 {
-  font-size: 23px!important;
-}
+  h2 {
+    font-size: 32px!important;
+  }
 
-h4 {
-  font-size: 16px!important;
-}
+  h3 {
+    font-size: 23px!important;
+  }
 
-p {
-  font-size: 14px!important;
-}
+  h4 {
+    font-size: 16px!important;
+  }
 
-.small-text, .small-text p {
-  font-size: 12px!important;
-}
-.hero-container {
+  p, li {
+    font-size: 14px!important;
+  }
+
+  .small-text, .small-text p {
+    font-size: 12px!important;
+  }
+
+  .hero-container {
     height: 200px!important;
-}
+  }
 
   .acs-header, .column-container-breadcrumbs, .column-container-select, .nomination-entry-share-container {
     display: none !important;
+  }
+
+  .column-container-data .column-container-select {
+    display: block !important;
   }
 
   .column-container-totals {
@@ -167,11 +180,11 @@ p {
   }
 
   .percent-fixed-280 {
-    width: calc(100% - 200px);
+    width: calc(100% - 280px);
   }
 
   .fixed-240 {
-    width: 180px;
+    width: 240px;
   }
 
   .fixed-180 {
@@ -381,7 +394,7 @@ p {
   .padding-right-inner {
     padding-right: 20px !important;
   }
-    
+
   .padding-left-inner-totals {
     padding-left: 50px !important;
   }
@@ -389,7 +402,7 @@ p {
   .padding-right-inner-totals {
     padding-right: 50px !important;
   }
-    
+
   .padding-top-right {
     padding-top: 20px !important;
     padding-right: 20px !important;
