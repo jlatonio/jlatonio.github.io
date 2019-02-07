@@ -70,9 +70,14 @@
   .small-text, .small-text p {
     font-size: 12px!important;
   }
-
+    
+  .hero-content {
+    width: 100%!important;
+  }
+    
   .hero-container {
-    height: 200px!important;
+    height: 200px !important;
+    background-size: 100% auto !important;
   }
 
   .acs-header, .column-container-breadcrumbs, .column-container-select, .nomination-entry-share-container {
