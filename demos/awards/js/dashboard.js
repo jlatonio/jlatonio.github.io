@@ -1271,9 +1271,9 @@ $(".store-nominator-delivery").each(function () {
 // print feature (prints a single page on chrome. FF not compatible)
 $("#view-print").click(function () {
     var dpi = document.getElementById('finddpi').offsetWidth;
-    var px = $(".acs-main-content:visible").height();
+    var px = $(".acs-main-content:visible").height() + 65;
     var total = px / dpi;
-    var height = '11in ' + total + 'in';
+    var height = '14in ' + total + 'in';
     var cssPagedMedia = (function () {
         var style = document.createElement('style');
         document.head.appendChild(style);

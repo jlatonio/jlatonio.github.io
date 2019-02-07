@@ -3,24 +3,30 @@
 @media print {
 
 @page {
-    margin: 0mm;
+    margin: 0mm !important;
+    padding: 0 !important;
   /* this affects the margin in the printer settings */
-    page-break-inside: always;
-    page-break-before: avoid;
-    page-break-after: avoid;
-    overflow-y: visible;
-    display: inline-block;
+    page-break-inside: always !important;
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+    overflow-y: visible !important;
+    display: inline-block !important;
+    background: #fff !important;
+    min-height: auto !important;
   }
 
   html, body {
-    margin: 0mm;
-    padding: 0;
+    margin: 0mm !important;
+    padding: 0 !important;
   /* this affects the margin on the html before sending to printer */
     page-break-inside: always;
     page-break-before: avoid;
     page-break-after: avoid;
     overflow-y: visible;
     display: inline-block;
+    background: #fff !important;
+    border: 1px solid transparent !important;
+    height: 99% !important;
   }
 
   .acs-main-content {
@@ -228,7 +234,7 @@
   }
 
   .hero-container {
-    height: 200px !important;
+    height: 300px !important;
     background-size: 130% auto !important;
   }
     
