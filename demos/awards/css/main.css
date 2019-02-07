@@ -5,6 +5,13 @@
   display: block;
 }
 
+#finddpi {
+    width: 1in;
+    height: 1in;
+    position: absolute;
+    z-index: -1;
+  } 
+
 .acs-header {
   display: -webkit-flex;
  /* Safari */

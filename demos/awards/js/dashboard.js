@@ -1268,6 +1268,22 @@ $(".store-nominator-delivery").each(function () {
     }
 });
 
-$("#view-print").click(function() {
- window.print();
+// print feature (prints a single page on chrome. FF not compatible)
+$("#view-print").click(function () {
+    var dpi = document.getElementById('finddpi').offsetWidth;
+    var px = $(".acs-main-content:visible").height();
+    var total = px / dpi;
+    var height = '11in ' + total + 'in';
+    var cssPagedMedia = (function () {
+        var style = document.createElement('style');
+        document.head.appendChild(style);
+        return function (rule) {
+            style.innerHTML = rule;
+        };
+    }());
+    cssPagedMedia.size = function (size) {
+        cssPagedMedia('@page {size: ' + height + '}');
+    };
+    cssPagedMedia.size('landscape');
+    window.print();
 });
