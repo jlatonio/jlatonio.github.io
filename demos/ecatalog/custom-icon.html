@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- removed height=device-height, -->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Adobe Scene7 Viewer eCatalog Example</title>
+    <style type="text/css">
+    
+        /* for demo only */
+        
+        body {
+            width: 100%;
+            height: auto;
+            margin: 0;
+        }
+        
+        .s7ecatalogviewer .s7embedshare {
+            display: none;
+        }
+        
+        .s7ecatalogviewer .s7fullscreenbutton {
+            display: none;
+        }
+        
+        #ecatPlaceholder {
+            position: relative;
+            width: 100%;
+        }
+        
+        #ecatPlaceholder img {
+            display: block;
+            margin: 0 auto;
+            width: 193px;
+            height: 279px;
+        }
+        
+        /* for demo only */
+        
+        #ecatalog.s7ecatalogviewer {
+            margin: 40px 0 40px 0 !important;
+        }
+ 
+        
+        /* add view height: row 15 */
+        
+        .s7ecatalogviewer .s7container {
+            background-color: rgb(221, 221, 221);
+            height: calc(100vh - 300px) !important;
+        }
+        
+        
+        /* Icon effect - magnify glass: Row 1709 */
+        
+        .s7ecatalogviewer .s7pageview .s7iconeffect {
+            width: 120px !important;
+            height: 120px !important;
+            background-size: contain;
+        }
+        
+        .s7ecatalogviewer .s7pageview .s7iconeffect[media-type='standard'] {
+            background-image: url('magnify.svg')!important;
+        }
+        
+        .s7ecatalogviewer .s7pageview .s7iconeffect[media-type='multitouch'] {
+            background-image: url('magnify.svg')!important;
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+            .s7ecatalogviewer .s7pageview .s7iconeffect[media-type='standard'] {
+                background-image: url('magnify.svg') !important;
+            }
+            .s7ecatalogviewer .s7pageview .s7iconeffect[media-type='multitouch'] {
+                background-image: url('magnify.svg') !important;
+            }
+        }
+        
+        
+        /* Icon effect - hotspots: Row 235 */
+        
+        .s7ecatalogviewer .s7imagemapeffect .s7mapoverlay[state="default"] {
+            opacity: 1 !important;
+        }
+        
+        .s7ecatalogviewer.s7mouseinput .s7imagemapeffect .s7mapoverlay {
+            height: 44px !important;
+            width: 44px !important;
+            background-image: url('hotspot.svg')!important;
+            opacity: .8 !important;
+        }
+        
+        
+        /* navigation bars */
+        
+        .s7ecatalogviewer .s7controlbar {
+            left: 0;
+            width: 100%;
+            position: absolute;
+            display: block;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.3) !important;
+            text-align: left;
+        }
+        
+        
+        /* Left Button - touch device size and art */
+        
+        .s7ecatalogviewer.s7mouseinput .s7ecatleftbutton .s7panleftbutton {
+            width: 44px !important;
+            height: 44px !important;
+            margin-bottom: -22px !important;
+            opacity: .5 !important;
+        }
+        
+        .s7ecatalogviewer.s7mouseinput .s7ecatleftbutton .s7panleftbutton[state='up'] {
+            background-image: url('back.svg')!important;
+        }
+        
+        .s7ecatalogviewer.s7mouseinput .s7ecatleftbutton .s7panleftbutton[state='over'] {
+            background-image: url('back.svg')!important;
+            opacity: 1 !important;
+        }
+        
+        .s7ecatalogviewer.s7mouseinput .s7ecatleftbutton .s7panleftbutton[state='down'] {
+            background-image: url('back.svg')!important;
+        }
+        
+        .s7ecatalogviewer.s7mouseinput .s7ecatleftbutton .s7panleftbutton[state='disabled'] {
+            background-image: url('back.svg')!important;
+        }
+        
+        @media only screen and (-webkit-min-device-pixel-ratio:1.5) {
+            .s7ecatalogviewer.s7touchinput .s7ecatleftbutton .s7panleftbutton[state='up'] {
+                background-image: url('back.svg')!important;
+            }
+            .s7ecatalogviewer.s7touchinput .s7ecatleftbutton .s7panleftbutton[state='over'] {
+                background-image: url('back.svg')!important;
+                opacity: 1 !important;
+            }
+            .s7ecatalogviewer.s7touchinput .s7ecatleftbutton .s7panleftbutton[state='down'] {
+                background-image: url('back.svg')!important;
+            }
+            .s7ecatalogviewer.s7touchinput .s7ecatleftbutton .s7panleftbutton[state='disabled'] {
+                background-image: url('back.svg')!important;
+            }
+        }
+        
+        
+        /* Right Button - touch device size and art */
+        
+        .s7ecatalogviewer.s7mouseinput .s7ecatrightbutton .s7panrightbutton {
+            width: 44px !important;
+            height: 44px !important;
+            margin-bottom: -22px !important;
+            opacity: .5 !important;
+        }
+        
+        .s7ecatalogviewer.s7mouseinput .s7ecatrightbutton .s7panrightbutton[state='up'] {
+            background-image: url('next.svg')!important;
+        }
+        
+        .s7ecatalogviewer.s7mouseinput .s7ecatrightbutton .s7panrightbutton[state='over'] {
+            background-image: url('next.svg')!important;
+            opacity: 1 !important;
+        }
+        
+        .s7ecatalogviewer.s7mouseinput .s7ecatrightbutton .s7panrightbutton[state='down'] {
+            background-image: url('next.svg')!important;
+        }
+        
+        .s7ecatalogviewer.s7mouseinput .s7ecatrightbutton .s7panrightbutton[state='disabled'] {
+            background-image: url('next.svg')!important;
+        }
+        
+        @media only screen and (-webkit-min-device-pixel-ratio:1.5) {
+            .s7ecatalogviewer.s7touchinput .s7ecatrightbutton .s7panrightbutton[state='up'] {
+                background-image: url('next.svg')!important;
+            }
+            .s7ecatalogviewer.s7touchinput .s7ecatrightbutton .s7panrightbutton[state='over'] {
+                background-image: url('next.svg')!important;
+                opacity: 1 !important;
+            }
+            .s7ecatalogviewer.s7touchinput .s7ecatrightbutton .s7panrightbutton[state='down'] {
+                background-image: url('next.svg')!important;
+            }
+            .s7ecatalogviewer.s7touchinput .s7ecatrightbutton .s7panrightbutton[state='disabled'] {
+                background-image: url('next.svg')!important;
+            }
+        }
+        
+        
+        /* Corrects top/bottom right pan button */
+        
+        .s7ecatalogviewer.s7mouseinput .s7lastpagebutton .s7panrightbutton {
+            width: 28px;
+            height: 28px;
+            right: 50% !important;
+            margin-right: -60px;
+        }
+    </style>
+    <script type="text/javascript" language="javascript" src="http://smartimaging.scene7.com/s7viewers/html5/js/eCatalogViewer.js"></script>
+</head>
+
+<body>
+    <div id="ecatalog"></div>
+    <script type="text/javascript">
+        var s7ecatalog_div = new s7viewers.eCatalogViewer({
+            "containerId": "ecatalog",
+            "params": {
+                "asset": "S7learn/RestoTest_JL09",
+                "serverurl": "http://smartimaging.scene7.com/is/image/",
+                "contenturl": "http://smartimaging.scene7.com/skins/",
+                "emailurl": "http://smartimaging.scene7.com/s7/emailFriend",
+                "portraitFrames": "solid",
+                "pageturnstyle": "0", /* Removes center line */
+                "mode": "region",  /*  --> converts hotspots to image maps)*/
+                "maptips": "1",  /*  --> adds rollover text to image maps)*/
+            },
+        }).init();
+    </script>
+</body>
+
+</html>
