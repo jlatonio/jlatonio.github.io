@@ -12,7 +12,8 @@
     overflow-y: visible !important;
     display: inline-block !important;
     background: #fff !important;
-    min-height: auto !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   html, body {
@@ -25,37 +26,15 @@
     overflow-y: visible;
     display: inline-block;
     background: #fff !important;
-    border: 1px solid transparent !important;
-    height: 99% !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: auto !important;
   }
 
   .acs-main-content {
     display: block;
     overflow-y: visible;
-  }
-
-  h1 {
-    font-size: 57px!important;
-  }
-
-  h2 {
-    font-size: 32px!important;
-  }
-
-  h3 {
-    font-size: 23px!important;
-  }
-
-  h4 {
-    font-size: 16px!important;
-  }
-
-  p, li {
-    font-size: 14px!important;
-  }
-
-  .small-text, .small-text p {
-    font-size: 12px!important;
+    box-shadow: none !important;
   }
 
   .acs-header, .column-container-breadcrumbs, .column-container-select, .nomination-entry-share-container {

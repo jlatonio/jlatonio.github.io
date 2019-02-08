@@ -1270,20 +1270,49 @@ $(".store-nominator-delivery").each(function () {
 
 // print feature (prints a single page on chrome. FF not compatible)
 $("#view-print").click(function () {
-    var dpi = document.getElementById('finddpi').offsetWidth;
-    var px = $(".acs-main-content:visible").height() + 65;
-    var total = px / dpi;
-    var height = '14in ' + total + 'in';
+    $(".nomination-entry-container-outer").each(function () {
+        var empty = $(this).find(".nomination-entry-container:visible").length;
+        $(".nomination-total-nominees").text(empty);
+    });
+    $(".nomination-entry-container-outer").each(function () {
+        var empty = $(this).find(".nomination-entry-submissions:visible").length;
+        $(".nomination-total-nominations").text(empty);
+    });
+    // fixes alternating styles
+    $(".nomination-entry-container:visible:even").css({
+        "background-color": "#fff"
+    });
+    $(".nomination-entry-container:visible:odd").css({
+        "background-color": "#f3f3f3"
+    });
+    $(".nomination-entry-submissions-container").find(".nomination-entry-submissions:visible").css({
+        "margin-bottom": "20px"
+    });
+    $(".nomination-entry-submissions-container").find(".nomination-entry-submissions:visible:last").css({
+        "margin-bottom": "0"
+    });
+    $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
+    $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
+    var devicePixelRatio = window.devicePixelRatio || 1;
+    var dpi = document.getElementById("finddpi").offsetHeight * devicePixelRatio * .5;
+    var noms = $(".nomination-total-nominations").text() * 19;
+    var removed = "200";
+    var delta = $("body").height() - removed;
+    var height = delta - noms;
+    var heighttotal = height / dpi;
+    var width = 1300;
+    var widthtotal = width / dpi;
+    var widthheight = widthtotal + "in " + heighttotal + "in";
     var cssPagedMedia = (function () {
-        var style = document.createElement('style');
+        var style = document.createElement("style");
         document.head.appendChild(style);
         return function (rule) {
             style.innerHTML = rule;
         };
     }());
     cssPagedMedia.size = function (size) {
-        cssPagedMedia('@page {size: ' + height + '}');
+        cssPagedMedia("@page {size: " + widthheight + "}");
     };
-    cssPagedMedia.size('landscape');
+    cssPagedMedia.size("landscape");
     window.print();
 });
