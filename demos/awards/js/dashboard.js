@@ -444,98 +444,6 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         }
     });
 
-    // counts total nominations per nominee without animation
-    $(".nomination-entry-container:visible").each(function (i) {
-        var empty = $(this).find(".nomination-entry-submissions:visible").length;
-        $(".store-nominee-total-nominations:visible").eq(i).text(empty);
-    });
-
-    // adds a 0 before single digits. Also needed for sorting
-    $(".store-nominee-total-nominations:visible").each(function () {
-        $(this).text(function (a, b) {
-            var result = Number(b) + 0;
-            if (result < 10) {
-                return "0" + result;
-            } else {
-                return result;
-            }
-        });
-    });
-
-    // counts and animates total nominations overall
-    $(".nomination-total-nominations").each(function () {
-        var option = $(this).closest("form").find(".nomination-entry-submissions:visible");
-        if (option.length < 9) {
-            $(this).prop("Counter", 0).animate({
-                Counter: option.length
-            }, {
-                duration: 2000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        } else {
-            $(this).prop("Counter", 0).animate({
-                Counter: option.length
-            }, {
-                duration: 4000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        }
-        return false;
-    });
-
-    // counts and animates total nominees overall
-    $(".nomination-total-nominees").each(function () {
-        var option = $(this).closest("form").find(".nomination-entry-container:visible");
-        if (option.length < 9) {
-            $(this).prop("Counter", 0).animate({
-                Counter: option.length
-            }, {
-                duration: 2000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        } else {
-            $(this).prop("Counter", 0).animate({
-                Counter: option.length
-            }, {
-                duration: 4000,
-                easing: "easeOutQuint",
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        }
-        return false;
-    });
-
-    // Shows no submission message
-    $(".nomination-no-entries").each(function () {
-        var option = $(this).closest("form").find(".nomination-entry-container:visible");
-        if (option.length === 0) {
-            $(".nomination-no-entries").show();
-            $("html, body").animate({
-                    scrollTop: $(".custom-dropdown-outer").offset().top - 170
-                },
-                200, "easeInOutQuad");
-            return false;
-        } else {
-            $(".nomination-no-entries").hide();
-            $("html, body").animate({
-                    scrollTop: $(".custom-dropdown-outer").offset().top - 170
-                },
-                200, "easeInOutQuad");
-            return false;
-        }
-    });
-
     // Quick Links (FY Quarters)
     var quarter_val = $(this).closest("form").find(".custom-dropdown-quarter").val();
     if (quarter_val === "FY2019 Q1") {
@@ -544,7 +452,6 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         $(".nomination-totals-centerpiece h1").text("Q1");
         $(".custom-select-close").show();
         $(".custom-select-date").hide();
-        $(".store-go").trigger("click");
     }
 
     if (quarter_val === "FY2019 Q2") {
@@ -553,7 +460,6 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         $(".nomination-totals-centerpiece h1").text("Q2");
         $(".custom-select-close").show();
         $(".custom-select-date").hide();
-        $(".store-go").trigger("click");
     }
 
     if (quarter_val === "FY2019 Q3") {
@@ -562,7 +468,6 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         $(".nomination-totals-centerpiece h1").text("Q3");
         $(".custom-select-close").show();
         $(".custom-select-date").hide();
-        $(".store-go").trigger("click");
     }
 
     if (quarter_val === "FY2019 Q4") {
@@ -571,7 +476,6 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         $(".nomination-totals-centerpiece h1").text("Q4");
         $(".custom-select-close").show();
         $(".custom-select-date").hide();
-        $(".store-go").trigger("click");
     }
 
     if (quarter_val === "FY2019 (Annual Q1-Q4)") {
@@ -580,7 +484,6 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         $(".nomination-totals-centerpiece h1").text("FY");
         $(".custom-select-close").show();
         $(".custom-select-date").hide();
-        $(".store-go").trigger("click");
     }
 
     if (quarter_val === "FY2020 Q1") {
@@ -589,7 +492,6 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         $(".nomination-totals-centerpiece h1").text("Q1");
         $(".custom-select-close").show();
         $(".custom-select-date").hide();
-        $(".store-go").trigger("click");
     }
 
     if (quarter_val === "FY2020 Q2") {
@@ -598,7 +500,6 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         $(".nomination-totals-centerpiece h1").text("Q2");
         $(".custom-select-close").show();
         $(".custom-select-date").hide();
-        $(".store-go").trigger("click");
     }
 
     if (quarter_val === "FY2020 Q3") {
@@ -607,7 +508,6 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         $(".nomination-totals-centerpiece h1").text("Q3");
         $(".custom-select-close").show();
         $(".custom-select-date").hide();
-        $(".store-go").trigger("click");
     }
 
     if (quarter_val === "FY2020 Q4") {
@@ -616,7 +516,6 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         $(".nomination-totals-centerpiece h1").text("Q4");
         $(".custom-select-close").show();
         $(".custom-select-date").hide();
-        $(".store-go").trigger("click");
     }
 
     if (quarter_val === "FY2020 (Annual Q1-Q4)") {
@@ -625,24 +524,9 @@ $(".custom-dropdown-award, .custom-dropdown-quarter, .custom-dropdown-geo").clos
         $(".nomination-totals-centerpiece h1").text("FY");
         $(".custom-select-close").show();
         $(".custom-select-date").hide();
-        $(".store-go").trigger("click");
     }
 
-    // fixes alternating styles
-    $(".nomination-entry-container:visible:even").css({
-        "background-color": "#fff"
-    });
-    $(".nomination-entry-container:visible:odd").css({
-        "background-color": "#f3f3f3"
-    });
-    $(".nomination-entry-submissions-container").find(".nomination-entry-submissions:visible").css({
-        "margin-bottom": "20px"
-    });
-    $(".nomination-entry-submissions-container").find(".nomination-entry-submissions:visible:last").css({
-        "margin-bottom": "0"
-    });
-    $(".nomination-entry-container:visible").removeClass("nomination-entry-container-last");
-    $(".nomination-entry-container:visible:last").addClass("nomination-entry-container-last");
+    $(".store-go").trigger("click");
     return false;
 });
 
