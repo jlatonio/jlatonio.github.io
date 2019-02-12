@@ -168,8 +168,6 @@ $(window).on("load", function () {
         }
     });
 
-
-
     // re-sets active states for quarter
     $(".custom-dropdown-quarter").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
         var value = $(".custom-dropdown-quarter").val();
@@ -566,7 +564,41 @@ $(".custom-date").on("change", function () {
     "use strict";
     $(".custom-dropdown-quarter").val("");
     $(".custom-dropdown-award").val("All Award Winners");
+    $(".custom-dropdown-geo").val("All Adobe");
 
+    // re-sets active state for quarter
+    $(".custom-dropdown-quarter").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-quarter").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+    
+    // re-sets active state for award
+    $(".custom-dropdown-award").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-award").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+    
+    // re-sets active state for geo
+    $(".custom-dropdown-geo").closest(".custom-dropdown-outer").find(".custom-dropdown").each(function () {
+        var value = $(".custom-dropdown-geo").val();
+        var btn = $(this).text();
+        if (value === btn) {
+            $(this).addClass("active");
+        } else {
+            $(this).removeClass("active");
+        }
+    });
+    
     // resets active states for search
     $(".nomination-entry-container").show();
     $(".nomination-entry-submissions").removeClass("hidethis").removeClass("showthis");
