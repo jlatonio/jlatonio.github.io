@@ -562,6 +562,7 @@ $(".custom-select-date, .custom-date").on("click", function () {
 // resets quick link if user searches with a new custom date
 $(".custom-date").on("change", function () {
     "use strict";
+    $(".nomination-no-entries").hide();    
     $(".custom-dropdown-quarter").val("");
     $(".custom-dropdown-award").val("All Award Winners");
     $(".custom-dropdown-geo").val("All Adobe");
