@@ -508,8 +508,9 @@
   position: relative;
 }
 
-.custom-dropdown-list {
-  padding-bottom: 20x 
+.custom-dropdown-conjunction {
+  display: block;
+  margin: 20px 0; 
 }
 
 .column-container-totals {
