@@ -508,6 +508,10 @@
   position: relative;
 }
 
+.custom-dropdown-list {
+  padding-bottom: 20x 
+}
+
 .column-container-totals {
   position: relative;
   margin: 0 10px;
