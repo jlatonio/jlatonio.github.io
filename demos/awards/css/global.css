@@ -359,8 +359,7 @@ thead {
 .box-shadow {
   -webkit-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
   -moz-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);  
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, color=rgba(4,4,4,0.4), offx=0, offy=1)";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, color=rgba(4,4,4,0.4), offx=0, offy=1);
+  box-shadow: 0px 1px 3px rgba(4,4,4,0.4);  
 }
 
 .text-shadow {
