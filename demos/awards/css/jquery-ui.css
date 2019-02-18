@@ -1447,6 +1447,9 @@ a.ui-button:active,
 }
 
 input::-ms-clear {
-   display: none;
+   display: none !important;
  }
 
+.custom-search::-ms-clear {
+    display: none !important;
+}
