@@ -1446,22 +1446,7 @@ a.ui-button:active,
   border-left: solid 1px #ccc;
 }
 
-input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none; 
-    appearance: none; 
+.ui-autocomplete-loading::-ms-clear {
+  display: none;
 }
 
-input[type="text"]::-webkit-search-cancel-button {
-    -webkit-appearance: none; 
-    appearance: none; 
-}
-
-.ui-autocomplete-clear {
-    -webkit-appearance: none; 
-    appearance: none; 
-}
-
-.ui-icon-cancel {     
-    -webkit-appearance: none; 
-    appearance: none;  
-}
