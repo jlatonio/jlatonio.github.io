@@ -540,7 +540,7 @@ $(".nomination-entry-share").click(function () {
         var subjectStr = "subject=Congratulations " + nominee + "!" + " - " + award;
         var mgr = $(this).closest(".nomination-entry-container").find(".store-nominee-manager-email").html();
         var cc = "?" + "cc=" + mgr;
-        window.location = mailto + cc + "&" + subjectStr + "&body=" + bodyStr + "%0D%0A%0D%0A%0D%0A Sincerely,%0D%0A Adobe Nominator";
+        window.location = mailto + cc + "&" + subjectStr + "&body=" + bodyStr + "%0D%0A%0D%0A%0D%0ASincerely,%0D%0AAdobe Nominator";
     });
 });
 
