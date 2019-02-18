@@ -1446,6 +1446,7 @@ a.ui-button:active,
   border-left: solid 1px #ccc;
 }
 
-.ui-autocomplete-clear {
+.ui-icon-cancel { 
+    background-position: 0 -158px; 
     display: none !important;
 }
