@@ -1446,7 +1446,7 @@ a.ui-button:active,
   border-left: solid 1px #ccc;
 }
 
-.ui-autocomplete-loading::-ms-clear {
-  display: none;
-}
+input::-ms-clear {
+   display: none;
+ }
 
