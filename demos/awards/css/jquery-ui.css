@@ -1446,29 +1446,32 @@ a.ui-button:active,
   border-left: solid 1px #ccc;
 }
 
+.ui-autocomplete-loading::-ms-clear {
+  display: none !important;
+}
+
 input::-ms-clear {
-   color:#fff !important;
-   color:#fff !important;
+  display: none !important;
  }
 
 .custom-search::-ms-clear {
-   color:#fff !important;
+  display: none !important;
 }
 
 
 ::-ms-clear {
- color:#fff !important; 
+  display: none !important;
 }
 
 /* Chrome */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration { color:#fff !important; }
+input[type="search"]::-webkit-search-results-decoration {   display: none !important; }
  
 ::-webkit-search-decoration,
 ::-webkit-search-cancel-button,
 ::-webkit-search-results-button,
 ::-webkit-search-results-decoration { 
-   color:#fff !important; 
+    display: none !important;
 }
