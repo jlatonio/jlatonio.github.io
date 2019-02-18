@@ -1447,27 +1447,28 @@ a.ui-button:active,
 }
 
 input::-ms-clear {
-   display: none !important;
+   color:#fff !important;
+   color:#fff !important;
  }
 
 .custom-search::-ms-clear {
-    display: none !important;
+   color:#fff !important;
 }
 
 
 ::-ms-clear {
-  display: none;
+ color:#fff !important; 
 }
 
 /* Chrome */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration { display: none; }
+input[type="search"]::-webkit-search-results-decoration { color:#fff !important; }
  
 ::-webkit-search-decoration,
 ::-webkit-search-cancel-button,
 ::-webkit-search-results-button,
 ::-webkit-search-results-decoration { 
-  display: none; 
+   color:#fff !important; 
 }
