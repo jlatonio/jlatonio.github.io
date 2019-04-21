@@ -1,10 +1,40 @@
 .column-testurl {
   text-align: center;
+position: relative;
+    background: transparent;
 }
 
-.testurl {
-  width: 60%;
+.column-testurl img{
+  text-align: center;
+position: relative;
+    background: transparent;
+}
+
+.testurl_f,.testurl_b,.testurl_s {
+  width: 100%;
   height: auto;
+    background: transparent;
+}
+
+
+.testurl_na {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  margin-left:-50px;
+  margin-top:-50px;
+  height: 100px;
+}
+
+.column-container-url {
+  display: -webkit-flex;
+ /* Safari */
+  -webkit-flex-wrap: wrap;
+ /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .copyurl {
