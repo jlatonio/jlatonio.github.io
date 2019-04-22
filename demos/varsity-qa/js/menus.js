@@ -18,6 +18,7 @@ $(".store-continue").click(function (e) {
 
 
 $(".store-continue").on("click", function () {
+$(".testurl_na").html("");
 var param01 = "https://s7d4.scene7.com/is/image/VarsityBrands?&CAMP%20TOPS&layer=1";
 var param02 = "&src=ir{VarsityBrandsRender/";
 var param03 = $(".idurl").val();
@@ -44,16 +45,17 @@ var tuckedin_s = param01 + param02 + param03 + param_s + param04 + param05 + par
 $(".testurl_f").attr('src', tuckedin_f);
 $(".testurl_b").attr('src', tuckedin_b);    
 $(".testurl_s").attr('src', tuckedin_s);
-$('.testurl_f,.testurl_b').error(function(){
+$('.testurl_f,.testurl_b').on("error", function () {
         $(this).closest(".column-testurl").find(".testurl_na").html("Preview Not Available");
 });
-$('.testurl_s').error(function(){
+$('.testurl_s').on("error", function () {
         $(this).closest(".column-testurl").find(".testurl_na").html("Side Preview Not Available");
 });
 });
 
 
 $(".store-continue-2").on("click", function () {
+$(".testurl_na").html("");
 var param01 = "https://s7d4.scene7.com/is/image/VarsityBrands?&CAMP%20TOPS&layer=1";
 var param02 = "&src=ir{VarsityBrandsRender/";
 var param03 = $(".idurl").val();
@@ -79,10 +81,10 @@ var tuckedout_s = param01 + param02 + param13 + param_s + param14 + param11 + pa
 $(".testurl_f").attr('src', tuckedout_f);
 $(".testurl_b").attr('src', tuckedout_b);
 $(".testurl_s").attr('src', tuckedout_s);
-$('.testurl_f,.testurl_b').error(function(){
+$('.testurl_f,.testurl_b').on("error", function () {
         $(this).closest(".column-testurl").find(".testurl_na").html("Preview Not Available");
 });
-$('.testurl_s').error(function(){
+$('.testurl_s').on("error", function () {
         $(this).closest(".column-testurl").find(".testurl_na").html("Side Preview Not Available");
 });
 });
