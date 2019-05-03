@@ -19,7 +19,7 @@ $(".store-continue").click(function (e) {
 
 $(".store-continue").on("click", function () {
 $(".testurl_na").html("");
-var param01 = "https://testvipd4.scene7.com/is/image/VarsityBrands?&CAMP%20TOPS&layer=1";
+var param01 = "https://s7d4.scene7.com/is/image/VarsityBrands?&CAMP%20TOPS&layer=1";
 var param02 = "&src=ir{VarsityBrandsRender/";
 var param03 = $(".idurl").val();
 var param_f = "_f"
@@ -56,7 +56,7 @@ $('.testurl_s').on("error", function () {
 
 $(".store-continue-2").on("click", function () {
 $(".testurl_na").html("");
-var param01 = "https://testvipd4.scene7.com/is/image/VarsityBrands?&CAMP%20TOPS&layer=1";
+var param01 = "https://s7d4.scene7.com/is/image/VarsityBrands?&CAMP%20TOPS&layer=1";
 var param02 = "&src=ir{VarsityBrandsRender/";
 var param03 = $(".idurl").val();
 var param_f = "_f"
