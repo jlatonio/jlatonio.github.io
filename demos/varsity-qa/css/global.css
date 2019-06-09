@@ -921,7 +921,7 @@ input::-webkit-clear-button {
   }
 
   .percent-33 {
-    width: 50%;
+    width: 33.33%;
   }
 
   .percent-30 {
@@ -990,6 +990,7 @@ input::-webkit-clear-button {
 
   .store-button-container input {
     width: calc(33% - 12px);
+    vertical-align: top;
   }
 
   .custom-dropdown-slots .custom-dropdown {
