@@ -23,9 +23,11 @@
     margin-left: -40px;
 }   
             
-            [data-lf-package="filmstrip#2.0.7"] .strip-container .content-container .hub-content-container {
- 
-            }
+[data-lf-package="filmstrip#2.0.7"] .strip-container .content-container {
+    float: left;
+    width: calc(100% - 100px );
+    overflow-x: hidden;
+}
             
             [data-lf-package="filmstrip#2.0.7"] .strip-container .btn.enabled {
                 background-color: #095423 !important;
@@ -43,10 +45,7 @@
             }
             
             @media screen and (min-width: 701px) {
-                [data-lf-package="filmstrip#2.0.7"] .strip-container .content-container .hub-content-container {
-                    float: left;
-                    padding-left: 20px !important;
-                }
+
 
                 [data-lf-package="filmstrip#2.0.7"] .strip-container .btn.enabled {
                     background-color: #000 !important;
