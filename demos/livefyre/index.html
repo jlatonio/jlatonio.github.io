@@ -6,48 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
 		<title>LiveFyre Demo</title>
         <style>
-            .lf-container {
-                width:400px;
+            [data-lf-package="filmstrip#2.0.7"] .strip-container .content-container .hub-content-container {
+                float: left;
+                padding-left: 0 !important;
+            }
+
+            @media screen and (min-width: 701px) {
+            [data-lf-package="filmstrip#2.0.7"] .strip-container .content-container .hub-content-container {
+                float: left;
+                padding-left: 20px !important;
+            }
             }
         </style>
 	</head>
 	<body>
 		<div class="page">
 			<!-- header -->
-			<header class="acs-header dark-bg">
-				<div class="acs-header-column-1 percent-40">
-					<img src="images/adobe-logo_h.svg" alt="" />
-				</div>
-				<div class="acs-header-column-2 percent-60">
-					<div class="acs-header-column-2-inner">
-						<p class="regular-text">
-							<a class="column-tools-breadcrumbs-each" id="view-fullscreen">Enter Fullscreen</a><a class="column-tools-breadcrumbs-each" id="cancel-fullscreen">Exit Fullscreen</a>
-						</p>
-					</div>
-				</div>
-			</header>
-			<!-- wrapper -->
-			
-<script type="text/javascript" src="https://cdn.livefyre.com/Livefyre.js"></script>
-<div class="lf-container">      
-<div class="lf-app-embed" data-lf-app="523cb04b-cfba-4b5b-8167-2d60c7fb5029/tagged/published" data-lf-env="prod" data-lf-read-only="">test</div>     
-</div>          
-<script>Livefyre.require(["app-embed#1.0.11"], function (appEmbed) {appEmbed.loadAll().done(function(embed) {embed = embed[0];if (embed.el.onload && embed.getConfig) {embed.el.onload(embed.getConfig());}});});</script>    
+
             
-            
-			<!-- footer -->
-			<footer class="acs-footer dark-bg text-align-center small-text">
-				<img class="footer-image" src="images/adobe-logo-print-rev.svg" alt="" />
-				<div>
-					<p>@2019 Adobe Systems Incorporated. All rights reserved.
-						
-						<span class="footer-secondary-color regular-text">
-							<a href="https://inside.corp.adobe.com/legal/corporate-law.html" target="_blank">Adobe Confidential</a>.
-						
-						</span>
-					</p>
-				</div>
-			</footer>
+<script type="text/javascript" src="https://cdn.livefyre.com/Livefyre.js"></script><div class="lf-app-embed" data-lf-app="ad104d64-c726-44e8-87fa-510e5eb27123/tagged/published" data-lf-env="prod" data-lf-read-only=""></div><script>Livefyre.require(["app-embed#1.0.11"], function (appEmbed) {appEmbed.loadAll().done(function(embed) {embed = embed[0];if (embed.el.onload && embed.getConfig) {embed.el.onload(embed.getConfig());}});});</script>
 		</div>
 	</body>
 </html>
