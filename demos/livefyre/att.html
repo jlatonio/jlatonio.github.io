@@ -48,8 +48,37 @@
                 height: 320px !important;
             }
     
+            @media screen 
+            and (device-width : 414px) 
+            and (device-height : 736px) 
+            and (-webkit-device-pixel-ratio : 3) { 
+            
+                /* size of each social container box will fit width or mobile screen */
+                [data-lf-package="filmstrip#2.0.7"] .strip-container.resize-to-width-crop div[data-hub-list-length]:first-child .content-attachments-tiled .oembed:first-child .content-attachment-photo {
+                    height: 350px !important;
+                }
+
+                /* back/next buttons are smaller with a new color */
+                [data-lf-package="filmstrip#2.0.7"] .strip-container .btn.enabled {
+                    background-color: #00A8E0 !important;
+                    height: 350px !important;
+                }
+
+                [data-lf-package="filmstrip#2.0.7"] .strip-container .btn.disabled {
+                    background-color: #00A8E0 !important;
+                    height: 350px !important;
+                }
+
+                [data-lf-package="filmstrip#2.0.7"] .strip-container .btn {
+                    background-color: #00A8E0 !important;
+                    height: 350px !important;
+                }
+            }
+            
+            
             /* first breaking point targets all tablets (or phones in landscape) and desktop */
-            @media screen and (min-width: 701px) {
+            @media screen 
+            and (min-width: 701px) {
                 
                 /* width of outer container to fit larger screens and accomodate larger buttons */
                 [data-lf-package="filmstrip#2.0.7"] .strip-container .content-container {
