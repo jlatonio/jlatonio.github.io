@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
+		<title>ATT LiveFyre Demo</title>
+        <style>
+            /* default sizing starts with mobile screens (portrait) */
+            body{
+                padding:0 !important;
+                margin:0 !important;
+            } 
+            
+            .page{
+                overflow:hidden;
+            } 
+
+            /* targets last social box container */
+            [data-lf-package="filmstrip#2.0.7"] .strip-container .content-container .hub-content-container:last-child {
+                padding-right: 20px;
+                margin-right:-20px;
+            }
+     
+            /* width of outer container to fit mobile screen and accomodate smaller buttons */
+            [data-lf-package="filmstrip#2.0.7"] .strip-container .content-container {
+                width: calc(100% - 100px ) !important;
+                background-color: #000 !important;
+            }
+            
+            /* size of each social container box will fit width or mobile screen */
+            [data-lf-package="filmstrip#2.0.7"] .strip-container.resize-to-width-crop div[data-hub-list-length]:first-child .content-attachments-tiled .oembed:first-child .content-attachment-photo {
+                background-color: #000 !important;
+                width: calc(100vw - 140px );
+                height: 320px !important;
+            }
+    
+            /* back/next buttons are smaller with a new color */
+            [data-lf-package="filmstrip#2.0.7"] .strip-container .btn.enabled {
+                background-color: #00A8E0 !important;
+                width: 50px !important;
+                height: 320px !important;
+            }
+
+            [data-lf-package="filmstrip#2.0.7"] .strip-container .btn.disabled {
+                background-color: #00A8E0 !important;
+                width: 50px !important;
+                height: 320px !important;
+            }
+            
+            [data-lf-package="filmstrip#2.0.7"] .strip-container .btn {
+                background-color: #00A8E0 !important;
+                width: 50px !important;
+                height: 320px !important;
+            }
+    
+            @media screen 
+            and (device-width : 414px) 
+            and (device-height : 736px) 
+            and (-webkit-device-pixel-ratio : 3) { 
+            
+                /* size of each social container box will fit width or mobile screen */
+                [data-lf-package="filmstrip#2.0.7"] .strip-container.resize-to-width-crop div[data-hub-list-length]:first-child .content-attachments-tiled .oembed:first-child .content-attachment-photo {
+                    height: 350px !important;
+                }
+
+                /* back/next buttons are smaller with a new color */
+                [data-lf-package="filmstrip#2.0.7"] .strip-container .btn.enabled {
+                    background-color: #00A8E0 !important;
+                    height: 350px !important;
+                }
+
+                [data-lf-package="filmstrip#2.0.7"] .strip-container .btn.disabled {
+                    background-color: #00A8E0 !important;
+                    height: 350px !important;
+                }
+
+                [data-lf-package="filmstrip#2.0.7"] .strip-container .btn {
+                    background-color: #00A8E0 !important;
+                    height: 350px !important;
+                }
+            }
+            
+            
+            /* first breaking point targets all tablets (or phones in landscape) and desktop */
+            @media screen 
+            and (min-width: 701px) {
+                
+                /* width of outer container to fit larger screens and accomodate larger buttons */
+                [data-lf-package="filmstrip#2.0.7"] .strip-container .content-container {
+                    width: calc(100% - 200px ) !important;
+                    background-color: #000 !important;
+                    height: 250px !important;
+                }
+                
+                /* size of each social container box will stack back into a strip */
+                [data-lf-package="filmstrip#2.0.7"] .strip-container.resize-to-width-crop div[data-hub-list-length]:first-child .content-attachments-tiled .oembed:first-child .content-attachment-photo {
+                    background-color: #000 !important;
+                    width: 250px !important;
+                    height: 250px !important;
+                }
+                
+                /* back/next buttons are larger */
+                [data-lf-package="filmstrip#2.0.7"] .strip-container .btn.enabled {
+                    width: 100px !important;
+                    height: 250px !important;
+                }
+
+                [data-lf-package="filmstrip#2.0.7"] .strip-container .btn.disabled {
+                    width: 100px !important;
+                    height: 250px !important;
+                }
+
+                [data-lf-package="filmstrip#2.0.7"] .strip-container .btn {
+                    width: 100px !important;
+                    height: 250px !important;
+            }
+                
+            }
+        </style>
+	</head>
+	<body>
+		<div class="page">
+			<!-- header -->
+            <script type="text/javascript" src="https://cdn.livefyre.com/Livefyre.js"></script><div class="lf-app-embed" data-lf-app="ad104d64-c726-44e8-87fa-510e5eb27123/tagged/published" data-lf-env="prod" data-lf-read-only=""></div><script>Livefyre.require(["app-embed#1.0.11"], function (appEmbed) {appEmbed.loadAll().done(function(embed) {embed = embed[0];if (embed.el.onload && embed.getConfig) {embed.el.onload(embed.getConfig());}});});</script>
+		</div>
+	</body>
+</html>
