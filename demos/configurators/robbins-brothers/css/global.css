@@ -188,7 +188,7 @@ thead {
 }
 
 .column-container-menu {
-   padding-left:100px; 
+   padding-left:0; 
 }
 
 .small-text, .small-text p {
@@ -740,7 +740,7 @@ input::-webkit-clear-button {
 
 .custom-dropdown {
   font-size: 14px;
-  padding: 16px 52px 16px 20px;
+  padding: 16px 52px;
   border-top: solid 1px #ccc;
   cursor: pointer;
   position: relative;
@@ -996,7 +996,11 @@ input::-webkit-clear-button {
   .store-button-container input {
     width: calc(33% - 12px);
   }
-
+    
+  .column-container-menu {
+    padding-left:20px; 
+  }
+    
   .custom-dropdown-slots .custom-dropdown {
     padding-left: 87px;
   }
@@ -1061,7 +1065,11 @@ input::-webkit-clear-button {
   .column-container-each {
     margin-bottom: 40px;
   }
-
+    
+  .column-container-menu {
+    padding-left:100px; 
+  }
+    
   .custom-dropdown-slots .custom-dropdown {
     padding-left: 107px;
     font-size: 16px;

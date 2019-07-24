@@ -112,7 +112,7 @@ position: relative;
 }
 
 .hero-container {
-  background-image: url('../images/awards-hero-centered.png');
+  background-image: url('');
   background-repeat: no-repeat;
   background-size: 1024px auto;
   background-position: center center;
@@ -139,7 +139,7 @@ position: relative;
 }
 
 .hero-content-image {
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 
@@ -552,6 +552,15 @@ position: relative;
   white-space: normal;
 }
 
+.custom-dropdown-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top:-15px;
+}
+
 .custom-dropdown-delete:hover {
   background-image: url('../images/select-close-white.svg');
   opacity: 1;
@@ -650,7 +659,7 @@ position: relative;
 
   .hero-container {
     background-size: 1440px auto;
-    height: 300px;
+    height: 150px;
   }
 
   .acs-header-column-1 {
@@ -739,7 +748,7 @@ position: relative;
 @media screen and (min-width: 1025px) {
 
   .column-container,.column-container-admin {
-    padding: 80px 100px;
+    padding: 20px 100px;
   }
 
   .column-container-breadcrumbs {
