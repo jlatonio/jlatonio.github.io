@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
+		<title>Robbins Brothers Configurator POC</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/fonts.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/print.css" />
+		<link rel="stylesheet" href="css/resizing.css" />
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<script src="js/jquery-1.12.4.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+	<body>
+		<div class="page">
+			<!-- header -->
+			<header class="acs-header dark-bg">
+				<div class="acs-header-column-1 percent-40">
+					<img src="images/adobe-logo_h.svg" alt="" />
+				</div>
+				<div class="acs-header-column-2 percent-60">
+					<div class="acs-header-column-2-inner">
+						<p class="regular-text">
+							<a class="column-tools-breadcrumbs-each" id="view-fullscreen">Enter Fullscreen</a><a class="column-tools-breadcrumbs-each" id="cancel-fullscreen">Exit Fullscreen</a>
+						</p>
+					</div>
+				</div>
+			</header>
+			<!-- wrapper -->
+				<div class="hero-container">
+					<div class="hero-content">
+						<img class="hero-content-image" src="images/fitbit-logo.png" alt="" />
+					</div>
+				</div>
+            
+			<form>
+				<div class="acs-main-content">
+					<div class="column-container">
+                        
+						<div class="column-container-url percent-40">
+                            <div class="column-testurl column-container-each percent-100">
+                            <div class="testurl_na"></div>
+							<img class="testurl testurl_preview" src="https://s7d1.scene7.com/is/image/daCostaDMC?&wid=500&$innerband=RED&$case=OBSIDIAN&layer=0&src=is{daCostaDMC/HIGGS_3QTR_LEGACY_MIDNIGHT_R3_v001_JW_$innerband$?&fmt=png-alpha&resmode=sharp2}&layer=2&src=is{daCostaDMC/HIGGS_3QTR_LEGACY_MIDNIGHT_R3_v001_JW_case_$case$?&fmt=png-alpha&resmode=sharp2}" alt="" />
+                            </div>
+						</div>
+						<div class="column-container-each column-container-menu percent-60">
+							<div class="custom-dropdown-outer">
+								<label class="custom-dropdown-label primary-color">Select Style</label>
+								<div class="custom-dropdown-relative">
+									<div class="primary-color">
+										<input type="text" class="url-base custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Ring ID" />
+										<div class="custom-dropdown-close"></div>
+										<div class="custom-dropdown-open"></div>
+										<img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+									</div>
+								</div>
+								<div class="custom-dropdown-position">
+									<div class="custom-dropdown-group">
+										<div class="custom-dropdown-scroll">
+                                            <div class="custom-dropdown" data-val="HIGGS_3QTR_LEGACY_MIDNIGHT_R3_v001_JW_"><img src="" class="custom-dropdown-icon" alt="" />Demo</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="custom-dropdown-outer">
+								<label class="custom-dropdown-label primary-color">Select Inner Band</label>
+								<div class="custom-dropdown-relative">
+									<div class="primary-color">
+										<input type="text" class="url-innerband custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Inner Band" />
+										<div class="custom-dropdown-close"></div>
+										<div class="custom-dropdown-open"></div>
+										<img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+									</div>
+								</div>
+								<div class="custom-dropdown-position">
+									<div class="custom-dropdown-group">
+										<div class="custom-dropdown-scroll">
+                                            <div class="custom-dropdown" data-val="ROYAL"><img src="images/royal-swatch.png" class="custom-dropdown-icon" alt="" />ROYAL</div>
+                                            <div class="custom-dropdown" data-val="RED"><img src="images/red-swatch.png" class="custom-dropdown-icon" alt="" />RED</div>
+                                            <div class="custom-dropdown" data-val="GOLD"><img src="images/gold-swatch.png" class="custom-dropdown-icon" alt="" />GOLD</div>
+                                            <div class="custom-dropdown" data-val="BROWN"><img src="images/brown-swatch.png" class="custom-dropdown-icon" alt="" />BROWN</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="custom-dropdown-outer">
+								<label class="custom-dropdown-label primary-color">Select Case</label>
+								<div class="custom-dropdown-relative">
+									<div class="primary-color">
+										<input type="text" class="url-case custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Case" />
+										<div class="custom-dropdown-close"></div>
+										<div class="custom-dropdown-open"></div>
+										<img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+									</div>
+								</div>
+								<div class="custom-dropdown-position">
+									<div class="custom-dropdown-group">
+										<div class="custom-dropdown-scroll">
+                                            <div class="custom-dropdown" data-val="OBSIDIAN"><img src="images/obsidian-swatch.png" class="custom-dropdown-icon" alt="" />OBSIDIAN</div>
+                                            <div class="custom-dropdown" data-val="GOLDRUSH"><img src="images/goldrush-swatch.png" class="custom-dropdown-icon" alt="" />GOLDRUSH</div>
+                                            <div class="custom-dropdown" data-val="COPPER"><img src="images/copper-swatch.png" class="custom-dropdown-icon" alt="" />COPPER</div>
+                                            <div class="custom-dropdown" data-val="STERLING"><img src="images/sterling-swatch.png" class="custom-dropdown-icon" alt="" />STERLING</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+
+                            
+                            <br><br>
+							<div class="store-button-container">
+								<input class="store-button store-continue" type="button" value="Go" />
+								<input class="store-button store-clear" type="reset" value="Reset" />
+							</div>
+                            
+                            
+                            
+                            
+						</div>
+					</div>
+				</div>
+			</form>
+			<!-- footer -->
+			<footer class="acs-footer dark-bg text-align-center small-text">
+				<img class="footer-image" src="images/adobe-logo-print-rev.svg" alt="" />
+				<div>
+					<p>@2019 Adobe Systems Incorporated. All rights reserved.
+						
+						<span class="footer-secondary-color regular-text">
+							<a href="https://inside.corp.adobe.com/legal/corporate-law.html" target="_blank">Adobe Confidential</a>.
+						
+						</span>
+					</p>
+				</div>
+			</footer>
+		</div>
+		<script src="js/menus.js"></script>
+		<script src="js/fullscreen.js"></script>
+	</body>
+</html>
