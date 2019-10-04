@@ -19,12 +19,103 @@
             .hub-wall-column {
                 width:100% !important;
             }
+
+            .column-container-header {
+                background-color: #333;
+                height: 40px;
+            }
+            .column-container-footer {
+                background-color: #333;
+                height: 100px;
+            }
+            
+            .column-container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            .column-container-left {
+                width:60%;
+                padding: 40px;
+            }     
+            .column-container-right {
+                width:20%;
+                padding: 40px;
+            } 
+            
+            .hero-container {
+              background-image: url('');
+              background-repeat: no-repeat;
+              background-size: 1024px auto;
+              background-position: center center;
+              width: 100%;
+              height: 200px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .hero-content {
+              display: flex;
+              align-items: center;
+              height: 100%;
+              justify-content: center;
+              color: #fff;
+              width: 280px;
+              margin: auto;
+              padding: 20px 0;
+            }
+
+            .hero-content h1 {
+              margin-bottom: 5px;
+            }
+
+            .hero-content-image {
+              height: auto;
+              width: 100%;
+            }
+
+            .hero-content-text {
+              text-align: center;
+            }     
         </style>
 	</head>
 	<body>
 		<div class="page">
 			<!-- header -->
-            <script type="text/javascript" src="https://cdn.livefyre.com/Livefyre.js"></script><div class="lf-app-embed" data-lf-app="523cb04b-cfba-4b5b-8167-2d60c7fb5029/tagged/published" data-lf-env="prod" data-lf-read-only=""></div><script>Livefyre.require(["app-embed#1.0.11"], function (appEmbed) {appEmbed.loadAll().done(function(embed) {embed = embed[0];if (embed.el.onload && embed.getConfig) {embed.el.onload(embed.getConfig());}});});</script>
-		</div>
+                <header class="column-container-header">
+                </header> 
+
+				<div class="hero-container">
+					<div class="hero-content">
+						<img class="hero-content-image" src="images/hero1.jpeg" alt="" />
+					</div>
+				</div>
+            
+                <div class="column-container">
+                    <div class="column-container-left">
+                    <script type="text/javascript" src="https://cdn.livefyre.com/Livefyre.js"></script>
+                    <div class="lf-app-embed" data-lf-app="523cb04b-cfba-4b5b-8167-2d60c7fb5029/tagged/published" data-lf-env="prod" data-lf-read-only=""></div><script>Livefyre.require(["app-embed#1.0.11"], function (appEmbed) {appEmbed.loadAll().done(function(embed) {embed = embed[0];if (embed.el.onload && embed.getConfig) {embed.el.onload(embed.getConfig());}});});</script>
+                    </div>
+                    <div class="column-container-right">
+                        <b>Browse by Topic</b><br /><br />
+
+                        CARING FOR LOVED ONES (1)<br />
+                        GENERAL (65)<br />
+                        HOSPITALS (1)<br />
+                        INCONTINENCE-SUPPORT (159)<br />
+                        PRODUCT (3)<br />
+                        SPOUSE-BEDWETTING (1)<br />
+                        YOUNG-INCONTINENCE (1)<br />
+                        LEARNING CENTER (26)<br />
+                        MENS SUPPORT (188)<br />
+                        SUPPORT FOR CAREGIVERS (3)<br />
+                        WOMENS SUPPORT (45) 
+                    </div>
+                </div>
+            </div>
+        
+			<footer class="column-container-footer">
+			</footer>
 	</body>
 </html>
