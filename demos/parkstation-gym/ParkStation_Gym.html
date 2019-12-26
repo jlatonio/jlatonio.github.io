@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<script src="../../js/jquery-1.11.1.min.js"></script>
+<!--response for desktop view-->
+<link rel="stylesheet" type="text/css" href="../../css/modal.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/demo.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/information.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/map.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/fonts.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../../css/information-1200.css" media="only screen and (max-width: 1200px)" />
+<link rel="stylesheet" type="text/css" href="../../css/map-1200.css" media="only screen and (max-width: 1200px)" />
+<link rel="stylesheet" type="text/css" href="../../css/map-850.css" media="only screen and (max-width: 620px)" />
+<link rel="stylesheet" type="text/css" href="../../css/information-850.css" media="only screen and (max-width: 620px)" />
+<link rel="stylesheet" type="text/css" href="../../css/map-500.css" media="only screen and (max-width: 500px)" />
+<link rel="stylesheet" type="text/css" href="../../css/information-500.css" media="only screen and (max-width: 500px)" />
+
+<link rel="stylesheet" type="text/css" href="../../css/portrait.css" media="all and (orientation:portrait)" />
+<link rel="stylesheet" type="text/css" href="../../css/landscape.css" media="all and (orientation:landscape)" />
+
+		<script type="text/javascript">
+			function hideUrlBar() {
+				// hide URL field on the iPhone/iPod touch
+				var p = String(navigator.platform);
+	
+				container = document.getElementById("container");
+				if( p === 'iPad' || p === 'iPhone' || p === 'iPod touch' ){
+					var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+					if (parseInt(v[1], 10)>=7) {
+						// iOS >=7
+						if (container) {
+							container.style.top=(0) + "px";
+							container.style.left=(0) + "px";
+							container.style.width=(window.innerWidth) + "px";
+							container.style.height=(window.innerHeight) + "px";
+							if (pano) {
+								pano.setViewerSize(window.innerWidth, window.innerHeight);
+							}						}
+						window.scrollTo(0, 0);
+					} else {
+						if (container) {
+							var cheight;
+							switch(window.innerHeight) {
+								case 208:cheight=268; break; // landscape
+								case 260:cheight=320; break; // landscape, fullscreen
+								case 336:cheight=396; break; // portrait, in call status bar
+								case 356:cheight=416; break; // portrait 
+								case 424:cheight=484; break; // portrait iPhone5, in call status bar
+								case 444:cheight=504; break; // portrait iPhone5 
+								default: cheight=window.innerHeight;
+							}
+							if ((cheight) && ((container.offsetHeight!=cheight) || (window.innerHeight!=cheight))) {
+								container.style.height=cheight + "px";
+							}
+						}
+						document.getElementsByTagName("body")[0].style.marginTop="1px";
+						window.scrollTo(0, 1);
+					}
+				}
+			}            
+			if (window.addEventListener) {
+				window.addEventListener("load", hideUrlBar);
+				window.addEventListener("resize", hideUrlBar);
+				window.addEventListener("orientationchange", hideUrlBar);
+			}
+	
+		</script>
+        
+		<style type="text/css" title="Default">
+			body, div, h1, h2, h3, span, p {
+				font-family: Verdana,Arial,Helvetica,sans-serif;
+				color: #000000; 
+			}
+	
+	
+			.warning { 
+				font-weight: bold;
+			} 
+			/* fix for scroll bars on webkit & Mac OS X Lion */ 
+			::-webkit-scrollbar {
+				background-color: rgba(0,0,0,0.5);
+				width: 0.75em;
+			}
+			::-webkit-scrollbar-thumb {
+    			background-color:  rgba(255,255,255,0.5);
+			}
+		</style>	
+                
+	</head>
+	<body>
+<!--title bar 
+<div class="titlebar" style="z-index:1;position:absolute;top:5;">
+<div class="titlebar2">
+<div class="titlebar3">
+<div class="titlebar4"><h2><div id="dynamicheader">Welcome!</div></h2></div>
+</div>
+</div>
+</div> 
+--> 
+<!-- information -->
+<div class="information" onclick="hide('map_box')">
+<a href="#" onclick="show('information_box')"><div class="information_button"
+onMouseOver="this.style.opacity=0.7;this.filters.alpha.opacity=70" 
+onMouseOut="this.style.opacity=1;this.filters.alpha.opacity=100">
+</div></a>
+<div id="information_box">
+	<div id="information_box_header" style="background-color:rgba(0,0,0,.5)">
+    <div class="information_header"> 
+    	<div class="information_title1" onclick="changeinformation1()" style="background-color:rgba(0, 0, 0, 0.5)"><h2>Overview</h2></div>
+        <div class="information_title2" onclick="changeinformation2()"><h2>Home Features</h2></div>
+        <div class="information_title3" onclick="changeinformation3()"><h2>Neighborhood</h2></div>
+	</div>
+    
+    <div class="information_close" onclick="hide('information_box')" onMouseOver="this.style.opacity=0.7;this.filters.alpha.opacity=70" onMouseOut="this.style.opacity=1;this.filters.alpha.opacity=100"> 
+	</div>
+</div>
+ 
+<div id="information_box_inner" style="background-color:rgba(222,222,222,.9);"> 
+<div class="information_text" style="color:rgb(0,0,0);text-shadow: 1px 1px 1px rgba(0, 0, 0, 0);margin:25px;">
+
+<div id="dynamicinformation">
+
+The owners' lounge includes a full kitchenette, flat-screen TV, and flexible seating for a variety of uses whether watching the game, hosting the book club, or throwing a party. An outdoor patio extends the Lounge's comforts outdoors. In addition, an adjoining Fitness Room equipped with cardio equipment makes it easy for you to get a workout anytime. <br><br>
+
+<b>Common Area Amenities</b><ul>
+<li>Fully-equipped owners’ lounge</li>
+<li>Fully-equipped fi tness room</li>
+<li>Beautifully decorated outside patio</li>
+<li>Access controlled buildings with one elevator in each building</li>
+<li>One or two parking spaces, per plan Barbecue area with tables and chairs</li>
+<li>Open lawn for sports and recreation</li>
+<li>Tranquil walking paths with seating and benches</li></ul>
+</div>
+</div></div> <div id="information_box_footer"></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- information dynamic copy -->
+<script>
+function changeinformation1() {
+document.getElementById("dynamicinformation").innerHTML = "With 99 luxurious condominiums, Park Station units provide inspired spaces for quiet relaxation or lively dinner parties. Four dynamic plans offer up to two bedrooms and approximately 1,315 square feet, an astounding value for an area undergoing such promising growth.<br><br>Easy access to upscale restaurants, a bustling nightlife, and the future Centennial Way Linear Park truly provides an opportunity for all residents to find their niche. The community grounds include a lounge, a shared gourmet kitchenette, and fitness room. <br><br>The owners' lounge includes a full kitchenette, flat-screen TV, and flexible seating for a variety of uses whether watching the game, hosting the book club, or throwing a party. An outdoor patio extends the Lounge's comforts outdoors. In addition, an adjoining Fitness Room equipped with cardio equipment makes it easy for you to get a workout anytime.<br><br><b>Common Area Amenities</b><ul><li>Fully-equipped owners’ lounge</li><li>Fully-equipped fi tness room</li><li>Beautifully decorated outside patio</li><li>Access controlled buildings with one elevator in each building</li><li>One or two parking spaces, per plan Barbecue area with tables and chairs</li><li>Open lawn for sports and recreation</li><li>Tranquil walking paths with seating and benches</li></ul>";
+}
+function changeinformation2() {
+document.getElementById("dynamicinformation").innerHTML = "<ul><li>Hand-set 12 inch-square ceramic tile flooring in entry, kitchen, and master bath</li><li>Designer-selected vinyl flooring in laundry and secondary bath, per plan</li><li>Designer-selected stain-resistant carpet for impressive style and durability</li><li>CraftMaster® two-panel interior doors with brushed chrome levers</li><li>Volume ceiling in living and dining area on penthouse floor, per plan</li><li>Two-color paint for richness and character</li><li>Beech cabinetry with shaker door and chrome knobs</li><li>Designer-selected, granite slab countertops in kitchen</li><li>Kohler® stainless steel dual compartment kitchen sink with gourmet pull-out faucet garbage disposal</li><li>Designer-selected light fixture in dining room</li><li>Comfortable shower or tub with cultured marble surround and clear glass enclosure, per plan</li><li>Designer-selected cultured marble vanity counter to with backsplash</li><li>Top-set china sinks with Kohler® faucets in an elegant polished chrome finish<li>Dual-paned vinyl windows with Low-E glass for improved energy savings</li><li>Functional blinds included for all windows to enhance privacy</li><li>Structured wiring throughout the home</li><li>Stainless steel with black appliances by GE®</li><li>High-speed networking including Category 5 cable</li><li>Interior laundry area with washer and dryer hook-up</li><li>Building is pre-wired for satellite Centrally-located hot water boiler with recirculation pump</li><li>Fire sprinklers and smoke detectors located throughout home and buildings</li></ul>";
+}
+function changeinformation3() {
+document.getElementById("dynamicinformation").innerHTML = "SummerHill Homes has created a tradition of well-planned neighborhoods with dramatic architectural styling built in superior settings throughout the San Francisco Bay Area. SummerHill Homes' new communities are distinguished by their rich character and exceptional attention to detail, lending to the enduring quality of all its homes.<br><br>For over 30 years, SummerHill Homes' communities have earned homeowner satisfaction and significant industry recognition, including several Best in American Living Awards from the National Association of Home Builders, numerous Gold Nugget Awards at the Pacific Coast Builders' Conference, and several features in national magazines including Builder, Professional Builder, and Sunset Magazine.";
+}
+</script>
+
+<!-- information tabs -->
+<script>
+$(".information_title1").click(function() {
+$(this).css({
+"backgroundColor":"rgba(0, 0, 0, 0.5)",
+});
+$(".information_title2").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+$(".information_title3").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+});
+
+$(".information_title2").click(function() {
+$(this).css({
+"backgroundColor":"rgba(0, 0, 0, 0.5)",
+});
+$(".information_title1").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+$(".information_title3").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+});
+
+$(".information_title3").click(function() {
+$(this).css({
+"backgroundColor":"rgba(0, 0, 0, 0.5)",
+});
+$(".information_title1").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+$(".information_title2").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+});
+</script>
+
+<!-- information box -->
+<script type="text/javascript">
+$('#information_box').hide(); 
+function show(target) {
+document.getElementById(target).style.display = 'block';
+}
+function hide(target) {
+document.getElementById(target).style.display = 'none';
+}
+</script>
+<!-- end of information -->    
+
+    
+<!-- map -->
+<div class="map" onclick="hide('information_box')">
+<a href="#" onclick="show('map_box')"><div class="map_button"
+onMouseOver="this.style.opacity=0.7;this.filters.alpha.opacity=70" 
+onMouseOut="this.style.opacity=1;this.filters.alpha.opacity=100">
+</div></a>
+
+<div id="map_box">
+	<div id="map_box_header" style="background-color:rgba(0,0,0,.5)">
+    	<div class="map_header"> 
+    	<span class="map_title1" onclick="changefloor1()" style="background-color:rgba(0, 0, 0, 0.5)"><h2>Lounge</h2></span>
+    	<span class="map_title2" onclick="changefloor2()"><h2>2nd Floor</h2></span>
+    	<span class="map_title3" onclick="changelocation()"><h2>Location</h2></span>
+   		</div>
+	<div class="map_close" onclick="hide('map_box')" onMouseOver="this.style.opacity=0.7;this.filters.alpha.opacity=70" onMouseOut="this.style.opacity=1;this.filters.alpha.opacity=100">
+	</div>
+</div>
+<div id="map_box_inner" style="background-color:rgba(222,222,222,.9);"> 
+	<div class="map_text">
+		<div class='map_link' style="width:100%;height:100%;overflow:hidden;position:relative;padding:0;">
+        	<div id="dynamicmap"><embed src='../../assets/parkstationmap.svg' style='width:100%;height:100%;overflow:hidden;' /></div>
+		</div>
+	</div>
+	</div>
+</div>
+
+<!-- dynamic maps -->
+<script>
+function changefloor1() {
+document.getElementById("dynamicmap").innerHTML = "<embed src='../../assets/parkstationmap.svg' style='width:100%;height:100%;overflow:hidden;' />";
+}
+function changefloor2() {
+document.getElementById("dynamicmap").innerHTML = "<embed src='../../assets/parkstationmap2.svg' style='width:100%;height:100%;overflow:hidden;' />";
+}
+function changelocation() {
+document.getElementById("dynamicmap").innerHTML = "<div class='map_link2'><iframe style='width:100%;height:100%;padding:20px;border:0;overflow:hidden;background-color:rgba(222,222,222,.9);' src='https://www.google.com/maps/embed/v1/view?zoom=16&center=37.6620%2C-122.4430&key=AIzaSyBQZN22UfEzxb1sAeYaM2J70lW3onIg4bU'></iframe></div>";
+}
+</script> 
+
+<!-- map tabs -->
+<script>
+$(".map_title1").click(function() {
+$(this).css({
+"backgroundColor":"rgba(0, 0, 0, 0.5)",
+});
+$(".map_title2").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+$(".map_title3").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+});
+
+$(".map_title2").click(function() {
+$(this).css({
+"backgroundColor":"rgba(0, 0, 0, 0.5)",
+});
+$(".map_title1").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+$(".map_title3").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+});
+
+$(".map_title3").click(function() {
+$(this).css({
+"backgroundColor":"rgba(0, 0, 0, 0.5)",
+});
+$(".map_title1").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+$(".map_title2").css({
+"backgroundColor":"rgba(0, 0, 0, 0)",
+});
+});
+ </script>
+ 
+<!-- map box -->
+<script type="text/javascript">
+$('#map_box').hide(); 
+function show(target) {
+document.getElementById(target).style.display = 'block';
+}
+function hide(target) {
+document.getElementById(target).style.display = 'none';
+}
+</script>
+<!-- end of map -->  
+
+		<script type="text/javascript" src="pano2vr_player.js">
+		</script>
+		<script type="text/javascript" src="skin.js">
+		</script>
+        <div id="startzoom3"style="width:100%;height:100%;position:absolute;z-index:0;opacity:1;">
+		<div id="container" style="width:100%;height:100%;position:absolute;z-index:0;">
+		This content requires HTML5/CSS3, WebGL, or Adobe Flash Player Version 9 or higher.
+		</div>
+        </div>
+		<script type="text/javascript">	
+	
+			// create the panorama player with the container
+			pano=new pano2vrPlayer("container");
+			// add the skin object
+			skin=new pano2vrSkin(pano);
+			// load the configuration
+			pano.readConfigUrl("Untitled.xml");
+			// hide the URL bar on the iPhone
+			setTimeout(function() { hideUrlBar(); }, 10);
+		</script>
+		<noscript>
+			<p><b>Please enable Javascript!</b></p>
+		</noscript>
+<div id="openModal1" class="modalDialog">
+	<div class="modalcontainer">
+	<span class="modalheader">Outside</span>
+    <div class="zoomnext">Proceed to enter?</div>      
+	<a href="#modalnext" title="Enter"><span id="modalnext" class="zoomnext1">Yes</span></a>
+	<a href="#modalclose" title="Cancel"><span id="modalclose">No</span></a>
+	</div> 
+</div>
+
+<div id="openModal2" class="modalDialog">
+	<div class="modalcontainer">
+	<span class="modalheader">Gym</span>
+    <div class="zoomnext">Proceed to enter?</div>      
+	<a href="#modalnext" title="Enter"><span id="modalnext" class="zoomnext2">Yes</span></a>
+	<a href="#modalclose" title="Cancel"><span id="modalclose">No</span></a>
+	</div> 
+</div>
+
+<div id="openModal3" class="modalDialog">
+	<div class="modalcontainer">
+	<span class="modalheader">Kitchen</span>
+    <div class="zoomnext">Proceed to enter?</div>      
+	<a href="#modalnext" title="Enter"><span id="modalnext" class="zoomnext3">Yes</span></a>
+	<a href="#modalclose" title="Cancel"><span id="modalclose">No</span></a>
+	</div> 
+</div>
+
+<div id="openModal4" class="modalDialog">
+	<div class="modalcontainer">
+	<span class="modalheader">Livingroom</span>
+    <div class="zoomnext">Proceed to enter?</div>      
+	<a href="#modalnext" title="Enter"><span id="modalnext" class="zoomnext4">Yes</span></a>
+	<a href="#modalclose" title="Cancel"><span id="modalclose">No</span></a>
+	</div> 
+</div>
+<script>
+$(".zoomnext1").click(function() {
+setTimeout(function() {
+window.location.href = "../ParkStation_Outside/ParkStation_Outside.html"
+}, 500);
+$("#container").css({
+"animation":"fadeInDown 1s ease","opacity":"1","-webkit-animation":"fadeInDown 1s ease",
+});	  
+});
+
+$(".zoomnext2").click(function() {
+setTimeout(function() {
+window.location.href = "../ParkStation_Gym/ParkStation_Gym.html"
+}, 500);
+$("#container").css({
+"animation":"fadeInDown 1s ease","opacity":"1","-webkit-animation":"fadeInDown 1s ease",
+});	  
+});
+
+$(".zoomnext3").click(function() {
+setTimeout(function() {
+window.location.href = "../ParkStation_Kitchen/ParkStation_Kitchen.html"
+}, 500);
+$("#container").css({
+"animation":"fadeInDown 1s ease","opacity":"1","-webkit-animation":"fadeInDown 1s ease",
+});	  
+});
+
+$(".zoomnext4").click(function() {
+setTimeout(function() {
+window.location.href = "../ParkStation_Livingroom/ParkStation_Livingroom.html"
+}, 500);
+$("#container").css({
+"animation":"fadeInDown 1s ease","opacity":"1","-webkit-animation":"fadeInDown 1s ease",
+});	  
+});
+</script>
+
+</body>
+</html>
