@@ -1,0 +1,150 @@
+.information{
+z-index: 9999;
+}
+
+.information_button{
+right:10px;
+top:190px;
+position: absolute;
+z-index: 200;	
+background-image: url(../images/info_icon_tr.svg);
+opacity: 1;
+background-repeat:no-repeat;
+background-size: 50px 50px;
+background-color:rgba(50,50,50,.8);
+width:50px;
+height:50px;
+border-radius: 8px;
+}
+
+#information_box {
+overflow: hidden;
+right: 100px;
+padding-left:0;
+padding-right:0;
+top:10px;
+position: absolute;
+opacity: 1;
+z-index:2;
+width: 650px;	
+height: 100%;
+}
+
+#information_box_header{
+height: 55px;	
+background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0));
+}
+
+#information_box_footer{
+height: 25px;
+background-color:rgba(222,222,222,.9);
+}
+
+#information_box_inner {		
+-webkit-overflow-scrolling: touch;
+overflow-y: scroll;
+max-height: 80%;
+}
+	
+.information_close{
+display:inline-block;
+padding:0 0 0 15px; 
+overflow:hidden; 
+background-image: url(../images/close_icon1.svg);
+background-repeat:no-repeat;
+background-size: 25px 25px;
+background-position:center right;
+width:25px;
+height:55px;
+cursor:pointer;
+position:absolute;
+top:0;
+right:15px;
+}
+
+.information_header { 
+display:inline-block;
+width:100%; 
+height:55px;
+opacity:1;
+margin-right:-50px;
+padding:0 10px 0 0; 
+overflow:hidden; 
+text-overflow: ellipsis;
+} 
+
+.information_title1 { 
+display:inline-block;
+padding:15px 20px 0 20px; 
+overflow:hidden; 
+text-overflow: ellipsis;
+height:55px;
+cursor:pointer;
+} 
+
+.information_title2 { 
+display:inline-block;
+padding:15px 20px 0 20px; 
+overflow:hidden; 
+text-overflow: ellipsis;
+height:55px;
+cursor:pointer;
+} 
+
+.information_title3 { 
+display:inline-block;
+padding:15px 20px 0 20px;  
+overflow:hidden; 
+text-overflow: ellipsis;
+height:55px;
+cursor:pointer;
+} 
+
+.information_title1 h2{ 
+color:#fff; 
+font-family:'TeXGyreAdventorRegular', Arial, sans-serif; 
+font-size:18px; 
+margin:0 0 0 0; 
+text-align: left;
+overflow:hidden;
+text-overflow: ellipsis;
+font-weight:normal;
+} 
+
+.information_title2 h2{ 
+color:#fff; 
+font-family:'TeXGyreAdventorRegular', Arial, sans-serif; 
+font-size:18px; 
+margin:0 0 0 0; 
+text-align: left;
+overflow:hidden;
+text-overflow: ellipsis;
+font-weight:normal;
+} 
+
+.information_title3 h2{ 
+color:#fff; 
+font-family:'TeXGyreAdventorRegular', Arial, sans-serif; 
+font-size:18px; 
+margin:0 0 0 0; 
+text-align: left;
+overflow:hidden;
+text-overflow: ellipsis;
+font-weight:normal;
+} 
+.information_text {
+text-decoration: none;
+font-size:15px;
+font-family:'Georgia', 'Times New Roman', serif;
+text-align:left;
+line-height: 160%;	 
+margin:20px 10px 0 25px; 
+}
+
+a {
+color: #fff;
+text-decoration: none;
+font-size:17px;
+font-family:'TeXGyreAdventorRegular', Arial, sans-serif; 
+text-align:left;
+}

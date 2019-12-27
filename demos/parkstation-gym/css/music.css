@@ -1,0 +1,47 @@
+.music{
+    right:10px;
+	top:70px;
+    position: absolute;
+	background-repeat:no-repeat;
+	background-size: 50px 50px;
+	width:50px;
+	height:50px;
+	z-index:2;
+	cursor:pointer;
+}    
+.music_mute { 
+    right:10px;
+	top:70px;
+    position: absolute;height:50px;width:50px;	background-color:#000;background-image: url(../images/audio_icon_on.svg);background-repeat:no-repeat;
+	background-size: 50px 50px;
+}       
+
+.music_play2 { 
+	right:0;
+	top:0;
+    position: absolute;
+    background-image: url(../images/audio_icon_on_tr.svg);
+	background-repeat:no-repeat;
+	background-size: 50px 50px;
+	background-color:rgba(50,50,50,.8);
+	opacity:1;
+	width:50px;
+	height:50px;
+	z-index:2;
+	border-radius: 8px;
+}  
+
+.music_pause { 
+    right:0;
+	top:0;
+    position: absolute;
+    background-image: url(../images/audio_icon_off_tr.svg);
+	background-repeat:no-repeat;
+	background-size: 50px 50px;
+	background-color:rgba(50,50,50,.8);
+	opacity:1;
+	width:50px;
+	height:50px;
+	z-index:2;
+	border-radius: 8px;
+}    
