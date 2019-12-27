@@ -111,22 +111,6 @@
 		<script type="text/javascript" src="skin.js">
 		</script>
         
-		<script type="text/javascript">
-	
-		// check for CSS3 3D transformations and WebGL
-		if (ggHasHtml5Css3D() || ggHasWebGL()) {
-		// use HTML5 panorama
-	
-			// create the panorama player with the container
-			pano=new pano2vrPlayer("body");
-			pano.readConfigUrl("output/pencilpano2_out.xml");
-			// hide the URL bar on the iPhone
-			setTimeout(function() { hideUrlBar(); }, 10);
-			// add gyroscope controller
-			gyro=new pano2vrGyro(pano,"body");
-				} else 
-		}
-		</script>
 
 		<script type="text/javascript">	
 	
@@ -138,6 +122,8 @@
 			pano.readConfigUrl("Untitled.xml");
 			// hide the URL bar on the iPhone
 			setTimeout(function() { hideUrlBar(); }, 10);
+			// add gyroscope controller
+			gyro=new pano2vrGyro(pano,"container");
 		</script>
 		<noscript>
 			<p><b>Please enable Javascript!</b></p>
