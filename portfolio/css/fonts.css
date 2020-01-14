@@ -1,0 +1,175 @@
+@font-face {
+font-family: OpenSans-Bold;
+src: url(../fonts/OpenSans-Bold.ttf);
+src: url(../fonts/OpenSans-Bold.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-BoldItalic;
+src: url(../fonts/OpenSans-BoldItalic.ttf);
+src: url(../fonts/OpenSans-BoldItalic.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-ExtraBold;
+src: url(../fonts/OpenSans-ExtraBold.ttf);
+src: url(../fonts/OpenSans-ExtraBold.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-ExtraBoldItalic;
+src: url(../fonts/OpenSans-ExtraBoldItalic.ttf);
+src: url(../fonts/OpenSans-ExtraBoldItalic.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-Italic;
+src: url(../fonts/OpenSans-Italic.ttf);
+src: url(../fonts/OpenSans-Italic.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-Light;
+src: url(../fonts/OpenSans-Light.ttf);
+src: url(../fonts/OpenSans-Light.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-LightItalic;
+src: url(../fonts/OpenSans-Regular.ttf);
+src: url(../fonts/OpenSans-Regular.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-LightItalic;
+src: url(../fonts/OpenSans-LightItalic.ttf);
+src: url(../fonts/OpenSans-LightItalic.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-Regular;
+src: url(../fonts/OpenSans-Regular.ttf);
+src: url(../fonts/OpenSans-Regular.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-Semibold;
+src: url(../fonts/OpenSans-Semibold.ttf);
+src: url(../fonts/OpenSans-Semibold.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-SemiboldItalic;
+src: url(../fonts/OpenSans-SemiboldItalic.ttf);
+src: url(../fonts/AdobeClean-SemiboldItalic.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-Bold;
+src: url(../fonts/AdobeClean-Bold.otf) format("opentype");
+src: url(../fonts/AdobeClean-Bold.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-BoldIt;
+src: url(../fonts/AdobeClean-BoldIt.otf) format("opentype");
+src: url(../fonts/AdobeClean-BoldIt.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-BoldSemiCn;
+src: url(../fonts/AdobeClean-BoldSemiCn.otf) format("opentype");
+src: url(../fonts/AdobeClean-BoldSemiCn.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-BoldSemiCnIt;
+src: url(../fonts/AdobeClean-BoldSemiCnIt.otf) format("opentype");
+src: url(../fonts/AdobeClean-BoldSemiCnIt.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-BoldSemiCn;
+src: url(../fonts/AdobeClean-BoldSemiCn.otf) format("opentype");
+src: url(../fonts/AdobeClean-BoldSemiCn.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-It;
+src: url(../fonts/AdobeClean-It.otf) format("opentype");
+src: url(../fonts/AdobeClean-It.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-Light;
+src: url(../fonts/AdobeClean-Light.otf) format("opentype");
+src: url(../fonts/AdobeClean-Light.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-LightIt;
+src: url(../fonts/AdobeClean-LightIt.otf) format("opentype");
+src: url(../fonts/AdobeClean-LightIt.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-Regular;
+src: url(../fonts/AdobeClean-Regular.otf) format("opentype");
+src: url(../fonts/AdobeClean-Regular.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-SemiCn;
+src: url(../fonts/AdobeClean-SemiCn.otf) format("opentype");
+src: url(../fonts/AdobeClean-SemiCn.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-SemiCnIt;
+src: url(../fonts/AdobeClean-SemiCnIt.otf) format("opentype");
+src: url(../fonts/AdobeClean-SemiCnIt.woff);
+font-weight: normal;
+font-style: normal;
+}

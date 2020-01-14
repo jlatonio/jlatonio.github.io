@@ -1,0 +1,251 @@
+
+a { color: inherit; } 
+
+
+.portfolio-text-module h2{
+ 
+  font-family: "AdobeClean-Regular";
+}
+
+.portfolio-text-module li{
+ margin-left:18px;
+}
+
+.portfolio-image-container img{
+  width:100%;
+  height:auto;
+  margin-bottom:10px;
+}
+.portfolio-image-container{
+  width:100%;
+  display: inline-block;
+  vertical-align: top;
+} 
+
+.portfolio-text-container{
+  width:100%;
+  padding-left:0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.portfolio-text-module{
+  margin-bottom: 20px;
+} 
+
+.portfolio-text-module:last-child{
+  margin-bottom: 0;
+} 
+
+.portfolio-objective-container{
+  margin-top: 5px;
+} 
+
+
+.portfolio-education-container, .portfolio-certificate-container {
+  width:100%;
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px 20px 20px;
+vertical-align:top;
+}
+
+.portfolio-education-container2 {
+  width:100%;
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px 20px 20px;
+    vertical-align:top;
+}
+
+.portfolio-header-container {
+  width:100%;
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px 0 20px;
+}
+
+
+.portfolio-highlights-container {
+  width:100%;
+  display: inline-block;
+  position: relative;
+  padding: 10px 17.5px 20px 20px;
+}
+
+.portfolio-highlights-container:last-child {
+  padding: 10px 20px 20px 17.5px;
+}
+
+.portfolio-highlights-container p{
+  margin-bottom:20px;
+    font-style: italic;
+}
+
+.panel-objective-specific-area span{
+  display:block;
+text-align: right;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.portfolio-skills-container{
+  width:100%;
+  display: inline-block;
+  position: relative;
+  padding: 20px 0 20px 20px;
+}
+
+.portfolio-skills-specific-area{
+  display: inline-block;
+  width:100%;
+  text-align: left;
+  padding-left: 45px;
+  padding-right: 35px;
+  padding-top: 7px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.portfolio-skills-checkbox {
+  width: 40px;
+  height: auto;
+  top: -3px;
+  left: -7px;
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+
+
+.panel-contact-image-container {
+  width: 70px;
+  height: 90px;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  background-color: #fff;
+  top: -15px;
+  left: 16px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .9);
+}
+
+.panel-contact-image {
+  width: 70px;
+  height: auto;
+  margin-top: -2px;
+  vertical-align: top;
+}
+
+
+
+@media screen and (min-width: 481px) {
+.portfolio-image-container{
+  width:45%;
+  display: inline-block;
+  vertical-align: top;
+} 
+.portfolio-text-container{
+  width:calc(55% - 4px);
+  padding-left:31px;
+}
+.portfolio-text-container:last-child{
+ 
+}
+    
+ .portfolio-skills-specific-area{
+width:calc(50% - 4px);
+}  
+  
+}
+
+@media screen and (min-width: 765px) {
+.portfolio-highlights-container {
+  width:calc(50% - 2px);
+}
+
+.portfolio-highlights-container {
+ 
+  padding: 10px 17.5px 20px 35px;
+}
+
+.portfolio-highlights-container:last-child {
+  padding: 10px 35px 20px 17.5px;
+}
+ 
+    
+.portfolio-education-container, .portfolio-certificate-container {
+  width:calc(50% - 2px);
+  display: inline-block;
+  position: relative;
+  padding: 10px 17.5px 20px 35px;
+}
+
+    
+
+.portfolio-education-container2 {
+  width:calc(50% - 2px);
+  display: inline-block;
+  position: relative;
+  padding: 10px 35px 20px 17.5px;
+}
+
+.portfolio-image-container{
+  width:100%;
+  display: inline-block;
+  vertical-align: top;
+} 
+.portfolio-text-container{
+  width:100%;
+  padding-left:0px;
+}
+    
+.portfolio-education-container2 {
+  width:calc(50% - 4px);
+}
+.portfolio-skills-container{
+  padding: 20px 0 20px 35px;
+}
+
+    }
+
+@media screen and (min-width: 1024px) {
+.portfolio-image-container{
+  width:calc(35% - 2px);
+  display: inline-block;
+  vertical-align: top;
+} 
+.portfolio-text-container{
+  width:calc(65% - 2px);
+  padding-left:31px;
+}
+    
+.portfolio-education-container .portfolio-image-container {
+      width:calc(50% - 2px);
+    padding:0;
+}    
+
+.portfolio-education-container .portfolio-text-container {
+      width:calc(50% - 2px);
+    padding-left:35px;
+}
+
+.portfolio-education-container2 .portfolio-image-container {
+      width:calc(50% - 2px);
+    padding:0;
+}    
+
+.portfolio-education-container2 .portfolio-text-container {
+      width:calc(50% - 2px);
+    padding-left:35px;
+}    
+.portfolio-header-container {
+  padding: 10px 35px 0 35px;
+}
+}
+
+@media screen and (min-width: 1025px) {
+.portfolio-skills-specific-area{
+width:calc(33% - 4px);
+} 
+}

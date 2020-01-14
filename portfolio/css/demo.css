@@ -1,0 +1,21 @@
+body {
+overflow:auto;
+background-color:transparent; text-align:center;padding:35px 0 0 0;
+}
+
+.iframe_container{ 
+max-width:1366px;
+margin:auto;
+
+display: block;
+    overflow: hidden;height: 680px;box-shadow: 0 0 15px #888888;
+    
+}
+
+#frame{ 
+    display: block;
+width:100%;
+margin:auto;
+padding:0;
+position: relative; height: 100%; border: none;
+}
