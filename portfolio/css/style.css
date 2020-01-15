@@ -190,19 +190,28 @@ section {
   width: 100%;
   display: block;
   padding: 0 0 20px 0;
+  position:relative;
+}
+
+.page {
+  max-width: 1440px;
+  margin: auto;
+  box-shadow: 0 0 5px #000;
+  position:relative;
+  background-image: url('../img/bg-priorities.png');
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .content-bg {
   width: 100%;
   height: 100%;
-  background-image: url('../img/bg-priorities.png');
-  background-color: #000;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
+
   position: fixed;
   z-index: -1;
-  display: block;
+  background-color: #aaa;
   top: 0;
 }
 
@@ -1300,6 +1309,11 @@ table {
 }
 
 @media (min-width: 1025px) {
+    
+  .nav2 {
+    left: calc(50% - 720px);
+  }
+    
   .top-section {
     padding: 20px 16px 0 56px;
   }
@@ -1329,6 +1343,11 @@ table {
 /* To target desktops only, and to hide from all other mobile screens */
 
 @media screen and (max-device-width: 1366px) and (orientation:portrait) {
+
+  .nav2 {
+    left: 0;
+  }
+    
   .tools-btns {
     display: none;
   }
@@ -1347,6 +1366,10 @@ table {
 }
 
 @media screen and (max-device-width: 1366px) and (orientation:landscape) {
+  .nav2 {
+    left: 0;
+  }
+   
   .tools-btns {
     display: none;
   }

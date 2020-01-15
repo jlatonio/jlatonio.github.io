@@ -1,72 +1,75 @@
 // Script for hover and to reset hover when content is scrolled in mobile view
-$('.nav2-btns').on('mousedown mouseover', function() {
- $(this).queue(function() {
+$('.nav2-btns').on('mousedown mouseover', function () {
+"use strict";
+ $(this).queue(function () {
   $('.nav2-btns').css({
    "-webkit-transition": "all .25s ease-out",
    "animation": "all .25s ease-out",
-   "transform":"scale(1.0)"
+   "transform" : "scale(1.0)"
   });
-  $('.nav2-btns-name-container p').css({"-webkit-transition":"all .25s ease-out","animation":"all .25s ease-out","color":"",});
+  $('.nav2-btns-name-container p').css({"-webkit-transition" : "all .25s ease-out", "animation" : "all .25s ease-out", "color" : ""});
   $(this).css({
    "-webkit-transition": "all .15 ease-out",
    "animation": "all .15s ease-out",
-   "transform":"scale(1.05)"
+   "transform" : "scale(1.05)"
   });
-  $(this).find('.nav2-btns-name-container p').css({"color":"#fff",});
+  $(this).find('.nav2-btns-name-container p').css({"color" : "#fff"});
   $(this).dequeue();
   return false;
  });
 });
-$('.nav2-image').on('mousedown mouseover touchstart', function() {
+$('.nav2-image').on('mousedown mouseover touchstart', function () {
+"use strict";
  $('.nav2-btns').css({
   "-webkit-transition": "all .25s ease-out",
   "animation": "all .25s ease-out",
-  "transform":"scale(1.0)"
+  "transform" : "scale(1.0)"
  });
- $('.nav2-btns-name-container p').css({"-webkit-transition":"all .25s ease-out","animation":"all .25s ease-out","color":"",});
+ $('.nav2-btns-name-container p').css({"-webkit-transition" : "all .25s ease-out", "animation" : "all .25s ease-out", "color" : ""});
 });
 
 // Sticky Navigation
-$(window).on('touchmove mousewheel touchstart wheel', function() {
+$(window).on('touchmove mousewheel touchstart wheel', function () {
  var windscroll = $(window).scrollTop() + 250;
+ "use strict";
  if (windscroll >= 0) {
-  $('.panel-sections').each(function(i) {
+  $('.panel-sections').each(function (i) {
    if ($(this).position().top <= windscroll - 0) {
     $('.nav2-btns').css({
      "-webkit-transition": "all .25s ease-out",
      "animation": "all .25s ease-out",
-     "transform":"scale(1.0)"
+     "transform" : "scale(1.0)"
     });
-    $('.nav2-btns-name-container p').css({"-webkit-transition":"all .25s ease-out","animation":"all .25s ease-out","color":"",});
+    $('.nav2-btns-name-container p').css({"-webkit-transition" : "all .25s ease-out", "animation" : "all .25s ease-out", "color" : ""});
     $('.nav2-btns').eq(i).css({
      "-webkit-transition": "all .15s ease-out",
      "animation": "all .15s ease-out",
-     "transform":"scale(1.05)"
+     "transform" : "scale(1.05)"
     });
-    $('.nav2-btns').find('.nav2-btns-name-container p').eq(i).css({"color":"#fff",});
+    $('.nav2-btns').find('.nav2-btns-name-container p').eq(i).css({"color" : "#fff"});
    }
    if ($(window).scrollTop() <= 50) {
     $('.nav2-btns').css({
      "-webkit-transition": "all .25s ease-out",
      "animation": "all .25s ease-out",
-     "transform":"scale(1.0)"
+     "transform" : "scale(1.0)"
     });
-    $('.nav2-btns-name-container p').css({"-webkit-transition":"all .25s ease-out","animation":"all .25s ease-out","color":"",});
+    $('.nav2-btns-name-container p').css({"-webkit-transition" : "all .25s ease-out", "animation" : "all .25s ease-out", "color" : ""});
    }
    if ($(window).scrollTop() + 50 + $(window).height() > $(document).height() - 0) {
     $('.nav2-btns').css({
      "-webkit-transition": "all .25s ease-out",
      "animation": "all .25s ease-out",
-     "transform":"scale(1.0)"
+     "transform" : "scale(1.0)"
     });
-    $('.nav2-btns-name-container p').css({"-webkit-transition":"all .25s ease-out","animation":"all .25s ease-out","color":"",});
+    $('.nav2-btns-name-container p').css({"-webkit-transition" : "all .25s ease-out", "animation" : "all .25s ease-out", "color" : ""});
    }
   });
  } else {
   $('.nav2-btns').css({
    "-webkit-transition": "all .25s ease-out",
    "animation": "all .25s ease-out",
-   "transform":"scale(1.0)"
+   "transform" : "scale(1.0)"
   });
  }
 }).scroll();
@@ -74,7 +77,7 @@ $(window).on('touchmove mousewheel touchstart wheel', function() {
 
 // Script for bottom navigation (for phones only)
 // Menu button
-$('.menu').on('touchstart', function() {
+$('.menu').on('mousedown touchstart', function () {
  $(".menu").css({
   "-webkit-transition": "all .1s ease-out",
   "animation": "all .1s ease-out",
@@ -86,7 +89,7 @@ $('.menu').on('touchstart', function() {
   "background-color": "transparent"
  });
  $('.nav2').toggleClass('nav2-open');
- $(this).delay(250).queue(function() {
+ $(this).delay(250).queue(function () {
   $(".menu").css({
    "-webkit-transition": "all .25s ease-out",
    "animation": "all .25s ease-out",
@@ -100,11 +103,11 @@ $('.menu').on('touchstart', function() {
 
 // View previous/next section based on position
 // Previous and Next buttons
-$('.js-next').on('touchstart', function() {
+$('.js-next').on('mousedown touchstart', function () {
  $('.nav2-open').removeClass('nav2-open');
  $('.nav2-open').addClass('nav2');
  var current;
- $(".js-current-panel").each(function(i, element) {
+ $(".js-current-panel").each(function (i, element) {
   current = $(element).offset().top;
   if (current - 10 > $(document).scrollTop()) {
    return false;
@@ -118,7 +121,7 @@ $('.js-next').on('touchstart', function() {
   "animation": "all .1s ease-out",
   "background-color": "rgba(110,110,110,.6)"
  });
- $(this).delay(250).queue(function() {
+ $(this).delay(250).queue(function () {
   $(".js-next").css({
    "-webkit-transition": "all .25s ease-out",
    "animation": "all .25s ease-out",
@@ -129,11 +132,11 @@ $('.js-next').on('touchstart', function() {
  });
 });
 
-$('.js-prev').on('touchstart', function() {
+$('.js-prev').on('touchstart', function () {
  $('.nav2-open').removeClass('nav2-open');
  $('.nav2-open').addClass('nav2');
  var current;
- $(".js-current-panel").each(function(i, element) {
+ $(".js-current-panel").each(function (i, element) {
   current = $(element).offset().top;
   if (current + 10 > $(document).scrollTop()) {
    if (i == 0) {
@@ -153,7 +156,7 @@ $('.js-prev').on('touchstart', function() {
   "animation": "all .1s ease-out",
   "background-color": "rgba(110,110,110,.5)"
  });
- $(this).delay(250).queue(function() {
+ $(this).delay(250).queue(function () {
   $(this).css({
    "-webkit-transition": "all .25s ease-out",
    "animation": "all .25s ease-out",
@@ -165,16 +168,16 @@ $('.js-prev').on('touchstart', function() {
 });
 
 // Script for sliding nav bar in phone view
-$('.nav2-btns').on('click', function() {
+$('.nav2-btns').on('click', function () {
  $('.nav2').toggleClass('nav2-open');
 });
-$('.nav2-image').on('click', function() {
+$('.nav2-image').on('click', function () {
  $('.nav2').toggleClass('nav2-open');
 });
 
 // Script for bar animation 
-$(window).load(function() {
- setTimeout(function() {
+$(window).load(function () {
+ setTimeout(function () {
   $(".animated-bar-critical").css({
    "animation": "animated-critical 1s ease-out",
    "-webkit-animation": "animated-critical 1s ease-out",
@@ -185,8 +188,8 @@ $(window).load(function() {
   });
  }, 125);
 });
-$(window).load(function() {
- setTimeout(function() {
+$(window).load(function () {
+ setTimeout(function () {
   $(".animated-bar-at-risk").css({
    "animation": "animated-at-risk 1s ease-out",
    "-webkit-animation": "animated-at-risk 1s ease-out",
@@ -197,8 +200,8 @@ $(window).load(function() {
   });
  }, 125);
 });
-$(window).load(function() {
- setTimeout(function() {
+$(window).load(function () {
+ setTimeout(function () {
   $(".animated-bar-on-track").css({
    "animation": "animated-on-track 1s ease-out",
    "-webkit-animation": "animated-on-track 1s ease-out",
@@ -209,8 +212,8 @@ $(window).load(function() {
   });
  }, 125);
 });
-$(window).load(function() {
- setTimeout(function() {
+$(window).load(function () {
+ setTimeout(function () {
   $(".animated-bar-completed").css({
    "animation": "animated-completed 1s ease-out",
    "-webkit-animation": "animated-completed 1s ease-out",
@@ -223,6 +226,6 @@ $(window).load(function() {
 });
 
 // Print
-$(".print-btn").click(function() {
+$(".print-btn").click(function () {
  window.print();
 });
