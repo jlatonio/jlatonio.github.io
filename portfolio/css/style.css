@@ -1339,15 +1339,13 @@ table {
     width: 268px;
   }
 }
-
+  
 /* To target desktops only, and to hide from all other mobile screens */
 
-@media screen and (max-device-width: 1366px) and (orientation:portrait) {
-
+@media screen and (min-device-width: 1366px) and (orientation:portrait) {
   .nav2 {
- 
+    left: calc(50% - 720px);
   }
-    
   .tools-btns {
     display: none;
   }
@@ -1365,11 +1363,10 @@ table {
   }
 }
 
-@media screen and (max-device-width: 1366px) and (orientation:landscape) {
+@media screen and (min-device-width: 1366px) and (orientation:landscape) {
   .nav2 {
- 
+     left: calc(50% - 720px);
   }
-   
   .tools-btns {
     display: none;
   }

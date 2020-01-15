@@ -78,6 +78,7 @@ $(window).on('touchmove mousewheel touchstart wheel', function () {
 // Script for bottom navigation (for phones only)
 // Menu button
 $('.menu').on('mousedown touchstart', function () {
+ $('.nav2').toggleClass('nav2-open');
  $(".menu").css({
   "-webkit-transition": "all .1s ease-out",
   "animation": "all .1s ease-out",
@@ -88,7 +89,6 @@ $('.menu').on('mousedown touchstart', function () {
   "animation": "all 0s ease-out",
   "background-color": "transparent"
  });
- $('.nav2').toggleClass('nav2-open');
  $(this).delay(250).queue(function () {
   $(".menu").css({
    "-webkit-transition": "all .25s ease-out",
@@ -96,8 +96,7 @@ $('.menu').on('mousedown touchstart', function () {
    "background-color": "transparent"
   });
   $(this).dequeue();
-  return false;
- });
+ });return false;
 });
 
 
