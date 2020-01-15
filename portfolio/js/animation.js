@@ -132,7 +132,7 @@ $('.js-next').on('mousedown touchstart', function () {
  });
 });
 
-$('.js-prev').on('touchstart', function () {
+$('.js-prev').on('mousedown touchstart', function () {
  $('.nav2-open').removeClass('nav2-open');
  $('.nav2-open').addClass('nav2');
  var current;

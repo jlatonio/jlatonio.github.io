@@ -1345,7 +1345,7 @@ table {
 @media screen and (max-device-width: 1366px) and (orientation:portrait) {
 
   .nav2 {
-    left: 0;
+ 
   }
     
   .tools-btns {
@@ -1367,7 +1367,7 @@ table {
 
 @media screen and (max-device-width: 1366px) and (orientation:landscape) {
   .nav2 {
-    left: 0;
+ 
   }
    
   .tools-btns {
