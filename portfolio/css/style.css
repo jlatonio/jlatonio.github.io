@@ -203,6 +203,7 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: right 0 top 0;
 }
 
 .content-bg {
@@ -441,9 +442,10 @@ table {
   width: 35px;
   height: 35px;
   top: 20px;
-  right: 20px;
+  right: 0;
   z-index: 2;
   position: absolute;
+  display:none;
 }
 
 #cancel-fullscreen {
@@ -453,9 +455,10 @@ table {
   width: 35px;
   height: 35px;
   top: 20px;
-  right: 20px;
+  right: 0;
   z-index: 2;
   position: absolute;
+  display:none;
 }
 
 
@@ -1381,5 +1384,16 @@ table {
 
   #cancel-fullscreen {
     display: none;
+  }
+}
+
+
+@media screen and (min-device-width: 1366px) {
+  #view-fullscreen {
+    display: block;
+  }
+
+  #cancel-fullscreen {
+    display: block;
   }
 }
