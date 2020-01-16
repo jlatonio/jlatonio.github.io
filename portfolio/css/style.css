@@ -201,7 +201,7 @@ section {
   background-image: url('../img/bg-priorities.png');
   background-color: #000;
   background-repeat: no-repeat;
-  background-size: 100% 100vh;
+  background-size: 100vw 100vh;
   background-attachment: fixed;
   background-position: right 0 top 0;
 }
