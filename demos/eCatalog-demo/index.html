@@ -28,6 +28,14 @@ body{
     height:160px;
 }
 
+.s7infopanelpopup .s7overlay .video{
+    width: calc(100% - 40px); height: 160px; padding: 20px; position:absolute; top:0; left:0; color:transparent;
+}
+
+.s7infopanelpopup .s7overlay video{
+    width: 100%; height: auto; top:0; left:0;
+}
+
 .s7ecatalogviewer .s7imagemapeffect .s7region{
     border: 5px solid red;
     background-color: rgb(255,0,0,.1);
@@ -53,7 +61,7 @@ body{
                 /*"initialFrame":"1",  /*  --> opens to default spread */
                 "mode": "region",  /*  --> converts hotspots to image maps */
                 "doubleclick":"none",
-			    "InfoPanelPopup.template": '<info><![CDATA[<video style="width: calc(100% - 40px); height: auto; padding: 20px; position:absolute; top:0; left:0;" controls=""><source src="http://sample.scene7.com/is/content/S7train/$4$" type="video/mp4"></video><iframe src="$1$" frameborder="0" allowtransparency="true" scrolling="no"></iframe><div><p>$2$</p>$3$</div>]]></info>', /*  --> response template)*/
+			    "InfoPanelPopup.template": '<info><![CDATA[<iframe src="$1$" frameborder="0" allowtransparency="true" scrolling="no"></iframe><div class="video">$4$</div><div><p>$2$</p>$3$</div>]]></info>', /*  --> response template)*/
                 "InfoPanelPopup.infoserverurl" : "https://s7info1.scene7.com/s7info/s7/S7learn/pluralist-demo/$1$" /*  --> infoserverurl*/
             },
         }).init();
