@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Adobe Scene7 Viewer eCatalog Example</title>
+    <link rel="stylesheet" href="demo.css" /> <!-- custom icons can be added by updating the css -->
+    <script type="text/javascript" language="javascript" src="http://smartimaging.scene7.com/s7viewers/html5/js/eCatalogViewer.js"></script>
+</head>
+<style>
+.s7ecatalogviewer .s7container {
+    height: calc(100vh) !important;
+}  
+ 
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+}  
+
+.s7ecatalogviewer .s7infopanelpopup .s7overlay {
+    height: auto !important;
+    padding: 20px !important;
+}
+
+.s7infopanelpopup .s7overlay iframe{
+    width: 100%;
+    height:160px;
+}
+
+.s7ecatalogviewer .s7imagemapeffect .s7region{
+    border: 5px solid red;
+    background-color: rgb(255,0,0,.1);
+}
+
+</style>
+<body>
+    <div id="ecatalog"></div>
+    <script type="text/javascript">
+        var s7ecatalog_div = new s7viewers.eCatalogViewer({
+            "containerId": "ecatalog",
+            "params": {
+                "asset": "S7learn/pluralist-demo",
+                "serverurl": "http://smartimaging.scene7.com/is/image/",
+                "contenturl": "http://smartimaging.scene7.com/skins/",
+                "config": "S7learn/demo_ecat_config",
+				"config2": "companypreset",
+                "emailurl": "http://smartimaging.scene7.com/s7/emailFriend",
+                "frametransition": "turn", /*  --> turn, slide or fade, or none)*/
+                /*"pageturnstyle":"0", /* Removes center line */
+				/*"showdefault":"0", /* Removes TOC */
+                /*"maptips":"1",  /*  --> adds rollover text to image maps */
+                /*"initialFrame":"1",  /*  --> opens to default spread */
+                "mode": "region",  /*  --> converts hotspots to image maps */
+                "doubleclick":"none",
+			    "InfoPanelPopup.template": '<info><![CDATA[<iframe src="$1$" frameborder="0" allowtransparency="true" scrolling="no"></iframe><div><p>$2$</p>$3$</div>]]></info>', /*  --> response template)*/
+                "InfoPanelPopup.infoserverurl" : "https://s7info1.scene7.com/s7info/s7/S7learn/pluralist-demo/$1$" /*  --> infoserverurl*/
+            },
+        }).init();
+    </script>
+</body>
+</html>
