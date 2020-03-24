@@ -20,6 +20,7 @@ body{
 .s7ecatalogviewer .s7infopanelpopup .s7overlay {
     height: auto !important;
     padding: 20px !important;
+    position: relative;
 }
 
 .s7infopanelpopup .s7overlay iframe{
@@ -52,7 +53,7 @@ body{
                 /*"initialFrame":"1",  /*  --> opens to default spread */
                 "mode": "region",  /*  --> converts hotspots to image maps */
                 "doubleclick":"none",
-			    "InfoPanelPopup.template": '<info><![CDATA[<iframe src="$1$" frameborder="0" allowtransparency="true" scrolling="no"></iframe><div><p>$2$</p>$3$</div>]]></info>', /*  --> response template)*/
+			    "InfoPanelPopup.template": '<info><![CDATA[<video style="width: calc(100% - 40px); height: 160px; padding: 20px; position:absolute; top:0; left:0;" controls=""><source src="http://sample.scene7.com/is/content/S7train/$4$.mp4" type="video/mp4"></video><iframe src="$1$" frameborder="0" allowtransparency="true" scrolling="no"></iframe><div><p>$2$</p>$3$</div>]]></info>', /*  --> response template)*/
                 "InfoPanelPopup.infoserverurl" : "https://s7info1.scene7.com/s7info/s7/S7learn/pluralist-demo/$1$" /*  --> infoserverurl*/
             },
         }).init();
