@@ -1,0 +1,157 @@
+.acs-hero-container {
+  padding: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.acs-hero-image {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+  z-index:0;
+}
+
+.acs-mainhero-padding {
+  padding: 0 0 40px 0;
+}
+
+.acs-hero-content {
+  margin: auto;
+}
+
+.acs-hero-content h1 {
+  color: #fff;
+  margin-bottom: 5px;
+  text-align: left;
+  position: relative;
+  z-index:0;
+}
+
+.hero-tagline p{
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 0;
+  position: relative;
+  z-index:0;
+}
+
+.hero-crumbs p{
+  padding-top: 10px;
+  padding-bottom: 0;
+  padding-left: 0;
+  position: relative;
+  z-index:0;
+}
+
+.acs-hero-content-image {
+  height: 100%;
+  width: 100%;
+}
+
+.acs-hero-content-text {
+  text-align: center;
+}
+
+.acs-hero-column-container {
+  padding: 20px 0 0 0;
+  display: block;
+}
+
+.acs-hero-container-each {
+  text-align: center;
+  position: relative;
+  padding: 0;
+}
+
+@media screen and (min-width: 701px) {
+  .acs-hero-container {
+    padding: 40px;
+  }
+
+.hero-tagline p{
+  padding-left: 40px;
+}
+
+.hero-crumbs p{
+  padding-left: 40px;
+}
+    
+  .acs-hero-container-each {
+    padding: 0 0 0 40px;
+  }
+}
+
+@media screen and (min-device-width: 701px) and (orientation:landscape) {
+  .acs-hero-container {
+    padding: 40px;
+  }
+
+.hero-tagline p{
+  padding-left: 40px;
+}
+
+.hero-crumbs p{
+  padding-left: 40px;
+}
+  .acs-hero-container-each {
+    padding: 0 0 0 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .acs-hero-container {
+    padding: 40px;
+  }
+    
+.hero-tagline p{
+  padding-left: 40px;
+}
+
+.hero-crumbs p{
+  padding-left: 40px;
+}
+    
+  .acs-hero-container-each {
+    padding: 0 0 0 40px;
+  }
+}
+
+@media screen and (min-device-width: 1025px) and (orientation:portrait) {
+  .acs-hero-container {
+    padding: 40px;
+  }
+
+.hero-tagline p{
+  padding-left: 40px;
+}
+
+.hero-crumbs p{
+  padding-left: 40px;
+}
+    
+  .acs-hero-container-each {
+    padding: 0 0 0 40px;
+  }
+}
+
+@media screen and (min-device-width: 1025px) and (orientation:landscape) {
+  .acs-hero-container {
+    padding: 40px 100px;
+  }
+    
+.hero-tagline p{
+  padding-left: 40px;
+}
+
+.hero-crumbs p{
+  padding-left: 40px;
+}
+    
+  .acs-hero-container-each {
+    padding: 0 0 0 40px;
+  }
+}
+ 

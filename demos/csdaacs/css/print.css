@@ -1,0 +1,239 @@
+/* Print*/
+
+#view-print {
+  display: block;
+  position: relative;
+}
+
+#view-print::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -24px;
+  top: 50%;
+  margin-top: -8px;
+  padding-top: 0;
+  background-image: url('../images/print-icon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  opacity: .4;
+}
+
+@media print {
+
+@page {
+    margin: 0mm !important;
+    padding: 0 !important;
+  /* this affects the margin in the printer settings */
+    page-break-inside: always !important;
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+    overflow-y: visible !important;
+    display: inline-block !important;
+    background: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  html, body {
+    margin: 0mm !important;
+    padding: 0 !important;
+  /* this affects the margin on the html before sending to printer */
+    page-break-inside: always;
+    page-break-before: avoid;
+    page-break-after: avoid;
+    overflow-y: visible;
+    display: inline-block;
+    background: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: auto !important;
+  }
+
+  .acs-main-content {
+    display: block;
+    overflow-y: visible;
+    box-shadow: none !important;
+  }
+
+  .acs-header, .column-container-breadcrumbs, .column-container-select, .nomination-entry-share-container {
+    display: none !important;
+  }
+
+  .percent-85 {
+    width: 75%;
+  }
+
+  .percent-85 {
+    width: 75%;
+  }
+
+  .percent-75 {
+    width: 75%;
+  }
+
+  .percent-70 {
+    width: 70%;
+  }
+
+  .percent-65 {
+    width: 65%;
+  }
+
+  .percent-60 {
+    width: 60%;
+  }
+
+  .percent-55 {
+    width: 55%;
+  }
+
+  .percent-50 {
+    width: 50%;
+  }
+
+  .percent-45 {
+    width: 45%;
+  }
+
+  .percent-40 {
+    width: 40%;
+  }
+
+  .percent-35 {
+    width: 35%;
+  }
+
+  .percent-33 {
+    width: 33.33%;
+  }
+
+  .percent-30 {
+    width: 30%;
+  }
+
+  .percent-25 {
+    width: 25%;
+  }
+
+  .percent-20 {
+    width: 20%;
+  }
+
+  .percent-15 {
+    width: 15%;
+  }
+
+  .percent-10 {
+    width: 10%;
+  }
+
+  .percent-05 {
+    width: 5%;
+  }
+
+  .percent-fixed-70-100 {
+    width: calc(70% - 100px);
+  }
+
+  .percent-fixed-70-120 {
+    width: calc(70% - 120px);
+  }
+
+  .percent-fixed-75-100 {
+    width: calc(75% - 100px);
+  }
+
+  .percent-fixed-180 {
+    width: calc(100% - 180px);
+  }
+
+  .percent-fixed-220 {
+    width: calc(100% - 220px);
+  }
+
+  .percent-fixed-280 {
+    width: calc(100% - 280px);
+  }
+
+  .fixed-240 {
+    width: 240px;
+  }
+
+  .fixed-180 {
+    width: 160px;
+  }
+
+  .rule-h {
+    margin: 40px 0;
+  }
+
+  .rule-v {
+    margin-left: 40px;
+  }
+
+  .margin-top {
+    margin-top: 40px;
+  }
+
+  .margin-left-0 {
+    margin-left: 20px;
+  }
+
+  .margin-bottom {
+    margin-bottom: 40px;
+  }
+
+  .margin-bottom-0 {
+    margin-bottom: 20px;
+  }
+
+  .padding-left-inner {
+    padding-left: 20px;
+  }
+
+  .padding-right-inner {
+    padding-right: 20px;
+  }
+
+  .padding-left-inner-totals {
+    padding-left: 50px;
+  }
+
+  .padding-right-inner-totals {
+    padding-right: 50px;
+  }
+
+  .padding-top-right {
+  }
+
+  .margin-bottom-20-mobile {
+    margin-bottom: 0;
+  }
+
+  .padding-all {
+    padding: 40px;
+  }
+
+  .padding-right {
+    padding-right: 40px;
+  }
+
+  .acs-column-container {
+    display: flex;
+  }
+
+  .acs-hero-container {
+    background-size: 100% auto;
+  }
+
+  .acs-column-container {
+    padding: 40px 100px 0 100px;
+  }
+
+  .acs-column-container:last-child {
+    padding: 40px 100px;
+  }
+}

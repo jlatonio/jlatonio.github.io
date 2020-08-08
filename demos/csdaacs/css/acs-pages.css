@@ -1,0 +1,134 @@
+.acs-pages-container {
+  margin: 0;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: left;
+  padding: 10px 10px;
+}
+
+.acs-wrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.acs-pages-item {
+  width: 100%;
+  min-width: 100%;
+  height: 300px;
+  padding: 10px;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.acs-pages-item-image {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.acs-pages-item-contents {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.acs-pages-item-title {
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0,0,0,.8);
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.acs-pages-item-title:hover {
+  height: 35%;
+  color: #000;
+  background-color: rgb(255,255,255,.97);
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+@media screen and (min-width: 701px) {
+  .acs-pages-item {
+    width: 33.33%;
+    min-width: 220px;
+    height: 300px;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .acs-pages-container {
+    padding: 10px 30px;
+  }
+
+  .acs-pages-item {
+    width: 33.33%;
+    min-width: 220px;
+    height: 300px;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-device-width: 1024px) and (orientation:portrait) {
+  .acs-pages-container {
+    padding: 20px 20px;
+  }
+
+  .acs-pages-item {
+    width: 33.33%;
+    min-width: 200px;
+    height: 300px;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-device-width: 1366px) and (orientation:landscape) {
+  .acs-pages-container {
+    padding: 10px 80px;
+  }
+
+  .acs-pages-item {
+    width: 20%;
+    min-width: 200px;
+    height: 300px;
+    padding: 10px;
+  }
+}
+ 

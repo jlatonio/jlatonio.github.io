@@ -1,0 +1,137 @@
+.acs-header {
+  display: -webkit-flex;
+ /* Safari */
+  -webkit-flex-wrap: wrap;
+ /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 16px 20px;
+  color: #fff;
+}
+
+.acs-header-column-1 {
+  display: flex;
+  align-items: left;
+}
+
+.acs-header img {
+  width: 100px;
+  margin: auto;
+}
+
+.acs-header-column-2 {
+  align-items: right;
+  display: none;
+  justify-content: right;
+  flex-direction: row;
+}
+
+.acs-header-column-2-inner{
+    padding: 0 15px 0 10px;
+    width: auto;
+}
+
+.acs-header-column-2 p {
+  font-size: 14px;
+}
+
+.acs-header-name {
+  display: block;
+}
+
+.acs-header-separator {
+  display: none;
+}
+
+
+.acs-column-container-header-each {
+  padding: 10px 40px 10px 0;
+  display: inline-block;
+  position: relative;
+}
+
+.acs-column-container-header-each::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 10px;
+  top: 10px;
+  padding-top: 0;
+  background-image: url('../images/dropdown-arrow.svg');
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center center;
+  -ms-transform: rotate(-90deg);
+ /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+ /* Safari 3-8 */
+  transform: rotate(-90deg);
+  opacity: .4;
+}
+
+.acs-column-container-header-each:last-child:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 10px;
+  padding-top: 0;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center center;
+  -ms-transform: rotate(-90deg);
+ /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+ /* Safari 3-8 */
+  transform: rotate(-90deg);
+  opacity: .4;
+}
+
+.acs-column-container-header-feature {
+  padding: 0 26px 0 40px;
+  display: inline-block;
+  position: relative;
+}
+
+
+@media screen and (min-width: 701px) {
+  .acs-header-name {
+    display: inline;
+  }
+
+  .acs-header-separator {
+    display: inline;
+  }
+
+  .acs-header-column-1 {
+    display: flex;
+    align-items: left;
+    margin-bottom: 0;
+  }
+
+  .acs-header img {
+    width: 100px;
+    margin: 0;
+  }
+
+  .acs-header-column-2 {
+    align-items: right;
+    display: flex;
+    justify-content: right;
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+
+  .acs-footer {
+    padding: 40px 100px 60px 100px;
+  }
+
+  .acs-header {
+    padding: 16px 100px;
+  }
+}

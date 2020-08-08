@@ -1,0 +1,29 @@
+.acs-column-container {
+  display: block;
+  padding:0;
+}
+
+.acs-column-container-each {
+  padding: 20px;
+  text-align: center;
+  position:relative;
+}
+
+@media screen and (min-width: 701px) {
+  .acs-column-container {
+    display: flex;
+  }
+  .acs-column-container-each {
+  padding: 40px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .acs-column-container {
+    padding: 40px 100px 0 100px;
+  }
+  
+  .acs-column-container:last-child{
+    padding: 40px 100px;
+  }
+}
