@@ -11,6 +11,11 @@
 
 @media screen and (min-width: 701px) {
   .acs-column-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
     display: flex;
   }
   .acs-column-container-each {
