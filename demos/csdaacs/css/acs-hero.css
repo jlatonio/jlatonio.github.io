@@ -44,10 +44,12 @@
 
 .stick {
   position: fixed;
-  width: calc(100vw - 40px);
   top: 0;
+  left: 0;
+  width: 100%;
   background-color: #333;
   color: #fff;
+  padding-left: 20px;
   padding-bottom: 20px;
   outline: 2px solid #333;
   outline-offset: -1px;
@@ -56,7 +58,6 @@
 .hero-crumbs {
   padding-top: 20px;
   z-index: 10000;
-  width: calc(100vw - 40px);
 }
 
 .acs-hero-content-image {
@@ -88,9 +89,12 @@
     padding-left: 40px;
   }
 
-  .hero-crumbs {
+  .stick {
     padding-left: 40px;
-    width: calc(100vw - 80px);
+  }
+
+  .hero-crumbs p {
+    padding-left: 40px;
   }
 
   .acs-hero-container-each {
@@ -107,7 +111,11 @@
     padding-left: 40px;
   }
 
-  .hero-crumbs {
+  .stick {
+    padding-left: 40px;
+  }
+
+  .hero-crumbs p {
     padding-left: 40px;
   }
 
@@ -125,9 +133,12 @@
     padding-left: 40px;
   }
 
-  .hero-crumbs {
+  .stick {
     padding-left: 40px;
-    width: calc(100vw - 215px);
+  }
+
+  .hero-crumbs p {
+    padding-left: 40px;
   }
 
   .acs-hero-container-each {
@@ -144,7 +155,11 @@
     padding-left: 40px;
   }
 
-  .hero-crumbs {
+  .stick {
+    padding-left: 140px;
+  }
+
+  .hero-crumbs p {
     padding-left: 40px;
   }
 
@@ -162,7 +177,11 @@
     padding-left: 40px;
   }
 
-  .hero-crumbs {
+  .stick {
+    padding-left: 100px;
+  }
+
+  .hero-crumbs p {
     padding-left: 40px;
   }
 
