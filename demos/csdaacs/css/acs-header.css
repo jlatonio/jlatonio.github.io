@@ -1,9 +1,11 @@
 .acs-header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
   display: -webkit-flex;
- /* Safari */
-  -webkit-flex-wrap: wrap;
- /* Safari 6.1+ */
   display: flex;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
   padding: 16px 20px;
@@ -11,6 +13,11 @@
 }
 
 .acs-header-column-1 {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
   display: flex;
   align-items: left;
 }
@@ -21,6 +28,12 @@
 }
 
 .acs-header-column-2 {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
   align-items: right;
   display: none;
   justify-content: right;

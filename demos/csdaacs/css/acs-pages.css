@@ -12,6 +12,12 @@
 }
 
 .acs-wrap {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-transition: all .3s ease-out;
@@ -69,6 +75,11 @@
   bottom: 0;
   left: 0;
   color: #fff;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
   display: flex;
   justify-content: center;
   align-items: center;
