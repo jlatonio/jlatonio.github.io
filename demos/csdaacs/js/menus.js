@@ -95,25 +95,45 @@ $(".custom-dropdown").on("click", function () {
 });
 
 // directs to specific pages
-$(".custom-dropdown-menu").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
+$(".acs-market-menu").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
 	// changes the form"s action link on specific choices
-	if ($(this).closest("form").find(".custom-dropdown-menu-left").val() === 'Americas') {
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'Americas') {
 		window.location.href = "americas.html";
 		return false;
 	}
-	if ($(this).closest("form").find(".custom-dropdown-menu-left").val() === 'APAC') {
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'APAC') {
 		window.location.href = "emea.html";
 		return false;
 	}
-	if ($(this).closest("form").find(".custom-dropdown-menu-left").val() === 'EMEA') {
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'EMEA') {
 		window.location.href = "emea.html";
 		return false;
 	}
-	if ($(this).closest("form").find(".custom-dropdown-menu-left").val() === 'Japan') {
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'Japan') {
 		window.location.href = "japan.html";
 		return false;
 	}
-	if ($(this).closest("form").find(".custom-dropdown-menu-left").val() === 'Latam') {
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'Latam') {
+		window.location.href = "latam.html";
+		return false;
+	}
+});
+
+$(".acs-report-menu").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
+	// changes the form"s action link on specific choices
+	if ($(this).closest("form").find(".acs-report-menu").val() === 'Americas Consulting') {
+		window.location.href = "americas_consulting.html";
+		return false;
+	}
+	if ($(this).closest("form").find(".acs-report-menu").val() === 'Americas Reports') {
+		window.location.href = "emea.html";
+		return false;
+	}
+	if ($(this).closest("form").find(".acs-report-menu").val() === 'EMEA Reports') {
+		window.location.href = "emea.html";
+		return false;
+	}
+	if ($(this).closest("form").find(".acs-report-menu").val() === 'Launch Foundation Services') {
 		window.location.href = "latam.html";
 		return false;
 	}

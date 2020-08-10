@@ -9,6 +9,7 @@
   display: flex;
   justify-content: left;
   padding: 10px 10px;
+  min-height: 300px;
 }
 
 .acs-wrap {
