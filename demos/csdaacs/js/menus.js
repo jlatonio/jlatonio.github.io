@@ -423,3 +423,9 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
 		"transition": "all .01s ease-out"
 	});
 });
+
+// for search in the header
+function goToPage() {
+	var page = $('.acs-header-search').val();
+	window.location = "https://agsdashboards.corp.adobe.com/content/adobe-csd/search.html?dashboard-search=" + page;
+}
