@@ -40,6 +40,7 @@
 
 .sticky {
   position: relative;
+  padding-top: 0;
 }
 
 .stick {
@@ -52,15 +53,15 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .hero-crumbs {
-  padding-top: 20px;
   z-index: 10000;
 }
 
-.hero-crumbs-container a{
-text-decoration: none;
+.hero-crumbs-container a {
+  text-decoration: none;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -70,16 +71,15 @@ text-decoration: none;
   justify-content: center;
   align-items: center;
   text-align: center;
-    color: #fff;
+  color: #fff;
 }
 
-.hero-crumbs-container a:hover{
-text-decoration: underline;
+.hero-crumbs-container a:hover {
+  text-decoration: underline;
 }
 
-
-.hero-crumbs-container a:last-child{
-text-decoration: none;
+.hero-crumbs-container a:last-child {
+  text-decoration: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -90,17 +90,14 @@ text-decoration: none;
   color: #e6de8f;
 }
 
-
-
-
-.hero-crumbs img{
-width: 15px;
-height: auto;
-margin: 0 10px;
-transform: rotate(-90deg);
+.hero-crumbs img {
+  width: 15px;
+  height: auto;
+  margin: 0 10px;
+  transform: rotate(-90deg);
 }
 
-  .hero-crumbs-container{
+.hero-crumbs-container {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -109,8 +106,8 @@ transform: rotate(-90deg);
   display: flex;
   justify-content: left;
   align-items: left;
-    padding-left: 0;
-  }
+  padding-left: 0;
+}
 
 .acs-hero-content-image {
   height: 100%;
@@ -141,11 +138,15 @@ transform: rotate(-90deg);
     padding-left: 40px;
   }
 
+  .sticky {
+    padding-top: 20px;
+  }
+
   .stick {
     padding-left: 40px;
   }
 
-  .hero-crumbs-container{
+  .hero-crumbs-container {
     padding-left: 40px;
   }
 
@@ -167,7 +168,7 @@ transform: rotate(-90deg);
     padding-left: 40px;
   }
 
-  .hero-crumbs-container{
+  .hero-crumbs-container {
     padding-left: 40px;
   }
 
@@ -189,7 +190,7 @@ transform: rotate(-90deg);
     padding-left: 40px;
   }
 
-   .hero-crumbs-container{
+  .hero-crumbs-container {
     padding-left: 40px;
   }
 
@@ -211,7 +212,7 @@ transform: rotate(-90deg);
     padding-left: 140px;
   }
 
-  .hero-crumbs-container{
+  .hero-crumbs-container {
     padding-left: 40px;
   }
 
@@ -233,7 +234,7 @@ transform: rotate(-90deg);
     padding-left: 100px;
   }
 
-  .hero-crumbs-container{
+  .hero-crumbs-container {
     padding-left: 40px;
   }
 
