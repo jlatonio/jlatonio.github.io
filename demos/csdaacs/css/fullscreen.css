@@ -3,6 +3,14 @@
   position: relative;
 }
 
+#view-fullscreen:hover {
+  text-decoration: underline;
+}
+
+#cancel-fullscreen:hover {
+  text-decoration: underline;
+}
+
 #view-fullscreen::after {
   content: "";
   position: absolute;

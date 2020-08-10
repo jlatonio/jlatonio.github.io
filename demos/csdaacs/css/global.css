@@ -120,12 +120,11 @@ li p {
 
 a {
   color: inherit;
-  text-decoration: underline;
+
 }
 
 a:hover {
   cursor: pointer;
-  text-decoration: none;
 }
 
 :focus {
