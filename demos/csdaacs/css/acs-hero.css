@@ -50,6 +50,7 @@
   background-color: #333;
   color: #fff;
   padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 20px;
 }
 
@@ -57,6 +58,59 @@
   padding-top: 20px;
   z-index: 10000;
 }
+
+.hero-crumbs-container a{
+text-decoration: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+    color: #fff;
+}
+
+.hero-crumbs-container a:hover{
+text-decoration: underline;
+}
+
+
+.hero-crumbs-container a:last-child{
+text-decoration: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: initial;
+  color: #e6de8f;
+}
+
+
+
+
+.hero-crumbs img{
+width: 15px;
+height: auto;
+margin: 0 10px;
+transform: rotate(-90deg);
+}
+
+  .hero-crumbs-container{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+    padding-left: 0;
+  }
 
 .acs-hero-content-image {
   height: 100%;
@@ -91,7 +145,7 @@
     padding-left: 40px;
   }
 
-  .hero-crumbs p {
+  .hero-crumbs-container{
     padding-left: 40px;
   }
 
@@ -113,7 +167,7 @@
     padding-left: 40px;
   }
 
-  .hero-crumbs p {
+  .hero-crumbs-container{
     padding-left: 40px;
   }
 
@@ -135,7 +189,7 @@
     padding-left: 40px;
   }
 
-  .hero-crumbs p {
+   .hero-crumbs-container{
     padding-left: 40px;
   }
 
@@ -157,7 +211,7 @@
     padding-left: 140px;
   }
 
-  .hero-crumbs p {
+  .hero-crumbs-container{
     padding-left: 40px;
   }
 
@@ -179,7 +233,7 @@
     padding-left: 100px;
   }
 
-  .hero-crumbs p {
+  .hero-crumbs-container{
     padding-left: 40px;
   }
 
