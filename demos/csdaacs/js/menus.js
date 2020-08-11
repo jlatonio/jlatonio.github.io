@@ -285,7 +285,7 @@ $(function () {
 				});
 				return false;
 			} else {
-				$(this).attr("placeholder", "Search Email ID").css({
+				$(this).attr("placeholder", "Search Account").css({
 					"background": ""
 				});  
 			}

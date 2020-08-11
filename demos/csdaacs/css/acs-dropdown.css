@@ -52,6 +52,11 @@ input::placeholder,textarea::placeholder {
   opacity: 1;
 }
 
+.ui-menu-item{
+  z-index: 99 !important;
+}
+
+
 .store-button-container{
   text-align:left;
   display: -webkit-box;
@@ -165,6 +170,7 @@ input::placeholder,textarea::placeholder {
   opacity: 0;
   position: absolute;
   right: 10px;
+  z-index: 0;
 }
 
 [type="date"]::-webkit-clear-button {
@@ -205,6 +211,7 @@ input::-webkit-clear-button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  z-index: 0;
 }
 
 .custom-dropdown-arrow-toggle,.custom-dropdown-arrow-open,.custom-dropdown-arrow-close {
@@ -213,6 +220,7 @@ input::-webkit-clear-button {
   right: 10px;
   width: 36px;
   height: 36px;
+   z-index: 0;
   -webkit-transition: all .25s ease-out;
   -moz-transition: all .25s ease-out;
   -o-transition: all .25s ease-out;
@@ -305,6 +313,7 @@ input::-webkit-clear-button {
   top: 19px;
   width: 70px;
   height: 45px;
+  z-index: 0;
 }
 
 .custom-dropdown-slots .custom-dropdown:hover:after {

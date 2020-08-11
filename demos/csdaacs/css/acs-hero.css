@@ -60,10 +60,6 @@
   padding-top: 20px;
 }
 
-.hero-crumbs {
-  z-index: 10000;
-}
-
 .hero-crumbs-container a {
   text-decoration: none;
   display: -webkit-box;
