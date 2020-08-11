@@ -276,7 +276,7 @@ $(function () {
 	];
 	$(".custom-search").autocomplete({
 		source:dataSrc,
-		minLength: 1,
+		minLength: 3,
 		response: function (event, ui) {
 			// clears field if name is misspelled or invalid
 			if (ui.content.length === 0) {

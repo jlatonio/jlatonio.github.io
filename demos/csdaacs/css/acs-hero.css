@@ -1,5 +1,5 @@
 .acs-hero-container {
-  padding: 20px;
+  padding: 40px 20px;
   width: 100%;
   position: relative;
 }
@@ -15,8 +15,13 @@
 }
 
 .acs-mainhero-padding {
-  padding: 0 0 40px 0;
+  padding: 0 0 30px 0;
 }
+
+.acs-mainhero-report-padding{
+  padding: 0 0 0 0;
+}
+
 
 .acs-hero-content {
   margin: auto;
@@ -24,14 +29,13 @@
 
 .acs-hero-content h1 {
   color: #fff;
-  margin-bottom: 5px;
   text-align: left;
   position: relative;
   z-index: 0;
 }
 
 .hero-tagline p {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 20px;
   padding-left: 0;
   position: relative;
@@ -40,7 +44,7 @@
 
 .sticky {
   position: relative;
-  padding-top: 0;
+  padding-top: 20px;
 }
 
 .stick {
@@ -119,7 +123,7 @@
 }
 
 .acs-hero-column-container {
-  padding: 20px 0 0 0;
+  padding: 25px 0 0 0;
   display: block;
 }
 
@@ -138,10 +142,6 @@
     padding-left: 40px;
   }
 
-  .sticky {
-    padding-top: 20px;
-  }
-
   .stick {
     padding-left: 40px;
   }
@@ -155,7 +155,7 @@
   }
 }
 
-@media screen and (min-device-width: 701px) and (orientation:landscape) {
+@media screen and (min-width: 1025px) {
   .acs-hero-container {
     padding: 40px;
   }
@@ -177,51 +177,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .acs-hero-container {
-    padding: 40px;
-  }
-
-  .hero-tagline p {
-    padding-left: 40px;
-  }
-
-  .stick {
-    padding-left: 40px;
-  }
-
-  .hero-crumbs-container {
-    padding-left: 40px;
-  }
-
-  .acs-hero-container-each {
-    padding: 0 0 0 40px;
-  }
-}
-
-@media screen and (min-device-width: 1025px) and (orientation:portrait) {
-  .acs-hero-container {
-    padding: 40px;
-  }
-
-  .hero-tagline p {
-    padding-left: 40px;
-  }
-
-  .stick {
-    padding-left: 140px;
-  }
-
-  .hero-crumbs-container {
-    padding-left: 40px;
-  }
-
-  .acs-hero-container-each {
-    padding: 0 0 0 40px;
-  }
-}
-
-@media screen and (min-device-width: 1025px) and (orientation:landscape) {
+@media only screen and (min-device-width: 1366px) and (orientation:landscape) {
   .acs-hero-container {
     padding: 40px 100px;
   }

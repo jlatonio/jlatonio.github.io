@@ -45,7 +45,7 @@ footer {
 }
 
 h1 {
-  font-size: 37px;
+  font-size: 38px;
   line-height: 1;
   font-family: "AdobeClean-Regular";
 }
@@ -609,7 +609,7 @@ input::-webkit-clear-button {
   }
 }
 
-@media screen and (max-device-width: 1366px) and (orientation:landscape) {
+@media screen and (min-device-width: 1366px) and (orientation:landscape) {
   .margin-left-0 {
     margin-left: 40px;
   }
