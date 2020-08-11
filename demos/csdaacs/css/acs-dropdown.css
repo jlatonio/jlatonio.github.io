@@ -49,6 +49,7 @@ input::placeholder,textarea::placeholder {
 
 ::placeholder {
   color: #fff;
+  opacity: 1;
 }
 
 .store-button-container{
