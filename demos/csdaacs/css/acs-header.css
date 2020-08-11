@@ -77,6 +77,7 @@
     background-color: #333;
     padding: 5px 10px;
     width: 200px;
+    height:32px;
 }
 
 .acs-header-search-go{
@@ -88,6 +89,7 @@
     border-radius: 0 5px 5px 0;
     background-color: #333;
     color:#bbb;
+    height:32px;
 }
 
 .acs-column-container-header-feature input[type=button]:hover {
