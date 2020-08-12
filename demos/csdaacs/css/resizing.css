@@ -1,7 +1,7 @@
 /* common margin and padding resizing for responsive design */
 
 .view-height {
-  height: 600px;
+  height: 100vh;
 }
 
 .margin-top {
