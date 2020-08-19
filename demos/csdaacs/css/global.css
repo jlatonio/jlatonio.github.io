@@ -305,10 +305,14 @@ thead {
 }
 
 .dark-bg {
-  background-color: #333;
+  background-color: #1e1e1e;
 }
 
 .dark-2-bg {
+  background-color: #333;
+}
+
+.dark-3-bg {
   background-color: #a3a3a3;
 }
 
