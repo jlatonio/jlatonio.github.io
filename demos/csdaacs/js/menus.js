@@ -263,20 +263,26 @@ $(".custom-select-search").on("click", function () {
 	$(this).closest(".custom-dropdown-outer").find("input[type='text']").focus();
 	return false;
 });
-    
+
 // enables autocomplete dropdown search
 $(function () {
 	"use strict";
-	var dataSrc = [
-	"Keyword A", 
-	"Keyword B", 
-	"Keyword C", 
-	"Keyword D", 
-	"Keyword E"
-	];
+	var dataSrc = [{
+			value: "https://agsdashboards-author.corp.adobe.com/content/emea-customer-dashboards/english/central-europe/automotive/msp-demo-template/demo-new.html?wcmmode=disabled",
+			label: "AAA"
+	}, {
+			value: "https://agsdashboards-author.corp.adobe.com/content/adobe-csd/retail/ashley_homestores_lt.html?wcmmode=disabled",
+			label: "Ashley Homestores"
+	},];
+              
 	$(".custom-search").autocomplete({
 		source:dataSrc,
 		minLength: 3,
+        select: function( event, ui ) { 
+            window.location.href = ui.item.value;
+            // if opening a new window is required, use this
+            // window.open(ui.item.value, "_blank");
+        },
 		response: function (event, ui) {
 			// clears field if name is misspelled or invalid
 			if (ui.content.length === 0) {
@@ -302,17 +308,17 @@ $(function () {
 	};
 });
 
-// resets placeholder text on focus
-$(".custom-search").on("focus", function () {
-	"use strict";
-	var input_place_holder = $(this).attr("data-placeholder");
-	$(this).attr("placeholder", input_place_holder).css({
-		"background": ""
-	});
-	$(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
-	$(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
-	return false;
-});
+// resets placeholder text on focus. This is not needed if quick links are applied to Search
+// $(".custom-search").on("focus", function () {
+// 	"use strict";
+// 	var input_place_holder = $(this).attr("data-placeholder");
+// 	$(this).attr("placeholder", input_place_holder).css({
+// 		"background": ""
+// 	});
+// 	$(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+// 	$(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
+// 	return false;
+// });
 
 // resets required fields to a white bg
 $("input[type='text'], textarea").on("keydown change", function () {
@@ -425,7 +431,17 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
 });
 
 // for search in the header
-function goToPage() {
-	var page = $('.acs-header-search').val();
-	window.location = "https://agsdashboards.corp.adobe.com/content/adobe-csd/search.html?dashboard-search=" + page;
+function goToPage() { 
+	var page = $(".acs-header-search").val();
+	window.open("https://agsdashboards.corp.adobe.com/content/adobe-csd/search.html?dashboard-search=*" + page, "_blank"); 
+} 
+
+// clicking enter for search in the header 
+function AddKeyPress(e) { 
+	e = e || window.event;
+	if (e.keyCode == 13) {
+		document.getElementById('acs-header-search-go').click();
+		return false;
+	}
+	return true;
 }
