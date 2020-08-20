@@ -164,7 +164,7 @@
   opacity: .4;
 }
 
-@media screen and (min-width: 701px) {
+@media screen and (min-width: 701px) { 
   .acs-header-name {
     display: inline;
   }
@@ -198,12 +198,15 @@
 }
 
 @media screen and (min-width: 1025px) {
-
+  .acs-header {
+    padding: 16px 40px;
+  }
+    
   .acs-footer {
     padding: 40px 100px 60px 100px;
   }
 
   .acs-header {
-    padding: 16px 100px;
+    padding: 16px 40px;
   }
 }

@@ -154,7 +154,7 @@
 
 @media screen and (min-device-width: 1366px) and (orientation:landscape) {
   .acs-pages-container {
-    padding: 30px 90px;
+    padding: 30px 30px;
   }
 
   .acs-pages-item {
