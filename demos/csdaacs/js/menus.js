@@ -433,7 +433,7 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
 // for search in the header
 function goToPage() { 
 	var page = $(".acs-header-search").val();
-	window.open("https://agsdashboards.corp.adobe.com/content/adobe-csd/search.html?dashboard-search=*" + page, "_blank"); 
+	window.open("https://agsdashboards.corp.adobe.com/content/adobe-csd/search.html?dashboard-search=" + page + "*", "_blank"); 
 } 
 
 // clicking enter for search in the header 
