@@ -3,6 +3,7 @@
 #view-print {
   display: block;
   position: relative;
+  margin-right: 25px;
 }
 
 #view-print::after {
@@ -235,5 +236,36 @@
 
   .acs-column-container:last-child {
     padding: 40px 100px;
+  }
+    
+  .acs-pages-container {
+    padding: 30px 30px;
+  }
+
+  .acs-pages-item {
+    width: 33.33%;
+    min-width: 220px;
+    height: 250px;
+    padding: 10px;
+  }
+    
+  .acs-hero-container {
+    padding: 40px;
+  }
+
+  .hero-tagline p {
+    padding-left: 40px;
+  }
+
+  .stick {
+    padding-left: 40px;
+  }
+
+  .hero-crumbs-container {
+    padding-left: 40px;
+  }
+
+  .acs-hero-container-each {
+    padding: 0 0 0 40px;
   }
 }
