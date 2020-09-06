@@ -18,10 +18,9 @@
   padding: 0 0 30px 0;
 }
 
-.acs-mainhero-report-padding{
+.acs-mainhero-report-padding {
   padding: 0 0 0 0;
 }
-
 
 .acs-hero-content {
   margin: auto;
@@ -50,7 +49,8 @@
 .stick {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   background-color: #333;
   color: #fff;
@@ -58,7 +58,12 @@
   padding-right: 20px;
   padding-bottom: 20px;
   padding-top: 20px;
-  z-index:99;
+  z-index: 99;
+  max-width: 1440px;
+}
+
+.hero-crumbs {
+  text-align: center;
 }
 
 .hero-crumbs-container a {
@@ -109,6 +114,7 @@
   align-items: left;
   padding-left: 0;
   height: 25px;
+  max-width: 1366px;
 }
 
 .acs-hero-content-image {
@@ -142,10 +148,12 @@
 
   .stick {
     padding-left: 40px;
+    padding-right: 40px;
   }
 
   .hero-crumbs-container {
     padding-left: 40px;
+    padding-right: 40px;
   }
 
   .acs-hero-container-each {
@@ -158,15 +166,12 @@
     padding: 40px;
   }
 
-  .hero-tagline p {
-    padding-left: 40px;
-  }
-
   .stick {
-    padding-left: 40px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
-  .hero-crumbs-container {
+  .hero-tagline p {
     padding-left: 40px;
   }
 
@@ -181,14 +186,6 @@
   }
 
   .hero-tagline p {
-    padding-left: 40px;
-  }
-
-  .stick {
-    padding-left: 100px;
-  }
-
-  .hero-crumbs-container {
     padding-left: 40px;
   }
 
