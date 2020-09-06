@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+		<title>ACS Customer Dashboards</title>
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/fonts.css" />
+		<link rel="stylesheet" href="css/resizing.css" />
+		<link rel="stylesheet" href="css/acs-pages.css" />
+		<link rel="stylesheet" href="css/acs-header.css" />
+		<link rel="stylesheet" href="css/acs-hero.css" />
+		<link rel="stylesheet" href="css/print.css" />
+		<link rel="stylesheet" href="css/acs-slider.css" />	
+		<link rel="stylesheet" href="css/acs-columns.css" />
+		<link rel="stylesheet" href="css/acs-dropdown.css" />
+		<link rel="stylesheet" href="css/acs-footer.css" />
+		<link rel="stylesheet" href="css/fullscreen.css" />
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<script src="js/jquery-1.12.4.js"></script>
+		<script src="js/jquery-ui.js"></script>
+        <script src="js/jquery.lazy.js"></script>  
+	</head>
+<body>
+	<div class="page">
+		<!-- header -->
+            <header class="acs-header dark-bg">
+                <div class="acs-header-column-1 percent-30">
+                    <a href="index.html">
+                        <img class="acs-header-logo" src="images/adobe-logo_h.svg" alt="" />
+                    </a>
+                </div>
+                <div class="acs-header-column-2 percent-70">
+                    <div class="acs-header-column-2-inner">
+                        <div class="acs-column-container-header-feature">
+                            <form>
+                                <input class="acs-header-search small-text light-text white-text text-shadow" type="text" autocomplete="on" placeholder="Site Search" data-placeholder="Site Search" onkeypress="return AddKeyPress(event);"/>
+                                <input class="acs-header-search-go small-text light-text white-text" id="acs-header-search-go" type="button" value="Go" onclick="goToPage();" />
+                            </form>
+                        </div>
+                        <div class="acs-column-container-header-feature">
+                            <a class="column-tools-header-each small-text" href="mailto:Grp-AGSCSD@adobe.com">Give Feedback</a>
+                        </div>
+                        <!-- Print Feature
+                        <div class="acs-column-container-header-feature">
+                            <a class="column-tools-header-each small-text" id="view-print">Print</a>
+                            <div id='finddpi'></div>
+                        </div>
+                        -->
+                        <div class="acs-column-container-header-feature">
+                            <a class="column-tools-header-each small-text" id="view-fullscreen">Enter Fullscreen</a>
+                            <a class="column-tools-header-each small-text" id="cancel-fullscreen">Exit Fullscreen</a>
+                        </div>
+                    </div>
+                    <div class="acs-header-column-2-inner">
+                        <div class="acs-column-container-header-feature">
+                            <a class="column-tools-header-each"></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+			<!-- wrapper -->
+			<div class="acs-hero-container">
+				<img class="acs-hero-image" src="images/csd-canada2.jpg" />
+				<div class="acs-hero-content">
+					<div class="text-shadow">
+						<h1>Canada</h1>
+					</div>
+					<form class="custom-dropdown-input" method="GET" accept-charset="UTF-8">
+						<div class="acs-hero-column-container">
+							<div class="acs-hero-container-each percent-50">
+								<!-- search menu -->
+								<div class="custom-dropdown-outer">
+								<div class="custom-dropdown-relative">
+                                    <input class="custom-search custom-dropdown-padding-small small-text light-text white-text text-shadow" type="text" autocomplete="on" placeholder="Account Quick Search" data-placeholder="Account Quick Search" />
+                                    <img src="images/select-search.svg" class="custom-select-search" alt="" />
+                                    <img src="images/select-close.svg" class="custom-select-close" alt="" />
+								</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div id="sticky-anchor"></div>
+				<div class="hero-crumbs sticky text-shadow">
+					<div class="hero-crumbs-container">
+						<a href="index.html">
+							<p>Home</p>
+						</a>
+						<img src="images/dropdown-arrow.svg" />
+						<a>
+							<p>Accounts</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="acs-pages-container dark-2-bg acs-wrap">
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/AAA.png" />
+						<a href="https://agsdashboards-author.corp.adobe.com/content/emea-customer-dashboards/english/central-europe/automotive/msp-demo-template/demo-new.html?wcmmode=disabled">
+							<div class="acs-pages-item-title">
+								<p>AAA</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/AIG%20Logo" />
+						<div class="acs-pages-item-title">
+							<p>AIG Technologies Inc</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/Aflac.png" />
+						<div class="acs-pages-item-title">
+							<p>Aflac</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/allstate.png" />
+						<div class="acs-pages-item-title">
+							<p>Allstate Insurance</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/ally.png" />
+						<div class="acs-pages-item-title">
+							<p>Ally Financial Inc</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/Allianz.png" />
+						<div class="acs-pages-item-title">
+							<p>Allianz</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/american-express.png" />
+						<div class="acs-pages-item-title">
+							<p>American Express</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/ameriprise.png" />
+						<div class="acs-pages-item-title">
+							<p>Ameriprise</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/bbva.png" />
+						<div class="acs-pages-item-title">
+							<p>BBVA</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/boa.png" />
+						<div class="acs-pages-item-title">
+							<p>Bank of America</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/blackrock.png" />
+						<div class="acs-pages-item-title">
+							<p>Blackrock</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/Broadridge.png" />
+						<div class="acs-pages-item-title">
+							<p>Broadridge</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/capital.png" />
+						<div class="acs-pages-item-title">
+							<p>Capital One Bank</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/Citizens.png" />
+						<div class="acs-pages-item-title">
+							<p>Citizens Bank</p>
+						</div>
+					</div>
+				</div>
+				<div class="acs-pages-item dark-2-bg">
+					<div class="acs-pages-item-contents dark-3-bg">
+						<img class="acs-pages-item-image acs-pages-contain lazy" data-src="logos/farmers.png" />
+						<div class="acs-pages-item-title">
+							<p>Farmers Insurance</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- footer -->
+			<footer class="acs-footer dark-bg text-align-center small-text">
+				<img class="footer-image" src="images/adobe-logo-print-rev.svg" alt="" />
+				<div>
+					<p>@2020 Adobe Systems Incorporated. All rights reserved.
+                        
+					
+						<span class="footer-secondary-color regular-text">
+							<a href="https://inside.corp.adobe.com/legal/corporate-law.html" target="_blank">Adobe Confidential</a>.
+                        
+					
+						</span>
+					</p>
+				</div>
+			</footer>
+		</div>
+		<script src="js/fullscreen.js"></script>
+		<script src="js/menus.js"></script>
+		<script src="js/crumbs.js"></script>
+        <script src="js/print.js"></script>
+	</body>
+</html>

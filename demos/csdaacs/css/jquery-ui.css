@@ -1410,7 +1410,7 @@ a.ui-button:active,
 }
 
 .ui-widget.ui-widget-content {
-  max-height: 400px;
+  max-height: 350px;
   overflow-x: hidden;
   overflow-y: auto;
   text-overflow: ellipsis;
@@ -1444,4 +1444,10 @@ a.ui-button:active,
   border-bottom: solid 1px #ccc;
   border-right: solid 1px #ccc;
   border-left: solid 1px #ccc;
+}
+
+@media screen and (min-width: 1025px) {
+  .ui-widget.ui-widget-content {
+    max-height: 350px;
+  }
 }

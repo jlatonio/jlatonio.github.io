@@ -1,0 +1,213 @@
+.acs-header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 16px 20px;
+  color: #fff;
+}
+
+.acs-header-column-1 {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acs-header-logo {  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  height: 25px;  
+  width: auto;
+  margin: auto;
+}
+
+.acs-column-container-header-feature{  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  margin: auto;
+  padding: 0 30px 0 0;
+}
+
+.acs-column-container-header-feature:last-child{ 
+  padding: 0 0 0 0;
+}
+
+.acs-header-column-2 {
+  align-items: right;
+  display: none;
+  justify-content: right;
+  flex-direction: row;
+}
+
+.acs-header-column-2-inner{
+  width: auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.acs-header-search{
+  padding: 0 40px 0 0;
+    border: 1px solid #777;
+    border-radius: 5px 0 0 5px;
+    padding: 5px 10px;
+    width: 170px;
+    height:32px;
+    background-color: inherit;
+}
+
+.acs-header-search-go{
+    padding: 0 10px;
+    border-top: 1px solid #777;
+    border-left: none;
+    border-bottom: 1px solid #777;
+    border-right: 1px solid #777;
+    border-radius: 0 5px 5px 0;
+    background-color: inherit;
+    color:#bbb;
+    height:32px;
+}
+
+.acs-column-container-header-feature input[type=button]:hover {
+    background:#999;
+    color:#000;
+}
+
+.acs-header-search::placeholder {
+  color: #bbb;
+}
+
+.acs-column-container-header-feature form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.acs-header-column-2 p {
+  font-size: 14px;
+}
+
+.acs-header-name {
+  display: block;
+}
+
+.acs-header-separator {
+  display: none;
+}
+
+
+.acs-column-container-header-each {
+  padding: 10px 40px 10px 0;
+  display: inline-block;
+  position: relative;
+}
+
+.acs-column-container-header-each::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 10px;
+  top: 10px;
+  padding-top: 0;
+  background-image: url('../images/dropdown-arrow.svg');
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center center;
+  -ms-transform: rotate(-90deg);
+ /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+ /* Safari 3-8 */
+  transform: rotate(-90deg);
+  opacity: .4;
+}
+
+.acs-column-container-header-each:last-child:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 10px;
+  padding-top: 0;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center center;
+  -ms-transform: rotate(-90deg);
+ /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+ /* Safari 3-8 */
+  transform: rotate(-90deg);
+  opacity: .4;
+}
+
+@media screen and (min-width: 701px) { 
+  .acs-header-name {
+    display: inline;
+  }
+
+  .acs-header-separator {
+    display: inline;
+  }
+
+  .acs-header-column-1 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    margin-bottom: 0;
+  }
+
+  .acs-header-column-2 {
+    align-items: right;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .acs-header {
+    padding: 16px 40px;
+  }
+    
+  .acs-footer {
+    padding: 40px 100px 60px 100px;
+  }
+
+  .acs-header {
+    padding: 16px 40px;
+  }
+}

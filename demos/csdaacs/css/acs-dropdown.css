@@ -438,7 +438,11 @@ input::-webkit-clear-button {
     padding-left: 40px;
     font-size: 16px;
   }
-
+    
+  .custom-dropdown-scroll {
+    max-height: 290px;
+  }
+    
   .custom-dropdown-slots, .custom-dropdown-large {
     max-height: 375px;
   }

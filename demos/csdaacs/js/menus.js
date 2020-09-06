@@ -97,24 +97,24 @@ $(".custom-dropdown").on("click", function () {
 // directs to specific pages
 $(".acs-market-menu").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
 	// changes the form"s action link on specific choices
-	if ($(this).closest("form").find(".acs-market-menu").val() === 'Americas') {
-		window.location.href = "americas.html";
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'FSI') {
+		window.location.href = "fsi.html";
 		return false;
 	}
-	if ($(this).closest("form").find(".acs-market-menu").val() === 'APAC') {
-		window.location.href = "emea.html";
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'Canada') {
+		window.location.href = "canada.html";
 		return false;
 	}
 	if ($(this).closest("form").find(".acs-market-menu").val() === 'EMEA') {
-		window.location.href = "emea.html";
+		window.location.href = "fsi.html";
 		return false;
 	}
 	if ($(this).closest("form").find(".acs-market-menu").val() === 'Japan') {
-		window.location.href = "japan.html";
+		window.location.href = "fsi.html";
 		return false;
 	}
 	if ($(this).closest("form").find(".acs-market-menu").val() === 'Latam') {
-		window.location.href = "latam.html";
+		window.location.href = "fsi.html";
 		return false;
 	}
 });
@@ -267,13 +267,16 @@ $(".custom-select-search").on("click", function () {
 // enables autocomplete dropdown search
 $(function () {
 	"use strict";
-	var dataSrc = [{
-			value: "https://agsdashboards-author.corp.adobe.com/content/emea-customer-dashboards/english/central-europe/automotive/msp-demo-template/demo-new.html?wcmmode=disabled",
+	var dataSrc = [
+        {
+            value: "https://agsdashboards-author.corp.adobe.com/content/emea-customer-dashboards/english/central-europe/automotive/msp-demo-template/demo-new.html?wcmmode=disabled",
 			label: "AAA"
-	}, {
-			value: "https://agsdashboards-author.corp.adobe.com/content/adobe-csd/retail/ashley_homestores_lt.html?wcmmode=disabled",
+        }, 
+        {
+            value: "https://agsdashboards-author.corp.adobe.com/content/adobe-csd/retail/ashley_homestores_lt.html?wcmmode=disabled",
 			label: "Ashley Homestores"
-	},];
+        }, 
+      ];
               
 	$(".custom-search").autocomplete({
 		source:dataSrc,
