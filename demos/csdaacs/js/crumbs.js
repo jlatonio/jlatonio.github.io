@@ -4,11 +4,14 @@ function sticky_relocate() {
   if (window_top > div_top) {
     $('.hero-crumbs').addClass('stick');
     $('.hero-crumbs').removeClass('sticky');
-  } if (window_top < div_top) {
+    $('.acs-hero-container').css('padding-bottom', '58px');
+  }
+  if (window_top < div_top) {
     $('.hero-crumbs').addClass('sticky');
     $('.hero-crumbs').removeClass('stick');
+    $('.acs-hero-container').css('padding-bottom', '');
   }
-    return false;
+  return false;
 }
 
 $(function() {
