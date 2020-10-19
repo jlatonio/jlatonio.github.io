@@ -1,0 +1,129 @@
+/* common margin and padding resizing for responsive design */
+
+.view-height {
+  min-height: 100vh;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.margin-left-0 {
+  margin-left: 0;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.margin-bottom-0:last-child {
+  margin-bottom: 0;
+}
+
+.margin-bottom-20,.margin-bottom-20-mobile {
+  margin-bottom: 20px;
+}
+
+.margin-bottom-20-mobile:last-child {
+  margin-bottom: 0;
+}
+
+.padding-all {
+  padding: 20px;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.padding-bottom {
+  padding-bottom: 20px;
+}
+
+.padding-left-inner,.padding-left-inner-totals {
+  padding-right: 0;
+}
+
+.padding-right-inner,.padding-right-inner-totals {
+  padding-right: 0;
+}
+
+.padding-right {
+  padding-right: 20px;
+}
+
+.padding-top-right {
+  padding-top: 0;
+  padding-right: 0;
+}
+
+@media screen and (min-width: 701px) {
+    
+  .view-height {
+    min-height: calc(100vh - 110px);
+  }
+    
+  .margin-left-0 {
+    margin-left: 20px;
+  }
+
+  .margin-bottom-0 {
+    margin-bottom: 20px;
+  }
+
+  .padding-left-inner {
+    padding-left: 20px;
+  }
+
+  .padding-right-inner {
+    padding-right: 20px;
+  }
+    
+  .padding-left-inner-totals {
+    padding-left: 50px;
+  }
+
+  .padding-right-inner-totals {
+    padding-right: 50px;
+  }
+    
+  .padding-top-right {
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .margin-top {
+    margin-top: 40px;
+  }
+
+  .margin-left-0 {
+    margin-left: 40px;
+  }
+
+  .margin-bottom {
+    margin-bottom: 40px;
+  }
+
+  .margin-bottom-0 {
+    margin-bottom: 40px;
+  }
+
+  .margin-bottom-20-mobile {
+    margin-bottom: 0;
+  }
+
+  .padding-all {
+    padding: 40px;
+  }
+
+  .padding-right {
+    padding-right: 40px;
+  }
+
+  .padding-top-right {
+  }
+}

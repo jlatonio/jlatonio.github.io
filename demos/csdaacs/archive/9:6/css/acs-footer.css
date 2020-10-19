@@ -1,0 +1,19 @@
+.acs-footer {
+  width: 100%;
+  padding: 20px 20px 30px 20px;
+  color: #fff;
+}
+
+.acs-footer p {
+  margin-bottom: 20px;
+}
+
+.acs-footer p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 1025px) {
+  .acs-footer {
+    padding: 40px 100px 60px 100px;
+  }
+}

@@ -5,16 +5,18 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
 		<title>ACS Customer Dashboards</title>
-		<link rel="stylesheet" href="css/global.css" />
-		<link rel="stylesheet" href="css/fonts.css" />
-		<link rel="stylesheet" href="css/resizing.css" />
+		<link rel="stylesheet" href="css/acs-global.css" />
+		<link rel="stylesheet" href="css/acs-resizing.css" />
+		<link rel="stylesheet" href="css/acs-pages.css" />
 		<link rel="stylesheet" href="css/acs-header.css" />
 		<link rel="stylesheet" href="css/acs-hero.css" />
-		<link rel="stylesheet" href="css/print.css" />
+		<link rel="stylesheet" href="css/acs-slider.css" />	
 		<link rel="stylesheet" href="css/acs-columns.css" />
 		<link rel="stylesheet" href="css/acs-dropdown.css" />
 		<link rel="stylesheet" href="css/acs-footer.css" />
-		<link rel="stylesheet" href="css/fullscreen.css" />
+		<link rel="stylesheet" href="css/acs-fullscreen.css" />
+		<link rel="stylesheet" href="css/acs-print.css" />
+		<link rel="stylesheet" href="css/fonts.css" />
 		<link rel="stylesheet" href="css/jquery-ui.css" />
 		<script src="js/jquery-1.12.4.js"></script>
 		<script src="js/jquery-ui.js"></script>
@@ -41,8 +43,8 @@
                             <a class="column-tools-header-each small-text" href="mailto:Grp-AGSCSD@adobe.com">Give Feedback</a>
                         </div>
                         <!-- Print Feature
-                            <div class="acs-column-container-header-feature"><a class="column-tools-header-each small-text" id="view-print">Print</a><div id='finddpi'></div></div>
-                            -->
+                            <div class="acs-column-container-header-feature"><a class="column-tools-header-each small-text" id="view-print">Print</a><div id='finddpi'></div>
+                        </div>-->
                         <div class="acs-column-container-header-feature">
                             <a class="column-tools-header-each small-text" id="view-fullscreen">Enter Fullscreen</a>
                             <a class="column-tools-header-each small-text" id="cancel-fullscreen">Exit Fullscreen</a>
@@ -56,10 +58,9 @@
                 </div>
             </header>
             <!-- main content -->
-            <div class="acs-hero-container view-height">
+            <div class="acs-hero-container view-height"><!-- 'view-height' added here for home page only -->
                 <img class="acs-hero-image" src="images/csdaacs-hero1.png" alt="" />
-                <div class="acs-mainhero-padding"></div>
-                <div class="acs-hero-content">
+                <div class="acs-hero-content acs-hero-content-home"><!-- 'acs-hero-content-home' added here for home page only-->
                     <div class="text-shadow">
                         <h1>ACS Customer Dashboards</h1>
                     </div>
