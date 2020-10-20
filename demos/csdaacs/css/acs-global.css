@@ -29,11 +29,10 @@ body {
   line-height: 1.4;
   overflow-x: hidden;
   overflow-y: scroll;
-  background-color: #1e1e1e;
+  background-color: #a9a9a9;
 }
 
  
-
 .page {
   max-width: 1440px;
   margin: auto;
