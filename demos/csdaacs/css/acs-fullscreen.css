@@ -21,7 +21,7 @@
   top: 50%;
   margin-top:-8px;
   padding-top: 0;
-  background-image: url('../images/fullscreen-icon.svg');
+  background-image: url('../images/icons/fullscreen-icon.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -42,7 +42,7 @@
   top: 50%;
   margin-top:-8px;
   padding-top: 0;
-  background-image: url('../images/fullscreen-icon-exit.svg');
+  background-image: url('../images/icons/fullscreen-icon-exit.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;

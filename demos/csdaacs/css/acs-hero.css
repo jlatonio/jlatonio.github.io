@@ -2,6 +2,8 @@
   padding: 40px 20px;
   width: 100%;
   position: relative;
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 30%, rgba(255,255,255,1) 100%);
 }
 
 .acs-hero-image {
@@ -12,6 +14,7 @@
   position: absolute;
   object-fit: cover;
   z-index: 0;
+  opacity: .9;
 }
 
 .acs-hero-content {
@@ -48,7 +51,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  background-color: #333;
+  background-color: #555;
   color: #fff;
   padding-left: 20px;
   padding-right: 20px;
@@ -65,7 +68,7 @@
 .hero-crumbs-container a:after {
   content: "";
   position: absolute;
-  background-image: url('../images/dropdown-arrow.svg');
+  background-image: url('../images/icons/dropdown-arrow.svg');
   background-repeat: no-repeat;
   background-size: contain;
   transform: rotate(-90deg);
@@ -112,8 +115,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor: initial;
   color: #e6de8f;
+  pointer-events: none;
+  cursor: default;
 }
 
 .hero-crumbs img {

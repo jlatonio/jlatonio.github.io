@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+		<title>ACS Customer Dashboards</title>
+		<link rel="stylesheet" href="css/acs-global.css" />
+		<link rel="stylesheet" href="css/acs-resizing.css" />
+		<link rel="stylesheet" href="css/acs-cards.css" />
+		<link rel="stylesheet" href="css/acs-header.css" />
+		<link rel="stylesheet" href="css/acs-hero.css" />
+		<link rel="stylesheet" href="css/acs-columns.css" />
+		<link rel="stylesheet" href="css/acs-dropdown.css" />
+		<link rel="stylesheet" href="css/acs-footer.css" />
+		<link rel="stylesheet" href="css/acs-fullscreen.css" />
+		<link rel="stylesheet" href="css/acs-print.css" />
+		<link rel="stylesheet" href="css/fonts.css" />
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<script src="js/jquery-1.12.4.js"></script>
+		<script src="js/jquery-ui.js"></script>
+        <script src="js/jquery.lazy.js"></script> 
+	</head>
+	
+    <body class="dark-bg">
+        <div class="page">
+            <!-- header -->
+            <header class="acs-header dark-bg">
+                <div class="acs-header-column-1 percent-30">
+                    <a href="index.html">
+                        <img class="acs-header-logo" src="images/logos/adobe-logo_h.svg" alt="" />
+                    </a>
+                </div>
+                <div class="acs-header-column-2 percent-70">
+                    <div class="acs-header-column-2-inner">
+                        <div class="acs-column-container-header-feature">
+                            <form>
+                                <input class="acs-header-search small-text light-text white-text text-shadow" type="text" autocomplete="on" placeholder="Site Search" data-placeholder="Site Search" onkeypress="return AddKeyPress(event);"/>
+                                <input class="acs-header-search-go small-text light-text white-text" id="acs-header-search-go" type="button" value="Go" onclick="goToPage();" />
+                            </form>
+                        </div>
+                        <div class="acs-column-container-header-feature">
+                            <a class="column-tools-header-each small-text" href="mailto:Grp-AGSCSD@adobe.com">Give Feedback</a>
+                        </div>
+                        <!-- Print Feature
+                            <div class="acs-column-container-header-feature"><a class="column-tools-header-each small-text" id="view-print">Print</a><div id='finddpi'></div></div>
+                            -->
+                        <div class="acs-column-container-header-feature">
+                            <a class="column-tools-header-each small-text" id="view-fullscreen">Enter Fullscreen</a>
+                            <a class="column-tools-header-each small-text" id="cancel-fullscreen">Exit Fullscreen</a>
+                        </div>
+                    </div>
+                    <div class="acs-header-column-2-inner">
+                        <div class="acs-column-container-header-feature">
+                            <a class="column-tools-header-each"></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- wrapper -->
+            <div class="acs-hero-container">
+                <img class="acs-hero-image" src="images/hero/csd-industry-hero.png" alt="" />
+                <div class="acs-hero-content">
+                    <div class="text-shadow">
+                        <h1>Financial Services and Insurance</h1>
+                    </div>
+                    <form class="custom-dropdown-input" method="GET" accept-charset="UTF-8">
+                        <div class="acs-hero-column-container">
+                            <div class="acs-hero-container-each percent-50">
+                                <!-- search menu -->
+                                <div class="custom-dropdown-outer">
+                                    <div class="custom-dropdown-relative">
+                                        <input class="custom-search custom-dropdown-padding-small small-text light-text white-text text-shadow" type="text" autocomplete="on" placeholder="Account Quick Search" data-placeholder="Account Quick Search" />
+                                        <img src="images/icons/select-search.svg" class="custom-select-search" alt="" />
+                                        <img src="images/icons/select-close.svg" class="custom-select-close" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="sticky-anchor"></div>
+                <div class="hero-crumbs regular-text text-shadow">
+                    <div class="hero-crumbs-container">
+                        <a href="index.html">
+                            <p>Home</p>
+                        </a>
+                        <a href="Industry-Template-Example.html">
+                            <p>Industry Sub-Verticals</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="acs-cards-container dark-2-bg acs-wrap">
+                <div class="acs-cards-item acs-cards-cover"><!-- use acs-cards-cover for Industry Template-->
+                    <div class="acs-cards-item-contents dark-3-bg">
+                        <img class="acs-cards-item-image lazy" data-src="images/cards/csd-vertical-card.png" alt="" />
+                        <a href="Sub-Vertical-Template-Example.html">
+                            <div class="acs-cards-item-title">
+                                <p>Banking</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="acs-cards-item acs-cards-cover">
+                    <div class="acs-cards-item-contents dark-3-bg">
+                        <img class="acs-cards-item-image lazy" data-src="images/cards/csd-vertical-card.png" alt="" />
+                        <a href="banking.html">
+                            <div class="acs-cards-item-title">
+                                <p>Insurance</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="acs-cards-item acs-cards-cover">
+                    <div class="acs-cards-item-contents dark-3-bg">
+                        <img class="acs-cards-item-image lazy" data-src="images/cards/csd-vertical-card.png" alt="" />
+                        <a href="banking.html">
+                            <div class="acs-cards-item-title">
+                                <p>Investment Management</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <footer class="acs-footer dark-bg text-align-center small-text">
+                <img class="footer-image" src="images/logos/adobe-logo-print-rev.svg" alt="" />
+                <div>
+                    <p>@2020 Adobe Systems Incorporated. All rights reserved.
+                        <span class="footer-secondary-color regular-text">
+                            <a href="https://inside.corp.adobe.com/legal/corporate-law.html" target="_blank">Adobe Confidential</a>.
+                        </span>
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <script src="js/acs-fullscreen.js"></script>
+        <script src="js/acs-menus.js"></script>
+        <script src="js/acs-crumbs.js"></script>
+        <script src="js/acs-print.js"></script>
+    </body>
+</html>

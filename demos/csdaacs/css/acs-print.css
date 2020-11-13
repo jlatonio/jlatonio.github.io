@@ -15,7 +15,7 @@
   top: 50%;
   margin-top: -8px;
   padding-top: 0;
-  background-image: url('../images/print-icon.svg');
+  background-image: url('../images/icons/print-icon.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -238,11 +238,11 @@
     padding: 40px 100px;
   }
     
-  .acs-pages-container {
+  .acs-cards-container {
     padding: 30px 30px;
   }
 
-  .acs-pages-item {
+  .acs-cards-item {
     width: 33.33%;
     min-width: 220px;
     height: 250px;
