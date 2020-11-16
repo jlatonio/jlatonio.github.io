@@ -1,0 +1,180 @@
+.box-shadow {
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
+  box-shadow: 0px 1px 3px rgba(4,4,4,0.4);
+}
+
+.text-shadow {
+  text-shadow: 0px 1px 1px #283966;
+}
+
+.small-text, .small-text p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.mid-text, .mid-text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.bold-text, .bold-text p {
+  font-family: "OpenSans-Bold";
+}
+
+.semi-bold-text, .semi-bold-text p {
+  font-family: "OpenSans-Semibold";
+}
+
+.regular-text, .regular-text p {
+  font-family: "OpenSans-Regular";
+}
+
+.regular-text-adobe, .regular-text-adobe p {
+  font-family: "OpenSans-Regular";
+}
+
+.light-text, .light-text p {
+  font-family: "OpenSans-Light";
+}
+
+.bold-italics-text, .bold-italics-text p {
+  font-family: "OpenSans-SemiboldItalic";
+}
+
+.bold-text-adobe, .bold-text-adobe p {
+  font-family: "AdobeClean-BoldSemiCn";
+}
+
+.light-italics-text, .light-italics-text p {
+  font-family: "AdobeClean-LightIt";
+}
+
+.light-italics-text-adobe, .light-italics-text-adobe p {
+  font-family: "AdobeClean-LightIt";
+}
+
+.primary-color {
+  color: #018aa6;
+}
+
+.secondary-color {
+  color: #f1675a;
+}
+
+.link-color {
+  color: #3a629d;
+}
+
+.red-color {
+  color: red;
+}
+
+.black-color {
+  color: #000;
+}
+
+.rule-h {
+  border-bottom: 2px solid #d3d3d3;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.rule-v {
+  border-left: 2px solid #d3d3d3;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.highlight {
+  color: #fff37d;
+}
+
+.white-border {
+  border: solid 0 #fff;
+}
+
+.border-design {
+  border-top: solid 5px #f1675a;
+  border-bottom: solid 5px #f1675a;
+}
+
+.border-radius {
+  border-radius: 10px;
+}
+
+.border-radius-top {
+  border-radius: 10px 10px 0 0;
+}
+
+.border-radius-bottom {
+  border-radius: 0 0 10px 10px;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.black-text, .black-text p, .black-text h1, .black-text h2, .black-text h3 {
+  color: #000;
+}
+
+.white-text, .white-text p, .white-text h1, .white-text h2, .white-text h3 {
+  color: #fff;
+}
+
+.gray-text, .gray-text p, .gray-text h1, .gray-text h2, .gray-text h3 {
+  color: #aaa;
+}
+
+.bold-text, .bold-text p {
+  font-family: "OpenSans-Bold";
+}
+
+.light-bg {
+    background-color: #fff;
+}
+
+.dark-0-bg {
+  background-color: #222;
+}
+
+.dark-1-bg {
+  background-color: #333;
+}
+
+.dark-2-bg {
+  background-color: #444;
+}
+
+.dark-3-bg {
+  background-color: #555;
+}
+
+.dark-4-bg {
+  background-color: #777;
+}
+
+.dark-5-bg {
+  background-color: #a3a3a3;
+}
+
+.dark-6-bg {
+  background-color: #a9a9a9;
+}
+
+.grey-bg {
+  background: rgb(245,245,245);
+}
+
+.grey-2-bg {
+  background: rgba(225,225,225);
+}
