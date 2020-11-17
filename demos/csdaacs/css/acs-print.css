@@ -1,21 +1,42 @@
 /* Print*/
 
+#view-print {
+  display: block;
+  position: relative;
+  margin-right: 25px;
+}
+
+#view-print::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -24px;
+  top: 50%;
+  margin-top: -8px;
+  padding-top: 0;
+  background-image: url('../images/icons/print-icon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  opacity: .4;
+}
+
 @media print {
 
   @page {
     margin: 0 !important;
     padding: 0 !important;
-  /* this affects the margin in the printer settings */
     page-break-inside: always !important;
     page-break-before: avoid !important;
     page-break-after: avoid !important;
     overflow-y: visible !important;
-    size: letter landscape !important;
+    size: A3 landscape;
   }
 
-  body {
+  html, body {
     width: 100%;
-    height: 100%;
+    height: auto;
     margin: 0 !important;
     padding: 0 !important;
     font-size: 12px;
@@ -30,7 +51,7 @@
   }
 
   .page {
-    max-width: 100% !important;
+    width: 100% !important;
   }
 
   .acs-main-content {

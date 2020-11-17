@@ -1,7 +1,7 @@
 #view-fullscreen, #cancel-fullscreen {
   display: none;
   position: relative;
-  margin-right: 25px;
+  margin-right: 22px;
 }
 
 #view-fullscreen:hover {
@@ -17,7 +17,7 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  right: -24px;
+  right: -22px;
   top: 50%;
   margin-top:-8px;
   padding-top: 0;
@@ -38,7 +38,7 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  right: -24px;
+  right: -22px;
   top: 50%;
   margin-top:-8px;
   padding-top: 0;
