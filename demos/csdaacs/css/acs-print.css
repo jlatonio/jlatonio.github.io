@@ -22,6 +22,10 @@
   opacity: .4;
 }
 
+#view-print:hover:after {
+  opacity: 1;
+}
+
 @media print {
 
   @page {

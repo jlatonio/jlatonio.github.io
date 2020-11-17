@@ -33,6 +33,10 @@
   opacity: .4;
 }
 
+#view-fullscreen:hover:after {
+  opacity: 1;
+}
+
 #cancel-fullscreen::after {
   content: "";
   position: absolute;
@@ -52,6 +56,10 @@
  /* Safari 3-8 */
   transform: rotate(-90deg);
   opacity: .4;
+}
+
+#cancel-fullscreen:hover:after {
+  opacity: 1;
 }
 
 @media screen and (min-width: 701px) { 
