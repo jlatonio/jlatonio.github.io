@@ -250,13 +250,13 @@ input::-webkit-clear-button {
 @media screen and (min-width: 701px) {
 
   .percent-85 {
-    width: 75%;
+    width: 85%;
   }
     
-  .percent-85 {
-    width: 75%;
+  .percent-80 {
+    width: 80%;
   }
-
+    
   .percent-75 {
     width: 75%;
   }

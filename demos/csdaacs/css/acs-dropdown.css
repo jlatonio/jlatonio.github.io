@@ -52,13 +52,12 @@ input::placeholder,textarea::placeholder {
   opacity: 1;
 }
 
-.ui-menu-item{
+.ui-menu-item {
   z-index: 99 !important;
 }
 
-
-.store-button-container{
-  text-align:left;
+.store-button-container {
+  text-align: left;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -67,16 +66,17 @@ input::placeholder,textarea::placeholder {
   display: flex;
 }
 
-.store-button-each{
-  padding:0;
+.store-button-each {
+  padding: 0;
   width: 50%;
 }
-.store-button-each:first-child{
-  padding:0 10px 0 0;
-}
-.store-button-each:last-child{
-  padding:0 0 0 10px;
 
+.store-button-each:first-child {
+  padding: 0 10px 0 0;
+}
+
+.store-button-each:last-child {
+  padding: 0 0 0 10px;
 }
 
 .store-button {
@@ -220,7 +220,7 @@ input::-webkit-clear-button {
   right: 10px;
   width: 36px;
   height: 36px;
-   z-index: 0;
+  z-index: 0;
   -webkit-transition: all .25s ease-out;
   -moz-transition: all .25s ease-out;
   -o-transition: all .25s ease-out;
@@ -438,11 +438,11 @@ input::-webkit-clear-button {
     padding-left: 40px;
     font-size: 16px;
   }
-    
+
   .custom-dropdown-scroll {
     max-height: 290px;
   }
-    
+
   .custom-dropdown-slots, .custom-dropdown-large {
     max-height: 375px;
   }

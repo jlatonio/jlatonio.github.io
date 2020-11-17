@@ -1,7 +1,6 @@
 #view-fullscreen, #cancel-fullscreen {
   display: none;
   position: relative;
-  margin-right: 22px;
 }
 
 #view-fullscreen:hover {

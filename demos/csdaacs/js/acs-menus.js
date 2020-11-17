@@ -434,17 +434,40 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
 });
 
 // for search in the header
-function goToPage() { 
-	var page = $(".acs-header-search").val();
-	window.open("https://agsdashboards.corp.adobe.com/content/adobe-csd/search.html?dashboard-search=" + page + "*", "_blank"); 
-} 
+$(".acs-header-search").on("keyup", function() {
+
+  if ($(this).val().length > 2) {
+    $('#acs-header-search-go').css({
+      "background-color": "#fff",
+      "color": "#000",
+      "cursor": "pointer"
+    });
+
+  } else {
+    $('#acs-header-search-go').css({
+      "background-color": "",
+      "color": "",
+      "cursor": ""
+    });
+  }
+  return false;
+});
+
+function goToPage() {
+  var page = $(".acs-header-search").val();
+
+  if ($(".acs-header-search").val().length > 2) {
+    window.open("https://agsdashboards.corp.adobe.com/content/adobe-csd/search.html?dashboard-search=" + page + "*", "_blank");
+  }
+  return false;
+}
 
 // clicking enter for search in the header 
-function AddKeyPress(e) { 
-	e = e || window.event;
-	if (e.keyCode == 13) {
-		document.getElementById('acs-header-search-go').click();
-		return false;
-	}
-	return true;
+function AddKeyPress(e) {
+  e = e || window.event;
+  if (e.keyCode == 13) {
+    document.getElementById('acs-header-search-go').click();
+    return false;
+  }
+  return true;
 }

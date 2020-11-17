@@ -3,7 +3,6 @@
 #view-print {
   display: block;
   position: relative;
-  margin-right: 22px;
 }
 
 #view-print::after {
@@ -79,10 +78,14 @@
     padding: 0 0 0 40px;
   }
     
-  .acs-cards-contain, .acs-cards-cover {
-    width: 16.665% !important;
+  .acs-cards-contain{
+    width: 20% !important;
   }
-
+    
+  .acs-cards-cover {
+    width: 25% !important;
+  }
+    
   .acs-footer {
     padding: 40px 100px 60px 100px;
   }
