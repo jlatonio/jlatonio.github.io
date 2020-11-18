@@ -434,8 +434,7 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
 });
 
 // for search in the header
-$(".acs-header-search").on("keyup", function() {
-
+$(".acs-header-search").on("keyup focus", function() {
   if ($(this).val().length > 2) {
     $('#acs-header-search-go').css({
       "background-color": "#fff",
@@ -444,6 +443,39 @@ $(".acs-header-search").on("keyup", function() {
     });
 
   } else {
+    $('#acs-header-search-go').css({
+      "background-color": "",
+      "color": "",
+      "cursor": ""
+    });
+  }
+  return false;
+});
+
+$(".acs-header-search").on("blur", function() {
+  if ($(this).val().length > 2) {
+    $('#acs-header-search-go').css({
+      "background-color": "",
+      "color": "",
+      "cursor": ""
+    });
+  }
+  return false;
+});
+
+$(".acs-header-search-go").on("mouseenter", function() {
+  if ($(".acs-header-search").val().length > 2) {
+    $('#acs-header-search-go').css({
+      "background-color": "#fff",
+      "color": "#000",
+      "cursor": "pointer"
+    });
+  }
+  return false;
+});
+
+$(".acs-header-search-go").on("mouseleave", function() {
+  if ($(".acs-header-search").val().length > 2) {
     $('#acs-header-search-go').css({
       "background-color": "",
       "color": "",
@@ -471,3 +503,11 @@ function AddKeyPress(e) {
   }
   return true;
 }
+
+
+$(".acs-header-help").on("click", function () {
+	"use strict";
+	$(".acs-header-column-2").slideToggle();
+    $(".acs-header").toggleClass("acs-header-shadow");
+  return true;
+});

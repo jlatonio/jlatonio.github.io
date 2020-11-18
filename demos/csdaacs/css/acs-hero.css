@@ -68,9 +68,9 @@
   -moz-transition: background-color .25s ease-in;
   -o-transition: background-color .25s ease-in;
   transition: background-color .25s ease-in;
-  -webkit-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.5);
-  -moz-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.5);
-  box-shadow: 0px 1px 3px rgba(4,4,4,0.5);
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.7);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.7);
+  box-shadow: 0px 1px 4px rgba(4,4,4,0.7);
 }
 
 .hero-crumbs {
