@@ -13,12 +13,6 @@ input[type=text],input[type=number],input[type=reset] {
 input[type=submit]:hover {
 }
 
-input[type=button]:hover {
-}
-
-input[type=reset]:hover {
-}
-
 /* Chrome */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
@@ -400,19 +394,6 @@ input::-webkit-clear-button {
     background-image: url('../images/select-notes-yl.svg');
   }
 
-  .custom-dropdown-group {
-    border-top: solid 1px #ccc;
-    border-bottom: solid 1px #ccc;
-    border-right: solid 1px #ccc;
-    border-left: solid 1px #ccc;
-    -webkit-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
-    -moz-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
-    box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
-    position: absolute;
-    bottom: initial;
-    z-index: 2;
-  }
-
   .custom-dropdown-scroll {
     max-height: 420px;
     height: auto;
@@ -428,7 +409,24 @@ input::-webkit-clear-button {
   }
 }
 
+@media screen and (min-width: 1024px) {
+}
+
 @media screen and (min-width: 1025px) {
+    
+  .custom-dropdown-group {
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    border-left: solid 1px #ccc;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
+    box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
+    position: absolute;
+    bottom: initial;
+    z-index: 2;
+  }
+    
   .custom-dropdown-slots .custom-dropdown {
     padding-left: 107px;
     font-size: 16px;

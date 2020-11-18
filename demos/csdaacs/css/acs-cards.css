@@ -73,7 +73,7 @@
   height: 100%;
   padding: 10px;
   overflow: hidden;
-  position: relative;
+  position: relative;  border-radius: 2px;
 }
 
 .acs-cards-item-title {
@@ -104,6 +104,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
 }
 
 .acs-cards-item-title:hover {

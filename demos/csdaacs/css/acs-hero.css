@@ -64,6 +64,10 @@
   padding-top: 20px;
   z-index: 99;
   max-width: 1440px;
+  -webkit-transition: background-color .25s ease-in;
+  -moz-transition: background-color .25s ease-in;
+  -o-transition: background-color .25s ease-in;
+  transition: background-color .25s ease-in;
 }
 
 .hero-crumbs {
