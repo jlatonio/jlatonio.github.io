@@ -56,7 +56,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  background-color: #555;
+  background-color: #333;
   color: #fff;
   padding-left: 20px;
   padding-right: 20px;
@@ -68,6 +68,9 @@
   -moz-transition: background-color .25s ease-in;
   -o-transition: background-color .25s ease-in;
   transition: background-color .25s ease-in;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.5);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.5);
+  box-shadow: 0px 1px 5px rgba(5,5,5,0.5);
 }
 
 .hero-crumbs {
@@ -84,8 +87,9 @@
   width: 16px;
   height: 16px;
   z-index: 1;
-  top: 5px;
+  top: 50%;
   right: -30px;
+  margin-top: -8px;
   text-decoration: none;
   pointer-events: none;
   cursor: initial;
@@ -145,7 +149,6 @@
   display: flex;
   justify-content: left;
   padding-left: 0;
-  height: 25px;
   max-width: 1440px;
 }
 
