@@ -61,6 +61,9 @@
   padding-right: 0;
 }
 
+@media screen and (min-width: 557px) {
+}
+
 @media screen and (min-width: 701px) {
     
   .view-height {
@@ -95,6 +98,9 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+}
+
 @media screen and (min-width: 1025px) {
   .margin-top {
     margin-top: 40px;
@@ -126,4 +132,7 @@
 
   .padding-top-right {
   }
+}
+
+@media screen and (min-device-width: 1366px) and (orientation:landscape) {
 }

@@ -384,6 +384,9 @@ input::-webkit-clear-button {
   opacity: 1;
 }
 
+@media screen and (min-width: 557px) {
+}
+
 @media screen and (min-width: 701px) {
 
   .custom-dropdown-slots .custom-dropdown {

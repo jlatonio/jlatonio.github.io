@@ -22,6 +22,15 @@
   margin: 0 0 20px 0;
 }
 
+@media screen and (min-width: 557px) {
+}
+
+@media screen and (min-width: 701px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+
 @media screen and (min-width: 1025px) {
   .acs-footer-image {
     width: 70px;
@@ -30,4 +39,7 @@
   .acs-footer {
     padding: 60px 100px 40px 100px;
   }
+}
+
+@media screen and (min-device-width: 1366px) and (orientation:landscape) {
 }

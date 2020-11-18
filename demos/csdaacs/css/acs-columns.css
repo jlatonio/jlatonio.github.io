@@ -9,6 +9,9 @@
   position:relative;
 }
 
+@media screen and (min-width: 557px) {
+}
+
 @media screen and (min-width: 701px) {
   .acs-column-container {
     display: -webkit-box;
@@ -23,6 +26,9 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+}
+
 @media screen and (min-width: 1025px) {
   .acs-column-container {
     padding: 40px 100px 0 100px;
@@ -31,4 +37,7 @@
   .acs-column-container:last-child{
     padding: 40px 100px;
   }
+}
+
+@media screen and (min-device-width: 1366px) and (orientation:landscape) {
 }

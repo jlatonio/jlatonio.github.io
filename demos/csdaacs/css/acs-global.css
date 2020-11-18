@@ -247,6 +247,9 @@ input::-webkit-clear-button {
   width: calc(100% - 120px);
 }
 
+@media screen and (min-width: 557px) {
+}
+
 @media screen and (min-width: 701px) {
 
   .percent-85 {
@@ -352,6 +355,9 @@ input::-webkit-clear-button {
   .fixed-180 {
     width: 160px;
   }
+}
+
+@media screen and (min-width: 1024px) {
 }
 
 @media screen and (min-width: 1025px) {

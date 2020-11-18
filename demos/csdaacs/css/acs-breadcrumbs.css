@@ -70,6 +70,9 @@
   position: relative;
 }
 
+@media screen and (min-width: 557px) {
+}
+
 @media screen and (min-width: 701px) {
   .acs-column-container-breadcrumbs-tools  {
     display: -webkit-box;
@@ -81,8 +84,14 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+}
+
 @media screen and (min-width: 1025px) {
   .acs-column-container-breadcrumbs {
     padding: 0 100px;
   }
+}
+
+@media screen and (min-device-width: 1366px) and (orientation:landscape) {
 }
