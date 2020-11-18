@@ -509,5 +509,6 @@ $(".acs-header-help").on("click", function () {
 	"use strict";
 	$(".acs-header-column-2").slideToggle();
     $(".acs-header").toggleClass("acs-header-shadow");
+    $(this).toggleClass("acs-header-help-active");
   return true;
 });
