@@ -214,7 +214,7 @@ label {
 
 input::-webkit-clear-button {
   position: relative;
-  background: #fff url('../images/select-close.svg') no-repeat;
+  background: #fff url('../images/icons/select-close.svg') no-repeat;
   background-position: center right 10px;
   background-size: 16px 16px;
   -webkit-appearance: none;
