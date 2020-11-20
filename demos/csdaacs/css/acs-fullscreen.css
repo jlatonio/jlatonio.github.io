@@ -23,23 +23,10 @@
 }
 
 #cancel-fullscreen::after {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  right: -22px;
-  top: 50%;
-  margin-top:-8px;
-  padding-top: 0;
   background-image: url('../images/icons/fullscreen-icon-exit.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  -ms-transform: rotate(-90deg);
- /* IE 9 */
-  -webkit-transform: rotate(-90deg);
- /* Safari 3-8 */
-  transform: rotate(-90deg);
   opacity: .4;
 }
 
