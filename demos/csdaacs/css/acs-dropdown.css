@@ -199,6 +199,7 @@ input::-webkit-clear-button {
   cursor: pointer;
   padding: 8px;
   margin-top: -18px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -223,6 +224,7 @@ input::-webkit-clear-button {
   cursor: pointer;
   padding: 8px;
   margin-top: -18px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -235,6 +237,7 @@ input::-webkit-clear-button {
   transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -247,6 +250,7 @@ input::-webkit-clear-button {
   transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -259,6 +263,7 @@ input::-webkit-clear-button {
   transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
