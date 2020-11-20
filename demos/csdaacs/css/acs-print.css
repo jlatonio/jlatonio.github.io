@@ -1,19 +1,10 @@
 /* Print*/
 
 #view-print {
-  display: block;
   position: relative;
 }
 
 #view-print::after {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  right: -22px;
-  top: 50%;
-  margin-top: -8px;
-  padding-top: 0;
   background-image: url('../images/icons/print-icon.svg');
   background-repeat: no-repeat;
   background-size: contain;

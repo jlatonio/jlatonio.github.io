@@ -232,6 +232,8 @@ input::-webkit-clear-button {
 }
 
 .custom-dropdown-arrow-toggle {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -242,6 +244,8 @@ input::-webkit-clear-button {
 }
 
 .custom-dropdown-arrow-open {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -252,6 +256,8 @@ input::-webkit-clear-button {
 }
 
 .custom-dropdown-arrow-close {
+  transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
