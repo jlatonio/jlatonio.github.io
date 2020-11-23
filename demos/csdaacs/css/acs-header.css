@@ -157,7 +157,7 @@
 }
 
 .column-tools-header-each {
-  margin-right: 32px;
+  margin-right: 30px;
   margin-top: 30px;
   text-align: right;
 }
@@ -165,11 +165,11 @@
 .column-tools-header-each::after {
   content: "";
   position: absolute;
-  width: 26px;
-  height: 26px;
-  right: -32px;
+  width: 22px;
+  height: 22px;
+  right: -30px;
   top: 50%;
-  margin-top: -13px;
+  margin-top: -11px;
   padding-top: 0;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-touch-callout: none;
