@@ -189,10 +189,6 @@
   position: static;
 }
 
-#view-feedback {
-  position: relative;
-}
-
 @media screen and (min-width: 557px) {
 }
 
