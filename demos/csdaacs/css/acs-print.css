@@ -1,21 +1,5 @@
 /* Print*/
 
-#view-print {
-  position: relative;
-}
-
-#view-print::after {
-  background-image: url('../images/icons/print-icon.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  opacity: .4;
-}
-
-#view-print:hover:after {
-  opacity: 1;
-}
-
 @media print {
 
   @page {

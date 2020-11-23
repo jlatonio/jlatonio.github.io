@@ -493,7 +493,6 @@ function goToPage() {
   }
   return false;
 }
-
 // clicking enter for search in the header 
 function AddKeyPress(e) {
   e = e || window.event;
@@ -504,11 +503,24 @@ function AddKeyPress(e) {
   return true;
 }
 
-
-$(".acs-header-help").on("click", function () {
-	"use strict";
-	$(".acs-header-column-2").slideToggle();
-    $(".acs-header").toggleClass("acs-header-shadow");
-    $(this).toggleClass("acs-header-help-active");
+// clicking tools on mobile will display header features
+$(".acs-header-help").on("click", function() {
+  "use strict";
+  $(".acs-header-column-2").slideToggle();
+  $(".acs-header").toggleClass("acs-header-shadow");
+  $(this).toggleClass("acs-header-help-active");
   return true;
+});
+
+// hover for header feature icons
+$(".column-tools-header-each").on("mouseover", function() {
+  "use strict";
+  $(this).closest(".acs-column-container-header-feature").find(".column-tools-header-icon").addClass("column-tools-header-icon-active");
+  return false;
+});
+
+$(".column-tools-header-each").on("mouseout", function() {
+  "use strict";
+  $(this).closest(".acs-column-container-header-feature").find(".column-tools-header-icon").removeClass("column-tools-header-icon-active");
+  return false;
 });

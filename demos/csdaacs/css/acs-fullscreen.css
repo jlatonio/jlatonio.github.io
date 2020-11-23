@@ -10,30 +10,6 @@
   text-decoration: underline;
 }
 
-#view-fullscreen::after {
-  background-image: url('../images/icons/fullscreen-icon.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  opacity: .4;
-}
-
-#view-fullscreen:hover:after {
-  opacity: 1;
-}
-
-#cancel-fullscreen::after {
-  background-image: url('../images/icons/fullscreen-icon-exit.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  opacity: .4;
-}
-
-#cancel-fullscreen:hover:after {
-  opacity: 1;
-}
-
 @media screen and (min-width: 701px) { 
   #view-fullscreen,#cancel-fullscreen  {
     display: block;
