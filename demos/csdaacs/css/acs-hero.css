@@ -201,11 +201,6 @@
     padding: 40px;
   }
 
-  .stick {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-
   .acs-hero-tagline p {
     padding-left: 40px;
   }
@@ -219,7 +214,12 @@
   .acs-hero-container {
     padding: 40px 100px;
   }
-
+    
+  .stick {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+    
   .acs-hero-tagline p {
     padding-left: 40px;
   }
@@ -228,4 +228,3 @@
     padding: 0 0 0 40px;
   }
 }
- 
