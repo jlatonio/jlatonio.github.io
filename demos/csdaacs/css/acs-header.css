@@ -165,10 +165,13 @@
 }
 
 .column-tools-header-each {
-  text-align: right;
   position: relative;
-  padding: 20px 28px 20px 0;
-  width: auto;
+  padding: 15px 28px 15px 0;
+}
+
+.column-tools-header-each p {
+  padding: 5px 0;
+  text-align: right;
 }
 
 .acs-column-container-header-feature .column-tools-header-each .column-tools-header-icon:hover {
@@ -248,7 +251,7 @@
   }
 
   .acs-header-search {
-    width: 190px;
+    width: 170px;
     margin-right: 0;
     position: relative;
   }
