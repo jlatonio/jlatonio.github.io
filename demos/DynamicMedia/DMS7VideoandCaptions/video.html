@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Video Viewer Example</title>
+	<link rel="stylesheet" href="css/html5_videoviewersocial.css" />
+	<link rel="stylesheet" href="css/custom-captions.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/fonts.css" />
+</head>
+<body>
+
+<script type="text/javascript" language="javascript" src="https://s7d1.scene7.com/s7viewers/html5/js/VideoViewer.js"></script>
+
+<div id="s7_videoview"></div>
+<script type="text/javascript">
+var s7_videoview = new s7viewers.VideoViewer({
+	"containerId" : "s7_videoview",
+		"params" : {
+            "asset" : "S7train/dynamicvideo-sample",
+            "serverurl" : "https://s7d1.scene7.com/is/image/",
+            "contenturl": "https://s7d1.scene7.com/skins/",
+            "config": "S7train/Video_social", 
+            "emailurl": "https://s7d1.scene7.com/s7/emailFriend", 
+            "videoserverurl": "https://s7d1.scene7.com/is/content/",
+            "posterimage":"S7train/dynamicvideo%2Dsample",
+            "singleclick": "playPause",
+            "loop": "1",
+            "caption": "https://s7d1.scene7.com/is/content/S7train/Joseph/vtt/sample.vtt,1", 
+            "autoplay": "1"
+        }	
+    }).init();
+</script>
+</body>
+</html>
