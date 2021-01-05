@@ -1,0 +1,46 @@
+#s7_videoview {
+  width: 620px;
+  height: auto;
+}
+
+.s7controlbar {
+  display: block;
+}
+
+.s7videoviewer .s7videoplayer .s7iconeffect[state] {
+  background-image: url('../images/next.svg') !important;
+  background-size: contain !important;
+}
+
+.s7videoviewer .s7playpausebutton[selected][state],.s7videoviewer .s7playpausebutton[selected][state][replay] {
+  background-image: url('../images/next-wh.svg') !important;
+  background-size: contain;
+  background-position: center !important;
+}
+
+.s7videoviewer .s7videoplayer .s7caption {
+  background-color: red !important;
+  color: #e6e6e6;
+  font-weight: normal;
+  font-size: 24px !important;
+  font-family: "OpenSans-Bold", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans" !important;
+}
+
+
+	/* IconEffect - desktop size and art */
+.s7videoviewer.s7mouseinput .s7videoplayer .s7iconeffect[state='play'] {
+  background-position: 0,0!important;
+}
+
+.s7videoviewer.s7mouseinput .s7videoplayer .s7iconeffect[state='replay'] {
+  background-position: 0,0!important;
+}
+
+	/* IconEffect - touch device size and art */
+.s7videoviewer.s7touchinput .s7videoplayer .s7iconeffect[state='play'] {
+  background-position: 0,0!important;
+}
+
+.s7videoviewer.s7touchinput .s7videoplayer .s7iconeffect[state='replay'] {
+  background-position: 0,0!important;
+}
