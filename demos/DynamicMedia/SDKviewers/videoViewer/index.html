@@ -33,7 +33,7 @@
 			from the same domain. Otherwise, specify a full path to one of Adobe Scene7 servers that have the SDK 
 			installed. 
 		-->
-		<script language="javascript" type="text/javascript" src="http://s7d1.scene7.com/s7sdk/3.5/js/s7sdk/utils/Utils.js"></script>
+		<script language="javascript" type="text/javascript" src="https://s7d1.scene7.com/s7sdk/3.5/js/s7sdk/utils/Utils.js"></script>
 		<!--
 			Add an "include" statement with a related module for each component that is needed for that particular 
 			viewer. Check API documentation to see a complete list of components and their modules.
@@ -373,10 +373,10 @@
 			function initViewer(){
 				/* Explicitly specify default modifiers in the viewer code by calling push().
 				   Specify the default video by pushing serverurl, videoserverurl and asset */
-				params.push("serverurl", "http://s7d1.scene7.com/is/image/");
-				params.push("videoserverurl", "http://s7d1.scene7.com/is/content/");
+				params.push("serverurl", "https://s7d1.scene7.com/is/image/");
+				params.push("videoserverurl", "https://s7d1.scene7.com/is/content/");
 				// specify content url for closed caption and chapter navigation asset
-				params.push("contenturl", "http://s7d1.scene7.com/is/content/");
+				params.push("contenturl", "https://s7d1.scene7.com/is/content/");
 				params.push("MediaSet.asset", "Scene7SharedAssets/Adobe_QBP-AVS");
 				// specify closed caption file
 				params.push("caption", "Scene7SharedAssets/adobe_qbc_final_cc,1");	
