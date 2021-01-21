@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--
+*
+* ADOBE SYSTEMS INCORPORATED
+*  Copyright 2012 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  Adobe permits you to use, modify, and distribute this file in
+* accordance with the terms of the Adobe license agreement accompanying it.
+* If you have received this file from a source other than Adobe, then your
+* use, modification, or distribution of it requires the prior written
+* permission of Adobe.
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <!--
+            Setting the viewport to not scalable is necessary to ensure that the viewer
+            is not scaled by the browser.  The viewer components handle all zooming and
+            panning so the browser should not.
+        -->
+		<meta name="viewport" content="user-scalable=no, height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<!-- Hiding the Safari on iPhone OS UI components -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-touch-fullscreen" content="YES" />
+
+		<!-- Specifying a per-page Home screen icon, helps to keep the UI cleaner -->
+		<link rel="apple-touch-icon" href=""/>
+		<link rel="apple-touch-startup-image" href="" />
+
+		<title>Adobe Scene7 Zoom Viewer with Dynamic Resizing, NavigationView and HotSpotEffect</title>
+
+		<!--
+			Include Utils.js before you use any of the SDK components. This file 
+			contains SDK utilities and global functions that are used to initialize the viewer and load viewer 
+			components. The path to the Utils.js determines which version of the SDK that the viewer uses. You 
+			can use a relative path if the viewer is deployed on one of the Adobe Scene7 servers and it is served 
+			from the same domain. Otherwise, specify a full path to one of Adobe Scene7 servers that have the SDK 
+			installed. 
+		-->
+		<script language="javascript" type="text/javascript" 
+						src="http://s7d1.scene7.com/s7sdk/3.5/js/s7sdk/utils/Utils.js"></script>
+
+		<!--
+			Add an "include" statement with a related module for each component that is needed for that particular 
+			viewer. Check API documentation to see a complete list of components and their modules.
+		-->
+		<script language="javascript" type="text/javascript">
+
+			/*  For this example, the viewer will use
+				- s7sdk.image.ZoomView for zoom view area, 
+				- s7sdk.common.Container as a container for all components,
+				- s7sdk.common.Buttons for zoom in/out/reset,
+				- s7sdk.image.NavigationView component for controlling the area to display
+				- s7sdk.image.HotSpotEffect for hot spot effect, and
+				- s7sdk.set.MediaSet to manage the asset,
+				these components are included here though the s7sdk.Util.lib.include()
+				function.
+			*/
+			s7sdk.Util.lib.include('s7sdk.image.ZoomView');
+			s7sdk.Util.lib.include('s7sdk.common.Button');
+			s7sdk.Util.lib.include('s7sdk.image.NavigationView');
+			s7sdk.Util.lib.include('s7sdk.image.HotSpotEffect');			
+			s7sdk.Util.lib.include('s7sdk.set.MediaSet');
+			s7sdk.Util.lib.include('s7sdk.common.Container');
+		</script>
+        
+        <style type="text/css" media="screen">
+		
+			/*************************************************************************/
+			/* Specify 100% width and height for responsive viewer resizing. */
+			html,body {
+				width:100%;
+				height:100%;
+			}
+
+			/*************************************************************************/
+			/* Set attributes for the page body */
+			body {
+				padding:0;
+				margin:0;
+				font-size:12px;
+				background: #FFFFFF;
+				overflow: hidden;
+			}
+
+			/*************************************************************************/
+			/* Tool Tip */
+			.s7tooltip {
+				-moz-border-radius: 3px 3px 3px 3px;
+				-webkit-border-radius: 3px 3px 3px 3px;
+				border-radius: 3px 3px 3px 3px;
+				border-color: #999999;
+				background-color: #000000;
+				color: #FFFFFF;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 11px;
+			}
+
+			/*************************************************************************/
+			/* HotspotEffect */
+			.s7hotspoteffect .s7hotspotoverlay[state=default] {
+				opacity:0.75;
+				filter:alpha(opacity = 75);
+			}
+			.s7hotspoteffect .s7hotspotoverlay[state=active] {
+				opacity: 1.0;
+				filter:alpha(opacity = 100);
+			}
+
+			/*************************************************************************/
+			/* NavigationView */
+			.s7navigationview {
+				position: absolute;	
+				top: 0px;
+				right: 0px;
+				color: #00ff00;
+			}
+
+			/*************************************************************************/
+			 /* ZoomInButton */
+			.s7zoominbutton  {
+				position:absolute;
+				top: 10px;
+				left: 20px;
+				width:28px;
+				height:28px;
+				background-size:contain;
+				z-index:5000;
+			 }
+ 
+			.s7zoominbutton[state='up'] { background-image:url(images/ZoomInButton_light_up.png); }
+			.s7zoominbutton[state='over'] { background-image:url(images/ZoomInButton_light_over.png); }
+			.s7zoominbutton[state='down'] { background-image:url(images/ZoomInButton_light_down.png); }
+			.s7zoominbutton[state='disabled'] { background-image:url(images/paramsZoomInButton_light_disabled.png); }
+
+			/*************************************************************************/
+			/* ZoomOutButton */
+			.s7zoomoutbutton{
+				position:absolute;
+				top: 10px;
+				left: 50px;
+				width:28px;
+				height:28px;
+				background-size:contain;
+				z-index:5000;
+			}
+
+			.s7zoomoutbutton[state='up'] { background-image:url(images/ZoomOutButton_light_up.png); }
+			.s7zoomoutbutton[state='over'] { background-image:url(images/ZoomOutButton_light_over.png); }
+			.s7zoomoutbutton[state='down'] { background-image:url(images/ZoomOutButton_light_down.png); }
+			.s7zoomoutbutton[state='disabled'] { background-image:url(images/ZoomOutButton_light_disabled.png); }			
+	
+			/*************************************************************************/
+			/* ZoomResetButton - common styles */
+			.s7zoomresetbutton {
+				position:absolute;
+				top: 10px;
+				left: 80px;
+				width:28px;
+				height:28px;
+				background-size:contain;
+				z-index:1;
+			}
+
+			.s7zoomresetbutton[state='up'] { background-image:url(images/ZoomResetButton_light_up.png); }
+			.s7zoomresetbutton[state='over'] { background-image:url(images/ZoomResetButton_light_over.png); }
+			.s7zoomresetbutton[state='down'] { background-image:url(images/ZoomResetButton_light_down.png); }
+			.s7zoomresetbutton[state='disabled'] { background-image:url(images/ZoomResetButton_light_disabled.png); }
+		</style>      
+
+	</head>
+	<body>
+
+		<script language="JavaScript" type="text/javascript">
+
+			// Initialize the SDK
+			s7sdk.Util.init();
+
+			/* Create an instance of the ParameterManager component to collect
+			   components' configuration that can come from a viewer preset, URL, or the HTML page itself. The ParameterManager 
+			   component also sends a notification s7sdk.Event.SDK_READY when all needed files are loaded and the configuration 
+			   parameters are processed. The other components should never be initialized outside of this handler. After  
+			   defining the handler for the s7sdk.Event.SDK_READY event, it is safe to initiate 
+			   configuration initialization by calling ParameterManager.init(). */
+			var params = new s7sdk.ParameterManager();
+
+			/* Variables for component objects */
+			var zoomView,	// for ZoomView component
+				navView,	// for NavigationView component
+				hotspot,	// for HotSpot efffect
+				container, mediaSet, zoomInButton, zoomOutButton, zoomResetButton;  			 
+
+			/* Event handler for s7sdk.Event.SDK_READY dispatched by ParameterManager to initialize various components of 
+			   this viewer. */
+			function initViewer(){
+				/* Explicitly specify default modifiers in the viewer code by calling push().
+				   Specify the default video by pushing serverurl, videoserverurl and asset.
+				   'serverurl' should refer to the image server where your company assets reside.
+				   'asset' should be assigned with an asset ID.
+				   Both 'serverurl' and 'asset' can be omitted or overriden if they were pass as URL parameters
+				   (serverurl=...) and (asset=...) */
+				params.push("serverurl", "http://s7d1.scene7.com/is/image"); 	
+				params.push("MediaSet.asset", "Scene7SharedAssets/ImageSet-Views-Sample");
+
+				// Create MediaSet to manage assets and add event listener to the NOTF_SET_PARSED event
+				mediaSet = new s7sdk.set.MediaSet(null, params, "mediaSet");
+				// Add MediaSet event listener
+				mediaSet.addEventListener(s7sdk.event.AssetEvent.NOTF_SET_PARSED, onSetParsed, false);
+
+				/* Create a viewer container as a parent component for other UI components that are part of the viewer application and
+				   associate event handlers for resize and full screen notification. 
+				   The advantage of using Container as the parent is the component's ability to resize and bring itself and its 
+				   children to full screen. */			
+				container = new s7sdk.common.Container(null, params, "s7container");
+				container.addEventListener(s7sdk.event.ResizeEvent.COMPONENT_RESIZE,resizeViewer,false);
+
+				/*  Create ZoomView component, attaching it to the s7container div.  (The
+				    div id is page specific, any valid id name will work.)
+				    - for version 2.0.1 library, this component has to be created before other components. */
+				zoomView = new s7sdk.image.ZoomView(container, params, "myZoomView");
+
+				/**
+				 * Setup HotSpostEffect. For the first parameter, instead of passing the s7sdk.Container
+				 * instance, we instead pass the DOM ID of the target ZoomView or SpinView component.
+				 */
+				hotspot = new s7sdk.image.HotSpotEffect("myZoomView", params, "myHotSpotEffect");
+
+				/* Create NavigationView component attached also to s7container div. */
+				navView = new s7sdk.image.NavigationView(container, params, "myNavView");
+
+				/* Create Zoom In, Zoom Out and Zoom Reset buttons */
+				zoomInButton  = new s7sdk.common.ZoomInButton(container, params, "zoomInBtn");
+				zoomOutButton = new s7sdk.common.ZoomOutButton(container, params, "zoomOutBtn");
+				zoomResetButton = new s7sdk.common.ZoomResetButton(container, params, "zoomResetBtn");
+
+				//  Add event handler for ZoomView events.
+				zoomView.addEventListener(s7sdk.event.ZoomRgnEvent.NOTF_ZOOM_NRGN,
+										  updateNav, true);
+
+				// Add handler for NavigationView s7sdk.ZoomPanEvent.NOTF_ZOOM_NPAN event.
+				navView.addEventListener(s7sdk.event.ZoomPanEvent.NOTF_ZOOM_NPAN, navPan, true);
+ 
+				// Add handlers for zoom in, zoom out and zoom reset buttons inline.
+				zoomInButton.addEventListener("click", function() { zoomView.zoomIn(); });
+				zoomOutButton.addEventListener("click", function() { zoomView.zoomOut(); });
+				zoomResetButton.addEventListener("click", function() { zoomView.zoomReset(); });
+			}
+
+			/* Event handler for s7sdk.event.ZoomPanEvent.NOTF_ZOOM_NPAN events dispatched by NavigationView to update ZoomView. */
+			function navPan(event) {
+				var s7event = event.s7event;
+				if (!s7event)
+					return;
+
+				zoomView.zoomNPan(s7event.dx, s7event.dy);
+			}
+ 
+			/* Event handler for s7sdkZoomPanEvent.event.NOTF_ZOOM_NPAN events dispatched by ZoomView to update NavigationView. */
+			function updateNav(event) {
+				var s7event = event.s7event;
+				if (!s7event) return;
+
+				navView.setViewPort(s7event.zoomRgn);
+			}
+
+			/* Add event handler for the s7sdk.Event.SDK_READY event dispatched by the ParameterManager when all modifiers are 
+			   processed and it is safe to initialize the viewer. */
+			params.addEventListener(s7sdk.Event.SDK_READY,initViewer,false);
+
+			/* Initiate configuration initialization of ParameterManager, this will trigger the SDK_READY event. */
+			params.init();
+
+			/* Event handler for s7sdk.event.ResizeEvent.COMPONENT_RESIZE events dispatched by Container to resize
+			   various view components included in this viewer. */
+			function resizeViewer(e){
+				zoomView.resize(e.s7event.w, e.s7event.h);
+			}
+
+			/* Event handler for the s7sdk.event.AssetEvent.NOTF_SET_PARSED event dispatched by MediaSet to
+			   assign the asset to the Swatches, ZoomView and NavigationView when parsing is complete. */
+			function onSetParsed(event) {
+				// set media set for Swatches to display 
+				var asset = event.s7event.asset.items[0];
+				zoomView.resize(container.getWidth(), container.getHeight());
+				navView.setItem(asset);
+				zoomView.setItem(asset);
+			}
+		</script>
+	</body>
+</html>

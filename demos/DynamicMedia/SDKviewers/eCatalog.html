@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<!--
+*
+* ADOBE SYSTEMS INCORPORATED
+*  Copyright 2013 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  Adobe permits you to use, modify, and distribute this file in 
+* accordance with the terms of the Adobe license agreement accompanying it. 
+* If you have received this file from a source other than Adobe, then your 
+* use, modification, or distribution of it requires the prior written 
+* permission of Adobe.
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- removed height=device-height, -->
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+		<title>Adobe Scene7 Viewer SDK eCatalog Example</title>
+		<script language="javascript" type="text/javascript" src="http://s7d1.scene7.com/s7sdk/3.5/js/s7sdk/utils/Utils.js"></script>
+		<script language="javascript" type="text/javascript">
+			s7sdk.Util.lib.include('s7sdk.common.Button');
+			s7sdk.Util.lib.include('s7sdk.common.ControlBar');
+			s7sdk.Util.lib.include('s7sdk.common.Container');
+			s7sdk.Util.lib.include('s7sdk.set.PageView');
+			s7sdk.Util.lib.include('s7sdk.set.PageScrubber');
+			s7sdk.Util.lib.include('s7sdk.set.ThumbnailGridView');
+			s7sdk.Util.lib.include('s7sdk.image.ImageMapEffect');
+			s7sdk.Util.lib.include('s7sdk.info.InfoPanelPopup');
+			s7sdk.Util.lib.include('s7sdk.set.MediaSet');
+		</script>
+
+		<style type="text/css" media="screen">
+			/*************************************************************************/
+			/* The following styles overwrites the default styles defined by s7sdk to provide
+			   custom look and feel. */
+		
+			/*************************************************************************/
+			/* Document body */
+			body {
+				padding: 0;
+				margin: 0;
+				overflow: hidden;
+			}
+
+			/*************************************************************************/
+			/* Container */
+			/* This example specifies default size of the entire eCatalog viewer */
+			.s7container {
+				width: 1024px;
+				height: 768px;
+				background-color: rgb(221, 221, 221);
+			}
+
+			/*************************************************************************/
+			/* Tooltip */
+			.s7tooltip {
+				-moz-border-radius: 3px 3px 3px 3px;
+				-webkit-border-radius: 3px 3px 3px 3px;
+				border-radius: 3px 3px 3px 3px;
+				border-color:#999999;
+				background-color: #000000;
+				color: #FFFFFF;
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:11px;
+			}	
+
+			/*************************************************************************/
+			/* PageView */
+			.s7pageview {
+				position: absolute;	
+				top: 0px;
+				left: 0px;
+			}
+
+			/* Icon effect */
+			.s7pageview .s7iconeffect {
+				width:100px;
+				height:100px;
+				background-size:contain;
+			}
+			
+			.s7pageview .s7iconeffect[media-type='standard'] {
+				background-image:url(images/IconEffect_zoom.png);
+			}
+			
+			.s7pageview .s7iconeffect[media-type='multitouch'] {
+				background-image:url(images/IconEffect_pinch.png);
+			}
+
+			/*************************************************************************/
+			/* ThumbnailGridView that displays thumbnails for all pages. */
+			.s7thumbnailgridview {
+				width: 1024px;
+				height: 768px;
+				top: 40px;
+				left: 0px;
+				position: absolute;
+			}
+			
+			.s7thumbnailgridview .s7thumb {
+				width: 120px;
+				height: 85px;
+				background-color: rgb(255, 255, 255);
+				border: solid 1px #999999;
+			}
+			
+			.s7thumbnailgridview .s7thumb[state="selected"] {
+				border: solid 2px #666666;
+			}
+			
+			.s7thumbnailgridview .s7thumbcell {
+				margin-left: 5px;
+				margin-bottom: 5px;
+				margin-right: 5px;
+				margin-top: 5px;
+			}
+			
+			.s7thumbnailgridview .s7scrollbar {
+				background-color:rgba(102, 102, 102, 0);
+				position:absolute;
+				top:8px;
+				bottom:8px;
+				right:8px;
+				width:28px;
+			}
+			
+			.s7thumbnailgridview .s7scrollbar .s7scrolltrack {
+				width:28px;
+				background-color:rgba(102, 102, 102, 0.5);
+			}
+
+			.s7thumbnailgridview .s7scrollbar .s7scrollthumb {
+				width:28px;
+				height:45px;
+			}
+
+			.s7thumbnailgridview .s7scrollbar .s7scrollthumb[state='up'] {background-image:url(images/ThumbnailScrollThumb_dark_up.png);}
+			.s7thumbnailgridview .s7scrollbar .s7scrollthumb[state='over'] {background-image:url(images/ThumbnailScrollThumb_dark_over.png);}
+			.s7thumbnailgridview .s7scrollbar .s7scrollthumb[state='down'] {background-image:url(images/ThumbnailScrollThumb_dark_down.png);}
+			.s7thumbnailgridview .s7scrollbar .s7scrollthumb[state='disabled'] {background-image:url(images/ThumbnailScrollThumb_dark_up.png);}
+
+			.s7thumbnailgridview .s7scrollbar .s7scrollupbutton {
+				width:28px;
+				height:32px;
+			}
+
+			.s7thumbnailgridview .s7scrollbar .s7scrollupbutton[state='up'] {background-image:url(images/ThumbnailScrollUpButton_dark_up.png);}
+			.s7thumbnailgridview .s7scrollbar .s7scrollupbutton[state='over'] {background-image:url(images/ThumbnailScrollUpButton_dark_over.png);}
+			.s7thumbnailgridview .s7scrollbar .s7scrollupbutton[state='down'] {background-image:url(images/ThumbnailScrollUpButton_dark_down.png);}
+			.s7thumbnailgridview .s7scrollbar .s7scrollupbutton[state='disabled'] {background-image:url(images/ThumbnailScrollUpButton_dark_up.png);}
+
+			.s7thumbnailgridview .s7scrollbar .s7scrolldownbutton {
+				width:28px;
+				height:32px;
+			 }
+			 
+			.s7thumbnailgridview .s7scrollbar .s7scrolldownbutton[state='up'] {background-image:url(images/ThumbnailScrollDownButton_dark_up.png);}
+			.s7thumbnailgridview .s7scrollbar .s7scrolldownbutton[state='over'] {background-image:url(images/ThumbnailScrollDownButton_dark_over.png);}
+			.s7thumbnailgridview .s7scrollbar .s7scrolldownbutton[state='down'] {background-image:url(images/ThumbnailScrollDownButton_dark_down.png);}
+			.s7thumbnailgridview .s7scrollbar .s7scrolldownbutton[state='disabled'] {background-image:url(images/ThumbnailScrollDownButton_dark_up.png);}
+
+			/*************************************************************************/
+			/* ControlBar containing both ThumbnailPageButton and FullScreenButton */
+			.s7controlbar{
+				position: absolute;
+				left: 0;
+				top: 0px;
+				width: 100%;
+				height: 36px;
+				position: absolute;
+				display:block;
+				z-index: 1;
+				background-color: rgb(0, 0, 0);/*whithout alpha*/
+				background-color: rgba(0, 0, 0, 0.5);
+				z-index: 2;
+			}
+
+			/*************************************************************************/
+			/* ImageMapEffect */
+			.s7imagemapeffect .s7mapoverlay {
+				height: 28px;
+				width: 28px;	
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size:contain;
+				display:block;
+				background-image: url(images/ImageMapEffect_dark_up.png);
+			}
+			.s7imagemapeffect .s7mapoverlay[state="default"] {
+				opacity: 0.5;
+			}
+			
+			.s7imagemapeffect .s7mapoverlay[state="active"] {
+				opacity: 1;
+			}
+			 
+			/*************************************************************************/
+			/* FullScreenButton */
+			.s7fullscreenbutton {
+				position:absolute;
+				bottom: 4px;
+				right: 5px;
+				width:28px;
+				height:28px;
+				background-size:contain;
+			 }
+			
+			.s7fullscreenbutton[selected='true'][state='up'] { background-image:url(images/MinScreenButton_dark_up.png); }
+			.s7fullscreenbutton[selected='true'][state='over'] { background-image:url(images/MinScreenButton_dark_over.png); }
+			.s7fullscreenbutton[selected='true'][state='down'] { background-image:url(images/MinScreenButton_dark_down.png); }
+			.s7fullscreenbutton[selected='true'][state='disabled'] { background-image:url(images/MinScreenButton_dark_disabled.png); }
+			.s7fullscreenbutton[selected='false'][state='up'] { background-image:url(images/FullScreenButton_dark_up.png); }
+			.s7fullscreenbutton[selected='false'][state='over'] { background-image:url(images/FullScreenButton_dark_over.png); }
+			.s7fullscreenbutton[selected='false'][state='down'] { background-image:url(images/FullScreenButton_dark_down.png); }
+			.s7fullscreenbutton[selected='false'][state='disabled'] { background-image:url(images/FullScreenButton_dark_disabled.png); }
+
+			/*************************************************************************/
+			/* ThumbnailPageButton */
+			.s7thumbnailpagebutton {
+				position: absolute;
+				bottom: 4px;
+				left: 5px;
+				width:28px;
+				height:28px;	
+				background-size:contain;
+			}
+			.s7thumbnailpagebutton[selected='false'][state='up'] { background-image:url(images/ThumbnailPageButton_dark_up.png); }
+			.s7thumbnailpagebutton[selected='false'][state='over'] { background-image:url(images/ThumbnailPageButton_dark_over.png); }
+			.s7thumbnailpagebutton[selected='false'][state='down'] { background-image:url(images/ThumbnailPageButton_dark_down.png); }
+			.s7thumbnailpagebutton[selected='false'][state='disabled'] { background-image:url(images/ThumbnailPageButton_dark_disabled.png); }
+			.s7thumbnailpagebutton[selected='true'][state='up'] { background-image:url(images/ThumbnailPageButton_dark_over.png); }
+			.s7thumbnailpagebutton[selected='true'][state='over'] { background-image:url(images/ThumbnailPageButton_dark_over.png); }
+			.s7thumbnailpagebutton[selected='true'][state='down'] { background-image:url(images/ThumbnailPageButton_dark_over.png); }
+			.s7thumbnailpagebutton[selected='true'][state='disabled'] { background-image:url(images/ThumbnailPageButton_dark_disabled.png); }
+
+			/*************************************************************************/
+			/* InfoPanelPopup */ 
+			.s7infopanelpopup {
+				position : absolute;
+				top : 0px;
+				left : 0px;
+				background-color : rgba(0,0,0,0.75);
+				z-index: 6000;
+			}
+			.s7infopanelpopup .s7overlay {
+				left: 50%;
+				top: 50%;
+				width: 300px;
+				height: 200px;
+				margin-left: -150px;
+				margin-top: -100px;
+				padding-top: 40px;
+				padding-right: 10px;
+				padding-bottom: 10px;
+				padding-left: 10px;
+				background-color:rgb(221,221,221);
+				-moz-border-radius: 10px 10px 10px 10px;
+				-webkit-border-radius: 10px 10px 10px 10px;
+				border-radius: 10px 10px 10px 10px;
+				background-size: 100% 100%;
+				-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.25);
+				   -moz-box-shadow: 0 0 5px rgba(0,0,0,0.25);
+						box-shadow: 0 0 5px rgba(0,0,0,0.25);	
+			}
+			
+			.s7infopanelpopup .s7closebutton {
+				position: absolute;
+				width: 28px;
+				height: 28px;
+				top: 5px;
+				right: 5px;
+				padding: 0px;
+				visibility:inherit;
+			}
+			.s7infopanelpopup .s7closebutton[state="up"]{ background-image:url(images/InfoPanelPopup_CloseButton_dark_up.png); }
+			.s7infopanelpopup .s7closebutton[state="over"]{ background-image:url(images/InfoPanelPopup_CloseButton_dark_over.png); }
+			.s7infopanelpopup .s7closebutton[state="down"]{ background-image:url(images/InfoPanelPopup_CloseButton_dark_up.png); }
+			.s7infopanelpopup .s7closebutton[state="disabled"]{ background-image:url(images/InfoPanelPopup_CloseButton_dark_up.png); }
+
+			/*************************************************************************/
+			/* PageScrubber  */
+			.s7pagescrubber {
+				height: 55px;
+				width: 1024px;
+				bottom: 20px;
+				left: 0px;
+				position: absolute;
+				z-index:3;
+			}
+			/* Track component of the PageScrubber */
+			.s7pagescrubber .s7track {
+				width: 1024px;
+			}
+		</style>
+	</head>
+	<body>
+		<script language="JavaScript" type="text/javascript">
+			// Call the s7sdk.Util.init() method to initialize the s7sdk libraries.
+			s7sdk.Util.init();
+
+			/* Create an instance of the ParameterManager component to collect
+			   components' configuration that can come from a viewer preset, URL, or the HTML page itself. The ParameterManager 
+			   component also sends a notification s7sdk.Event.SDK_READY when all needed files are loaded and the configuration 
+			   parameters are processed. The other components should never be initialized outside of this handler. After  
+			   defining the handler for the s7sdk.Event.SDK_READY event, it is safe to initiate 
+			   configuration initialization by calling ParameterManager.init(). */
+			var params = new s7sdk.ParameterManager();
+
+			/* Variables for component objects */
+			var container, pageView, pageScrubber, controls, mediaSet, imageMapEffect, infoPanelPopup,
+				thumbnailPageButton, gridView, fullScreenButton;
+
+			/* Event handler for s7sdk.Event.SDK_READY dispatched by ParameterManager to initialize various components of 
+			   this viewer. */
+			function initViewer(){
+				/* Explicitly specify default modifiers in the viewer code by calling push().
+				   Specify the default video by pushing serverurl, videoserverurl and asset.
+				   'serverurl' should refer to the image server where your company assets reside.
+				   'asset' should be assigned with an asset ID.
+				   Both 'serverurl' and 'asset' can be omitted or overriden if they were pass as URL parameters
+				   (serverurl=...) and (asset=...) */
+				params.push("serverurl", "http://s7d1.scene7.com/is/image/");
+				params.push("MediaSet.asset", "Scene7SharedAssets/eCatalog_Sample");
+					
+				// Create MediaSet to manage assets and add event listener to the NOTF_SET_PARSED event
+				mediaSet = new s7sdk.set.MediaSet(null, params, "s7mediaSet");
+				// Add MediaSet event listener
+				mediaSet.addEventListener(s7sdk.event.AssetEvent.NOTF_SET_PARSED, onSetParsed, false);
+
+				/* Disable Info Panel by default, append ImageMapEffect.rollover=1 to enable.
+				   When enabled, the Info Panel will display the template string when the mouse is over a map region. */
+				params.push("ImageMapEffect.rollover", "0");
+				/* Define template and variable mappings for content of Info Panel.  In this example,
+				   the template string is defined for all the hotspot is: Value of <b>var1</b> for the map region is <b>$var1$</b>,
+				   where $var1$ will be substituted by the value defined in the <var /> element of that region, or assume the 
+				   global default definition.
+				   In this example, 
+				   the global default value for var1 is defined as "Adobe Scene7",
+				   the default value for var1 for map region 1-1 is not defined and will assume the global default value,
+				   the default value for var1 for map region 2-1 is defined as "Dynamic Imaging Solution",
+				   the default value for var1 for map region 2-2 is defined as "eCatalog Solution",
+				   the default value for var1 for map region 3-1 is defined as "Visual Configurators Solution", and
+				   the default value for var1 for map retion 3-2 is defined as "Targeted Email & Print Solution"
+				*/
+				params.push('template', '<info><var name="var1"><![CDATA[Adobe Scene7]]></var><var name="var1" rollover="2-1"><![CDATA[Dynamic Imaging Solution]]></var><var name="var1" rollover="2-2"><![CDATA[eCatalog Solution]]></var><var name="var1" rollover="3-1"><![CDATA[Visual Configurators Solution]]></var><var name="var1" rollover="3-2"><![CDATA[Targeted Email & Print Solution]]></var><![CDATA[Value of <b>var1</b> for this map region is <b>$var1$</b>]]></info>'); //Template for Info Panel popup
+				
+				/* Create a viewer container as a parent component for other UI components that are part of the viewer application and
+				   associate event handlers for resize and fullscreen notification. 
+				   The advantage of using Container as the parent is the component's ability to resize and bring itself and its 
+				   children to full screen. */			
+				container = new s7sdk.common.Container(null, params, "s7container");
+				container.addEventListener(s7sdk.event.ResizeEvent.COMPONENT_RESIZE, resizeViewer, false);
+				container.addEventListener(s7sdk.event.ResizeEvent.FULLSCREEN_RESIZE, onContainerFullScreen, false);
+				
+				// Create the PageScrubber component object
+				pageScrubber = new s7sdk.set.PageScrubber(container, params, "s7pageScrubber");
+				
+				// Create the PageView component object
+				pageView = new s7sdk.set.PageView(container, params, "s7pageView");
+
+				// Create the ThumbnailGridView component object
+				gridView = new s7sdk.set.ThumbnailGridView(container, params, "s7gridView");
+
+				// Create the ControlBar component object
+				controls = new s7sdk.common.ControlBar(container, params, "s7controls");
+
+				// Create the ImageMapEffect component object
+				imageMapEffect = new s7sdk.image.ImageMapEffect("s7pageView", params, "s7imageMapEffect");
+				// Add event listeners for image map rollover and target events
+				imageMapEffect.addEventListener(s7sdk.event.RolloverKeyEvent.ROLLOVER_ACTIVATED,  rolloverKeyHandler, false);
+				imageMapEffect.addEventListener(s7sdk.event.RolloverKeyEvent.ROLLOVER_DEACTIVATED, rolloverKeyHandler, false);
+				imageMapEffect.addEventListener(s7sdk.event.RolloverKeyEvent.TARGET_INDEX, rolloverKeyTargetHandler, false);
+
+				infoPanelPopup = new s7sdk.info.InfoPanelPopup(container, params, "s7infoPanelPopup");
+				
+				// Attach the PageView, GridView and ImageMapEffect objects to the ControlBar
+				controls.attachView(pageView, false);
+				controls.attachView(gridView, false);
+				controls.attachView(imageMapEffect, false);
+
+				// Create the ThumbnailPageButton component object
+				thumbnailPageButton = new s7sdk.common.ThumbnailPageButton("s7controls", params, "s7thumbnailButton");
+
+				// Create the ThumbnailPageButton component object
+				fullScreenButton = new s7sdk.common.FullScreenButton("s7controls", params, "s7fullScreenButton");
+
+				// Hide the ThumbnailGridView by default
+				gridView.setCSS(".s7thumbnailgridview", "visibility", "hidden");
+
+				// Add an event listener for PageView selection events
+				pageView.addEventListener(s7sdk.event.AssetEvent.ITEM_SELECTED_EVENT, onPageViewSelected, false);
+
+				// Add an event listener for ThumbnailGridView swatch selection events
+				gridView.addEventListener(s7sdk.event.AssetEvent.SWATCH_SELECTED_EVENT, onGridViewSwatchSelected, false);
+
+				// Add an event listener for ThumbnailPageButton click events
+				thumbnailPageButton.addEventListener("click", onThumbnailPageButton, false);
+
+				// Add an event listener for FullScreenButton click events
+				fullScreenButton.addEventListener("click", onFullScreenButtonClick, false);
+
+				// Add an event listener for PageScrubber selection events
+				pageScrubber.addEventListener(s7sdk.event.AssetEvent.ITEM_SELECTED_EVENT, onPageScrubberSelected, false);
+			}
+
+			/* Event handler for s7sdk.event.AssetEvent.ITEM_SELECTED_EVENT events dispatched by PageView to switch pages 
+			   for PageView item selections. */
+			function onPageViewSelected(event){
+				switchToPage(event);
+			}
+
+			/* Event handler for s7sdk.event.AssetEvent.SWATCH_SELECTED_EVENT events dispatched by ThumbnailGridView to 
+			   switch pages for ThumbnailGridView swatch selections. */
+			function onGridViewSwatchSelected(event){
+				switchToPage(event);
+			}
+
+			/* Event handler for click events dispatched by ThumbnailPageButton to update the visibility of UI elements. */
+			function onThumbnailPageButton(event){
+				updateUI();
+			}
+
+			/* Updates visibility state of different UI elements */
+			function updateUI() {
+				// show/hide PageView 
+				pageView.setCSS(".s7pageview", "visibility", thumbnailPageButton.isSelected() ? "hidden" : "inherit");
+				// show/hide ThumbnailGridView
+				gridView.setCSS(".s7thumbnailgridview", "visibility", thumbnailPageButton.isSelected() ? "inherit" : "hidden");
+				// show/hide PageScrubber
+				pageScrubber.setCSS(".s7pagescrubber", "visibility", (!thumbnailPageButton.isSelected()) ? "inherit" : "hidden");
+			}
+
+			/* Event handler for s7sdk.event.AssetEvent.ITEM_SELECTED_EVENT events dispatched by PageScrubber to 
+			   switch pages for PageScrubber item selections. */
+			function onPageScrubberSelected(event){
+				switchToPage(event);
+			}
+
+			/* Event handler for click events dispatched by FullScreenButton to switch between normal and full screen modes. */
+			function onFullScreenButtonClick(event) {
+				if (!container.isFullScreen()){
+					container.requestFullScreen();
+				}
+				else {
+					container.cancelFullScreen();
+				}					
+			}
+			
+            // Define an event handler function to activate the InfoPanelPopup for image map rollovers
+            function rolloverKeyHandler(event) {
+                if (event.s7event.rolloverKey != null) {
+                    infoPanelPopup.activateRollover(event.s7event.rolloverKey);
+                }
+            }
+			
+			function rolloverKeyTargetHandler(event) {
+				if(event.s7event.frame) {
+					var frameIndex = event.s7event.frame;
+					var orientation = self.getOrientation();
+					if (orientation == 0 || orientation == 180) {
+						//portrait
+						frameIndex = this.landscapeToPortraitHash[frameIndex];
+					}
+					pageView.setCurrentFrameIndex(frameIndex);
+				}
+			}	
+						
+			/**
+			 * Define a function to deal with the popup for image map
+			 */
+			function loadProduct(href){
+				var new_window = window.open(href);
+				try {
+					new_window.focus();
+				} catch (err) {}
+			}
+			
+			/* Define a function to update all components to display the currently selected page */
+			function switchToPage(event){
+				infoPanelPopup.setItem(event.s7event.asset);
+				pageView.setCurrentFrameIndex(event.s7event.frame);
+				gridView.selectSwatch(event.s7event.frame, true);
+				pageScrubber.setCurrentFrameIndex(event.s7event.frame);
+				// If the ThumbnailGridView is showing, hide it and deselect the ThumbnailPageButton
+				if(thumbnailPageButton.isSelected()){
+					thumbnailPageButton.setSelected(false);
+					updateUI();
+				}
+			}
+
+			/* Add event handler for the s7sdk.Event.SDK_READY event dispatched by the ParameterManager when all modifiers are 
+			   processed and it is safe to initialize the viewer. */
+			params.addEventListener(s7sdk.Event.SDK_READY, initViewer, false);
+
+			/* Initiate configuration initialization of ParameterManager. */
+			params.init();
+
+			/* Event handler for s7sdk.event.ResizeEvent.COMPONENT_RESIZE events dispatched by Container to resize
+			   various view components included in this viewer. */
+			function resizeViewer(event){
+				pageView.resize(event.s7event.w, event.s7event.h);
+				infoPanelPopup.resize(event.s7event.w, event.s7event.h);
+				gridView.resize(event.s7event.w, event.s7event.h - 40);
+				pageScrubber.resize(event.s7event.w, 55);
+			}
+
+			/* Event handler for s7sdk.event.ResizeEvent.FULLSCREEN_RESIZE events dispatched by Container to update
+			   the appearance of the FullScreenButton. */
+			function onContainerFullScreen(event) {
+				fullScreenButton.setSelected(container.isFullScreen());
+			}
+
+			/* Event handler for the s7sdk.event.AssetEvent.NOTF_SET_PARSED event dispatched by MediaSet to
+			   assign the asset to the PageView, PageScrubber and ThumbnailGridView when parsing is complete. */
+			function onSetParsed(event) {
+				// set media set for various components to display
+				var mediaset = event.s7event.asset;
+				var w = container.getWidth();
+				var h = container.getHeight()
+				pageView.resize(w, h);
+				infoPanelPopup.resize(w, h);
+				gridView.resize(w, h - 40);
+				pageScrubber.resize(w, 55);
+				pageView.setMediaSet(event.s7event.asset);
+				pageScrubber.setMediaSet(event.s7event.asset);
+				gridView.setMediaSet(event.s7event.asset);
+			}
+		</script>
+	</body>
+</html>

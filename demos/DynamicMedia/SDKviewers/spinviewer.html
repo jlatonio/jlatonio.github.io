@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--
+*
+* ADOBE SYSTEMS INCORPORATED
+*  Copyright 2012 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  Adobe permits you to use, modify, and distribute this file in
+* accordance with the terms of the Adobe license agreement accompanying it.
+* If you have received this file from a source other than Adobe, then your
+* use, modification, or distribution of it requires the prior written
+* permission of Adobe.
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- removed height=device-height, -->
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+		<!-- Hiding the Safari on iPhone OS UI components -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<!-- Specifying a per-page Home screen icon -->
+		<link rel="apple-touch-icon" href=""/>
+		<link rel="apple-touch-startup-image" href="" />
+		
+		<title>Adobe Scene7 Viewer SDK Spin Demo</title>
+		<script language="javascript" type="text/javascript" 
+		src="http://s7d1.scene7.com/s7sdk/3.5/js/s7sdk/utils/Utils.js"></script>
+
+		<script language="javascript" type="text/javascript">	
+			/* For this example, we set up a spin viewer with a close button component.
+			   We need 
+			   s7sdk.set.SpinView for spin viewer area, 
+			   s7sdk.common.Container as a container of all components, 
+			   s7sdk.set.MediaSet for managing asset,
+			   s7sdk.common.Button for a close button */
+			s7sdk.Util.lib.include('s7sdk.common.Container');
+			s7sdk.Util.lib.include('s7sdk.set.SpinView');
+			s7sdk.Util.lib.include('s7sdk.set.MediaSet');
+			s7sdk.Util.lib.include('s7sdk.common.Button');
+		</script>       
+
+		<style type="text/css" media="screen">
+			/*************************************************************************/
+			/* The following styles overwrites the default styles defined by s7sdk to provide
+			   custom look and feel. */
+		
+			/*************************************************************************/
+			/* Document body */
+			/* Specify 100% width and 100% height for responsive fill parent behavior */
+			html, body {
+				width:100%;
+				height:100%;
+			}
+			
+			/*************************************************************************/
+			/* Main body of the SpinView component */
+			.s7spinview {
+				position: absolute;	
+				top: 0px;
+				left: 0px;
+				z-index: 1;
+			}
+			
+			/*************************************************************************/
+			/* IconEffect */
+			.s7spinview .s7iconeffect{
+				width:100px;
+				height:100px;
+				background-size:contain;
+			}
+			
+			/* IconEffect - desktop size and art */
+			.s7spinview .s7iconeffect[state='spin_1D'] { background-image:url(images/IconEffect_spin_up.png); }
+			.s7spinview .s7iconeffect[state='spin_2D'] { background-image:url(images/IconEffect_spin3d_up.png); }		
+
+			/*************************************************************************/
+			/* CloseButton */
+			.s7closebutton{
+				position: absolute;	
+				top: 20px;
+				right: 20px;
+				width:28px;
+				height:28px;
+				z-index: 2;
+				background-size:contain;
+			}
+			
+			.s7closebutton[state='up'] { background-image:url(images/CloseButton_light_up.png); }
+			.s7closebutton[state='over'] { background-image:url(images/CloseButton_light_over.png); }
+			.s7closebutton[state='down'] { background-image:url(images/CloseButton_light_down.png); }
+			.s7closebutton[state='disabled'] { background-image:url(images/CloseButton_light_disabled.png); }
+		</style>
+	</head>
+
+	<body style="margin: 0 0; overflow:hidden;">	
+		
+		<script language="JavaScript" type="text/javascript">
+
+			// Call the s7sdk.Util.init() method to initialize the s7sdk libraries.
+			s7sdk.Util.init();
+
+			/* Create an instance of the ParameterManager component to collect
+			   components' configuration that can come from a viewer preset, URL, or the HTML page itself. The ParameterManager 
+			   component also sends a notification s7sdk.Event.SDK_READY when all needed files are loaded and the configuration 
+			   parameters are processed. The other components should never be initialized outside of this handler. After  
+			   defining the handler for the s7sdk.Event.SDK_READY event, it is safe to initiate 
+			   configuration initialization by calling ParameterManager.init(). */
+			var params = new s7sdk.ParameterManager();
+
+			/* Variables for component objects */
+			var s7spinview, s7closeButton, container, mediaSet;
+			
+			/* Event handler for s7sdk.Event.SDK_READY dispatched by ParameterManager to initialize various components of 
+			   this viewer. */
+			function initViewer(){
+				/* Explicitly specify default modifiers in the viewer code by calling push().
+				   Specify the default video by pushing serverurl, videoserverurl and asset.
+				   'serverurl' should refer to the image server where your company assets reside.
+				   'asset' should be assigned with an asset ID.
+				   Both 'serverurl' and 'asset' can be omitted or overriden if they were pass as URL parameters
+				   (serverurl=...) and (asset=...) */
+				params.push("serverurl", "http://s7d1.scene7.com/is/image");
+				params.push("MediaSet.asset", "Scene7SharedAssets/SpinSet_Sample");               
+
+				// Create MediaSet to manage assets and add event listener to the NOTF_SET_PARSED event
+				mediaSet = new s7sdk.set.MediaSet(null, params, "mediaSet");
+				// Add MediaSet event listener
+				mediaSet.addEventListener(s7sdk.event.AssetEvent.NOTF_SET_PARSED, onSetParsed, false);
+
+				/* Create a viewer container as a parent component for other UI components that are part of the viewer application and
+				   associate event handlers for resize notification. 
+				   The advantage of using Container as the parent is the component's ability to resize and bring itself and its 
+				   children to full screen. */			
+				container = new s7sdk.common.Container(null, params, "s7container");
+				container.addEventListener(s7sdk.event.ResizeEvent.COMPONENT_RESIZE,resizeViewer,false);
+				
+				/* Create a SpinView component 
+				   - for version 2.0.1 library, this component has to be created before other components. */
+				s7spinview = new s7sdk.set.SpinView(container, params, "s7viewer");
+				
+				/* Create a CloseButton component and associate event handlers for click notification */
+				s7closeButton = new s7sdk.common.CloseButton(container, params, "closeBtn");
+				s7closeButton.addEventListener("click",function(){
+					try{
+						if(s7sdk.browser.name != "firefox")
+							//workaround for close self window with JS
+							window.open("s7sdkclose.html","_self"); 
+						else
+							// Firefox does not allow workaround so we fall back to window.close to cover pop-up case
+							window.close(); 
+					}
+					catch(e){
+						s7sdk.Logger.log(s7sdk.Logger.WARN,"Cannot close the window");
+					}
+				});
+			}
+				
+			/* Add event handler for the s7sdk.Event.SDK_READY event dispatched by the ParameterManager when all modifiers are 
+			   processed and it is safe to initialize the viewer. */
+			params.addEventListener(s7sdk.Event.SDK_READY, initViewer, false);
+
+			/* Initiate configuration initialization of ParameterManager. */
+			params.init();
+
+			/* Event handler for s7sdk.event.ResizeEvent.COMPONENT_RESIZE events dispatched by Container to resize
+			   various view components included in this viewer. */
+			function resizeViewer(event){
+				s7spinview.resize(event.s7event.w, event.s7event.h);
+			}
+
+			/* Event handler for the s7sdk.event.AssetEvent.NOTF_SET_PARSED event dispatched by MediaSet to
+			   assign the asset to the Swatches when parsing is complete. */
+			function onSetParsed(event) {
+				// set asset for SpinView to display
+				var mediasetDesc = event.s7event.asset;
+				s7spinview.resize(container.getWidth(), container.getHeight());
+				s7spinview.setMediaSet(mediasetDesc);
+			}
+		</script>		
+	</body>
+</html>

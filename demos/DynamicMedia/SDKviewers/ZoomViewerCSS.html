@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+*
+* ADOBE SYSTEMS INCORPORATED
+*  Copyright 2012 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  Adobe permits you to use, modify, and distribute this file in
+* accordance with the terms of the Adobe license agreement accompanying it.
+* If you have received this file from a source other than Adobe, then your
+* use, modification, or distribution of it requires the prior written
+* permission of Adobe.
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="user-scalable=no, height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+		<!-- Hiding the Safari on iPhone OS UI components -->
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta name="apple-touch-fullscreen" content="no"/>
+
+		<title>Adobe Scene7 Viewer SDK Zoom Viewer With SocialShare and External CSS</title>
+
+		<!--
+			Include Utils.js before you use any of the SDK components. This file 
+			contains SDK utilities and global functions that are used to initialize the viewer and load viewer 
+			components. The path to the Utils.js determines which version of the SDK that the viewer uses. You 
+			can use a relative path if the viewer is deployed on one of the Adobe Scene7 servers and it is served 
+			from the same domain. Otherwise, specify a full path to one of Adobe Scene7 servers that have the SDK 
+			installed. 
+		-->
+		<script language="javascript" type="text/javascript"     
+						src="http://s7d1.scene7.com/s7sdk/3.5/js/s7sdk/utils/Utils.js"></script>
+
+		<!--
+			Add an "include" statement with a related module for each component that is needed for that particular 
+			viewer. Check API documentation to see a complete list of components and their modules.
+		-->
+		<script language="javascript" type="text/javascript">
+			s7sdk.Util.lib.include('s7sdk.image.ZoomView'); 	
+			s7sdk.Util.lib.include('s7sdk.common.Container'); 
+			s7sdk.Util.lib.include('s7sdk.set.Swatches'); 		
+			s7sdk.Util.lib.include('s7sdk.set.MediaSet');
+			s7sdk.Util.lib.include('s7sdk.share.Share');
+		</script> 	
+
+		<!--
+			The styles in the externally-linked CSS file override the default styles defined by s7sdk to provide
+			custom look and feel. */
+		-->
+		<link rel="stylesheet" type="text/css" media="all" href="ZoomViewer.css"/>                
+	</head>
+
+	<body>
+
+		<script language="JavaScript" type="text/javascript">
+
+			// Initialize the SDK  
+			s7sdk.Util.init();
+
+			/* Create an instance of the ParameterManager component to collect
+			   components' configuration that can come from a viewer preset, URL, or the HTML page itself. The ParameterManager 
+			   component also sends a notification s7sdk.Event.SDK_READY when all needed files are loaded and the configuration 
+			   parameters are processed. The other components should never be initialized outside of this handler. After  
+			   defining the handler for the s7sdk.Event.SDK_READY event, it is safe to initiate 
+			   configuration initialization by calling ParameterManager.init(). */
+			var params = new s7sdk.ParameterManager();
+
+			/* Variables for component objects */
+			var zoomView, container, swatches, mediaSet;  			 
+
+			/* Event handler for s7sdk.Event.SDK_READY dispatched by ParameterManager to initialize various components of 
+			   this viewer. */
+			function initViewer(){
+				/* Explicitly specify default modifiers in the viewer code by calling push().
+				   Specify the default video by pushing serverurl, videoserverurl and asset.
+				   'serverurl' should refer to the image server where your company assets reside.
+				   'asset' should be assigned with an asset ID.
+				   Both 'serverurl' and 'asset' can be omitted or overriden if they were pass as URL parameters
+				   (serverurl=...) and (asset=...) */
+				params.push("serverurl", "http://s7d1.scene7.com/is/image"); 	
+				params.push("MediaSet.asset", "Scene7SharedAssets/ImageSet-Views-Sample");
+
+				// configure the URL for e-mail server
+				params.push("EmailShare.emailurl", "http://s7d1.scene7.com/s7/emailFriend");
+
+				// Create MediaSet to manage assets and add event listener to the NOTF_SET_PARSED event
+				mediaSet = new s7sdk.set.MediaSet(null, params, "mediaSet");
+				// Add MediaSet event listener
+				mediaSet.addEventListener(s7sdk.event.AssetEvent.NOTF_SET_PARSED, onSetParsed, false);
+
+				/* Create a viewer container as a parent component for other UI components that are part of the viewer application and
+				   associate event handlers for resize and full screen notification. 
+				   The advantage of using Container as the parent is the component's ability to resize and bring itself and its 
+				   children to full screen. */			
+				container = new s7sdk.common.Container(null, params, "s7container");
+				container.addEventListener(s7sdk.event.ResizeEvent.COMPONENT_RESIZE,resizeViewer,false);
+
+				/* Create ZoomView component */
+				zoomView = new s7sdk.image.ZoomView(container, params, "myZoomView");
+
+				/* create Swatches component and associate event handler for swatch selection notification */
+				swatches = new s7sdk.set.Swatches(container, params, "mySwatches");
+				swatches.addEventListener(s7sdk.event.AssetEvent.SWATCH_SELECTED_EVENT, swatchSelected, false);
+
+				/* Create SocialShare button */
+				socialShare = new s7sdk.share.SocialShare(container, params, "socialShare");
+
+				// Configure EmailShare component
+				emailShare = new s7sdk.share.EmailShare("socialShare", params);
+				emailShare.setContentTitle("Content title");
+				emailShare.setContentUrl("http://www.adobe.com");
+				emailShare.setDescription("Content description");
+				emailShare.setOriginUrl("http://www.adobe.com/");
+				emailShare.setThumbnail("sample/0");
+
+				// Configure LinkShare component
+				linkShare = new s7sdk.share.LinkShare("socialShare", params);
+				linkShare.setContentUrl("http://www.adobe.com");
+
+				// Configure EmbedShare component
+				embedShare = new s7sdk.share.EmbedShare("socialShare", params);
+				embedShare.setEmbedCode(
+					"<script language=\"javascript\" type=\"text/javascript\"  src=\"http://s7d1.scene7.com/s7viewers/html5/js/ZoomViewer.js\"></sc" + "ript>\n" +
+					"<div id='zoom'></div>\n" +
+					"<script type=\"text/javascript\">\n" +
+					"var zoomViewer = new s7viewers.ZoomViewer();\n" +
+					"zoomViewer.setContainerId(\"zoom\");\n" +
+					"zoomViewer.setAsset(\"Scene7SharedAssets/ImageSet-Views-Sample\");\n" +
+					"zoomViewer.setParam(\"stagesize\",\"$EMBED_WIDTH$,$EMBED_HEIGHT$\");\n" +
+					"zoomViewer.setParam(\"serverurl\",\"http://s7d1.scene7.com/is/image/\");\n" +
+					"zoomViewer.init();\n" +
+					"</s" + "cript>"
+				);
+
+				// Configure FacebookShare
+				facebookShare = new s7sdk.share.FacebookShare("socialShare", params);
+				facebookShare.setContentUrl("http://www.adobe.com");
+
+				// Configure TwitterShare
+				twitterShare = new s7sdk.share.TwitterShare("socialShare", params);
+				twitterShare.setContentUrl("http://www.adobe.com");
+
+			} 
+
+			/* Add event handler for the s7sdk.Event.SDK_READY event dispatched by the ParameterManager when all modifiers are 
+			   processed and it is safe to initialize the viewer. */
+			params.addEventListener(s7sdk.Event.SDK_READY, initViewer, false);
+
+			/* Initiate configuration initialization of ParameterManager. */
+			params.init();
+
+			/* Event handler for s7sdk.event.ResizeEvent.COMPONENT_RESIZE events dispatched by Container to resize
+			   various view components included in this viewer. */
+			function resizeViewer(e){
+				zoomView.resize(e.s7event.w, e.s7event.h);
+			}
+
+			/* Event handler for s7sdk.event.AssetEvent.SWATCH_SELECTED_EVENT events dispatched by Swatches to switch
+			   the image in the ZoomView when a different swatch is selected. */
+			function swatchSelected(event) { 	
+				zoomView.setItem(event.s7event.asset); 
+			}
+
+			/* Event handler for the s7sdk.event.AssetEvent.NOTF_SET_PARSED event dispatched by MediaSet to
+			   assign the asset to the Swatches when parsing is complete. */
+			function onSetParsed(e) {
+				// set media set for Swatches to display 
+				var mediasetDesc = e.s7event.asset; 
+				zoomView.resize(container.getWidth(), container.getHeight());
+				swatches.setMediaSet(mediasetDesc);		
+
+				// select the first swatch by default 
+				swatches.selectSwatch(0, true);		
+			}
+		</script> 
+	</body>
+</html>

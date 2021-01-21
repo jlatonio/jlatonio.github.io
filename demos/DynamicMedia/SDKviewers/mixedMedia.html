@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--
+*
+* ADOBE SYSTEMS INCORPORATED
+*  Copyright 2012 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  Adobe permits you to use, modify, and distribute this file in
+* accordance with the terms of the Adobe license agreement accompanying it.
+* If you have received this file from a source other than Adobe, then your
+* use, modification, or distribution of it requires the prior written
+* permission of Adobe.
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+		<meta name="viewport" content="user-scalable=no, height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+		<!-- Hiding the Safari on iPhone OS UI components -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<!-- Specifying a per-page Home screen icon -->
+		<link rel="apple-touch-icon" href=""/>
+		<link rel="apple-touch-startup-image" href="" />
+		
+		<title>Adobe Scene7 Mixed Media Example</title>
+		<script language="javascript" type="text/javascript" src="http://s7d1.scene7.com/s7sdk/3.5/js/s7sdk/utils/Utils.js"></script>
+		<script language="javascript" type="text/javascript">
+			s7sdk.Util.lib.include('s7sdk.common.Container');				
+			s7sdk.Util.lib.include('s7sdk.set.MediaSet');
+			s7sdk.Util.lib.include('s7sdk.set.SpinView');
+			s7sdk.Util.lib.include('s7sdk.set.Swatches');
+			s7sdk.Util.lib.include('s7sdk.image.ZoomView');
+			s7sdk.Util.lib.include('s7sdk.video.VideoPlayer');			
+		</script>
+
+		<style type="text/css">
+			/*************************************************************************/
+			/* The following styles overwrites the default styles defined by s7sdk to provide
+			   custom look and feel. */
+		
+			/*************************************************************************/
+			/* Specify 100% width and height for responsive viewer resizing. */
+			html,body {
+				width: 100%;
+				height: 100%;
+			}
+	
+			/*************************************************************************/
+			/* Set attributes for the page body */
+			body {
+				padding: 0;
+				margin: 0;
+				font-size: 12px;
+				background: #FFFFFF;
+				overflow: hidden;
+			}
+
+			/*************************************************************************/
+			/* Tool Tip */
+			.s7tooltip {
+				-moz-border-radius: 3px 3px 3px 3px;
+				-webkit-border-radius: 3px 3px 3px 3px;
+				border-radius: 3px 3px 3px 3px;
+				border-color: #999999;
+				background-color: #000000;
+				color: #FFFFFF;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 11px;
+			}
+
+			/*************************************************************************/
+			/* Zoom View */
+			.s7zoomview {
+				position: absolute;	
+				top: 0px;
+				left: 0px;
+				z-index:1;
+			}
+	
+			/* IconEffect component*/
+			.s7zoomview .s7iconeffect {
+				width:100px;
+				height:100px;
+				background-size:contain;
+			}
+
+			.s7zoomview .s7iconeffect[media-type='standard'] {background-image:url(images/IconEffect_zoom.png);}
+			.s7zoomview .s7iconeffect[media-type='multitouch'] {background-image:url(images/IconEffect_pinch.png);}
+
+			/*************************************************************************/
+			/* SetIndicator styles */
+			.s7setindicator {
+				position: absolute;
+				visibility:inherit;
+				z-index:1;
+			}
+			.s7setindicator .s7dot {
+				width:15px;
+				height:15px;
+				margin-left:2px;
+				margin-top:5px;
+				margin-right:2px;
+				margin-bottom:1px;
+				border-radius:12px;
+				background-color:#d5d3d3;
+			}
+
+			.s7setindicator .s7dot[state='selected'] {
+				background-color:#939393;
+			}
+
+			/*************************************************************************/
+			/* Spin View */
+			.s7spinview {
+				position: absolute;
+			}
+			
+			/* IconEffect component */
+			.s7spinview .s7iconeffect{
+				width:100px;
+				height:100px;
+				background-size:contain;
+			 }
+			.s7spinview .s7iconeffect[state='spin_1D'] { background-image:url(images/IconEffect_spin_up.png); }
+			.s7spinview .s7iconeffect[state='spin_2D'] { background-image:url(images/IconEffect_spin3d_up.png); }
+
+			/*************************************************************************/
+			/* Swatches component for switching between viewers  */
+			.s7swatches {
+				-moz-box-shadow: inset 0px 0px 10px #888;
+				-webkit-box-shadow: inset 0px 0px 10px #888;
+				box-shadow: inset 0px 0px 10px #888;		
+				position:absolute;
+				left: 0px; 
+				width: 100%;
+				height: 96px;
+				bottom: 0px;
+				background-color: rgba(200, 200, 200, 0.5);
+				z-index: 9999;
+			}
+			.s7swatches .s7thumb { 
+				width: 56px;
+				height: 56px;
+				background-color : #ffffff;
+				border: 1px solid #dddddd;
+			}
+			.s7swatches .s7thumb[state="default"] {
+				border: 1px solid #dddddd;
+			}
+			.s7swatches .s7thumb[state="selected"] {
+				border: 1px solid #666666;
+			}
+			
+			/* Swatches scroll left button */
+			.s7swatches .s7scrollleftbutton {
+				background-size: auto;
+				width: 56px;
+				height: 56px;
+			}
+			.s7swatches .s7scrollleftbutton[state="up"]{ background-image:url(images/ScrollLeftButton_light_up.png); }
+			.s7swatches .s7scrollleftbutton[state="over"]{ background-image:url(images/ScrollLeftButton_light_over.png);}
+			.s7swatches .s7scrollleftbutton[state="down"]{ background-image:url(images/ScrollLeftButton_light_down.png); }
+			.s7swatches .s7scrollleftbutton[state="disabled"]{ background-image:url(images/ScrollLeftButton_light_disabled.png); }
+
+			/* Swatches scroll right button */
+			.s7swatches .s7scrollrightbutton {
+				background-size: auto;
+				width: 56px;
+				height: 56px;
+			}
+			.s7swatches .s7scrollrightbutton[state="up"]{ background-image:url(images/ScrollRightButton_light_up.png); }
+			.s7swatches .s7scrollrightbutton[state="over"]{ background-image:url(images/ScrollRightButton_light_over.png); }
+			.s7swatches .s7scrollrightbutton[state="down"]{ background-image:url(images/ScrollRightButton_light_down.png); }
+			.s7swatches .s7scrollrightbutton[state="disabled"]{ background-image:url(images/ScrollRightButton_light_disabled.png); }
+			
+			.s7swatches .s7thumb .s7thumboverlay[type="image"] {
+			}
+			.s7swatches .s7thumb .s7thumboverlay[type="swatchset"] {
+				background-image: url(images/ThumbOverlaySwatchSet.png); 
+			}
+			.s7swatches .s7thumb .s7thumboverlay[type="spinset"] {
+				background-image: url(images/ThumbOverlaySpinSet.png); 
+			}
+			.s7swatches .s7thumb .s7thumboverlay[type="video"] {
+				background-image: url(images/ThumbOverlayVideo.png); 
+			}
+
+			/*************************************************************************/
+			/* VideoPlayer component*/
+			.s7videoplayer {
+				position: absolute;
+			}
+
+			/* IconEffect component*/
+			.s7videoplayer .s7iconeffect {
+				width: 80px;
+				height: 80px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+			/* Images for the VideoPlayer play and replay icon */
+			.s7videoplayer .s7iconeffect[state='play']{background-image:url(images/IconEffect_play_up.png);}
+			.s7videoplayer .s7iconeffect[state='replay']{background-image:url(images/IconEffect_replay_up.png);}
+		</style>	
+	</head>
+	
+	<body>	
+		<script language="JavaScript" type="text/javascript">
+						
+		   	// Call the s7sdk.Util.init() method to initialize the s7sdk libraries.
+			s7sdk.Util.init();
+
+			/* Create an instance of the ParameterManager component to collect
+			   components' configuration that can come from a viewer preset, URL, or the HTML page itself. The ParameterManager 
+			   component also sends a notification s7sdk.Event.SDK_READY when all needed files are loaded and the configuration 
+			   parameters are processed. The other components should never be initialized outside of this handler. After  
+			   defining the handler for the s7sdk.Event.SDK_READY event, it is safe to initiate 
+			   configuration initialization by calling ParameterManager.init(). */
+			var s7params = new s7sdk.ParameterManager(null, null, { "asset" : "MediaSet.asset" });
+			var s7container, s7mediaSet, s7zoomview, s7spinview, s7swatches, s7videoplayer;
+		
+			/* Event handler for s7sdk.Event.SDK_READY dispatched by ParameterManager to initialize various components of 
+			   this viewer. */
+			function initViewer(){
+				/* Explicitly specify default modifiers in the viewer code by calling push().
+				   Specify the default video by pushing serverurl, videoserverurl and asset */
+				s7params.push("serverurl", "http://s7d1.scene7.com/is/image");
+				s7params.push("videoserverurl", "http://s7d1.scene7.com/is/content/");
+				s7params.push("MediaSet.asset", "Viewers/MediaSet-Sample-B");
+				/* Specifies columns, or rows, or both to limit the number of cells per row and column, respectively */
+				s7params.push("Swatches.tmblayout", "0,1");
+				
+				// Create MediaSet to manage assets and add event listener to the NOTF_SET_PARSED event
+				mediaSet = new s7sdk.set.MediaSet(null, s7params, "s7mediaSet");
+				// Add MediaSet event listeners
+				mediaSet.addEventListener(s7sdk.event.AssetEvent.NOTF_SET_PARSED, onSetParsed, false);
+				
+				/* Create a viewer container as a parent component for other UI components that are part of the viewer application and
+				   associate event handlers for resize notification. 
+				   The advantage of using Container as the parent is the component's ability to resize and bring itself and its 
+				   children to full screen. */			
+				s7container = new s7sdk.common.Container(null, s7params, "s7container");
+				s7container.addEventListener(s7sdk.event.ResizeEvent.COMPONENT_RESIZE, onResize, false);
+		
+				/* Create swatches to reference different images, spin set and video, and associate event handler for the
+				   s7sdk.event.AssetEvent.SWATCH_SELECTED_EVENT to display the view of interest and hide the others. */	
+				s7swatches = new s7sdk.set.Swatches(s7container, s7params, "s7swatches");
+				s7swatches.addEventListener(s7sdk.event.AssetEvent.SWATCH_SELECTED_EVENT, swatchSelected, false);
+				
+				/* Initialize view components to null and create them later to display assets as needed. */
+				s7zoomview = null;
+				s7videoplayer = null;
+				s7spinview = null;	
+			}
+			/* Add event handler for the s7sdk.Event.SDK_READY event dispatched by the ParameterManager when all modifiers are 
+			   processed and it is safe to initialize the viewer. */
+			s7params.addEventListener(s7sdk.Event.SDK_READY,initViewer,false);
+		
+			/* Initiate configuration initialization of ParameterManager. */
+			s7params.init();
+			
+			/* Event handler for s7sdk.event.AssetEvent.SWATCH_SELECTED_EVENT events dispatched by Swatches to switch
+			   among views displaying different assets in the main view. */
+			function swatchSelected(event) {
+				
+				var w = s7container.getWidth();
+				var h = s7container.getHeight();
+
+				// asset is a s7sdk.ItemDesc
+				var asset = event.s7event.asset;
+				
+				// pause video playback, just in case the previous active item was a video 
+				if (s7videoplayer)
+					s7videoplayer.pause();
+					
+				// Hide all, only the active component should be visible
+				displayElement("s7zoomView", false);
+				displayElement("s7videoplayer", false);
+				displayElement("s7spinview", false);
+				
+				/* Determine which view to show or hide depending on the type of asset to display */
+				if (asset.type === s7sdk.ItemDescType.IMG) { // the selected item is an image
+				
+					/* Create a ZoomView component that displays in image, if not already created. */
+					if (s7zoomview == null) {
+						s7zoomview = new s7sdk.image.ZoomView(s7container, s7params, "s7zoomView");
+					}
+
+					/* Assign image asset to zoom view and show */
+					s7zoomview.setItem(asset);
+					s7zoomview.resize(w,h);
+					displayElement("s7zoomView", true);
+				}
+				else if (asset.type === s7sdk.ItemDescType.VIDEO || 	// the selected item is a video or video set
+						 asset.type === s7sdk.ItemDescType.VIDEO_SET) { 
+		
+					/* Create a VideoPlayer component that displays an MP4 or Adaptive Video Set video, if not already created. */
+					if (s7videoplayer == null) {
+						s7videoplayer = new s7sdk.video.VideoPlayer(s7container,s7params,"s7videoplayer");
+					}
+						
+					/* Assign video asset to the video player and show */
+					s7videoplayer.setItem(asset);
+					s7videoplayer.resize(w,h);
+					displayElement("s7videoplayer", true);
+				}		
+				else if (asset.type === s7sdk.ItemDescType.SPIN_SET) { 	// the selected item is a spin set
+				
+					/* Create a SpinView that displays a SpinSet if not already created. */
+					if (s7spinview == null) { 
+						s7spinview = new s7sdk.set.SpinView(s7container, s7params, "s7spinview");
+					}
+		
+					/* Assign spin set asset to the spin view and show */
+					s7spinview.setMediaSet(asset);
+					s7spinview.resize(w,h);
+					displayElement("s7spinview", true);
+				}
+			}
+
+			/* Show or hide an element specified by its id. */	
+			function displayElement(elementId, show) {
+				var element = document.getElementById(elementId);
+				if (element) {
+					if (!show){
+						element.style.left = '-99999px';
+					}else{
+						element.style.left = '0px';
+					}
+					if(s7sdk.browser.name == 'safari' && s7sdk.browser.version.major == 5){
+						element.style.visibility = show ? 'inherit' : 'hidden';
+					}
+				}
+			}
+					
+			/* Event handler for s7sdk.event.ResizeEvent.COMPONENT_RESIZE events dispatched by Container to resize
+			   various view components included in this viewer. */
+			function onResize(event) {
+				
+				s7swatches.resize(event.s7event.w, s7swatches.getHeight()); 
+		
+				if (s7zoomview)
+					s7zoomview.resize(event.s7event.w, event.s7event.h);
+		
+				if (s7spinview)
+					s7spinview.resize(event.s7event.w, event.s7event.h);
+					
+				if (s7videoplayer)
+					s7videoplayer.resize(event.s7event.w, event.s7event.h);
+			}
+			
+			/* Event handler for the s7sdk.event.AssetEvent.NOTF_SET_PARSED event dispatched by MediaSet to
+			   assign the asset to the Swatches when parsing is complete. */
+			function onSetParsed(event) {
+				// set media set for Swatches to display
+				s7swatches.setMediaSet(event.s7event.asset);
+				s7swatches.resize(s7container.getWidth(),s7swatches.getHeight()); 
+				// then select the first swatch
+				s7swatches.selectSwatch(0, true);
+			}
+		</script>
+	</body>
+</html>

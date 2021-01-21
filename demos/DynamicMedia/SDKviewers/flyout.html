@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--
+*
+* ADOBE SYSTEMS INCORPORATED
+*  Copyright 2012 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  Adobe permits you to use, modify, and distribute this file in
+* accordance with the terms of the Adobe license agreement accompanying it.
+* If you have received this file from a source other than Adobe, then your
+* use, modification, or distribution of it requires the prior written
+* permission of Adobe.
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<!--
+		the following meta tag does not control the touch handling so it is often caught by the browser and used
+		for resizing the browser window.
+		-->
+		<!--meta name="viewport" content="width=device-width" -->
+		
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+		
+		<!-- Hiding the Safari on iPhone OS UI components -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<!-- Specifying a per-page Home screen icon -->
+		<link rel="apple-touch-icon" href=""/>
+		<link rel="apple-touch-startup-image" href="" />
+		
+		<title>Adobe Scene7 Viewer SDK FlyoutZoomView Demo</title>
+		<!--
+			Include Utils.js before you use any of the SDK components. This file 
+			contains SDK utilities and global functions that are used to initialize the viewer and load viewer 
+			components. The path to the Utils.js determines which version of the SDK that the viewer uses. You 
+			can use a relative path if the viewer is deployed on one of the Adobe Scene7 servers and it is served 
+			from the same domain. Otherwise, specify a full path to one of Adobe Scene7 servers that have the SDK 
+			installed. 
+		-->
+		<script language="javascript" type="text/javascript" src="http://s7d1.scene7.com/s7sdk/3.5/js/s7sdk/utils/Utils.js"></script>
+		<!--
+			Add an "include" statement with a related module for each component that is needed for that particular 
+			viewer. Check API documentation to see a complete list of components and their modules.
+		-->
+		<script language="javascript" type="text/javascript">
+			s7sdk.Util.lib.include('s7sdk.image.FlyoutZoomView');
+			s7sdk.Util.lib.include('s7sdk.set.Swatches');
+			s7sdk.Util.lib.include('s7sdk.common.Container');
+			s7sdk.Util.lib.include('s7sdk.set.MediaSet');
+		</script>
+
+		<style type="text/css">
+			/*************************************************************************/
+			/* The following styles overwrites the default styles defined by s7sdk to provide
+			   custom look and feel. */
+
+			/*************************************************************************/
+			/* Document body */
+			body {
+				padding:0;
+				margin:0;
+				font-size:12px;
+				background: #FFFFFF;
+				overflow: hidden;
+			}
+
+			/*************************************************************************/
+			/* Tool Tip */
+			.s7tooltip {
+				-moz-border-radius: 3px 3px 3px 3px;
+				-webkit-border-radius: 3px 3px 3px 3px;
+				border-radius: 3px 3px 3px 3px;
+				border-color:#999999;
+				background-color: #000000;
+				color: #FFFFFF;
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:11px;
+			}
+
+			/*************************************************************************/
+			/* Main body of the FlyoutZoomView component */
+			.s7flyoutzoomview {
+				border: 5px solid #CCCCCC;
+				width: 374px;
+				height: 250px;
+				background-color: rgba(200, 200, 200, 0.5);				
+				z-index:0;
+			}
+
+			/* Highlight area in the main view, used when overlay modifier is set to 0 
+			   and highlightmode modifier is set to highlight. */
+			.s7flyoutzoomview .s7highlight {
+				opacity: 0.25;
+				filter: alpha(opacity = 25);
+				background-color: #000000;
+				border: 1px solid #000000;
+				cursor: pointer;
+			}
+
+			/* Flyout area, control positioning by including position: absolute; and the left and top elements. */
+			.s7flyoutzoomview .s7flyoutzoom {
+				position: absolute;
+				left: 400px;
+				top: 0px;
+				width: 400px;
+				height: 400px;
+				border: 2px solid #dddddd;
+				z-index:999;
+			}
+					
+			/*************************************************************************/
+			/* Swatches component */
+			.s7swatches {
+				position:absolute;
+				left: 0px;
+				top: 265px;
+				background: transparent; 
+				background-color: rgba(200, 200, 200, 0.5);
+				border: 5px solid #CCCCCC;
+				margin-left: 15px;
+			}
+			
+			/*  Swatch thumbnails, use height and width properties to define the dimensions. */
+			.s7swatches .s7thumb {
+				width: 100px;
+				height: 80px;
+				background: transparent; 
+				margin : 0px;
+				border: 1px solid #dddddd;
+			}
+
+			/* default state attribute corresponds to "up" state */
+			.s7swatches .s7thumb[state="default"] {
+				margin : 0px;
+				border: 1px solid #dddddd;
+			}
+
+			/* selected state attribute means that the thumbnail is currently selected */
+			.s7swatches .s7thumb[state="selected"] {
+				margin : 0px;
+				border: 2px solid #ffffff;
+				background-color: #ffffff;
+			}
+			
+			/* over state attribute turns on when user rolls over unselected thumbnail */
+			.s7swatches .s7thumb[state=over] {
+				margin : 0px;
+				border: 2px solid #f4f4f4;
+				background-color: #f4f4f4;
+			}
+			
+			
+		</style>        
+	</head>
+
+	<body style="margin:0 0 0 0;">	
+
+		<script language="JavaScript" type="text/javascript">
+
+			// Call the s7sdk.Util.init() method to initialize the s7sdk libraries.
+			s7sdk.Util.init();
+
+			/* Create an instance of the ParameterManager component to collect
+			   components' configuration that can come from a viewer preset, URL, or the HTML page itself. The ParameterManager 
+			   component also sends a notification s7sdk.Event.SDK_READY when all needed files are loaded and the configuration 
+			   parameters are processed. The other components should never be initialized outside of this handler. After  
+			   defining the handler for the s7sdk.Event.SDK_READY event, it is safe to initiate 
+			   configuration initialization by calling ParameterManager.init(). */
+			var params = new s7sdk.ParameterManager();
+
+			/* Variables for component objects */
+			var tracker, container, flyout, swatches, mediaSet;
+			
+			/* Event handler for s7sdk.Event.SDK_READY dispatched by ParameterManager to initialize various components of 
+			   this viewer. */
+			function initViewer(){
+				/* Explicitly specify default modifiers in the viewer code by calling push().
+				   Specify the default video by pushing serverurl, videoserverurl and asset */
+				params.push("serverurl", "http://s7d1.scene7.com/is/image");
+				params.push("MediaSet.asset", "demo/Thibaut_RS");
+
+				// optional FlyoutZoomView settings
+				params.push("flyout.zoomfactor", "2,4");	// specify the image magnification for the flyout view, 
+															// relative to the main view.
+
+				// optional Swatches settings
+				params.push("swatches.tmblayout", "3,0");	// specify 3 thumbnails per row
+				params.push("swatches.orientation", "1");	// specify column-major layout
+				params.push("swatches.resizable", "1");		// specify dynamic resizing to fit the content
+
+				// Create MediaSet to manage assets and add event listener to the NOTF_SET_PARSED event
+				mediaSet = new s7sdk.set.MediaSet(null, params, "mediaSet");
+				// Add MediaSet event listener
+				mediaSet.addEventListener(s7sdk.event.AssetEvent.NOTF_SET_PARSED, onSetParsed, false);
+
+				/* Create a viewer container as a parent component for other UI components that are part of the viewer application and
+				   associate event handlers for resize and full screen notification. 
+				   The advantage of using Container as the parent is the component's ability to resize and bring itself and its 
+				   children to full screen. */			
+				container = new s7sdk.common.Container(null, params, "s7container");
+				
+				/* Create a FlyoutZoomView that displays an image served by Adobe Scene7 Image Serving to provide a
+				   fast and simple flyout zoom viewer */
+				flyout = new s7sdk.image.FlyoutZoomView(container, params, "flyout");
+				
+				/* Create a tracking manager to enable event tracking for all user-initiated events by default. */
+				tracker = new s7sdk.TrackingManager();
+				tracker.attach(flyout);
+			
+				/* Create swatches to display various thumbnail images to reference the corresponding asset and 
+				   associate event handler for the s7sdk.event.AssetEvent.SWATCH_SELECTED_EVENT to display the 
+				   view of interest and hide the others. */					
+				swatches = new s7sdk.set.Swatches(container, params, "swatches");
+				swatches.addEventListener(s7sdk.AssetEvent.SWATCH_SELECTED_EVENT,
+						function(event) {flyout.setItem(event.s7event.asset);},
+						false);
+			}
+			
+			/* Event handler for the s7sdk.event.AssetEvent.NOTF_SET_PARSED event dispatched by MediaSet to
+			   assign the asset to the Swatches when parsing is complete. */
+			function onSetParsed(event) {
+				// assign assets to Swatches
+				swatches.setMediaSet(event.s7event.asset);
+				
+				// select the first swatch
+				swatches.selectSwatch(0, true);
+			}
+
+			/* Add event handler for the s7sdk.Event.SDK_READY event dispatched by the ParameterManager when all modifiers are 
+			   processed and it is safe to initialize the viewer. */
+			params.addEventListener(s7sdk.Event.SDK_READY,initViewer,false);
+			
+			/* Initiate configuration initialization of ParameterManager. */
+			params.init();
+			
+			/* Standard tracking function, typically will be hooked to SiteCatalyst */
+			function s7ComponentEvent(objID, compClass, instName, timeStamp, eventData) {
+				console.log("s7ComponentEvent(" + objID + ", " + compClass + ", " + instName + ", " + timeStamp + ", " + eventData + ")");
+			}
+		</script>
+
+	</body>
+</html>
+

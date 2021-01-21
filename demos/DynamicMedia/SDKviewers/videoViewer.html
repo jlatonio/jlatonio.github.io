@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!--
+*
+* ADOBE SYSTEMS INCORPORATED
+*  Copyright 2012 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  Adobe permits you to use, modify, and distribute this file in
+* accordance with the terms of the Adobe license agreement accompanying it.
+* If you have received this file from a source other than Adobe, then your
+* use, modification, or distribution of it requires the prior written
+* permission of Adobe.
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- removed height=device-height, -->
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+		<!-- Hiding the Safari on iPhone OS UI components -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<!-- Specifying a per-page Home screen icon -->
+		<link rel="apple-touch-icon" href=""/>
+		<link rel="apple-touch-startup-image" href="" />
+		
+		<title>Adobe Scene7 Viewer SDK Video Demo</title>
+		<!--
+			Include Utils.js before you use any of the SDK components. This file 
+			contains SDK utilities and global functions that are used to initialize the viewer and load viewer 
+			components. The path to the Utils.js determines which version of the SDK that the viewer uses. You 
+			can use a relative path if the viewer is deployed on one of the Adobe Scene7 servers and it is served 
+			from the same domain. Otherwise, specify a full path to one of Adobe Scene7 servers that have the SDK 
+			installed. 
+		-->
+		<script language="javascript" type="text/javascript" src="http://s7d1.scene7.com/s7sdk/3.5/js/s7sdk/utils/Utils.js"></script>
+		<!--
+			Add an "include" statement with a related module for each component that is needed for that particular 
+			viewer. Check API documentation to see a complete list of components and their modules.
+		-->
+		<script language="javascript" type="text/javascript">
+			s7sdk.Util.lib.include('s7sdk.common.Button');
+			s7sdk.Util.lib.include('s7sdk.common.Container');
+			s7sdk.Util.lib.include('s7sdk.event.Event');
+			s7sdk.Util.lib.include('s7sdk.video.VideoControls');
+			s7sdk.Util.lib.include('s7sdk.video.VideoPlayer');
+			s7sdk.Util.lib.include('s7sdk.common.ControlBar');
+			s7sdk.Util.lib.include('s7sdk.set.MediaSet');
+		</script>
+
+		<style type="text/css">
+			/*************************************************************************/
+			/* The following styles overwrites the default styles defined by s7sdk to provide
+			   custom look and feel. */
+		
+			/*************************************************************************/
+			/* Container */
+			/* This example specifies default size of the video viewer */
+			.s7container {
+				position: absolute;
+				width: 552px;
+				height: 315px;
+				overflow: visible;
+			}
+
+			/*************************************************************************/
+			/* VideoPlayer */
+			.s7videoplayer {
+				position: absolute;
+				background-color: #FFFFFF;
+				opacity: 1;
+				top: 0px;
+				left: 0px;
+			}
+
+			/*************************************************************************/
+			/* Tool Tip */
+			.s7tooltip {
+				-moz-border-radius: 3px 3px 3px 3px;
+				-webkit-border-radius: 3px 3px 3px 3px;
+				border-radius: 3px 3px 3px 3px;
+				border-color: #999999;
+				background-color: #000000;
+				color: #FFFFFF;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 11px;
+			}
+
+			/*************************************************************************/
+			/* VideoControlBar */
+			/* Parent control of the play button, video scrubber, video time, closed caption button
+			   mutable volume button and full screen button */
+			.s7controlbar {
+				position: absolute;
+				bottom: 5px;
+				left: 50%;
+				width:520px;
+				margin-left: -260px;
+				height: 36px;
+				background-image: url(images/Dot0x000000opacity75.png);
+				background-color: transparent;
+			}
+
+			/*************************************************************************/
+			/* PlayPauseButton */
+			.s7playpausebutton {
+				position: absolute;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				top: 4px;
+				left: 4px;
+				width: 28px;
+				height: 28px;
+			}
+
+			/* Images for various states of the PlayPauseButton */
+			.s7playpausebutton[selected='true'][state='up'] { background-image:url(images/PlayButton_up.png); }
+			.s7playpausebutton[selected='true'][state='over'] { background-image:url(images/PlayButton_over.png); }
+			.s7playpausebutton[selected='true'][state='down'] { background-image:url(images/PlayButton_down.png); }
+			.s7playpausebutton[selected='true'][state='disabled'] { background-image:url(images/PlayButton_disabled.png); }
+			.s7playpausebutton[selected='false'][state='up'] { background-image:url(images/PauseButton_up.png); }
+			.s7playpausebutton[selected='false'][state='over'] { background-image:url(images/PauseButton_over.png); }
+			.s7playpausebutton[selected='false'][state='down'] { background-image:url(images/PauseButton_down.png); }
+			.s7playpausebutton[selected='false'][state='disabled'] { background-image:url(images/PauseButton_disabled.png); }
+			.s7playpausebutton[selected='true'][replay='true'][state='up'] {background-image:url(images/ReplayButton_up.png);}
+			.s7playpausebutton[selected='true'][replay='true'][state='over'] {background-image:url(images/ReplayButton_over.png);}
+			.s7playpausebutton[selected='true'][replay='true'][state='down'] {background-image:url(images/ReplayButton_down.png);}
+			.s7playpausebutton[selected='true'][replay='true'][state='disabled'] {background-image:url(images/ReplayButton_disabled.png);}
+
+			/*************************************************************************/
+			/* FullScreenButton */
+			.s7fullscreenbutton {
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				top: 4px;
+				right: 5px;
+				width: 28px;
+				height: 28px;
+			}
+
+			/* Images for various states of the FullScreenButton */
+			.s7fullscreenbutton[selected='true'][state='up'] { background-image:url(images/MinScreenButton_up.png); }
+			.s7fullscreenbutton[selected='true'][state='over'] { background-image:url(images/MinScreenButton_over.png); }
+			.s7fullscreenbutton[selected='true'][state='down'] { background-image:url(images/MinScreenButton_down.png); }
+			.s7fullscreenbutton[selected='true'][state='disabled'] { background-image:url(images/MinScreenButton_disabled.png); }
+			.s7fullscreenbutton[selected='false'][state='up'] { background-image:url(images/FullScreenButton_up.png); }
+			.s7fullscreenbutton[selected='false'][state='over'] { background-image:url(images/FullScreenButton_over.png); }
+			.s7fullscreenbutton[selected='false'][state='down'] { background-image:url(images/FullScreenButton_down.png); }
+			.s7fullscreenbutton[selected='false'][state='disabled'] { background-image:url(images/FullScreenButton_disabled.png); }
+
+			/*************************************************************************/
+			/* ClosedCaptionButton */
+			.s7closedcaptionbutton {
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				top: 4px;
+				right: 68px;
+				width: 28px;
+				height: 28px;
+			}
+
+			/* Images for various states of the ClosedCaptionButton */
+			.s7closedcaptionbutton[selected='true'][state='up'] { background-image:url(images/ClosedCaptionButton_up.png); }
+			.s7closedcaptionbutton[selected='true'][state='over'] { background-image:url(images/ClosedCaptionButton_over.png); }
+			.s7closedcaptionbutton[selected='true'][state='down'] { background-image:url(images/ClosedCaptionButton_down.png); }
+			.s7closedcaptionbutton[selected='true'][state='disabled'] { background-image:url(images/ClosedCaptionButton_disabled.png); }
+			.s7closedcaptionbutton[selected='false'][state='up'] { background-image:url(images/ClosedCaptionButton_disabled.png); }
+			.s7closedcaptionbutton[selected='false'][state='over'] { background-image:url(images/ClosedCaptionButton_over.png); }
+			.s7closedcaptionbutton[selected='false'][state='down'] { background-image:url(images/ClosedCaptionButton_down.png); }
+			.s7closedcaptionbutton[selected='false'][state='disabled'] { background-image:url(images/ClosedCaptionButton_disabled.png); }
+
+			/*************************************************************************/
+			/* VideoScrubber */
+			.s7videoscrubber {
+				position: absolute;
+				background-color: #9C6;
+				top: 14px;
+				left: 40px;
+				width: 320px;
+				height: 8px;
+			}
+			/* VideoTime component of the VideoScrubber */
+			.s7videoscrubber .s7videotime {
+				position: absolute;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 10px;
+				width: 58px;
+				height: 35px;
+				padding: 0px;
+				background-image: url(images/VideoScrubberTime.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: top;
+				align: center;
+				text-align: center;
+				vertical-align: middle;
+				line-height: 24px;		/* centers the text vertically in the bubble */
+				color: #ffffff;
+			}
+			/* Navigation marker of the VideoScrubber */
+			.s7videoscrubber .s7navigation {
+				top: 0px;
+				height: 8px;
+			}
+			.s7videoscrubber .s7track {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 320px;
+				height: 8px;
+				background-color: #555555;
+			}
+			/* Part of the track for which video content has been loaded */
+			.s7videoscrubber .s7trackloaded {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				height: 8px;
+				background-color: #666666;
+			}
+			/* Part of the track for which video content has been played */
+			.s7videoscrubber .s7trackplayed {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				height: 8px;
+				background-color: #999999;
+			}
+			/* Knob component of the VideoScrubber */
+			.s7videoscrubber .s7knob {
+				position: absolute;
+				width: 14px;
+				height: 24px;
+				top: -8px;
+				left: -3px;
+				background-image: url(images/VideoScrubberKnob.png);
+			}
+			/* Start time component of Video Chapter Summary */
+			.s7videoscrubber .s7chapter .s7header .s7starttime {
+				font-size:14px;
+			}
+			/* Title component of Video Chapter Summary */
+			.s7videoscrubber .s7chapter .s7header .s7title {
+				font-size:14px;
+			}
+			/* Description component of Video Chapter Summary */
+			.s7videoscrubber .s7chapter .s7description {
+				font-size:12px;
+			}
+
+			/*************************************************************************/
+			/* VideoTime */
+			.s7videotime {
+				position: absolute;
+				font-family: Arial, Helvetica, sans-serif;
+				color: #999999;
+				line-height: normal;
+				/* Need to add an explicit width to enable scrubber resizing due to getComputedStyle not working in IE8 (IE uses currentStyle, 
+				which returns "auto" and breaks our layout math) */
+				/* Info on this hack here: http://webdesignerwall.com/tutorials/css-specific-for-internet-explorer */
+				width: 60px\9;
+				top: 8px;
+				right: 98px;
+				font-size: 10px;
+			}
+
+			/*************************************************************************/
+			/* Caption component of the VideoPlayer */
+			.s7videoplayer .s7caption {
+				background-color: rgba(0,0,0,0.75);
+				color: #e6e6e6;
+				font-weight: normal;
+				font-size: 14px;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			/*************************************************************************/
+			/* MutableVolume */
+			.s7mutablevolume {
+				position: absolute;
+				top: 4px;
+				right: 36px;
+				width: 30px;
+				height: 28px;
+			}
+			/* Mute/Unmute button of the MutableVolume */
+			.s7mutablevolume .s7mutebutton {
+				position: absolute;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			/* VerticalVolume component of the MutableVolume, which appears when mouse or touch input is over the 
+			   Mute/Unmute button */
+			.s7mutablevolume .s7verticalvolume {
+				position: absolute;
+				background-color: #dddddd;
+				left: 0px;
+				width: 30px;
+				height: 83px;
+			}
+			/* Track component of the VerticalVolume */
+			.s7mutablevolume .s7verticalvolume .s7track {
+				position: absolute;
+				top: 11px;
+				width: 8px;
+				height: 61px;
+				background-color: #666666;
+				left: 11px;
+			}
+			/* Part of the track that indicates the current volume */
+			.s7mutablevolume .s7verticalvolume .s7filledtrack {
+				position: absolute;
+				width: 8px;
+				height: 61px;
+				background-color: #ababab;
+			}
+			/* Knob component of the VerticalVolume */
+			.s7mutablevolume .s7verticalvolume .s7knob {
+				position: absolute;
+				top: 11px;
+				left: 8px;
+				width: 14px;
+				height: 8px;
+				background-image: url(images/VolumeKnob.png);
+			}
+			/* Images for various states of the Mute/Unmute button */
+			.s7mutablevolume .s7mutebutton[selected='true'][state='up'] { background-image:url(images/VolumeMute_up.png); }
+			.s7mutablevolume .s7mutebutton[selected='true'][state='over'] { background-image:url(images/VolumeMute_over.png); }
+			.s7mutablevolume .s7mutebutton[selected='true'][state='down'] { background-image:url(images/VolumeMute_down.png); }
+			.s7mutablevolume .s7mutebutton[selected='true'][state='disabled'] { background-image:url(images/VolumeMute_disabled.png); }
+			.s7mutablevolume .s7mutebutton[selected='false'][state='up'] { background-image:url(images/VolumeFull_up.png); }
+			.s7mutablevolume .s7mutebutton[selected='false'][state='over'] { background-image:url(images/VolumeFull_over.png); }
+			.s7mutablevolume .s7mutebutton[selected='false'][state='down'] { background-image:url(images/VolumeFull_down.png); }
+			.s7mutablevolume .s7mutebutton[selected='false'][state='disabled'] { background-image:url(images/VolumeFull_disabled.png); }
+
+			/*************************************************************************/
+			/* IconEffect of the VideoPlayer*/
+			.s7videoplayer .s7iconeffect {
+				width: 80px;
+				height: 80px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+			/* Images for the VideoPlayer play and replay icon */
+			.s7videoplayer .s7iconeffect[state='play']{background-image:url(images/IconEffect_play_up.png);}
+			.s7videoplayer .s7iconeffect[state='replay']{background-image:url(images/IconEffect_replay_up.png);}
+		</style>
+	</head>
+
+	<body>
+		<script language="JavaScript" type="text/javascript">
+						
+		   	// Call the s7sdk.Util.init() method to initialize the s7sdk libraries.
+			s7sdk.Util.init();
+
+			/* Create an instance of the ParameterManager component to collect
+			   components' configuration that can come from a viewer preset, URL, or the HTML page itself. The ParameterManager 
+			   component also sends a notification s7sdk.Event.SDK_READY when all needed files are loaded and the configuration 
+			   parameters are processed. The other components should never be initialized outside of this handler. After  
+			   defining the handler for the s7sdk.Event.SDK_READY event, it is safe to initiate 
+			   configuration initialization by calling ParameterManager.init(). */
+			var params = new s7sdk.ParameterManager();				
+			var s7videoplayer, s7videotoolbar, s7closeButton, container, controls, fullscreenbutton, closedCaptionButton, mediaSet;
+			
+			/* Event handler for s7sdk.Event.SDK_READY dispatched by ParameterManager to initialize various components of 
+			   this viewer. */
+			function initViewer(){
+				/* Explicitly specify default modifiers in the viewer code by calling push().
+				   Specify the default video by pushing serverurl, videoserverurl and asset */
+				params.push("serverurl", "http://s7d1.scene7.com/is/image/");
+				params.push("videoserverurl", "http://s7d1.scene7.com/is/content/");
+				// specify content url for closed caption and chapter navigation asset
+				params.push("contenturl", "http://s7d1.scene7.com/is/content/");
+				params.push("MediaSet.asset", "Scene7SharedAssets/Adobe_QBP-AVS");
+				// specify closed caption file
+				params.push("caption", "Scene7SharedAssets/adobe_qbc_final_cc,1");	
+				// specify chapter navigation file			
+				params.push("navigation", "Scene7SharedAssets/adobe_qbc_final_nc");
+				// disable video player to play video after load operation has completed
+				params.push("autoplay", "0");
+				// enable single click on video to toggle between play and pause
+				params.push("singleclick", "playPause");
+				// configures the icon effect when video is in paused state as follows: enable,# times to appear, fade duration, auto-hide duration
+				params.push("iconeffect", "1,-1,0.3,0");				
+				
+				// Create MediaSet to manage assets and add event listener to the NOTF_SET_PARSED event
+				mediaSet = new s7sdk.set.MediaSet(null, params, "mediaSet");
+				// Add MediaSet event listeners
+				mediaSet.addEventListener(s7sdk.event.AssetEvent.NOTF_SET_PARSED, onSetParsed, false);
+				
+				/* Create a viewer container as a parent component for other UI components that are part of the viewer application and
+				   associate event handlers for resize and full screen notification. 
+				   The advantage of using Container as the parent is the component's ability to resize and bring itself and its 
+				   children to full screen. */			
+				container = new s7sdk.common.Container(null, params, "cont");
+				container.addEventListener(s7sdk.event.ResizeEvent.COMPONENT_RESIZE,resizeViewer,false);
+				container.addEventListener(s7sdk.event.ResizeEvent.FULLSCREEN_RESIZE, fullScreenEnter,false);
+				
+				/* Create a video viewing component that displays a MP4 or Adaptive Video Set 
+				   video served by Adobe Scene7	and associate various event handlers to update GUI elements when video changes 
+				   between play and paused states. */
+				s7videoplayer = new s7sdk.video.VideoPlayer(container,params,"s7viewer");
+				s7videoplayer.addEventListener(s7sdk.event.CapabilityStateEvent.NOTF_VIDEO_CAPABILITY_STATE,
+					onPlayPauseButtonSelectionChange, false);
+				s7videoplayer.addEventListener(s7sdk.event.VideoEvent.NOTF_DURATION, onCurrentTimeFunc, false);
+				s7videoplayer.addEventListener(s7sdk.event.VideoEvent.NOTF_CURRENT_TIME, onCurrentTimeFunc, false);
+				s7videoplayer.addEventListener(s7sdk.event.VideoEvent.NOTF_LOAD_PROGRESS, onCurrentTimeFunc, false);
+				// Add navigation event listener to handle chapter navigation information
+				s7videoplayer.addEventListener(s7sdk.event.VideoEvent.NOTF_NAVIGATION, onVideoNavigation, false);
+				
+				/* Create control bar component to contain a set of UI elements like buttons, video scrubber, video time, mutable
+				   volume, etc. and attach to the video player */ 
+				controls = new s7sdk.common.ControlBar(container, params, "controls");
+				controls.attachView(s7videoplayer, false);
+				
+				/* Create PlayPauseButton which is a two state button that is typically used for toggling between playing (or 
+				   replaying) and pausing of the video playback in the VideoPlayer component. Add handler for the click event 
+				   of the button to instruct VideoPlayer to play or pause video playback based on the state of the button. */
+				playPauseButton = new s7sdk.common.PlayPauseButton("controls", params, "playPauseBtn");
+				playPauseButton.addEventListener("click",function() { 
+		 			if (!playPauseButton.isSelected()) {
+						// resume play or restart play
+		 				if (s7videoplayer.getCapabilityState().hasCapability(s7sdk.VideoCapabilityState.REPLAY)) 
+							s7videoplayer.seek(0);
+		 				s7videoplayer.play();
+		 			}
+		 			else {
+						// pause play
+		 				s7videoplayer.pause();
+		 			}
+		 		});
+				
+				/* Create the VideoScrubber to display the current playback time of the video file relative to its duration, and 
+				   to allow a user to "scrub" a video or audio file to commence playback at any time position they choose. The 
+				   component has a knob, the position of which can be adjusted either by dragging it or by explicitly calling the
+				   setPosition() method. Every time the position of the knob changes a notification event
+				   s7sdk.event.SliderEvent.NOTF_SLIDER_MOVE is dispatched. Typically an event handler assigned to handle this event
+				   sets the played time of a VideoPlayer component to the new time specified by the user (by calling 
+				   VideoPlayer.seek() API). */
+				videoScrubber = new s7sdk.video.VideoScrubber("controls", params, "videoScrubber");
+				videoScrubber.addEventListener(s7sdk.event.SliderEvent.NOTF_SLIDER_DOWN, onScrubberSlide, false);
+				videoScrubber.addEventListener(s7sdk.event.SliderEvent.NOTF_SLIDER_MOVE, onScrubberSlide, false);
+				videoScrubber.addEventListener(s7sdk.event.SliderEvent.NOTF_SLIDER_UP, onScrubberSlide, false);
+				// Create VideoTime for displaying the duration and elapsed time in a video.
+				videoTime = new s7sdk.video.VideoTime("controls", params, "videoTime");
+				/* Create MutableVolume and associate event handler for the ability to either mute the audio playback for a video or 
+				   adjust the audio output during playback. */
+				mutableVolume = new s7sdk.video.MutableVolume("controls", params, "mutableVolume");
+				mutableVolume.addEventListener("click",function() { 
+					if (!mutableVolume.isSelected()) {
+						s7videoplayer.setVolume(mutableVolume.getPosition());
+					}
+					else {
+						s7videoplayer.setVolume(0);
+					}
+				});				
+				mutableVolume.addEventListener(s7sdk.event.SliderEvent.NOTF_SLIDER_DOWN, onVolumeSlide, false);
+				mutableVolume.addEventListener(s7sdk.event.SliderEvent.NOTF_SLIDER_MOVE, onVolumeSlide, false);
+				mutableVolume.addEventListener(s7sdk.event.SliderEvent.NOTF_SLIDER_UP, onVolumeSlide, false);
+				
+				/* Create FullScreenButton and associate event handler to control the full screen viewing of a container component. */
+				fullScreenButton = new s7sdk.common.FullScreenButton("controls", params, "fullScreenBtn");
+				fullScreenButton.addEventListener("click",function() { 
+					if (!container.isFullScreen()){
+						container.requestFullScreen();
+					}
+					else {
+						container.cancelFullScreen();
+					}					
+				});
+				
+				/* Create ClosedCaptionButton and add event handler to enable or disable closed captioning in a video.  This
+				   button is only visitable if captioning is available. */
+				if (params.get("caption")) {
+					closedCaptionButton = new s7sdk.common.ClosedCaptionButton("controls", params, "closedCaptionButton");
+					closedCaptionButton.setSelected(s7videoplayer.getCaptionEnabled());
+					closedCaptionButton.addEventListener("click", onClickClosedCaptionButton, false);
+				}				
+			}
+			
+			/* Event handler for s7sdk.event.CapabilityStateEvent.NOTF_VIDEO_CAPABILITY_STATE dispatched by VideoPlayer
+			   to update the state and appearance of the PlayPauseButton. */
+			function onPlayPauseButtonSelectionChange(event) {
+				var cap = event.s7event.state;
+				if (cap.hasCapability(s7sdk.VideoCapabilityState.PAUSE)) {
+	 				playPauseButton.setSelected(false);
+				}
+				else if (cap.hasCapability(s7sdk.VideoCapabilityState.PLAY) || cap.hasCapability(s7sdk.VideoCapabilityState.REPLAY)) {
+					// pause or stop
+	 				playPauseButton.setSelected(true);
+				}				
+				playPauseButton.enableReplay(cap.hasCapability(s7sdk.VideoCapabilityState.REPLAY));	
+			}
+			
+			/* Event handler for s7sdk.event.SliderEvent.NOTF_SLIDER_DOWN/NOTF_SLIDER_MOVE/NOTF_SLIDER_UP events dispatched by 
+			   MutableVolume that applies the audio settings of the video playback. */
+			function onVolumeSlide(event) {
+				s7videoplayer.setVolume(mutableVolume.getPosition());
+			}
+			
+			/* Event handler for s7sdk.event.VideoEvent.NOTF_DURATION/NOTF_CURRENT_TIME/NOTF_LOAD_PROGRESS events dispatched by 
+			   VideoPlayer to update VideoTime and VideoScrubber. */	
+			function onCurrentTimeFunc(event) {
+				if (event.s7event.type == s7sdk.event.VideoEvent.NOTF_CURRENT_TIME) {
+	 				videoTime.setPlayedTime(s7videoplayer.getCurrentTime());
+	 				videoScrubber.setPlayedTime(s7videoplayer.getCurrentTime());
+				}
+				else if (event.s7event.type == s7sdk.event.VideoEvent.NOTF_DURATION) {
+	 				videoTime.setDuration(s7videoplayer.getDuration());					
+					if (s7videoplayer.getDuration() > 0)
+	 					videoScrubber.setDuration(s7videoplayer.getDuration());
+				}
+				else if (event.s7event.type == s7sdk.event.VideoEvent.NOTF_LOAD_PROGRESS) {
+					if (s7videoplayer.getDuration() > 0)
+	 					videoScrubber.setLoadedPosition(s7videoplayer.getLoadedPosition());
+				}
+			}
+			
+			// Add Video Navigation feature
+			function onVideoNavigation(event) {			
+				// notify VideoScrubber of navigation data
+				videoScrubber.setNavigation(event.s7event.data);				
+			}
+
+			/* Event handler for s7sdk.event.SliderEvent.NOTF_SLIDER_DOWN/NOTF_SLIDER_MOVE/NOTF_SLIDER_UP events dispatched by 	
+			   VideoScrubber to seek forward or backwards through the video playback. */
+			function onScrubberSlide(event) {
+				if (event.s7event.type == s7sdk.event.SliderEvent.NOTF_SLIDER_UP) {
+					s7videoplayer.seek(videoScrubber.getPosition() * s7videoplayer.getDuration());
+				}
+			}
+			
+			/* Event handler for the s7sdk.event.ResizeEvent.COMPONENT_RESIZE event dispatched by Container to resize VideoPlayer. */			
+			function resizeViewer(event) {
+				s7videoplayer.resize(event.s7event.w, event.s7event.h );
+			}
+			
+			/* Event handler for s7sdk.event.ResizeEvent.FULLSCREEN_RESIZE event dispatched by Container to resize VideoPlayer 
+			   and update the state and appearance of the FullScreenButton. */
+			function fullScreenEnter(event) {
+				console.log (event.s7event.type + ": width=" + event.s7event.w +"; height=" + event.s7event.h);
+				s7videoplayer.resize(event.s7event.w, event.s7event.h );
+				fullScreenButton.setSelected(container.isFullScreen());
+			}
+
+			/* Event handler for the click event of the ClosedCaptionButton to enable or disable captioning of
+			   the VideoPlayer. */
+			function onClickClosedCaptionButton() {
+				s7videoplayer.setCaptionEnabled(!s7videoplayer.getCaptionEnabled());
+			}
+			
+			/* Event handler for the s7sdk.event.AssetEvent.NOTF_SET_PARSED event dispatched by MediaSet to
+			   assign the asset to the VideoPlayer when parsing is complete. */
+			function onSetParsed(event) {
+				var mediasetDesc = event.s7event.asset;
+				
+				// just in case, check what is returned is of type MediaSetDesc
+				if (mediasetDesc instanceof s7sdk.MediaSetDesc) {
+					s7videoplayer.resize(container.getWidth(), container.getHeight());
+					if (mediasetDesc.type == s7sdk.ItemDescType.VIDEO_SET) {
+						// MBR set
+						s7videoplayer.setItem(mediasetDesc);
+					}
+					else {
+						// single video
+						s7videoplayer.setItem(mediasetDesc.items[0]);
+					}
+				}
+				else
+					throw new Error("Failed to get meta data for video: " + event.s7event.asset);
+			}
+			
+			/* Add event handler for the s7sdk.Event.SDK_READY event dispatched by the ParameterManager when all modifiers are 
+			   processed and it is safe to initialize the viewer. */
+			params.addEventListener(s7sdk.Event.SDK_READY, initViewer, false);
+			
+			/* Initiate configuration initialization of ParameterManager. */
+			params.init();
+		</script>
+	</body>
+</html>

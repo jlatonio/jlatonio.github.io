@@ -1,0 +1,223 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*************************************************************************/
+/* The following styles overwrites the default styles defined by s7sdk to provide
+   custom look and feel. */
+
+/*************************************************************************/
+/* Specify 100% width and height for responsive viewer resizing. */
+html,body {
+	width:100%;
+	height:100%;
+}
+
+/*************************************************************************/
+/* Set attributes for the page body */
+body {
+	padding:0;
+	margin:0;
+	font-size:12px;
+	background: #FFFFFF;
+	overflow: hidden;
+}
+
+/*************************************************************************/
+/* Tool Tip */
+.s7tooltip {
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	border-radius: 3px 3px 3px 3px;
+	border-color: #999999;
+	background-color: #000000;
+	color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+/*************************************************************************/
+/* Swatches component for switching between images  */
+.s7swatches {
+	top: 10px;
+	left: 10px;
+	height: 150px;
+	width: 400px;
+	border: 1px;
+	border-color:#cccccc;
+	background-color: rgba(100, 100, 100, 0.5);
+}
+			
+.s7swatches .s7thumb { }
+.s7swatches .s7thumb[state="default"] { }
+.s7swatches .s7thumb[state="selected"] {
+	box-shadow: inset 0px 0px 0px 2px #3366CC;
+	-webkit-box-shadow: inset 0px 0px 0px 2px #3366CC;
+}
+
+/*************************************************************************/
+/*
+iPhone3 section, 480x320 163 dpi device with 1:1 pixel ratio.
+7x7 mm screen object should be 45x45 px.
+10x10 mm screen object should be 64x64 px.
+*/
+@media screen and (-webkit-device-pixel-ratio:1) and (max-device-width:480px) {
+	
+	/*************************************************************************/
+	/* Swatches component for switching between images  */
+	.s7swatches {
+		top: 10px;
+		left: 10px;
+		height: 110px;
+		width: 300px;
+		border: 1px;
+		border-color:#cccccc;
+		background-color: rgba(100, 100, 100, 0.5);
+	}
+
+	.s7swatches .s7thumb { 
+		width: 40px;
+		height: 40px;
+	}	
+
+	/*************************************************************************/
+	/* Zoom View - IconEffect */
+	.s7zoomview .s7iconeffect {
+		width: 60px;
+		height: 60px;
+		background-repeat: no-repeat;
+		background-position: center;		
+		background-image: url(http://s7d1.scene7.com/is/image/Scene7SharedAssets/zoomicon_1x?scl=1&fmt=png-alpha);
+	}
+}
+
+/*************************************************************************/
+/*
+iPhone4 section, 960x640 326 dpi device with 2:1 pixel ratio.
+7x7 mm screen object should be 45x45 screen pixels and 90x90 px physical pixels.
+10x10 mm screen object should be 64x64 screen pixels and 128x128 px physical pixels.
+*/
+@media screen and (-webkit-device-pixel-ratio:2) and (max-device-width:480px) {
+	/*************************************************************************/
+	/* Swatches component for switching between images  */
+	.s7swatches {
+		top: 10px;
+		left: 10px;
+		height: 120px;
+		width: 300px;
+		border: 1px;
+		border-color:#cccccc;
+		background-color: rgba(100, 100, 100, 0.5);
+	}
+
+	.s7swatches .s7thumb { 
+		width: 50px;
+		height: 50px;
+	}	
+	
+	/*************************************************************************/
+	/* Zoom View */
+	.s7zoomview .s7iconeffect {
+		width: 60px;
+		height: 60px;	
+		-webkit-background-size : 60px 60px;
+		background-image: url(http://s7d1.scene7.com/is/image/Scene7SharedAssets/zoomicon_2x?scl=1&fmt=png-alpha);
+	}
+}
+
+/*************************************************************************/
+/* SocialShare */
+.s7socialshare {
+	position:absolute;
+	top:10px;
+	right:20px;
+	width:28px;
+	height:28px;
+}
+.s7socialshare .s7socialsharepanel {
+	background-color: rgb(231, 231, 231);/*whithout alpha*/
+	background-color: rgba(231, 231, 231, 0);
+}
+.s7socialshare .s7socialbutton {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.s7socialshare .s7socialbutton[state='up'] {background-image:url(images/SocialShare_dark_up.png);}
+.s7socialshare .s7socialbutton[state='over'] {background-image:url(images/SocialShare_dark_over.png);}
+.s7socialshare .s7socialbutton[state='down'] {background-image:url(images/SocialShare_dark_down.png);}
+.s7socialshare .s7socialbutton[state='disabled'] {background-image:url(images/SocialShare_dark_disabled.png);}
+
+
+/*************************************************************************/
+/* EmailShare */
+.s7emailshare[state='up'] {background-image:url(images/EmailShare_dark_up.png);}
+.s7emailshare[state='over'] {background-image:url(images/EmailShare_dark_over.png);}
+.s7emailshare[state='down'] {background-image:url(images/EmailShare_dark_down.png);}
+.s7emailshare[state='disabled'] {background-image:url(images/EmailShare_dark_disabled.png);}
+
+
+/*************************************************************************/
+/* EmbedShare */
+.s7embedshare[state='up'] {background-image:url(images/EmbedShare_dark_up.png);}
+.s7embedshare[state='over'] {background-image:url(images/EmbedShare_dark_over.png);}
+.s7embedshare[state='down'] {background-image:url(images/EmbedShare_dark_down.png);}
+.s7embedshare[state='disabled'] {background-image:url(images/EmbedShare_dark_disabled.png);} 
+
+
+/*************************************************************************/
+/* LinkShare */
+.s7linkshare[state='up'] {background-image:url(images/LinkShare_dark_up.png);}
+.s7linkshare[state='over'] {background-image:url(images/LinkShare_dark_over.png);}
+.s7linkshare[state='down'] {background-image:url(images/LinkShare_dark_down.png);}
+.s7linkshare[state='disabled'] {background-image:url(images/LinkShare_dark_disabled.png);}
+
+
+/*************************************************************************/
+/* FacebookShare */
+.s7facebookshare[state='up'] {background-image:url(images/FacebookShare_dark_up.png);}
+.s7facebookshare[state='over'] {background-image:url(images/FacebookShare_dark_over.png);}
+.s7facebookshare[state='down'] {background-image:url(images/FacebookShare_dark_down.png);}
+.s7facebookshare[state='disabled'] {background-image:url(images/FacebookShare_dark_disabled.png);}
+
+
+/*************************************************************************/
+/* TwitterShare */
+.s7twittershare[state='up'] {background-image:url(images/TwitterShare_dark_up.png);}
+.s7twittershare[state='over'] {background-image:url(images/TwitterShare_dark_over.png);}
+.s7twittershare[state='down'] {background-image:url(images/TwitterShare_dark_down.png);}
+.s7twittershare[state='disabled'] {background-image:url(images/TwitterShare_dark_disabled.png);}  
+
+
+/*************************************************************************/
+/* LinkDialog */
+.s7linkdialog .s7closebutton {
+	width: 28px;
+	height: 28px;
+} 
+.s7linkdialog .s7closebutton[state='up'] { background-image:url(images/CloseButton_light_up.png); }
+.s7linkdialog .s7closebutton[state='over'] { background-image:url(images/CloseButton_light_over.png); }
+.s7linkdialog .s7closebutton[state='down'] { background-image:url(images/CloseButton_light_down.png); }
+.s7linkdialog .s7closebutton[state='disabled'] { background-image:url(images/CloseButton_light_disabled.png); }
+
+
+/*************************************************************************/
+/* Emaildialog - desktop size and art */
+.s7emaildialog .s7closebutton {
+	width: 28px;
+	height: 28px;
+} 
+.s7emaildialog .s7closebutton[state='up'] { background-image:url(images/CloseButton_light_up.png); }
+.s7emaildialog .s7closebutton[state='over'] { background-image:url(images/CloseButton_light_over.png); }
+.s7emaildialog .s7closebutton[state='down'] { background-image:url(images/CloseButton_light_down.png); }
+.s7emaildialog .s7closebutton[state='disabled'] { background-image:url(images/CloseButton_light_disabled.png); }
+
+/*************************************************************************/
+/* Embeddialog - desktop size and art */
+.s7embeddialog .s7closebutton {
+	width: 28px;
+	height: 28px;
+} 
+.s7embeddialog .s7closebutton[state='up'] { background-image:url(images/CloseButton_light_up.png); }
+.s7embeddialog .s7closebutton[state='over'] { background-image:url(images/CloseButton_light_over.png); }
+.s7embeddialog .s7closebutton[state='down'] { background-image:url(images/CloseButton_light_down.png); }
+.s7embeddialog .s7closebutton[state='disabled'] { background-image:url(images/CloseButton_light_disabled.png); }
+
