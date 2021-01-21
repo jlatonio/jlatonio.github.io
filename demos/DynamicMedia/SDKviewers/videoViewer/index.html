@@ -379,7 +379,7 @@
 				params.push("contenturl", "https://s7d1.scene7.com/is/content/");
 				params.push("MediaSet.asset", "Scene7SharedAssets/Adobe_QBP-AVS");
 				// specify closed caption file
-				params.push("caption", "Scene7SharedAssets/adobe_qbc_final_cc,1");	
+				params.push("caption", "https://s7d1.scene7.com/is/content/Scene7SharedAssets/adobe_qbc_final_cc,1");	
 				// specify chapter navigation file			
 				params.push("navigation", "Scene7SharedAssets/adobe_qbc_final_nc");
 				// disable video player to play video after load operation has completed
@@ -387,7 +387,7 @@
 				// enable single click on video to toggle between play and pause
 				params.push("singleclick", "playPause");
 				// configures the icon effect when video is in paused state as follows: enable,# times to appear, fade duration, auto-hide duration
-				params.push("iconeffect", "1,-1,0.3,0");				
+				params.push("iconeffect", "1,-1,0.3,0");					
 				
 				// Create MediaSet to manage assets and add event listener to the NOTF_SET_PARSED event
 				mediaSet = new s7sdk.set.MediaSet(null, params, "mediaSet");
