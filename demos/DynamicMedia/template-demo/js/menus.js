@@ -17,7 +17,7 @@ $(".store-continue").on("click", function() {
 
   var param01 = "http://testvipd1.scene7.com/is/image/jlatonio/";
   var param02 = $(".s7template").data('val');
-  var param03 = $(".s7preset").data('val');
+  var param03 = "?" + $(".s7preset").data('val');
   var param04 = "&$asset=is{jlatonio/" + $(".s7product").data('val') + "}" + "&layer=1&hide=0";
   var param05 = "&$heading=" + $(".s7heading").val() + "&layer=3&hide=0";
   var param06 = "&$subtext=" + $(".s7subtext").val() + "&layer=4&hide=0";
@@ -28,10 +28,10 @@ $(".store-continue").on("click", function() {
   $(".testurl_preview").attr('src', results);
   $(".generated_url").text(results);
   $(".testurl_preview").on("error", function() {
-    1
     $(this).closest(".column-testurl").find(".generated_url").text("Preview Not Available. Complete required fields.");
   });
 });
+
 
 
 $(".s7heading,.s7subtext").on("keyup", function() {
@@ -42,6 +42,38 @@ $(".store-clear").on("click", function() {
   $(".custom-select-close").hide();
   $(".generated_url").text("Generated URL:");
   $(".testurl_preview").attr('src', "http://testvipd1.scene7.com/is/image/jlatonio/psd-with-layers?$asset=is{jlatonio/psd-with-layers_image}&$heading=Heading&$color=%5Cred204%5Cgreen204%5Cblue204&$subtext=Subtext&$font=Arial");
+});
+
+
+$(".store-pdf").on("click", function() {
+  "use strict";
+  var isValid = true;
+  $(".s7required").each(function() {
+    if ($(this).val().length === 0) {
+      isValid = false;
+      $(this).focus().attr("placeholder", "This is a required field.").css({
+        "background": "#fff2f2"
+      });
+      return false;
+    } else {
+      $(this).css({
+        "background": ""
+      });
+    }
+
+  var param01 = "http://testvipd1.scene7.com/is/image/jlatonio/";
+  var param02 = $(".s7template").data('val');
+  var param03 = "?" + $(".s7preset").data('val');
+  var param04 = "&$asset=is{jlatonio/" + $(".s7product").data('val') + "}" + "&layer=1&hide=0";
+  var param05 = "&$heading=" + $(".s7heading").val() + "&layer=3&hide=0";
+  var param06 = "&$subtext=" + $(".s7subtext").val() + "&layer=4&hide=0";
+  var param07 = "&$color=" + $(".s7color").data('val');
+  var param08 = "&$font=" + $(".s7font").data('val');
+  var results = param01 + param02 + param03 + param04 + param05 + param06 + param07 + param08 + "&fmt=pdf";
+
+  var url = results;
+  window.open(url, '_blank');
+  });
 });
 
 $(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("click", function() {
