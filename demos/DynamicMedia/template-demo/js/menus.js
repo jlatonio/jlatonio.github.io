@@ -30,6 +30,7 @@ $(".store-continue").on("click", function() {
   $(".testurl_preview").on("error", function() {
     $(this).closest(".column-testurl").find(".generated_url").text("Preview Not Available. Complete required fields.");
   });
+  return false;
 });
 
 
@@ -74,6 +75,7 @@ $(".store-pdf").on("click", function() {
   var url = results;
   window.open(url, '_blank');
   });
+  return false;
 });
 
 $(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("click", function() {
