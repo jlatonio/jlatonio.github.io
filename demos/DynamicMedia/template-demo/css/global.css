@@ -625,6 +625,7 @@ input::-webkit-clear-button {
 }
 
 .store-button-container {
+  margin-top: 35px;
   margin-bottom: 35px;
   padding: 0 2px;
 }
@@ -736,6 +737,10 @@ input::-webkit-clear-button {
   margin: 0 0 20px 0;
   position: relative;
   height: auto;
+}
+
+.custom-dropdown-outer, .custom-select-outer:last-child {
+  margin: 0 0 0 0;
 }
 
 .custom-dropdown {
