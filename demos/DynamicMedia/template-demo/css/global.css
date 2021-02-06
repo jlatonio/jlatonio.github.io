@@ -999,7 +999,7 @@ input::-webkit-clear-button {
   }
 
   .store-button-container input {
-    width: calc(33% - 12px);
+    width: calc(33% - 8px);
   }
     
   .column-container-menu {
