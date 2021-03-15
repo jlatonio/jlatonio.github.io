@@ -17,7 +17,7 @@ $(".store-continue").on("click", function() {
  });
    
  $(".testurl_na").html("");
- var param01 = "http://sample.scene7.com/ir/render/S7trainRender/";
+ var param01 = "https://sample.scene7.com/ir/render/S7trainRender/";
  var param02 = $(".url-base").data('val') + "?scl=1";
  var param03 = "&obj=body&src=" + $(".url-body ").data('val') + "&res=20";
  var param04 = $(".url-rim").data('val');
