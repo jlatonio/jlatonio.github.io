@@ -67,7 +67,7 @@
 @media screen and (min-width: 701px) {
     
   .view-height {
-    min-height: calc(100vh - 110px);
+    min-height: calc(100vh - 315px);
   }
     
   .margin-left-0 {
