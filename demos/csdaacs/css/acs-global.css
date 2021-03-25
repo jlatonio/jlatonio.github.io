@@ -28,7 +28,6 @@ body {
   font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   line-height: 1.5;
   overflow-x: hidden;
-  overflow-y: scroll;
 }
  
 .page {
