@@ -27,6 +27,11 @@ $(".store-continue").on("click", function() {
  $(".testurl_preview").on("error", function() {
   $(this).closest(".column-testurl").find(".testurl_na").html("Preview Not Available");
  });
+  $(".generated_url").text(results);
+  $(".testurl_preview").on("error", function() {
+    $(this).closest(".column-testurl").find(".generated_url").text("Preview Not Available. Complete required fields.");
+  });
+  return false;
 });
 
 $(".store-pdf").on("click", function() {
