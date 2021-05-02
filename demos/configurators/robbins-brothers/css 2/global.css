@@ -472,6 +472,12 @@ input[type="search"]::-webkit-search-results-decoration {
   text-shadow: 0px 1px 0px #283966;
 }
 
+.store-button:last-child{
+  margin: 0 0 12px 0;
+}
+
+
+
 .column-container-go {
   height: 100%;
   display: flex;
@@ -999,7 +1005,7 @@ input::-webkit-clear-button {
   }
 
   .store-button-container input {
-    width: calc(33% - 8px);
+    width: calc(50% - 8px);
   }
     
   .column-container-menu {

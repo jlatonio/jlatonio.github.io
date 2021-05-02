@@ -29,6 +29,34 @@ $(".store-continue").on("click", function() {
  });
 });
 
+$(".store-pdf").on("click", function() {
+  "use strict";
+  var param01 = "http://s7d5.scene7.com/is/image/RobbinsBros/";
+  var param02 = $(".url-ring").data('val');
+  var param03 = "?&$stone=" + $(".url-stone").data('val');
+  var param04 = "&$config_" + $(".url-metal").data('val') + "$";
+  var results = param01 + param02 + param03 + param04 + "&fmt=pdf";
+
+  var isValid = true;
+  $(".s7required").each(function() {
+    if ($(this).val().length === 0) {
+      isValid = false;
+      $(this).focus().attr("placeholder", "This is a required field.").css({
+        "background": "#fff2f2"
+      });
+      return false;
+    } else {
+      $(this).css({
+        "background": ""
+      });
+      window.open(results, '_blank');
+     }
+      return false;
+  });
+  return false;
+});
+
+
 $(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("click", function() {
  // closes other elements other than this when clicked
  "use strict";
