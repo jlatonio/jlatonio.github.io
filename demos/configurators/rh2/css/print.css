@@ -1,0 +1,372 @@
+/* Print*/
+
+@media print {
+
+@page {
+    margin: 0mm !important;
+    padding: 0 !important;
+  /* this affects the margin in the printer settings */
+    page-break-inside: always !important;
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+    overflow-y: visible !important;
+    display: inline-block !important;
+    background: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  html, body {
+    margin: 0mm !important;
+    padding: 0 !important;
+  /* this affects the margin on the html before sending to printer */
+    page-break-inside: always;
+    page-break-before: avoid;
+    page-break-after: avoid;
+    overflow-y: visible;
+    display: inline-block;
+    background: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: auto !important;
+  }
+
+  .acs-main-content {
+    display: block;
+    overflow-y: visible;
+    box-shadow: none !important;
+  }
+
+  .acs-header, .column-container-breadcrumbs, .column-container-select, .nomination-entry-share-container {
+    display: none !important;
+  }
+
+  .column-container-data .column-container-select {
+    display: block !important;
+  }
+
+  .column-container-totals {
+    border: none;
+  }
+
+  .nomination-totals-container-inner {
+    padding: 20px 0px;
+  }
+
+  .percent-85 {
+    width: 75%;
+  }
+
+  .percent-75 {
+    width: 75%;
+  }
+
+  .percent-70 {
+    width: 70%;
+  }
+
+  .percent-65 {
+    width: 65%;
+  }
+
+  .percent-60 {
+    width: 60%;
+  }
+
+  .percent-55 {
+    width: 55%;
+  }
+
+  .percent-50 {
+    width: 50%;
+  }
+
+  .percent-45 {
+    width: 45%;
+  }
+
+  .percent-40 {
+    width: 40%;
+  }
+
+  .percent-35 {
+    width: 35%;
+  }
+
+  .percent-33 {
+    width: 50%;
+  }
+
+  .percent-30 {
+    width: 30%;
+  }
+
+  .percent-25 {
+    width: 25%;
+  }
+
+  .percent-20 {
+    width: 20%;
+  }
+
+  .percent-15 {
+    width: 15%;
+  }
+
+  .percent-10 {
+    width: 10%;
+  }
+
+  .percent-05 {
+    width: 5%;
+  }
+
+  .percent-fixed-70-100 {
+    width: calc(70% - 100px);
+  }
+
+  .percent-fixed-70-120 {
+    width: calc(70% - 120px);
+  }
+
+  .percent-fixed-75-100 {
+    width: calc(75% - 100px);
+  }
+
+  .percent-fixed-180 {
+    width: calc(100% - 180px);
+  }
+
+  .percent-fixed-220 {
+    width: calc(100% - 220px);
+  }
+
+  .percent-fixed-280 {
+    width: calc(100% - 280px);
+  }
+
+  .fixed-240 {
+    width: 240px;
+  }
+
+  .fixed-180 {
+    width: 160px;
+  }
+
+  .column-container-go {
+    padding: 7px 0;
+  }
+
+  .custom-date-dash {
+    border-bottom: solid 2px #9baec8;
+  }
+
+  .store-button-container input {
+    width: calc(50% - 7.1px);
+  }
+
+  .custom-dropdown-slots .custom-dropdown {
+    padding-left: 87px;
+  }
+
+  .custom-dropdown-slots .custom-dropdown:after {
+    background-image: url('../images/select-notes-yl.svg');
+  }
+
+  .custom-dropdown-group {
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    border-left: solid 1px #ccc;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
+    box-shadow: 0px 1px 3px 0px rgba(4,4,4,0.4);
+    position: absolute;
+    bottom: initial;
+    z-index: 2;
+  }
+
+  .custom-dropdown-scroll {
+    max-height: 420px;
+    height: auto;
+  }
+
+  .custom-dropdown-slots, .custom-dropdown-large {
+    max-height: 400px;
+    height: auto;
+  }
+
+  .custom-dropdown:last-child {
+    border-bottom: solid 0 #ccc;
+  }
+
+  .footer-image {
+    margin: 20px 0 40px 0;
+  }
+
+  .acs-header-name {
+    display: inline;
+  }
+
+  .acs-header-separator {
+    display: inline;
+  }
+
+  .hero-container {
+    height: 300px !important;
+    background-size: 130% auto !important;
+  }
+    
+  .acs-header-column-1 {
+    display: flex;
+    align-items: left;
+    margin-bottom: 0;
+  }
+
+  .hero-content {
+    width: 100% !important;
+  }
+
+  .acs-header img {
+    width: 100px;
+    margin: 0;
+  }
+
+  .acs-header-column-2 {
+    align-items: right;
+    display: flex;
+    justify-content: right;
+    flex-direction: row-reverse;
+  }
+
+  .nomination-entry-header-first h4:after {
+    content: "";
+  }
+
+  .nomination-entry-header-second h4:before {
+    content: "Submissions ";
+  }
+
+  .nomination-totals-centerpiece {
+    top: -25px;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    border-radius: 100px;
+    position: absolute;
+  }
+
+  .column-container-options {
+    display: -webkit-flex;
+ /* Safari */
+    -webkit-flex-wrap: wrap;
+ /* Safari 6.1+ */
+    display: flex;
+  }
+
+  .column-container-span {
+    display: block;
+  }
+
+  .nomination-entry-header-container {
+    display: -webkit-flex;
+ /* Safari */
+    -webkit-flex-wrap: wrap;
+ /* Safari 6.1+ */
+    display: flex;
+  }
+
+  .nomination-entry-details {
+    margin-bottom: 0;
+    padding-right: 40px;
+  }
+
+  .nomination-entry-details:nth-child(2):after {
+    border-right: 2px solid #e3e3e3;
+    position: absolute;
+    content: "";
+    top: -20px;
+    right: 20px;
+    height: calc(100% + 40px);
+  }
+
+  .column-container-breadcrumbs-tools {
+    display: flex;
+  }
+
+  #view-fullscreen,#cancel-fullscreen {
+    display: block;
+  }
+
+  .store-data-container textarea {
+    height: calc(100% - 85px);
+  }
+
+  .store-data-container-inner {
+    margin-bottom: 0;
+  }
+
+  .store-disclaimer {
+    padding: 16px 0 0 0;
+  }
+
+  .notes-container-column-each {
+    padding-left: 70px;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
+  .notes-container-column-icon {
+    left: 0;
+    width: 50px;
+    height: 50px;
+    margin-left: 0;
+  }
+
+  .notes-container-column-each:before {
+    border-top: none;
+  }
+
+  .notes-container-column-each:after {
+    border-top: none;
+  }
+
+  .column-container-row .notes-container-column-inner:first-child {
+    padding-right: 10px;
+    margin-bottom: 0;
+  }
+
+  .column-container-row .notes-container-column-inner:last-child {
+    padding-left: 10px;
+  }
+
+  .margin-left-0 {
+    margin-left: 20px !important;
+  }
+
+  .margin-bottom-0 {
+    margin-bottom: 20px !important;
+  }
+
+  .padding-left-inner {
+    padding-left: 20px !important;
+  }
+
+  .padding-right-inner {
+    padding-right: 20px !important;
+  }
+
+  .padding-left-inner-totals {
+    padding-left: 50px !important;
+  }
+
+  .padding-right-inner-totals {
+    padding-right: 50px !important;
+  }
+
+  .padding-top-right {
+    padding-top: 20px !important;
+    padding-right: 20px !important;
+  }
+}
