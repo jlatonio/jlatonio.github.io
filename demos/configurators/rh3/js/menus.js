@@ -28,7 +28,7 @@ $(".store-continue").on("click", function() {
  });
     
  $(".testurl_na").html("");
- var param01 = "https://s7d1.scene7.com/is/image/rhis?src=ir(rhir/";
+ var param01 = "https://media.restorationhardware.com/is/image/rhis?src=ir(rhir/";
  var param02 = $(".url-product").data('val');
  var param03 = "?obj=Fabric&src=rhir/" + $(".url-fabric").data('val') + "&res=200&illum=0&";
  var param04 = "obj=Finish&color=" + $(".url-finish").data('val') + "&illum=0)&wid=400&qlt=95,1&resMode=sharp2";
@@ -48,10 +48,10 @@ $(".store-continue").on("click", function() {
 // Open new tab with image converted as a PDF
 $(".store-pdf").on("click", function() {
   "use strict";
-  var param01 = "https://testvipd1.scene7.com/is/image/jlatonio/";
+  var param01 = "https://media.restorationhardware.com/is/image/rhis?src=ir(rhir/";
   var param02 = $(".url-product").data('val');
-  var param03 = "?layer=1&src=" + $(".url-fabric").data('val');
-  var param04 = "&layer=2&src=" + $(".url-finish").data('val') + "&wid=1000&qlt=95,1&resMode=sharp2";
+  var param03 = "?obj=Fabric&src=rhir/" + $(".url-fabric").data('val') + "&res=200&illum=0&";
+  var param04 = "obj=Finish&color=" + $(".url-finish").data('val') + "&illum=0)&wid=400&qlt=95,1&resMode=sharp2";
   var results = param01 + param02 + param03 + param04 + "&fmt=pdf";
   var isValid = true;
   $(".s7required").each(function() {
