@@ -1,0 +1,14 @@
+<svg id="Layer_6" data-name="Layer 6" xmlns="http://www.w3.org/2000/svg" width="110.2" height="110.2" viewBox="0 0 110.2 110.2">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: 0;
+      }
+    </style>
+  </defs>
+  <title>select-close</title>
+  <rect class="cls-1" width="110.2" height="110.2"/>
+  <rect x="-0.62" y="44.84" width="111.43" height="20.51" transform="translate(133.02 55.1) rotate(135)"/>
+  <rect x="-0.62" y="44.84" width="111.43" height="20.51" transform="translate(55.1 133.02) rotate(-135)"/>
+</svg>

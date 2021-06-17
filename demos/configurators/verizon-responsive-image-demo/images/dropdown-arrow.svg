@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f2f2f2;
+        opacity: 0;
+      }
+    </style>
+  </defs>
+  <title>dropdown-arrow</title>
+  <rect class="cls-1" width="100" height="100" transform="translate(100 100) rotate(180)"/>
+  <polygon points="50 52.7 24.7 20.33 0.5 20.33 50 83.67 99.5 20.33 75.3 20.33 50 52.7"/>
+</svg>
