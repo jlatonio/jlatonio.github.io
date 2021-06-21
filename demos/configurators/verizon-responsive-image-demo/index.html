@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="css/resizing.css" />
 		<link rel="stylesheet" href="css/jquery-ui.css" />
 		<script src="js/jquery-1.12.4.js"></script>
+		<script src="js/clipboard.min.js"></script>
 	</head>
 	<body>
 		<div class="page">
@@ -75,11 +76,12 @@
 
 
                             <label class="custom-dropdown-label primary-color">Generated URL</label>
-                            <p class="generated_url"></p>
+                            <p class="generated_url" id="copy-content"></p>
 							<div class="store-button-container">
 								<input class="store-button store-continue" type="button" value="Go" />
+                                <input class="store-button copy-text" data-clipboard-target="#copy-content" type="button" value="Copy URL to Clipboard" />
 								<input class="store-button store-clear" type="reset" value="Reset" />
-                                <input class="store-button store-pdf" type="button" value="Create PDF" />
+                                <!--<input class="store-button store-pdf" type="button" value="Create PDF" />-->
 							</div>
                             
                             
