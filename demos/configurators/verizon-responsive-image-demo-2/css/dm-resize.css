@@ -1,31 +1,32 @@
 .column-container {
   position: relative;
   width: 100%;
-  height: 300px;
+  min-height: 350px;
   text-align: center;
-  background-color: #000000;
 }
 
 .background-image-demo-d {
   background: #fff url('https://assets.verizon.com/is/image/verizonqa/VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-ncs?wid=1272&hei=477&rect=50,-30,1272,477&size=470,0&align=1,0&qlt=95,1&resmode=sharp2') no-repeat;
   background-size: contain;
-  height: 100%;
+  background-position: center;
+  min-height: 350px;
   width: 100%;
   position: absolute;
   top: 0;
   right: 0;
-  display: none;background-color: #000000;
+  display: none;
 }
 
 .background-image-demo-m {
   background: #fff url('https://assets.verizon.com/is/image/verizonqa/VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-ncs?wid=767&hei=640&rect=0,-10,767,640&size=280,0&align=0,1&qlt=95,1&resmode=sharp2') no-repeat;
   background-size: contain;
-  height: 100%;
+  background-position: center;
+  min-height: 350px;
   width: 100%;
   position: absolute;
   top: 0;
   right: 0;
-  display: block;background-color: #000000;
+  display: block;
 }
 
 
@@ -35,7 +36,6 @@
 }
 
 .background-image-demo-m {
-  background: #fff url('https://assets.verizon.com/is/image/verizonqa/VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-ncs?wid=767&hei=640&rect=0,-10,767,640&size=280,0&align=0,1&qlt=95,1&resmode=sharp2') no-repeat;
   display: none;
   }
 }
