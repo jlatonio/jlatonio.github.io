@@ -139,7 +139,7 @@ iframe[seamless] {
   background-size: 1024px auto;
   background-position: center center;
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;

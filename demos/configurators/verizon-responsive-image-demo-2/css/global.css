@@ -45,7 +45,7 @@ footer {
 }
 
 h1 {
-  font-size: 55px;
+  font-size: 40px;
   line-height: 1;
   font-family: "AdobeClean-Regular";
 }
@@ -1001,13 +1001,13 @@ input::-webkit-clear-button {
     border-bottom: solid 2px #9baec8;
   }
     
-.store-button {
-  margin: 0 10px 12px 0;
-}
+  .store-button {
+    margin: 0 10px 12px 0;
+  }
     
-.store-button:last-child {
-  margin: 0 0 12px 0;
-}
+  .store-button:last-child {
+    margin: 0 0 12px 0;
+  }
     
   .store-button-container input {
     width: calc(33% - 8px);
@@ -1058,6 +1058,10 @@ input::-webkit-clear-button {
 }
 
 @media screen and (min-width: 1025px) {
+  h1 {
+    font-size: 55px;
+  }
+    
   .percent-33 {
     width: 33.33%;
   }
