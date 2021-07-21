@@ -1,0 +1,161 @@
+@font-face {
+font-family: OpenSans-Bold;
+src: url(../fonts/OpenSans-Bold.ttf);
+src: url(../fonts/OpenSans-Bold.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-BoldItalic;
+src: url(../fonts/OpenSans-BoldItalic.ttf);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-ExtraBold;
+src: url(../fonts/OpenSans-ExtraBold.ttf);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-ExtraBoldItalic;
+src: url(../fonts/OpenSans-ExtraBoldItalic.ttf);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-Italic;
+src: url(../fonts/OpenSans-Italic.ttf);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-Light;
+src: url(../fonts/OpenSans-Light.ttf);
+src: url(../fonts/OpenSans-Light.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-LightItalic;
+src: url(../fonts/OpenSans-Regular.ttf);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-LightItalic;
+src: url(../fonts/OpenSans-LightItalic.ttf);
+src: url(../fonts/OpenSans-LightItalic.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-Regular;
+src: url(../fonts/OpenSans-Regular.ttf);
+src: url(../fonts/OpenSans-Regular.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-Semibold;
+src: url(../fonts/OpenSans-Semibold.ttf);
+src: url(../fonts/OpenSans-Semibold.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans-SemiboldItalic;
+src: url(../fonts/OpenSans-SemiboldItalic.ttf);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-Bold;
+src: url(../fonts/AdobeClean-Bold.otf) format("opentype");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-BoldIt;
+src: url(../fonts/AdobeClean-BoldIt.otf) format("opentype");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-BoldSemiCn;
+src: url(../fonts/AdobeClean-BoldSemiCn.otf) format("opentype");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-BoldSemiCnIt;
+src: url(../fonts/AdobeClean-BoldSemiCnIt.otf) format("opentype");
+src: url(../fonts/AdobeClean-BoldSemiCnIt.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-BoldSemiCn;
+src: url(../fonts/AdobeClean-BoldSemiCn.otf) format("opentype");
+src: url(../fonts/AdobeClean-BoldSemiCn.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-It;
+src: url(../fonts/AdobeClean-It.otf) format("opentype");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-Light;
+src: url(../fonts/AdobeClean-Light.otf) format("opentype");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-LightIt;
+src: url(../fonts/AdobeClean-LightIt.otf) format("opentype");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-Regular;
+src: url(../fonts/AdobeClean-Regular.otf) format("opentype");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-SemiCn;
+src: url(../fonts/AdobeClean-SemiCn.otf) format("opentype");
+src: url(../fonts/AdobeClean-SemiCn.woff);
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: AdobeClean-SemiCnIt;
+src: url(../fonts/AdobeClean-SemiCnIt.otf) format("opentype");
+font-weight: normal;
+font-style: normal;
+}
