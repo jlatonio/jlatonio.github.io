@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
+		<title>Text Layer Demo</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/fonts.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/print.css" />
+		<link rel="stylesheet" href="css/resizing.css" />
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<script src="js/jquery-1.12.4.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+   <div class="page">
+      <!-- header -->
+      <header class="acs-header dark-bg">
+         <div class="acs-header-column-1 percent-40">
+            <img src="images/adobe-logo_h.svg" alt="" />
+         </div>
+         <div class="acs-header-column-2 percent-60">
+            <div class="acs-header-column-2-inner">
+               <p class="regular-text">
+                  <a class="column-tools-breadcrumbs-each" id="view-fullscreen">Enter Fullscreen</a><a class="column-tools-breadcrumbs-each" id="cancel-fullscreen">Exit Fullscreen</a>
+               </p>
+            </div>
+         </div>
+      </header>
+      <!-- wrapper -->
+      <div class="hero-container">
+         <div class="hero-content">
+     
+            <h1>Text Layer Demo</h1>
+         </div>
+      </div>
+      <form>
+         <div class="acs-main-content">
+            <div class="column-container">
+               <div class="column-container-url percent-50">
+                  <div class="column-testurl column-container-each percent-100">
+                     <img class="testurl testurl_preview" src="https://s7d2.scene7.com/is/image/jlatonio?layer=0&src=is(jlatonio/hiking_4)&wid=1200&size=1200,0&layer=1&pos=0,0&opac=100&size=900,600&color=000000,0&textPs={\fonttbl\f%20Arial;}{\*\iscolortbl;ffffff;}\f0\fs40\margl20\margt-400\vertalc\ql\cf1Guided%20Hikes&textattr=300,crisp,maxRes&effect=-1&color=000000&op_blur=4&opac=75,100&blendmode=mult&pos=2,2&layer=2&pos=0,0&opac=100&size=900,600&color=000000,0&textPs={\fonttbl\f%20LFT Etica XB;}{\*\iscolortbl;00ff00;}\f0\fs35\margl700\margt200\vertalc\ql\cf1Best%20of%202021&textattr=300,crisp,maxRes&effect=-1&color=000000&op_blur=4&opac=75,100&blendmode=mult&pos=2,2" alt="" />
+                     <p class="generated_url">Generated URL:</p>
+                  </div>
+               </div>
+               <div class="column-container-each column-container-menu percent-50">
+                  
+                  <div class="custom-dropdown-outer">
+                     <label class="custom-dropdown-label primary-color">Select Image</label>
+                     <div class="custom-dropdown-relative">
+                        <div class="primary-color">
+                           <input readonly type="text" class="s7image s7required custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" data-val="hiking_4" placeholder="Image" value="Hiking Example 1"/>
+                           <div class="custom-dropdown-close"></div>
+                           <div class="custom-dropdown-open"></div>
+                           <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+                        </div>
+                     </div>
+                     <div class="custom-dropdown-position">
+                        <div class="custom-dropdown-group">
+                           <div class="custom-dropdown-scroll">
+                              <div class="custom-dropdown" data-val="hiking_4"><img src="https://s7d2.scene7.com/is/image/DynamicMediaNA?layer=0&src=is(DynamicMediaNA/hiking_4)" class="custom-dropdown-icon" alt="" />Hiking Example 1</div>
+                              <div class="custom-dropdown" data-val="Hiking-Campaign-Male"><img src="https://s7d2.scene7.com/is/image/DynamicMediaNA?layer=0&src=is(DynamicMediaNA/Hiking-Campaign-Male)" class="custom-dropdown-icon" alt="" />Hiking Example 2</div>
+                              <div class="custom-dropdown" data-val="Hiking-Campaign"><img src="https://s7d2.scene7.com/is/image/DynamicMediaNA?layer=0&src=is(DynamicMediaNA/Hiking-Campaign)" class="custom-dropdown-icon" alt="" />Hiking Example 3</div>
+                              <div class="custom-dropdown" data-val="hiking_3"><img src="https://s7d2.scene7.com/is/image/DynamicMediaNA?layer=0&src=is(DynamicMediaNA/hiking_3)" class="custom-dropdown-icon" alt="" />Hiking Example 4</div>
+                               
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="custom-dropdown-outer">
+                     <label class="custom-dropdown-label primary-color">Enter Heading</label>
+                     <div class="custom-dropdown-outer">
+                        <div class="custom-dropdown-relative">
+                           <input type="text" class="s7heading texturl custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Guided Hikes" value="Guided Hikes" />
+                           <img src="images/select-close.svg" class="custom-select-close" alt="" />
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="custom-dropdown-outer">
+                     <label class="custom-dropdown-label primary-color">Select Font</label>
+                     <div class="custom-dropdown-relative">
+                        <div class="primary-color">
+                           <input readonly type="text" class="s7font1 custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Select Font" data-val="Arial" value="Arial" />
+                           <div class="custom-dropdown-close"></div>
+                           <div class="custom-dropdown-open"></div>
+                           <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+                        </div>
+                     </div>
+                     <div class="custom-dropdown-position">
+                        <div class="custom-dropdown-group">
+                           <div class="custom-dropdown-scroll">
+                              <div class="custom-dropdown" data-val="Arial"><img src="http://testvipd1.scene7.com/is/image/jlatonio/font-icon" class="custom-dropdown-icon" alt="" />Arial</div>
+                              <div class="custom-dropdown" data-val="Adobe Caslon Pro Bold"><img src="http://testvipd1.scene7.com/is/image/jlatonio/font-icon" class="custom-dropdown-icon" alt="" />Adobe Caslon Pro Bold</div>
+                              <div class="custom-dropdown" data-val="LFT Etica XB"><img src="http://testvipd1.scene7.com/is/image/jlatonio/font-icon" class="custom-dropdown-icon" alt="" />LFT Etica XB</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="custom-dropdown-outer">
+                     <label class="custom-dropdown-label primary-color">Font Color</label>
+                     <div class="custom-dropdown-relative">
+                        <div class="primary-color">
+                           <input readonly type="text" class="s7color1 custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Font Color" data-val="ffffff" value="White" />
+                           <div class="custom-dropdown-close"></div>
+                           <div class="custom-dropdown-open"></div>
+                           <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+                        </div>
+                     </div>
+                     <div class="custom-dropdown-position">
+                        <div class="custom-dropdown-group">
+                           <div class="custom-dropdown-scroll">
+                              <div class="custom-dropdown" data-val="000000"><div class="custom-dropdown-icon" style="background:#000000;"></div>Black</div>
+                              <div class="custom-dropdown" data-val="ffffff"><div class="custom-dropdown-icon" style="background:#ffffff;"></div>White</div>
+                              <div class="custom-dropdown" data-val="ff0000"><div class="custom-dropdown-icon" style="background:#ff0000;"></div>Red</div>
+                              <div class="custom-dropdown" data-val="00ff00"><div class="custom-dropdown-icon" style="background:#00ff00;"></div>Green</div>
+                              <div class="custom-dropdown" data-val="0000ff"><div class="custom-dropdown-icon" style="background:#0000ff;"></div>Blue</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                   
+                  <div class="custom-dropdown-outer">
+                     <label class="custom-dropdown-label primary-color">Enter Subtext</label>
+                     <div class="custom-dropdown-outer">
+                        <div class="custom-dropdown-relative">
+                           <input type="text" class="s7subheader texturl custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Best of 2021" value="Best of 2021" />
+                           <img src="images/select-close.svg" class="custom-select-close" alt="" />
+                        </div>
+                     </div>
+                  </div>
+                  <div class="custom-dropdown-outer">
+                     <label class="custom-dropdown-label primary-color">Select Font</label>
+                     <div class="custom-dropdown-relative">
+                        <div class="primary-color">
+                           <input readonly type="text" class="s7font2 custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Select Font" data-val="LFT%20Etica%20XB" value="Arial" />
+                           <div class="custom-dropdown-close"></div>
+                           <div class="custom-dropdown-open"></div>
+                           <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+                        </div>
+                     </div>
+                     <div class="custom-dropdown-position">
+                        <div class="custom-dropdown-group">
+                           <div class="custom-dropdown-scroll">
+                           <div class="custom-dropdown-scroll">
+                              <div class="custom-dropdown" data-val="Arial"><img src="http://testvipd1.scene7.com/is/image/jlatonio/font-icon" class="custom-dropdown-icon" alt="" />Arial</div>
+                              <div class="custom-dropdown" data-val="Adobe Caslon Pro Bold"><img src="http://testvipd1.scene7.com/is/image/jlatonio/font-icon" class="custom-dropdown-icon" alt="" />Adobe Caslon Pro Bold</div>
+                              <div class="custom-dropdown" data-val="LFT Etica XB"><img src="http://testvipd1.scene7.com/is/image/jlatonio/font-icon" class="custom-dropdown-icon" alt="" />LFT Etica XB</div>
+                           </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="custom-dropdown-outer">
+                     <label class="custom-dropdown-label primary-color">Font Color</label>
+                     <div class="custom-dropdown-relative">
+                        <div class="primary-color">
+                           <input readonly type="text" class="s7color2 custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Font Color" data-val="00ff00" value="Green" />
+                           <div class="custom-dropdown-close"></div>
+                           <div class="custom-dropdown-open"></div>
+                           <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+                        </div>
+                     </div>
+                     <div class="custom-dropdown-position">
+                        <div class="custom-dropdown-group">
+                           <div class="custom-dropdown-scroll">
+                              <div class="custom-dropdown" data-val="000000"><div class="custom-dropdown-icon" style="background:#000000;"></div>Black</div>
+                              <div class="custom-dropdown" data-val="ffffff"><div class="custom-dropdown-icon" style="background:#ffffff;"></div>White</div>
+                              <div class="custom-dropdown" data-val="ff0000"><div class="custom-dropdown-icon" style="background:#ff0000;"></div>Red</div>
+                              <div class="custom-dropdown" data-val="00ff00"><div class="custom-dropdown-icon" style="background:#00ff00;"></div>Green</div>
+                              <div class="custom-dropdown" data-val="0000ff"><div class="custom-dropdown-icon" style="background:#0000ff;"></div>Blue</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="store-button-container">
+                     <input class="store-button store-continue" style="display:none;" type="button" value="Go" />
+                     <input class="store-button store-clear" type="reset" value="Reset" />
+                     <input class="store-button store-pdf" type="button" value="Create PDF" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </form>
+      <!-- footer -->
+      <footer class="acs-footer dark-bg text-align-center small-text">
+         <img class="footer-image" src="images/adobe-logo-print-rev.svg" alt="" />
+         <div>
+            <p>@2021 Adobe Systems Incorporated. All rights reserved.
+               <span class="footer-secondary-color regular-text">
+               <a href="https://inside.corp.adobe.com/legal/corporate-law.html" target="_blank">Adobe Confidential</a>.
+               </span>
+            </p>
+         </div>
+      </footer>
+   </div>
+   <script src="js/menus.js"></script>
+   <script src="js/fullscreen.js"></script>
+</body>
+</html>
