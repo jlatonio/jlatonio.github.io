@@ -1,13 +1,27 @@
 // Show default generated URL when loaded
 var results = $(".testurl_preview").attr('src');
-
+var s7heading = $(".s7heading").val();
 $( document ).ready(function() {
  $(".s7image").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
  $(".s7font1").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
  $(".s7color1").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(2)").click();
  $(".s7font2").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(3)").click();
  $(".s7color2").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(4)").click();
- $(".store-continue").trigger("click");
+});
+
+$(function() {
+  "use strict";
+  $("input[type='text'], input[type='number']").each(function() {
+    var option = $(this).val();
+    var item = option;
+    if (option.length === 0) {
+      $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+    }
+    if (option.length > 0) {
+      $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
+    }
+  });
+  return false;
 });
 
 // Resets to default image and default generated URL
@@ -18,8 +32,20 @@ $(".store-clear").on("click", function() {
  $(".s7color1").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(2)").click();
  $(".s7font2").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(3)").click();
  $(".s7color2").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(4)").click();
+ $(".s7heading").val("Guided Hikes");
+ $(".s7subheader").val("Best of 2021");
  $(".store-continue").trigger("click");
- return false;
+  $("input[type='text'], input[type='number']").each(function() {
+    var option = $(this).val();
+    var item = option;
+    if (option.length === 0) {
+      $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+    }
+    if (option.length > 0) {
+      $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
+    }
+  });
+  return false;
 });
 
 // Process results
@@ -138,12 +164,13 @@ $("input[type='text'],input[type='number']").closest(".custom-dropdown-outer").f
  "use strict";
  var input_place_holder = $(this).closest(".custom-dropdown-outer").find("input[type='text'],input[type='number']").attr("data-placeholder");
  $(this).hide();
- $(this).closest(".custom-dropdown-outer").find("input[type='text'],input[type='number']").val("").focusout().attr("placeholder", input_place_holder).css({
+ $(this).closest(".custom-dropdown-outer").find("input[type='text'],input[type='number']").val("").focus().attr("placeholder", input_place_holder).css({
   "background": ""
  });
  $(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").hide();
  $(this).closest(".custom-dropdown-outer").find(".custom-select-date").show();
  $(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
+ $(".store-continue").trigger("click");
  return false;
 });
 
