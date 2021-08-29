@@ -25,7 +25,7 @@ $(".store-clear").on("click", function() {
 // Process results
 $(".store-continue").on("click", function() {
   "use strict";
-  var param01 = "https://s7d2.scene7.com/is/image/jlatonio?layer=0&src=is(jlatonio/";
+  var param01 = "https://s7d1.scene7.com/is/image/jlatonio?layer=0&src=is(jlatonio/";
   var param02 = $(".s7image").data('val') + ")&wid=1200&size=1200,0&layer=1&pos=0,0&opac=100&size=900,600&color=000000,0&textPs={";
   var param03 = "\\fonttbl\\f%20" + $(".s7font1").data('val') + ";}{";
   var param04 = "\\*\\iscolortbl;" + $(".s7color1").data('val') + ";}\\f0\\fs40\\margl20\\margt-400\\vertalc\\ql";
@@ -63,7 +63,7 @@ $(".s7heading,.s7subheader").on("keyup", function() {
 
 $(".store-pdf").on("click", function() {
   "use strict";
-  var param01 = "https://s7d2.scene7.com/is/image/jlatonio?layer=0&src=is(jlatonio/";
+  var param01 = "https://s7d1.scene7.com/is/image/jlatonio?layer=0&src=is(jlatonio/";
   var param02 = $(".s7image").data('val') + ")&wid=1200&size=1200,0&layer=1&pos=0,0&opac=100&size=900,600&color=000000,0&textPs={";
   var param03 = "\\fonttbl\\f%20" + $(".s7font1").data('val') + ";}{";
   var param04 = "\\*\\iscolortbl;" + $(".s7color1").data('val') + ";}\\f0\\fs40\\margl20\\margt0\\vertalc\\ql";
