@@ -19,7 +19,7 @@
 }
 
 .testurl {
-  padding: 20px;
+  padding: 0;
   box-shadow: 1px 1px 2px 1px #999;
 }
 
@@ -57,12 +57,12 @@ iframe[seamless] {
 .generated_url {
   overflow-wrap: break-word;
   width: 100%;
-  padding: 20px;
+  padding: 16px 20px;
   height: auto;
   box-shadow: 1px 1px 2px 1px #999;
   margin-top: 5px;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .column-container-url {
