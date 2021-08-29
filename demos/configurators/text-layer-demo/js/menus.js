@@ -1,21 +1,28 @@
 // Show default generated URL when loaded
 var results = $(".testurl_preview").attr('src');
-$(".generated_url").text(results);
+
+$( document ).ready(function() {
+ $(".s7image").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
+ $(".s7font1").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
+ $(".s7color1").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(2)").click();
+ $(".s7font2").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(3)").click();
+ $(".s7color2").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(4)").click();
+ $(".store-continue").trigger("click");
+});
 
 // Resets to default image and default generated URL
 $(".store-clear").on("click", function() {
- $(".custom-dropdown:first-child").click();
+  "use strict";
+ $(".s7image").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
+ $(".s7font1").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
+ $(".s7color1").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(2)").click();
+ $(".s7font2").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(3)").click();
+ $(".s7color2").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(4)").click();
  $(".store-continue").trigger("click");
-
+ return false;
 });
 
-
-
-// https://s7d2.scene7.com/is/image/DynamicMediaNA?layer=0&src=is(DynamicMediaNA/hiking_4)&wid=1200&size=1200,0&layer=1&pos=0,0&opac=100&size=900,600&color=000000,0&textPs={\fonttbl\f%20Arial;}{\*\iscolortbl;ffffff;}\f0\fs40\margl20\margt0\vertalc\ql\cf1Guided%20Hikes&textattr=300,crisp,maxRes&effect=-1&color=000000&op_blur=4&opac=75,100&blendmode=mult&pos=2,2&layer=2&pos=0,0&opac=100&size=900,600&color=000000,0&textPs={\fonttbl\f%20LFT%20Etica%20XB;}{\*\iscolortbl;00ff00;}\f0\fs35\margl700\margt600\vertalc\ql\cf1Best%20of%202021&textattr=300,crisp,maxRes&effect=-1&color=000000&op_blur=4&opac=75,100&blendmode=mult&pos=2,2
-
-// https://s7d2.scene7.com/is/image/DynamicMediaNA?layer=0&src=is(DynamicMediaNA/hiking_4)&wid=1200&size=1200,0&layer=1&pos=0,0&opac=100&size=900,600&color=000000,0&textPs={\fonttbl\f%20Arial;}{\*\iscolortbl;00ff00;}\f0\fs40\margl20\margt0\vertalc\ql\cf1asd&textattr=300,crisp,maxRes&effect=-1&color=000000&op_blur=4&opac=75,100&blendmode=mult&pos=2,2&layer=2&pos=0,0&opac=100&size=900,600&color=000000,0&textPs={\fonttbl\f%20LFT%20Etica%20XB;}{\*\iscolortbl;ffffff;}\f0\fs35\vmargl700\margt600\vertalc\ql\cf1dasas&textattr=300,crisp,maxRes&effect=-1&color=000000&op_blur=4&opac=75,100&blendmode=mult&pos=2,2
-
-
+// Process results
 $(".store-continue").on("click", function() {
   "use strict";
   var param01 = "https://s7d2.scene7.com/is/image/jlatonio?layer=0&src=is(jlatonio/";
