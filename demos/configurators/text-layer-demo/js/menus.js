@@ -3,11 +3,10 @@ var results = $(".testurl_preview").attr('src');
 $(".generated_url").text(results);
 
 // Resets to default image and default generated URL
-var default_image = $(".testurl_preview").attr('src');
 $(".store-clear").on("click", function() {
- $(".testurl_preview").attr('src', default_image);
- $(".generated_url").text(default_image);
  $(".custom-dropdown:first-child").click();
+ $(".store-continue").trigger("click");
+
 });
 
 
