@@ -51,7 +51,7 @@
         padding: 20px 40px 0 40px;
         margin-bottom: 40px;
         background-color: inherit;
-        box-shadow: 1px 1px 2px 1px #999;
+        border-bottom: 1px solid;
         z-index: 1;
       }
 
@@ -199,7 +199,15 @@
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <div class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">DCO_Acc_160x600</div>
+                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">DCO_Acc_160x600</p>
+                      </div>
+                      <div class="asset-specs-each">
+                        <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
+                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">160x600</p>
+                      </div>
+                      <div class="asset-specs-each">
+                        <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
+                        <p>260x360</p>
                       </div>
                     </div>
                     <div class="each-container each-160x600">
@@ -214,7 +222,15 @@
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <div class="preset-name modifier2" data-val="?fmt=png-alpha&qlt=75,1&wid=370&hei=290">DCO_Acc_300x250</div>
+                        <p class="preset-name modifier2" data-val="?fmt=png-alpha&qlt=75,1&wid=370&hei=290">DCO_Acc_300x250</p>
+                      </div>
+                      <div class="asset-specs-each">
+                        <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
+                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">300x250</p>
+                      </div>
+                      <div class="asset-specs-each">
+                        <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
+                        <p>370x290</p>
                       </div>
                     </div>
                     <div class="each-container each-300x250">
@@ -229,7 +245,15 @@
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <div class="preset-name modifier3" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=600">DCO_Acc_300x600</div>
+                        <p class="preset-name modifier3" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=600">DCO_Acc_300x600</p>
+                      </div>
+                      <div class="asset-specs-each">
+                        <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
+                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">300x600</p>
+                      </div>
+                      <div class="asset-specs-each">
+                        <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
+                        <p>260x600</p>
                       </div>
                     </div>
                     <div class="each-container each-300x600">
@@ -244,7 +268,15 @@
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <div class="preset-name modifier4" data-val="?fmt=png-alpha&qlt=75,1&wid=240&hei=76">DCO_Acc_728x90</div>
+                        <p class="preset-name modifier4" data-val="?fmt=png-alpha&qlt=75,1&wid=240&hei=76">DCO_Acc_728x90</p>
+                      </div>
+                      <div class="asset-specs-each">
+                        <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
+                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">728x90</p>
+                      </div>
+                      <div class="asset-specs-each">
+                        <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
+                        <p>240x76</p>
                       </div>
                     </div>
                     <div class="each-container each-728x90">
@@ -259,7 +291,15 @@
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <div class="preset-name modifier5" data-val="?fmt=png-alpha&qlt=75,1&wid=356&hei=312">DCO_Acc_970x250</div>
+                        <p class="preset-name modifier5" data-val="?fmt=png-alpha&qlt=75,1&wid=356&hei=312">DCO_Acc_970x250</p>
+                      </div>
+                      <div class="asset-specs-each">
+                        <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
+                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">970x250</p>
+                      </div>
+                      <div class="asset-specs-each">
+                        <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
+                        <p>356x312</p>
                       </div>
                     </div>
                     <div class="each-container each-970x250">
@@ -290,8 +330,8 @@
                   <input class="store-button store-clear" type="button" value="Clear">
                 </div>
                 <div class="store-checkbox-container">
-                  <div class="checkbox-each" id="outer-guides-checked">Outer Frame Guides Added</div>
-                  <div class="checkbox-each" id="outer-guides-unchecked">Outer Frame Guides Removed</div>
+                  <div class="checkbox-each" id="outer-guides-checked">Guides Added (15px spacing)</div>
+                  <div class="checkbox-each" id="outer-guides-unchecked">Guides Removed</div>
                 </div>
                 <div class="store-checkbox-container">
                   <div class="checkbox-each" id="inner-guides-checked">Image Background Guide Added</div>
