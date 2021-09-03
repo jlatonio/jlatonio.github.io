@@ -43,11 +43,11 @@ $(".store-clear").on("click", function() {
 	return false;
 });
 
-
+// Click on individual image to generate URL feature
 $(".testp").on("click", function() {
 	"use strict";
-	$("#inner-guides-checked").trigger("click");
-	var select_image = $(this).attr('src');
+	var select_preset = $(this).closest(".each-container-row").find(".preset-name").text();
+    var select_image = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
 	$(".generated_url").text(select_image);
 	return false;
 });
@@ -394,8 +394,7 @@ $("#guides-10-unchecked").click(function() {
 
 $("#inner-guides-checked").click(function() {
 	"use strict";
-	$("#inner-guides-checked").hide();
-	$("#inner-guides-unchecked").show();
+ 
 	$(".store-continue").trigger("click");
 	return false;
 });
