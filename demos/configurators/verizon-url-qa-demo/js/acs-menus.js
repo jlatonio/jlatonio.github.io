@@ -8,11 +8,22 @@ $(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("c
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-group").delay(200).slideDown(300);
 	$(this).hide();
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").show();
-	$("html, body").animate({
-			scrollTop: $(this).closest(".custom-dropdown-outer").offset().top - 170
-		},
-		200, "easeInOutQuad");
 	return false;
+});
+
+// enables the datepicker
+$(".custom-select-date, .custom-date").on("click", function () {
+    "use strict";
+    $(".custom-dropdown-start-date, .custom-dropdown-end-date").datepicker({
+        changeMonth: false,
+        changeYear: false,
+        numberOfMonths: 1,
+        dateFormat: "yy-mm-dd",
+        showAnim: "fadeIn"
+    });
+    $(this).closest(".custom-dropdown-outer").find(".custom-date").datepicker("show");
+    $("body").trigger("click"); // closes all other open menus
+    return false;
 });
 
 // closes menu when an item is selected
@@ -84,20 +95,46 @@ $(".custom-dropdown").on("click", function () {
 });
 
 // directs to specific pages
-$(".custom-dropdown-awards").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
+$(".acs-market-menu").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
 	// changes the form"s action link on specific choices
-	if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Thank You') {
-		$(".custom-dropdown-input").removeAttr("action");
-		$(".custom-dropdown-input").attr("action", "ty-entry.html");
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'FSI') {
+		window.location.href = "Industry-Template-Example.html";
 		return false;
 	}
-	if ($(this).closest("form").find(".custom-dropdown-awards").val() === 'Manager of the Quarter') {
-		$(".custom-dropdown-input").removeAttr("action");
-		$(".custom-dropdown-input").attr("action", "moq-entry.html");
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'Canada') {
+		window.location.href = "Vertical-Template-Example.html";
 		return false;
-	} else {
-		$(".custom-dropdown-input").removeAttr("action");
-		$(".custom-dropdown-input").attr("action", "awards-entry.html");
+	}
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'EMEA') {
+		window.location.href = "fsi.html";
+		return false;
+	}
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'Japan') {
+		window.location.href = "fsi.html";
+		return false;
+	}
+	if ($(this).closest("form").find(".acs-market-menu").val() === 'Latam') {
+		window.location.href = "fsi.html";
+		return false;
+	}
+});
+
+$(".acs-report-menu").closest(".custom-dropdown-outer").find(".custom-dropdown").on("click", function () {
+	// changes the form"s action link on specific choices
+	if ($(this).closest("form").find(".acs-report-menu").val() === 'Americas Consulting') {
+		window.location.href = "Report-Template-Example.html";
+		return false;
+	}
+	if ($(this).closest("form").find(".acs-report-menu").val() === 'Americas Reports') {
+		window.location.href = "emea.html";
+		return false;
+	}
+	if ($(this).closest("form").find(".acs-report-menu").val() === 'EMEA Reports') {
+		window.location.href = "emea.html";
+		return false;
+	}
+	if ($(this).closest("form").find(".acs-report-menu").val() === 'Launch Foundation Services') {
+		window.location.href = "latam.html";
 		return false;
 	}
 });
@@ -227,52 +264,37 @@ $(".custom-select-search").on("click", function () {
 	return false;
 });
 
-
-$(".custom-search").autocomplete({
-    source: function (request, response) {
-         $.ajax({
-             url: "my_server_side_resource.php",
-             type: "GET",
-             data: request,
-             success: function (data) {
-                 response($.map(data, function (el) {
-                     return {
-                         label: el.color,
-                         value: el.value
-                     };
-                 }));
-             }
-         });
-    },
-    select: function (event, ui) {
-        // Prevent value from being put in the input:
-        this.value = ui.item.label;
-        // Set the next input's value to the "value" of the item.
-        $(this).next("input").val(ui.item.value);
-        event.preventDefault();
-    }
-});
-
-
 // enables autocomplete dropdown search
 $(function () {
 	"use strict";
+	var dataSrc = [
+        {
+            value: "https://agsdashboards-author.corp.adobe.com/content/emea-customer-dashboards/english/central-europe/automotive/msp-demo-template/demo-new.html?wcmmode=disabled",
+			label: "AAA"
+        }, 
+        {
+            value: "https://agsdashboards-author.corp.adobe.com/content/adobe-csd/retail/ashley_homestores_lt.html?wcmmode=disabled",
+			label: "Ashley Homestores"
+        }, 
+      ];
+              
 	$(".custom-search").autocomplete({
-		source: [
-			"Joseph Latonio",
-			"Rebecca Warner",
-			"Sri Krishnamoorthy"
-		],
-		minLength: 1,
+		source:dataSrc,
+		minLength: 3,
+        select: function( event, ui ) { 
+            window.location.href = ui.item.value;
+            // if opening a new window is required, use this
+            // window.open(ui.item.value, "_blank");
+        },
 		response: function (event, ui) {
 			// clears field if name is misspelled or invalid
 			if (ui.content.length === 0) {
 				$(this).val("").attr("placeholder", "No Match Found").blur().css({
-					"background": "#fff2f2"
+					"background": "#5d2b2b"
 				});
 				return false;
 			} else {
-				$(this).attr("placeholder", "Search Email ID").css({
+				$(this).attr("placeholder", "Search Account").css({
 					"background": ""
 				});  
 			}
@@ -289,17 +311,17 @@ $(function () {
 	};
 });
 
-// resets placeholder text on focus
-$(".custom-search").on("focus", function () {
-	"use strict";
-	var input_place_holder = $(this).attr("data-placeholder");
-	$(this).attr("placeholder", input_place_holder).css({
-		"background": ""
-	});
-	$(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
-	$(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
-	return false;
-});
+// resets placeholder text on focus. This is not needed if quick links are applied to Search
+// $(".custom-search").on("focus", function () {
+// 	"use strict";
+// 	var input_place_holder = $(this).attr("data-placeholder");
+// 	$(this).attr("placeholder", input_place_holder).css({
+// 		"background": ""
+// 	});
+// 	$(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+// 	$(this).closest(".custom-dropdown-outer").find(".custom-select-search").show();
+// 	return false;
+// });
 
 // resets required fields to a white bg
 $("input[type='text'], textarea").on("keydown change", function () {
@@ -409,4 +431,96 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function () {
 		"o-transition": "all .01s ease-out",
 		"transition": "all .01s ease-out"
 	});
+});
+
+// for search in the header
+$(".acs-header-search").on("keyup focus", function() {
+  if ($(this).val().length > 2) {
+    $('#acs-header-search-go').css({
+      "background-color": "#fff",
+      "color": "#000",
+      "cursor": "pointer"
+    });
+
+  } else {
+    $('#acs-header-search-go').css({
+      "background-color": "",
+      "color": "",
+      "cursor": ""
+    });
+  }
+  return false;
+});
+
+$(".acs-header-search").on("blur", function() {
+  if ($(this).val().length > 2) {
+    $('#acs-header-search-go').css({
+      "background-color": "",
+      "color": "",
+      "cursor": ""
+    });
+  }
+  return false;
+});
+
+$(".acs-header-search-go").on("mouseenter", function() {
+  if ($(".acs-header-search").val().length > 2) {
+    $('#acs-header-search-go').css({
+      "background-color": "#fff",
+      "color": "#000",
+      "cursor": "pointer"
+    });
+  }
+  return false;
+});
+
+$(".acs-header-search-go").on("mouseleave", function() {
+  if ($(".acs-header-search").val().length > 2) {
+    $('#acs-header-search-go').css({
+      "background-color": "",
+      "color": "",
+      "cursor": ""
+    });
+  }
+  return false;
+});
+
+function goToPage() {
+  var page = $(".acs-header-search").val();
+
+  if ($(".acs-header-search").val().length > 2) {
+    window.open("https://agsdashboards.corp.adobe.com/content/adobe-csd/search.html?dashboard-search=" + page + "*", "_blank");
+  }
+  return false;
+}
+// clicking enter for search in the header 
+function AddKeyPress(e) {
+  e = e || window.event;
+  if (e.keyCode == 13) {
+    document.getElementById('acs-header-search-go').click();
+    return false;
+  }
+  return true;
+}
+
+// clicking tools on mobile will display header features
+$(".acs-header-help").on("click", function() {
+  "use strict";
+  $(".acs-header-column-2").slideToggle();
+  $(".acs-header").toggleClass("acs-header-shadow");
+  $(this).toggleClass("acs-header-help-active");
+  return true;
+});
+
+// hover for header feature icons
+$(".column-tools-header-each").on("mouseover", function() {
+  "use strict";
+  $(this).closest(".acs-column-container-header-feature").find(".column-tools-header-icon").addClass("column-tools-header-icon-active");
+  return false;
+});
+
+$(".column-tools-header-each").on("mouseout", function() {
+  "use strict";
+  $(this).closest(".acs-column-container-header-feature").find(".column-tools-header-icon").removeClass("column-tools-header-icon-active");
+  return false;
 });
