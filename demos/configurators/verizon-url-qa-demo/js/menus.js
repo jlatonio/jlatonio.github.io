@@ -213,23 +213,23 @@ $(".custom-dropdown").on("click", function() {
 	var preset_accessories = "Accessories-Cropped";
 
 	if (preset === "Single-Cropped") {
-		$(".modifier1").text('Single-Device-160x600-CR');
-		$(".modifier2").text('Single-Device-300x250-CR');
-		$(".modifier3").text('Single-Device-300x600-CR');
-		$(".modifier4").text('Single-Device-728x90-CR');
-		$(".modifier5").text('Single-Device-970x250-CR');
+		$(".modifier1").text('Single-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160x600");
+		$(".modifier2").text('Single-Device-300x250-CR').closest(".each-container-row").find(".asset-specs-size").text("300x250");
+		$(".modifier3").text('Single-Device-300x600-CR').closest(".each-container-row").find(".asset-specs-size").text("300x600");
+		$(".modifier4").text('Single-Device-728x90-CR').closest(".each-container-row").find(".asset-specs-size").text("728x90");
+		$(".modifier5").text('Single-Device-970x250-CR').closest(".each-container-row").find(".asset-specs-size").text("970x250");
 	} else if (preset === "Double-Cropped") {
-		$(".modifier1").text('Double-Device-160x600-CR');
-		$(".modifier2").text('Double-Device-300x250-CR');
-		$(".modifier3").text('Double-Device-300x600-CR');
-		$(".modifier4").text('Double-Device-728x90-CR');
-		$(".modifier5").text('Double-Device-970x250-CR');
+		$(".modifier1").text('Double-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160x600");
+		$(".modifier2").text('Double-Device-300x250-CR').closest(".each-container-row").find(".asset-specs-size").text("300x250");
+		$(".modifier3").text('Double-Device-300x600-CR').closest(".each-container-row").find(".asset-specs-size").text("300x600");
+		$(".modifier4").text('Double-Device-728x90-CR').closest(".each-container-row").find(".asset-specs-size").text("728x90");
+		$(".modifier5").text('Double-Device-970x250-CR').closest(".each-container-row").find(".asset-specs-size").text("970x250");
 	} else if (preset === "Accessories-Cropped") {
-		$(".modifier1").text('DCO_Acc_160x600');
-		$(".modifier2").text('DCO_Acc_300x250');
-		$(".modifier3").text('DCO_Acc_300x600');
-		$(".modifier4").text('DCO_Acc_728x90');
-		$(".modifier5").text('DCO_Acc_970x250');
+		$(".modifier1").text('DCO_Acc_160x600').closest(".each-container-row").find(".asset-specs-size").text("260x360");
+		$(".modifier2").text('DCO_Acc_300x250').closest(".each-container-row").find(".asset-specs-size").text("370x290");
+		$(".modifier3").text('DCO_Acc_300x600').closest(".each-container-row").find(".asset-specs-size").text("260x600");
+		$(".modifier4").text('DCO_Acc_728x90').closest(".each-container-row").find(".asset-specs-size").text("240x760");
+		$(".modifier5").text('DCO_Acc_970x250').closest(".each-container-row").find(".asset-specs-size").text("356x312");
 	}
 
 
