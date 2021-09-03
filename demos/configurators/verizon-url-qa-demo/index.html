@@ -79,8 +79,14 @@
 
       .green-guides {
         outline: 1px solid green;
+        outline-offset: -11px;
       }
-
+        
+      .yellow-guides {
+        outline: 1px solid yellow;
+        outline-offset: -41px;
+      }
+        
       .each-container img {
         position: relative;
         object-fit: contain;
@@ -90,9 +96,13 @@
         -o-transition: all .25s ease-out;
         transition: all .25s ease-out;
       }
-
+        
       .spacing-15 {
         padding: 15px;
+      }
+
+      .spacing-10 {
+        padding: 10px;
       }
         
       .preset-name {}
@@ -118,12 +128,12 @@
       }
 
       .each-300x600 {
-        width: 200px;
+        width: 300px;
         height: 600px;
       }
 
       .each-300x600 img {
-        width: 200px;
+        width: 300px;
         height: 600px;
       }
 
@@ -154,11 +164,19 @@
         cursor: pointer;
       }
 
-      #outer-guides-unchecked {
+      #guides-10-unchecked {
         background-image: url('images/check1.svg');
       }
 
-      #outer-guides-checked {
+      #guides-10-checked {
+        background-image: url('images/check2.svg');
+      }
+        
+      #guides-15-unchecked {
+        background-image: url('images/check1.svg');
+      }
+
+      #guides-15-checked {
         background-image: url('images/check2.svg');
       }
 
@@ -363,10 +381,19 @@
                   <input class="store-button store-continue" type="button" value="Go" />
                   <input class="store-button store-clear" type="button" value="Clear">
                 </div>
+                  
                 <div class="store-checkbox-container">
-                  <div class="checkbox-each" id="outer-guides-checked">Guides applied (15px padding)</div>
-                  <div class="checkbox-each" id="outer-guides-unchecked">Show guides (15px padding)</div>
+                  <div class="checkbox-each" id="guides-10-checked">Guides applied (10px padding)</div>
+                  <div class="checkbox-each" id="guides-10-unchecked">Show guides (10px padding)</div>
+                </div> 
+                  
+                <div class="store-checkbox-container">
+                  <div class="checkbox-each" id="guides-15-checked">Guides applied (15px padding)</div>
+                  <div class="checkbox-each" id="guides-15-unchecked">Show guides (15px padding)</div>
                 </div>
+
+         
+                  
                   
                 <div class="store-checkbox-container">
                   <div class="checkbox-each" id="spacing-checked">15px padding applied</div>

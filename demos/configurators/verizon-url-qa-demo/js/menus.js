@@ -37,7 +37,7 @@ $(".store-clear").on("click", function() {
 			$(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
 		}
 	});
-	$("#outer-guides-checked").trigger("click");
+	$("#guides-15-checked").trigger("click");
 	$("#inner-guides-checked").trigger("click");
 	$(".generated_url").text("");
 	return false;
@@ -355,62 +355,64 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function() {
 });
 
 $(document).ready(function() {
-	$("#outer-guides-checked").hide();
+	$("#guides-15-checked").hide();
+	$("#guides-10-checked").hide();
 	$("#inner-guides-checked").hide();
 	$("#spacing-unchecked").hide();
 	$(".testp").addClass("spacing-15");
 });
 
-
-$("#outer-guides-checked").click(function() {
-
-	$("#outer-guides-checked").hide();
-	$("#outer-guides-unchecked").show();
-
+$("#guides-15-checked").click(function() {
+	$("#guides-15-checked").hide();
+	$("#guides-15-unchecked").show();
 	$(".testp").removeClass("red-guides");
-
 });
 
-$("#outer-guides-unchecked").click(function() {
-
-	$("#outer-guides-unchecked").hide();
-	$("#outer-guides-checked").show();
-
+$("#guides-15-unchecked").click(function() {
+	$("#guides-10-checked").hide();
+	$("#guides-10-unchecked").show();
+	$("#guides-15-unchecked").hide();
+	$("#guides-15-checked").show();
+    $(".testp").removeClass("green-guides")
 	$(".testp").addClass("red-guides");
-
 });
 
+$("#guides-10-checked").click(function() {
+	$("#guides-10-checked").hide();
+	$("#guides-10-unchecked").show();
+	$(".testp").removeClass("green-guides");
+});
+
+$("#guides-10-unchecked").click(function() {
+	$("#guides-15-checked").hide();
+	$("#guides-15-unchecked").show();
+	$("#guides-10-unchecked").hide();
+	$("#guides-10-checked").show();
+    $(".testp").removeClass("red-guides");
+	$(".testp").addClass("green-guides");
+});
 
 $("#inner-guides-checked").click(function() {
 	"use strict";
 	$("#inner-guides-checked").hide();
 	$("#inner-guides-unchecked").show();
-
-
 	$(".store-continue").trigger("click");
 	return false;
-
 });
 
-
 $("#spacing-unchecked").click(function() {
-
 	$("#spacing-unchecked").hide();
 	$("#spacing-checked").show();
 
 	$(".testp").addClass("spacing-15");
-
 });
-
 
 $("#spacing-checked").click(function() {
 	"use strict";
 	$("#spacing-checked").hide();
 	$("#spacing-unchecked").show();
-
 	$(".testp").removeClass("spacing-15");
 	return false;
-
 });
 
 

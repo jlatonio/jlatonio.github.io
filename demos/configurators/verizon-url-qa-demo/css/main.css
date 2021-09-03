@@ -153,7 +153,8 @@ iframe[seamless] {
   height: 100%;
   justify-content: left;
   color: #fff;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-content h1 {
@@ -453,8 +454,7 @@ iframe[seamless] {
     margin-bottom: 0;
   }
 
-  .hero-content {
-  }
+
 
   .acs-header img {
     width: 100px;
@@ -498,7 +498,10 @@ iframe[seamless] {
   .column-container-breadcrumbs {
     padding: 0 100px;
   }
-
+  .hero-content {
+  margin-left: 200px;
+  margin-right: auto;
+  }
   .acs-footer {
     padding: 40px 100px 60px 100px;
   }
