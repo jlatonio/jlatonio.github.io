@@ -23,7 +23,7 @@
 
       .outer-container {
         width: 100%;
-        overflow-x: scroll;
+          overflow-x: scroll;
       }
 
       .inner-container {
@@ -86,15 +86,12 @@
         object-fit: contain;
         overflow: hidden;
         cursor: pointer;
-        -moz-transition: all 2s ease-out;
-        -o-transition: all .25s ease-out;
-        transition: all .25s ease-out;
       }
 
       .spacing-15 {
         padding: 15px;
       }
-
+        
       .preset-name {}
 
       .each-160x600 {
@@ -169,7 +166,7 @@
       #inner-guides-checked {
         background-image: url('images/check2.svg');
       }
-
+        
       #spacing-unchecked {
         background-image: url('images/check1.svg');
       }
@@ -177,6 +174,7 @@
       #spacing-checked {
         background-image: url('images/check2.svg');
       }
+        
     </style>
   </head>
   <body>
@@ -238,7 +236,7 @@
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier2">DCO_Acc_300x250</p>
+                        <p class="preset-name modifier2" >DCO_Acc_300x250</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
@@ -327,32 +325,28 @@
             </div>
             <div class="column-container-each column-container-menu percent-20">
               <div class="right-data-column">
-                <div class="custom-dropdown-outer">
-                  <label class="custom-dropdown-label primary-color">Select Bundle</label>
-                  <div class="custom-dropdown-relative">
-                    <div class="primary-color">
-                      <input type="text" class="s7presets url-fabric custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" value="Accessories-Cropped" />
-                      <div class="custom-dropdown-close"></div>
-                      <div class="custom-dropdown-open"></div>
-                      <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
-                    </div>
-                  </div>
-                  <div class="custom-dropdown-position">
-                    <div class="custom-dropdown-group">
-                      <div class="custom-dropdown-scroll">
-                        <div class="custom-dropdown" data-val="sw_furn_ClassLinen_White_repeat">
-                          <div class="custom-dropdown-icon"></div>Single-Cropped
-                        </div>
-                        <div class="custom-dropdown" data-val="sw_furn_ClassLinen_Navy_040319_repeat">
-                          <div class="custom-dropdown-icon"></div>Double-Cropped
-                        </div>
-                        <div class="custom-dropdown" data-val="sw_furn_ClassLinen_Black_repeat">
-                          <div class="custom-dropdown-icon"></div>Accessories-Cropped
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+ 
+							<div class="custom-dropdown-outer">
+								<label class="custom-dropdown-label primary-color">Select Bundle</label>
+								<div class="custom-dropdown-relative">
+									<div class="primary-color">
+										<input type="text" class="s7presets url-fabric custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" value="Accessories-Cropped" />
+										<div class="custom-dropdown-close"></div>
+										<div class="custom-dropdown-open"></div>
+										<img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+									</div>
+								</div>
+								<div class="custom-dropdown-position">
+									<div class="custom-dropdown-group">
+										<div class="custom-dropdown-scroll">
+                                            <div class="custom-dropdown" data-val="sw_furn_ClassLinen_White_repeat"><div class="custom-dropdown-icon"></div>Single-Cropped</div>
+                                            <div class="custom-dropdown" data-val="sw_furn_ClassLinen_Navy_040319_repeat"><div class="custom-dropdown-icon"></div>Double-Cropped</div>
+                                            <div class="custom-dropdown" data-val="sw_furn_ClassLinen_Black_repeat"><div class="custom-dropdown-icon"></div>Accessories-Cropped</div>
+										</div>
+									</div>
+								</div>
+							</div>
+ 
                 <div class="custom-dropdown-outer">
                   <label class="custom-dropdown-label primary-color">Enter Asset Name</label>
                   <div class="custom-dropdown-outer">
@@ -370,10 +364,12 @@
                   <div class="checkbox-each" id="outer-guides-checked">Guides applied (15px padding)</div>
                   <div class="checkbox-each" id="outer-guides-unchecked">Show guides (15px padding)</div>
                 </div>
+                  
                 <div class="store-checkbox-container">
                   <div class="checkbox-each" id="spacing-checked">15px padding applied</div>
                   <div class="checkbox-each" id="spacing-unchecked">Apply 15px padding</div>
                 </div>
+                  
                 <div class="store-checkbox-container">
                   <div class="checkbox-each" id="inner-guides-checked">DM image background added</div>
                   <div class="checkbox-each" id="inner-guides-unchecked">Show DM image background</div>
