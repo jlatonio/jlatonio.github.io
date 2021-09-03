@@ -1,6 +1,10 @@
 // Show default generated URL when loaded
 var results = $(".testurl_preview").attr('src');
+$(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
 
+$( document ).ready(function() {
+$(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(3)").click();
+});
 
 $(function() {
 	"use strict";

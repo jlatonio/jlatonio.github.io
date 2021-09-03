@@ -1,427 +1,214 @@
 <!DOCTYPE html>
 <html lang="zxx">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
-    <title>Campaign Image QA</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/print.css" />
-    <link rel="stylesheet" href="css/resizing.css" />
-    <link rel="stylesheet" href="css/jquery-ui.css" />
-    <script src="js/jquery-1.12.4.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <style>
-      .right-data-column {
-        position: sticky;
-        top: 40px;
-        right: 0;
-      }
 
-      .outer-container {
-        width: 100%;
-        overflow-x: scroll;
-      }
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
+	<title>Campaign Image QA</title>
+	<link rel="stylesheet" href="css/verizon-style.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/global.css" />
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/print.css" />
+	<link rel="stylesheet" href="css/resizing.css" />
+	<script src="js/jquery-1.12.4.js"></script>
+</head>
 
-      .inner-container {
-        display: block;
-        margin: 0;
-        padding: 0;
-      }
-
-      .each-container-row {
-        position: relative;
-        padding: 40px;
-        min-height: 350px;
-      }
-
-      .each-container-row:nth-child(even) {
-        background: #e0e0e0;
-      }
-
-      .each-container-row:nth-child(odd) {
-        background: #f0f0f0;
-      }
-
-      .asset-specs {
-        position: sticky;
-        top: 0;
-        padding: 20px 40px 0 40px;
-        margin-bottom: 40px;
-        background-color: inherit;
-        border-bottom: 1px solid;
-        z-index: 1;
-      }
-
-      .asset-specs-each {
-        display: inline-flex;
-        margin-right: 40px;
-      }
-
-      .each-container {
-        background-color: #ffffff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 0;
-        margin-right: auto;
-        margin-left: auto;
-        vertical-align: top;
-      }
-
-      .red-guides {
-        outline: 2px solid red;
-        outline-offset: -17px;
-      }
-
-      .blue-guides {
-        outline: 2px solid #5d5dff;
-        outline-offset: -12px;
-      }
-        
-      .yellow-guides {
-        outline: 1px solid yellow;
-        outline-offset: -41px;
-      }
-        
-      .each-container img {
-        position: relative;
-        object-fit: contain;
-        overflow: hidden;
-        cursor: pointer;
-        -moz-transition: all .25s ease-out;
-        -o-transition: all .25s ease-out;
-        transition: all .25s ease-out;
-      }
-        
-      .spacing-15 {
-        padding: 15px;
-      }
-
-      .spacing-10 {
-        padding: 10px;
-      }
-        
-      .preset-name {}
-
-      .each-160x600 {
-        width: 160px;
-        height: 600px;
-      }
-
-      .each-160x600 img {
-        width: 160px;
-        height: 600px;
-      }
-
-      .each-300x250 {
-        width: 300px;
-        height: 250px;
-      }
-
-      .each-300x250 img {
-        width: 300px;
-        height: 250px;
-      }
-
-      .each-300x600 {
-        width: 300px;
-        height: 600px;
-      }
-
-      .each-300x600 img {
-        width: 300px;
-        height: 600px;
-      }
-
-      .each-728x90 {
-        width: 728px;
-        height: 90px;
-      }
-
-      .each-728x90 img {
-        width: 728px;
-        height: 90px;
-      }
-
-      .each-970x250 {
-        width: 970px;
-        height: 250px;
-      }
-
-      .each-970x250 img {
-        width: 970px;
-        height: 250px;
-      }
-
-      .checkbox-each {
-        background-size: 50px;
-        background-repeat: no-repeat;
-        padding: 20px 0 50px 50px;
-        cursor: pointer;
-      }
-
-      #guides-10-unchecked {
-        background-image: url('images/check1.svg');
-      }
-
-      #guides-10-checked {
-        background-image: url('images/check2.svg');
-      }
-        
-      #guides-15-unchecked {
-        background-image: url('images/check1.svg');
-      }
-
-      #guides-15-checked {
-        background-image: url('images/check2.svg');
-      }
-
-      #inner-guides-unchecked {
-        background-image: url('images/check1.svg');
-      }
-
-      #inner-guides-checked {
-        background-image: url('images/check2.svg');
-      }
-        
-      #spacing-unchecked {
-        background-image: url('images/check1.svg');
-      }
-
-      #spacing-checked {
-        background-image: url('images/check2.svg');
-      }
-        
-    </style>
-  </head>
-  <body>
-    <div class="page">
-      <!-- header -->
-      <header class="acs-header dark-bg">
-        <div class="acs-header-column-1 percent-40">
-          <img src="images/adobe-logo_h.svg" alt="" />
-        </div>
-        <div class="acs-header-column-2 percent-60">
-          <div class="acs-header-column-2-inner">
-            <p class="regular-text">
-              <a class="column-tools-breadcrumbs-each" id="view-fullscreen">Enter Fullscreen</a>
-              <a class="column-tools-breadcrumbs-each" id="cancel-fullscreen">Exit Fullscreen</a>
-            </p>
-          </div>
-        </div>
-      </header>
-      <!-- wrapper -->
-      <div class="hero-container">
-        <div class="hero-content">
-          <h1>Verizon Image and Image Preset QA</h1>
-        </div>
-      </div>
-      <form>
-        <div class="acs-main-content">
-          <div class="column-container">
-            <div class="column-container-url percent-80">
-              <div class="outer-container">
-                <div class="inner-container">
-                  <div class="each-container-row">
-                    <div class="asset-specs">
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
-                        <div class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</div>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier1">DCO_Acc_160x600</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
-                        <p>160x600</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
-                        <p class="asset-specs-size">260x360</p>
-                      </div>
-                    </div>
-                    <div class="each-container box-shadow each-160x600">
-                      <img class="testurl_preview1 testp" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-d?fmt=png-alpha&qlt=75,1&wid=260&hei=360" alt= />
-                    </div>
-                  </div>
-                  <div class="each-container-row">
-                    <div class="asset-specs">
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
-                        <p class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier2" >DCO_Acc_300x250</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
-                        <p>300x250</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
-                        <p class="asset-specs-size">370x290</p>
-                      </div>
-                    </div>
-                    <div class="each-container box-shadow each-300x250">
-                      <img class="testurl_preview2 testp" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-d?fmt=png-alpha&qlt=75,1&wid=370&hei=290" alt= />
-                    </div>
-                  </div>
-                  <div class="each-container-row">
-                    <div class="asset-specs">
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
-                        <p class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier3">DCO_Acc_300x600</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
-                        <p>300x600</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
-                        <p class="asset-specs-size">260x600</p>
-                      </div>
-                    </div>
-                    <div class="each-container box-shadow each-300x600">
-                      <img class="testurl_preview3 testp" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-d?fmt=png-alpha&qlt=75,1&wid=260&hei=600" alt= />
-                    </div>
-                  </div>
-                  <div class="each-container-row">
-                    <div class="asset-specs">
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
-                        <p class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier4">DCO_Acc_728x90</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
-                        <p>728x90</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
-                        <p class="asset-specs-size">240x76</p>
-                      </div>
-                    </div>
-                    <div class="each-container box-shadow each-728x90">
-                      <img class="testurl_preview4 testp" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-d?fmt=png-alpha&qlt=75,1&wid=240&hei=76" alt= />
-                    </div>
-                  </div>
-                  <div class="each-container-row">
-                    <div class="asset-specs">
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
-                        <p class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier5">DCO_Acc_970x250</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
-                        <p>970x250</p>
-                      </div>
-                      <div class="asset-specs-each">
-                        <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
-                        <p class="asset-specs-size">356x312</p>
-                      </div>
-                    </div>
-                    <div class="each-container box-shadow each-970x250">
-                      <img class="testurl_preview5 testp" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-d?fmt=png-alpha&qlt=75,1&wid=356&hei=312" alt= />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="column-container-each column-container-menu percent-20">
-              <div class="right-data-column">
- 
+<body>
+	<div class="page">
+		<!-- header -->
+		<header class="acs-header dark-bg">
+			<div class="acs-header-column-1 percent-40"> <img src="images/adobe-logo_h.svg" alt="" /> </div>
+			<div class="acs-header-column-2 percent-60">
+				<div class="acs-header-column-2-inner">
+					<p class="regular-text"> <a class="column-tools-breadcrumbs-each" id="view-fullscreen">Enter Fullscreen</a> <a class="column-tools-breadcrumbs-each" id="cancel-fullscreen">Exit Fullscreen</a> </p>
+				</div>
+			</div>
+		</header>
+		<!-- wrapper -->
+		<div class="hero-container">
+			<div class="hero-content">
+				<h1>Verizon Image and Image Preset QA</h1> </div>
+		</div>
+		<form>
+			<div class="acs-main-content">
+				<div class="column-container">
+					<div class="column-container-url percent-80">
+						<div class="outer-container">
+							<div class="inner-container">
+								<div class="each-container-row">
+									<div class="asset-specs">
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
+											<div class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</div>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
+											<p class="preset-name modifier1">DCO_Acc_160x600</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
+											<p>160x600</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
+											<p class="asset-specs-size">260x360</p>
+										</div>
+									</div>
+									<div class="each-container box-shadow each-160x600"> <img class="testurl_preview1 testp" src="" alt=/> </div>
+								</div>
+								<div class="each-container-row">
+									<div class="asset-specs">
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
+											<p class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
+											<p class="preset-name modifier2">DCO_Acc_300x250</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
+											<p>300x250</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
+											<p class="asset-specs-size">370x290</p>
+										</div>
+									</div>
+									<div class="each-container box-shadow each-300x250"> <img class="testurl_preview2 testp" src="" alt=/> </div>
+								</div>
+								<div class="each-container-row">
+									<div class="asset-specs">
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
+											<p class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
+											<p class="preset-name modifier3">DCO_Acc_300x600</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
+											<p>300x600</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
+											<p class="asset-specs-size">260x600</p>
+										</div>
+									</div>
+									<div class="each-container box-shadow each-300x600"> <img class="testurl_preview3 testp" src="" alt=/> </div>
+								</div>
+								<div class="each-container-row">
+									<div class="asset-specs">
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
+											<p class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
+											<p class="preset-name modifier4">DCO_Acc_728x90</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
+											<p>728x90</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
+											<p class="asset-specs-size">240x76</p>
+										</div>
+									</div>
+									<div class="each-container box-shadow each-728x90"> <img class="testurl_preview4 testp" src="" alt=/> </div>
+								</div>
+								<div class="each-container-row">
+									<div class="asset-specs">
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
+											<p class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
+											<p class="preset-name modifier5">DCO_Acc_970x250</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
+											<p>970x250</p>
+										</div>
+										<div class="asset-specs-each">
+											<p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
+											<p class="asset-specs-size">356x312</p>
+										</div>
+									</div>
+									<div class="each-container box-shadow each-970x250"> <img class="testurl_preview5 testp" src="" alt=/> </div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column-container-each column-container-menu percent-20">
+						<div class="right-data-column">
 							<div class="custom-dropdown-outer">
-								<label class="custom-dropdown-label primary-color">Select Bundle</label>
+								<label class="custom-dropdown-label primary-color">Select Bundle Type</label>
 								<div class="custom-dropdown-relative">
 									<div class="primary-color">
 										<input type="text" class="s7presets url-fabric custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" value="Accessories-Cropped" />
 										<div class="custom-dropdown-close"></div>
-										<div class="custom-dropdown-open"></div>
-										<img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
-									</div>
+										<div class="custom-dropdown-open"></div> <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" /> </div>
 								</div>
 								<div class="custom-dropdown-position">
 									<div class="custom-dropdown-group">
 										<div class="custom-dropdown-scroll">
-                                            <div class="custom-dropdown" data-val="sw_furn_ClassLinen_White_repeat"><div class="custom-dropdown-icon"></div>Single-Cropped</div>
-                                            <div class="custom-dropdown" data-val="sw_furn_ClassLinen_Navy_040319_repeat"><div class="custom-dropdown-icon"></div>Double-Cropped</div>
-                                            <div class="custom-dropdown" data-val="sw_furn_ClassLinen_Black_repeat"><div class="custom-dropdown-icon"></div>Accessories-Cropped</div>
+											<div class="custom-dropdown" data-val="sw_furn_ClassLinen_White_repeat"><img class="custom-dropdown-icon" src="https://assets.verizon.com/is/image/verizonqa/device-test-2" alt="" />Single-Cropped</div>
+											<div class="custom-dropdown" data-val="sw_furn_ClassLinen_Navy_040319_repeat"><img class="custom-dropdown-icon" src="https://assets.verizon.com/is/image/verizonqa/VZ_219957_19_Mot Z4 gra Sam Gal A50 Bk_DC_RGB_SIMP_v2_Cropped" alt="" />Double-Cropped</div>
+											<div class="custom-dropdown" data-val="sw_furn_ClassLinen_Black_repeat"><img class="custom-dropdown-icon" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-g" alt="" />Accessories-Cropped</div>
 										</div>
 									</div>
 								</div>
 							</div>
- 
-                <div class="custom-dropdown-outer">
-                  <label class="custom-dropdown-label primary-color">Enter Asset Name</label>
-                  <div class="custom-dropdown-outer">
-                    <div class="custom-dropdown-relative">
-                      <input type="text" class="s7asset texturl custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" value="jbl-live-pro-earbuds-black-jblliveproptwsbam-d" />
-                      <img src="images/select-close.svg" class="custom-select-close" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="store-button-container">
-                  <input class="store-button store-continue" type="button" value="Go" />
-                  <input class="store-button store-clear" type="button" value="Clear">
-                </div>
-                  
-                <div class="store-checkbox-container">
-                  <div class="checkbox-each" id="guides-10-checked">Guides applied (10px padding)</div>
-                  <div class="checkbox-each" id="guides-10-unchecked">Show guides (10px padding)</div>
-                </div> 
-                  
-                <div class="store-checkbox-container">
-                  <div class="checkbox-each" id="guides-15-checked">Guides applied (15px padding)</div>
-                  <div class="checkbox-each" id="guides-15-unchecked">Show guides (15px padding)</div>
-                </div>
+							<div class="custom-dropdown-outer">
+								<label class="custom-dropdown-label primary-color">Enter Asset Name</label>
+								<div class="custom-dropdown-outer">
+									<div class="custom-dropdown-relative">
+										<input type="text" class="s7asset texturl custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" value="jbl-live-pro-earbuds-black-jblliveproptwsbam-d" /> <img src="images/select-close.svg" class="custom-select-close" alt="" /> </div>
+								</div>
+							</div>
+							<div class="store-button-container">
+								<input class="store-button store-continue" type="button" value="Go" />
+								<input class="store-button store-clear" type="button" value="Clear"> </div>
+							<div class="store-checkbox-container">
+								<div class="checkbox-each" id="guides-10-checked">Guides applied (10px padding)</div>
+								<div class="checkbox-each" id="guides-10-unchecked">Show guides (10px padding)</div>
+							</div>
+							<div class="store-checkbox-container">
+								<div class="checkbox-each" id="guides-15-checked">Guides applied (15px padding)</div>
+								<div class="checkbox-each" id="guides-15-unchecked">Show guides (15px padding)</div>
+							</div>
+							<div class="store-checkbox-container">
+								<div class="checkbox-each" id="spacing-checked">15px padding applied</div>
+								<div class="checkbox-each" id="spacing-unchecked">Apply 15px padding</div>
+							</div>
+							<div class="store-checkbox-container">
+								<div class="checkbox-each" id="inner-guides-checked">DM image background added</div>
+								<div class="checkbox-each" id="inner-guides-unchecked">Show DM image background</div>
+							</div>
+							<label class="custom-dropdown-label primary-color">Click on image to generate URL</label>
+							<p class="generated_url"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<!-- footer -->
+		<footer class="acs-footer dark-bg text-align-center small-text"> <img class="footer-image" src="images/adobe-logo-print-rev.svg" alt="" />
+			<div>
+				<p>@2021 Adobe Systems Incorporated. All rights reserved. <span class="footer-secondary-color regular-text">
+              <a href="https://inside.corp.adobe.com/legal/corporate-law.html" target="_blank">Adobe Confidential</a>. </span> </p>
+			</div>
+		</footer>
+	</div>
+	<script src="js/menus.js"></script>
+	<script src="js/fullscreen.js"></script>
+</body>
 
-         
-                  
-                  
-                <div class="store-checkbox-container">
-                  <div class="checkbox-each" id="spacing-checked">15px padding applied</div>
-                  <div class="checkbox-each" id="spacing-unchecked">Apply 15px padding</div>
-                </div>
-                  
-                <div class="store-checkbox-container">
-                  <div class="checkbox-each" id="inner-guides-checked">DM image background added</div>
-                  <div class="checkbox-each" id="inner-guides-unchecked">Show DM image background</div>
-                </div>
-                <label class="custom-dropdown-label primary-color">Click on image to generate URL</label>
-                <p class="generated_url"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-      <!-- footer -->
-      <footer class="acs-footer dark-bg text-align-center small-text">
-        <img class="footer-image" src="images/adobe-logo-print-rev.svg" alt="" />
-        <div>
-          <p>@2021 Adobe Systems Incorporated. All rights reserved. <span class="footer-secondary-color regular-text">
-              <a href="https://inside.corp.adobe.com/legal/corporate-law.html" target="_blank">Adobe Confidential</a>. </span>
-          </p>
-        </div>
-      </footer>
-    </div>
-    <script src="js/menus.js"></script>
-    <script src="js/fullscreen.js"></script>
-  </body>
 </html>

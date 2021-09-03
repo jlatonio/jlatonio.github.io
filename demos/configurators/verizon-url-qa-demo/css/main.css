@@ -342,10 +342,13 @@ iframe[seamless] {
   position: absolute;
   left: 10px;
   top: 50%;
-  width: 30px;
-  height: 30px;
-  margin-top: -15px;
+  width: 34px;
+  height: 34px;
+  margin-top: -17px;
   border: 1px solid #000000;
+  object-fit: scale-down;
+  padding:2px;
+  background-color: #ffffff;
 }
 
 .custom-dropdown-delete:hover {
