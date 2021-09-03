@@ -373,14 +373,14 @@ $("#guides-15-unchecked").click(function() {
 	$("#guides-10-unchecked").show();
 	$("#guides-15-unchecked").hide();
 	$("#guides-15-checked").show();
-    $(".testp").removeClass("green-guides")
+    $(".testp").removeClass("blue-guides")
 	$(".testp").addClass("red-guides");
 });
 
 $("#guides-10-checked").click(function() {
 	$("#guides-10-checked").hide();
 	$("#guides-10-unchecked").show();
-	$(".testp").removeClass("green-guides");
+	$(".testp").removeClass("blue-guides");
 });
 
 $("#guides-10-unchecked").click(function() {
@@ -389,7 +389,7 @@ $("#guides-10-unchecked").click(function() {
 	$("#guides-10-unchecked").hide();
 	$("#guides-10-checked").show();
     $(".testp").removeClass("red-guides");
-	$(".testp").addClass("green-guides");
+	$(".testp").addClass("blue-guides");
 });
 
 $("#inner-guides-checked").click(function() {
