@@ -20,11 +20,11 @@ $(function() {
 // Resets to default image and default generated URL
 $(".store-clear").on("click", function() {
 	"use strict";
-	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?fmt=png-alpha&qlt=75,1&wid=260&hei=360";
-	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?fmt=png-alpha&qlt=75,1&wid=370&hei=290";
-	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?fmt=png-alpha&qlt=75,1&wid=260&hei=600";
-	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?fmt=png-alpha&qlt=75,1&wid=240&hei=76";
-	var assetprev5 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?fmt=png-alpha&qlt=75,1&wid=356&hei=312";
+	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?$" + $(".modifier1").text() + "$";
+	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?$" + $(".modifier2").text() + "$";
+	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?$" + $(".modifier3").text() + "$";
+	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?$" + $(".modifier4").text() + "$";
+	var assetprev5 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?$" + $(".modifier5").text() + "$";
 
 	$(".store-continue").trigger("click");
 	$("input[type='text'], input[type='number']").each(function() {
@@ -37,6 +37,8 @@ $(".store-clear").on("click", function() {
 			$(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
 		}
 	});
+	$("#outer-guides-checked").trigger("click");
+	$("#inner-guides-checked").trigger("click");
 	$(".generated_url").text("");
 	return false;
 });
@@ -56,11 +58,11 @@ $(".testp").on("click", function() {
 // Process results
 $(".store-continue").on("click", function() {
 	"use strict";
-	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier1").data('val');
-	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier2").data('val');
-	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier3").data('val');
-	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier4").data('val');
-	var assetprev5 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier5").data('val');
+	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$";
+	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier2").text() + "$";
+	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$";
+	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$";
+	var assetprev5 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$";
 	var prevname = $(".s7asset").val();
 	var isValid = true;
 	$(".s7required").each(function() {
@@ -86,6 +88,8 @@ $(".store-continue").on("click", function() {
 	$(".testurl_preview").on("error", function() {
 		$(this).closest(".column-testurl").find(".generated_url").text("Preview Not Available. Complete required fields.");
 	});
+	$("#inner-guides-checked").hide();
+	$("#inner-guides-unchecked").show();
 	return false;
 });
 
@@ -202,7 +206,38 @@ $(".custom-dropdown").on("click", function() {
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-menu").removeData().attr('data-val', result);
+
+	var preset = $(".s7presets").val();
+	var preset_single = "Single-Cropped";
+	var preset_double = "Double-Cropped";
+	var preset_accessories = "Accessories-Cropped";
+
+	if (preset === "Single-Cropped") {
+		$(".modifier1").text('Single-Device-160x600-CR');
+		$(".modifier2").text('Single-Device-300x250-CR');
+		$(".modifier3").text('Single-Device-300x600-CR');
+		$(".modifier4").text('Single-Device-728x90-CR');
+		$(".modifier5").text('Single-Device-970x250-CR');
+	} else if (preset === "Double-Cropped") {
+		$(".modifier1").text('Double-Device-160x600-CR');
+		$(".modifier2").text('Double-Device-300x250-CR');
+		$(".modifier3").text('Double-Device-300x600-CR');
+		$(".modifier4").text('Double-Device-728x90-CR');
+		$(".modifier5").text('Double-Device-970x250-CR');
+	} else if (preset === "Accessories-Cropped") {
+		$(".modifier1").text('DCO_Acc_160x600');
+		$(".modifier2").text('DCO_Acc_300x250');
+		$(".modifier3").text('DCO_Acc_300x600');
+		$(".modifier4").text('DCO_Acc_728x90');
+		$(".modifier5").text('DCO_Acc_970x250');
+	}
+
+
+	return false;
 });
+
+
+
 
 $(".custom-dropdown-open").on("click", function() {
 	"use strict";
@@ -322,6 +357,8 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function() {
 $(document).ready(function() {
 	$("#outer-guides-checked").hide();
 	$("#inner-guides-checked").hide();
+	$("#spacing-unchecked").hide();
+	$(".testp").addClass("spacing-15");
 });
 
 
@@ -330,7 +367,7 @@ $("#outer-guides-checked").click(function() {
 	$("#outer-guides-checked").hide();
 	$("#outer-guides-unchecked").show();
 
-	$(".each-container").removeClass("red-guides");
+	$(".testp").removeClass("red-guides");
 
 });
 
@@ -339,62 +376,54 @@ $("#outer-guides-unchecked").click(function() {
 	$("#outer-guides-unchecked").hide();
 	$("#outer-guides-checked").show();
 
-	$(".each-container").addClass("red-guides");
+	$(".testp").addClass("red-guides");
 
 });
 
 
 $("#inner-guides-checked").click(function() {
-
+	"use strict";
 	$("#inner-guides-checked").hide();
 	$("#inner-guides-unchecked").show();
 
-	"use strict";
-	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier1").data('val');
-	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier2").data('val');
-	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier3").data('val');
-	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier4").data('val');
-	var assetprev5 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier5").data('val');
-	var prevname = $(".s7asset").val();
-	var isValid = true;
-	$(".s7required").each(function() {
-		if ($(this).val().length === 0) {
-			isValid = false;
-			$(this).focus().attr("placeholder", "This is a required field.").css({
-				"background": "#fff2f2"
-			});
-			return false;
-		} else {
-			$(this).css({
-				"background": ""
-			});
-		}
-	});
-	$(".testurl_preview1").attr('src', assetprev1);
-	$(".testurl_preview2").attr('src', assetprev2);
-	$(".testurl_preview3").attr('src', assetprev3);
-	$(".testurl_preview4").attr('src', assetprev4);
-	$(".testurl_preview5").attr('src', assetprev5);
-	$(".image-preview-name").text(prevname);
 
-	$(".testurl_preview").on("error", function() {
-		$(this).closest(".column-testurl").find(".generated_url").text("Preview Not Available. Complete required fields.");
-	});
+	$(".store-continue").trigger("click");
 	return false;
 
 });
 
-$("#inner-guides-unchecked").click(function() {
 
+$("#spacing-unchecked").click(function() {
+
+	$("#spacing-unchecked").hide();
+	$("#spacing-checked").show();
+
+	$(".testp").addClass("spacing-15");
+
+});
+
+
+$("#spacing-checked").click(function() {
+	"use strict";
+	$("#spacing-checked").hide();
+	$("#spacing-unchecked").show();
+
+	$(".testp").removeClass("spacing-15");
+	return false;
+
+});
+
+
+$("#inner-guides-unchecked").click(function() {
+	"use strict";
 	$("#inner-guides-unchecked").hide();
 	$("#inner-guides-checked").show();
 
-	"use strict";
-	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier1").data('val') + "&fmt=jpg&bgc=000000";
-	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier2").data('val') + "&fmt=jpg&bgc=000000";
-	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier3").data('val') + "&fmt=jpg&bgc=000000";
-	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier4").data('val') + "&fmt=jpg&bgc=000000";
-	var assetprev5 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + $(".modifier5").data('val') + "&fmt=jpg&bgc=000000";
+	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier2").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprev5 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$" + "&fmt=jpg&bgc=000000";
 	var prevname = $(".s7asset").val();
 	var isValid = true;
 	$(".s7required").each(function() {

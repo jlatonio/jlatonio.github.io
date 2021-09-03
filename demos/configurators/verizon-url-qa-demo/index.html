@@ -23,7 +23,7 @@
 
       .outer-container {
         width: 100%;
-          overflow-x: auto;
+        overflow-x: scroll;
       }
 
       .inner-container {
@@ -66,7 +66,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid;
         margin-top: 0;
         margin-right: auto;
         margin-left: auto;
@@ -84,10 +83,16 @@
 
       .each-container img {
         position: relative;
-        padding: 15px;
         object-fit: contain;
         overflow: hidden;
         cursor: pointer;
+        -moz-transition: all 2s ease-out;
+        -o-transition: all .25s ease-out;
+        transition: all .25s ease-out;
+      }
+
+      .spacing-15 {
+        padding: 15px;
       }
 
       .preset-name {}
@@ -164,6 +169,14 @@
       #inner-guides-checked {
         background-image: url('images/check2.svg');
       }
+
+      #spacing-unchecked {
+        background-image: url('images/check1.svg');
+      }
+
+      #spacing-checked {
+        background-image: url('images/check2.svg');
+      }
     </style>
   </head>
   <body>
@@ -198,22 +211,22 @@
                     <div class="asset-specs">
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Name:&nbsp;</p>
-                        <p class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</p>
+                        <div class="image-preview-name">jbl-live-pro-earbuds-black-jblliveproptwsbam-d</div>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">DCO_Acc_160x600</p>
+                        <p class="preset-name modifier1">DCO_Acc_160x600</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
-                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">160x600</p>
+                        <p>160x600</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
                         <p>260x360</p>
                       </div>
                     </div>
-                    <div class="each-container each-160x600">
+                    <div class="each-container box-shadow each-160x600">
                       <img class="testurl_preview1 testp" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-d?fmt=png-alpha&qlt=75,1&wid=260&hei=360" alt= />
                     </div>
                   </div>
@@ -225,18 +238,18 @@
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier2" data-val="?fmt=png-alpha&qlt=75,1&wid=370&hei=290">DCO_Acc_300x250</p>
+                        <p class="preset-name modifier2">DCO_Acc_300x250</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
-                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">300x250</p>
+                        <p>300x250</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
                         <p>370x290</p>
                       </div>
                     </div>
-                    <div class="each-container each-300x250">
+                    <div class="each-container box-shadow each-300x250">
                       <img class="testurl_preview2 testp" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-d?fmt=png-alpha&qlt=75,1&wid=370&hei=290" alt= />
                     </div>
                   </div>
@@ -248,18 +261,18 @@
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier3" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=600">DCO_Acc_300x600</p>
+                        <p class="preset-name modifier3">DCO_Acc_300x600</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
-                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">300x600</p>
+                        <p>300x600</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
                         <p>260x600</p>
                       </div>
                     </div>
-                    <div class="each-container each-300x600">
+                    <div class="each-container box-shadow each-300x600">
                       <img class="testurl_preview3 testp" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-d?fmt=png-alpha&qlt=75,1&wid=260&hei=600" alt= />
                     </div>
                   </div>
@@ -271,18 +284,18 @@
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier4" data-val="?fmt=png-alpha&qlt=75,1&wid=240&hei=76">DCO_Acc_728x90</p>
+                        <p class="preset-name modifier4">DCO_Acc_728x90</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
-                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">728x90</p>
+                        <p>728x90</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
                         <p>240x76</p>
                       </div>
                     </div>
-                    <div class="each-container each-728x90">
+                    <div class="each-container box-shadow each-728x90">
                       <img class="testurl_preview4 testp" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-d?fmt=png-alpha&qlt=75,1&wid=240&hei=76" alt= />
                     </div>
                   </div>
@@ -294,18 +307,18 @@
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Preset Name:&nbsp;</p>
-                        <p class="preset-name modifier5" data-val="?fmt=png-alpha&qlt=75,1&wid=356&hei=312">DCO_Acc_970x250</p>
+                        <p class="preset-name modifier5">DCO_Acc_970x250</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Container Size:&nbsp;</p>
-                        <p class="preset-name modifier1" data-val="?fmt=png-alpha&qlt=75,1&wid=260&hei=360">970x250</p>
+                        <p>970x250</p>
                       </div>
                       <div class="asset-specs-each">
                         <p class="custom-dropdown-label primary-color">Image Size (Scaled to fit):&nbsp;</p>
                         <p>356x312</p>
                       </div>
                     </div>
-                    <div class="each-container each-970x250">
+                    <div class="each-container box-shadow each-970x250">
                       <img class="testurl_preview5 testp" src="https://assets.verizon.com/is/image/verizonqa/jbl-live-pro-earbuds-black-jblliveproptwsbam-d?fmt=png-alpha&qlt=75,1&wid=356&hei=312" alt= />
                     </div>
                   </div>
@@ -314,11 +327,32 @@
             </div>
             <div class="column-container-each column-container-menu percent-20">
               <div class="right-data-column">
-                <!--<div class="custom-dropdown-outer"><label class="custom-dropdown-label primary-color">Enter Asset Name</label><div class="custom-dropdown-relative"><div class="primary-color"><input type="text" class="s7asset s7required custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" data-val="hiking_4" placeholder="Image" value="Hiking Example 1" /><div class="custom-dropdown-close"></div><div class="custom-dropdown-open"></div><img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" /></div></div><div class="custom-dropdown-position"><div class="custom-dropdown-group"><div class="custom-dropdown-scroll"><div class="custom-dropdown" data-val="hiking_4"><img src="https://s7d1.scene7.com/is/image/DynamicMediaNA?layer=0&src=is(DynamicMediaNA/hiking_4)" class="custom-dropdown-icon" alt="" />Hiking Example 1
-                      </div><div class="custom-dropdown" data-val="Hiking-Campaign-Male"><img src="https://s7d1.scene7.com/is/image/DynamicMediaNA?layer=0&src=is(DynamicMediaNA/Hiking-Campaign-Male)" class="custom-dropdown-icon" alt="" />Hiking Example 2
-                      </div><div class="custom-dropdown" data-val="Hiking-Campaign"><img src="https://s7d1.scene7.com/is/image/DynamicMediaNA?layer=0&src=is(DynamicMediaNA/Hiking-Campaign)" class="custom-dropdown-icon" alt="" />Hiking Example 3
-                      </div><div class="custom-dropdown" data-val="hiking_3"><img src="https://s7d1.scene7.com/is/image/DynamicMediaNA?layer=0&src=is(DynamicMediaNA/hiking_3)" class="custom-dropdown-icon" alt="" />Hiking Example 4
-                      </div></div></div></div></div>-->
+                <div class="custom-dropdown-outer">
+                  <label class="custom-dropdown-label primary-color">Select Bundle</label>
+                  <div class="custom-dropdown-relative">
+                    <div class="primary-color">
+                      <input type="text" class="s7presets url-fabric custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" value="Accessories-Cropped" />
+                      <div class="custom-dropdown-close"></div>
+                      <div class="custom-dropdown-open"></div>
+                      <img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+                    </div>
+                  </div>
+                  <div class="custom-dropdown-position">
+                    <div class="custom-dropdown-group">
+                      <div class="custom-dropdown-scroll">
+                        <div class="custom-dropdown" data-val="sw_furn_ClassLinen_White_repeat">
+                          <div class="custom-dropdown-icon"></div>Single-Cropped
+                        </div>
+                        <div class="custom-dropdown" data-val="sw_furn_ClassLinen_Navy_040319_repeat">
+                          <div class="custom-dropdown-icon"></div>Double-Cropped
+                        </div>
+                        <div class="custom-dropdown" data-val="sw_furn_ClassLinen_Black_repeat">
+                          <div class="custom-dropdown-icon"></div>Accessories-Cropped
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="custom-dropdown-outer">
                   <label class="custom-dropdown-label primary-color">Enter Asset Name</label>
                   <div class="custom-dropdown-outer">
@@ -333,12 +367,16 @@
                   <input class="store-button store-clear" type="button" value="Clear">
                 </div>
                 <div class="store-checkbox-container">
-                  <div class="checkbox-each" id="outer-guides-checked">Guides Added (15px spacing)</div>
-                  <div class="checkbox-each" id="outer-guides-unchecked">Guides Removed</div>
+                  <div class="checkbox-each" id="outer-guides-checked">Guides applied (15px padding)</div>
+                  <div class="checkbox-each" id="outer-guides-unchecked">Show guides (15px padding)</div>
                 </div>
                 <div class="store-checkbox-container">
-                  <div class="checkbox-each" id="inner-guides-checked">Image Background Guide Added</div>
-                  <div class="checkbox-each" id="inner-guides-unchecked">Image Background Guide Removed</div>
+                  <div class="checkbox-each" id="spacing-checked">15px padding applied</div>
+                  <div class="checkbox-each" id="spacing-unchecked">Apply 15px padding</div>
+                </div>
+                <div class="store-checkbox-container">
+                  <div class="checkbox-each" id="inner-guides-checked">DM image background added</div>
+                  <div class="checkbox-each" id="inner-guides-unchecked">Show DM image background</div>
                 </div>
                 <label class="custom-dropdown-label primary-color">Click on image to generate URL</label>
                 <p class="generated_url"></p>

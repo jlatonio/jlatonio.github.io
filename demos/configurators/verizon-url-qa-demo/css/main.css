@@ -492,7 +492,7 @@ iframe[seamless] {
 @media screen and (min-width: 1025px) {
 
   .column-container,.column-container-admin {
-    padding: 20px 100px;
+    padding: 40px;
   }
 
   .column-container-breadcrumbs {
