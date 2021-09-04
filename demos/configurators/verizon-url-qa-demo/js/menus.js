@@ -65,8 +65,9 @@ $(".testp").on("click", function() {
 	"use strict";
 	var select_preset = $(this).closest(".each-container-row").find(".preset-name").text();
 	var select_image = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
+	var inspect_image = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
 	$(".generated_url").text(select_image);
-	$(".inspect_url").attr("src", select_image + "&req=resolve");
+	$(".inspect_url").attr("src", inspect_image + "&req=resolve");
 	return false;
 });
 
