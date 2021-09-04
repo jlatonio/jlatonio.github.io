@@ -41,7 +41,7 @@ $(".store-clear").on("click", function() {
 	$("#guides-10-checked").trigger("click");
 	$("#guides-15-checked").trigger("click");
 	$("#guides-20-checked").trigger("click");
-	$("#guides-40-checked").hide();
+	$("#guides-40-checked").trigger("click");
 	$("#inner-guides-checked").trigger("click");
 	$("#spacing-top-15-checked").trigger("click");
     $("#spacing-bottom-15-checked").trigger("click");
