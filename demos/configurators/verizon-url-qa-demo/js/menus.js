@@ -398,7 +398,6 @@ $("#guides-10-unchecked").click(function() {
 
 $("#inner-guides-checked").click(function() {
 	"use strict";
- 
 	$(".store-continue").trigger("click");
 	return false;
 });
