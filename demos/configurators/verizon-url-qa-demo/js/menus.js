@@ -55,6 +55,7 @@ $(".store-clear").on("click", function() {
     
     
 	$(".generated_url").text("");
+    $(".inspect_url").attr("src", "");
 	return false;
 });
 
@@ -64,11 +65,9 @@ $(".testp").on("click", function() {
 	var select_preset = $(this).closest(".each-container-row").find(".preset-name").text();
     var select_image = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
 	$(".generated_url").text(select_image);
+    $(".inspect_url").attr("src", select_image + "&req=resolve");
 	return false;
 });
-
-
-
 
 // Process results
 $(".store-continue").on("click", function() {
