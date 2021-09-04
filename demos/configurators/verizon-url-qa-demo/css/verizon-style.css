@@ -9,7 +9,8 @@
   overflow-y: auto;
   background-color: #f7f7f8;
 }
-.right-data-column {
+.asset-specs-each p:nth-child(2){
+padding-left: 4px;
 }
 
 .each-container {

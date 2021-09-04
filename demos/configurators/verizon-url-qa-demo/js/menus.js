@@ -73,11 +73,11 @@ $(".testp").on("click", function() {
 // Process results
 $(".store-continue").on("click", function() {
 	"use strict";
-	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$";
-	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier2").text() + "$";
-	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$";
-	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$";
-	var assetprev5 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$";
+	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$";
+	var assetprev2 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier2").text() + "$";
+	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$";
+	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$";
+	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$";
 	var prevname = $(".s7asset").val();
 	var isValid = true;
 	$(".s7required").each(function() {
@@ -631,11 +631,11 @@ $("#inner-guides-unchecked").click(function() {
 	$("#inner-guides-unchecked").hide();
 	$("#inner-guides-checked").show();
 
-	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=jpg&bgc=000000";
-	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier2").text() + "$" + "&fmt=jpg&bgc=000000";
-	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$" + "&fmt=jpg&bgc=000000";
-	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$" + "&fmt=jpg&bgc=000000";
-	var assetprev5 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprev2 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier2").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$" + "&fmt=jpg&bgc=000000";
 	var prevname = $(".s7asset").val();
 	var isValid = true;
 	$(".s7required").each(function() {
