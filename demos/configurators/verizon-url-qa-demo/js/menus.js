@@ -1,7 +1,5 @@
 // Show default generated URL when loaded
 var results = $(".testurl_preview").attr('src');
-$(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
-
 $( document ).ready(function() {
 $(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(3)").click();
 });
@@ -62,7 +60,7 @@ $(".testp").on("click", function() {
 // Process results
 $(".store-continue").on("click", function() {
 	"use strict";
-	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$";
+	var assetprev1 = "https://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$";
 	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier2").text() + "$";
 	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$";
 	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$";
@@ -359,26 +357,19 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function() {
 });
 
 $(document).ready(function() {
-	$("#guides-15-checked").hide();
 	$("#guides-10-checked").hide();
+	$("#guides-15-checked").hide();
+	$("#guides-20-checked").hide();
 	$("#inner-guides-checked").hide();
-	$("#spacing-unchecked").hide();
-	$(".testp").addClass("spacing-15");
-});
-
-$("#guides-15-checked").click(function() {
-	$("#guides-15-checked").hide();
-	$("#guides-15-unchecked").show();
-	$(".testp").removeClass("red-guides");
-});
-
-$("#guides-15-unchecked").click(function() {
-	$("#guides-10-checked").hide();
-	$("#guides-10-unchecked").show();
-	$("#guides-15-unchecked").hide();
-	$("#guides-15-checked").show();
-    $(".testp").removeClass("blue-guides")
-	$(".testp").addClass("red-guides");
+	$("#spacing-top-15-checked").hide();
+    $("#spacing-bottom-15-checked").hide();
+	$("#spacing-left-15-checked").hide();
+    $("#spacing-right-15-checked").hide();
+	$("#spacing-top-20-checked").hide();
+    $("#spacing-bottom-20-checked").hide();
+	$("#spacing-left-20-checked").hide();
+    $("#spacing-right-20-checked").hide();
+    $("#HTML-guides-checked").hide();
 });
 
 $("#guides-10-checked").click(function() {
@@ -388,12 +379,41 @@ $("#guides-10-checked").click(function() {
 });
 
 $("#guides-10-unchecked").click(function() {
-	$("#guides-15-checked").hide();
-	$("#guides-15-unchecked").show();
+	$("#guides-15-checked").trigger('click');
+	$("#guides-20-checked").trigger('click');
 	$("#guides-10-unchecked").hide();
 	$("#guides-10-checked").show();
     $(".testp").removeClass("red-guides");
 	$(".testp").addClass("blue-guides");
+});
+
+$("#guides-15-checked").click(function() {
+	$("#guides-15-checked").hide();
+	$("#guides-15-unchecked").show();
+	$(".testp").removeClass("red-guides");
+});
+
+$("#guides-15-unchecked").click(function() {
+	$("#guides-10-checked").trigger('click');
+	$("#guides-20-checked").trigger('click');
+	$("#guides-15-unchecked").hide();
+	$("#guides-15-checked").show();
+    $(".testp").removeClass("blue-guides");
+	$(".testp").addClass("red-guides");
+});
+
+$("#guides-20-checked").click(function() {
+	$("#guides-20-checked").hide();
+	$("#guides-20-unchecked").show();
+	$(".testp").removeClass("yellow-guides");
+});
+
+$("#guides-20-unchecked").click(function() {
+	$("#guides-10-checked").trigger('click');
+	$("#guides-15-checked").trigger('click');
+	$("#guides-20-unchecked").hide();
+	$("#guides-20-checked").show();
+	$(".testp").addClass("yellow-guides");
 });
 
 $("#inner-guides-checked").click(function() {
@@ -402,18 +422,151 @@ $("#inner-guides-checked").click(function() {
 	return false;
 });
 
-$("#spacing-unchecked").click(function() {
-	$("#spacing-unchecked").hide();
-	$("#spacing-checked").show();
+$("#spacing-top-15-unchecked").click(function() {
+    $("#spacing-top-20-checked").trigger('click');
+	$("#spacing-top-15-unchecked").hide();
+	$("#spacing-top-15-checked").show();
 
-	$(".testp").addClass("spacing-15");
+	$(".testp").addClass("spacing-top-15");
 });
 
-$("#spacing-checked").click(function() {
+$("#spacing-top-15-checked").click(function() {
 	"use strict";
-	$("#spacing-checked").hide();
-	$("#spacing-unchecked").show();
-	$(".testp").removeClass("spacing-15");
+	$("#spacing-top-15-checked").hide();
+	$("#spacing-top-15-unchecked").show();
+	$(".testp").removeClass("spacing-top-15");
+	return false;
+});
+
+$("#spacing-bottom-15-unchecked").click(function() {
+    $("#spacing-bottom-20-checked").trigger('click');
+	$("#spacing-bottom-15-unchecked").hide();
+	$("#spacing-bottom-15-checked").show();
+
+	$(".testp").addClass("spacing-bottom-15");
+});
+
+$("#spacing-bottom-15-checked").click(function() {
+	"use strict";
+	$("#spacing-bottom-15-checked").hide();
+	$("#spacing-bottom-15-unchecked").show();
+	$(".testp").removeClass("spacing-bottom-15");
+	return false;
+});
+
+$("#spacing-left-15-unchecked").click(function() {
+    $("#spacing-left-20-checked").trigger('click');
+	$("#spacing-left-15-unchecked").hide();
+	$("#spacing-left-15-checked").show();
+
+	$(".testp").addClass("spacing-left-15");
+});
+
+$("#spacing-left-15-checked").click(function() {
+	"use strict";
+	$("#spacing-left-15-checked").hide();
+	$("#spacing-left-15-unchecked").show();
+	$(".testp").removeClass("spacing-left-15");
+	return false;
+});
+
+$("#spacing-right-15-unchecked").click(function() {
+    $("#spacing-right-20-checked").trigger('click');
+	$("#spacing-right-15-unchecked").hide();
+	$("#spacing-right-15-checked").show();
+
+	$(".testp").addClass("spacing-right-15");
+});
+
+$("#spacing-right-15-checked").click(function() {
+	"use strict";
+	$("#spacing-right-15-checked").hide();
+	$("#spacing-right-15-unchecked").show();
+	$(".testp").removeClass("spacing-right-15");
+	return false;
+});
+
+
+
+
+$("#spacing-top-20-unchecked").click(function() {
+    $("#spacing-top-15-checked").trigger('click');
+	$("#spacing-top-20-unchecked").hide();
+	$("#spacing-top-20-checked").show();
+
+	$(".testp").addClass("spacing-top-20");
+});
+
+$("#spacing-top-20-checked").click(function() {
+	"use strict";
+	$("#spacing-top-20-checked").hide();
+	$("#spacing-top-20-unchecked").show();
+	$(".testp").removeClass("spacing-top-20");
+	return false;
+});
+
+$("#spacing-bottom-20-unchecked").click(function() {
+    $("#spacing-bottom-15-checked").trigger('click');
+	$("#spacing-bottom-20-unchecked").hide();
+	$("#spacing-bottom-20-checked").show();
+
+	$(".testp").addClass("spacing-bottom-20");
+});
+
+$("#spacing-bottom-20-checked").click(function() {
+	"use strict";
+	$("#spacing-bottom-20-checked").hide();
+	$("#spacing-bottom-20-unchecked").show();
+	$(".testp").removeClass("spacing-bottom-20");
+	return false;
+});
+
+$("#spacing-left-20-unchecked").click(function() {
+    $("#spacing-left-15-checked").trigger('click');
+	$("#spacing-left-20-unchecked").hide();
+	$("#spacing-left-20-checked").show();
+
+	$(".testp").addClass("spacing-left-20");
+});
+
+$("#spacing-left-20-checked").click(function() {
+	"use strict";
+	$("#spacing-left-20-checked").hide();
+	$("#spacing-left-20-unchecked").show();
+	$(".testp").removeClass("spacing-left-20");
+	return false;
+});
+
+$("#spacing-right-20-unchecked").click(function() {
+    $("#spacing-right-15-checked").trigger('click');
+	$("#spacing-right-20-unchecked").hide();
+	$("#spacing-right-20-checked").show();
+
+	$(".testp").addClass("spacing-right-20");
+});
+
+$("#spacing-right-20-checked").click(function() {
+	"use strict";
+	$("#spacing-right-20-checked").hide();
+	$("#spacing-right-20-unchecked").show();
+	$(".testp").removeClass("spacing-right-20");
+	return false;
+});
+
+
+$("#HTML-guides-unchecked").click(function() {
+	"use strict";
+	$("#HTML-guides-unchecked").hide();
+	$("#HTML-guides-checked").show();
+	$(".testp").addClass("background-alt1");
+	return false;
+});
+
+$("#HTML-guides-checked").click(function() {
+	"use strict";
+	$("#HTML-guides-checked").hide();
+	$("#HTML-guides-unchecked").show();
+	$(".testp").removeClass("background-alt1");
 	return false;
 });
 
