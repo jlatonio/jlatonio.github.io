@@ -41,6 +41,7 @@ $(".store-clear").on("click", function() {
 	$("#guides-10-checked").trigger("click");
 	$("#guides-15-checked").trigger("click");
 	$("#guides-20-checked").trigger("click");
+	$("#guides-40-checked").hide();
 	$("#inner-guides-checked").trigger("click");
 	$("#spacing-top-15-checked").trigger("click");
     $("#spacing-bottom-15-checked").trigger("click");
@@ -372,6 +373,7 @@ $(document).ready(function() {
 	$("#guides-10-checked").hide();
 	$("#guides-15-checked").hide();
 	$("#guides-20-checked").hide();
+	$("#guides-40-checked").hide();
 	$("#inner-guides-checked").hide();
 	$("#spacing-top-15-checked").hide();
     $("#spacing-bottom-15-checked").hide();
@@ -393,6 +395,7 @@ $("#guides-10-checked").click(function() {
 $("#guides-10-unchecked").click(function() {
 	$("#guides-15-checked").trigger('click');
 	$("#guides-20-checked").trigger('click');
+	$("#guides-40-checked").trigger('click');
 	$("#guides-10-unchecked").hide();
 	$("#guides-10-checked").show();
     $(".testp").removeClass("red-guides");
@@ -408,6 +411,7 @@ $("#guides-15-checked").click(function() {
 $("#guides-15-unchecked").click(function() {
 	$("#guides-10-checked").trigger('click');
 	$("#guides-20-checked").trigger('click');
+	$("#guides-40-checked").trigger('click');
 	$("#guides-15-unchecked").hide();
 	$("#guides-15-checked").show();
     $(".testp").removeClass("blue-guides");
@@ -423,9 +427,25 @@ $("#guides-20-checked").click(function() {
 $("#guides-20-unchecked").click(function() {
 	$("#guides-10-checked").trigger('click');
 	$("#guides-15-checked").trigger('click');
+	$("#guides-40-checked").trigger('click');
 	$("#guides-20-unchecked").hide();
 	$("#guides-20-checked").show();
 	$(".testp").addClass("yellow-guides");
+});
+
+$("#guides-40-checked").click(function() {
+	$("#guides-40-checked").hide();
+	$("#guides-40-unchecked").show();
+	$(".testp").removeClass("green-guides");
+});
+
+$("#guides-40-unchecked").click(function() {
+	$("#guides-10-checked").trigger('click');
+	$("#guides-15-checked").trigger('click');
+	$("#guides-20-checked").trigger('click');
+	$("#guides-40-unchecked").hide();
+	$("#guides-40-checked").show();
+	$(".testp").addClass("green-guides");
 });
 
 $("#inner-guides-checked").click(function() {

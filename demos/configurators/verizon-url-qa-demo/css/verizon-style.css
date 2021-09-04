@@ -75,6 +75,11 @@
   outline-offset: -20px;
 }
 
+.green-guides {
+  outline: 2px solid #57b259;
+  outline-offset: -40px;
+}
+
 .background-alt1 {
   background-color: #272b3d;
 }
@@ -208,6 +213,14 @@
 }
 
 #guides-20-checked {
+  background-image: url("../images/check2.svg");
+}
+
+#guides-40-unchecked {
+  background-image: url("../images/check1.svg");
+}
+
+#guides-40-checked {
   background-image: url("../images/check2.svg");
 }
 
