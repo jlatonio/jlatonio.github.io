@@ -1,8 +1,9 @@
 // Show default generated URL when loaded
 var results = $(".testurl_preview").attr('src');
-$( document ).ready(function() {
-$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-cns");
-$(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
+$(document).ready(function() {
+	$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-cns");
+	$(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
+
 });
 
 $(function() {
@@ -24,8 +25,8 @@ $(function() {
 $(".store-clear").on("click", function() {
 	"use strict";
 	$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-cns");
-    $(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
-    
+	$(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
+
 	$(".store-continue").trigger("click");
 	$("input[type='text'], input[type='number']").each(function() {
 		var option = $(this).val();
@@ -44,18 +45,18 @@ $(".store-clear").on("click", function() {
 	$("#guides-40-checked").trigger("click");
 	$("#inner-guides-checked").trigger("click");
 	$("#spacing-top-15-checked").trigger("click");
-    $("#spacing-bottom-15-checked").trigger("click");
+	$("#spacing-bottom-15-checked").trigger("click");
 	$("#spacing-left-15-checked").trigger("click");
-    $("#spacing-right-15-checked").trigger("click");
+	$("#spacing-right-15-checked").trigger("click");
 	$("#spacing-top-20-checked").trigger("click");
-    $("#spacing-bottom-20-checked").trigger("click");
+	$("#spacing-bottom-20-checked").trigger("click");
 	$("#spacing-left-20-checked").trigger("click");
-    $("#spacing-right-20-checked").trigger("click");
-    $("#HTML-guides-checked").trigger("click");
-    
-    
+	$("#spacing-right-20-checked").trigger("click");
+	$("#HTML-guides-checked").trigger("click");
+
+
 	$(".generated_url").text("");
-    $(".inspect_url").attr("src", "");
+	$(".inspect_url").attr("src", "");
 	return false;
 });
 
@@ -63,9 +64,9 @@ $(".store-clear").on("click", function() {
 $(".testp").on("click", function() {
 	"use strict";
 	var select_preset = $(this).closest(".each-container-row").find(".preset-name").text();
-    var select_image = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
+	var select_image = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
 	$(".generated_url").text(select_image);
-    $(".inspect_url").attr("src", select_image + "&req=resolve");
+	$(".inspect_url").attr("src", select_image + "&req=resolve");
 	return false;
 });
 
@@ -104,9 +105,9 @@ $(".store-continue").on("click", function() {
 	});
 	$("#inner-guides-checked").hide();
 	$("#inner-guides-unchecked").show();
-    
+
 	$(".generated_url").text("");
-    $(".inspect_url").attr("src", "");
+	$(".inspect_url").attr("src", "");
 	return false;
 });
 
@@ -223,7 +224,7 @@ $(".custom-dropdown").on("click", function() {
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-menu").removeData().attr('data-val', result);
-    $(".generated_url").text("");
+	$(".generated_url").text("");
 	var preset = $(".s7presets").val();
 	var preset_single = "Single-Cropped";
 	var preset_double = "Double-Cropped";
@@ -235,18 +236,38 @@ $(".custom-dropdown").on("click", function() {
 		$(".modifier3").text('Single-Device-300x600-CR').closest(".each-container-row").find(".asset-specs-size").text("300x600");
 		$(".modifier4").text('Single-Device-728x90-CR').closest(".each-container-row").find(".asset-specs-size").text("728x90");
 		$(".modifier5").text('Single-Device-970x250-CR').closest(".each-container-row").find(".asset-specs-size").text("970x250");
+
+		$(".testurl_preview1").removeClass("testurl_preview1_alt");
+		$(".testurl_preview2").removeClass("testurl_preview2_alt");
+		$(".testurl_preview3").removeClass("testurl_preview3_alt");
+		$(".testurl_preview4").removeClass("testurl_preview4_alt");
+		$(".testurl_preview5").removeClass("testurl_preview5_alt");
+
 	} else if (preset === "Double-Cropped") {
 		$(".modifier1").text('Double-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160x600");
 		$(".modifier2").text('Double-Device-300x250-CR').closest(".each-container-row").find(".asset-specs-size").text("300x250");
 		$(".modifier3").text('Double-Device-300x600-CR').closest(".each-container-row").find(".asset-specs-size").text("300x600");
 		$(".modifier4").text('Double-Device-728x90-CR').closest(".each-container-row").find(".asset-specs-size").text("728x90");
 		$(".modifier5").text('Double-Device-970x250-CR').closest(".each-container-row").find(".asset-specs-size").text("970x250");
+
+		$(".testurl_preview1").removeClass("testurl_preview1_alt");
+		$(".testurl_preview2").removeClass("testurl_preview2_alt");
+		$(".testurl_preview3").removeClass("testurl_preview3_alt");
+		$(".testurl_preview4").removeClass("testurl_preview4_alt");
+		$(".testurl_preview5").removeClass("testurl_preview5_alt");
+
 	} else if (preset === "Accessories-Cropped") {
 		$(".modifier1").text('DCO_Acc_160x600').closest(".each-container-row").find(".asset-specs-size").text("260x360");
 		$(".modifier2").text('DCO_Acc_300x250').closest(".each-container-row").find(".asset-specs-size").text("370x290");
 		$(".modifier3").text('DCO_Acc_300x600').closest(".each-container-row").find(".asset-specs-size").text("260x600");
 		$(".modifier4").text('DCO_Acc_728x90').closest(".each-container-row").find(".asset-specs-size").text("240x760");
 		$(".modifier5").text('DCO_Acc_970x250').closest(".each-container-row").find(".asset-specs-size").text("356x312");
+
+		$(".testurl_preview1").addClass("testurl_preview1_alt");
+		$(".testurl_preview2").addClass("testurl_preview2_alt");
+		$(".testurl_preview3").addClass("testurl_preview3_alt");
+		$(".testurl_preview4").addClass("testurl_preview4_alt");
+		$(".testurl_preview5").addClass("testurl_preview5_alt");
 	}
 
 
@@ -378,14 +399,14 @@ $(document).ready(function() {
 	$("#guides-40-checked").hide();
 	$("#inner-guides-checked").hide();
 	$("#spacing-top-15-checked").hide();
-    $("#spacing-bottom-15-checked").hide();
+	$("#spacing-bottom-15-checked").hide();
 	$("#spacing-left-15-checked").hide();
-    $("#spacing-right-15-checked").hide();
+	$("#spacing-right-15-checked").hide();
 	$("#spacing-top-20-checked").hide();
-    $("#spacing-bottom-20-checked").hide();
+	$("#spacing-bottom-20-checked").hide();
 	$("#spacing-left-20-checked").hide();
-    $("#spacing-right-20-checked").hide();
-    $("#HTML-guides-checked").hide();
+	$("#spacing-right-20-checked").hide();
+	$("#HTML-guides-checked").hide();
 });
 
 $("#guides-10-checked").click(function() {
@@ -400,7 +421,7 @@ $("#guides-10-unchecked").click(function() {
 	$("#guides-40-checked").trigger('click');
 	$("#guides-10-unchecked").hide();
 	$("#guides-10-checked").show();
-    $(".testp").removeClass("red-guides");
+	$(".testp").removeClass("red-guides");
 	$(".testp").addClass("blue-guides");
 });
 
@@ -416,7 +437,7 @@ $("#guides-15-unchecked").click(function() {
 	$("#guides-40-checked").trigger('click');
 	$("#guides-15-unchecked").hide();
 	$("#guides-15-checked").show();
-    $(".testp").removeClass("blue-guides");
+	$(".testp").removeClass("blue-guides");
 	$(".testp").addClass("red-guides");
 });
 
@@ -457,7 +478,7 @@ $("#inner-guides-checked").click(function() {
 });
 
 $("#spacing-top-15-unchecked").click(function() {
-    $("#spacing-top-20-checked").trigger('click');
+	$("#spacing-top-20-checked").trigger('click');
 	$("#spacing-top-15-unchecked").hide();
 	$("#spacing-top-15-checked").show();
 
@@ -473,7 +494,7 @@ $("#spacing-top-15-checked").click(function() {
 });
 
 $("#spacing-bottom-15-unchecked").click(function() {
-    $("#spacing-bottom-20-checked").trigger('click');
+	$("#spacing-bottom-20-checked").trigger('click');
 	$("#spacing-bottom-15-unchecked").hide();
 	$("#spacing-bottom-15-checked").show();
 
@@ -489,7 +510,7 @@ $("#spacing-bottom-15-checked").click(function() {
 });
 
 $("#spacing-left-15-unchecked").click(function() {
-    $("#spacing-left-20-checked").trigger('click');
+	$("#spacing-left-20-checked").trigger('click');
 	$("#spacing-left-15-unchecked").hide();
 	$("#spacing-left-15-checked").show();
 
@@ -505,7 +526,7 @@ $("#spacing-left-15-checked").click(function() {
 });
 
 $("#spacing-right-15-unchecked").click(function() {
-    $("#spacing-right-20-checked").trigger('click');
+	$("#spacing-right-20-checked").trigger('click');
 	$("#spacing-right-15-unchecked").hide();
 	$("#spacing-right-15-checked").show();
 
@@ -524,7 +545,7 @@ $("#spacing-right-15-checked").click(function() {
 
 
 $("#spacing-top-20-unchecked").click(function() {
-    $("#spacing-top-15-checked").trigger('click');
+	$("#spacing-top-15-checked").trigger('click');
 	$("#spacing-top-20-unchecked").hide();
 	$("#spacing-top-20-checked").show();
 
@@ -540,7 +561,7 @@ $("#spacing-top-20-checked").click(function() {
 });
 
 $("#spacing-bottom-20-unchecked").click(function() {
-    $("#spacing-bottom-15-checked").trigger('click');
+	$("#spacing-bottom-15-checked").trigger('click');
 	$("#spacing-bottom-20-unchecked").hide();
 	$("#spacing-bottom-20-checked").show();
 
@@ -556,7 +577,7 @@ $("#spacing-bottom-20-checked").click(function() {
 });
 
 $("#spacing-left-20-unchecked").click(function() {
-    $("#spacing-left-15-checked").trigger('click');
+	$("#spacing-left-15-checked").trigger('click');
 	$("#spacing-left-20-unchecked").hide();
 	$("#spacing-left-20-checked").show();
 
@@ -572,7 +593,7 @@ $("#spacing-left-20-checked").click(function() {
 });
 
 $("#spacing-right-20-unchecked").click(function() {
-    $("#spacing-right-15-checked").trigger('click');
+	$("#spacing-right-15-checked").trigger('click');
 	$("#spacing-right-20-unchecked").hide();
 	$("#spacing-right-20-checked").show();
 
@@ -592,7 +613,7 @@ $("#HTML-guides-unchecked").click(function() {
 	"use strict";
 	$("#HTML-guides-unchecked").hide();
 	$("#HTML-guides-checked").show();
-	$(".testp").addClass("background-alt1");
+	$(".each-container").addClass("background-alt1");
 	return false;
 });
 
@@ -600,7 +621,7 @@ $("#HTML-guides-checked").click(function() {
 	"use strict";
 	$("#HTML-guides-checked").hide();
 	$("#HTML-guides-unchecked").show();
-	$(".testp").removeClass("background-alt1");
+	$(".each-container").removeClass("background-alt1");
 	return false;
 });
 

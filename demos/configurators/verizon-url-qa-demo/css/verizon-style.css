@@ -12,6 +12,11 @@
 .right-data-column {
 }
 
+.each-container {
+position: relative;
+}
+
+ 
 .inspect_url {
   min-height: auto;
 }
@@ -103,6 +108,34 @@
   -moz-transition: all 0.25s ease-out;
   -o-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
+}
+
+.testurl_preview1_alt {
+  max-width: 130px !important;
+  max-height: 180px !important;
+}
+
+.testurl_preview2_alt  {
+  max-width: 230px !important;
+  max-height: 145px !important;
+  top: -38px;
+}
+
+.testurl_preview3_alt  {
+  max-width: 240px !important;
+  max-height: 300px !important;
+}
+
+.testurl_preview4_alt  {
+  max-width: 120px !important;
+  max-height: 38px !important;
+  top: -16px;
+}
+
+.testurl_preview5_alt  {
+  max-width: 200px !important;
+  max-height: 156px !important;
+  top: -28px;
 }
 
 .spacing-top-15 {
