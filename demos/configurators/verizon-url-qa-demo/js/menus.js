@@ -1,7 +1,7 @@
 // Show default generated URL when loaded
 var results = $(".testurl_preview").attr('src');
 $( document ).ready(function() {
-$(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(3)").click();
+$(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
 });
 
 $(function() {
