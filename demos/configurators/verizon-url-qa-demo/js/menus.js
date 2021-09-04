@@ -65,9 +65,11 @@ $(".testp").on("click", function() {
 	"use strict";
 	var select_preset = $(this).closest(".each-container-row").find(".preset-name").text();
 	var select_image = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
-	var inspect_image = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
+	var inspect_preset = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
+	var inspect_image = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$";
 	$(".generated_url").text(select_image);
-	$(".inspect_url").attr("src", inspect_image + "&req=resolve");
+	$(".inspect_preset").attr("src", inspect_preset + "&req=resolve");
+	$(".inspect_url").attr("src", inspect_image + "&req=imageprops");
 	return false;
 });
 
@@ -109,6 +111,7 @@ $(".store-continue").on("click", function() {
 
 	$(".generated_url").text("");
 	$(".inspect_url").attr("src", "");
+    $(".inspect_preset").attr("src", "");
 	return false;
 });
 

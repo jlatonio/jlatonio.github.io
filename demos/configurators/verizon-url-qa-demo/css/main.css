@@ -62,7 +62,8 @@ iframe[seamless] {
   margin-top: 5px;
   margin-bottom: 20px;
   text-align: left;
-  font-size: 16px;
+  font-size: 13px;
+  font-family: monospace;
 }
 
 .column-container-url {
