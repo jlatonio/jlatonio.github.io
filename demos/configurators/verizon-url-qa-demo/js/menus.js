@@ -221,7 +221,7 @@ $(".custom-dropdown").on("click", function() {
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-menu").removeData().attr('data-val', result);
-
+    $(".generated_url").text("");
 	var preset = $(".s7presets").val();
 	var preset_single = "Single-Cropped";
 	var preset_double = "Double-Cropped";
