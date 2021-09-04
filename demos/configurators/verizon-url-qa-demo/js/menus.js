@@ -22,12 +22,9 @@ $(function() {
 // Resets to default image and default generated URL
 $(".store-clear").on("click", function() {
 	"use strict";
-	var assetprev1 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?$" + $(".modifier1").text() + "$";
-	var assetprev2 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?$" + $(".modifier2").text() + "$";
-	var assetprev3 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?$" + $(".modifier3").text() + "$";
-	var assetprev4 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?$" + $(".modifier4").text() + "$";
-	var assetprev5 = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val("") + "?$" + $(".modifier5").text() + "$";
-
+	$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-cns");
+    $(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
+    
 	$(".store-continue").trigger("click");
 	$("input[type='text'], input[type='number']").each(function() {
 		var option = $(this).val();
@@ -39,8 +36,22 @@ $(".store-clear").on("click", function() {
 			$(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
 		}
 	});
+
+	$("#guides-10-checked").trigger("click");
 	$("#guides-15-checked").trigger("click");
+	$("#guides-20-checked").trigger("click");
 	$("#inner-guides-checked").trigger("click");
+	$("#spacing-top-15-checked").trigger("click");
+    $("#spacing-bottom-15-checked").trigger("click");
+	$("#spacing-left-15-checked").trigger("click");
+    $("#spacing-right-15-checked").trigger("click");
+	$("#spacing-top-20-checked").trigger("click");
+    $("#spacing-bottom-20-checked").trigger("click");
+	$("#spacing-left-20-checked").trigger("click");
+    $("#spacing-right-20-checked").trigger("click");
+    $("#HTML-guides-checked").trigger("click");
+    
+    
 	$(".generated_url").text("");
 	return false;
 });
