@@ -1,6 +1,7 @@
 .right-data-column {
   position: sticky;
   top: 40px;
+
   right: 0;
 }
 
@@ -293,7 +294,7 @@
 
 
 .store-checkbox-container{
-  width:250px;
+ width:140px;
   display: inline-flex;
  padding-right:20px
 }

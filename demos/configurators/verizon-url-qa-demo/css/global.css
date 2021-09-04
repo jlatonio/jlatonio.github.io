@@ -561,7 +561,7 @@ textarea {
 label {
   font-family: "OpenSans-Regular";
   display: block;
-  margin-top: 20px;
+  margin-top: 25px;
   margin-bottom: 5px;
 }
 
@@ -626,7 +626,7 @@ input::-webkit-clear-button {
 
 .store-button-container {
   margin-top: 20px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   padding: 0 2px;
 }
 
