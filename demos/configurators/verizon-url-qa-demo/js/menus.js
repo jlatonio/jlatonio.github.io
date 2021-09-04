@@ -1,6 +1,7 @@
 // Show default generated URL when loaded
 var results = $(".testurl_preview").attr('src');
 $( document ).ready(function() {
+$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-cns");
 $(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
 });
 
