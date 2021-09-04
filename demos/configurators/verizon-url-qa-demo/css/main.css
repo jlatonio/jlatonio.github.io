@@ -58,7 +58,7 @@ iframe[seamless] {
   overflow-wrap: break-word;
   width: 100%;
   padding: 16px 20px;
-  min-height: 150px;
+  min-height: 100px;
   margin-top: 5px;
   margin-bottom: 20px;
   text-align: left;

@@ -104,6 +104,9 @@ $(".store-continue").on("click", function() {
 	});
 	$("#inner-guides-checked").hide();
 	$("#inner-guides-unchecked").show();
+    
+	$(".generated_url").text("");
+    $(".inspect_url").attr("src", "");
 	return false;
 });
 
