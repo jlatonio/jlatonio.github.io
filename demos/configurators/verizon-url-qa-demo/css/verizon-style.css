@@ -4,10 +4,7 @@
   right: 0;
 }
 
-.asset-specs-label {
-  font-family: "OpenSans-Regular";
-  display: block;
-  margin-top: 16px;
+.asset-specs p{
   margin-bottom: 5px;
 }
 
