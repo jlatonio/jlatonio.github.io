@@ -4,7 +4,7 @@
   height: 100vh;
   padding-top: 15px;
   padding-right: 40px;
-  padding-bottom: 340px;
+  padding-bottom: 40px;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #f7f7f8;
@@ -35,11 +35,6 @@
   height: 100%;
   outline: 2px solid red;
   outline-offset: 0;
-  -webkit-transition: all .35s ease-in;
-  -moz-transition: all .35s ease-in;
-  -o-transition: all .35s ease-in;
-  transition: all .35s ease-in;
-
 }
 
 .guide-container-single-1::after {
@@ -569,6 +564,7 @@
 }
 
 .checkbox-each {
+  min-width: 200px;
   background-size: 50px;
   background-repeat: no-repeat;
   padding: 15px 0 15px 50px;
@@ -631,9 +627,15 @@
   background-image: url("../images/check2.svg");
 }
 
+#original-guides-unchecked {
+  background-image: url("../images/check1.svg");
+}
+
+#original-guides-checked {
+  background-image: url("../images/check2.svg");
+}
 
 .store-checkbox-container {
-  width: 160px;
   display: inline-flex;
   padding-right: 20px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -643,4 +645,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.notes-show-guides{
+ display: block;
+  width: 100%;
 }

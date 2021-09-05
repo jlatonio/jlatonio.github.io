@@ -98,6 +98,7 @@ $(".store-continue").on("click", function() {
     $("#inner-guides-checked").trigger("click");
     $("#HTML-guides-checked").trigger("click");
     $("#alpha-guides-checked").trigger("click");
+    $("#original-guides-checked").trigger("click");    
 	return false;
 });
 
@@ -220,6 +221,8 @@ $(".custom-dropdown").on("click", function() {
 	var preset_double = "Double-Cropped";
 	var preset_accessories = "Accessories-Cropped";
 
+
+    
 	if (preset === "Single-Cropped") {
 		$(".modifier1").text('Single-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
 		$(".modifier2").text('Single-Device-300x250-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 250px");
@@ -236,8 +239,10 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
-        $("#guides-single-unchecked").trigger('click');
+ 
         $(".s7asset").val("VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-cns");
+        
+
 
 	} else if (preset === "Single-Shadow") {
 		$(".modifier1").text('Single-Device-160x600-NC').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
@@ -251,7 +256,7 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
-        $("#guides-single-unchecked").trigger('click');
+ 
         $(".s7asset").val("VZ_201584_1_LG-G8-BL-F_OLA_RGB_v1");
         
         
@@ -267,7 +272,7 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
-        $("#guides-double-unchecked").trigger('click');
+ 
         $(".s7asset").val("VZ_219957_19_Mot Z4 gra Sam Gal A50 Bk_DC_RGB_SIMP_v2_Cropped");
         
 	} else if (preset === "Accessories-Cropped") {
@@ -282,7 +287,7 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").addClass("testurl_preview3_alt");
 		$(".testurl_preview4").addClass("testurl_preview4_alt");
 		$(".testurl_preview5").addClass("testurl_preview5_alt");
-        $("#guides-accessories-unchecked").trigger('click');
+ 
         $(".s7asset").val("jbl-live-pro-earbuds-black-jblliveproptwsbam-g");
         
 	} else if (preset === "Other-Cropped") {
@@ -297,7 +302,7 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").addClass("testurl_preview3_alt");
 		$(".testurl_preview4").addClass("testurl_preview4_alt");
 		$(".testurl_preview5").addClass("testurl_preview5_alt");
-        $("#guides-other-unchecked").trigger('click');
+        $("#guides-other-unchecked").trigger("click");
 	}
 
 
@@ -320,7 +325,7 @@ $(".custom-dropdown-menu").on("keydown click", function() {
 });
 
 // set active state (neded for appended dropdown)
-$(document.body).on('click', ".custom-dropdown", function() {
+$(document.body).on("click", ".custom-dropdown", function() {
 	"use strict";
 	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active");
 	$(this).closest(".custom-dropdown-outer").find(this).addClass("active");
@@ -423,23 +428,15 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function() {
 });
 
 $(document).ready(function() {
-
+	$("#guides-single-checked").hide();
 	$("#guides-double-checked").hide();
 	$("#guides-accessories-checked").hide();
 	$("#guides-other-checked").hide();
- 
-	$("#spacing-top-15-checked").hide();
-	$("#spacing-bottom-15-checked").hide();
-	$("#spacing-left-15-checked").hide();
-	$("#spacing-right-15-checked").hide();
-	$("#spacing-top-20-checked").hide();
-	$("#spacing-bottom-20-checked").hide();
-	$("#spacing-left-20-checked").hide();
-	$("#spacing-right-20-checked").hide();
     
 	$("#inner-guides-checked").hide();
 	$("#HTML-guides-checked").hide();
 	$("#alpha-guides-checked").hide();
+	$("#original-guides-checked").hide();
     return false;
 });
 
@@ -455,12 +452,12 @@ $("#guides-single-checked").click(function() {
 });
 
 $("#guides-single-unchecked").click(function() {
-	$("#guides-double-checked").trigger('click');
-	$("#guides-accessories-checked").trigger('click');
-	$("#guides-other-checked").trigger('click');
+	$("#guides-double-checked").trigger("click");
+	$("#guides-accessories-checked").trigger("click");
+	$("#guides-other-checked").trigger("click");
 	$("#guides-single-unchecked").hide();
 	$("#guides-single-checked").show();
-	$(".guide-container1").addClass("guide-container-single-1");
+	$(".guide-container1").animate().addClass("guide-container-single-1");
 	$(".guide-container2").addClass("guide-container-single-2");
 	$(".guide-container3").addClass("guide-container-single-3");
 	$(".guide-container4").addClass("guide-container-single-4");
@@ -480,9 +477,9 @@ $("#guides-double-checked").click(function() {
 });
 
 $("#guides-double-unchecked").click(function() {
-	$("#guides-single-checked").trigger('click');
-	$("#guides-accessories-checked").trigger('click');
-	$("#guides-other-checked").trigger('click');
+	$("#guides-single-checked").trigger("click");
+	$("#guides-accessories-checked").trigger("click");
+	$("#guides-other-checked").trigger("click");
 	$("#guides-double-unchecked").hide();
 	$("#guides-double-checked").show();
 	$(".guide-container1").addClass("guide-container-double-1");
@@ -506,9 +503,9 @@ $("#guides-accessories-checked").click(function() {
 });
 
 $("#guides-accessories-unchecked").click(function() {
-	$("#guides-single-checked").trigger('click');
-	$("#guides-double-checked").trigger('click');
-	$("#guides-other-checked").trigger('click');
+	$("#guides-single-checked").trigger("click");
+	$("#guides-double-checked").trigger("click");
+	$("#guides-other-checked").trigger("click");
 	$("#guides-accessories-unchecked").hide();
 	$("#guides-accessories-checked").show();
 	$(".guide-container1").addClass("guide-container-accessories-1");
@@ -531,9 +528,9 @@ $("#guides-other-checked").click(function() {
 });
 
 $("#guides-other-unchecked").click(function() {
-	$("#guides-single-checked").trigger('click');
-	$("#guides-double-checked").trigger('click');
-	$("#guides-accessories-checked").trigger('click');
+	$("#guides-single-checked").trigger("click");
+	$("#guides-double-checked").trigger("click");
+	$("#guides-accessories-checked").trigger("click");
 	$("#guides-other-unchecked").hide();
 	$("#guides-other-checked").show();
 	$(".guide-container1").addClass("guide-container-other-1");
@@ -546,8 +543,9 @@ $("#guides-other-unchecked").click(function() {
 
 $("#HTML-guides-unchecked").click(function() {
 	"use strict";
-    $("#alpha-guides-checked").trigger('click');
-    $("#inner-guides-checked").trigger('click');
+    $("#alpha-guides-checked").trigger("click");
+    $("#inner-guides-checked").trigger("click");
+	$("#original-guides-checked").trigger("click");
 	$("#HTML-guides-unchecked").hide();
 	$("#HTML-guides-checked").show();
 	$(".each-container").addClass("background-alt1");
@@ -581,8 +579,9 @@ $("#inner-guides-checked").click(function() {
 
 $("#inner-guides-unchecked").click(function() {
 	"use strict";
-    $("#HTML-guides-checked").trigger('click');
-    $("#alpha-guides-checked").trigger('click');
+    $("#HTML-guides-checked").trigger("click");
+    $("#alpha-guides-checked").trigger("click");
+    $("#original-guides-checked").trigger("click");
 	$("#inner-guides-unchecked").hide();
 	$("#inner-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=jpg&bgc=000000";
@@ -619,8 +618,9 @@ $("#alpha-guides-checked").click(function() {
 
 $("#alpha-guides-unchecked").click(function() {
 	"use strict";
-    $("#inner-guides-checked").trigger('click');
-    $("#HTML-guides-checked").trigger('click');
+    $("#inner-guides-checked").trigger("click");
+    $("#HTML-guides-checked").trigger("click");
+    $("#original-guides-checked").trigger("click");
 	$("#alpha-guides-unchecked").hide();
 	$("#alpha-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=png-alpha";
@@ -628,6 +628,49 @@ $("#alpha-guides-unchecked").click(function() {
 	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$" + "&fmt=png-alpha";
 	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$" + "&fmt=png-alpha";
 	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$" + "&fmt=png-alpha";
+	$(".testurl_preview1").attr('src', assetprev1);
+	$(".testurl_preview2").attr('src', assetprev2);
+	$(".testurl_preview3").attr('src', assetprev3);
+	$(".testurl_preview4").attr('src', assetprev4);
+	$(".testurl_preview5").attr('src', assetprev5);
+    $(".each-container").addClass("background-alt2");
+	return false;
+
+});
+
+
+
+
+$("#original-guides-checked").click(function() {
+	"use strict";
+	$("#original-guides-unchecked").show();
+	$("#original-guides-checked").hide();
+	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$";
+	var assetprev2 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier2").text() + "$";
+	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$";
+	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$";
+	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$";
+	$(".testurl_preview1").attr('src', assetprev1);
+	$(".testurl_preview2").attr('src', assetprev2);
+	$(".testurl_preview3").attr('src', assetprev3);
+	$(".testurl_preview4").attr('src', assetprev4);
+	$(".testurl_preview5").attr('src', assetprev5);
+    $(".each-container").removeClass("background-alt2");
+	return false;
+});
+
+$("#original-guides-unchecked").click(function() {
+	"use strict";
+    $("#inner-guides-checked").trigger("click");
+    $("#HTML-guides-checked").trigger("click");
+    $("#alpha-guides-checked").trigger("click");
+	$("#original-guides-unchecked").hide();
+	$("#original-guides-checked").show();
+	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
+	var assetprev2 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
+	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
+	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
+	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
 	$(".testurl_preview1").attr('src', assetprev1);
 	$(".testurl_preview2").attr('src', assetprev2);
 	$(".testurl_preview3").attr('src', assetprev3);
