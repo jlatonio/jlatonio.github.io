@@ -9,21 +9,345 @@
   overflow-y: auto;
   background-color: #f7f7f8;
 }
-.asset-specs-each p:nth-child(2){
-padding-left: 4px;
+
+.asset-specs-each p:nth-child(2) {
+  padding-left: 4px;
 }
 
 .each-container {
-position: relative;
+  position: relative;
 }
 
- 
+.guide-each {
+  position: absolute;
+  z-index: 2;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+
+.guide-container-single-1 {
+  width: 88px;
+  height: 100%;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-single-1::after {
+  content: "88px x Variable";
+  position: absolute;
+  max-width: 120px;
+  left: -150px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-single-2 {
+  width: 100%;
+  height: 205px;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-single-2::after {
+  content: "Variable x 205px";
+  position: absolute;
+  max-width: 120px;
+  left: -150px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-single-3 {
+  width: 142px;
+  height: 100%;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-single-3::after {
+  content: "142px x Variable";
+  position: absolute;
+  max-width: 120px;
+  left: -150px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-single-4 {
+  width: 170px;
+  height: 80px;
+  outline: 2px solid red;
+  outline-offset: 0;
+  top: 10px;
+}
+
+.guide-container-single-4::after {
+  content: "170x180 with 10px Top Padding";
+  position: absolute;
+  max-width: 120px;
+  left: -150px;
+  top: -30px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-single-5 {
+  width: 220px;
+  height: 210px;
+  outline: 2px solid red;
+  outline-offset: 0;
+  top: 40px;
+}
+
+.guide-container-single-5::after {
+  content: "220x210 with 40px Top Padding";
+  position: absolute;
+  max-width: 120px;
+  left: -150px;
+  top: -30px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-double-1 {
+  width: 130px;
+  height: 100%;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-double-1::after {
+  content: "130px x Variable";
+  position: absolute;
+  max-width: 120px;
+  left: -150px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-double-2 {
+  width: 100%;
+  height: 205px;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-double-2::after {
+  content: "Variable x 205px";
+  position: absolute;
+  max-width: 120px;
+  left: -150px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-double-3 {
+  width: 240px;
+  height: 100%;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-double-3::after {
+  content: "240px x Variable";
+  position: absolute;
+  max-width: 120px;
+  left: -150px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-double-4 {
+  width: 190px;
+  height: 80px;
+  outline: 2px solid red;
+  outline-offset: 0;
+  top: 10px;
+}
+
+.guide-container-double-4::after {
+  content: "190x180 with 10px Top Padding";
+  position: absolute;
+  max-width: 120px;
+  left: -150px;
+  top: -30px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-double-5 {
+  width: 400px;
+  height: 210px;
+  outline: 2px solid red;
+  outline-offset: 0;
+  top: 40px;
+}
+
+.guide-container-double-5::after {
+  content: "400x210 with 40px Top Padding";
+  position: absolute;
+  max-width: 120px;
+  left: -150px;
+  top: -30px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-accessories-1 {
+  width: 130px;
+  height: 180px;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-accessories-1::after {
+  content: "130x180";
+  position: absolute;
+  max-width: 120px;
+  left: -90px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+
+.guide-container-accessories-2 {
+  width: 230px;
+  height: 145px;
+  top: 15px;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-accessories-2::after {
+  content: "230x145";
+  position: absolute;
+  max-width: 120px;
+  left: -90px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-accessories-3 {
+  width: 240px;
+  height: 300px;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-accessories-3::after {
+  content: "240x300";
+  position: absolute;
+  max-width: 120px;
+  left: -90px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-accessories-4 {
+  width: 120px;
+  height: 38px;
+  top: 10px;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-accessories-4::after {
+  content: "120x38";
+  position: absolute;
+  max-width: 120px;
+  left: -90px;
+  top: 0;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-accessories-5 {
+  width: 200px;
+  height: 156px;
+  top: 20px;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-accessories-5::after {
+  content: "200x156";
+  position: absolute;
+  max-width: 120px;
+  left: -90px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-other-1 {
+  width: 130px;
+  height: 100%;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-other-2 {
+  width: 100%;
+  height: 205px;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-other-3 {
+  width: 260px;
+  height: 100%;
+  outline: 2px solid red;
+  outline-offset: 0;
+}
+
+.guide-container-other-4 {
+  width: 170px;
+  height: 80px;
+  outline: 2px solid red;
+  outline-offset: 0;
+  top: 10px;
+}
+
+.guide-container-other-5 {
+  width: 220px;
+  height: 210px;
+  outline: 2px solid red;
+  outline-offset: 0;
+  top: 20px;
+}
+
 .inspect_url {
   min-height: auto;
 }
 
-.asset-specs p {
-  margin-bottom: 5px;
+.asset-specs-each p {
+  margin-bottom: 10px;
 }
 
 .outer-container {
@@ -54,7 +378,7 @@ position: relative;
 .asset-specs {
   position: sticky;
   top: 0;
-  padding: 0 40px 0 40px;
+  padding: 5px 40px 0 40px;
   margin-bottom: 40px;
   background-color: inherit;
   border-bottom: 2px solid #8f8f8f;
@@ -98,7 +422,14 @@ position: relative;
 }
 
 .background-alt1 {
-  background-color: #272b3d;
+  background-color: #a6c7e3;
+}
+
+.background-alt2 {
+  background-image: url(../images/transparency.svg);
+  border-image-repeat: repeat;
+  background-size: 150px auto;
+  background-color: #ffffff;
 }
 
 .each-container img {
@@ -116,24 +447,24 @@ position: relative;
   max-height: 180px !important;
 }
 
-.testurl_preview2_alt  {
+.testurl_preview2_alt {
   max-width: 230px !important;
   max-height: 145px !important;
   top: -38px;
 }
 
-.testurl_preview3_alt  {
+.testurl_preview3_alt {
   max-width: 240px !important;
   max-height: 300px !important;
 }
 
-.testurl_preview4_alt  {
+.testurl_preview4_alt {
   max-width: 120px !important;
   max-height: 38px !important;
   top: -16px;
 }
 
-.testurl_preview5_alt  {
+.testurl_preview5_alt {
   max-width: 200px !important;
   max-height: 156px !important;
   top: -28px;
@@ -235,35 +566,35 @@ position: relative;
   cursor: pointer;
 }
 
-#guides-10-unchecked {
+#guides-single-unchecked {
   background-image: url("../images/check1.svg");
 }
 
-#guides-10-checked {
+#guides-single-checked {
   background-image: url("../images/check2.svg");
 }
 
-#guides-15-unchecked {
+#guides-double-unchecked {
   background-image: url("../images/check1.svg");
 }
 
-#guides-15-checked {
+#guides-double-checked {
   background-image: url("../images/check2.svg");
 }
 
-#guides-20-unchecked {
+#guides-accessories-unchecked {
   background-image: url("../images/check1.svg");
 }
 
-#guides-20-checked {
+#guides-accessories-checked {
   background-image: url("../images/check2.svg");
 }
 
-#guides-40-unchecked {
+#guides-other-unchecked {
   background-image: url("../images/check1.svg");
 }
 
-#guides-40-checked {
+#guides-other-checked {
   background-image: url("../images/check2.svg");
 }
 
@@ -283,72 +614,17 @@ position: relative;
   background-image: url("../images/check2.svg");
 }
 
-#spacing-top-15-unchecked {
+#alpha-guides-unchecked {
   background-image: url("../images/check1.svg");
 }
 
-#spacing-top-15-checked {
+#alpha-guides-checked {
   background-image: url("../images/check2.svg");
 }
 
-#spacing-bottom-15-unchecked {
-  background-image: url("../images/check1.svg");
-}
-
-#spacing-bottom-15-checked {
-  background-image: url("../images/check2.svg");
-}
-
-#spacing-left-15-unchecked {
-  background-image: url("../images/check1.svg");
-}
-
-#spacing-left-15-checked {
-  background-image: url("../images/check2.svg");
-}
-
-#spacing-right-15-unchecked {
-  background-image: url("../images/check1.svg");
-}
-
-#spacing-right-15-checked {
-  background-image: url("../images/check2.svg");
-}
-
-#spacing-top-20-unchecked {
-  background-image: url("../images/check1.svg");
-}
-
-#spacing-top-20-checked {
-  background-image: url("../images/check2.svg");
-}
-
-#spacing-bottom-20-unchecked {
-  background-image: url("../images/check1.svg");
-}
-
-#spacing-bottom-20-checked {
-  background-image: url("../images/check2.svg");
-}
-
-#spacing-left-20-unchecked {
-  background-image: url("../images/check1.svg");
-}
-
-#spacing-left-20-checked {
-  background-image: url("../images/check2.svg");
-}
-
-#spacing-right-20-unchecked {
-  background-image: url("../images/check1.svg");
-}
-
-#spacing-right-20-checked {
-  background-image: url("../images/check2.svg");
-}
 
 .store-checkbox-container {
-  width: 125px;
+  width: 160px;
   display: inline-flex;
   padding-right: 20px;
 }
