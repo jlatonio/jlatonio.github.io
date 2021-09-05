@@ -10,6 +10,19 @@
   background-color: #f7f7f8;
 }
 
+.column-container-menu::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+.column-container-menu::-webkit-scrollbar-track {
+  box-shadow: inset 0px 0px 10px #fff;
+}
+ 
+.column-container-menu::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
 .inspect_preset{
   padding: 8px 13px; 
   width: 100%; 
@@ -648,6 +661,7 @@
 }
 
 .notes-show-guides{
- display: block;
+  display: block;
   width: 100%;
+  margin-bottom: 5px;
 }
