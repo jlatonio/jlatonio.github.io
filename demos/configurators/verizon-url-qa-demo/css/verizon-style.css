@@ -50,6 +50,7 @@
   height: 205px;
   outline: 2px solid red;
   outline-offset: 0;
+  top: 15px;
 }
 
 .guide-container-single-2::after {
