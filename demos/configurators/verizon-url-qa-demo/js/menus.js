@@ -580,7 +580,7 @@ $("#inner-guides-checked").click(function() {
 
 $("#inner-guides-unchecked").click(function() {
 	"use strict";
-
+	$("#original-guides-checked").trigger("click");
 	$("#inner-guides-unchecked").hide();
 	$("#inner-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=jpg&bgc=000000";
