@@ -617,7 +617,7 @@ $("#alpha-guides-checked").click(function() {
 
 $("#alpha-guides-unchecked").click(function() {
 	"use strict";
-
+    $("#inner-guides-checked").trigger("click");
 	$("#alpha-guides-unchecked").hide();
 	$("#alpha-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=png-alpha";
