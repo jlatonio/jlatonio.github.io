@@ -275,11 +275,6 @@ $(".custom-dropdown").on("click", function() {
 		$(".modifier3").text('Single-Device-300x600-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 600px");
 		$(".modifier4").text('Single-Device-728x90-CR').closest(".each-container-row").find(".asset-specs-size").text("728px x 90px");
 		$(".modifier5").text('Single-Device-970x250-CR').closest(".each-container-row").find(".asset-specs-size").text("970px x 250px");
-		$(".modifier1").text('Single-Device-160x600-CR').closest(".each-container-row").find(".asset-scale-size").text("88px x Variable");
-		$(".modifier2").text('Single-Device-300x250-CR').closest(".each-container-row").find(".asset-scale-size").text("Variable x 205px");
-		$(".modifier3").text('Single-Device-300x600-CR').closest(".each-container-row").find(".asset-scale-size").text("142px x Variable");
-		$(".modifier4").text('Single-Device-728x90-CR').closest(".each-container-row").find(".asset-scale-size").text("170px x 180px with 10px Top Padding");
-		$(".modifier5").text('Single-Device-970x250-CR').closest(".each-container-row").find(".asset-scale-size").text("220px x 210px with 40px Top Padding");
 		$("#css-guides-checked").hide();
 		$("#css-guides-unchecked").hide();
 		$(".testurl_preview1").removeClass("testurl_preview1_alt");
@@ -287,10 +282,8 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
-
+        $(".image-add-specs").val("");
 		$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-cns");
-
-
 
 	} else if (preset === "Single-Shadow") {
 		$(".modifier1").text('Single-Device-160x600-NC').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
@@ -304,8 +297,8 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
+        $(".image-add-specs-clear").click();
 		$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_OLA_RGB_v1");
-
 
 	} else if (preset === "Double/Triple-Cropped") {
 		$(".modifier1").text('Double-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
@@ -319,6 +312,7 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
+        $(".image-add-specs-clear").click();
 		$(".s7asset").val("VZ_219957_19_Mot Z4 gra Sam Gal A50 Bk_DC_RGB_SIMP_v2_Cropped");
 
 	} else if (preset === "Accessories-Cropped") {
@@ -334,6 +328,7 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").addClass("testurl_preview3_alt");
 		$(".testurl_preview4").addClass("testurl_preview4_alt");
 		$(".testurl_preview5").addClass("testurl_preview5_alt");
+        $(".image-add-specs-clear").click();
 		$(".s7asset").val("jbl-live-pro-earbuds-black-jblliveproptwsbam-g");
 
 	} else if (preset === "Other-Cropped") {
@@ -348,6 +343,7 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
+        $(".image-add-specs-clear").click();
 		$("#guides-other-unchecked").trigger("click");
 	}
 
