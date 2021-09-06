@@ -29,8 +29,30 @@
   height: 230px;
 }
 
+
+.image-add-specs {
+    line-height: 1.4;
+    background-color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 220px;
+    height: 30px;
+    margin: 0;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0px 1px 2px 0px rgb(4 4 4 / 40%);
+    -moz-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
+    box-shadow: inset 0px 1px 2px 0px rgb(4 4 4 / 40%);
+    position: relative;
+    padding: 2px 16px;
+    font-family: "OpenSans-Light";
+}
+
+
+
 .asset-specs-each p:nth-child(2) {
-  padding-left: 4px;
+  padding-left: 0;
 }
 
 .each-container {
@@ -393,9 +415,9 @@
 }
 
 .asset-specs {
-  position: sticky;
+  position: relative;
   top: 0;
-  padding: 5px 40px 0 40px;
+  padding: 10px 0;
   margin-bottom: 40px;
   background-color: inherit;
   border-bottom: 2px solid #8f8f8f;
@@ -404,7 +426,11 @@
 
 .asset-specs-each {
   display: inline-flex;
-  margin-right: 40px;
+  margin-right: 20px;
+}
+
+.asset-specs-each:last-child {
+  margin-right: 0;
 }
 
 .each-container {

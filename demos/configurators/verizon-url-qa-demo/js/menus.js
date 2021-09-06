@@ -59,17 +59,17 @@ $(".testp,.guide-each").on("click", function() {
 // Process results
 $(".store-continue").on("click", function() {
 	"use strict";
-	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$";
-	var assetprev2 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier2").text() + "$";
-	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$";
-	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$";
-	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$";
+	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + $(".asset-specs-add1").val();
+	var assetprev2 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier2").text() + "$" + $(".asset-specs-add2").val();
+	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$" + $(".asset-specs-add3").val();
+	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$" + $(".asset-specs-add4").val();
+	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$" + $(".asset-specs-add5").val();
 	var prevname = $(".s7asset").val();
 	var isValid = true;
 	$(".s7required").each(function() {
 		if ($(this).val().length === 0) {
 			isValid = false;
-			$(this).focus().attr("placeholder", "This is a required field.").css({
+			$(this).focus().attr("placeholder", "This is a required field.").css({ 
 				"background": "#fff2f2"
 			});
 			return false;
@@ -95,10 +95,7 @@ $(".store-continue").on("click", function() {
 	$(".generated_url").text("");
 	$(".inspect_url").attr("src", "");
 	$(".inspect_preset").attr("src", "");
-	$("#inner-guides-checked").trigger("click");
-	$("#HTML-guides-checked").trigger("click");
-	$("#alpha-guides-checked").trigger("click");
-	$("#original-guides-checked").trigger("click");
+ 
 	return false;
 });
 
