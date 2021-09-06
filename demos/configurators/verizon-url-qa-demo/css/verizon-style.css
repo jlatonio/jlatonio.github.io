@@ -648,6 +648,14 @@
   background-image: url("../images/check2.svg");
 }
 
+#css-guides-unchecked {
+  background-image: url("../images/check1.svg");
+}
+
+#css-guides-checked {
+  background-image: url("../images/check2.svg");
+}
+
 .store-checkbox-container {
   display: inline-flex;
   padding-right: 20px;

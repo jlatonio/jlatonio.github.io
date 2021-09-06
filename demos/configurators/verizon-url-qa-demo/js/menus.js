@@ -94,11 +94,11 @@ $(".store-continue").on("click", function() {
 
 	$(".generated_url").text("");
 	$(".inspect_url").attr("src", "");
-    $(".inspect_preset").attr("src", "");
-    $("#inner-guides-checked").trigger("click");
-    $("#HTML-guides-checked").trigger("click");
-    $("#alpha-guides-checked").trigger("click");
-    $("#original-guides-checked").trigger("click");    
+	$(".inspect_preset").attr("src", "");
+	$("#inner-guides-checked").trigger("click");
+	$("#HTML-guides-checked").trigger("click");
+	$("#alpha-guides-checked").trigger("click");
+	$("#original-guides-checked").trigger("click");
 	return false;
 });
 
@@ -222,7 +222,7 @@ $(".custom-dropdown").on("click", function() {
 	var preset_accessories = "Accessories-Cropped";
 
 
-    
+
 	if (preset === "Single-Cropped") {
 		$(".modifier1").text('Single-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
 		$(".modifier2").text('Single-Device-300x250-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 250px");
@@ -234,14 +234,16 @@ $(".custom-dropdown").on("click", function() {
 		$(".modifier3").text('Single-Device-300x600-CR').closest(".each-container-row").find(".asset-scale-size").text("142px x Variable");
 		$(".modifier4").text('Single-Device-728x90-CR').closest(".each-container-row").find(".asset-scale-size").text("170px x 180px with 10px Top Padding");
 		$(".modifier5").text('Single-Device-970x250-CR').closest(".each-container-row").find(".asset-scale-size").text("220px x 210px with 40px Top Padding");
+		$("#css-guides-checked").hide();
+		$("#css-guides-unchecked").hide();
 		$(".testurl_preview1").removeClass("testurl_preview1_alt");
 		$(".testurl_preview2").removeClass("testurl_preview2_alt");
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
- 
-        $(".s7asset").val("VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-cns");
-        
+
+		$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-cns");
+
 
 
 	} else if (preset === "Single-Shadow") {
@@ -250,59 +252,57 @@ $(".custom-dropdown").on("click", function() {
 		$(".modifier3").text('Single-Device-300x600-NC').closest(".each-container-row").find(".asset-specs-size").text("300px x 600px");
 		$(".modifier4").text('Single-Device-728x90-NC').closest(".each-container-row").find(".asset-specs-size").text("728px x 90px");
 		$(".modifier5").text('Single-Device-970x250-NC').closest(".each-container-row").find(".asset-specs-size").text("970px x 250px");
-
+		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".testurl_preview1").removeClass("testurl_preview1_alt");
 		$(".testurl_preview2").removeClass("testurl_preview2_alt");
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
- 
-        $(".s7asset").val("VZ_201584_1_LG-G8-BL-F_OLA_RGB_v1");
-        
-        
+		$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_OLA_RGB_v1");
+
+
 	} else if (preset === "Double/Triple-Cropped") {
 		$(".modifier1").text('Double-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
 		$(".modifier2").text('Double-Device-300x250-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 250px");
 		$(".modifier3").text('Double-Device-300x600-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 600px");
 		$(".modifier4").text('Double-Device-728x90-CR').closest(".each-container-row").find(".asset-specs-size").text("728px x 90px");
 		$(".modifier5").text('Double-Device-970x250-CR').closest(".each-container-row").find(".asset-specs-size").text("970px x 250px");
-
+		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".testurl_preview1").removeClass("testurl_preview1_alt");
 		$(".testurl_preview2").removeClass("testurl_preview2_alt");
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
- 
-        $(".s7asset").val("VZ_219957_19_Mot Z4 gra Sam Gal A50 Bk_DC_RGB_SIMP_v2_Cropped");
-        
+		$(".s7asset").val("VZ_219957_19_Mot Z4 gra Sam Gal A50 Bk_DC_RGB_SIMP_v2_Cropped");
+
 	} else if (preset === "Accessories-Cropped") {
 		$(".modifier1").text('DCO_Acc_160x600').closest(".each-container-row").find(".asset-specs-size").text("260px x 360px");
 		$(".modifier2").text('DCO_Acc_300x250').closest(".each-container-row").find(".asset-specs-size").text("370px x 290px");
 		$(".modifier3").text('DCO_Acc_300x600').closest(".each-container-row").find(".asset-specs-size").text("260px x 600px");
 		$(".modifier4").text('DCO_Acc_728x90').closest(".each-container-row").find(".asset-specs-size").text("240px x 760px");
 		$(".modifier5").text('DCO_Acc_970x250').closest(".each-container-row").find(".asset-specs-size").text("356px x 312px");
-
+		$("#css-guides-unchecked,.notes-show-guides").show();
+		$("#css-guides-checked").hide();
 		$(".testurl_preview1").addClass("testurl_preview1_alt");
 		$(".testurl_preview2").addClass("testurl_preview2_alt");
 		$(".testurl_preview3").addClass("testurl_preview3_alt");
 		$(".testurl_preview4").addClass("testurl_preview4_alt");
 		$(".testurl_preview5").addClass("testurl_preview5_alt");
- 
-        $(".s7asset").val("jbl-live-pro-earbuds-black-jblliveproptwsbam-g");
-        
+		$(".s7asset").val("jbl-live-pro-earbuds-black-jblliveproptwsbam-g");
+
 	} else if (preset === "Other-Cropped") {
 		$(".modifier1").text('Other-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
 		$(".modifier2").text('Other-Device-300x250-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 250px");
 		$(".modifier3").text('Other-Device-300x600-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 600px");
 		$(".modifier4").text('Other-Device-728x90-CR').closest(".each-container-row").find(".asset-specs-size").text("728px x 90px");
 		$(".modifier5").text('Other-Device-970x250-CR').closest(".each-container-row").find(".asset-specs-size").text("970px x 250px");
-
-		$(".testurl_preview1").addClass("testurl_preview1_alt");
-		$(".testurl_preview2").addClass("testurl_preview2_alt");
-		$(".testurl_preview3").addClass("testurl_preview3_alt");
-		$(".testurl_preview4").addClass("testurl_preview4_alt");
-		$(".testurl_preview5").addClass("testurl_preview5_alt");
-        $("#guides-other-unchecked").trigger("click");
+		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
+		$(".testurl_preview1").removeClass("testurl_preview1_alt");
+		$(".testurl_preview2").removeClass("testurl_preview2_alt");
+		$(".testurl_preview3").removeClass("testurl_preview3_alt");
+		$(".testurl_preview4").removeClass("testurl_preview4_alt");
+		$(".testurl_preview5").removeClass("testurl_preview5_alt");
+		$("#guides-other-unchecked").trigger("click");
 	}
 
 
@@ -432,12 +432,15 @@ $(document).ready(function() {
 	$("#guides-double-checked").hide();
 	$("#guides-accessories-checked").hide();
 	$("#guides-other-checked").hide();
-    
+	$("#css-guides-checked").hide();
+	$("#css-guides-unchecked").hide();
 	$("#inner-guides-checked").hide();
 	$("#HTML-guides-checked").hide();
 	$("#alpha-guides-checked").hide();
 	$("#original-guides-checked").hide();
-    return false;
+	$("#css-guides-checked").hide();
+	$(".notes-show-guides").hide();
+	return false;
 });
 
 $("#guides-single-checked").click(function() {
@@ -448,7 +451,7 @@ $("#guides-single-checked").click(function() {
 	$(".guide-container3").removeClass("guide-container-single-3");
 	$(".guide-container4").removeClass("guide-container-single-4");
 	$(".guide-container5").removeClass("guide-container-single-5");
-    return false;
+	return false;
 });
 
 $("#guides-single-unchecked").click(function() {
@@ -462,7 +465,7 @@ $("#guides-single-unchecked").click(function() {
 	$(".guide-container3").addClass("guide-container-single-3");
 	$(".guide-container4").addClass("guide-container-single-4");
 	$(".guide-container5").addClass("guide-container-single-5");
-    return false;
+	return false;
 });
 
 $("#guides-double-checked").click(function() {
@@ -473,7 +476,7 @@ $("#guides-double-checked").click(function() {
 	$(".guide-container3").removeClass("guide-container-double-3");
 	$(".guide-container4").removeClass("guide-container-double-4");
 	$(".guide-container5").removeClass("guide-container-double-5");
-    return false;
+	return false;
 });
 
 $("#guides-double-unchecked").click(function() {
@@ -487,7 +490,7 @@ $("#guides-double-unchecked").click(function() {
 	$(".guide-container3").addClass("guide-container-double-3");
 	$(".guide-container4").addClass("guide-container-double-4");
 	$(".guide-container5").addClass("guide-container-double-5");
-    return false;
+	return false;
 });
 
 
@@ -499,7 +502,7 @@ $("#guides-accessories-checked").click(function() {
 	$(".guide-container3").removeClass("guide-container-accessories-3");
 	$(".guide-container4").removeClass("guide-container-accessories-4");
 	$(".guide-container5").removeClass("guide-container-accessories-5");
-    return false;
+	return false;
 });
 
 $("#guides-accessories-unchecked").click(function() {
@@ -513,7 +516,7 @@ $("#guides-accessories-unchecked").click(function() {
 	$(".guide-container3").addClass("guide-container-accessories-3");
 	$(".guide-container4").addClass("guide-container-accessories-4");
 	$(".guide-container5").addClass("guide-container-accessories-5");
-    return false;
+	return false;
 });
 
 $("#guides-other-checked").click(function() {
@@ -524,7 +527,7 @@ $("#guides-other-checked").click(function() {
 	$(".guide-container3").removeClass("guide-container-other-3");
 	$(".guide-container4").removeClass("guide-container-other-4");
 	$(".guide-container5").removeClass("guide-container-other-5");
-    return false;
+	return false;
 });
 
 $("#guides-other-unchecked").click(function() {
@@ -538,13 +541,13 @@ $("#guides-other-unchecked").click(function() {
 	$(".guide-container3").addClass("guide-container-other-3");
 	$(".guide-container4").addClass("guide-container-other-4");
 	$(".guide-container5").addClass("guide-container-other-5");
-    return false;
+	return false;
 });
 
 $("#HTML-guides-unchecked").click(function() {
 	"use strict";
-    $("#alpha-guides-checked").trigger("click");
-    $("#inner-guides-checked").trigger("click");
+	$("#alpha-guides-checked").trigger("click");
+	$("#inner-guides-checked").trigger("click");
 	$("#original-guides-checked").trigger("click");
 	$("#HTML-guides-unchecked").hide();
 	$("#HTML-guides-checked").show();
@@ -579,9 +582,9 @@ $("#inner-guides-checked").click(function() {
 
 $("#inner-guides-unchecked").click(function() {
 	"use strict";
-    $("#HTML-guides-checked").trigger("click");
-    $("#alpha-guides-checked").trigger("click");
-    $("#original-guides-checked").trigger("click");
+	$("#HTML-guides-checked").trigger("click");
+	$("#alpha-guides-checked").trigger("click");
+	$("#original-guides-checked").trigger("click");
 	$("#inner-guides-unchecked").hide();
 	$("#inner-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=jpg&bgc=000000";
@@ -595,7 +598,6 @@ $("#inner-guides-unchecked").click(function() {
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
 	return false;
-
 });
 
 $("#alpha-guides-checked").click(function() {
@@ -612,15 +614,15 @@ $("#alpha-guides-checked").click(function() {
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
-    $(".each-container").removeClass("background-alt2");
+	$(".each-container").removeClass("background-alt2");
 	return false;
 });
 
 $("#alpha-guides-unchecked").click(function() {
 	"use strict";
-    $("#inner-guides-checked").trigger("click");
-    $("#HTML-guides-checked").trigger("click");
-    $("#original-guides-checked").trigger("click");
+	$("#inner-guides-checked").trigger("click");
+	$("#HTML-guides-checked").trigger("click");
+	$("#original-guides-checked").trigger("click");
 	$("#alpha-guides-unchecked").hide();
 	$("#alpha-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=png-alpha";
@@ -633,13 +635,10 @@ $("#alpha-guides-unchecked").click(function() {
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
-    $(".each-container").addClass("background-alt2");
+	$(".each-container").addClass("background-alt2");
 	return false;
 
 });
-
-
-
 
 $("#original-guides-checked").click(function() {
 	"use strict";
@@ -655,15 +654,15 @@ $("#original-guides-checked").click(function() {
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
-    $(".each-container").removeClass("background-alt2");
+	$(".each-container").removeClass("background-alt2");
 	return false;
 });
 
 $("#original-guides-unchecked").click(function() {
 	"use strict";
-    $("#inner-guides-checked").trigger("click");
-    $("#HTML-guides-checked").trigger("click");
-    $("#alpha-guides-checked").trigger("click");
+	$("#inner-guides-checked").trigger("click");
+	$("#HTML-guides-checked").trigger("click");
+	$("#alpha-guides-checked").trigger("click");
 	$("#original-guides-unchecked").hide();
 	$("#original-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
@@ -676,7 +675,32 @@ $("#original-guides-unchecked").click(function() {
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
-    $(".each-container").addClass("background-alt2");
+	$(".each-container").addClass("background-alt2");
 	return false;
+});
 
+$("#css-guides-checked").click(function() {
+	"use strict";
+	$("#css-guides-unchecked").show();
+	$("#css-guides-checked").hide();
+	$(".testurl_preview1").addClass("testurl_preview1_alt");
+	$(".testurl_preview2").addClass("testurl_preview2_alt");
+	$(".testurl_preview3").addClass("testurl_preview3_alt");
+	$(".testurl_preview4").addClass("testurl_preview4_alt");
+	$(".testurl_preview5").addClass("testurl_preview5_alt");
+	return false;
+});
+
+$("#css-guides-unchecked").click(function() {
+	"use strict";
+	$("#css-guides-unchecked").hide();
+	$("#css-guides-checked").show();
+
+	$(".testurl_preview1").removeClass("testurl_preview1_alt");
+	$(".testurl_preview2").removeClass("testurl_preview2_alt");
+	$(".testurl_preview3").removeClass("testurl_preview3_alt");
+	$(".testurl_preview4").removeClass("testurl_preview4_alt");
+	$(".testurl_preview5").removeClass("testurl_preview5_alt");
+
+	return false;
 });
