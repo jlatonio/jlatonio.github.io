@@ -11,45 +11,85 @@
 }
 
 .column-container-menu::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
- 
+
 .column-container-menu::-webkit-scrollbar-track {
   box-shadow: inset 0px 0px 10px #fff;
 }
- 
+
 .column-container-menu::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   box-shadow: 1px 1px 2px 1px #999;
 }
 
-.inspect_preset{
-  padding: 8px 13px; 
-  width: 100%; 
+.inspect_preset {
+  padding: 8px 13px;
+  width: 100%;
   height: 230px;
 }
 
-
 .image-add-specs {
-    line-height: 1.4;
-    background-color: transparent;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 220px;
-    height: 30px;
-    margin: 0;
-    border-radius: 0;
-    border: 1px solid #ccc;
-    -webkit-box-shadow: inset 0px 1px 2px 0px rgb(4 4 4 / 40%);
-    -moz-box-shadow: inset 0px 1px 2px 0px rgba(4,4,4,0.4);
-    box-shadow: inset 0px 1px 2px 0px rgb(4 4 4 / 40%);
-    position: relative;
-    padding: 2px 16px;
-    font-family: "OpenSans-Light";
+  line-height: 1.4;
+  background-color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 400px;
+  height: 30px;
+  margin: 0;
+  border-radius: 0;
+  border: 0 solid #aaa;
+  position: relative;
+  padding: 2px 85px 2px 16px;
+  font-family: "OpenSans-light";
 }
 
+.image-add-specs-container {
+  position: relative;
+}
 
+.image-add-specs-go {
+  position: absolute;
+  padding: 5px 16px;
+  top: 0;
+  right: 0;
+  min-width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  font-size: 14px;
+  font-family: "OpenSans-regular";
+  color: #aaa;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.image-add-specs-clear {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  width: 40px;
+  height: 30px;
+  z-index: 0;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  opacity: 0.4;
+  cursor: pointer;
+  padding: 8px;
+  margin-top: -17px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 .asset-specs-each p:nth-child(2) {
   padding-left: 0;
@@ -267,7 +307,6 @@
   padding: 7px;
   box-shadow: 1px 1px 2px 1px #999;
 }
-
 
 .guide-container-accessories-2 {
   width: 230px;
@@ -685,7 +724,7 @@
 .store-checkbox-container {
   display: inline-flex;
   padding-right: 20px;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -694,7 +733,7 @@
   user-select: none;
 }
 
-.notes-show-guides{
+.notes-show-guides {
   display: block;
   width: 100%;
   margin-bottom: 5px;

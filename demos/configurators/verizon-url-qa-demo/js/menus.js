@@ -69,7 +69,7 @@ $(".store-continue").on("click", function() {
 	$(".s7required").each(function() {
 		if ($(this).val().length === 0) {
 			isValid = false;
-			$(this).focus().attr("placeholder", "This is a required field.").css({ 
+			$(this).focus().attr("placeholder", "This is a required field.").css({
 				"background": "#fff2f2"
 			});
 			return false;
@@ -95,7 +95,56 @@ $(".store-continue").on("click", function() {
 	$(".generated_url").text("");
 	$(".inspect_url").attr("src", "");
 	$(".inspect_preset").attr("src", "");
- 
+
+	return false;
+});
+
+
+// Additional Queries section: 
+$(".image-add-specs-clear").hide();
+$(".image-add-specs-go").on("click", function() {
+	$(".store-continue").click();
+});
+
+$(".image-add-specs-clear").on("click", function() {
+	$(this).closest(".image-add-specs-container").find(".image-add-specs").val("");
+	$(".store-continue").click();
+	$(this).hide();
+		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
+			"background-color": "",
+			"color": "",
+			"cursor": ""
+		});
+});
+
+$(".image-add-specs").on("keyup change", function() {
+	if ($(this).val().length > 0) {
+		$(this).closest(".image-add-specs-container").find(".image-add-specs-clear").show();
+		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
+			"background-color": "#000",
+			"color": "#fff",
+			"cursor": "pointer"
+		});
+
+	} else {
+		$(this).closest(".image-add-specs-container").find(".image-add-specs-clear").hide();
+		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
+			"background-color": "",
+			"color": "",
+			"cursor": ""
+		});
+	}
+	return false;
+});
+
+$(".image-add-specs").on("blur", function() {
+	if ($(this).val().length < 1) {
+		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
+			"background-color": "",
+			"color": "",
+			"cursor": ""
+		});
+	}
 	return false;
 });
 
@@ -614,7 +663,7 @@ $("#alpha-guides-checked").click(function() {
 
 $("#alpha-guides-unchecked").click(function() {
 	"use strict";
-    $("#inner-guides-checked").trigger("click");
+	$("#inner-guides-checked").trigger("click");
 	$("#alpha-guides-unchecked").hide();
 	$("#alpha-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=png-alpha";
