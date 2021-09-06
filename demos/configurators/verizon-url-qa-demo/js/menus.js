@@ -546,9 +546,7 @@ $("#guides-other-unchecked").click(function() {
 
 $("#HTML-guides-unchecked").click(function() {
 	"use strict";
-	$("#alpha-guides-checked").trigger("click");
-	$("#inner-guides-checked").trigger("click");
-	$("#original-guides-checked").trigger("click");
+
 	$("#HTML-guides-unchecked").hide();
 	$("#HTML-guides-checked").show();
 	$(".each-container").addClass("background-alt1");
@@ -582,9 +580,7 @@ $("#inner-guides-checked").click(function() {
 
 $("#inner-guides-unchecked").click(function() {
 	"use strict";
-	$("#HTML-guides-checked").trigger("click");
-	$("#alpha-guides-checked").trigger("click");
-	$("#original-guides-checked").trigger("click");
+
 	$("#inner-guides-unchecked").hide();
 	$("#inner-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=jpg&bgc=000000";
@@ -621,9 +617,7 @@ $("#alpha-guides-checked").click(function() {
 
 $("#alpha-guides-unchecked").click(function() {
 	"use strict";
-	$("#inner-guides-checked").trigger("click");
-	$("#HTML-guides-checked").trigger("click");
-	$("#original-guides-checked").trigger("click");
+
 	$("#alpha-guides-unchecked").hide();
 	$("#alpha-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier1").text() + "$" + "&fmt=png-alpha";
@@ -661,7 +655,7 @@ $("#original-guides-checked").click(function() {
 $("#original-guides-unchecked").click(function() {
 	"use strict";
 	$("#inner-guides-checked").trigger("click");
-	$("#HTML-guides-checked").trigger("click");
+
 	$("#original-guides-unchecked").hide();
 	$("#original-guides-checked").show();
 	var assetprev1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
