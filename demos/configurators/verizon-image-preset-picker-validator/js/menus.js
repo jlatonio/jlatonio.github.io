@@ -48,7 +48,7 @@ $(".testp,.guide-each").on("click", function() {
 	"use strict";
 	var select_preset = $(this).closest(".each-container-row").find(".preset-name").text();
 	var select_image = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
-	var inspect_preset = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
+	var inspect_preset = "https://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
 	var inspect_image = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$";
 	$(".generated_url").text(select_image);
 	$(".inspect_preset").attr("src", inspect_preset + "&req=resolve");
