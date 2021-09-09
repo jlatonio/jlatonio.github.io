@@ -64,6 +64,8 @@ $(".store-continue").on("click", function() {
 	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$" + $(".asset-specs-add3").val();
 	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$" + $(".asset-specs-add4").val();
 	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$" + $(".asset-specs-add5").val();
+	var assetprevd1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-d1").text() + "$" + $(".asset-specs-add-d1").val();
+	var assetprevm1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-m1").text() + "$" + $(".asset-specs-add-m1").val();
 	var prevname = $(".s7asset").val();
 	var isValid = true;
 	$(".s7required").each(function() {
@@ -84,6 +86,8 @@ $(".store-continue").on("click", function() {
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
+	$(".testurl_preview-d1").attr('src', assetprevd1);
+	$(".testurl_preview-m1").attr('src', assetprevm1);
 	$(".image-preview-name").text(prevname);
 
 	$(".testurl_preview").on("error", function() {
@@ -270,13 +274,14 @@ $(".custom-dropdown").on("click", function() {
 
 
 	if (preset === "Single-Cropped") {
+        $(".each-mobile-container-row").hide(); 
+        $(".each-default-container-row").slideDown("2000"); 
 		$(".modifier1").text('Single-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
 		$(".modifier2").text('Single-Device-300x250-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 250px");
 		$(".modifier3").text('Single-Device-300x600-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 600px");
 		$(".modifier4").text('Single-Device-728x90-CR').closest(".each-container-row").find(".asset-specs-size").text("728px x 90px");
-		$(".modifier5").text('Single-Device-970x250-CR').closest(".each-container-row").find(".asset-specs-size").text("970px x 250px");
-		$("#css-guides-checked").hide();
-		$("#css-guides-unchecked").hide();
+		$(".modifier5").text('Single-Device-970x250-CR').closest(".each-container-row").find(".asset-specs-size").text("970px x 250px");       
+		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".testurl_preview1").removeClass("testurl_preview1_alt");
 		$(".testurl_preview2").removeClass("testurl_preview2_alt");
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
@@ -286,6 +291,8 @@ $(".custom-dropdown").on("click", function() {
 		$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_DC_RGB_v1-cns");
 
 	} else if (preset === "Single-Shadow") {
+        $(".each-mobile-container-row").hide(); 
+        $(".each-default-container-row").slideDown("2000"); 
 		$(".modifier1").text('Single-Device-160x600-NC').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
 		$(".modifier2").text('Single-Device-300x250-NC').closest(".each-container-row").find(".asset-specs-size").text("300px x 250px");
 		$(".modifier3").text('Single-Device-300x600-NC').closest(".each-container-row").find(".asset-specs-size").text("300px x 600px");
@@ -301,6 +308,8 @@ $(".custom-dropdown").on("click", function() {
 		$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_OLA_RGB_v1");
 
 	} else if (preset === "Double/Triple-Cropped") {
+        $(".each-mobile-container-row").hide(); 
+        $(".each-default-container-row").slideDown("2000"); 
 		$(".modifier1").text('Double-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
 		$(".modifier2").text('Double-Device-300x250-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 250px");
 		$(".modifier3").text('Double-Device-300x600-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 600px");
@@ -316,6 +325,8 @@ $(".custom-dropdown").on("click", function() {
 		$(".s7asset").val("VZ_219957_19_Mot Z4 gra Sam Gal A50 Bk_DC_RGB_SIMP_v2_Cropped");
 
 	} else if (preset === "Accessories-Cropped") {
+        $(".each-mobile-container-row").hide(); 
+        $(".each-default-container-row").slideDown("2000"); 
 		$(".modifier1").text('DCO_Acc_160x600').closest(".each-container-row").find(".asset-specs-size").text("260px x 360px");
 		$(".modifier2").text('DCO_Acc_300x250').closest(".each-container-row").find(".asset-specs-size").text("370px x 290px");
 		$(".modifier3").text('DCO_Acc_300x600').closest(".each-container-row").find(".asset-specs-size").text("260px x 600px");
@@ -332,6 +343,8 @@ $(".custom-dropdown").on("click", function() {
 		$(".s7asset").val("jbl-live-pro-earbuds-black-jblliveproptwsbam-g");
 
 	} else if (preset === "Other-Cropped") {
+        $(".each-mobile-container-row").hide(); 
+        $(".each-default-container-row").slideDown("2000"); 
 		$(".modifier1").text('Other-Device-160x600-CR').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
 		$(".modifier2").text('Other-Device-300x250-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 250px");
 		$(".modifier3").text('Other-Device-300x600-CR').closest(".each-container-row").find(".asset-specs-size").text("300px x 600px");
@@ -345,6 +358,17 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
         $(".image-add-specs-clear").click();
 		$("#guides-other-unchecked").trigger("click");
+        
+	} else if (preset === "Web-Responsive Design") {
+        $(".each-mobile-container-row").slideDown("2000");
+        $(".each-default-container-row").hide();
+		$(".modifier-d1").text('deals-desktop').closest(".each-container-row").find(".asset-specs-size").text("1272px x 477px");    
+		$(".modifier-m1").text('deals-mobile').closest(".each-container-row").find(".asset-specs-size").text("767px x 640px"); 
+		$(".testurl_preview-d1").addClass("testurl_preview-d1_alt");
+		$(".testurl_preview-m1").addClass("testurl_preview-m1_alt");
+		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
+        $(".image-add-specs").val("");
+		$(".s7asset").val("VZ_201584_1_LG-G8-BL-F_OLA_RGB_v1");
 	}
 
 
@@ -470,6 +494,7 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function() {
 });
 
 $(document).ready(function() {
+    $(".each-mobile-container-row").hide(); 
 	$("#guides-single-checked").hide();
 	$("#guides-double-checked").hide();
 	$("#guides-accessories-checked").hide();
@@ -493,6 +518,8 @@ $("#guides-single-checked").click(function() {
 	$(".guide-container3").removeClass("guide-container-single-3");
 	$(".guide-container4").removeClass("guide-container-single-4");
 	$(".guide-container5").removeClass("guide-container-single-5");
+	$(".guide-container-d1").removeClass("guide-container-single-d1");
+	$(".guide-container-m1").removeClass("guide-container-single-m1");
 	return false;
 });
 
@@ -507,6 +534,8 @@ $("#guides-single-unchecked").click(function() {
 	$(".guide-container3").addClass("guide-container-single-3");
 	$(".guide-container4").addClass("guide-container-single-4");
 	$(".guide-container5").addClass("guide-container-single-5");
+	$(".guide-container-d1").addClass("guide-container-single-d1");
+	$(".guide-container-m1").addClass("guide-container-single-m1");
 	return false;
 });
 
@@ -518,6 +547,8 @@ $("#guides-double-checked").click(function() {
 	$(".guide-container3").removeClass("guide-container-double-3");
 	$(".guide-container4").removeClass("guide-container-double-4");
 	$(".guide-container5").removeClass("guide-container-double-5");
+	$(".guide-container-d1").removeClass("guide-container-single-d1");
+	$(".guide-container-m1").removeClass("guide-container-single-m1");
 	return false;
 });
 
@@ -532,6 +563,8 @@ $("#guides-double-unchecked").click(function() {
 	$(".guide-container3").addClass("guide-container-double-3");
 	$(".guide-container4").addClass("guide-container-double-4");
 	$(".guide-container5").addClass("guide-container-double-5");
+	$(".guide-container-d1").addClass("guide-container-single-d1");
+	$(".guide-container-m1").addClass("guide-container-single-m1");
 	return false;
 });
 
@@ -544,6 +577,8 @@ $("#guides-accessories-checked").click(function() {
 	$(".guide-container3").removeClass("guide-container-accessories-3");
 	$(".guide-container4").removeClass("guide-container-accessories-4");
 	$(".guide-container5").removeClass("guide-container-accessories-5");
+	$(".guide-container-d1").removeClass("guide-container-single-d1");
+	$(".guide-container-m1").removeClass("guide-container-single-m1");
 	return false;
 });
 
@@ -558,6 +593,8 @@ $("#guides-accessories-unchecked").click(function() {
 	$(".guide-container3").addClass("guide-container-accessories-3");
 	$(".guide-container4").addClass("guide-container-accessories-4");
 	$(".guide-container5").addClass("guide-container-accessories-5");
+	$(".guide-container-d1").addClass("guide-container-single-d1");
+	$(".guide-container-m1").addClass("guide-container-single-m1");
 	return false;
 });
 
@@ -569,6 +606,8 @@ $("#guides-other-checked").click(function() {
 	$(".guide-container3").removeClass("guide-container-other-3");
 	$(".guide-container4").removeClass("guide-container-other-4");
 	$(".guide-container5").removeClass("guide-container-other-5");
+	$(".guide-container-d1").removeClass("guide-container-single-d1");
+	$(".guide-container-m1").removeClass("guide-container-single-m1");
 	return false;
 });
 
@@ -583,12 +622,13 @@ $("#guides-other-unchecked").click(function() {
 	$(".guide-container3").addClass("guide-container-other-3");
 	$(".guide-container4").addClass("guide-container-other-4");
 	$(".guide-container5").addClass("guide-container-other-5");
+	$(".guide-container-d1").addClass("guide-container-single-d1");
+	$(".guide-container-m1").addClass("guide-container-single-m1");
 	return false;
 });
 
 $("#HTML-guides-unchecked").click(function() {
 	"use strict";
-
 	$("#HTML-guides-unchecked").hide();
 	$("#HTML-guides-checked").show();
 	$(".each-container").addClass("background-alt1");
@@ -612,11 +652,15 @@ $("#inner-guides-checked").click(function() {
 	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$";
 	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$";
 	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$";
+	var assetprevd1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-d1").text() + "$";
+	var assetprevm1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-m1").text() + "$";
 	$(".testurl_preview1").attr('src', assetprev1);
 	$(".testurl_preview2").attr('src', assetprev2);
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
+	$(".testurl_preview-d1").attr('src', assetprevd1);
+	$(".testurl_preview-m1").attr('src', assetprevm1);
 	return false;
 });
 
@@ -630,11 +674,15 @@ $("#inner-guides-unchecked").click(function() {
 	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$" + "&fmt=jpg&bgc=000000";
 	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$" + "&fmt=jpg&bgc=000000";
 	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprevd1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-d1").text() + "$" + "&fmt=jpg&bgc=000000";
+	var assetprevm1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-m1").text() + "$" + "&fmt=jpg&bgc=000000";
 	$(".testurl_preview1").attr('src', assetprev1);
 	$(".testurl_preview2").attr('src', assetprev2);
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
+	$(".testurl_preview-d1").attr('src', assetprevd1);
+	$(".testurl_preview-m1").attr('src', assetprevm1);
 	return false;
 
 });
@@ -648,11 +696,15 @@ $("#alpha-guides-checked").click(function() {
 	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$";
 	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$";
 	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$";
+	var assetprevd1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-d1").text() + "$";
+	var assetprevm1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-m1").text() + "$";
 	$(".testurl_preview1").attr('src', assetprev1);
 	$(".testurl_preview2").attr('src', assetprev2);
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
+	$(".testurl_preview-d1").attr('src', assetprevd1);
+	$(".testurl_preview-m1").attr('src', assetprevm1);
 	$(".each-container").removeClass("background-alt2");
 	return false;
 });
@@ -667,11 +719,15 @@ $("#alpha-guides-unchecked").click(function() {
 	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$" + "&fmt=png-alpha";
 	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$" + "&fmt=png-alpha";
 	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$" + "&fmt=png-alpha";
+	var assetprevd1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-d1").text() + "$" + "&fmt=png-alpha";
+	var assetprevm1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-m1").text() + "$" + "&fmt=png-alpha";
 	$(".testurl_preview1").attr('src', assetprev1);
 	$(".testurl_preview2").attr('src', assetprev2);
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
+	$(".testurl_preview-d1").attr('src', assetprevd1);
+	$(".testurl_preview-m1").attr('src', assetprevm1);
 	$(".each-container").addClass("background-alt2");
 	return false;
 
@@ -686,11 +742,15 @@ $("#original-guides-checked").click(function() {
 	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier3").text() + "$";
 	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier4").text() + "$";
 	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier5").text() + "$";
+	var assetprevd1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-d1").text() + "$";
+	var assetprevm1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + $(".modifier-m1").text() + "$";
 	$(".testurl_preview1").attr('src', assetprev1);
 	$(".testurl_preview2").attr('src', assetprev2);
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
+	$(".testurl_preview-d1").attr('src', assetprevd1);
+	$(".testurl_preview-m1").attr('src', assetprevm1);
 	return false;
 });
 
@@ -705,11 +765,15 @@ $("#original-guides-unchecked").click(function() {
 	var assetprev3 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
 	var assetprev4 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
 	var assetprev5 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
+	var assetprevd1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
+	var assetprevm1 = "http://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
 	$(".testurl_preview1").attr('src', assetprev1);
 	$(".testurl_preview2").attr('src', assetprev2);
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
+	$(".testurl_preview-d1").attr('src', assetprevd1);
+	$(".testurl_preview-m1").attr('src', assetprevm1);
 	return false;
 });
 
@@ -723,6 +787,8 @@ $("#css-guides-checked").click(function() {
 	$(".testurl_preview3").addClass("testurl_preview3_alt");
 	$(".testurl_preview4").addClass("testurl_preview4_alt");
 	$(".testurl_preview5").addClass("testurl_preview5_alt");
+	$(".testurl_preview-d1").addClass("testurl_preview-d1_alt");
+	$(".testurl_preview-m1").addClass("testurl_preview-m1_alt");
 	return false;
 });
 
@@ -735,6 +801,7 @@ $("#css-guides-unchecked").click(function() {
 	$(".testurl_preview3").removeClass("testurl_preview3_alt");
 	$(".testurl_preview4").removeClass("testurl_preview4_alt");
 	$(".testurl_preview5").removeClass("testurl_preview5_alt");
-
+	$(".testurl_preview-d1").removeClass("testurl_preview-d1_alt");
+	$(".testurl_preview-m1").removeClass("testurl_preview-m1_alt");
 	return false;
 });

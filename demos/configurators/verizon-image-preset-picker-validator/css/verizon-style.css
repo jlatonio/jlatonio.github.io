@@ -422,6 +422,22 @@
   top: 20px;
 }
 
+.guide-container-other-d1 {
+  width: 170px;
+  height: 80px;
+  outline: 2px solid red;
+  outline-offset: 0;
+  top: 10px;
+}
+
+.guide-container-other-m1 {
+  width: 220px;
+  height: 210px;
+  outline: 2px solid red;
+  outline-offset: 0;
+  top: 20px;
+}
+
 .inspect_url {
   min-height: auto;
 }
@@ -554,6 +570,14 @@
   top: -27px;
 }
 
+.testurl_preview-d1_alt {
+ 
+}
+
+.testurl_preview-m1_alt {
+ 
+}
+
 .spacing-top-15 {
   padding-top: 15px;
 }
@@ -641,6 +665,27 @@
 .each-970x250 img {
   width: 970px;
   height: 250px;
+}
+
+.each-1272x477 {
+  width: 1272px;
+  height: 477px;
+}
+
+.each-1272x477 img {
+  width: 1272px;
+  height: 477px;
+}
+
+
+.each-767x640 {
+  width: 767px;
+  height: 640px;
+}
+
+.each-767x640 img {
+  width: 767px;
+  height: 640px;
 }
 
 .checkbox-each {
