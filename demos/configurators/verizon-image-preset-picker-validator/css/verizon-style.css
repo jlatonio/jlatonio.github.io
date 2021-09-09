@@ -667,26 +667,30 @@
   height: 250px;
 }
 
+
+
+/* Responsive design images are fluid*/
+
 .each-1272x477 {
-  width: 1272px;
-  height: 477px;
+  max-width: 1272px;
+  max-height: 477px;
 }
 
 .each-1272x477 img {
-  width: 1272px;
-  height: 477px;
+  max-width: 1272px;
+  max-height: 477px;
 }
 
-
 .each-767x640 {
-  width: 767px;
-  height: 640px;
+  max-width: 767px;
+  max-height: 640px;
 }
 
 .each-767x640 img {
-  width: 767px;
-  height: 640px;
+  max-width: 1272px;
+  max-height: 477px;
 }
+
 
 .checkbox-each {
   min-width: 200px;
