@@ -494,6 +494,7 @@ iframe[seamless] {
   }
 }
 
+
 @media screen and (min-width: 1025px) {
 
   .column-container,.column-container-admin {
@@ -504,7 +505,7 @@ iframe[seamless] {
     padding: 0 100px;
   }
   .hero-content {
-  margin-left: 200px;
+  margin-left: 150px;
   margin-right: auto;
   }
   .acs-footer {
