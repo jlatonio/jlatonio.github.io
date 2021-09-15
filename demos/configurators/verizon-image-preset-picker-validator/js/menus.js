@@ -54,7 +54,8 @@ $(".testp,.guide-each").on("click", function() {
 	$(".inspect_preset").attr("src", inspect_preset + "&req=resolve");
 	$(".inspect_url").attr("src", inspect_image + "&req=imageprops");
 	$('.column-container-menu').animate({
-	scrollTop: $(".generated_url").offset().top	}, 1000);
+	scrollTop: $(".inspect_preset").offset().top
+    }, 1000);
 	return false;
 });
 
