@@ -50,9 +50,11 @@ $(".testp,.guide-each").on("click", function() {
 	var select_image = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
 	var inspect_preset = "https://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
 	var inspect_image = "https://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$";
-	$(".generated_url").text(select_image);
+    $(".generated_url").text(select_image);
 	$(".inspect_preset").attr("src", inspect_preset + "&req=resolve");
 	$(".inspect_url").attr("src", inspect_image + "&req=imageprops");
+	$('.column-container-menu').animate({
+	scrollTop: $(".generated_url").offset().top	}, 1000);
 	return false;
 });
 
