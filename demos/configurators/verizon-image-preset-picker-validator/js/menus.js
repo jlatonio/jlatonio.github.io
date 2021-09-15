@@ -47,6 +47,7 @@ $(".store-clear").on("click", function() {
 $(".testp,.guide-each").on("click", function() {
 	"use strict";
 	var select_preset = $(this).closest(".each-container-row").find(".preset-name").text();
+    var select_specs = $(this).closest(".each-container-row").find(".asset-specs");
 	var select_image = "https://assets.verizon.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
 	var inspect_preset = "https://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$" + select_preset + "$";
 	var inspect_image = "https://testvipd1.scene7.com/is/image/verizonqa/" + $(".s7asset").val() + "?$";
@@ -54,8 +55,11 @@ $(".testp,.guide-each").on("click", function() {
 	$(".inspect_preset").attr("src", inspect_preset + "&req=resolve");
 	$(".inspect_url").attr("src", inspect_image + "&req=imageprops");
 	$('.column-container-menu').animate({
-	scrollTop: $(".inspect_preset").offset().top
-    }, 1000);
+	scrollTop: $(".anchor-end").offset().top
+    }, 500);
+	// $("html,body").animate({
+	// scrollTop: $(select_specs).offset().top
+    // }, 500);
 	return false;
 });
 
