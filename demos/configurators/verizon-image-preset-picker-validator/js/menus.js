@@ -54,9 +54,9 @@ $(".testp,.guide-each").on("click", function() {
     $(".generated_url").text(select_image);
 	$(".inspect_preset").attr("src", inspect_preset + "&req=resolve");
 	$(".inspect_url").attr("src", inspect_image + "&req=imageprops");
-	$('.column-container-menu').animate({
-	scrollTop: $(".anchor-end").offset().top
-    }, 500);
+	// $('.column-container-menu').animate({
+	// scrollTop: $(".anchor-end").offset().top
+    // }, 500);
 	// $("html,body").animate({
 	// scrollTop: $(select_specs).offset().top
     // }, 500);
