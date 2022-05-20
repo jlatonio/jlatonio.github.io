@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
+    <title>Verizon Responsive Device Demo</title>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Please place this section in the HEAD of your host HTML file.-->
+      <style type="text/css">
+        body {
+          margin: 0;
+        }
+
+        .container {
+          width: 100%;
+        }
+
+        .fluidimage {
+          max-width: 100%;
+        }
+      </style>
+      <!-- Please place this section in the BODY of your host HTML file.-->
+      <div class="container">
+        <img id="responsiveImage" data-mode="smartcrop" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://assets.verizon.com/is/image/verizonqa/Duolingohpg" class="fluidimage">
+      </div>
+      <script type="text/javascript" src="https://assets.verizon.com/s7viewers/libs/responsive_image.js"></script>
+      <script type="text/javascript">
+        s7responsiveImage(document.getElementById("responsiveImage"));
+      </script>
+    </div>
+  </body>
+</html>
