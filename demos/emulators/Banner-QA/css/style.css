@@ -1,0 +1,101 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+* { outline: 0px solid lime; }
+
+html, body {
+overflow:auto;
+}
+
+h2{
+font-size: 18px;
+line-height: 1.33;
+color:#000;
+font-family: "AdobeClean-Bold";
+padding:40px 20px 10px 20px;
+}
+
+p{
+font-size: 12px;
+line-height: 1.33;
+color:#000;
+font-family: "AdobeClean-Regular";
+}
+
+.content-container {
+overflow:auto;
+padding:20px;
+background-color: aqua;
+}
+
+.content {
+overflow:auto;
+}
+
+@media screen and (min-width: 160px) {
+p{
+font-size: 15px;
+}
+
+    .content-container {
+    max-width:160px;
+    min-height:600px;
+    }
+}
+
+@media screen and (min-width: 300px) {
+p{
+font-size: 24px;
+}
+
+    .content-container {
+    max-width:300px;
+    min-height:250px;
+    }
+}
+
+@media screen and (min-width: 728px) {
+p{
+font-size: 11px;
+}
+
+    .content-container {
+    max-width:728px;
+    min-height:90px;
+    }
+}
+
+.iframe_section{ 
+padding:40px;
+}
+
+iframe{ 
+border-style:none;
+overflow: hidden;
+}
+
+#frame1{ 
+width:160px;
+height:600px;
+margin:0;
+padding:0;background-color: aqua;
+}
+
+#frame2{ 
+width:300px;
+height:250px;
+margin:0;
+padding:0;
+}
+
+#frame3{ 
+width:728px;
+height:90px;
+margin:0;
+padding:0;
+}
+
+
+
+
