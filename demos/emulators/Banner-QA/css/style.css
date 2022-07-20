@@ -39,29 +39,43 @@ font-size: 15px;
 }
 
     .content-container {
-    max-width:160px;
+    min-width:160px;
     min-height:600px;
     }
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 300px) and (min-height: 250px) {
 p{
 font-size: 24px;
+color: orange;
 }
 
     .content-container {
-    max-width:300px;
+    min-width:300px;
     min-height:250px;
+    }
+}
+
+@media screen and (min-width: 300px) and (min-height: 600px) {
+p{
+font-size: 28px;
+color: red;
+}
+
+    .content-container {
+    min-width:300px;
+    min-height:600px;
     }
 }
 
 @media screen and (min-width: 728px) {
 p{
 font-size: 11px;
+color: mediumpurple;
 }
 
     .content-container {
-    max-width:728px;
+    min-width:728px;
     min-height:90px;
     }
 }
@@ -79,7 +93,7 @@ overflow: hidden;
 width:160px;
 height:600px;
 margin:0;
-padding:0;background-color: aqua;
+padding:0; 
 }
 
 #frame2{ 
@@ -90,12 +104,15 @@ padding:0;
 }
 
 #frame3{ 
+width:300px;
+height:600px;
+margin:0;
+padding:0;
+}
+
+#frame4{ 
 width:728px;
 height:90px;
 margin:0;
 padding:0;
 }
-
-
-
-
