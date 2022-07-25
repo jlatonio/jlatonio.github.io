@@ -89,28 +89,28 @@ border-style:none;
 overflow: hidden;
 }
 
-#frame1{ 
+#grid-160x600{ 
 width:160px;
 height:600px;
 margin:0;
 padding:0; 
 }
 
-#frame2{ 
+#grid-300x250{ 
 width:300px;
 height:250px;
 margin:0;
 padding:0;
 }
 
-#frame3{ 
+#grid-300x600{ 
 width:300px;
 height:600px;
 margin:0;
 padding:0;
 }
 
-#frame4{ 
+#grid-728x90{ 
 width:728px;
 height:90px;
 margin:0;
