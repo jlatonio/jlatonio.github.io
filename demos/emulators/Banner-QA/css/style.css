@@ -21,8 +21,6 @@ font-size: 12px;
 line-height: 1.33;
 color:#000;
 font-family: "AdobeClean-Regular";
-border: 1px solid #000000;
-padding: 4px;
 }
 
 .content-container {
@@ -33,12 +31,21 @@ background-color: aqua;
 
 .content {
 overflow:auto;
+border-left: 1px solid #000000;
+border-top: 1px solid #000000;
+border-right: 1px solid #000000;
+border-bottom: 0 solid #000000;
+padding: 4px;
+}
+
+.content:last-child {
+border-bottom: 1px solid #000000;
 }
 
 @media screen and (min-width: 160px) and (height: 600px) {
-p{
-font-size: 15px;
-}
+    p{
+    font-size: 15px;
+    }
 
     .content-container {
     min-width:160px;
@@ -47,11 +54,11 @@ font-size: 15px;
 }
 
 @media screen and (min-width: 300px) and (height: 250px) {
-p{
-font-size: 24px;
-color: orange; 
-}
-
+    p{
+    font-size: 24px;
+    color: orange; 
+    }
+    
     .content-container {
     min-width:300px;
     min-height:250px;
@@ -59,10 +66,10 @@ color: orange;
 }
 
 @media screen and (min-width: 300px) and (height: 600px) {
-p{
-font-size: 28px;
-color: red;
-}
+    p{
+    font-size: 28px;
+    color: red;
+    }
 
     .content-container {
     min-width:300px;
@@ -71,13 +78,15 @@ color: red;
 }
 
 @media screen and (min-width: 728px) and (height: 90px) {
-p{
-font-size: 10px;
-color: mediumpurple;
-border: 1px solid #000000;
-padding: 2px;
-}
+    p{
+    font-size: 10px;
+    color: mediumpurple;
+    }
 
+    .content {
+    padding: 2px;
+    }
+    
     .content-container {
     padding: 7px;
     min-width:728px;
