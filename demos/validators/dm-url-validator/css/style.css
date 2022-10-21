@@ -1,0 +1,39 @@
+.img-container {
+  width: 250px;
+  height: 250px;
+  display:inline-flex;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: red;
+  margin: 0 10px 70px 0;
+}
+
+.outer-container h3 {
+  background-color: #000;
+  margin-bottom: 20px;
+  padding: 5px 0 3px 15px;
+  color: #ffffff;
+}
+
+.img-container p {
+  position: absolute;
+  display:block;
+  height:20px;
+  bottom:-45px;
+  left: 0;
+  padding: 1px 5px 1px 5px;
+  font-size: 15px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 701px) {
+}
+
+@media screen and (min-width: 1025px) {
+}

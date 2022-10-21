@@ -1,0 +1,177 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  line-height: 1.4;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #ccc;
+}
+
+.page {
+  max-width: 1440px;
+  margin: auto;
+  box-shadow: 0 0 5px #000;
+  background-color: #fff;
+}
+
+footer {
+  width: 100%;
+  min-height:160px
+}
+
+h1 {
+  font-size: 59px;
+  line-height: 1;
+  font-family: "AdobeClean-Bold";
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1.4;
+  display: block;
+}
+
+h3 {
+  font-size: 25px;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+p {
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+p + p {
+  margin-bottom: 20px;
+}
+
+/* headings for paragraphs or lists */
+h2 + ul, h2 + ol, ul + p, ol + p, h2 + p {
+  margin-top: 20px;
+}
+
+/* additional headings placed after paragraphs or lists */
+p + h2, ul + h2, ol + h2 {
+  margin-top: 40px;
+}
+
+/* subheadings for paragraphs or lists */
+h3 + ol, h3 + ul, h4 + ol, h4 + ul {
+  margin-top: 5px;
+}
+
+h3 + p, h4 + p {
+  margin-top: 5px;
+}
+
+/* subheadings if stacked */
+h3 + h3, h4 + h4 {
+  margin-top: 5px;
+}
+
+b {
+  font-family: "OpenSans-Semibold";
+}
+
+ul,ol {
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+li p {
+  margin: 20px 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+  border: none;
+}
+
+table {
+  font-size: 14px;
+}
+
+tr th {
+  border-right: 1px solid #B3B3B3;
+  padding: 20px;
+  vertical-align: middle;
+  font-family: "OpenSans-Regular";
+  font-weight: normal;
+  color: #FFFFFF;
+  border-left: 0px solid #FFFFFF;
+}
+
+tr td {
+  border-right: 1px solid #B3B3B3;
+  padding: 20px;
+  vertical-align: middle;
+}
+
+th:first-child {
+  border-left: 0 solid #B3B3B3;
+}
+
+td:first-child {
+  border-left: 0 solid #B3B3B3;
+}
+
+th:last-child {
+  border-right: 0 solid #B3B3B3;
+}
+
+td:last-child {
+  border-right: 0 solid #B3B3B3;
+}
+
+tr:nth-child(even) {
+}
+
+thead {
+  border: none;
+}
