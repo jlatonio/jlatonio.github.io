@@ -9,11 +9,19 @@
   margin: 0 10px 70px 0;
 }
 
-.outer-container h3 {
-  background-color: #000;
+.outer-container {
+  padding: 20px;
+}
+
+.header-container {
   margin-bottom: 20px;
-  padding: 5px 0 3px 15px;
+}
+
+.header-container h3 {
+  background-color: #000;
+  padding: 10px 0 10px 0;
   color: #ffffff;
+  text-align: center;
 }
 
 .img-container p {
