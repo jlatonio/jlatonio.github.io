@@ -3,8 +3,9 @@
   height: 220px;
   display:inline-flex;
   position: relative;
-  background-color: #333333;
+  background-color: #eee;
   margin: 0 20px 70px 0;
+  box-shadow: 0 0 7px #999;
 }
 
 .outer-container {
