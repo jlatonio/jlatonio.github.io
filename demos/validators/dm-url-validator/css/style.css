@@ -5,7 +5,11 @@
   position: relative;
   background-color: #eee;
   margin: 0 20px 70px 0;
-  box-shadow: 0 0 7px #999;
+  background-image: url(../images/transparency.svg);
+  border-image-repeat: repeat;
+  background-size: 120px auto;
+  box-shadow: 0 0 7px #555;
+  
 }
 
 .outer-container {
