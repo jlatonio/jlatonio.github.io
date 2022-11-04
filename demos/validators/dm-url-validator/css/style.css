@@ -1,12 +1,10 @@
 .img-container {
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   display:inline-flex;
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
   background-color: #333333;
-  margin: 0 10px 70px 0;
+  margin: 0 20px 70px 0;
 }
 
 .outer-container {
