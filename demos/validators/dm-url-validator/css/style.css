@@ -8,8 +8,7 @@
   background-image: url(../images/transparency.svg);
   border-image-repeat: repeat;
   background-size: 120px auto;
-  box-shadow: 0 0 7px #555;
-  
+  box-shadow: 0 0 7px #777;
 }
 
 .outer-container {
