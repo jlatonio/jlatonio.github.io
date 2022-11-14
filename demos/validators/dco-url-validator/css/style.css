@@ -101,6 +101,29 @@ img {
   object-fit: contain;
 }
 
+.sticky {
+  position: relative;
+}
+
+.stick {
+  position: fixed;
+  top: 0;
+  left: 0;
+ 
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+ 
+  z-index: 99;
+  -webkit-transition: background-color .25s ease-in;
+  -moz-transition: background-color .25s ease-in;
+  -o-transition: background-color .25s ease-in;
+  transition: background-color .25s ease-in;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.7);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.7);
+  box-shadow: 0px 1px 4px rgba(4,4,4,0.7);
+}
+
 @media screen and (min-width: 701px) {
 }
 
