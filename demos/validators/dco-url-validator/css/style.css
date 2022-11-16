@@ -1,6 +1,6 @@
 .add-html-container {
   position: absolute;
-  top: 15px;
+  top: 13px;
   right: 10px;
   width: 300px;
 }
@@ -190,9 +190,9 @@
 
 .header-container h3 {
   background-color: #000;
-  padding: 10px;
+  padding: 10px 10px 10px 30px;
   color: #ffffff;
-  text-align: center;
+  text-align: left;
 }
 
 img {
