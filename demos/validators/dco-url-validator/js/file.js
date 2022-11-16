@@ -1,7 +1,12 @@
+    $(".add-html-here").show();
+    $(".broken-image-urls-container").hide();
+
 // adds HTML
 $(".add-html-go").on("click", function() {
 	"use strict";
 	var find_html = $(".add-html-form").val();
+    $(".add-html-here").show();
+    $(".broken-image-urls-container").hide();
 	$(".add-html-here").html(find_html);
 
 	// List all broken URLs in an ordered list
@@ -70,6 +75,19 @@ $(".add-html-go").on("click", function() {
 			$(".inspect-url").attr("srcdoc", url_video);
 			return false;
 		});
+        
+        
+        $(".view-report").click(function () {
+            "use strict";
+            $(".add-html-here").hide();
+            $(".broken-image-urls-container").show();
+            $("html, body").animate({
+                    scrollTop: $(".broken-image-urls-container").offset().top - 170
+                },
+                300, "easeInOutQuad");
+            return false;
+        });
+        
 	});
 	return false;
 });

@@ -1,8 +1,9 @@
 .add-html-container {
   position: absolute;
   top: 13px;
-  right: 10px;
-  width: 300px;
+  right: 20px;
+  width: 420px;
+  text-align: right;
 }
 
 .add-html-form {
@@ -15,7 +16,6 @@
   border-right: 0 solid;
   border-color: #eee;
   box-shadow: none;
-  margin-right: 10px;
   color: #fff;
   display: inline-flex;
 }
@@ -29,9 +29,37 @@
   border: 2px solid;
   border-color: #eee;
   color: #fff;
+  margin-left: 10px;
 }
 
 .add-html-go:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+.add-html-go:active {
+  background-color: #eee;
+  color: #000;
+}
+
+.view-report {
+  background-color: #000;
+  color: #000;
+  display: inline-flex;
+  text-align: center;
+  padding: 5px;
+  border: 2px solid;
+  border-color: #eee;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.view-report:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+.view-report:active {
   background-color: #eee;
   color: #000;
 }
@@ -244,8 +272,8 @@ img {
 .stick {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 20px;
+  width: calc(100% - 40px);
   z-index: 99;
   -webkit-transition: background-color 0.25s ease-in;
   -moz-transition: background-color 0.25s ease-in;
