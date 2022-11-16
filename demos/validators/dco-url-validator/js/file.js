@@ -5,7 +5,7 @@
 $(".add-html-go").on("click", function() {
 	"use strict";
 	var find_html = $(".add-html-form").val();
-    $(".add-html-here").show();
+    $(".add-html-here,.inspect-url").show();
     $(".broken-image-urls-container").hide();
 	$(".add-html-here").html(find_html);
 
@@ -79,7 +79,7 @@ $(".add-html-go").on("click", function() {
         
         $(".view-report").click(function () {
             "use strict";
-            $(".add-html-here").hide();
+            $(".add-html-here,.inspect-url").hide();
             $(".broken-image-urls-container").show();
             $("html, body").animate({
                     scrollTop: $(".broken-image-urls-container").offset().top - 170
