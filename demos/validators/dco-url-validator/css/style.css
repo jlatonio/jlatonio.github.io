@@ -86,6 +86,32 @@
   content: "Inspect Preset";
 }
 
+.inspect-video-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: -47px;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+  font-size: 9px;
+  background-size: 40px 40px;
+  background-position: cover;
+  background-color: #444;
+  color: #fff;
+  padding: 7px 3px 3px 3px;
+  vertical-align: text-bottom;
+}
+
+.inspect-video-icon:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.inspect-video-icon::after {
+  content: "Inspect URL";
+}
+
 .inspect-url-icon {
   width: 40px;
   height: 40px;
@@ -112,9 +138,9 @@
   content: "Inspect URL";
 }
 
-.img-container {
-  width: 270px;
-  height: 270px;
+.img-container, .video-container{
+  width: 280px;
+  height: 280px;
   display: inline-flex;
   position: relative;
   background-color: #eee;
@@ -139,6 +165,17 @@
 }
 
 .img-container p {
+  position: absolute;
+  display: block;
+  height: 20px;
+  bottom: -45px;
+  left: 0;
+  padding: 1px 93px 1px 5px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.video-container p {
   position: absolute;
   display: block;
   height: 20px;

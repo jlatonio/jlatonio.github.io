@@ -45,6 +45,8 @@ $(".add-html-go").on("click", function() {
 
 	$(function() {
 		$(".inspect-url-icon").on("click", function() {
+			"use strict";
+			$(".inspect-url").removeAttr("srcdoc");
 			var url_image = $(this).closest(".img-container").find(".img-container-image").attr('src');
 			$(".inspect-url").attr("srcdoc", url_image);
 			return false;
@@ -59,7 +61,15 @@ $(".add-html-go").on("click", function() {
 			$(".inspect-url").attr("src", inspect_preset);
 			return false;
 		});
-	});
 
+		// Click on individual video to generate URL feature
+		$(".inspect-video-icon").on("click", function() {
+			"use strict";
+			$(".inspect-url").removeAttr("srcdoc");
+			var url_video = $(this).closest(".video-container").find(".video-container-image source").attr("src");
+			$(".inspect-url").attr("srcdoc", url_video);
+			return false;
+		});
+	});
 	return false;
 });
