@@ -1,20 +1,120 @@
-.inspect_url {
-  width: calc(100% - 40px);
+.add-html-container {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: 300px;
+}
+
+.add-html-form {
+  width: 240px;
+  height: 27px;
+  background-color: #000;
+  border-top: 0 solid;
+  border-left: 0 solid;
+  border-bottom: 2px solid;
+  border-right: 0 solid;
+  border-color: #eee;
+  box-shadow: none;
+  margin-right: 10px;
+  color: #fff;
+  display: inline-flex;
+}
+
+.add-html-go {
+  background-color: #000;
+  color: #000;
+  display: inline-flex;
+  text-align: center;
+  padding: 5px;
+  border: 2px solid;
+  border-color: #eee;
+  color: #fff;
+}
+
+.add-html-go:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+.add-html-here {
+  text-align: center;
+}
+
+.inspect-url {
+  width: 100%;
   height: 120px;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  margin-bottom: 30px;
   background-color: #fff;
-  border:2px solid;
-  border-color:#777;
-  position: fixed;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-color: #777;
+}
+
+.inspect-container {
+  width: 100%;
+  height: 120px;
+  padding: 20px;
+}
+
+.inspect-preset-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: -47px;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+  font-size: 9px;
+  background-size: 40px 40px;
+  background-position: cover;
+  background-color: #444;
+  color: #fff;
+  padding: 7px 3px 3px 3px;
+  vertical-align: text-bottom;
+}
+
+.inspect-preset-icon:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+.inspect-preset-icon::after {
+  content: "Inspect Preset";
+}
+
+.inspect-url-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: -47px;
+  right: 45px;
+  z-index: 1;
+  text-align: center;
+  font-size: 9px;
+  background-size: 40px 40px;
+  background-position: cover;
+  background-color: #444;
+  color: #fff;
+  padding: 7px 3px 3px 3px;
+  vertical-align: text-bottom;
+}
+
+.inspect-url-icon:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+.inspect-url-icon::after {
+  content: "Inspect URL";
 }
 
 .img-container {
-  width: 220px;
-  height: 220px;
+  width: 270px;
+  height: 270px;
   display: inline-flex;
   position: relative;
   background-color: #eee;
@@ -23,19 +123,19 @@
   border-image-repeat: repeat;
   background-size: 120px auto;
   box-shadow: 0 0 8px #777;
-  -webkit-transition: all .2s ease-in;
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  transition: all .2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .img-container:hover {
-  transform: scale(1.055,1.055);
+  transform: scale(1.055, 1.055);
   box-shadow: 0 0 4px #888;
-  -webkit-transition: all .1s ease-in;
-  -moz-transition: all .1s ease-in;
-  -o-transition: all .1s ease-in;
-  transition: all .1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .img-container p {
@@ -44,7 +144,7 @@
   height: 20px;
   bottom: -45px;
   left: 0;
-  padding: 1px 45px 1px 5px;
+  padding: 1px 93px 1px 5px;
   font-size: 12px;
   width: 100%;
 }
@@ -64,6 +164,7 @@
 
 .header-container {
   margin-bottom: 20px;
+  position: relative;
 }
 
 .broken-image-urls-container {
@@ -71,12 +172,10 @@
   padding-bottom: 20px;
   padding-left: 40px;
   padding-right: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
   margin-bottom: 10px;
   background-color: #fff;
-  border:2px solid;
-  border-color:#777;
+  border: 2px solid;
+  border-color: #777;
 }
 
 .broken-image-urls {
@@ -109,19 +208,12 @@ img {
   position: fixed;
   top: 0;
   left: 0;
- 
   width: 100%;
-  background-color: #333;
-  color: #fff;
- 
   z-index: 99;
-  -webkit-transition: background-color .25s ease-in;
-  -moz-transition: background-color .25s ease-in;
-  -o-transition: background-color .25s ease-in;
-  transition: background-color .25s ease-in;
-  -webkit-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.7);
-  -moz-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.7);
-  box-shadow: 0px 1px 4px rgba(4,4,4,0.7);
+  -webkit-transition: background-color 0.25s ease-in;
+  -moz-transition: background-color 0.25s ease-in;
+  -o-transition: background-color 0.25s ease-in;
+  transition: background-color 0.25s ease-in;
 }
 
 @media screen and (min-width: 701px) {
