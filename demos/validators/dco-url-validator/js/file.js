@@ -1,14 +1,14 @@
-    $(".add-html-here").show();
+    $(".add-html-here").hide();
     $(".broken-image-urls-container").hide();
     $(".close-report").hide();
     // adds HTML
     $(".add-html-go").on("click", function() {
     	"use strict";
     	var find_html = $(".add-html-form").val();
-    	$(".add-html-here,.inspect-url").fadeIn("5000");
     	$(".broken-image-urls-container").hide();
     	$(".add-html-here").html(find_html);
-
+    	$(".add-html-here,.inspect-url").fadeIn();
+        
     	// List all broken URLs in an ordered list
     	$(".img-container-image").each(function() {
     		"use strict";
