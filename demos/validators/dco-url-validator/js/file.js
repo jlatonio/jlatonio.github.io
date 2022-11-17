@@ -18,7 +18,7 @@
   
     			var label_image = $(this).closest(".img-container").find(".image-label").text();
     			var broken_url = $(this).attr("src");
-    			$('.broken-image-urls').text('Broken Image URL Report:');
+    			$('.broken-image-urls').text('Broken URL Report:');
     			$('.broken-image-urls').after('<li>' + label_image + ' - ' + broken_url);
     			$(".broken-image-urls-container li").sort(asc_sort).appendTo('.broken-image-urls-container');
 
@@ -37,7 +37,7 @@
   
     			var label_image = $(this).closest(".video-container").find(".image-label").text();
     			var broken_url = $(this).closest(".video-container").find(".video-container-image source").attr("src");
-    			$('.broken-image-urls').text('Broken Image URL Report:');
+    			$('.broken-image-urls').text('Broken URL Report:');
     			$('.broken-image-urls').after('<li>' + label_image + ' - ' + broken_url);
     			$(".broken-image-urls-container li").sort(asc_sort).appendTo('.broken-image-urls-container');
 
