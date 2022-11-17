@@ -28,6 +28,7 @@
     			}
     			return false;
     		});
+            
     	});
 
     	function sticky_relocate() {
