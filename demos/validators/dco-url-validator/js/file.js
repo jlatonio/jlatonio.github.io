@@ -7,7 +7,7 @@
     	var find_html = $(".add-html-form").val();
     	$(".broken-image-urls-container").hide();
     	$(".add-html-here").html(find_html);
-    	$(".add-html-here,.inspect-url").fadeIn();
+    	$(".add-html-here,.inspect-url").fadeIn(1000,"swing");
         
     	// List all broken URLs in an ordered list
     	$(".img-container-image").each(function() {
