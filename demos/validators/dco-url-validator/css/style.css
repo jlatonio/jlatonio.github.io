@@ -2,13 +2,13 @@
   position: absolute;
   top: 13px;
   right: 30px;
-  width: 420px;
+  width: 432px;
   text-align: right;
 }
 
 .add-html-form {
   width: 240px;
-  height: 30px;
+  height: 29px;
   background-color: #000;
   border-top: 0 solid;
   border-left: 0 solid;
@@ -18,7 +18,7 @@
   box-shadow: none;
   color: #fff;
   display: inline-flex;
-  margin-right: 200px;
+  margin-right: 220px;
   padding-right: 9px;
 }
 
