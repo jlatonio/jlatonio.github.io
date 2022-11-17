@@ -8,7 +8,7 @@
 
 .add-html-form {
   width: 240px;
-  height: 29px;
+  height: 30px;
   background-color: #000;
   border-top: 0 solid;
   border-left: 0 solid;
@@ -18,7 +18,7 @@
   box-shadow: none;
   color: #fff;
   display: inline-flex;
-  margin-right: 185px;
+  margin-right: 200px;
   padding-right: 9px;
 }
 
