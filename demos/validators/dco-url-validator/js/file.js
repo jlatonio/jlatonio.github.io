@@ -123,6 +123,7 @@
     			"use strict";
     			$(this).hide();
                 $(".add-html-form").val('');
+                $(".add-html-here").empty();
     			return false;
     		});
             
