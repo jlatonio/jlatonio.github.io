@@ -18,19 +18,23 @@
   box-shadow: none;
   color: #fff;
   display: inline-flex;
+  margin-right: 185px;
+  padding-right: 9px;
 }
 
 .add-html-go {
+  position: absolute;
+  top: 0;
+  right: 120px;
+  width: 60px;
+  z-index: 3;
   background-color: #000;
   color: #000;
-  display: inline-flex;
   text-align: center;
   padding: 5px;
   border: 1.5px solid;
   border-color: #eee;
   color: #fff;
-  margin-left: 10px;
-  margin-right: 125px;
   cursor: pointer;
   font-size: 12px;
   -webkit-user-select: none; /* Safari */
@@ -44,6 +48,36 @@
 }
 
 .add-html-go:active {
+  background-color: #eee;
+  color: #000;
+}
+
+.add-html-reset {
+  position: absolute;
+  top: 0;
+  right: 120px;
+  width: 60px;
+  z-index: 4;
+  background-color: #000;
+  color: #000;
+  text-align: center;
+  padding: 5px;
+  border: 1.5px solid;
+  border-color: #eee;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.add-html-reset:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+.add-html-reset:active {
   background-color: #eee;
   color: #000;
 }
