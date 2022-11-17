@@ -1,14 +1,14 @@
 .add-html-container {
   position: absolute;
   top: 13px;
-  right: 20px;
+  right: 30px;
   width: 420px;
   text-align: right;
 }
 
 .add-html-form {
   width: 240px;
-  height: 27px;
+  height: 30px;
   background-color: #000;
   border-top: 0 solid;
   border-left: 0 solid;
@@ -30,7 +30,12 @@
   border-color: #eee;
   color: #fff;
   margin-left: 10px;
+  margin-right: 125px;
   cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .add-html-go:hover {
@@ -44,25 +49,63 @@
 }
 
 .view-report {
-  background-color: #000;
-  color: #000;
-  display: inline-flex;
+  position: absolute;
+  background-color:#000;
+  height: 30px;
+  top: 0;
+  right: 0;
+  width: 110px;
   text-align: center;
   padding: 5px;
   border: 1.5px solid;
   border-color: #eee;
   color: #fff;
-  margin-left: 20px;
+  margin-left: 10px;
   cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .view-report:hover {
-  background-color: #eee;
+  background-color: #fff;
   color: #000;
 }
 
 .view-report:active {
-  background-color: #eee;
+  background-color: #fff;
+  color: #000;
+}
+
+.close-report {
+  position: absolute;
+  background-color:#000;
+  height: 30px;
+  top: 0;
+  right: 0;
+  width: 110px;
+  text-align: center;
+  padding: 5px;
+  border: 1.5px solid;
+  border-color: #eee;
+  color: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+  z-index: 3;
+  font-size: 12px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.close-report:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.close-report:active {
+  background-color: #fff;
   color: #000;
 }
 
@@ -106,6 +149,9 @@
   padding: 7px 3px 3px 3px;
   vertical-align: text-bottom;
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .inspect-preset-icon:hover {
@@ -133,6 +179,9 @@
   padding: 7px 3px 3px 3px;
   vertical-align: text-bottom;
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .inspect-video-icon:hover {
@@ -160,6 +209,9 @@
   padding: 7px 3px 3px 3px;
   vertical-align: text-bottom;
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .inspect-url-icon:hover {
@@ -259,7 +311,7 @@
 
 .header-container h3 {
   background-color: #000;
-  padding: 10px 10px 10px 30px;
+  padding: 10px 30px 10px 30px;
   color: #ffffff;
   text-align: left;
 }
