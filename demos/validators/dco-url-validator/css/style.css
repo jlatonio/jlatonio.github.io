@@ -111,6 +111,7 @@
 
 .add-html-here {
   text-align: center;
+  padding-top: 10px;
 }
 
 .inspect-url {
@@ -285,7 +286,7 @@
 }
 
 .header-container {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   position: relative;
 }
 
