@@ -14,16 +14,25 @@
 <script type="text/javascript" language="javascript" src="https://s7d1.scene7.com/s7viewers/html5/js/VideoViewer.js"></script>
 
 <div class="container">
-    <label>Static URL 1 - suitable for small-sized videos </label>
+    <label>Static URL 1 - 70mb</label>
 	<video id=video-caption-demo autoplay loop muted width=100% crossorigin playsinline>
 		 <source src="https://assets.verizon.com/is/content/verizon/AEHistoryVaultPPlacementVideo" type="video/mp4">
 			<!-- Caption files -->
 			<track kind="captions" label="English" srclang="en" src="https://assets.verizon.com/is/content/verizonqa/verizon-test/video-streaming-test/demo-sample-html.vtt" default>
 	</video>
 </div>
+
+<div class="container">
+    <label>Static URL 2 - 73mb </label>
+	<video id=video-caption-demo autoplay loop muted width=100% crossorigin playsinline>
+		 <source src="https://assets.verizon.com/is/content/verizon/AELifetimeMovieClubHomepageVideo" type="video/mp4">
+			<!-- Caption files -->
+			<track kind="captions" label="English" srclang="en" src="https://assets.verizon.com/is/content/verizonqa/verizon-test/video-streaming-test/demo-sample-html.vtt" default>
+	</video>
+</div>
     
 <div class="container">
-    <label>Static URL 2 with an HLS Player - suitable to stream medium-sized videos (tested videos up to approx 70mb)</label>
+    <label>Static URL 3 with an HLS Player - suitable to stream medium-sized videos (tested videos up to approx 70mb)</label>
     <video id='hls-example' autoplay loop muted class="video-js vjs-fluid vjs-default-skin" width="400" height="300" controls>
       <source type="application/x-mpegURL" src="https://assets.verizon.com/is/content/verizon/AELifetimeMovieClubHeroVideo.m3u8">
     </video>
