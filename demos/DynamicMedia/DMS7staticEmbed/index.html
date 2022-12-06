@@ -5,6 +5,9 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>Static Video URL Embed Examples</title>
 	<link rel="stylesheet" href="css/main.css" />
+    <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet"><script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+    <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
 </head>
 <body>
 
@@ -21,8 +24,9 @@
     
 <div class="container">
     <label>Static URL 2</label>
-	<video id=video-caption-demo controls autoplay loop width=100% crossorigin playsinline>
-		 <source src="https://assets.verizon.com/is/content/verizon/AEHistoryVaultHeroVideo-1" type="video/mp4">
+	<video id='hls-example' class="video-js  vjs-fluid vjs-default-skin" controls autoplay loop width=100% crossorigin playsinline>
+         <source src="https://assets.verizon.com/is/content/verizon/AEHistoryVaultHeroVideo-1" type="video/mp4">
+		 <source src="https://assets.verizon.com/is/content/verizon/AEHistoryVaultHeroVideo-1.m3u8" type="application/x-mpegURL">
 			<!-- Caption files -->
 			<track kind="captions" label="English" srclang="en" src="https://assets.verizon.com/is/content/verizonqa/verizon-test/video-streaming-test/demo-sample-html.vtt" default>
 	</video>
@@ -31,7 +35,12 @@
 <div class="container">
     <label>iframe container</label>
     <iframe onload="this.width=screen.width;this.height=screen.height;" scrolling="no" frameborder="0" src="https://assets.verizon.com/s7viewers/html5/VideoViewer.html?videoserverurl=https://assets.verizon.com/is/content/&emailurl=https://assets.verizon.com/s7/emailFriend&serverUrl=https://assets.verizon.com/is/image/&config=Scene7SharedAssets/Universal%5FHTML5%5FVideo&contenturl=https://assets.verizon.com/skins/&asset=verizon/AEHistoryVaultHeroVideo%2D1"></iframe>
-    </div>
+</div>
+
+<script>
+var player = videojs('hls-example');
+player.play();
+</script>
     
 </body>
 </html>
