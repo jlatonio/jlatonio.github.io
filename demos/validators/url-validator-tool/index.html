@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0" />
+    <title>JL URL Validator</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/acs-fullscreen.css" />
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+  </head>
+  <body>
+    <form>
+      <div class="outer-container">
+        <div id="sticky-anchor">
+          <div class="header-container hero-crumbs">
+            <h3>CDAM URL Validator</h3>
+            <iframe srcdoc="Image Data" class="inspect-url" scrolling="no" frameborder="0" src=""></iframe>
+            <div class="add-html-container">
+              <div class="column-container-header-feature">
+                <p class="error-count-container">Broken Images: <span class="image-error-count">0</span>/<span class="image-total-count">0</span>
+                </p>
+              </div>
+              <div class="column-container-header-feature">
+                <p class="error-count-container">Broken Video: <span class="video-error-count">0</span>/<span class="video-total-count">0</span>
+                </p>
+              </div>
+              <div class="column-container-header-feature">
+                <p class="error-count-container">Total: <span class="total-error-count">0</span>/<span class="total-count">0</span>
+                </p>
+              </div>
+              <div class="column-container-header-feature">
+                <input class="add-html-form" type="text" placeholder="Add HTML here then click GO" />
+              </div>
+              <div class="column-container-header-feature">
+                <div class="add-html-go">GO</div>
+                <div class="add-html-reset">Reset</div>
+              </div>
+              <div class="column-container-header-feature">
+                <div class="view-report">Report View</div>
+                <div class="close-report">Grid View</div>
+              </div>
+              <div class="column-container-header-feature">
+                <a class="column-tools-header-each" id="view-fullscreen">
+                  <img class="column-tools-header-icon" src="images/fullscreen-icon.svg" alt="" />
+                </a>
+                <a class="column-tools-header-each" id="cancel-fullscreen">
+                  <img class="column-tools-header-icon" src="images/fullscreen-icon-exit.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="add-html-here"></div>
+        <div class="broken-image-urls-container">
+          <div class="broken-image-urls"></div>
+        </div>
+      </div>
+    </form>
+    <script src="js/file.js"></script>
+    <script src="js/acs-fullscreen.js"></script>
+  </body>
+</html>

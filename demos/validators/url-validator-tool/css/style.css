@@ -1,0 +1,454 @@
+.add-html-container {
+  position: absolute;
+  top: 13px;
+  right: 30px;
+  width: 90%;
+  text-align: right;
+}
+
+.add-html-form {
+  width: 280px;
+  height: 29px;
+  background-color: #000;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  display: inline-flex;
+  padding-right: 9px;
+}
+
+.column-container-header-feature {
+  display: inline-flex;
+  vertical-align: top;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.error-count-container {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.column-container-header-feature p {
+  font-size: 14px;
+}
+
+.column-container-header-feature:nth-child(1) {
+  color: #eee;
+  margin-left: 20px;
+}
+
+.column-container-header-feature:nth-child(2) {
+  color: #eee;
+  margin-left: 20px;
+}
+
+.column-container-header-feature:nth-child(3) {
+  color: #eee;
+  margin-left: 20px;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.column-container-header-feature:nth-child(4) {
+  border-bottom: 1.5px solid;
+  border-color: #eee;
+}
+
+.column-container-header-feature:nth-child(5) {
+  border: 1.5px solid;
+  border-color: #eee;
+  margin-left: -5px;
+}
+
+.column-container-header-feature:nth-child(6) {
+  border: 1.5px solid;
+  border-color: #eee;
+  margin-left: 20px;
+}
+
+.column-container-header-feature:last-child {
+  margin-left: 18px;
+}
+
+.column-tools-header-each {
+  position: relative;
+  height: 30px;
+  padding: 2px;
+}
+
+.column-tools-header-icon {
+  width: 26px;
+  height: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 0.4;
+}
+
+.column-tools-header-icon:hover {
+  opacity: 1;
+}
+
+.add-html-go {
+  height: 28px;
+  right: 0;
+  width: 60px;
+  z-index: 3;
+  background-color: #000;
+  color: #000;
+  text-align: center;
+  padding: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.add-html-go:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+.add-html-go:active {
+  background-color: #eee;
+  color: #000;
+}
+
+.add-html-reset {
+  height: 28px;
+  top: 0;
+  right: 0;
+  width: 60px;
+  z-index: 4;
+  background-color: #000;
+  color: #000;
+  text-align: center;
+  padding: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.add-html-reset:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+.add-html-reset:active {
+  background-color: #eee;
+  color: #000;
+}
+
+.view-report {
+  height: 28px;
+  background-color: #000;
+  top: 0;
+  right: 0;
+  width: 110px;
+  text-align: center;
+  padding: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.view-report:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.view-report:active {
+  background-color: #fff;
+  color: #000;
+}
+
+.close-report {
+  position: absolute;
+  height: 28px;
+  background-color: #000;
+  top: 0;
+  right: 0;
+  width: 110px;
+  text-align: center;
+  padding: 6px;
+  color: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+  z-index: 3;
+  font-size: 12px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.close-report:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.close-report:active {
+  background-color: #fff;
+  color: #000;
+}
+
+.add-html-here {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.inspect-url {
+  width: 100%;
+  height: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #fff;
+  border-left: 2.5px solid;
+  border-bottom: 2.5px solid;
+  border-right: 2.5px solid;
+  border-color: #000;
+}
+
+.inspect-container {
+  width: 100%;
+  height: 120px;
+  padding: 20px;
+}
+
+.inspect-preset-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: -48px;
+  right: 47px;
+  z-index: 1;
+  text-align: center;
+  font-size: 9px;
+  background-size: 40px 40px;
+  background-position: cover;
+  background-color: #444;
+  color: #fff;
+  padding: 7px 3px 3px 3px;
+  vertical-align: text-bottom;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.inspect-preset-icon:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.inspect-preset-icon::after {
+  content: "Inspect Preset";
+}
+
+.inspect-video-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: -48px;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+  font-size: 9px;
+  background-size: 40px 40px;
+  background-position: cover;
+  background-color: #444;
+  color: #fff;
+  padding: 7px 3px 3px 3px;
+  vertical-align: text-bottom;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.inspect-video-icon:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.inspect-video-icon::after {
+  content: "Inspect URL";
+}
+
+.inspect-url-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: -48px;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+  font-size: 9px;
+  background-size: 40px 40px;
+  background-position: cover;
+  background-color: #444;
+  color: #fff;
+  padding: 7px 3px 3px 3px;
+  vertical-align: text-bottom;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.inspect-url-icon:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.inspect-url-icon::after {
+  content: "Inspect URL";
+}
+
+.img-container,
+.video-container {
+  width: 280px;
+  height: 280px;
+  display: inline-flex;
+  position: relative;
+  background-color: #eee;
+  margin: 0 10px 85px 10px;
+  background-image: url(../images/transparency.svg);
+  border-image-repeat: repeat;
+  background-size: 120px auto;
+  box-shadow: 0 0 8px #777;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  text-align: left;
+}
+
+.img-container-image {
+}
+
+.img-container-image:hover {
+}
+
+.img-container p {
+  position: absolute;
+  display: block;
+  height: 20px;
+  bottom: -45px;
+  left: 0;
+  padding: 1px 93px 1px 5px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.video-container p {
+  position: absolute;
+  display: block;
+  height: 20px;
+  bottom: -45px;
+  left: 0;
+  padding: 1px 93px 1px 5px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.img-container-error::after {
+  position: absolute;
+  background-color: red;
+  top: -8px;
+  left: -5px;
+  content: "Broken Image URL";
+  padding: 2px 10px;
+}
+
+.video-container-error::after {
+  position: absolute;
+  background-color: red;
+  top: -8px;
+  left: -5px;
+  content: "Broken Video URL";
+  padding: 2px 10px;
+}
+
+.outer-container {
+  padding: 20px;
+}
+
+.header-container {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.broken-image-urls-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 2px solid;
+  border-color: #777;
+}
+
+.broken-image-urls {
+  margin-bottom: 10px;
+  margin-left: -20px;
+  font-weight: bold;
+}
+
+.broken-image-urls li {
+}
+
+.header-container h3 {
+  background-color: #000;
+  padding: 10px 30px 10px 30px;
+  color: #ffffff;
+  text-align: left;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sticky {
+  position: relative;
+}
+
+.stick {
+  position: fixed;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  z-index: 99;
+  -webkit-transition: background-color 0.25s ease-in;
+  -moz-transition: background-color 0.25s ease-in;
+  -o-transition: background-color 0.25s ease-in;
+  transition: background-color 0.25s ease-in;
+}
+
+@media screen and (min-width: 701px) {
+}
+
+@media screen and (min-width: 1025px) {
+}
