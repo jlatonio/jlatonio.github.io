@@ -19,11 +19,10 @@
 
 .column-container-header-feature {
   display: inline-flex;
-  vertical-align: top;
+  vertical-align: middle;
   position: relative;
   align-items: center;
   justify-content: center;
-  height: 30px;
 }
 
 .error-count-container {
@@ -38,9 +37,13 @@
   font-size: 14px;
 }
 
+.column-container-header-feature span {
+  font-size: 14px;
+  font-family: OpenSans-Bold;
+}
+
 .column-container-header-feature:nth-child(1) {
   color: #eee;
-  margin-left: 20px;
 }
 
 .column-container-header-feature:nth-child(2) {
@@ -51,13 +54,13 @@
 .column-container-header-feature:nth-child(3) {
   color: #eee;
   margin-left: 20px;
-  padding-right: 10px;
-  margin-right: 10px;
 }
 
 .column-container-header-feature:nth-child(4) {
   border-bottom: 1.5px solid;
-  border-color: #eee;
+  border-color: #eee;  
+  padding-right: 40px;
+  margin-left: 50px;
 }
 
 .column-container-header-feature:nth-child(5) {
@@ -69,17 +72,17 @@
 .column-container-header-feature:nth-child(6) {
   border: 1.5px solid;
   border-color: #eee;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .column-container-header-feature:nth-child(7) {
   border: 1.5px solid;
   border-color: #eee;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .column-container-header-feature:last-child {
-  margin-left: 18px;
+  margin-left: 8px;
 }
 
 .column-tools-header-each {
@@ -98,14 +101,14 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .column-tools-header-icon:hover {
   opacity: 1;
 }
 
-.add-html-go,.add-html-clear {
+.add-html-go {
   height: 28px;
   right: 0;
   width: 60px;
@@ -120,6 +123,31 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+}
+
+.add-html-clear {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  height: 28px;
+  width: 50px;
+  z-index: 3;
+  background-color: #000;
+  color: #000;
+  text-align: center;
+  padding: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: OpenSans-Bold;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  opacity: 0.5;
+}
+
+.add-html-clear:hover {
+  opacity: 1;
 }
 
 .add-html-go:hover {
@@ -298,6 +326,10 @@
 
 .inspect-video-icon::after {
   content: "Inspect URL";
+}
+
+.broken-image-urls-container li{
+  overflow-wrap: break-word;
 }
 
 .inspect-url-icon {
