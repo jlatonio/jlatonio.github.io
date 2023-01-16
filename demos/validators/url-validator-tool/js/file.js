@@ -19,6 +19,7 @@ $(document).ready(function() {
 		return false;
 	}
 
+    // Sticky nav
 	$(function() {
 		$(window).scroll(sticky_relocate);
 		sticky_relocate();
@@ -51,6 +52,13 @@ $(document).ready(function() {
 				function asc_sort(a, b) {
 					return ($(b).text()) < ($(a).text()) ? 1 : -1;
 				}
+                
+				// image error counter
+				var imgErrors = $('.img-container-error').length;
+				var totalImg = $('.img-container-image').length;
+				$(".image-error-count").text(imgErrors);
+                $(".image-total-count").text(totalImg);
+                
 				return false;
 			});
 		});
@@ -71,7 +79,18 @@ $(document).ready(function() {
 					return ($(b).text()) < ($(a).text()) ? 1 : -1;
 				}
 
-				// error counter
+				// video error counter
+				var vidErrors = $('.video-container-error').length;
+                var totalVid = $('.video-container-image').length;
+				$(".video-error-count").text(vidErrors);
+                $(".video-total-count").text(totalVid);
+                
+				return false;
+			});
+		});
+
+		$(function() {
+                // total error counter
 				var imgErrors = $('.img-container-error').length;
 				var vidErrors = $('.video-container-error').length;
 				var totalImg = $('.img-container-image').length;
@@ -87,11 +106,8 @@ $(document).ready(function() {
 
 				$(".total-error-count").text(numErrors);
 				$(".total-count").text(numItems);
-				return false;
-			});
-		});
-
-		$(function() {
+            
+            // Inspect URL feature 
 			$(".inspect-url-icon").on("click", function() {
 				"use strict";
 				$(".inspect-url").removeAttr("srcdoc");
