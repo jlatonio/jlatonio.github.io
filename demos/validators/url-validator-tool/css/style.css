@@ -39,7 +39,7 @@
 
 .column-container-header-feature span {
   font-size: 14px;
-  font-family: OpenSans-Bold;
+  font-family: OpenSans-Semibold;
 }
 
 .column-container-header-feature:nth-child(1) {
