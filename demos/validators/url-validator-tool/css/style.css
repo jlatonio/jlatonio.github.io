@@ -445,6 +445,8 @@
   background-color: #fff;
   border: 2px solid;
   border-color: #777;
+  font-family: monospace;
+  font-size: 15px;
 }
 
 .broken-image-urls {
