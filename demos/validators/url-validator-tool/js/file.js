@@ -1,8 +1,8 @@
 $(document).ready(function() {
-	$(".add-html-here").show();
+    $(".add-html-clear").hide();
 	$(".broken-image-urls-container").hide();
 	$(".close-report").hide();
-	$(".add-html-reset").hide();
+
 
 	// Sticky nav
 	function sticky_relocate() {
@@ -30,11 +30,13 @@ $(document).ready(function() {
 		"use strict";
 
 		var find_html = $(".add-html-form").val();
-		$(this).hide();
+        $(this).hide();
+        $(".add-html-clear").show();
+        $(".view-report").show();
+        $(".close-report").hide();
 		$(".broken-image-urls-container").hide();
 		$(".add-html-here").html(find_html);
 		$(".add-html-here,.inspect-url").fadeIn(2000, "swing");
-		$(".add-html-reset").show();
 
 		// List all broken URLs in an ordered list
 		$(".img-container-image").each(function() {
@@ -68,21 +70,11 @@ $(document).ready(function() {
 			$(this).error(function() {
 				$(this).closest(".video-container").addClass("video-container-error");
 
-				var imgErrors = $('.img-container-error').length;
-				var vidErrors = $('.video-container-error').length;
-				var totalImg = $('.img-container-image').length;
-				var totalVid = $('.video-container-image').length;
-				var numErrors = imgErrors + vidErrors;
-				var numItems = totalImg + totalVid;
-
-				$(".image-error-count").text(imgErrors);
-				$(".image-total-count").text(totalImg);
-
-				$(".video-error-count").text(vidErrors);
-				$(".video-total-count").text(totalVid);
-
-				$(".total-error-count").text(numErrors);
-				$(".total-count").text(numItems);
+				var label_image = $(this).closest(".video-container").find(".image-label").text();
+				var broken_url = $(this).closest(".video-container").find(".video-container-image source").attr("src");
+				$('.broken-image-urls').text('Broken URL Report:');
+				$('.broken-image-urls').after('<li>' + label_image + ' - ' + broken_url);
+				$(".broken-image-urls-container li").sort(asc_sort).appendTo('.broken-image-urls-container');
 
 				// accending sort
 				function asc_sort(a, b) {
@@ -179,14 +171,25 @@ $(document).ready(function() {
 				return false;
 			});
 
+			$(".add-html-clear").click(function() {
+				"use strict";
+                $(this).hide();
+                $(".add-html-go").show();
+				$(".add-html-form").val('');
+				$(".add-html-form").focus();
+				return false;
+			});        
+            
 			$(".add-html-reset").click(function() {
 				"use strict";
-				$(this).hide();
+                $(".add-html-clear").hide();
+                $(".add-html-go").show();
+                $(".view-report").show();
+                $(".close-report").hide();
 				$(".add-html-form").val('');
 				$(".add-html-here").empty();
 				$(".broken-image-urls-container li").remove();
 				$(".add-html-form").focus();
-				$(".add-html-go").show();
 
 				$(".image-error-count").text("0");
 				$(".image-total-count").text("0");
@@ -200,8 +203,8 @@ $(document).ready(function() {
 			});
 
 			$('.add-html-form').click(function() {
-				$(".add-html-reset").hide();
-				$(".add-html-go").show();
+
+
 				return false;
 			});
 
