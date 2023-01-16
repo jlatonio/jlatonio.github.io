@@ -18,6 +18,7 @@ article, aside, details, figcaption, figure, footer, header, menu, nav, section 
 html {
   box-sizing: border-box;
   background-color: transparent;
+  font-family: OpenSans-Regular;
 }
 
 body {
@@ -25,7 +26,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "OpenSans-Regular", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+  font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   line-height: 1.4;
   overflow-x: hidden;
   overflow-y: scroll;

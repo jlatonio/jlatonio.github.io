@@ -25,10 +25,12 @@ $(document).ready(function() {
 		if (window_top > div_top) {
 			$('.hero-crumbs').addClass('stick');
 			$('.hero-crumbs').removeClass('sticky');
+            $('.inspect-url').css("margin-top","0");
 		}
 		if (window_top < div_top) {
 			$('.hero-crumbs').addClass('sticky');
 			$('.hero-crumbs').removeClass('stick');
+            $('.inspect-url').css("margin-top","20px");
 		}
 		return false;
 	}
@@ -75,9 +77,20 @@ $(document).ready(function() {
 
 				// image error counter
 				var imgErrors = $('.img-container-error').length;
+				var vidErrors = $('.video-container-error').length;
 				var totalImg = $('.img-container-image').length;
+				var totalVid = $('.video-container-image').length;
+				var numErrors = imgErrors + vidErrors;
+				var numItems = totalImg + totalVid;
+
 				$(".image-error-count").text(imgErrors);
 				$(".image-total-count").text(totalImg);
+
+				$(".video-error-count").text(vidErrors);
+				$(".video-total-count").text(totalVid);
+
+				$(".total-error-count").text(numErrors);
+				$(".total-count").text(numItems);
 
 				return false;
 			});
@@ -121,16 +134,6 @@ $(document).ready(function() {
 			});
 		});
 
-		// removes duplicates 
-		var seen = {};
-		$(".broken-image-urls-container li").each(function() {
-			var txt = $(this).text();
-			if (seen[txt])
-				$(this).remove();
-			else
-				seen[txt] = true;
-		});
-
 		$(function() {
 			// total error counter
 			var imgErrors = $('.img-container-error').length;
@@ -149,6 +152,16 @@ $(document).ready(function() {
 			$(".total-error-count").text(numErrors);
 			$(".total-count").text(numItems);
 
+            // removes duplicates 
+            var seen = {};
+            $(".broken-image-urls-container li").each(function() {
+                var txt = $(this).text();
+                if (seen[txt])
+                    $(this).remove();
+                else
+                    seen[txt] = true;
+            });
+            
 			// Inspect URL feature 
 			$(".inspect-url-icon").on("click", function() {
 				"use strict";
@@ -220,6 +233,10 @@ $(document).ready(function() {
 
 				$(".total-error-count").text("0");
 				$(".total-count").text("0");
+                
+                var inspect_reset = "<p><b>Asset Data</b></p>";
+				$(".inspect-url").attr("srcdoc", inspect_reset);
+
 				return false;
 			});
 		});
