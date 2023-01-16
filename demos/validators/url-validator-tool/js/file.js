@@ -203,7 +203,8 @@ $(document).ready(function() {
 			$(".add-html-reset").click(function() {
 				"use strict";
 				$(".add-html-clear").hide();
-
+				$(".add-html-here,.inspect-url").slideDown();
+				$(".broken-image-urls-container").slideUp();
 				$(".view-report").show();
 				$(".close-report").hide();
 				$(".add-html-form").val('');
