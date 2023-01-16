@@ -68,11 +68,21 @@ $(document).ready(function() {
 			$(this).error(function() {
 				$(this).closest(".video-container").addClass("video-container-error");
 
-				var label_image = $(this).closest(".video-container").find(".image-label").text();
-				var broken_url = $(this).closest(".video-container").find(".video-container-image source").attr("src");
-				$('.broken-image-urls').text('Broken URL Report:');
-				$('.broken-image-urls').after('<li>' + label_image + ' - ' + broken_url);
-				$(".broken-image-urls-container li").sort(asc_sort).appendTo('.broken-image-urls-container');
+				var imgErrors = $('.img-container-error').length;
+				var vidErrors = $('.video-container-error').length;
+				var totalImg = $('.img-container-image').length;
+				var totalVid = $('.video-container-image').length;
+				var numErrors = imgErrors + vidErrors;
+				var numItems = totalImg + totalVid;
+
+				$(".image-error-count").text(imgErrors);
+				$(".image-total-count").text(totalImg);
+
+				$(".video-error-count").text(vidErrors);
+				$(".video-total-count").text(totalVid);
+
+				$(".total-error-count").text(numErrors);
+				$(".total-count").text(numItems);
 
 				// accending sort
 				function asc_sort(a, b) {
@@ -80,10 +90,21 @@ $(document).ready(function() {
 				}
 
 				// video error counter
+				var imgErrors = $('.img-container-error').length;
 				var vidErrors = $('.video-container-error').length;
-                var totalVid = $('.video-container-image').length;
+				var totalImg = $('.img-container-image').length;
+				var totalVid = $('.video-container-image').length;
+				var numErrors = imgErrors + vidErrors;
+				var numItems = totalImg + totalVid;
+
+				$(".image-error-count").text(imgErrors);
+				$(".image-total-count").text(totalImg);
+
 				$(".video-error-count").text(vidErrors);
-                $(".video-total-count").text(totalVid);
+				$(".video-total-count").text(totalVid);
+
+				$(".total-error-count").text(numErrors);
+				$(".total-count").text(numItems);
                 
 				return false;
 			});
