@@ -69,21 +69,22 @@
 
 .column-container-header-feature:nth-child(1) {
   border-left: 2px #ddd solid;
-  padding-left: 30px;
+  width: 140px;
   color: #eee;
   background-color: #000;
 }
 
 .column-container-header-feature:nth-child(2) {
+  border-left: 2px #ddd solid;
   color: #eee;
-  padding-left: 30px;
+  width: 140px;
   background-color: #000;
 }
 
 .column-container-header-feature:nth-child(3) {
+  border-left: 2px #ddd solid;
   color: #eee;
-  padding-left: 30px;
-  padding-right: 30px;
+  width: 140px;
   background-color: #000;
 }
 
@@ -238,7 +239,7 @@
   background-color: #000;
   top: 0;
   right: 0;
-  width: 110px;
+  width: 140px;
   text-align: center;
   padding: 6px;
   color: #fff;
