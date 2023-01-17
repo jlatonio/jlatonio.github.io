@@ -25,12 +25,12 @@ $(document).ready(function() {
 		if (window_top > div_top) {
 			$('.hero-crumbs').addClass('stick');
 			$('.hero-crumbs').removeClass('sticky');
-            $('.inspect-url').css("margin-top","0");  
+			$('.inspect-url').css("margin-top", "0");
 		}
 		if (window_top < div_top) {
 			$('.hero-crumbs').addClass('sticky');
 			$('.hero-crumbs').removeClass('stick');
-            $('.inspect-url').css("margin-top","20px");     
+			$('.inspect-url').css("margin-top", "20px");
 		}
 		return false;
 	}
@@ -41,12 +41,12 @@ $(document).ready(function() {
 	});
 
 	// iframe styling
-    var frame = $('#inspect-url-frame');
-    frame.load(function () {
-        frame.contents().find('body').css('font-family', 'monospace');
-        frame.contents().find('body').css('font-size', '14px');
-    });  
-    
+	var frame = $('#inspect-url-frame');
+	frame.load(function() {
+		frame.contents().find('body').css('font-family', 'monospace');
+		frame.contents().find('body').css('font-size', '14px');
+	});
+
 	// adds HTML
 	$(".add-html-go").on("click", function() {
 		"use strict";
@@ -152,16 +152,16 @@ $(document).ready(function() {
 			$(".total-error-count").text(numErrors);
 			$(".total-count").text(numItems);
 
-            // removes duplicates 
-            var seen = {};
-            $(".broken-image-urls-container li").each(function() {
-                var txt = $(this).text();
-                if (seen[txt])
-                    $(this).remove();
-                else
-                    seen[txt] = true;
-            });
-            
+			// removes duplicates 
+			var seen = {};
+			$(".broken-image-urls-container li").each(function() {
+				var txt = $(this).text();
+				if (seen[txt])
+					$(this).remove();
+				else
+					seen[txt] = true;
+			});
+
 			// Inspect URL feature 
 			$(".inspect-url-icon").on("click", function() {
 				"use strict";
@@ -193,6 +193,7 @@ $(document).ready(function() {
 			// Report feature
 			$(".view-report").click(function() {
 				"use strict";
+				$(this).hide();
 				$(".close-report").show();
 				$(".add-html-here,.inspect-url").hide();
 				$(".broken-image-urls-container").show();
@@ -233,8 +234,8 @@ $(document).ready(function() {
 
 				$(".total-error-count").text("0");
 				$(".total-count").text("0");
-                
-                var inspect_reset = "<p><b>Asset Data</b></p>";
+
+				var inspect_reset = "<p><b>Asset Data</b></p>";
 				$(".inspect-url").attr("srcdoc", inspect_reset);
 
 				return false;
