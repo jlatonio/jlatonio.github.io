@@ -2,7 +2,8 @@ $(document).ready(function() {
 	$(".add-html-clear").hide();
 	$(".broken-image-urls-container").hide();
 	$(".close-report").hide();
-
+    $(".add-html-form").focus();
+    
 	$(".add-html-form").on("keyup focus", function() {
 		if ($(this).val().length > 1) {
 			$(".add-html-clear").show();
