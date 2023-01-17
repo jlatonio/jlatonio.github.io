@@ -44,7 +44,7 @@ $(document).ready(function() {
     var frame = $('#inspect-url-frame');
     frame.load(function () {
         frame.contents().find('body').css('font-family', 'monospace');
-        frame.contents().find('body').css('font-size', '15px');
+        frame.contents().find('body').css('font-size', '14px');
     });  
     
 	// adds HTML
