@@ -25,12 +25,12 @@ $(document).ready(function() {
 		if (window_top > div_top) {
 			$('.hero-crumbs').addClass('stick');
 			$('.hero-crumbs').removeClass('sticky');
-            $('.inspect-url').css("margin-top","0");
+            $('.inspect-url').css("margin-top","0");  
 		}
 		if (window_top < div_top) {
 			$('.hero-crumbs').addClass('sticky');
 			$('.hero-crumbs').removeClass('stick');
-            $('.inspect-url').css("margin-top","20px");
+            $('.inspect-url').css("margin-top","20px");     
 		}
 		return false;
 	}
