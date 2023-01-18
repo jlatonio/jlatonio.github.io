@@ -27,11 +27,15 @@ $(document).ready(function() {
 			$('.hero-crumbs').addClass('stick');
 			$('.hero-crumbs').removeClass('sticky');
 			$('.inspect-url').css("margin-top", "0");
+            $('.add-html-here').css("margin-top", "195px");
+            $('.broken-image-urls-container').css("margin-top", "70px");
 		}
 		if (window_top < div_top) {
 			$('.hero-crumbs').addClass('sticky');
 			$('.hero-crumbs').removeClass('stick');
 			$('.inspect-url').css("margin-top", "20px");
+            $('.add-html-here').css("margin-top", "10px");
+            $('.broken-image-urls-container').css("margin-top", "0");
 		}
 		return false;
 	}
