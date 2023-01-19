@@ -240,7 +240,7 @@ $(document).ready(function() {
 				$(".total-error-count").text("0");
 				$(".total-count").text("0");
 
-				var inspect_reset = "<p><b>Asset Data</b></p>";
+				var inspect_reset = "<p><b>Asset URL Data</b></p>";
 				$(".inspect-url").attr("srcdoc", inspect_reset);
 
 				return false;
