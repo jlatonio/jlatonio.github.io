@@ -7,16 +7,27 @@
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/title.css" />
     <link rel="stylesheet" href="css/captions.css" />
-    <script src="js/jquery-1.12.4.js"></script>
-    <script src="js/video.js"></script>
+        <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/dm-video.js"></script>
+
+      <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+      <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+        <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+    
+
   </head>
   <body>
     <div class="video-container">  
-        <video controls width="620" height="auto" crossorigin="anonymous">
-        <source id="videosrc" data-title="dynamicvideo-sample.mp4" src="https://s7d1.scene7.com/is/content/S7train/dynamicvideo-sample" type="video/mp4">
-        <track src="https://s7d1.scene7.com/is/content/S7train/Joseph/vtt/sample.vtt" kind="captions" srclang="en" label="Demo" default>
+        <video id='hls-example'  class="video-js vjs-fluid vjs-default-skin" controls width="620" height="auto" crossorigin="anonymous">
+        <source id="videosrc" data-title="" src="https://assets.verizon.com/is/content/verizondev/HowToGetAppleOne.m3u8" type="application/x-mpegURL">
+        <track src="https://assets.verizon.com/is/content/verizondev/verizon%2Dtest/mva%2Ddemo/video/caption%2Ddemo%2Dstatic.vtt" kind="captions" srclang="en" label="Demo" default>
         </video>
         <div class="video-title"><p></p></div>
     </div>
+    <script>
+    var player = videojs('hls-example');
+    player.play();
+    </script>
   </body>
 </html>
