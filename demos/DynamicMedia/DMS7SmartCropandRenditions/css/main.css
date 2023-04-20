@@ -69,3 +69,21 @@ label {
   height: 100%;
   object-fit: cover;
 }
+
+.video-button{ 
+    font-family: "OpenSans-Regular";
+    font-size: 11px;
+    display: block;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding:2px 5px;
+    margin-bottom: 5px;
+    color: #000000;
+    background-color: #ffffff;
+    cursor:pointer;
+}
+
+.video-button:hover{ 
+    color: #ffffff;
+    background-color: #000;
+}
