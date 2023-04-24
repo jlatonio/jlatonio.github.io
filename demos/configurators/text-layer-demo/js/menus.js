@@ -33,7 +33,7 @@ $(".store-clear").on("click", function() {
  $(".s7font2").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(3)").click();
  $(".s7color2").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(4)").click();
  $(".s7heading").val("Guided Hikes");
- $(".s7subheader").val("Best of 2021");
+ $(".s7subheader").val("Best of 2023");
  $(".store-continue").trigger("click");
   $("input[type='text'], input[type='number']").each(function() {
     var option = $(this).val();
