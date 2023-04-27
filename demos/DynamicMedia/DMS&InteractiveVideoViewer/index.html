@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Interactive Video Viewer Example</title>
+
+<style type="text/css">
+    
+	body{
+		 margin:0;
+	}
+    *{
+		 object-fit: contain;
+	}
+    
+	#s7interactivevideo_div.s7interactivevideoviewer{
+		 width:100%; 
+		 height:100vh;
+ 
+	}
+</style>
+</head>
+<body>
+ 
+
+<script type="text/javascript" src="http://verizon-o.scene7.com/s7viewers/html5/js/InteractiveVideoViewer.js"></script>
+<div id="s7interactivevideo_div" class="shoppable_video_dark"></div>
+<script type="text/javascript">
+	var s7interactivevideoviewer = new s7viewers.InteractiveVideoViewer({
+		"containerId" : "s7interactivevideo_div",
+		"params" : { 
+			"serverurl" : "https://verizon-o.scene7.com/is/image/",
+			"contenturl" : "https://verizon-o.scene7.com/is/content/", 
+			"config" : "verizondev/Shoppable_Video_Dark",
+			"interactivedata": "verizondev/segment-demo",
+			"VideoPlayer.contenturl": "https://verizon-o.scene7.com/is/content/",
+			"videoserverurl": "https://verizon-o.scene7.com/is/content",
+			"asset" : "verizondev/PostHoliday_DroidMaxx_demo-AVS" }
+	})
+	/* // Example of interactive video event for quick view.
+		 s7interactivevideoviewer.setHandlers({ 
+			"quickViewActivate": function(inData) {
+ 				var sku=inData.sku; //SKU for product ID
+				//To pass other parameter from the hotspot, you will need to add custom parameter during the hotspot setup as parameterName=value
+				loadQuickView(sku); //Replace this call with your quickview plugin
+				//Please refer to your quickviewer plugin for the quickview call
+			 }, 
+"initComplete":function() { 
+				//--- Attach quickview popup to viewer container so popup will work in fullscreen mode ---
+				var popup = document.getElementById("quickview_div"); // get custom quick view container
+				popup.parentNode.removeChild(popup); // remove it from current DOM
+				var sdkContainerId = s7interactivevideoviewer.getComponent("container").getInnerContainerId(); // get viewer container component
+				var inner_container = document.getElementById(sdkContainerId); 
+				inner_container.appendChild(popup); //Attach custom quick view container to viewer
+			 } 
+		 });
+	*/
+
+s7interactivevideoviewer.init(); 
+</script>
+
+</body>
+</html>
