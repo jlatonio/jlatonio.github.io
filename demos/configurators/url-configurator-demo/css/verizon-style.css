@@ -666,6 +666,14 @@
   background-image: url("../images/check2.svg");
 }
 
+#guides-triple-unchecked {
+  background-image: url("../images/check1.svg");
+}
+
+#guides-triple-checked {
+  background-image: url("../images/check2.svg");
+}
+
 #guides-accessories-unchecked {
   background-image: url("../images/check1.svg");
 }
