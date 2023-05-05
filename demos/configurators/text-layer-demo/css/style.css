@@ -1,3 +1,10 @@
+.readonly {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .notes-container {
   width: 100%;
   height: auto;
