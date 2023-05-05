@@ -141,7 +141,7 @@ $(".preset-name").on("keyup change", function() {
 	return false;
 });
 
-$(".preset-name").on("blur", function() {
+$(".preset-name").on("focus", function() {
 	if ($(this).val().length < 1) {
 		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
 			"background-color": "",
