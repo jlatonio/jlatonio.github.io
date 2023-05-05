@@ -869,11 +869,11 @@ $("#original-guides-unchecked").click(function() {
    $("#shadow-checked").click();
 	$("#original-guides-unchecked").hide();
 	$("#original-guides-checked").show();
-	var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
-	var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
-	var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
-	var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
-	var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + "?&scl=1&fmt=jpg";
+	var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val();
+	var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val();
+	var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val();
+	var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val();
+	var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val();
 	$(".testurl_preview1").attr('src', assetprev1);
 	$(".testurl_preview2").attr('src', assetprev2);
 	$(".testurl_preview3").attr('src', assetprev3);
