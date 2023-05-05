@@ -141,7 +141,7 @@ $(".preset-name").on("keyup change", function() {
 	return false;
 });
 
-$(".image-add-specs").on("blur", function() {
+$(".preset-name").on("blur", function() {
 	if ($(this).val().length < 1) {
 		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
 			"background-color": "",
@@ -206,6 +206,14 @@ $(".custom-dropdown-close").on("click", function() {
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-open").show();
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
 	return false;
+});
+
+// menu icon hover
+$(".custom-dropdown-relative").hover(function() {
+  $(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", "1");
+  }, function(){
+  $(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", ".4");
+    return false;
 });
 
 // autofill fields as user types. static html only
