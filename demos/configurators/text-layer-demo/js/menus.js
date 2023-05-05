@@ -230,6 +230,14 @@ $(".custom-dropdown").on("click", function() {
   return false;
 });
 
+// menu icon hover
+$(".custom-dropdown-relative").hover(function() {
+  $(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", "1");
+  }, function(){
+  $(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", ".4");
+    return false;
+});
+
 // Hover effects
 $(window).on("load", function() {
   "use strict";
