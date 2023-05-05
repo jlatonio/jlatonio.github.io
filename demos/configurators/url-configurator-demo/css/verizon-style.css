@@ -51,11 +51,12 @@
 
 .image-add-specs-go {
   position: absolute;
-  padding: 5px 10px;
+  padding: 3px 10px 5px 10px;
   top: 0;
-  right: -5px;
+  right: -50px;
+  margin-right: 30px;
   min-width: 30px;
-  height: 30px;
+  height: 26px;
   background-color: #ccc;
   font-size: 14px;
   font-family: "OpenSans-regular";
@@ -66,7 +67,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border-radius: 0 5px 5px 0;
+  border-radius: 4px 4px;
   border: 0 solid #aaa;
 }
 
@@ -590,6 +591,13 @@
 }
 
 .preset-name {
+  background-color: #ffffff;
+  position: relative;
+  min-height: 26px;
+  word-wrap: anywhere; 
+  overflow-wrap: anywhere; 
+  white-space: break-spaces;
+  margin-right: 30px;
 }
 
 .each-160x600 {
@@ -663,6 +671,14 @@
 }
 
 #guides-double-checked {
+  background-image: url("../images/check2.svg");
+}
+
+#guides-bundle-unchecked {
+  background-image: url("../images/check1.svg");
+}
+
+#guides-bundle-checked {
   background-image: url("../images/check2.svg");
 }
 

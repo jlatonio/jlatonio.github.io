@@ -120,8 +120,9 @@ $(".image-add-specs-clear").on("click", function() {
 		});
 });
 
-$(".image-add-specs").on("keyup change", function() {
-	if ($(this).val().length > 0) {
+
+$(".preset-name").on("keyup change", function() {
+	if ($(this).html().length > 0) {
 		$(this).closest(".image-add-specs-container").find(".image-add-specs-clear").show();
 		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
 			"background-color": "#000",
@@ -273,7 +274,7 @@ $(".custom-dropdown").on("click", function() {
 
 
 	if (preset === "Single Device") {
-		$(".modifier1").text('?wid=600&hei=600&size=474,0&rect=140,0,320,600&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("320px x 1200px");
+		$(".modifier1").text('?wid=1200&hei=1200&size=486,0&rect=440,0,320,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("320px x 1200px");
 		$(".modifier2").text('?wid=600&hei=600&size=0,520&rect=0,50,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 500px");
 		$(".modifier3").text('?wid=1200&hei=1200&size=774,0&rect=300,0,600,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 1200px");
 		$(".modifier4").text('?wid=1456&hei=1456&size=630,0&rect=0,50,1456,180&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
@@ -296,7 +297,7 @@ $(".custom-dropdown").on("click", function() {
 
             var shadowparam = "&layer=1&src=verizondev/" + $(".s7asset").val() + "_sh";
             
-            var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text() + shadowparam + "&size=474,0&blendMode=screen";
+            var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text() + shadowparam + "&size=486,0&blendMode=screen";
             var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text() + shadowparam + "&size=0,520&blendMode=screen";
             var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text() + shadowparam + "&size=774,0&blendMode=screen";
             var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text() + shadowparam + "&size=630,0&blendMode=screen";
@@ -384,18 +385,17 @@ $(".custom-dropdown").on("click", function() {
         });  
         
 	} else if (preset === "Bundle Device") {
-		$(".modifier1").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("260px x 360px");
-		$(".modifier2").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("370px x 290px");
-		$(".modifier3").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("260px x 600px");
-		$(".modifier4").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("240px x 760px");
-		$(".modifier5").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("356px x 312px");
-		$("#css-guides-unchecked,.notes-show-guides").show();
-		$("#css-guides-checked").hide();
-		$(".testurl_preview1").addClass("testurl_preview1_alt");
-		$(".testurl_preview2").addClass("testurl_preview2_alt");
-		$(".testurl_preview3").addClass("testurl_preview3_alt");
-		$(".testurl_preview4").addClass("testurl_preview4_alt");
-		$(".testurl_preview5").addClass("testurl_preview5_alt");
+		$(".modifier1").text('?wid=1200&hei=1200&size=370,0&rect=440,0,320,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("320px x 1200px");
+		$(".modifier2").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 500px");
+		$(".modifier3").text('?wid=1200&hei=1200&size=684,0&rect=300,0,600,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 1200px");
+		$(".modifier4").text('?wid=1456&hei=1456&size=550,0&rect=0,40,1456,180&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
+		$(".modifier5").text('?wid=1940&hei=1940&size=1134,0&rect=0,42,1940,500&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
+		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
+		$(".testurl_preview1").removeClass("testurl_preview1_alt");
+		$(".testurl_preview2").removeClass("testurl_preview2_alt");
+		$(".testurl_preview3").removeClass("testurl_preview3_alt");
+		$(".testurl_preview4").removeClass("testurl_preview4_alt");
+		$(".testurl_preview5").removeClass("testurl_preview5_alt");
         $(".image-add-specs-clear").click();
 		$(".s7asset").val("creative-demo-bundle-ns");
 
@@ -408,11 +408,11 @@ $(".custom-dropdown").on("click", function() {
 
             var shadowparam = "&layer=1&src=verizondev/" + $(".s7asset").val() + "_sh";
             
-            var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text() + shadowparam + "&size=880,0&blendMode=screen";
-            var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text() + shadowparam + "&size=980,0&blendMode=screen";
-            var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text() + shadowparam + "&size=680,0&blendMode=screen";
-            var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text() + shadowparam + "&size=580,0&blendMode=screen";
-            var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text() + shadowparam + "&size=480,0&blendMode=screen";
+            var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text() + shadowparam + "&size=370,0&blendMode=screen";
+            var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text() + shadowparam + "&size=0,520&blendMode=screen";
+            var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text() + shadowparam + "&size=684,0&blendMode=screen";
+            var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text() + shadowparam + "&size=550,0&blendMode=screen";
+            var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text() + shadowparam + "&size=1134,0&blendMode=screen";
             $(".testurl_preview1").attr('src', assetprev1);
             $(".testurl_preview2").attr('src', assetprev2);
             $(".testurl_preview3").attr('src', assetprev3);
@@ -562,6 +562,7 @@ $(document).ready(function() {
 	$("#guides-single-checked").hide();
 	$("#guides-double-checked").hide();
 	$("#guides-triple-checked").hide();
+	$("#guides-bundle-checked").hide();
 	$("#guides-accessories-checked").hide();
 	$("#guides-other-checked").hide();
 	$("#css-guides-checked").hide();
@@ -590,6 +591,7 @@ $("#guides-single-checked").click(function() {
 $("#guides-single-unchecked").click(function() {
 	$("#guides-double-checked").trigger("click");
 	$("#guides-triple-checked").trigger("click");
+	$("#guides-bundle-checked").trigger("click");
 	$("#guides-accessories-checked").trigger("click");
 	$("#guides-other-checked").trigger("click");
 	$("#guides-single-unchecked").hide();
@@ -616,6 +618,7 @@ $("#guides-double-checked").click(function() {
 $("#guides-double-unchecked").click(function() {
 	$("#guides-single-checked").trigger("click");
 	$("#guides-triple-checked").trigger("click");
+	$("#guides-bundle-checked").trigger("click");
 	$("#guides-accessories-checked").trigger("click");
 	$("#guides-other-checked").trigger("click");
 	$("#guides-double-unchecked").hide();
@@ -642,6 +645,7 @@ $("#guides-triple-checked").click(function() {
 $("#guides-triple-unchecked").click(function() {
 	$("#guides-single-checked").trigger("click");
 	$("#guides-double-checked").trigger("click");
+	$("#guides-bundle-checked").trigger("click");
 	$("#guides-accessories-checked").trigger("click");
 	$("#guides-other-checked").trigger("click");
 	$("#guides-triple-unchecked").hide();
@@ -653,6 +657,34 @@ $("#guides-triple-unchecked").click(function() {
 	$(".guide-container5").addClass("guide-container-double-5");
 	return false;
 });
+
+$("#guides-bundle-checked").click(function() {
+	$("#guides-bundle-checked").hide();
+	$("#guides-bundle-unchecked").show();
+	$(".guide-container1").removeClass("guide-container-double-1");
+	$(".guide-container2").removeClass("guide-container-double-2");
+	$(".guide-container3").removeClass("guide-container-double-3");
+	$(".guide-container4").removeClass("guide-container-double-4");
+	$(".guide-container5").removeClass("guide-container-double-5");
+	return false;
+});
+
+$("#guides-bundle-unchecked").click(function() {
+	$("#guides-single-checked").trigger("click");
+	$("#guides-double-checked").trigger("click");
+	$("#guides-triple-checked").trigger("click");
+	$("#guides-accessories-checked").trigger("click");
+	$("#guides-other-checked").trigger("click");
+	$("#guides-bundle-unchecked").hide();
+	$("#guides-bundle-checked").show();
+	$(".guide-container1").addClass("guide-container-double-1");
+	$(".guide-container2").addClass("guide-container-double-2");
+	$(".guide-container3").addClass("guide-container-double-3");
+	$(".guide-container4").addClass("guide-container-double-4");
+	$(".guide-container5").addClass("guide-container-double-5");
+	return false;
+});
+
 
 $("#guides-accessories-checked").click(function() {
 	$("#guides-accessories-checked").hide();
@@ -668,6 +700,8 @@ $("#guides-accessories-checked").click(function() {
 $("#guides-accessories-unchecked").click(function() {
 	$("#guides-single-checked").trigger("click");
 	$("#guides-double-checked").trigger("click");
+	$("#guides-triple-checked").trigger("click");
+	$("#guides-bundle-checked").trigger("click");
 	$("#guides-other-checked").trigger("click");
 	$("#guides-accessories-unchecked").hide();
 	$("#guides-accessories-checked").show();
@@ -693,6 +727,8 @@ $("#guides-other-checked").click(function() {
 $("#guides-other-unchecked").click(function() {
 	$("#guides-single-checked").trigger("click");
 	$("#guides-double-checked").trigger("click");
+	$("#guides-triple-checked").trigger("click");
+	$("#guides-bundle-checked").trigger("click");
 	$("#guides-accessories-checked").trigger("click");
 	$("#guides-other-unchecked").hide();
 	$("#guides-other-checked").show();
