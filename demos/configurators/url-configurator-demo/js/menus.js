@@ -290,11 +290,11 @@ $(".custom-dropdown").on("click", function() {
 				var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
 				var assetfmt = $(this).closest(".each-container-row").find(".asset-format").text();
 
-				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=486,0&blendMode=screen";
-				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520&blendMode=screen";
-				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=774,0&blendMode=screen";
-				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=630,0&blendMode=screen";
-				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1200,0&blendMode=screen";
+				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=486,0";
+				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520";
+				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=774,0";
+				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=630,0";
+				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1200,0";
 
 				$(".asset-shadow-label").show();
 				$(".asset-shadow-01").text(shadowparam1);
@@ -343,11 +343,11 @@ $(".custom-dropdown").on("click", function() {
 				var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
 				var assetfmt = $(this).closest(".each-container-row").find(".asset-format").text();
 
-				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=480,0&blendMode=screen";
-				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520&blendMode=screen";
-				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=886,0&blendMode=screen";
-				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=710,0&blendMode=screen";
-				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1500,0&blendMode=screen";
+				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=480,0";
+				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520";
+				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=886,0";
+				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=710,0";
+				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1500,0";
 
 				$(".asset-shadow-label").show();
 				$(".asset-shadow-01").text(shadowparam1);
@@ -396,11 +396,11 @@ $(".custom-dropdown").on("click", function() {
 				var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
 				var assetfmt = $(this).closest(".each-container-row").find(".asset-format").text();
 
-				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=480,0&blendMode=screen";
-				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520&blendMode=screen";
-				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=886,0&blendMode=screen";
-				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=710,0&blendMode=screen";
-				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1500,0&blendMode=screen";
+				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=480,0";
+				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520";
+				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=886,0";
+				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=710,0";
+				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1500,0";
 
 				$(".asset-shadow-label").show();
 				$(".asset-shadow-01").text(shadowparam1);
@@ -450,11 +450,11 @@ $(".custom-dropdown").on("click", function() {
 				var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
 				var assetfmt = $(this).closest(".each-container-row").find(".asset-format").text();
 
-				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=370,0&blendMode=screen";
-				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520&blendMode=screen";
-				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=684,0&blendMode=screen";
-				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=550,0&blendMode=screen";
-				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1134,0&blendMode=screen";
+				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=370,0";
+				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520";
+				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=684,0";
+				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=550,0";
+				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1134,0";
 
 				$(".asset-shadow-label").show();
 				$(".asset-shadow-01").text(shadowparam1);
