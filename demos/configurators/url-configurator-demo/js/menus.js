@@ -834,7 +834,7 @@ $("#inner-guides-unchecked").click(function() {
 	$(".asset-color-label").show();
 	$(".asset-format-label").hide();
 	$(".asset-color").each(function() {
-		var assetclr = "&bgc=000000";
+		var assetclr = "&bgc=FF0000";
 		var assetshadow = $(this).closest(".asset-specs").find(".asset-shadow").text();
 		var assetfmt = $(this).closest(".asset-specs").find(".asset-format").text();
 		var prevname = $(this).closest(".asset-specs").find(".image-preview-name").text();
