@@ -652,6 +652,16 @@
   height: 250px;
 }
 
+.each-500x500 {
+  width: 500px;
+  height: 500px;
+}
+
+.each-500x500 img {
+  width: 500px;
+  height: 500px;
+}
+
 .checkbox-each {
   min-width: 200px;
   background-size: 50px;
