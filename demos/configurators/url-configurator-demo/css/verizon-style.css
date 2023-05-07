@@ -53,7 +53,7 @@
   position: absolute;
   padding: 3px 10px 5px 10px;
   top: 0;
-  right: -50px;
+  right: -150px;
   margin-right: 30px;
   min-width: 30px;
   height: 26px;
@@ -427,7 +427,7 @@
 }
 
 .asset-specs-each p {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .outer-container {
@@ -463,13 +463,16 @@
   background-color: inherit;
   border-bottom: 2px solid #8f8f8f;
   z-index: 1;
+  min-height: 125px;
+  background-color: #ffffff;
+  padding: 20px 20px 10px 20px;
 }
 
 .asset-specs-each {
   display: inline-flex;
   margin-right: 20px;
 }
-
+ 
 .asset-specs-each:last-child {
   margin-right: 0;
 }
@@ -590,14 +593,13 @@
   padding: 10px;
 }
 
-.preset-name {
-  background-color: #ffffff;
+.preset-name, .asset-shadow, .asset-format, .asset-shadow {
   position: relative;
   min-height: 26px;
   word-wrap: anywhere; 
   overflow-wrap: anywhere; 
   white-space: break-spaces;
-  margin-right: 30px;
+  margin-right: 10px;
 }
 
 .each-160x600 {

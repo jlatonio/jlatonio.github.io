@@ -93,8 +93,8 @@ $(".store-continue").on("click", function() {
 	});
 	$("#inner-guides-checked").hide();
 	$("#inner-guides-unchecked").show();
-    $("#shadow-checked").click();
-    
+	$("#shadow-checked").click();
+
 	$(".generated_url").text("");
 	$(".inspect_url").attr("src", "");
 	$(".inspect_preset").attr("src", "");
@@ -103,51 +103,28 @@ $(".store-continue").on("click", function() {
 });
 
 
-// Additional Queries section: 
+// Update mods section: 
 $(".image-add-specs-clear").hide();
-$(".image-add-specs-go").on("click", function() {
-	$(".store-continue").click();
+$(".image-add-specs-go").each(function() {
+	$(this).on("click", function() {
+		var prevname = $(this).closest(".asset-specs").find(".image-preview-name").text();
+		var prevmods = $(this).closest(".asset-specs").find(".preset-name").text();
+		var prevfmt = $(this).closest(".asset-specs").find(".asset-format").text();
+		$(this).closest(".each-container-row").find(".testp").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods + prevfmt);
+		return false;
+	});
 });
 
-$(".image-add-specs-clear").on("click", function() {
-	$(this).closest(".image-add-specs-container").find(".image-add-specs").val("");
-	$(".store-continue").click();
-	$(this).hide();
-		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
-			"background-color": "",
-			"color": "",
-			"cursor": ""
-		});
-});
+$(".preset-name, .asset-shadow, .asset-color, .asset-format").on("keyup change", function() {
+	var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
+	var assetshadow = $(this).closest(".each-container-row").find(".asset-shadow").text();
+	var assetfmt = $(this).closest(".each-container-row").find(".asset-format").text();
+	var prevname = $(this).closest(".each-container-row").find(".image-preview-name").text();
+	var prevmods = $(this).closest(".each-container-row").find(".preset-name").text();
 
-
-$(".preset-name").on("keyup change", function() {
 	if ($(this).html().length > 0) {
-		$(this).closest(".image-add-specs-container").find(".image-add-specs-clear").show();
-		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
-			"background-color": "#000",
-			"color": "#fff",
-			"cursor": "pointer"
-		});
+		$(this).closest(".each-container-row").find(".testp").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods + assetshadow + assetfmt + assetclr);
 
-	} else {
-		$(this).closest(".image-add-specs-container").find(".image-add-specs-clear").hide();
-		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
-			"background-color": "",
-			"color": "",
-			"cursor": ""
-		});
-	}
-	return false;
-});
-
-$(".preset-name").on("focus", function() {
-	if ($(this).val().length < 1) {
-		$(this).closest(".image-add-specs-container").find('.image-add-specs-go').css({
-			"background-color": "",
-			"color": "",
-			"cursor": ""
-		});
 	}
 	return false;
 });
@@ -210,10 +187,10 @@ $(".custom-dropdown-close").on("click", function() {
 
 // menu icon hover
 $(".custom-dropdown-relative").hover(function() {
-  $(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", "1");
-  }, function(){
-  $(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", ".4");
-    return false;
+	$(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", "1");
+}, function() {
+	$(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", ".4");
+	return false;
 });
 
 // autofill fields as user types. static html only
@@ -293,31 +270,47 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
-        $(".image-add-specs").val("");
+		$(".image-add-specs").val("");
 		$(".s7asset").val("creative-demo-single-ns");
 
-        $("#shadow-unchecked").click(function() {
-            "use strict";
-            $("#shadow-unchecked").hide();
-            $("#shadow-checked").show();
-            $("#original-guides-unchecked").show();
-            $("#original-guides-checked").hide();
+		$("#shadow-unchecked").click(function() {
+			"use strict";
+			$("#shadow-unchecked").hide();
+			$("#shadow-checked").show();
+			$("#original-guides-unchecked").show();
+			$("#original-guides-checked").hide();
 
-            var shadowparam = "&layer=1&src=verizondev/" + $(".s7asset").val() + "_sh";
-            
-            var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text() + shadowparam + "&size=486,0&blendMode=screen";
-            var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text() + shadowparam + "&size=0,520&blendMode=screen";
-            var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text() + shadowparam + "&size=774,0&blendMode=screen";
-            var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text() + shadowparam + "&size=630,0&blendMode=screen";
-            var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text() + shadowparam + "&size=1200,0&blendMode=screen";
-            $(".testurl_preview1").attr('src', assetprev1);
-            $(".testurl_preview2").attr('src', assetprev2);
-            $(".testurl_preview3").attr('src', assetprev3);
-            $(".testurl_preview4").attr('src', assetprev4);
-            $(".testurl_preview5").attr('src', assetprev5);
-            return false;
-        });  
-        
+			$(".asset-shadow").each(function() {
+				var prevname = $(this).closest(".each-container-row").find(".image-preview-name").text();
+				var prevmods1 = $(".asset-shadow-01").closest(".each-container-row").find(".preset-name").text();
+				var prevmods2 = $(".asset-shadow-02").closest(".each-container-row").find(".preset-name").text();
+				var prevmods3 = $(".asset-shadow-03").closest(".each-container-row").find(".preset-name").text();
+				var prevmods4 = $(".asset-shadow-04").closest(".each-container-row").find(".preset-name").text();
+				var prevmods5 = $(".asset-shadow-05").closest(".each-container-row").find(".preset-name").text();
+				var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
+				var assetfmt = $(this).closest(".each-container-row").find(".asset-format").text();
+
+				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=486,0&blendMode=screen";
+				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520&blendMode=screen";
+				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=774,0&blendMode=screen";
+				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=630,0&blendMode=screen";
+				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1200,0&blendMode=screen";
+
+				$(".asset-shadow-label").show();
+				$(".asset-shadow-01").text(shadowparam1);
+				$(".asset-shadow-02").text(shadowparam2);
+				$(".asset-shadow-03").text(shadowparam3);
+				$(".asset-shadow-04").text(shadowparam4);
+				$(".asset-shadow-05").text(shadowparam5);
+
+				$(".testurl_preview1").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods1 + shadowparam1 + assetfmt + assetclr);
+				$(".testurl_preview2").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods2 + shadowparam2 + assetfmt + assetclr);
+				$(".testurl_preview3").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods3 + shadowparam3 + assetfmt + assetclr);
+				$(".testurl_preview4").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods4 + shadowparam4 + assetfmt + assetclr);
+				$(".testurl_preview5").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods5 + shadowparam5 + assetfmt + assetclr);
+			});
+		});
+
 	} else if (preset === "Double Device") {
 		$(".modifier1").text('?wid=1200&hei=1200&size=480,0&rect=440,0,320,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("320px x 1200px");
 		$(".modifier2").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 500px");
@@ -330,31 +323,47 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
-        $(".image-add-specs-clear").click();
+		$(".image-add-specs-clear").click();
 		$(".s7asset").val("creative-demo-double-ns");
 
-        $("#shadow-unchecked").click(function() {
-            "use strict";
-            $("#shadow-unchecked").hide();
-            $("#shadow-checked").show();
-            $("#original-guides-unchecked").show();
-            $("#original-guides-checked").hide();
+		$("#shadow-unchecked").click(function() {
+			"use strict";
+			$("#shadow-unchecked").hide();
+			$("#shadow-checked").show();
+			$("#original-guides-unchecked").show();
+			$("#original-guides-checked").hide();
 
-            var shadowparam = "&layer=1&src=verizondev/" + $(".s7asset").val() + "_sh";
-            
-            var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text() + shadowparam + "&size=480,0&blendMode=screen";
-            var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text() + shadowparam + "&size=0,520&blendMode=screen";
-            var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text() + shadowparam + "&size=886,0&blendMode=screen";
-            var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text() + shadowparam + "&size=710,0&blendMode=screen";
-            var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text() + shadowparam + "&size=1500,0&blendMode=screen";
-            $(".testurl_preview1").attr('src', assetprev1);
-            $(".testurl_preview2").attr('src', assetprev2);
-            $(".testurl_preview3").attr('src', assetprev3);
-            $(".testurl_preview4").attr('src', assetprev4);
-            $(".testurl_preview5").attr('src', assetprev5);
-            return false;
-        });  
-        
+			$(".asset-shadow").each(function() {
+				var prevname = $(this).closest(".each-container-row").find(".image-preview-name").text();
+				var prevmods1 = $(".asset-shadow-01").closest(".each-container-row").find(".preset-name").text();
+				var prevmods2 = $(".asset-shadow-02").closest(".each-container-row").find(".preset-name").text();
+				var prevmods3 = $(".asset-shadow-03").closest(".each-container-row").find(".preset-name").text();
+				var prevmods4 = $(".asset-shadow-04").closest(".each-container-row").find(".preset-name").text();
+				var prevmods5 = $(".asset-shadow-05").closest(".each-container-row").find(".preset-name").text();
+				var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
+				var assetfmt = $(this).closest(".each-container-row").find(".asset-format").text();
+
+				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=480,0&blendMode=screen";
+				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520&blendMode=screen";
+				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=886,0&blendMode=screen";
+				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=710,0&blendMode=screen";
+				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1500,0&blendMode=screen";
+
+				$(".asset-shadow-label").show();
+				$(".asset-shadow-01").text(shadowparam1);
+				$(".asset-shadow-02").text(shadowparam2);
+				$(".asset-shadow-03").text(shadowparam3);
+				$(".asset-shadow-04").text(shadowparam4);
+				$(".asset-shadow-05").text(shadowparam5);
+
+				$(".testurl_preview1").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods1 + shadowparam1 + assetfmt + assetclr);
+				$(".testurl_preview2").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods2 + shadowparam2 + assetfmt + assetclr);
+				$(".testurl_preview3").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods3 + shadowparam3 + assetfmt + assetclr);
+				$(".testurl_preview4").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods4 + shadowparam4 + assetfmt + assetclr);
+				$(".testurl_preview5").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods5 + shadowparam5 + assetfmt + assetclr);
+			});
+		});
+
 	} else if (preset === "Triple Device") {
 		$(".modifier1").text('?wid=1200&hei=1200&size=480,0&rect=440,0,320,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("320px x 1200px");
 		$(".modifier2").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 500px");
@@ -367,31 +376,48 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
-        $(".image-add-specs-clear").click();
+		$(".image-add-specs-clear").click();
 		$(".s7asset").val("creative-demo-triple-ns");
 
-        $("#shadow-unchecked").click(function() {
-            "use strict";
-            $("#shadow-unchecked").hide();
-            $("#shadow-checked").show();
-            $("#original-guides-unchecked").show();
-            $("#original-guides-checked").hide();
+		$("#shadow-unchecked").click(function() {
+			"use strict";
+			$("#shadow-unchecked").hide();
+			$("#shadow-checked").show();
+			$("#original-guides-unchecked").show();
+			$("#original-guides-checked").hide();
 
-            var shadowparam = "&layer=1&src=verizondev/" + $(".s7asset").val() + "_sh";
-            
-            var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text() + shadowparam + "&size=480,0&blendMode=screen";
-            var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text() + shadowparam + "&size=0,520&blendMode=screen";
-            var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text() + shadowparam + "&size=886,0&blendMode=screen";
-            var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text() + shadowparam + "&size=710,0&blendMode=screen";
-            var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text() + shadowparam + "&size=1500,0&blendMode=screen";
-            $(".testurl_preview1").attr('src', assetprev1);
-            $(".testurl_preview2").attr('src', assetprev2);
-            $(".testurl_preview3").attr('src', assetprev3);
-            $(".testurl_preview4").attr('src', assetprev4);
-            $(".testurl_preview5").attr('src', assetprev5);
-            return false;
-        });  
-        
+			$(".asset-shadow").each(function() {
+				var prevname = $(this).closest(".each-container-row").find(".image-preview-name").text();
+				var prevmods1 = $(".asset-shadow-01").closest(".each-container-row").find(".preset-name").text();
+				var prevmods2 = $(".asset-shadow-02").closest(".each-container-row").find(".preset-name").text();
+				var prevmods3 = $(".asset-shadow-03").closest(".each-container-row").find(".preset-name").text();
+				var prevmods4 = $(".asset-shadow-04").closest(".each-container-row").find(".preset-name").text();
+				var prevmods5 = $(".asset-shadow-05").closest(".each-container-row").find(".preset-name").text();
+				var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
+				var assetfmt = $(this).closest(".each-container-row").find(".asset-format").text();
+
+				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=480,0&blendMode=screen";
+				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520&blendMode=screen";
+				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=886,0&blendMode=screen";
+				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=710,0&blendMode=screen";
+				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1500,0&blendMode=screen";
+
+				$(".asset-shadow-label").show();
+				$(".asset-shadow-01").text(shadowparam1);
+				$(".asset-shadow-02").text(shadowparam2);
+				$(".asset-shadow-03").text(shadowparam3);
+				$(".asset-shadow-04").text(shadowparam4);
+				$(".asset-shadow-05").text(shadowparam5);
+
+				$(".testurl_preview1").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods1 + shadowparam1 + assetfmt + assetclr);
+				$(".testurl_preview2").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods2 + shadowparam2 + assetfmt + assetclr);
+				$(".testurl_preview3").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods3 + shadowparam3 + assetfmt + assetclr);
+				$(".testurl_preview4").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods4 + shadowparam4 + assetfmt + assetclr);
+				$(".testurl_preview5").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods5 + shadowparam5 + assetfmt + assetclr);
+			});
+		});
+
+
 	} else if (preset === "Bundle Device") {
 		$(".modifier1").text('?wid=1200&hei=1200&size=370,0&rect=440,0,320,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("320px x 1200px");
 		$(".modifier2").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 500px");
@@ -404,31 +430,47 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
-        $(".image-add-specs-clear").click();
+		$(".image-add-specs-clear").click();
 		$(".s7asset").val("creative-demo-bundle-ns");
 
-        $("#shadow-unchecked").click(function() {
-            "use strict";
-            $("#shadow-unchecked").hide();
-            $("#shadow-checked").show();
-            $("#original-guides-unchecked").show();
-            $("#original-guides-checked").hide();
+		$("#shadow-unchecked").click(function() {
+			"use strict";
+			$("#shadow-unchecked").hide();
+			$("#shadow-checked").show();
+			$("#original-guides-unchecked").show();
+			$("#original-guides-checked").hide();
 
-            var shadowparam = "&layer=1&src=verizondev/" + $(".s7asset").val() + "_sh";
-            
-            var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text() + shadowparam + "&size=370,0&blendMode=screen";
-            var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text() + shadowparam + "&size=0,520&blendMode=screen";
-            var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text() + shadowparam + "&size=684,0&blendMode=screen";
-            var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text() + shadowparam + "&size=550,0&blendMode=screen";
-            var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text() + shadowparam + "&size=1134,0&blendMode=screen";
-            $(".testurl_preview1").attr('src', assetprev1);
-            $(".testurl_preview2").attr('src', assetprev2);
-            $(".testurl_preview3").attr('src', assetprev3);
-            $(".testurl_preview4").attr('src', assetprev4);
-            $(".testurl_preview5").attr('src', assetprev5);
-            return false;
-        });  
-        
+			$(".asset-shadow").each(function() {
+				var prevname = $(this).closest(".each-container-row").find(".image-preview-name").text();
+				var prevmods1 = $(".asset-shadow-01").closest(".each-container-row").find(".preset-name").text();
+				var prevmods2 = $(".asset-shadow-02").closest(".each-container-row").find(".preset-name").text();
+				var prevmods3 = $(".asset-shadow-03").closest(".each-container-row").find(".preset-name").text();
+				var prevmods4 = $(".asset-shadow-04").closest(".each-container-row").find(".preset-name").text();
+				var prevmods5 = $(".asset-shadow-05").closest(".each-container-row").find(".preset-name").text();
+				var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
+				var assetfmt = $(this).closest(".each-container-row").find(".asset-format").text();
+
+				var shadowparam1 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=370,0&blendMode=screen";
+				var shadowparam2 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=0,520&blendMode=screen";
+				var shadowparam3 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=684,0&blendMode=screen";
+				var shadowparam4 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=550,0&blendMode=screen";
+				var shadowparam5 = "&layer=1&src=verizondev/" + prevname + "_sh" + "&size=1134,0&blendMode=screen";
+
+				$(".asset-shadow-label").show();
+				$(".asset-shadow-01").text(shadowparam1);
+				$(".asset-shadow-02").text(shadowparam2);
+				$(".asset-shadow-03").text(shadowparam3);
+				$(".asset-shadow-04").text(shadowparam4);
+				$(".asset-shadow-05").text(shadowparam5);
+
+				$(".testurl_preview1").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods1 + shadowparam1 + assetfmt + assetclr);
+				$(".testurl_preview2").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods2 + shadowparam2 + assetfmt + assetclr);
+				$(".testurl_preview3").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods3 + shadowparam3 + assetfmt + assetclr);
+				$(".testurl_preview4").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods4 + shadowparam4 + assetfmt + assetclr);
+				$(".testurl_preview5").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods5 + shadowparam5 + assetfmt + assetclr);
+			});
+		});
+
 	} else if (preset === "Other-Cropped") {
 		$(".modifier1").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("160px x 600px");
 		$(".modifier2").text('?wid=600&hei=520&size=0,520&rect=0,10,600,500&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("300px x 250px");
@@ -441,7 +483,7 @@ $(".custom-dropdown").on("click", function() {
 		$(".testurl_preview3").removeClass("testurl_preview3_alt");
 		$(".testurl_preview4").removeClass("testurl_preview4_alt");
 		$(".testurl_preview5").removeClass("testurl_preview5_alt");
-        $(".image-add-specs-clear").click();
+		$(".image-add-specs-clear").click();
 		$("#guides-other-unchecked").trigger("click");
 	}
 
@@ -581,7 +623,10 @@ $(document).ready(function() {
 	$("#original-guides-checked").hide();
 	$("#css-guides-checked").hide();
 	$(".notes-show-guides").hide();
-    $("#shadow-checked").hide();
+	$("#shadow-checked").hide();
+	$(".asset-format-label").hide();
+	$(".asset-color-label").hide();
+	$(".asset-shadow-label").hide();
 	return false;
 });
 
@@ -750,7 +795,6 @@ $("#guides-other-unchecked").click(function() {
 
 $("#HTML-guides-unchecked").click(function() {
 	"use strict";
-
 	$("#HTML-guides-unchecked").hide();
 	$("#HTML-guides-checked").show();
 	$(".each-container").addClass("background-alt1");
@@ -769,52 +813,52 @@ $("#inner-guides-checked").click(function() {
 	"use strict";
 	$("#inner-guides-unchecked").show();
 	$("#inner-guides-checked").hide();
-	var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text();
-	var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text();
-	var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text();
-	var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text();
-	var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text();
-	$(".testurl_preview1").attr('src', assetprev1);
-	$(".testurl_preview2").attr('src', assetprev2);
-	$(".testurl_preview3").attr('src', assetprev3);
-	$(".testurl_preview4").attr('src', assetprev4);
-	$(".testurl_preview5").attr('src', assetprev5);
+	$(".asset-color-label").hide();
+	$(".asset-color").each(function() {
+		var assetclr = "";
+		var assetshadow = $(this).closest(".asset-specs").find(".asset-shadow").text();
+		var assetfmt = $(this).closest(".asset-specs").find(".asset-format").text();
+		var prevname = $(this).closest(".asset-specs").find(".image-preview-name").text();
+		var prevmods = $(this).closest(".asset-specs").find(".preset-name").text();
+		$(this).text(assetclr);
+		$(this).closest(".each-container-row").find(".testp").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods + assetshadow + assetfmt + assetclr);
+	});
 	return false;
 });
 
 $("#inner-guides-unchecked").click(function() {
 	"use strict";
-	$("#original-guides-checked").trigger("click");
+	$("#alpha-guides-checked").trigger("click");
 	$("#inner-guides-unchecked").hide();
 	$("#inner-guides-checked").show();
-	var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text() + "&fmt=jpg&bgc=000000";
-	var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text() + "&fmt=jpg&bgc=000000";
-	var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text() + "&fmt=jpg&bgc=000000";
-	var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text() + "&fmt=jpg&bgc=000000";
-	var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text() + "&fmt=jpg&bgc=000000";
-	$(".testurl_preview1").attr('src', assetprev1);
-	$(".testurl_preview2").attr('src', assetprev2);
-	$(".testurl_preview3").attr('src', assetprev3);
-	$(".testurl_preview4").attr('src', assetprev4);
-	$(".testurl_preview5").attr('src', assetprev5);
+	$(".asset-color-label").show();
+	$(".asset-format-label").hide();
+	$(".asset-color").each(function() {
+		var assetclr = "&bgc=000000";
+		var assetshadow = $(this).closest(".asset-specs").find(".asset-shadow").text();
+		var assetfmt = $(this).closest(".asset-specs").find(".asset-format").text();
+		var prevname = $(this).closest(".asset-specs").find(".image-preview-name").text();
+		var prevmods = $(this).closest(".asset-specs").find(".preset-name").text();
+		$(this).text(assetclr);
+		$(this).closest(".each-container-row").find(".testp").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods + assetshadow + assetfmt + assetclr);
+	});
 	return false;
-
 });
 
 $("#alpha-guides-checked").click(function() {
 	"use strict";
 	$("#alpha-guides-unchecked").show();
 	$("#alpha-guides-checked").hide();
-	var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text();
-	var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text();
-	var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text();
-	var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text();
-	var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text();
-	$(".testurl_preview1").attr('src', assetprev1);
-	$(".testurl_preview2").attr('src', assetprev2);
-	$(".testurl_preview3").attr('src', assetprev3);
-	$(".testurl_preview4").attr('src', assetprev4);
-	$(".testurl_preview5").attr('src', assetprev5);
+	$(".asset-format-label").hide();
+	$(".asset-format").each(function() {
+		var assetfmt = "";
+		var assetshadow = $(this).closest(".asset-specs").find(".asset-shadow").text();
+		var assetclr = $(this).closest(".asset-specs").find(".asset-color").text();
+		var prevname = $(this).closest(".asset-specs").find(".image-preview-name").text();
+		var prevmods = $(this).closest(".asset-specs").find(".preset-name").text();
+		$(this).text(assetfmt);
+		$(this).closest(".each-container-row").find(".testp").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods + assetshadow + assetfmt + assetclr);
+	});
 	$(".each-container").removeClass("background-alt2");
 	return false;
 });
@@ -824,26 +868,19 @@ $("#alpha-guides-unchecked").click(function() {
 	$("#inner-guides-checked").trigger("click");
 	$("#alpha-guides-unchecked").hide();
 	$("#alpha-guides-checked").show();
-    
-    var currentpreview1 = $(".testurl_preview1").attr("src");
-    var currentpreview2 = $(".testurl_preview2").attr("src");
-    var currentpreview3 = $(".testurl_preview3").attr("src");   
-    var currentpreview4 = $(".testurl_preview4").attr("src");
-    var currentpreview5 = $(".testurl_preview5").attr("src");
-    
-	var assetprev1 = currentpreview1 + "&fmt=png-alpha";
-	var assetprev2 = currentpreview2 + "&fmt=png-alpha";
-	var assetprev3 = currentpreview3 + "&fmt=png-alpha";
-	var assetprev4 = currentpreview4 + "&fmt=png-alpha";
-	var assetprev5 = currentpreview5 + "&fmt=png-alpha";
-	$(".testurl_preview1").attr('src', assetprev1);
-	$(".testurl_preview2").attr('src', assetprev2);
-	$(".testurl_preview3").attr('src', assetprev3);
-	$(".testurl_preview4").attr('src', assetprev4);
-	$(".testurl_preview5").attr('src', assetprev5);
+	$(".asset-format-label").show();
+	$(".asset-color-label").hide();
+	$(".asset-format").each(function() {
+		var assetfmt = "&fmt=png-alpha";
+		var assetshadow = $(this).closest(".asset-specs").find(".asset-shadow").text();
+		var assetclr = $(this).closest(".asset-specs").find(".asset-color").text();
+		var prevname = $(this).closest(".asset-specs").find(".image-preview-name").text();
+		var prevmods = $(this).closest(".asset-specs").find(".preset-name").text();
+		$(this).text(assetfmt);
+		$(this).closest(".each-container-row").find(".testp").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods + assetshadow + assetfmt + assetclr);
+	});
 	$(".each-container").addClass("background-alt2");
 	return false;
-
 });
 
 $("#original-guides-checked").click(function() {
@@ -866,7 +903,7 @@ $("#original-guides-checked").click(function() {
 $("#original-guides-unchecked").click(function() {
 	"use strict";
 	$("#inner-guides-checked").trigger("click");
-   $("#shadow-checked").click();
+	$("#shadow-checked").click();
 	$("#original-guides-unchecked").hide();
 	$("#original-guides-checked").show();
 	var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val();
@@ -881,7 +918,6 @@ $("#original-guides-unchecked").click(function() {
 	$(".testurl_preview5").attr('src', assetprev5);
 	return false;
 });
-
 
 $("#css-guides-checked").click(function() {
 	"use strict";
@@ -904,24 +940,22 @@ $("#css-guides-unchecked").click(function() {
 	$(".testurl_preview3").removeClass("testurl_preview3_alt");
 	$(".testurl_preview4").removeClass("testurl_preview4_alt");
 	$(".testurl_preview5").removeClass("testurl_preview5_alt");
-
 	return false;
 });
 
-
-        $("#shadow-checked").click(function() {
-            "use strict";
-            $("#shadow-unchecked").show();
-            $("#shadow-checked").hide();
-            var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text();
-            var assetprev2 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier2").text();
-            var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text();
-            var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text();
-            var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text();
-            $(".testurl_preview1").attr('src', assetprev1);
-            $(".testurl_preview2").attr('src', assetprev2);
-            $(".testurl_preview3").attr('src', assetprev3);
-            $(".testurl_preview4").attr('src', assetprev4);
-            $(".testurl_preview5").attr('src', assetprev5);
-            return false;
-        });
+$("#shadow-checked").click(function() {
+	"use strict";
+	$("#shadow-unchecked").show();
+	$("#shadow-checked").hide();
+	$(".asset-shadow-label").hide();
+	$(".asset-shadow").each(function() {
+		var assetshadow = "";
+		var assetclr = $(this).closest(".asset-specs").find(".asset-color").text();
+		var assetfmt = $(this).closest(".asset-specs").find(".asset-format").text();
+		var prevname = $(this).closest(".asset-specs").find(".image-preview-name").text();
+		var prevmods = $(this).closest(".asset-specs").find(".preset-name").text();
+		$(this).text(assetshadow);
+		$(this).closest(".each-container-row").find(".testp").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods + assetshadow + assetfmt + assetclr);
+	});
+	return false;
+});
