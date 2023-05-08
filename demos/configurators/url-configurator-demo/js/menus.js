@@ -98,17 +98,6 @@ $(".store-continue").on("click", function () {
 });
 
 // Update mods section: 
-$(".image-add-specs-go").each(function () {
-    "use strict";
-	$(this).on("click", function () {
-		var prevname = $(this).closest(".asset-specs").find(".image-preview-name").text();
-		var prevmods = $(this).closest(".asset-specs").find(".preset-name").text();
-		var prevfmt = $(this).closest(".asset-specs").find(".asset-format").text();
-		$(this).closest(".each-container-row").find(".testp").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods + prevfmt);
-		return false;
-	});
-});
-
 $(".preset-name, .asset-shadow, .asset-color, .asset-format").on("keyup change", function () {
     "use strict";
 	var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
@@ -121,37 +110,6 @@ $(".preset-name, .asset-shadow, .asset-color, .asset-format").on("keyup change",
 		$(this).closest(".each-container-row").find(".testp").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods + assetshadow + assetfmt + assetclr);
 
 	}
-	return false;
-});
-
-$(".store-pdf").on("click", function () {
-	"use strict";
-	var param01 = "https://s7d1.scene7.com/is/image/jlatonio?layer=0&src=is(jlatonio/";
-	var param02 = $(".s7image").data('val') + ")&wid=1200&size=1200,0&layer=1&pos=0,0&opac=100&size=900,600&color=000000,0&textPs={";
-	var param03 = "\\fonttbl\\f%20" + $(".s7font1").data('val') + ";}{";
-	var param04 = "\\*\\iscolortbl;" + $(".s7color1").data('val') + ";}\\f0\\fs40\\margl20\\margt0\\vertalc\\ql";
-	var param05 = "\\cf1" + $(".s7heading").val() + "&textattr=300,crisp,maxRes&effect=-1&color=000000&op_blur=4&opac=75,100&blendmode=mult&pos=2,2&layer=2&pos=0,0&opac=100&size=900,600&color=000000,0&textPs={";
-	var param06 = "\\fonttbl\\f%20" + $(".s7font2").data('val') + ";}{";
-	var param07 = "\\*\\iscolortbl;" + $(".s7color2").data('val') + ";}\\f0\\fs35\\margl700\\margt600\\vertalc\\ql";
-	var param08 = "\\cf1" + $(".s7subheader").val() + "&textattr=300,crisp,maxRes&effect=-1&color=000000&op_blur=4&opac=75,100&blendmode=mult&pos=2,2";
-	var results = param01 + param02 + param03 + param04 + param05 + param06 + param07 + param08 + "&fmt=pdf";
-
-	var isValid = true;
-	$(".s7required").each(function () {
-		if ($(this).val().length === 0) {
-			isValid = false;
-			$(this).focus().attr("placeholder", "This is a required field.").css({
-				"background": "#fff2f2"
-			});
-			return false;
-		} else {
-			$(this).css({
-				"background": ""
-			});
-			window.open(results, '_blank');
-		}
-		return false;
-	});
 	return false;
 });
 
@@ -248,9 +206,6 @@ $(".custom-dropdown").on("click", function () {
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-menu").removeData().attr('data-val', result);
 	$(".generated_url").text("");
 	var preset = $(".s7presets").val();
-	var preset_single = "Single-Cropped";
-	var preset_double = "Double-Cropped";
-	var preset_accessories = "Accessories-Cropped";
 
 	if (preset === "Single Device") {
 		$(".pdp-container-row").hide();
@@ -262,6 +217,7 @@ $(".custom-dropdown").on("click", function () {
 		$(".modifier3").text('?wid=1200&hei=1200&size=774,0&rect=300,0,600,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 1200px");
 		$(".modifier4").text('?wid=1456&hei=1456&size=630,0&rect=0,50,1456,180&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
 		$(".modifier5").text('?wid=1940&hei=1940&size=1200,0&rect=0,50,1940,500&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
+		$(".modifier6").text('?scl=1&extend=-318,-318,-318,-318').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
 		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".s7asset").val("creative-demo-single-ns");
 
@@ -314,6 +270,8 @@ $(".custom-dropdown").on("click", function () {
 		$(".modifier4").text('?wid=1456&hei=1456&size=710,0&rect=0,56,1456,180&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
 		$(".modifier5").text('?wid=1940&hei=1940&size=1500,0&rect=0,80,1940,500&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
 		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
+		$(".modifier6").text('?scl=1&extend=-318,-318,-318,-318').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
+        $("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".s7asset").val("creative-demo-double-ns");
 
 		$("#shadow-unchecked").click(function () {
@@ -364,6 +322,7 @@ $(".custom-dropdown").on("click", function () {
 		$(".modifier3").text('?wid=1200&hei=1200&size=886,0&rect=300,0,600,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 1200px");
 		$(".modifier4").text('?wid=1456&hei=1456&size=710,0&rect=0,56,1456,180&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
 		$(".modifier5").text('?wid=1940&hei=1940&size=1500,0&rect=0,80,1940,500&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
+		$(".modifier6").text('?scl=1&extend=-318,-318,-318,-318').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
 		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".s7asset").val("creative-demo-triple-ns");
 
@@ -416,6 +375,7 @@ $(".custom-dropdown").on("click", function () {
 		$(".modifier3").text('?wid=1200&hei=1200&size=684,0&rect=300,0,600,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 1200px");
 		$(".modifier4").text('?wid=1456&hei=1456&size=550,0&rect=0,40,1456,180&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
 		$(".modifier5").text('?wid=1940&hei=1940&size=1134,0&rect=0,42,1940,500&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
+		$(".modifier6").text('?scl=1&extend=-318,-318,-318,-318').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
 		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".s7asset").val("creative-demo-bundle-ns");
 
@@ -463,16 +423,7 @@ $(".custom-dropdown").on("click", function () {
 		$(".pdp-container-row").show();
         $(".guides-checkbox-outer-container").hide();
         $(".shadow-checkbox-container").hide();
-		$(".mktg-container-row").slideUp();
-		$(".modifier6").text('?scl=1&extend=-318,-318,-318,-318').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
-		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
-        $(".s7asset").val("creative-demo-single-ns");
-
-		var prevname = $(this).closest(".pdp-container-row").find(".image-preview-name").text();
-		var assetclr = $(this).closest(".pdp-container-row").find(".asset-color").text();
-		var assetfmt = $(this).closest(".pdp-container-row").find(".asset-format").text();
-		var prevmods6 = $(this).closest(".pdp-container-row").find(".modifier6").text();
-		$(".testurl_preview6").attr('src', "https://assets.verizon.com/is/image/verizondev/" + prevname + prevmods6 + assetfmt + assetclr);
+		$(".mktg-container-row").hide();
 	}
 	return false;
 });
