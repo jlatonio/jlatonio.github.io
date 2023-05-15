@@ -10,7 +10,7 @@
 
 .header-container h3 {
   background-color: #000;
-  padding-top: 8px;
+  padding-top: 10px;
   padding-left: 30px;
   color: #ffffff;
   text-align: left;
@@ -69,7 +69,7 @@
 
 .column-container-header-feature:nth-child(1) {
   border-left: 2px #ddd solid;
-  width: 140px;
+  width: 120px;
   color: #eee;
   background-color: #000;
 }
@@ -77,14 +77,14 @@
 .column-container-header-feature:nth-child(2) {
   border-left: 2px #ddd solid;
   color: #eee;
-  width: 140px;
+  width: 120px;
   background-color: #000;
 }
 
 .column-container-header-feature:nth-child(3) {
   border-left: 2px #ddd solid;
   color: #eee;
-  width: 140px;
+  width: 120px;
   background-color: #000;
 }
 
@@ -239,7 +239,7 @@
   background-color: #000;
   top: 0;
   right: 0;
-  width: 140px;
+  width: 120px;
   text-align: center;
   padding: 6px;
   color: #fff;
