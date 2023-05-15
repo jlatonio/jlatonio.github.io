@@ -19,7 +19,6 @@ $(document).ready(function() {
 		return false;
 	});
 
-	// Sticky nav
 	function sticky_relocate() {
 		var window_top = $(window).scrollTop();
 		var div_top = $('#sticky-anchor').offset().top;
@@ -45,14 +44,12 @@ $(document).ready(function() {
 		sticky_relocate();
 	});
 
-	// iframe styling
 	var frame = $('#inspect-url-frame');
 	frame.load(function() {
 		frame.contents().find('body').css('font-family', 'monospace');
 		frame.contents().find('body').css('font-size', '14px');
 	});
 
-	// adds HTML
 	$(".add-html-go").on("click", function() {
 		"use strict";
 
@@ -63,7 +60,6 @@ $(document).ready(function() {
 		$(".add-html-here").html(find_html);
 		$(".add-html-here,.inspect-url").fadeIn(2000, "swing");
 
-		// List all broken URLs in an ordered list
 		$(".img-container-image").each(function() {
 			"use strict";
 			$(this).error(function() {
@@ -75,12 +71,10 @@ $(document).ready(function() {
 				$('.broken-image-urls').after('<li>' + label_image + ' - ' + broken_url);
 				$(".broken-image-urls-container li").sort(asc_sort).appendTo('.broken-image-urls-container');
 
-				// accending sort
 				function asc_sort(a, b) {
 					return ($(b).text()) < ($(a).text()) ? 1 : -1;
 				}
 
-				// image error counter
 				var imgErrors = $('.img-container-error').length;
 				var vidErrors = $('.video-container-error').length;
 				var totalImg = $('.img-container-image').length;
@@ -113,12 +107,10 @@ $(document).ready(function() {
 				$('.broken-image-urls').after('<li>' + label_image + ' - ' + broken_url);
 				$(".broken-image-urls-container li").sort(asc_sort).appendTo('.broken-image-urls-container');
 
-				// accending sort
 				function asc_sort(a, b) {
 					return ($(b).text()) < ($(a).text()) ? 1 : -1;
 				}
 
-				// video error counter
 				var imgErrors = $('.img-container-error').length;
 				var vidErrors = $('.video-container-error').length;
 				var totalImg = $('.img-container-image').length;
@@ -140,7 +132,6 @@ $(document).ready(function() {
 		});
 
 		$(function() {
-			// total error counter
 			var imgErrors = $('.img-container-error').length;
 			var vidErrors = $('.video-container-error').length;
 			var totalImg = $('.img-container-image').length;
@@ -157,7 +148,6 @@ $(document).ready(function() {
 			$(".total-error-count").text(numErrors);
 			$(".total-count").text(numItems);
 
-			// removes duplicates 
 			var seen = {};
 			$(".broken-image-urls-container li").each(function() {
 				var txt = $(this).text();
@@ -167,7 +157,6 @@ $(document).ready(function() {
 					seen[txt] = true;
 			});
 
-			// Inspect URL feature 
 			$(".inspect-url-icon").on("click", function() {
 				"use strict";
 				$(".inspect-url").removeAttr("srcdoc");
@@ -176,7 +165,6 @@ $(document).ready(function() {
 				return false;
 			});
 
-			// Click on individual image to generate URL feature
 			$(".inspect-preset-icon").on("click", function() {
 				"use strict";
 				$(".inspect-url").removeAttr("srcdoc");
@@ -186,7 +174,6 @@ $(document).ready(function() {
 				return false;
 			});
 
-			// Click on individual video to generate URL feature
 			$(".inspect-video-icon").on("click", function() {
 				"use strict";
 				$(".inspect-url").removeAttr("srcdoc");
@@ -195,7 +182,6 @@ $(document).ready(function() {
 				return false;
 			});
 
-			// Report feature
 			$(".view-report").click(function() {
 				"use strict";
 				$(this).hide();
