@@ -1,4 +1,3 @@
-// Show default generated URL when loaded
 $(document).ready(function () {
     "use strict";
 	$(".s7presets").closest(".custom-dropdown-outer").find(".custom-dropdown:nth-child(1)").click();
@@ -19,7 +18,6 @@ $(function () {
 	return false;
 });
 
-// Resets to default image and default generated URL
 $(".store-clear").on("click", function () {
 	"use strict";
  
@@ -40,7 +38,6 @@ $(".store-clear").on("click", function () {
 	return false;
 });
 
-// Click on individual image to generate URL feature
 $(".testp,.guide-each").on("click", function () {
 	"use strict";
 	var select_preset = $(this).closest(".each-container-row").find(".preset-name").text();
@@ -53,7 +50,6 @@ $(".testp,.guide-each").on("click", function () {
 	return false;
 });
 
-// Process results
 $(".store-continue").on("click", function () {
 	"use strict";
 	var assetprev1 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier1").text();
@@ -97,7 +93,6 @@ $(".store-continue").on("click", function () {
 	return false;
 });
 
-// Update mods section: 
 $(".preset-name, .asset-shadow, .asset-color, .asset-format").on("keyup change", function () {
     "use strict";
 	var assetclr = $(this).closest(".each-container-row").find(".asset-color").text();
@@ -114,7 +109,6 @@ $(".preset-name, .asset-shadow, .asset-color, .asset-format").on("keyup change",
 });
 
 $(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("click", function () {
-	// closes other elements other than this when clicked
 	"use strict";
 	$(".custom-dropdown-input").find(".custom-dropdown-close").not(this).trigger("click");
 	$("body").trigger("click");
@@ -126,7 +120,6 @@ $(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("c
 	return false;
 });
 
-// closes menu when an item is selected
 $(".custom-dropdown-close").on("click", function () {
 	"use strict";
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-arrow-toggle").removeClass("custom-dropdown-arrow-close");
@@ -137,7 +130,6 @@ $(".custom-dropdown-close").on("click", function () {
 	return false;
 });
 
-// menu icon hover
 $(".custom-dropdown-relative").hover(function () {
     "use strict";
 	$(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", "1");
@@ -147,7 +139,6 @@ $(".custom-dropdown-relative").hover(function () {
 	return false;
 });
 
-// autofill fields as user types. static html only
 $(function () {
 	"use strict";
 	$("input[type='text'], input[type='number']").on("keyup change", function () {
@@ -163,7 +154,6 @@ $(function () {
 	return false;
 });
 
-// resets search when user clicks close
 $(".custom-select-close").hide();
 $("input[type='text'],input[type='number']").closest(".custom-dropdown-outer").find(".custom-select-close").on("click", function () {
 	"use strict";
@@ -179,7 +169,6 @@ $("input[type='text'],input[type='number']").closest(".custom-dropdown-outer").f
 	return false;
 });
 
-// closes menu when user clicks away
 $("html, body, input").on("click", function () {
 	"use strict";
 	if ($(this).not(".custom-dropdown-outer")) {
@@ -187,7 +176,6 @@ $("html, body, input").on("click", function () {
 	}
 });
 
-// adds the html to the input value for each button clicked
 $(".custom-dropdown").on("click", function () {
 	"use strict";
 	var option = $(this).text();
@@ -440,7 +428,6 @@ $(".custom-dropdown-menu").on("keydown click", function () {
 	$(this).closest(".custom-dropdown-outer").find(".custom-dropdown-close").hide();
 });
 
-// set active state (neded for appended dropdown)
 $(document.body).on("click", ".custom-dropdown", function () {
 	"use strict";
 	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active");
@@ -448,7 +435,6 @@ $(document.body).on("click", ".custom-dropdown", function () {
 	return false;
 });
 
-// set active state
 $(".custom-dropdown").on("click", function () {
 	"use strict";
 	$(this).closest(".custom-dropdown-outer").find(this).siblings().removeClass("active");
@@ -457,7 +443,6 @@ $(".custom-dropdown").on("click", function () {
 	return false;
 });
 
-// Hover effects
 $(window).on("load", function () {
 	"use strict";
 	$(".custom-dropdown").append("<div class='custom-dropdown-animation'></div>");
