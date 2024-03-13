@@ -386,40 +386,95 @@
 }
 
 .guide-container-other-1 {
-  width: 130px;
-  height: 100%;
+  width: 128px;
+  height: 568px;
   outline: 2px solid #52fefd;
   outline-offset: 0;
+}
+
+.guide-container-other-1::after {
+  content: "Safe Area: 16px, 16px";
+  position: absolute;
+  max-width: 80px;
+  left: -121px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
 }
 
 .guide-container-other-2 {
-  width: 100%;
-  height: 205px;
+  width: 236px;
+  height: 218px;
   outline: 2px solid #52fefd;
   outline-offset: 0;
+}
+
+.guide-container-other-2::after {
+  content: "Safe Area: 32px, 16px";
+  position: absolute;
+  max-width: 80px;
+  left: -121px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
 }
 
 .guide-container-other-3 {
-  width: 260px;
-  height: 100%;
+  width: 236px;
+  height: 568px;
   outline: 2px solid #52fefd;
   outline-offset: 0;
+}
+
+.guide-container-other-3::after {
+  content: "Safe Area: 32px, 16px";
+  position: absolute;
+  max-width: 80px;
+  left: -121px;
+  top: 20px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
 }
 
 .guide-container-other-4 {
-  width: 170px;
+  width: 728px;
   height: 80px;
+  top: 10px;
   outline: 2px solid #52fefd;
   outline-offset: 0;
-  top: 10px;
+}
+
+.guide-container-other-4::after {
+  content: "Safe Area: 10px top";
+  position: absolute;
+  max-width: 80px;
+  left: -81px;
+  top: 7px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
 }
 
 .guide-container-other-5 {
-  width: 220px;
-  height: 210px;
+  width: 970px;
+  height: 220px;
+  top: 30px;
   outline: 2px solid #52fefd;
   outline-offset: 0;
-  top: 20px;
+}
+
+.guide-container-other-5::after {
+  content: "Safe Area: 30px top";
+  position: absolute;
+   max-width: 80px;
+  left: -81px;
+  top: 10px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
 }
 
 .inspect_url {
