@@ -427,7 +427,7 @@ $(".custom-dropdown").on("click", function () {
 		});
 
         
-	} else if (preset === "DCO") {
+	} else if (preset === "DCO Universal Presets") {
 		$(".pdp-container-row").hide();
         $(".dco-container-row").show();
         $(".guides-checkbox-outer-container").show();
