@@ -57,6 +57,8 @@ $(".store-continue").on("click", function () {
 	var assetprev3 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier3").text();
 	var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4").text();
 	var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5").text();
+	var assetprev4 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier4-half").text();
+	var assetprev5 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier5-half").text();
 	var assetprev6 = "https://assets.verizon.com/is/image/verizondev/" + $(".s7asset").val() + $(".modifier6").text();
 	var prevname = $(".s7asset").val();
 	var isValid = true;
@@ -78,6 +80,8 @@ $(".store-continue").on("click", function () {
 	$(".testurl_preview3").attr('src', assetprev3);
 	$(".testurl_preview4").attr('src', assetprev4);
 	$(".testurl_preview5").attr('src', assetprev5);
+	$(".testurl_preview4-half").attr('src', assetprev4);
+	$(".testurl_preview5-half").attr('src', assetprev5);
 	$(".testurl_preview6").attr('src', assetprev6);
 	$(".image-preview-name").text(prevname);
 
