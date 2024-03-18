@@ -222,7 +222,7 @@ $(".custom-dropdown").on("click", function () {
 		$(".modifier3").text('?wid=1200&hei=1200&size=774,0&rect=300,0,600,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 1200px");
 		$(".modifier4").text('?wid=1456&hei=1456&size=630,0&rect=0,50,1456,180&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
 		$(".modifier5").text('?wid=1940&hei=1940&size=1200,0&rect=0,50,1940,500&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
-		$(".modifier6").text('?scl=1&extend=-318,-318,-318,-318').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
+		$(".modifier6").text('?scl=1').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
 		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".s7asset").val("creative-demo-single-ns");
 
@@ -276,7 +276,7 @@ $(".custom-dropdown").on("click", function () {
 		$(".modifier4").text('?wid=1456&hei=1456&size=710,0&rect=0,56,1456,180&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
 		$(".modifier5").text('?wid=1940&hei=1940&size=1500,0&rect=0,80,1940,500&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
 		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
-		$(".modifier6").text('?scl=1&extend=-318,-318,-318,-318').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
+		$(".modifier6").text('?scl=1').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
         $("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".s7asset").val("creative-demo-double-ns");
 
@@ -329,7 +329,7 @@ $(".custom-dropdown").on("click", function () {
 		$(".modifier3").text('?wid=1200&hei=1200&size=886,0&rect=300,0,600,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 1200px");
 		$(".modifier4").text('?wid=1456&hei=1456&size=710,0&rect=0,56,1456,180&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
 		$(".modifier5").text('?wid=1940&hei=1940&size=1500,0&rect=0,80,1940,500&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
-		$(".modifier6").text('?scl=1&extend=-318,-318,-318,-318').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
+		$(".modifier6").text('?scl=1').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
 		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".s7asset").val("creative-demo-triple-ns");
 
@@ -383,7 +383,7 @@ $(".custom-dropdown").on("click", function () {
 		$(".modifier3").text('?wid=1200&hei=1200&size=684,0&rect=300,0,600,1200&align=0,0&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("600px x 1200px");
 		$(".modifier4").text('?wid=1456&hei=1456&size=550,0&rect=0,40,1456,180&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
 		$(".modifier5").text('?wid=1940&hei=1940&size=1134,0&rect=0,42,1940,500&align=0,-1&resmode=sharp2').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
-		$(".modifier6").text('?scl=1&extend=-318,-318,-318,-318').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
+		$(".modifier6").text('?scl=1').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
 		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".s7asset").val("creative-demo-bundle-ns");
 
@@ -440,7 +440,7 @@ $(".custom-dropdown").on("click", function () {
 		$(".modifier5").text('?$DCO_device_970x250$').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
 		$(".modifier4-half").text('?$DCO_device_half_728x90$').closest(".each-container-row").find(".asset-specs-size").text("1456px x 180px");
 		$(".modifier5-half").text('?$DCO_device_half_970x250$').closest(".each-container-row").find(".asset-specs-size").text("1940px x 500px");
-		$(".modifier6").text('?scl=1&extend=-318,-318,-318,-318').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
+		$(".modifier6").text('?scl=1').closest(".pdp-container-row").find(".asset-specs-size").text("2366px x 2366px");
 		$("#css-guides-checked,#css-guides-unchecked,.notes-show-guides").hide();
 		$(".s7asset").val("creative-demo-single-cr");
 
