@@ -439,7 +439,7 @@
   box-shadow: 1px 1px 2px 1px #999;
 }
 
-.guide-container-other-4 {
+.guide-container-other-4-half {
   width: 728px;
   height: 80px;
   top: 10px;
@@ -447,7 +447,7 @@
   outline-offset: 0;
 }
 
-.guide-container-other-4::after {
+.guide-container-other-4-half::after {
   content: "Safe Area: 10px top";
   position: absolute;
   max-width: 80px;
@@ -458,7 +458,7 @@
   box-shadow: 1px 1px 2px 1px #999;
 }
 
-.guide-container-other-5 {
+.guide-container-other-5-half {
   width: 970px;
   height: 220px;
   top: 30px;
@@ -466,10 +466,48 @@
   outline-offset: 0;
 }
 
-.guide-container-other-5::after {
+.guide-container-other-5-half::after {
   content: "Safe Area: 30px top";
   position: absolute;
    max-width: 80px;
+  left: -81px;
+  top: 10px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-other-4 {
+  width: 728px;
+  height: 70px;
+  top: 10px;
+  outline: 2px solid #52fefd;
+  outline-offset: 0;
+}
+
+.guide-container-other-4::after {
+  content: "Safe Area: 10px top, 10px bottom";
+  position: absolute;
+  max-width: 100px;
+  left: -81px;
+  top: 7px;
+  background-color: #fff;
+  padding: 7px;
+  box-shadow: 1px 1px 2px 1px #999;
+}
+
+.guide-container-other-5 {
+  width: 970px;
+  height: 190px;
+  top: 30px;
+  outline: 2px solid #52fefd;
+  outline-offset: 0;
+}
+
+.guide-container-other-5::after {
+  content: "Safe Area: 30px top, 30px bottom";
+  position: absolute;
+  max-width: 100px;
   left: -81px;
   top: 10px;
   background-color: #fff;
