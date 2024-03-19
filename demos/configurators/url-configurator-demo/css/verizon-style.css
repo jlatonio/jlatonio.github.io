@@ -448,7 +448,7 @@
 }
 
 .guide-container-other-4-half::after {
-  content: "Safe Area: 10px top" '\A' "cutoff mid-product height";
+  content: "Safe Area: 10px top" '\A' "Cutoff mid-product height";
   position: absolute;
   max-width: 190px;
   left: 20px;
@@ -468,7 +468,7 @@
 }
 
 .guide-container-other-5-half::after {
-  content: "Safe Area: 30px top" '\A' "cutoff mid-product height";
+  content: "Safe Area: 30px top" '\A' "Cutoff mid-product height";
   position: absolute;
    max-width: 190px;
   left: 20px;
