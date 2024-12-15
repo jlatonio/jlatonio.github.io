@@ -41,13 +41,13 @@ $(".store-continue").on("click", function() {
  $(".testurl_na").html("");
  var param01 = "https://testvipd1.scene7.com/is/image/jlatonio/";
  var param02 = $(".url-product").data('val');
- var param03 = "?$decal-image=is{jlatonio/" + $(".url-decal").data('val') + "}&$decal-pos=982,1404&$decal-rotate=0";
+ var param03 = "?$decal-image=is{jlatonio/" + $(".url-decal").data('val') + "}";
  var param04 = "&$decal-size=" + $(".url-decal-size").data('val');
  var param05 = "&layer=3&$text=" + $(".url-text").val(); 
  var param06 = "&$font=" + $(".url-text-font").val(); 
 
  var results = param01 + param02 + param03 + param04 + param05 + param06 + "&scl=1&effect=-1&color=0x000000&op_blur=2&opac=75,75&blendmode=mult&pos=1,1&fmt=webp";
-
+    
  $(".testurl_preview").attr('src', results);
  $(".testurl_preview").on("error", function() {
   $(this).closest(".column-testurl").find(".testurl_na").html("Preview Not Available");
@@ -281,4 +281,12 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function() {
   "o-transition": "all .01s ease-out",
   "transition": "all .01s ease-out"
  });
+});
+
+// menu icon hover
+$(".custom-dropdown-relative").hover(function() {
+  $(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", "1");
+  }, function(){
+  $(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", ".4");
+    return false;
 });
