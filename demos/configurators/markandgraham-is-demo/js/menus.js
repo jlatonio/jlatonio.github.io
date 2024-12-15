@@ -43,10 +43,10 @@ $(".store-continue").on("click", function() {
  var param02 = $(".url-product").data('val');
  var param03 = "?$decal-image=is{jlatonio/" + $(".url-decal").data('val') + "}";
  var param04 = "&$decal-size=" + $(".url-decal-size").data('val');
- var param05 = "&layer=3&$text=" + $(".url-text").val(); 
+ var param05 = "&$text=" + $(".url-text").val(); 
  var param06 = "&$font=" + $(".url-text-font").val(); 
 
- var results = param01 + param02 + param03 + param04 + param05 + param06 + "&scl=1&effect=-1&color=0x000000&op_blur=2&opac=75,75&blendmode=mult&pos=1,1&fmt=webp";
+ var results = param01 + param02 + param03 + param04 + param05 + param06 + "&scl=1&fmt=webp";
     
  $(".testurl_preview").attr('src', results);
  $(".testurl_preview").on("error", function() {
