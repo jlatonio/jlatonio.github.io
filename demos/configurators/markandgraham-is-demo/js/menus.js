@@ -290,3 +290,14 @@ $(".custom-dropdown-relative").hover(function() {
   $(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", ".4");
     return false;
 });
+
+// Show each image preview on dropdown click
+// $(".url-product").find(function() {
+//     $(".custom-dropdown").on("click", function() {
+//      "use strict";
+//      var imageurl = $(this).closest(".custom-dropdown-outer").find(this).find(".custompreview").attr("src");
+//      $(".testurl_preview").attr('src', imageurl+ "?scl=1&fmt=webp");
+//     return false;
+//     });
+// });
+ 
