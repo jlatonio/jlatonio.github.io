@@ -34,7 +34,7 @@
           <div class="hero-container">
              <div class="hero-content">
 
-                <h1 class="text-shadow">RH Configurator Demo <br>- DMc Templates -</h1>
+                <h1 class="text-shadow">M&G Configurator Demo <br>- Image Serving -</h1>
              </div>
           </div>
             
@@ -43,19 +43,19 @@
 				<div class="acs-main-content">
 					<div class="column-container">
                         
-						<div class="column-container-url percent-45">
+						<div class="column-container-url percent-60">
                             <div class="column-testurl column-container-each percent-100">
                             <div class="testurl_na"></div>
 							<img class="testurl testurl_preview" src="http://s7d1.scene7.com/is/image/jlatonio/Terminal_Pet_Boarding_Carrier_White_4200711_HOL24_1?scl=1" alt="" />
                             
                             </div>
 						</div>
-						<div class="column-container-each column-container-menu percent-55">
+						<div class="column-container-each column-container-menu percent-40">
 							<div class="custom-dropdown-outer">
 								<label class="custom-dropdown-label primary-color">Select Product</label>
 								<div class="custom-dropdown-relative">
 									<div class="primary-color">
-										<input type="text" class="s7required url-product custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="SKU ID" />
+										<input type="text" class="s7required url-product custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Select SKU" />
 										<div class="custom-dropdown-close"></div>
 										<div class="custom-dropdown-open"></div>
 										<img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
@@ -73,7 +73,7 @@
 								<label class="custom-dropdown-label primary-color">Select Decal</label>
 								<div class="custom-dropdown-relative">
 									<div class="primary-color">
-										<input type="text" class="s7required decal-image custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Select Fabric" />
+										<input type="text" class="s7required url-decal custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Select Decal" />
 										<div class="custom-dropdown-close"></div>
 										<div class="custom-dropdown-open"></div>
 										<img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
@@ -82,7 +82,7 @@
 								<div class="custom-dropdown-position">
 									<div class="custom-dropdown-group">
 										<div class="custom-dropdown-scroll">
-                                            <div class="custom-dropdown" data-val="mg-decal-fish"><img src="http://s7d1.scene7.com/is/image/jlatonio/mg-decal-fish?scl=1&extend=-170,-170,-170,-170" class="custom-dropdown-icon" alt="" />mg-decal-fish</div>
+                                            <div class="custom-dropdown" data-val="mg-decal-fish"><img src="http://s7d1.scene7.com/is/image/jlatonio/mg-decal-fish?scl=1&extend=-170,-170,-170,-170" class="custom-dropdown-icon" alt="" />Fish</div>
                                             <div class="custom-dropdown" data-val="mg-decal-shell"><img src="http://s7d1.scene7.com/is/image/jlatonio/mg-decal-shell?scl=1&extend=-170,-170,-170,-170" class="custom-dropdown-icon" alt="" />Shell</div>
                                             <div class="custom-dropdown" data-val="mg-decal-waves"><img src="http://s7d1.scene7.com/is/image/jlatonio/mg-decal-waves?scl=1&extend=-170,-170,-170,-170" class="custom-dropdown-icon" alt="" />Waves</div>
                                             <div class="custom-dropdown" data-val="mg-decal-boot"><img src="http://s7d1.scene7.com/is/image/jlatonio/mg-decal-boot?scl=1&extend=-170,-170,-170,-170" class="custom-dropdown-icon" alt="" />Boot</div>
@@ -91,10 +91,10 @@
 								</div>
 							</div>
 							<div class="custom-dropdown-outer">
-								<label class="custom-dropdown-label primary-color">Decal Size</label>
+								<label class="custom-dropdown-label primary-color">Select Decal Size</label>
 								<div class="custom-dropdown-relative">
 									<div class="primary-color">
-										<input type="text" class="s7required decal-size custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Select Finish" />
+										<input type="text" class="s7required url-decal-size custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Select Decal Size" />
 										<div class="custom-dropdown-close"></div>
 										<div class="custom-dropdown-open"></div>
 										<img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
@@ -103,17 +103,46 @@
 								<div class="custom-dropdown-position">
 									<div class="custom-dropdown-group">
 										<div class="custom-dropdown-scroll">
-                                            <div class="custom-dropdown" data-val="0,200"><img style="background:#ffffff" class="custom-dropdown-icon" alt="" />Small</div>
-                                            <div class="custom-dropdown" data-val="0,300"><img style="background:#ffffff" class="custom-dropdown-icon" alt="" />Medium</div>
-                                            <div class="custom-dropdown" data-val="0,500"><img style="background:#ffffff" class="custom-dropdown-icon" alt="" />Large</div>
+                                            <div class="custom-dropdown" data-val="0,200">Small</div>
+                                            <div class="custom-dropdown" data-val="0,300">Medium</div>
+                                            <div class="custom-dropdown" data-val="0,500">Large</div>
 										</div>
 									</div>
 								</div>
 							</div>
 
+							<div class="custom-dropdown-outer">
+								<label class="custom-dropdown-label primary-color">Personalize</label>
+								<div class="custom-dropdown-relative">
+									<div class="primary-color">
+										<input type="text" class="s7required url-text custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Add Name" />
+                                        <img src="images/select-close.svg" class="custom-select-close" alt="" />
+									</div>
+								</div>
+							</div>
 
-
-
+							<div class="custom-dropdown-outer">
+								<label class="custom-dropdown-label primary-color">Select Font</label>
+								<div class="custom-dropdown-relative">
+									<div class="primary-color">
+										<input type="text" class="s7required url-text-font custom-dropdown-menu custom-dropdown-awards custom-dropdown-padding-small small-text light-text" placeholder="Select Font" />
+										<div class="custom-dropdown-close"></div>
+										<div class="custom-dropdown-open"></div>
+										<img src="images/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+									</div>
+								</div>
+								<div class="custom-dropdown-position">
+									<div class="custom-dropdown-group">
+										<div class="custom-dropdown-scroll">
+                                          <div class="custom-dropdown" data-val="Arial"><img src="https://testvipd1.scene7.com/is/image/jlatonio/font-icon" class="custom-dropdown-icon" alt="" />Arial</div>
+                                          <div class="custom-dropdown" data-val="Adobe Caslon Pro Bold"><img src="https://testvipd1.scene7.com/is/image/jlatonio/font-icon" class="custom-dropdown-icon" alt="" />Adobe Caslon Pro Bold</div>
+                                          <div class="custom-dropdown" data-val="LFT Etica XB"><img src="https://testvipd1.scene7.com/is/image/jlatonio/font-icon" class="custom-dropdown-icon" alt="" />LFT Etica XB</div>
+                                          <div class="custom-dropdown" data-val="PhoenixPro-Bold"><img src="https://testvipd1.scene7.com/is/image/jlatonio/font-icon" class="custom-dropdown-icon" alt="" />PhoenixPro-Bold</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                            
                             <label class="custom-dropdown-label primary-color">Generated URL</label>
                             <p class="generated_url"></p>
 							<div class="store-button-container">
@@ -132,7 +161,7 @@
 			<footer class="acs-footer dark-bg text-align-center small-text">
 				<img class="footer-image" src="images/adobe-logo-print-rev.svg" alt="" />
 				<div>
-					<p>@2021 Adobe Systems Incorporated. All rights reserved.
+					<p>@2025 Adobe Systems Incorporated. All rights reserved.
 						
 						<span class="footer-secondary-color regular-text">
 							<a href="https://inside.corp.adobe.com/legal/corporate-law.html" target="_blank">Adobe Confidential</a>.

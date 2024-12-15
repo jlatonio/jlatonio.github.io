@@ -1,4 +1,3 @@
-
 // Show default generated URL when loaded
 var results = $(".testurl_preview").attr('src');
 $(".generated_url").text(results);
@@ -28,7 +27,6 @@ $(".store-continue").on("click", function() {
   }
  });
 
-//https://s7d1.scene7.com/is/image/jlatonio/Terminal_Pet_Boarding_Carrier_White_4200711_HOL24?$decal-pos=982,1404&$decal-rotate=0&$decal-size=0,500&$text=jlatonio&$decal-image=is{jlatonio/mg-decal-fish}&$font-size=fs180&$color=\red201\green142\blue86&$font=Arial&scl=1
     
 //var param01 = "https://testvipd1.scene7.com/is/image/jlatonio/";
 //var param02 = "Terminal_Pet_Boarding_Carrier_White_4200711_HOL24";
@@ -38,19 +36,17 @@ $(".store-continue").on("click", function() {
 //var param06 = "&font=Arial"; 
 //var param07 = "&$font-size=fs180"; 
 //var param08 = "&$text=jlatonio" + "&scl=1"; 
+    
 
  $(".testurl_na").html("");
  var param01 = "https://testvipd1.scene7.com/is/image/jlatonio/";
  var param02 = $(".url-product").data('val');
- var param03 = "?$decal-image=is{jlatonio/";
- var param04 = $(".decal-image").data('') +"}";
- var param05 = "&$decal-pos=982,1404&$decal-rotate=0"
- var param06 = "&$decal-size=" + $(".decal-size").data('');
- var param07 = "&$color=" + $(".personalize-font-color").data(''); 
- var param08 = "&font=" + $(".personalize-font").data(''); 
- var param09 = "&$font-size=" + $(".personalize-font-size").data(''); 
- var param10 = "&$text=" + $(".personalize-text").data('') + "&scl=1"; 
- var results = param01 + param02 + param03 + param04;
+ var param03 = "?$decal-image=is{jlatonio/" + $(".url-decal").data('val') + "}&$decal-pos=982,1404&$decal-rotate=0";
+ var param04 = "&$decal-size=" + $(".url-decal-size").data('val');
+ var param05 = "&layer=3&$text=" + $(".url-text").val(); 
+ var param06 = "&$font=" + $(".url-text-font").val(); 
+
+ var results = param01 + param02 + param03 + param04 + param05 + param06 + "&scl=1&effect=-1&color=0x000000&op_blur=2&opac=75,75&blendmode=mult&pos=1,1&fmt=webp";
 
  $(".testurl_preview").attr('src', results);
  $(".testurl_preview").on("error", function() {
@@ -59,6 +55,49 @@ $(".store-continue").on("click", function() {
   $(".generated_url").text(results);
   $(".testurl_preview").on("error", function() {
     $(this).closest(".column-testurl").find(".generated_url").text("Preview Not Available. Complete required fields.");
+  });
+  return false;
+});
+
+// autofill fields as user types. static html only
+$(function() {
+  "use strict";
+  $("input[type='text'], input[type='number']").on("keyup change", function() {
+    var option = $(this).val();
+    var item = option;
+    if (option.length === 0) {
+      $(this).closest(".custom-dropdown-outer").find(".custom-select-close").hide();
+    }
+    if (option.length > 0) {
+      $(this).closest(".custom-dropdown-outer").find(".custom-select-close").show();
+    }
+  });
+  return false;
+});
+
+// Open new tab with image converted as a PDF
+$(".store-pdf").on("click", function() {
+  "use strict";
+  var param01 = "https://testvipd1.scene7.com/is/image/jlatonio/";
+  var param02 = $(".url-product").data('val');
+  var param03 = "?layer=1&src=" + $(".url-fabric").data('val');
+  var param04 = "&layer=2&src=" + $(".url-finish").data('val') + "&wid=1000&qlt=95,1&resMode=sharp2";
+  var results = param01 + param02 + param03 + param04 + "&fmt=pdf";
+  var isValid = true;
+  $(".s7required").each(function() {
+    if ($(this).val().length === 0) {
+      isValid = false;
+      $(this).focus().attr("placeholder", "This is a required field.").css({
+        "background": "#fff2f2"
+      });
+      return false;
+    } else {
+      $(this).css({
+        "background": ""
+      });
+      window.open(results, '_blank');
+     }
+      return false;
   });
   return false;
 });
