@@ -316,4 +316,6 @@ $(".url-product").find(function() {
     return false;
     });
 });
- 
+
+// Show year at Footer
+$("#year").text(new Date().getFullYear());
