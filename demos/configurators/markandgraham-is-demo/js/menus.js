@@ -313,6 +313,9 @@ $(".url-product").find(function() {
         {$(".testurl_preview").attr('src', results);
         }
     });
+        
+    var generated_results = $(".testurl_preview").attr('src');
+    $(".generated_url").text(generated_results);
     return false;
     });
 });
