@@ -963,3 +963,6 @@ $("#shadow-checked").click(function () {
 	});
 	return false;
 });
+
+// Show year at Footer
+$("#year").text(new Date().getFullYear());

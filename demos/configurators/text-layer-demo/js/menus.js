@@ -323,3 +323,6 @@ $(document.body).on('mouseout touchend', ".custom-dropdown", function() {
     "transition": "all .01s ease-out"
   });
 });
+
+// Show year at Footer
+$("#year").text(new Date().getFullYear());
