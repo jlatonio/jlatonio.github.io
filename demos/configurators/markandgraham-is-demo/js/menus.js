@@ -292,12 +292,28 @@ $(".custom-dropdown-relative").hover(function() {
 });
 
 // Show each image preview on dropdown click
-// $(".url-product").find(function() {
-//     $(".custom-dropdown").on("click", function() {
-//      "use strict";
-//      var imageurl = $(this).closest(".custom-dropdown-outer").find(this).find(".custompreview").attr("src");
-//      $(".testurl_preview").attr('src', imageurl+ "?scl=1&fmt=webp");
-//     return false;
-//     });
-// });
+$(".url-product").find(function() {
+    $(".custompreview").on("click", function() {
+    "use strict";
+     var imageurl = $(this).closest(".custom-dropdown-outer").find(this).find(".imgpreview").attr("src");
+        
+     var param01 = "https://testvipd1.scene7.com/is/image/jlatonio/";
+     var param02 = $(".url-product").data('val');
+     var param03 = "?$decal-image=is{jlatonio/" + $(".url-decal").data('val') + "}";
+     var param04 = "&$decal-size=" + $(".url-decal-size").data('val');
+     var param05 = "&$text=" + $(".url-text").val(); 
+     var param06 = "&$font=" + $(".url-text-font").val(); 
+     var results = param01 + param02 + param03 + param04 + param05 + param06 + "&scl=1&fmt=webp"; 
+        
+    $('.s7required').each(function () {
+        if ($(this).val() == '') {
+            $(".testurl_preview").attr('src', imageurl + "?scl=1&fmt=webp");
+        }
+        else
+        {$(".testurl_preview").attr('src', results);
+        }
+    });
+    return false;
+    });
+});
  
