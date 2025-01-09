@@ -46,6 +46,7 @@
   align-items: center;
   justify-content: center;
   font-family: OpenSans-Regular;
+  user-select: none;
 }
 
 .error-count-container {
