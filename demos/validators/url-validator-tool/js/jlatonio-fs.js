@@ -18,6 +18,8 @@ $("#cancel-fullscreen").click(function () {
     });
 });
 
+// Show year at Footer
+$("#year").text(new Date().getFullYear());
 if (document.addEventListener) {
     document.addEventListener('webkitfullscreenchange', exitHandler, false);
     document.addEventListener('mozfullscreenchange', exitHandler, false);

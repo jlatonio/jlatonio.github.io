@@ -517,6 +517,28 @@ img {
   transition: background-color 0.25s ease-in;
 }
 
+.acs-footer {
+  max-width: 1440px;
+  margin: auto;
+  text-align: center;
+  padding: 20px 20px 30px 20px;
+  color: #000;
+}
+
+.footer-image {
+  width: 70px;
+  height: auto;
+  margin: 20px 0;
+}
+
+.acs-footer p {
+  margin-bottom: 20px;
+}
+
+.acs-footer p:last-child {
+  margin-bottom: 0;
+}
+
 @media screen and (min-width: 701px) {
 }
 
