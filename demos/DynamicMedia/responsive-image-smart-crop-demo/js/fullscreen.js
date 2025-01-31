@@ -111,3 +111,6 @@ function exitHandler() {
         }, false);
     }
 })();
+
+// Show year at Footer
+$("#year").text(new Date().getFullYear());
