@@ -1,0 +1,55 @@
+html, body {
+overflow:auto;
+background-color:transparent;
+}
+
+h2{
+font-size: 15px;
+line-height: 1.33;
+color:#000;
+font-family: "OpenSans-Light","Lucida Grande","Lucida Sans Unicode","Lucida Sans";
+margin:20px 20px 0 20px;
+}
+
+iframe{ 
+border-style:none;
+}
+
+#frame1{ 
+width:402px;
+height:874px;
+margin:0;
+padding:0;
+}
+
+#frame2{ 
+width:1024px;
+height:1366px;
+margin:0;
+padding:0;
+}
+
+#frame3{ 
+width:1366px;
+height:1024px;
+margin:0;
+padding:0;
+}
+
+#frame4{ 
+width:2000px;
+height:1000px;
+margin:0;
+padding:0;
+}
+
+.mockup{
+width:300px;
+height:400px;
+background-image: url('../img/next-gen-mockup.jpg');
+background-repeat: no-repeat;
+background-size:contain;
+background-position: top center;
+display:block;
+box-shadow: 2px 2px 5px 2px #888888;
+}
