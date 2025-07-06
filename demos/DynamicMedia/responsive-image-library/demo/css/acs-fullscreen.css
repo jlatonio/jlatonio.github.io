@@ -1,0 +1,17 @@
+#view-fullscreen, #cancel-fullscreen {
+  position: relative;
+}
+
+#view-fullscreen:hover {
+  text-decoration: underline;
+}
+
+#cancel-fullscreen:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 701px) { 
+  #view-fullscreen,#cancel-fullscreen  {
+    display: block;
+  }
+}

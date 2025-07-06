@@ -1,0 +1,45 @@
+.acs-footer {
+  width: 100%;
+  min-height:160px;
+  padding: 40px 20px 20px 20px;
+}
+
+.acs-footer p {
+  margin-bottom: 20px;
+}
+
+.acs-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.acs-footer-secondary-color {
+  color: #9cc9fb;
+}
+
+.acs-footer-image {
+  width: 50px;
+  height: auto;
+  margin: 0 0 20px 0;
+}
+
+@media screen and (min-width: 557px) {
+}
+
+@media screen and (min-width: 701px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1025px) {
+  .acs-footer-image {
+    width: 70px;
+  }
+    
+  .acs-footer {
+    padding: 60px 100px 40px 100px;
+  }
+}
+
+@media screen and (min-device-width: 1366px) and (orientation:landscape) {
+}

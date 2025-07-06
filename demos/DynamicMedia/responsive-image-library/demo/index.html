@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+		<title>ACS Customer Dashboards</title>
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" href="css/acs-global.css" />
+		<link rel="stylesheet" href="css/acs-resizing.css" />
+		<link rel="stylesheet" href="css/acs-cards.css" />
+		<link rel="stylesheet" href="css/acs-header.css" />
+		<link rel="stylesheet" href="css/acs-hero.css" />
+		<link rel="stylesheet" href="css/acs-columns.css" />
+		<link rel="stylesheet" href="css/acs-dropdown.css" />
+		<link rel="stylesheet" href="css/acs-footer.css" />
+		<link rel="stylesheet" href="css/acs-fullscreen.css" />
+		<link rel="stylesheet" href="css/fonts.css" />
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<link rel="stylesheet" href="css/selectors.css" /><!-- updated the original -->
+        <meta http-equiv='cache-control' content='no-cache'>
+        <meta http-equiv='expires' content='0'>
+        <meta http-equiv='pragma' content='no-cache'>
+		<script src="js/jquery-1.12.4.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+	
+    <body class="dark-0-bg">
+        <div class="page">
+            <!-- header -->
+            <!--<header class="acs-header white-text dark-0-bg">
+                <div class="acs-header-column-1">
+                    <a href="index.html">
+                        <img class="acs-header-logo" src="images/logos/adobe-logo_h.svg" alt="" />
+                    </a>
+                    <img class="acs-header-help" src="images/icons/gear-icon.svg" alt="" />
+                </div>
+                <div class="acs-header-column-2">
+                    <div class="acs-header-column-2-inner small-text text-shadow">
+                        <div class="acs-column-container-header-feature">
+                            <a class="column-tools-header-each" id="view-fullscreen">
+                                <p>Enter Fullscreen</p>
+                                <img class="column-tools-header-icon" src="images/icons/fullscreen-icon.svg" alt="" />
+                            </a>
+                            <a class="column-tools-header-each" id="cancel-fullscreen">
+                                <p>Exit Fullscreen</p>
+                                <img class="column-tools-header-icon" src="images/icons/fullscreen-icon-exit.svg" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>-->
+            <!-- main content -->
+            <div class="acs-hero-container view-height"><!-- 'view-height' added here for home page only -->
+                <div class="acs-hero-content acs-hero-content-home"><!-- 'acs-hero-content-home' added here for home page only-->
+                    <form class="custom-dropdown-input" method="GET" accept-charset="UTF-8">
+                        <div class="acs-hero-column-container">
+                            <div class="acs-hero-container-each">
+                                <!-- search menu -->
+                                <div class="custom-dropdown-outer">
+                                    <div class="custom-dropdown-relative">
+                                        <input type="text" class="acs-demo-menu custom-dropdown-menu custom-dropdown-menu-left custom-dropdown-padding-small small-text light-text white-text text-shadow" placeholder="Select Demo" value="Select Demo" readonly />
+                                        <div class="custom-dropdown-close"></div>
+                                        <div class="custom-dropdown-open"></div>
+                                        <img src="images/icons/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+                                    </div>
+                                    <div class="custom-dropdown-position">
+                                        <div class="custom-dropdown-group">
+                                            <div class="custom-dropdown-scroll">
+                                                <div class="custom-dropdown">Templates</div>
+                                                <div class="custom-dropdown">Image Presets</div>
+                                                <div class="custom-dropdown">Smart Crop</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           <div class="acs-hero-container-each">
+                                <!-- dropdown -->
+                                <div class="custom-dropdown-outer">
+                                    <div class="custom-dropdown-relative">
+                                        <input type="text" class="acs-market-menu custom-dropdown-menu custom-dropdown-menu-left custom-dropdown-padding-small small-text light-text white-text text-shadow" placeholder="Select Screen Size" value="Select Screen Size" readonly />
+                                        <div class="custom-dropdown-close"></div>
+                                        <div class="custom-dropdown-open"></div>
+                                        <img src="images/icons/dropdown-arrow.svg" class="custom-dropdown-arrow-toggle" alt="" />
+                                    </div>
+                                    <div class="custom-dropdown-position">
+                                        <div class="custom-dropdown-group">
+                                            <div class="custom-dropdown-scroll">
+                                                <div class="custom-dropdown">iPhone 15 Pro</div>
+                                                <div class="custom-dropdown">iPad 13 Portrait</div>
+                                                <div class="custom-dropdown">iPad 13 Landscape</div>
+                                                <div class="custom-dropdown">Desktop</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                   
+                        </div>
+                    </form>   
+                    <div id="iframe_container"> 
+                        <iframe id="frame1" src="../index-smart-crop.html" scrolling="no" allowtransparency="true" crossorigin="anonymous"></iframe>
+                    </div>      
+                </div>
+            </div>
+            <!-- footer -->
+            <footer class="acs-footer dark-0-bg text-align-center white-text small-text">
+                <img class="acs-footer-image" src="images/logos/adobe-logo-print-rev.svg" alt="" />
+                <div>
+                    <p>© <span id="year"></span> Adobe Systems Incorporated. All rights reserved.
+                        <span class="acs-footer-secondary-color regular-text">
+                            <a href="https://inside.corp.adobe.com/legal/corporate-law.html" target="_blank">Adobe Confidential</a>.
+                        </span>
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <script src="js/acs-fullscreen.js"></script>
+        <script src="js/acs-menus.js"></script>
+        <script src="js/acs-print.js"></script>
+    </body>
+</html>

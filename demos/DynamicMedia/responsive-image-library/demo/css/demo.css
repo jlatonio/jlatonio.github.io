@@ -1,0 +1,48 @@
+html, body {
+padding:70px 20px 20px 20px;
+overflow-y:auto;
+overflow:auto;
+background-color: transparent !important;
+font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+}
+
+h2{
+font-size: 15px;
+line-height: 1.33;
+color:#000;
+font-family: "OpenSans-Light","Lucida Grande","Lucida Sans Unicode","Lucida Sans";
+margin:20px 20px 0 20px;
+}
+
+.screen-size{ 
+position: fixed;
+text-align: center;
+width: 100%;
+padding: 20px;
+top: 0;
+left: 0;
+}
+
+.screen-container{ 
+text-align: center;
+}
+
+.iframe-container{ 
+background-color: transparent;
+}
+
+iframe{ 
+border-style:none;
+background-color: transparent;
+}
+
+#frame1{
+width:430px;
+height:932px;
+margin:0;
+padding:0;
+}
+
+#iframe_container{
+padding-top: 75px;
+}

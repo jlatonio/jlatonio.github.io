@@ -1,0 +1,233 @@
+.acs-hero-container {
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  background: rgb(0,0,0);
+  background: #cccccc;
+}
+
+.hero-crumbs-container p{
+  font-size: 16px;
+}
+
+.acs-hero-image {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 1;
+}
+
+.acs-hero-content {
+  margin: auto;
+}
+
+.acs-hero-content-home {
+}
+
+.acs-hero-content h1 {
+  color: #fff;
+  font-size: 32px;
+  text-align: left;
+  position: relative;
+  z-index: 0;
+}
+
+.acs-hero-tagline p {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  padding-left: 0;
+  position: relative;
+  z-index: 0;
+}
+
+.sticky {
+  position: relative;
+  padding-top: 20px;
+}
+
+.stick {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  z-index: 99;
+  max-width: 1440px;
+  -webkit-transition: background-color .25s ease-in;
+  -moz-transition: background-color .25s ease-in;
+  -o-transition: background-color .25s ease-in;
+  transition: background-color .25s ease-in;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.7);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(5,5,5,0.7);
+  box-shadow: 0px 1px 4px rgba(4,4,4,0.7);
+}
+
+.hero-crumbs {
+  text-align: center;
+}
+
+.hero-crumbs-container a:after {
+  content: "";
+  position: absolute;
+  background-image: url('../images/icons/dropdown-arrow.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(-90deg);
+  width: 16px;
+  height: 16px;
+  z-index: 1;
+  top: 50%;
+  right: -30px;
+  margin-top: -8px;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: initial;
+}
+
+.hero-crumbs-container a {
+  margin-right: 40px;
+  position: relative;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-crumbs-container a:hover {
+  text-decoration: underline;
+}
+
+.hero-crumbs-container a:last-child:after {
+  background-image: none;
+}
+
+.hero-crumbs-container a:last-child {
+  background-image: none;
+  text-decoration: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #e6de8f;
+  pointer-events: none;
+  cursor: default;
+}
+
+.hero-crumbs img {
+  width: 15px;
+  height: auto;
+  margin: 0 10px;
+  transform: rotate(-90deg);
+}
+
+.hero-crumbs-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: left;
+  padding-left: 0;
+  max-width: 1440px;
+}
+
+.acs-hero-container{ 
+text-align: center;
+}
+
+.acs-hero-content-image {
+  height: 100%;
+  width: 100%;
+}
+
+.acs-hero-content-text {
+  text-align: center;
+}
+
+.acs-hero-column-container {
+  padding: 0 0 0 0;
+  display: flex;
+}
+
+.acs-hero-container-each {
+  text-align: center;
+  position: relative;
+  padding: 0;
+  display: flex;
+  margin-right: 20px;
+}
+
+@media screen and (min-width: 701px) {
+  .acs-hero-container {
+    padding: 20px;
+  }
+
+  .acs-hero-tagline p {
+    padding-left: 40px;
+  }
+
+  .stick {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .hero-crumbs-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .acs-hero-container-each {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .acs-hero-container {
+    padding: 20px;
+  }
+
+  .acs-hero-tagline p {
+    padding-left: 40px;
+  }
+
+  .acs-hero-container-each {
+  }
+}
+
+@media only screen and (min-device-width: 1366px) and (orientation:landscape) {
+  .acs-hero-container {
+    padding: 20px;
+  }
+    
+  .stick {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+    
+  .acs-hero-tagline p {
+    padding-left: 40px;
+  }
+
+  .acs-hero-container-each {
+  }
+}

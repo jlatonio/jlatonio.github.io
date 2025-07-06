@@ -1,0 +1,67 @@
+/* Print*/
+
+@media print {
+
+  @page {
+    margin: 0 !important;
+    padding: 0 !important;
+    page-break-inside: always !important;
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+    overflow-y: visible !important;
+    size: A3 landscape;
+  }
+
+  html, body {
+    width: 100%;
+    height: auto;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12px;
+    font-family: "OpenSans-Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
+    line-height: 1.33;
+    color: #fff;
+    overflow-y: visible;
+    overflow-x: hidden;
+    -ms-font-feature-settings: "liga" 1;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 100% !important;
+  }
+
+  .acs-main-content {
+    display: block;
+    overflow-y: visible;
+  }
+
+  .acs-header, .hero-crumbs, .custom-dropdown-input {
+    display: none !important;
+  }
+
+  .acs-hero-container {
+    padding: 60px 100px;
+  }
+   
+  .acs-hero-tagline p {
+    padding-left: 40px;
+  }
+
+  .acs-hero-container-each {
+    padding: 0 0 0 40px;
+  }
+    
+  .acs-cards-contain{
+    width: 20% !important;
+  }
+    
+  .acs-cards-cover {
+    width: 25% !important;
+  }
+    
+  .acs-footer {
+    padding: 40px 100px 60px 100px;
+  }
+}
