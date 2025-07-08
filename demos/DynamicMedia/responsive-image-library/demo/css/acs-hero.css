@@ -167,6 +167,7 @@ text-align: center;
 .acs-hero-column-container {
   padding: 0 0 0 0;
   display: flex;
+  justify-content: center;
 }
 
 .acs-hero-container-each {
