@@ -58,7 +58,7 @@
                    <img
                       style="width:100%;height:auto;"
                       id="responsiveImage"
-                      src="https://s7d1.scene7.com/is/image/DynamicMediaNA/jl-test-smart-crop"
+                      src=""
                       data-mode="smartcrop"
                       class="fluidimage"
                       />
@@ -87,13 +87,27 @@
       <script type="text/javascript">
          s7responsiveImage(document.getElementById("responsiveImage"));
       </script>
-      <script type="text/javascript">     
-        $(".fluidimage").on("click", function () {
+      <script type="text/javascript">
+         // Click to inspect URL
+         $(".fluidimage").on("click", function () {
             "use strict";
             var imageUrl = $('.fluidimage').attr('src');
             alert(imageUrl);
             return false;
-        });
+         }); 
+          
+         // Default image with smart crops  
+         $(".fluidimage").attr("src", "https://s7d1.scene7.com/is/image/DynamicMediaNA/jl-test-smart-crop");
+         
+         // Action to perform on Enter key press  
+         $(".url-text").keydown(function(event) {
+            var enterurl = $(this).val();
+            if (event.keyCode === 13) {
+              $(".fluidimage").removeAttr("src");
+              $(".fluidimage").attr("src", enterurl);
+              s7responsiveImage(document.getElementById("responsiveImage"));  
+            }
+         });
       </script>    
    </body>
 </html>

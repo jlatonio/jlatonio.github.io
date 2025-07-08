@@ -162,13 +162,3 @@ $(".custom-dropdown-relative").hover(function() {
   $(this).find('.custom-dropdown-arrow-toggle, .custom-dropdown-arrow-open, .custom-dropdown-arrow-close, .custom-select-close').css("opacity", ".4");
     return false;
 });
-
-
-  $(".url-text").keydown(function(event) {
-    var enterurl = $(this).val();
-    if (event.keyCode === 13) {
-      // Action to perform on Enter key press
-      $(".fluidimage").attr("src", enterurl);
-      s7responsiveImage(document.getElementById("responsiveImage"));  
-    }
-  });
