@@ -1,3 +1,6 @@
+var imageUrl = $('.fluidimage').attr('src');
+$(".url-container").text(imageUrl);
+
 $(".custom-dropdown-scroll").closest("form").find(".custom-dropdown-open").on("click", function () {
 	// closes other elements other than this when clicked
 	"use strict";

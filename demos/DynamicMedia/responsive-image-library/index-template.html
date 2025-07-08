@@ -52,6 +52,7 @@
          <div class="acs-main-content">
             <div class="column-container">
                 <div class="container">
+                   <div class="url-container">Click on image to preview URL</div>
                    <img
                       style="width: 100%;"
                       id="responsiveImage"
@@ -84,5 +85,13 @@
       <script type="text/javascript">
          s7responsiveImage(document.getElementById("responsiveImage"));
       </script>
+      <script type="text/javascript">     
+        $(".fluidimage").on("click", function () {
+            "use strict";
+            var imageUrl = $('.fluidimage').attr('src');
+            alert(imageUrl);
+            return false;
+        });
+      </script>    
    </body>
 </html>

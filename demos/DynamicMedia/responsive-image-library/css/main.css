@@ -1,3 +1,27 @@
+.acs-main-content{
+  position:relative;
+}
+
+.url-container {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  font-size: 12px;
+  padding: 0 0 4px 0 ;
+}
+
+.fluidimage:hover {
+  cursor: pointer;
+  user-select: none;
+}
+
+.fluidimage:hover {
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
 .column-testurl {
   text-align: center;
   position: relative;
