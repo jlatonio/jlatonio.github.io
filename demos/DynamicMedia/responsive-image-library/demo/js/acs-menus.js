@@ -114,7 +114,7 @@ $(".acs-market-menu").closest(".custom-dropdown-outer").find(".custom-dropdown")
 	}
 	if ($(this).closest("form").find(".acs-market-menu").val() === 'Desktop') {
 		$("#frame1").animate({"width":"1728px","height":"1317px","animation-duration":"1s"});
-        $('#frame1').attr('scrolling', 'no');
+        $('#frame1').attr('scrolling', 'yes');
 		return false;
 	}
 });
