@@ -79,14 +79,7 @@
 				</div>
 			</footer>
       </div>
-      <script src="js/fullscreen.js"></script>
-      <script
-         type="text/javascript"
-         src="https://s7d9.scene7.com/s7viewers/libs/responsive_image.js"
-         ></script>
-      <script type="text/javascript">
-         s7responsiveImage(document.getElementById("responsiveImage"));
-      </script>
+
       <script type="text/javascript">
          // Click to inspect URL
          $(".fluidimage").on("click", function () {
@@ -95,9 +88,6 @@
             alert(imageUrl);
             return false;
          }); 
-          
-         // Default image with smart crops  
-         $(".fluidimage").attr("src", "https://s7d1.scene7.com/is/image/DynamicMediaNA/jl-test-smart-crop");
          
          // Action to perform on Enter key press  
          $(".url-text").keydown(function(event) {
@@ -108,6 +98,16 @@
               s7responsiveImage(document.getElementById("responsiveImage"));  
             }
          });
-      </script>    
+      </script>   
+       
+      <script src="js/fullscreen.js"></script>
+      <script
+         type="text/javascript"
+         src="https://s7d9.scene7.com/s7viewers/libs/responsive_image.js"
+         ></script>
+      <script type="text/javascript">
+         s7responsiveImage(document.getElementById("responsiveImage"));
+      </script>
+       
    </body>
 </html>
