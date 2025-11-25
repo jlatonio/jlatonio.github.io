@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AEM Asset Selector + DM</title>
+
+  <!-- Asset Selector package -->
+  <script
+    id="asset-selectors-script"
+    src="https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/assets-selectors.js">
+  </script>
+
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 20px; }
+    #asset-selector-dialog { border: none; padding: 0; }
+    #asset-selector-container {
+      height: calc(100vh - 80px);
+      width: calc(100vw - 60px);
+      margin: -20px;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f7f7f7;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+
+  <script>
+    // 1) IMS + AEM config – fill these in with your real values
+    const imsProps = {
+      imsClientId: "<YOUR_IMS_CLIENT_ID>",
+      imsScope: "openid,AdobeID",
+      redirectUrl: window.location.href,
+      modalMode: true,
+      onImsServiceInitialized: (service) => {
+        console.log("onImsServiceInitialized", service);
+      },
+      onAccessTokenReceived: (token) => {
+        console.log("onAccessTokenReceived", token);
+      },
+      onAccessTokenExpired: () => {
+        console.log("onAccessTokenExpired");
+      },
+      onErrorReceived: (type, msg) => {
+        console.error("onErrorReceived", type, msg);
+      }
+    };
+
+    // AEM + DM info (your tenant values)
+    const AEM_AUTHOR = "https://author-p170255-e1819712.adobeaemcloud.com";
+    const DM_DELIVERY = "https://delivery-p170255-e1819712.adobeaemcloud.com";
+
+    let imsInstance;
+
+    function initIms() {
+      // Provided by assets-selectors.js
+      const registeredTokenService = PureJSSelectors.registerAssetsSelectorsAuthService(imsProps);
+      imsInstance = registeredTokenService;
+    }
+
+    // Render Asset Selector with IMS auth flow
+    function openAssetSelector() {
+      const container = document.getElementById("asset-selector-container");
+
+      const props = {
+        imsOrg: "<YOUR_IMS_ORG_ID>",            // e.g. "1234567890@AdobeOrg"
+        aemHost: AEM_AUTHOR,
+        onSelectionChange: handleSelection,
+        selectionMode: "single"
+      };
+
+      PureJSSelectors.renderAssetSelectorWithAuthFlow(
+        container,
+        props,
+        () => {
+          document.getElementById("asset-selector-dialog").showModal();
+        }
+      );
+    }
+
+    // Handle selected asset and build DM URL
+    function handleSelection(items) {
+      const out = document.getElementById("output");
+      if (!items || items.length === 0) {
+        out.textContent = "No asset selected.";
+        return;
+      }
+
+      const asset = items[0];
+
+      // URN is usually in repo.id
+      const urn = asset?.repo?.id;
+
+      const dmUrl = `${DM_DELIVERY}/adobe/assets/${urn}/original`;
+
+      const payload = {
+        title: asset.title,
+        path: asset.path,
+        mimeType: asset.mimeType,
+        urn: urn,
+        dynamicMediaURL: dmUrl
+      };
+
+      out.textContent = JSON.stringify(payload, null, 2);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initIms();
+      document.getElementById("open-btn").addEventListener("click", openAssetSelector);
+    });
+  </script>
+</head>
+
+<body>
+  <h1>AEM Asset Selector + Dynamic Media</h1>
+  <p>Make sure you are logged into Experience Cloud and AEM in this browser.</p>
+
+  <button id="open-btn">Open Asset Selector</button>
+
+  <dialog id="asset-selector-dialog">
+    <div id="asset-selector-container"></div>
+  </dialog>
+
+  <h2>Selected Asset</h2>
+  <div id="output">No asset selected yet.</div>
+</body>
+</html>
