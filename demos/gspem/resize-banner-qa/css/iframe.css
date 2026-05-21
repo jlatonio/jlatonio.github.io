@@ -1,0 +1,84 @@
+html,
+body {
+  font-family: "AdobeClean-Light";
+}
+
+h2 {
+  font-family: "AdobeClean-Bold";
+  font-size: 24px;
+}
+
+p {
+  font-family: "AdobeClean-Light";
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.header_section {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.iframe_section {
+  padding-top: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 0;
+  display: flex;
+  flex-wrap: wrap; /* allows wrapping to next line */
+  gap: 20px; /* spacing between iframes */
+}
+
+iframe {
+  border-style: none;
+  overflow: hidden;
+}
+
+#grid-160x600 {
+  width: 160px;
+  height: 600px;
+  margin: 0;
+  padding: 0;
+}
+
+#grid-300x250 {
+  width: 300px;
+  height: 250px;
+  margin: 0;
+  padding: 0;
+}
+
+#grid-300x600 {
+  width: 300px;
+  height: 600px;
+  margin: 0;
+  padding: 0;
+}
+
+#grid-320x50 {
+  width: 320px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+#grid-336x280 {
+  width: 336px;
+  height: 280px;
+  margin: 0;
+  padding: 0;
+}
+
+#grid-728x90 {
+  width: 728px;
+  height: 90px;
+  margin: 0;
+  padding: 0;
+}
+
+#grid-970x250 {
+  width: 970px;
+  height: 250px;
+  margin: 0;
+  padding: 0;
+}

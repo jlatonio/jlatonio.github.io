@@ -1,39 +1,420 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>AEM Asset Selector + DM</title>
+  <meta charset="UTF-8" />
+  <title>Dynamic Media Open API Asset Selector</title>
 
-  <!-- Asset Selector package -->
-  <script
-    id="asset-selectors-script"
-    src="https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/assets-selectors.js">
-  </script>
+  <script src="https://experience.adobe.com/solutions/CQ-assets-selectors/static-assets/resources/assets-selectors.js"></script>
 
   <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 20px; }
-    #asset-selector-dialog { border: none; padding: 0; }
-    #asset-selector-container {
-      height: calc(100vh - 80px);
-      width: calc(100vw - 60px);
-      margin: -20px;
+    :root {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color-scheme: light dark;
     }
-    #output {
-      margin-top: 20px;
-      padding: 10px;
-      background: #f7f7f7;
-      font-family: monospace;
-      white-space: pre-wrap;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      color: #f9fafb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-shell {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 18px 24px 24px;
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .app-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .app-title {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .app-subtitle {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    .app-tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.7);
+      color: #e5e7eb;
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+    }
+
+    .layout {
+      flex: 1;
+      display: flex;
+      gap: 16px;
+      margin-top: 4px;
+      min-height: 0;
+    }
+
+    .left-pane,
+    .right-pane {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.7),
+        0 0 0 1px rgba(15, 23, 42, 0.6);
+    }
+
+    .left-pane {
+      flex: 1.2;
+    }
+
+    .right-pane {
+      flex: 1;
+    }
+
+    .pane-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+
+    .pane-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .pane-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #e5e7eb;
+      margin: 0;
+    }
+
+    .pane-subtitle {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin: 0;
+    }
+
+    .primary-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 7px 14px;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #0b1120;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.45);
+      transition:
+        transform 80ms ease,
+        box-shadow 80ms ease,
+        filter 80ms ease;
+      white-space: nowrap;
+    }
+
+    .primary-btn:hover {
+      filter: brightness(1.05);
+      box-shadow: 0 14px 32px rgba(56, 189, 248, 0.55);
+    }
+
+    .primary-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.7);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #cbd5f5;
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    #asset-selector {
+      flex: 1;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at top, #020617 0, #020617 50%, #020617 100%);
+      overflow: hidden;
+      min-height: 420px;
+      position: relative;
+    }
+
+    .selector-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      text-align: center;
+      padding: 0 16px;
+      pointer-events: none;
+    }
+
+    .selector-placeholder strong {
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+
+    .selector-placeholder span {
+      font-size: 0.8rem;
+    }
+
+    .selector-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.16), transparent 60%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .right-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .field-group-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    .field-row {
+      display: flex;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+      gap: 6px;
+    }
+
+    .field-label {
+      flex: 0 0 70px;
+      color: #9ca3af;
+    }
+
+    .field-value {
+      flex: 1;
+      color: #e5e7eb;
+      word-break: break-all;
+    }
+
+    .field-muted {
+      color: #6b7280;
+    }
+
+    .links-block {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(75, 85, 99, 0.7);
+    }
+
+    .links-block a {
+      display: block;
+      font-size: 0.8rem;
+      color: #38bdf8;
+      text-decoration: none;
+      margin-bottom: 4px;
+      word-break: break-all;
+    }
+
+    .links-block a:hover {
+      text-decoration: underline;
+    }
+
+    .hint-text {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    .code-block {
+      margin-top: 12px;
+      border-radius: 10px;
+      background: #020617;
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      padding: 8px 10px;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: #e5e7eb;
+      overflow-x: auto;
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    @media (max-width: 960px) {
+      .app-shell {
+        padding: 14px 12px 18px;
+      }
+
+      .layout {
+        flex-direction: column;
+      }
+
+      #asset-selector {
+        min-height: 360px;
+      }
+
+      .app-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
     }
   </style>
+</head>
 
-  <script>
-    // 1) IMS + AEM config – fill these in with your real values
+<body>
+<div class="app-shell">
+  <header class="app-header">
+    <div class="app-title-block">
+      <h1 class="app-title">Dynamic Media Asset Selector</h1>
+      <p class="app-subtitle">Search and pick delivery assets, then copy ready-to-use Dynamic Media URLs.</p>
+    </div>
+    <div class="app-tag">Creator friendly · AEM CS · Dynamic Media</div>
+  </header>
+
+  <div class="layout">
+    <!-- Left pane: Asset Selector -->
+    <section class="left-pane">
+      <div class="pane-header">
+        <div class="pane-title-block">
+          <h2 class="pane-title">Browse assets</h2>
+          <p class="pane-subtitle">Launch Asset Selector and explore your Dynamic Media library.</p>
+        </div>
+        <button class="primary-btn" id="launch-btn">
+          Launch selector
+        </button>
+      </div>
+
+      <div id="asset-selector">
+        <div class="selector-gradient"></div>
+        <div class="selector-placeholder" id="selector-placeholder">
+          <strong>Asset Selector will render here</strong>
+          <span>Click "Launch selector" and sign in with your Adobe ID.</span>
+          <span class="hint-text">If nothing loads, your imsClientId or allow-listed domains may need an update.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right pane: Selection details -->
+    <section class="right-pane">
+      <div class="pane-header">
+        <div class="pane-title-block">
+          <h2 class="pane-title">Selection details</h2>
+          <p class="pane-subtitle">Instant metadata and delivery URLs for the selected asset.</p>
+        </div>
+      </div>
+
+      <div class="right-content" id="asset-selector-select">
+        <div class="pill-row">
+          <div class="pill">Single selection</div>
+          <div class="pill">Delivery repository</div>
+        </div>
+
+        <div class="field-group-label">Summary</div>
+        <div class="field-row">
+          <div class="field-label">Title</div>
+          <div class="field-value field-muted" id="field-title">No asset selected yet</div>
+        </div>
+        <div class="field-row">
+          <div class="field-label">Path</div>
+          <div class="field-value field-muted" id="field-path">–</div>
+        </div>
+        <div class="field-row">
+          <div class="field-label">MIME</div>
+          <div class="field-value field-muted" id="field-mime">–</div>
+        </div>
+        <div class="field-row">
+          <div class="field-label">URN</div>
+          <div class="field-value field-muted" id="field-urn">–</div>
+        </div>
+
+        <div class="field-group-label" style="margin-top: 12px;">Dynamic Media URLs</div>
+        <div class="links-block" id="link-block">
+          <span class="hint-text">Select an asset to generate original and renditions URLs.</span>
+        </div>
+
+        <div class="field-group-label" style="margin-top: 12px;">Raw payload</div>
+        <div class="code-block" id="raw-json">
+          Waiting for selection from Asset Selector.
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  // TODO: paste the real imsClientId Adobe gives you
+  const IMS_CLIENT_ID = ""; // e.g. "aemcs-mytenant-assetselector"
+  const IMS_ORG = "BB22160E57207B7B7F000101@AdobeOrg";
+  const REPOSITORY_ID = "delivery-p170255-e1819712.adobeaemcloud.com";
+  const DM_BASE = "https://delivery-p170255-e1819712.adobeaemcloud.com";
+
+  function openAssetSelector() {
+    const ASS_DIV_SEL = "asset-selector-select";
+
     const imsProps = {
-      imsClientId: "<YOUR_IMS_CLIENT_ID>",
-      imsScope: "openid,AdobeID",
+      imsClientId: IMS_CLIENT_ID,
+      imsScope: "openid",
       redirectUrl: window.location.href,
       modalMode: true,
+      adobeImsOptions: {
+        modalSettings: {
+          allowOrigin: window.location.origin
+        },
+        useLocalStorage: true
+      },
       onImsServiceInitialized: (service) => {
         console.log("onImsServiceInitialized", service);
       },
@@ -44,86 +425,95 @@
         console.log("onAccessTokenExpired");
       },
       onErrorReceived: (type, msg) => {
-        console.error("onErrorReceived", type, msg);
+        console.log("onErrorReceived", type, msg);
+        const assDiv = document.getElementById(ASS_DIV_SEL);
+        assDiv.innerHTML =
+          "<div class='hint-text'><strong>IMS error:</strong> " +
+          type +
+          "<br>" +
+          (msg || "") +
+          "<br>Check your imsClientId, scopes and allowed domains.</div>";
       }
     };
 
-    // AEM + DM info (your tenant values)
-    const AEM_AUTHOR = "https://author-p170255-e1819712.adobeaemcloud.com";
-    const DM_DELIVERY = "https://delivery-p170255-e1819712.adobeaemcloud.com";
-
-    let imsInstance;
-
-    function initIms() {
-      // Provided by assets-selectors.js
-      const registeredTokenService = PureJSSelectors.registerAssetsSelectorsAuthService(imsProps);
-      imsInstance = registeredTokenService;
+    function loadIms() {
+      PureJSSelectors.registerAssetsSelectorsAuthService(imsProps);
     }
 
-    // Render Asset Selector with IMS auth flow
-    function openAssetSelector() {
-      const container = document.getElementById("asset-selector-container");
+    function handleSelection(selectedAssets) {
+      const titleEl = document.getElementById("field-title");
+      const pathEl = document.getElementById("field-path");
+      const mimeEl = document.getElementById("field-mime");
+      const urnEl = document.getElementById("field-urn");
+      const linkBlock = document.getElementById("link-block");
+      const rawJson = document.getElementById("raw-json");
 
-      const props = {
-        imsOrg: "<YOUR_IMS_ORG_ID>",            // e.g. "1234567890@AdobeOrg"
-        aemHost: AEM_AUTHOR,
-        onSelectionChange: handleSelection,
-        selectionMode: "single"
-      };
-
-      PureJSSelectors.renderAssetSelectorWithAuthFlow(
-        container,
-        props,
-        () => {
-          document.getElementById("asset-selector-dialog").showModal();
-        }
-      );
-    }
-
-    // Handle selected asset and build DM URL
-    function handleSelection(items) {
-      const out = document.getElementById("output");
-      if (!items || items.length === 0) {
-        out.textContent = "No asset selected.";
+      if (!selectedAssets || !selectedAssets.length) {
+        titleEl.textContent = "No asset selected";
+        pathEl.textContent = "–";
+        mimeEl.textContent = "–";
+        urnEl.textContent = "–";
+        linkBlock.innerHTML =
+          "<span class='hint-text'>Select an asset to generate URLs.</span>";
+        rawJson.textContent = "Waiting for selection from Asset Selector.";
         return;
       }
 
-      const asset = items[0];
+      const firstAsset = selectedAssets[0];
 
-      // URN is usually in repo.id
-      const urn = asset?.repo?.id;
+      titleEl.textContent = firstAsset.title || "(no title)";
+      pathEl.textContent = firstAsset.path || "(no path)";
+      mimeEl.textContent = firstAsset.mimeType || "(unknown)";
 
-      const dmUrl = `${DM_DELIVERY}/adobe/assets/${urn}/original`;
+      const urn = firstAsset.repo && firstAsset.repo.id ? firstAsset.repo.id : null;
+      urnEl.textContent = urn || "(not available)";
 
-      const payload = {
-        title: asset.title,
-        path: asset.path,
-        mimeType: asset.mimeType,
-        urn: urn,
-        dynamicMediaURL: dmUrl
-      };
+      if (urn) {
+        const encodedUrn = encodeURIComponent(urn);
+        const originalUrl = DM_BASE + "/adobe/assets/" + encodedUrn + "/original";
+        const renditionsUrl = DM_BASE + "/adobe/assets/" + encodedUrn + "/renditions";
 
-      out.textContent = JSON.stringify(payload, null, 2);
+        linkBlock.innerHTML =
+          '<a href="' + originalUrl + '" target="_blank" rel="noopener noreferrer">Open original rendition</a>' +
+          '<a href="' + renditionsUrl + '" target="_blank" rel="noopener noreferrer">Open renditions JSON</a>' +
+          '<div class="hint-text">Drop these URLs into your layouts, components or prototypes.</div>';
+      } else {
+        linkBlock.innerHTML =
+          "<span class='hint-text'>No URN found on this asset, so delivery URLs cannot be generated.</span>";
+      }
+
+      rawJson.textContent = JSON.stringify(firstAsset, null, 2);
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      initIms();
-      document.getElementById("open-btn").addEventListener("click", openAssetSelector);
+    loadIms();
+
+    const assetSelectorProps = {
+      aemTierType: ["delivery"],
+      imsOrg: IMS_ORG,
+      repositoryId: REPOSITORY_ID,
+      hideTreeNav: false,
+      handleSelection: handleSelection
+    };
+
+    const container = document.getElementById("asset-selector");
+    const placeholder = document.getElementById("selector-placeholder");
+    if (placeholder) {
+      placeholder.remove();
+    }
+
+    PureJSSelectors.renderAssetSelectorWithAuthFlow(container, assetSelectorProps);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const launchBtn = document.getElementById("launch-btn");
+
+    launchBtn.addEventListener("click", () => {
+      if (!IMS_CLIENT_ID) {
+        alert("Please update IMS_CLIENT_ID in the script with the imsClientId Adobe provided for Asset Selector.");
+      }
+      openAssetSelector();
     });
-  </script>
-</head>
-
-<body>
-  <h1>AEM Asset Selector + Dynamic Media</h1>
-  <p>Make sure you are logged into Experience Cloud and AEM in this browser.</p>
-
-  <button id="open-btn">Open Asset Selector</button>
-
-  <dialog id="asset-selector-dialog">
-    <div id="asset-selector-container"></div>
-  </dialog>
-
-  <h2>Selected Asset</h2>
-  <div id="output">No asset selected yet.</div>
+  });
+</script>
 </body>
 </html>

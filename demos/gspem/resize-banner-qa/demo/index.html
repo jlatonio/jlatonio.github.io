@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="ad.size" content="width=300,height=300">
+  <title>Google Ads HTML5 Banner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive-style.css">
+  <!-- REQUIRED: clickTag MUST be declared at top level for Google Ads -->
+  <script>
+    var clickTag = "%%CLICK_URL_UNESC%%";
+    var clickTarget = "_blank";
+  </script>
+</head>
+<body>
+  <!-- Banner Container with onclick handler -->
+  <div class="banner-container" id="banner" onclick="window.open(clickTag, clickTarget);">
+
+    <!-- Content - Pod 1 -->
+    <div class="content">
+      <!-- Full-bleed background image -->
+      <img data-gs-custom="image" src="{{pod1_image}}" alt="Product" id="product-img-1" class="bg-image">
+      <!-- Gradient scrim for text legibility -->
+      <div class="scrim"></div>
+      <!-- Text overlay -->
+      <div class="overlay">
+        <h1 class="headline">{{pod1_headline}}</h1>
+        <p class="subheadline">{{pod1_sub_headline}}</p>
+        <a href="#" class="cta-button" id="cta-1" onclick="event.stopPropagation(); window.open(clickTag, clickTarget); return false;">{{pod1_cta}}</a>
+      </div>
+    </div>
+
+    <!-- Content - Pod 2 -->
+    <div class="content">
+      <img data-gs-custom="image" src="{{pod2_image}}" alt="Product" id="product-img-2" class="bg-image">
+      <div class="scrim"></div>
+      <div class="overlay">
+        <h1 class="headline">{{pod2_headline}}</h1>
+        <p class="subheadline">{{pod2_sub_headline}}</p>
+        <a href="#" class="cta-button" id="cta-2" onclick="event.stopPropagation(); window.open(clickTag, clickTarget); return false;">{{pod2_cta}}</a>
+      </div>
+    </div>
+
+    <!-- Content - Pod 3 -->
+    <div class="content">
+      <img data-gs-custom="image" src="{{pod3_image}}" alt="Product" id="product-img-3" class="bg-image">
+      <div class="scrim"></div>
+      <div class="overlay">
+        <h1 class="headline">{{pod3_headline}}</h1>
+        <p class="subheadline">{{pod3_sub_headline}}</p>
+        <a href="#" class="cta-button" id="cta-3" onclick="event.stopPropagation(); window.open(clickTag, clickTarget); return false;">{{pod3_cta}}</a>
+      </div>
+    </div>
+
+    <!-- Animated Particles -->
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+  </div>
+
+  <!-- REQUIRED: Click tracking script -->
+  <script src="script.js"></script>
+</body>
+</html>

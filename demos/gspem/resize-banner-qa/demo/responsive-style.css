@@ -1,0 +1,362 @@
+html,
+body {
+  overflow: auto;
+}
+
+@media screen and (min-width: 160px) and (height: 600px) {
+  .banner-container {
+    min-width: 160px;
+    min-height: 600px;
+  }
+
+  /* ── Overlay ── */
+  .overlay {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    padding: 10px 12px !important;
+    gap: 6px !important;
+  }
+    
+  /* ── Headline ── */
+  .headline {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* ── Subheadline ── */
+  .subheadline {
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.15px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* ── CTA ── */
+  .cta-button {
+    background: #ffea00 !important;
+    color: #000 !important;
+    border: none;
+    padding: 6px 10px !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .cta-button:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.45) !important;
+  }
+}
+
+@media screen and (min-width: 300px) and (height: 250px) {
+  .banner-container {
+    min-width: 300px;
+    min-height: 250px;
+  }
+
+  /* ── Overlay ── */
+  .overlay {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    padding: 16px 18px !important;
+    gap: 6px !important;
+  }
+    
+  /* ── Headline ── */
+  .headline {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* ── Subheadline ── */
+  .subheadline {
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.15px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* ── CTA ── */
+  .cta-button {
+    background: #ffea00 !important;
+    color: #000 !important;
+    border: none;
+    padding: 8px 18px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .cta-button:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.45) !important;
+  }
+}
+
+@media screen and (min-width: 300px) and (height: 600px) {
+  .banner-container {
+    min-width: 300px;
+    min-height: 600px;
+  }
+
+  /* ── Overlay ── */
+  .overlay {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    padding: 16px 18px !important;
+    gap: 6px !important;
+  }
+    
+  /* ── Headline ── */
+  .headline {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* ── Subheadline ── */
+  .subheadline {
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.15px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* ── CTA ── */
+  .cta-button {
+    background: #ffea00 !important;
+    color: #000 !important;
+    border: none;
+    padding: 8px 18px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .cta-button:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.45) !important;
+  }
+}
+
+@media screen and (min-width: 320px) and (height: 50px) {
+  .overlay {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    padding: 6px 8px !important;
+    gap: 6px !important;
+  }
+
+  /* TEXT stays left */
+  .text-group {
+    max-width: 70%;
+  }
+
+  .headline {
+    font-size: 10px !important;
+    line-height: 1.1 !important;
+  }
+
+  .subheadline {
+    font-size: 9px !important;
+    line-height: 1.1 !important;
+  }
+
+  /* ── CTA ── */
+  .cta-button {
+    background: #ffea00 !important;
+    color: #000 !important;
+    border: none;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    padding: 4px 8px !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .cta-button:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.45) !important;
+  }
+}
+@media screen and (min-width: 336px) and (height: 280px) {
+  .banner-container {
+    min-width: 320px;
+    min-height: 50px;
+  }
+
+  /* ── Overlay ── */
+  .overlay {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    padding: 16px 18px !important;
+    gap: 6px !important;
+  }
+    
+  /* ── Headline ── */
+  .headline {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* ── Subheadline ── */
+  .subheadline {
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.15px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* ── CTA ── */
+  .cta-button {
+    background: #ffea00 !important;
+    color: #000 !important;
+    border: none;
+    padding: 8px 18px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .cta-button:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.45) !important;
+  }
+}
+
+@media screen and (min-width: 728px) and (height: 90px) {
+  .banner-container {
+    min-width: 728px;
+    min-height: 90px;
+  }
+
+  /* ── Overlay ── */
+  .overlay {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    padding: 10px 12px !important;
+    gap: 4px !important;
+  }
+    
+  /* ── Headline ── */
+  .headline {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* ── Subheadline ── */
+  .subheadline {
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.15px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* ── CTA ── */
+  .cta-button {
+    background: #ffea00 !important;
+    color: #000 !important;
+    border: none;
+    padding: 5px 10px !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .cta-button:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.45) !important;
+  }
+}
+
+@media screen and (min-width: 970px) and (height: 250px) {
+  .banner-container {
+    min-width: 970px;
+    min-height: 50px;
+  }
+
+  /* ── Overlay ── */
+  .overlay {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    padding: 16px 18px !important;
+    gap: 6px !important;
+  }
+    
+  /* ── Headline ── */
+  .headline {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* ── Subheadline ── */
+  .subheadline {
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.15px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* ── CTA ── */
+  .cta-button {
+    background: #ffea00 !important;
+    color: #000 !important;
+    border: none;
+    padding: 8px 18px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .cta-button:hover {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.45) !important;
+  }
+}
